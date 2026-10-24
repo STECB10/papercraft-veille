@@ -9,6 +9,21 @@ résultats étaient trop maigres. Le motion design, la musique et la voix sont v
   au début pour que le contexte soit bien compris).
 - Chaque phrase porte une information. Pas de phrase d'ambiance sans fait.
 
+## Style (retour de Steven sur le 2e essai)
+
+- **Des phrases complètes, reliées par des connecteurs logiques** : « En effet », « Pourtant », « Pour le savoir »,
+  « Concrètement », « Résultat : », « Autrement dit », « En revanche ». Jamais une suite de fragments ou de chiffres
+  lâchés seuls (« 18 %. Pause. Une photo. Pause. »).
+- **L'intro raconte** : qui est concerné, quel est le problème, pourquoi c'est important, avant tout chiffre isolé.
+  Le premier chiffre arrive dans une phrase qui l'explique.
+- **Expliquer la méthode et les résultats pas à pas**, quitte à ralentir : ce qu'on a mesuré, comment, chez qui, puis
+  ce que veut dire le chiffre (« autrement dit, sur dix patients… »).
+- **Respirations** : `pause_apres` de 0,3 à 0,6 s après chaque information clé (question de l'étude, chaque groupe,
+  chaque résultat), en plus des pauses imposées (moment muet, pivot, avant la promesse).
+- Phrases de 9 à 20 mots en moyenne ; une phrase de moins de 6 mots seulement pour un effet voulu (2 au plus par film).
+- **Nombres** : dans le texte dit, toujours en toutes lettres (« zéro virgule huit cent quarante-cinq »,
+  « dix-huit virgule deux pour cent »). `pipeline/nombres.py` convertit automatiquement s'il reste des chiffres.
+
 ## Ce que chaque script doit dire, dans cet ordre
 
 0. **L'accroche** (la première phrase, 8 à 14 mots) : une question ou un constat qui parle directement au

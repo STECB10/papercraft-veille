@@ -29,7 +29,7 @@ Règle : un élément apparaît au mot qui le nomme ; la caméra (`cam_at`) part
 "mode": "sub" (défaut) | "type" (pivot ou nuance : grande typo, pas de sous-titre) | "none" (fin),
 "pause_apres": secondes de silence ajoutées après la phrase}`
 
-- `pause_apres` : 2.5 après la phrase où commence le moment muet (si gag), 1.4 sur la phrase du pivot (obligatoire,
+- `pause_apres` : 0.3 à 0.6 après chaque information clé (respiration) ; 2.5 après la phrase où commence le moment muet (si gag), 1.4 sur la phrase du pivot (obligatoire,
   1.0 à 2.0), 0.3 sur la dernière phrase avant la promesse.
 - Les deux dernières phrases sont toujours `"Une étude par jour, vérifiée à la source."` (mode none) puis
   `"Papercraft."` (mode none).

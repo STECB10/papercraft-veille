@@ -33,7 +33,8 @@ rétrospective, préprint non relu).
 
 ## 3. Script et `film.json`
 
-Suis `serie/REGLES-CONTENU.md` à la lettre : 80 à 100 s, 210 à 280 mots dits, dans l'ordre accroche (1 phrase
+Suis `serie/REGLES-CONTENU.md` à la lettre (surtout la section « Style » : phrases complètes reliées par des
+connecteurs logiques, intro qui raconte, méthode et résultats expliqués pas à pas, respirations) : 80 à 100 s, 210 à 280 mots dits, dans l'ordre accroche (1 phrase
 qui capte, la toute première) → contexte (4 à 5 phrases : la situation, qui est concerné, comment on fait
 aujourd'hui, ce qui coince, ce que fait l'IA testée) → question de
 l'étude → carte d'identité (`id_card`) → ce que fait l'IA (`ai_scan` : ce qui entre, ce que l'IA en fait, ce qui
@@ -63,5 +64,5 @@ Le titre de l'étude, la raison du choix, le rôle de l'IA en une phrase, le tex
 
 ## 6. Valider
 
-`python3 pipeline/verifier.py`. S'il répond REFUSÉ, corrige chaque point et relance, jusqu'à VALIDÉ. Tu as fini
+`python3 pipeline/nombres.py` (écrit les nombres du texte dit en toutes lettres), puis `python3 pipeline/verifier.py`. S'il répond REFUSÉ, corrige chaque point et relance, jusqu'à VALIDÉ. Tu as fini
 quand il répond VALIDÉ. Ne lance ni la voix, ni le rendu, ni la publication : la suite de la chaîne s'en charge.

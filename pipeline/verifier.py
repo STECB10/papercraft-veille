@@ -97,6 +97,14 @@ def main():
     mots = sum(len(s["text"].split()) for s in sents)
     if not 200 <= mots <= 290:
         err.append(f"script de {mots} mots (attendu 200 à 290)")
+    corps = [s for s in sents if s.get("mode", "sub") == "sub"]
+    courtes = [s["text"] for s in corps if len(s["text"].split()) < 6]
+    if len(courtes) > 2:
+        err.append(f"trop de phrases hachées (moins de 6 mots) : {courtes} ; faire des phrases complètes avec connecteurs")
+    if corps and sum(len(s["text"].split()) for s in corps) / len(corps) < 9:
+        err.append("phrases trop courtes en moyenne (9 mots au moins) : relier les idées avec des connecteurs logiques")
+    if sum(1 for s in corps if 0.25 <= float(s.get("pause_apres", 0) or 0) <= 0.8) < 3:
+        err.append("ajouter des respirations : pause_apres de 0,3 à 0,6 s après au moins 3 informations clés")
     for i, s in enumerate(sents):
         if re.search(r"\d", s["text"]):
             err.append(f"phrase {i} : chiffres dans le texte dit (écrire en lettres, mettre les chiffres dans display) : {s['text']}")

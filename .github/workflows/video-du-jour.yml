@@ -50,7 +50,9 @@ jobs:
           claude_args: '--max-turns 90 --allowedTools "Bash,Read,Write,Edit,Glob,Grep"'
       - name: Vérification indépendante des chiffres
         id: verif
-        run: python3 pipeline/verifier.py
+        run: |
+          python3 pipeline/nombres.py
+          python3 pipeline/verifier.py
       - name: Fabrication (voix, animation, musique, rendu, contrôles)
         id: fab
         run: python3 pipeline/fabriquer.py
