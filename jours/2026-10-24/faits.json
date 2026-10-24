@@ -1,0 +1,82 @@
+[
+ {
+  "id": "f1",
+  "valeur": 453,
+  "citation": "A total of 453 patients were included"
+ },
+ {
+  "id": "f2",
+  "valeur": 228,
+  "citation": "228 intervention [50.3%]"
+ },
+ {
+  "id": "f3",
+  "valeur": 225,
+  "citation": "225 control [49.7%]"
+ },
+ {
+  "id": "f4",
+  "valeur": 12,
+  "citation": "12 ambulatory clinics"
+ },
+ {
+  "id": "f5",
+  "valeur": 12,
+  "citation": "with 12-month follow-up"
+ },
+ {
+  "id": "f6",
+  "valeur": 65,
+  "citation": "65 years or older"
+ },
+ {
+  "id": "f7",
+  "valeur": 2021,
+  "citation": "June 2021 to March 2025"
+ },
+ {
+  "id": "f8",
+  "valeur": 2025,
+  "citation": "June 2021 to March 2025"
+ },
+ {
+  "id": "f9",
+  "valeur": 56.6,
+  "citation": "56.6% vs 40.0%"
+ },
+ {
+  "id": "f10",
+  "valeur": 40.0,
+  "citation": "56.6% vs 40.0%"
+ },
+ {
+  "id": "f11",
+  "valeur": 16.6,
+  "citation": "rate difference, 16.6%"
+ },
+ {
+  "id": "f12",
+  "valeur": 7.5,
+  "citation": "95% CI, 7.5%-25.7%"
+ },
+ {
+  "id": "f13",
+  "valeur": 25.7,
+  "citation": "95% CI, 7.5%-25.7%"
+ },
+ {
+  "id": "f14",
+  "valeur": 95,
+  "citation": "95% CI, 7.5%-25.7%"
+ },
+ {
+  "id": "f15",
+  "valeur": 13.2,
+  "citation": "30 of 227 [13.2%]"
+ },
+ {
+  "id": "f16",
+  "valeur": 41.3,
+  "citation": "92 of 223 [41.3%]"
+ }
+]
