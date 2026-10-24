@@ -4,6 +4,7 @@
 Usage : python3 pipeline/voix.py        (lit jours/<date>/film.json, écrit jours/<date>/assets/audio/voix.mp3 et voix-mots-brut.json)
 Secret : ELEVENLABS_API_KEY
 """
+import difflib
 import json
 import sys
 
@@ -16,6 +17,32 @@ API = "https://api.elevenlabs.io/v1"
 
 def norm(w):
     return w.replace("’", "'").strip(".,;:!?«»\"()…").lower()
+
+
+def aligner(mots, texte_mots):
+    """Aligne la transcription sur le script (difflib) : compte les vrais écarts sans effet de décalage,
+    et rend un mot horodaté par mot du script (temps répartis sur les passages qui diffèrent)."""
+    dits = [norm(w["w"]) for w in mots]
+    attendu = [norm(w) for w in texte_mots]
+    temps = [None] * len(attendu)
+    ecarts, details = 0, []
+    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, dits, attendu, autojunk=False).get_opcodes():
+        if op == "equal":
+            for k in range(i2 - i1):
+                temps[j1 + k] = (mots[i1 + k]["start"], mots[i1 + k]["end"])
+            continue
+        ecarts += max(i2 - i1, j2 - j1)
+        details.append(f"dit « {' '.join(dits[i1:i2])} » / attendu « {' '.join(attendu[j1:j2])} »")
+        if i2 > i1:
+            t0, t1 = mots[i1]["start"], mots[i2 - 1]["end"]
+        else:
+            t0 = mots[i1 - 1]["end"] if i1 > 0 else 0.0
+            t1 = mots[i1]["start"] if i1 < len(mots) else t0
+        n = j2 - j1
+        for k in range(n):
+            temps[j1 + k] = (t0 + (t1 - t0) * k / n, t0 + (t1 - t0) * (k + 1) / n)
+    alignes = [{"w": t, "start": a, "end": b} for t, (a, b) in zip(texte_mots, temps)]
+    return ecarts, details, alignes
 
 
 def tts(texte, cle, graine):
@@ -43,7 +70,8 @@ def main():
     cle = env("ELEVENLABS_API_KEY")
     film = lire_json(jour / "film.json")
     texte = "\n".join(s["text"] for s in film["sentences"])
-    attendu = [norm(w) for s in film["sentences"] for w in s["text"].split()]
+    texte_mots = [w for s in film["sentences"] for w in s["text"].split()]
+    tolerance = max(3, len(texte_mots) // 20)          # 5 % des mots, au moins 3
     a = jour / "assets" / "audio"
     a.mkdir(parents=True, exist_ok=True)
     meilleure = None
@@ -51,23 +79,19 @@ def main():
         mp3, modele = tts(texte, cle, graine)
         p = a / f"prise{k}.mp3"
         p.write_bytes(mp3)
-        mots = scribe(p, cle)
-        dits = [norm(w["w"]) for w in mots]
-        ecarts = sum(1 for x, y in zip(dits, attendu) if x != y) + abs(len(dits) - len(attendu))
-        print(f"prise {k} ({modele}) : {len(dits)} mots, {ecarts} écart(s) avec le texte")
+        ecarts, details, alignes = aligner(scribe(p, cle), texte_mots)
+        print(f"prise {k} ({modele}) : {ecarts} écart(s) réel(s) sur {len(texte_mots)} mots (tolérance {tolerance})")
+        for d in details[:15]:
+            print(f"   {d}")
         if meilleure is None or ecarts < meilleure[0]:
-            meilleure = (ecarts, p, mots, modele)
+            meilleure = (ecarts, p, alignes, modele)
         if ecarts == 0:
             break
     ecarts, p, mots, modele = meilleure
+    if ecarts > tolerance:
+        raise SystemExit(f"voix : aucune prise ne colle au texte ({ecarts} écarts réels, tolérance {tolerance})")
     if ecarts:
-        if len(mots) != len(attendu) or ecarts > 3:
-            raise SystemExit(f"voix : aucune prise ne colle au texte ({ecarts} écarts, {len(mots)} mots contre {len(attendu)})")
-        # même nombre de mots, petites variantes de transcription : on garde les temps, on remet le texte du script
-        texte_mots = [w for s in film["sentences"] for w in s["text"].split()]
-        for w, t in zip(mots, texte_mots):
-            w["w"] = t
-        print(f"voix : {ecarts} variante(s) de transcription corrigée(s) d'après le script")
+        print(f"voix : {ecarts} variante(s) de transcription recalée(s) sur le script")
     (a / "voix.mp3").write_bytes(p.read_bytes())
     (a / "voix-mots-brut.json").write_text(json.dumps({"source": f"ElevenLabs {modele}, voix Léo, Scribe v1", "words": mots},
                                                       ensure_ascii=False, indent=1), encoding="utf-8")
