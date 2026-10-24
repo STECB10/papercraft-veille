@@ -12,10 +12,14 @@ Tu travailles seul, sans humain à qui poser une question. La date est dans la v
 
 ## 1. Choisir
 
-Lis `candidats.json` (6 études, déjà notées). Choisis celle qui parle le plus à des soignants, kinés, chercheurs
-français : un vrai résultat chiffré sur des patients, une comparaison claire, de préférence un essai tiré au sort ou
-une étude prospective. Évite les études purement techniques (précision d'un modèle sans patient) sauf si le résultat
-est frappant et concret. Puis : `python3 pipeline/texte_integral.py <rang>` (rang à partir de 1). Il écrit
+Lis `candidats.json` (6 études, déjà notées). **L'étude doit avoir un vrai lien avec l'IA ou le machine
+learning** : un outil d'IA testé sur des patients, un modèle qui prédit ou détecte quelque chose, un algorithme qui
+classe des patients, un assistant conversationnel, etc. Écarte seulement les études où l'IA n'est qu'une mention en
+passant (une phrase de perspective, un mot-clé). Parmi celles qui restent, choisis celle qui parle le plus à des soignants, kinés, chercheurs
+français : un vrai résultat chiffré et utile en pratique, quel que soit le type d'étude (essai tiré au sort,
+méta-analyse, revue, cohorte, performance d'un modèle…). À intérêt égal, préfère les preuves les plus solides (essai
+tiré au sort, méta-analyse, étude prospective). Évite les études purement techniques sans lien avec le soin, sauf si
+le résultat est frappant et concret. Puis : `python3 pipeline/texte_integral.py <rang>` (rang à partir de 1). Il écrit
 `source.txt` (le seul texte dont tu tires des chiffres) et `etude.json`.
 
 ## 2. Fiche des faits : `faits.json`
@@ -24,17 +28,25 @@ Liste de faits : `{"id": "f1", "valeur": 2378, "citation": "<extrait copié MOT 
 valeur>"}` ou, pour un chiffre calculé, `{"id": "f9", "valeur": 64.1, "calcul": "100 - f8"}`. Chaque chiffre du film
 et du post (années comprises) doit venir d'ici. Ne jamais arrondir au-delà de ce que dit la source ; un arrondi affiché
 (« 64 % » pour 64,1) est accepté par le vérificateur. Si la source ne donne pas un chiffre, ne l'invente pas : change
-la phrase. Note honnêtement le type d'étude (essai tiré au sort, cohorte, rétrospective, préprint non relu).
+la phrase. Note honnêtement le type d'étude (essai tiré au sort, méta-analyse, revue, cohorte, étude diagnostique,
+rétrospective, préprint non relu).
 
 ## 3. Script et `film.json`
 
-Suis `serie/REGLES-CONTENU.md` à la lettre : 60 à 85 s, 170 à 230 mots dits, dans l'ordre contexte → question de
-l'étude → carte d'identité (`id_card`) → les deux groupes décrits concrètement (`two_groups`) → résultats (valeur des
-deux groupes, écart, intervalle de confiance s'il existe) → 1 résultat secondaire utile → portée et limite (une
-phrase `typo`) → phrase à retenir → promesse → « Papercraft. ».
+Suis `serie/REGLES-CONTENU.md` à la lettre : 80 à 100 s, 210 à 280 mots dits, dans l'ordre accroche (1 phrase
+qui capte, la toute première) → contexte (4 à 5 phrases : la situation, qui est concerné, comment on fait
+aujourd'hui, ce qui coince, ce que fait l'IA testée) → question de
+l'étude → carte d'identité (`id_card`) → ce que fait l'IA (`ai_scan` : ce qui entre, ce que l'IA en fait, ce qui
+sort, chaque bloc apparaît au mot qui le nomme) → méthode puis résultats **adaptés au type d'étude** (tableau « La
+trame s'adapte au type d'étude » de REGLES-CONTENU.md : `two_groups` et `result_dots` pour deux groupes comparés,
+`metric` pour une performance, `studies_stack` pour une méta-analyse ou une revue, `key_points` pour des constats) →
+1 résultat secondaire utile → portée et limite (une phrase `typo`) → phrase à retenir → promesse → « Papercraft. ».
+Le champ `type_etude` de candidats.json donne une première indication ; vérifie-le dans source.txt.
 Français simple, phrases courtes (8 à 14 mots), vouvoiement implicite, aucun anglicisme évitable, jamais « l'IA bat
-les médecins » si l'étude ne le teste pas, jamais un avant/après pour deux groupes tirés au sort.
-Texte dit : chiffres en lettres (« trente-six pour cent ») ; `display` : chiffres (« 36 % »). Sigles lisibles :
+les médecins » si l'étude ne le teste pas, jamais un avant/après pour deux groupes tirés au sort, jamais de « deux groupes » inventés pour une étude qui n'en
+compare pas.
+Texte dit : chiffres en lettres (« trente-six pour cent ») ; `display` : chiffres (« 36 % »), et sinon le
+texte dit **mot pour mot, en entier** (le vérificateur refuse tout mot retiré ou reformulé). Sigles lisibles :
 écris « IA », jamais « I.A. ». Choisis des stations qui montrent chaque idée au moment où elle est dite, avec des
 ancres sur les mots (voir FILM-SCHEMA.md). La nuit montre le problème (`hook_number`, un moment muet `gag_clock` ou
 `gag_waiting`, `steps`) ; le papier montre l'étude. Respecte les espacements y.
@@ -47,7 +59,7 @@ exact de `etude.json` (`https://doi.org/…`). Puis 3 à 4 hashtags. 1 500 carac
 
 ## 5. Garder une trace : `SCRIPT.md`
 
-Le titre de l'étude, la raison du choix, le texte dit complet, et la fiche des faits sous forme de tableau.
+Le titre de l'étude, la raison du choix, le rôle de l'IA en une phrase, le texte dit complet, et la fiche des faits sous forme de tableau.
 
 ## 6. Valider
 

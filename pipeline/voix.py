@@ -8,11 +8,15 @@ import difflib
 import json
 import sys
 
-from commun import dossier_du_jour, env, http, lire_json, multipart
+from commun import RACINE, dossier_du_jour, env, http, lire_json, multipart
 
 VOIX = "AfbuxQ9DVtS4azaxN1W7"          # Léo, choisie par Steven le 24 octobre 2026
-MODELES = ["eleven_v4", "eleven_v3", "eleven_multilingual_v2"]
 API = "https://api.elevenlabs.io/v1"
+# Réglages du pilote Tanzanie (tonalité, naturel), retrouvés par pipeline/reglages_voix.py. Un seul modèle : pas de
+# repli sur un autre modèle, qui changerait le timbre de Léo d'une vidéo à l'autre.
+REGLAGES = lire_json(RACINE / "serie" / "audio" / "voix-leo.json", {}) or {}
+MODELE = REGLAGES.get("model_id", "eleven_v4")
+VOICE_SETTINGS = REGLAGES.get("voice_settings")
 
 
 def norm(w):
@@ -46,16 +50,14 @@ def aligner(mots, texte_mots):
 
 
 def tts(texte, cle, graine):
-    err = None
-    for m in MODELES:
-        try:
-            body = {"text": texte, "model_id": m, "language_code": "fr", "seed": graine}
-            return http(f"{API}/text-to-speech/{VOIX}?output_format=mp3_44100_128", body,
-                        {"xi-api-key": cle, "Accept": "audio/mpeg"}, method="POST", timeout=300, brut=True), m
-        except RuntimeError as e:
-            err = e
-            print(f"modèle {m} refusé : {str(e)[:160]}")
-    raise SystemExit(f"voix : aucun modèle n'a fonctionné ({err})")
+    body = {"text": texte, "model_id": MODELE, "language_code": "fr", "seed": graine}
+    if VOICE_SETTINGS:
+        body["voice_settings"] = VOICE_SETTINGS
+    try:
+        return http(f"{API}/text-to-speech/{VOIX}?output_format=mp3_44100_128", body,
+                    {"xi-api-key": cle, "Accept": "audio/mpeg"}, method="POST", timeout=300, brut=True), MODELE
+    except RuntimeError as e:
+        raise SystemExit(f"voix : le modèle {MODELE} de Léo a refusé ({str(e)[:200]})")
 
 
 def scribe(chemin, cle):
@@ -93,7 +95,7 @@ def main():
     if ecarts:
         print(f"voix : {ecarts} variante(s) de transcription recalée(s) sur le script")
     (a / "voix.mp3").write_bytes(p.read_bytes())
-    (a / "voix-mots-brut.json").write_text(json.dumps({"source": f"ElevenLabs {modele}, voix Léo, Scribe v1", "words": mots},
+    (a / "voix-mots-brut.json").write_text(json.dumps({"source": f"ElevenLabs {modele}, voix Léo, réglages {VOICE_SETTINGS or 'par défaut'}, Scribe v1", "words": mots},
                                                       ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"voix : {p.name} retenue")
 

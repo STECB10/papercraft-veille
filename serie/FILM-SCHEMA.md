@@ -48,10 +48,24 @@ Espacements minimum : après `hook_number` +980, après un gag +660.
 
 ## Stations du papier (y croissants)
 
+Choisis-les selon le type d'étude (tableau de REGLES-CONTENU.md) : `two_groups` / `population_split` /
+`result_dots` pour des groupes comparés ; `metric` pour une performance ; `studies_stack` + `key_points` pour une
+méta-analyse ou une revue. `id_card` et `ai_scan` servent à toutes les études.
+
 - `id_card` « L'étude en bref » : `title`, `cam_at`, `rows`: [`{label, value, at, accent?}`] (4 à 6 lignes : type
   d'étude, lieu, patients, durée, critère principal…). Hauteur +1100.
+- Noms de groupes (`label` dans `two_groups`, `population_split`, `result_dots`, `result_bars`) : courts et explicites,
+  22 caractères au plus, les mêmes d'une station à l'autre (« Sans IA » / « Avec IA », ou « Suivi habituel » / « Avec
+  l'IA »). Jamais de sigle ni de libellé technique.
 - `two_groups` les groupes comparés : `cam_at`, `groups`: 2 × `{label, sub?, accent?, at, steps: [{icon, text, at}]}`
   (2 à 4 étapes, texte de 40 caractères au plus ; le groupe testé a `accent: true`). Hauteur ≥ 1100.
+- `ai_scan` **ce que fait l'IA (obligatoire, une fois, juste après `id_card` ou `two_groups`)** : `input_icon`
+  (ce qui entre : fundus, xray, ecg, skin, eye, camera, doc, message, mic, heart, brain…), `input_label` (ex. « Photo du
+  fond de l'œil », 40 caractères au plus), `ai_label` (ce que l'IA fait, verbe d'action : « repère les signes de
+  rétinopathie », 45 caractères au plus), `output_label` (ce qui sort : « Résultat en 1 minute », 30 caractères au
+  plus), `output_note?`, `ai_name?` (nom du logiciel s'il est dit), `title?` (défaut « Ce que fait l'IA »), `at` (au
+  mot qui nomme l'entrée), `scan_at?`, `core_at?` (au mot qui nomme l'IA), `out_at?` (au mot qui nomme le résultat),
+  `cam_at`. Hauteur +1180.
 - `population_split` des points-patients qui se partagent : `total`, `total_label`, `dot_value` (10 si > 600),
   `count_at`, `count_end`, `split_at`, `groups`: [`{label, n}`, `{label, n, accent: true, accent_at}`], `cam_at`. +1250.
 - `result_dots` résultat en proportion (n patients, k « oui ») : `title`, `groups`: [`{label, n, k, value, at, accent?}`]
@@ -60,12 +74,21 @@ Espacements minimum : après `hook_number` +980, après un gag +660.
   affiché, ex. « 12,4 »), num (nombre), at, accent?}`] ×2 ou 3, `diff?`, `diff_at?`, `cam_at`. +1150.
 - `face_to_face` deux personnes et une carte : `card_title`, `card_value`, `card_note`, `label`, `at`, `card_at`,
   `label_at`, `check_at`, `cam_at`. +1100.
+- `studies_stack` **méta-analyse ou revue** : les études regroupées, une feuille par étude (par lot au-delà de 40) :
+  `n_studies`, `label?` (défaut « études »), `n_patients?`, `sub?` (ex. « 2015–2025 · 14 pays »), `title?`, `at` (au
+  nombre d'études), `patients_at?`, `cam_at`. Hauteur +1150.
+- `metric` **mesures de performance ou résultat regroupé** (sensibilité, spécificité, AUC, précision, risque
+  relatif…) : `title`, `metrics`: 1 à 3 × `{label (« Sensibilité »), value (texte affiché, « 92,4 »), num (nombre),
+  max? (100 par défaut ; 1 pour une AUC), unit? (« % »), note? (ex. « IC 95 % : 89–95 »), at, accent?}`, `caption?`,
+  `caption_at?`, `cam_at`. Les jauges se remplissent jusqu'à num/max. Hauteur +1050.
+- `key_points` **constats numérotés** (revue, cohorte, étude qualitative, limites) : `title?` (défaut « Ce qu'il
+  faut retenir »), `points`: 2 à 4 × `{text (70 caractères au plus), at}`, `cam_at`. Hauteur 260 + 226 par constat.
 - `typo` phrase de nuance en grande typo : `text` (= une phrase de mode type), `italic`, `cam_at`. +680.
 - `flow_door` du résultat vers la porte : `from_label`, `to_label`, `at`, `card_at`, `door_at`, `walk_at`, `cam_at`. +850.
 - `remaining_dots` ce qui reste à faire : `n`, `k`, `value`, `label`, `at`, `group_label`, `cam_at`. +1100.
 
 Icônes permises : camera, magnifier, phone, chair, door, check, fundus, doc, clock, calendar, chart, chip, heart,
-pill, hospital, eye, brain, stethoscope, user, users, message.
+pill, hospital, eye, brain, stethoscope, user, users, message, xray, ecg, skin, mic.
 
 ## end
 

@@ -6,6 +6,7 @@ Contrôles : fiche de l'étude, citations exactes de faits.json présentes dans 
 présent dans faits.json, structure de film.json (stations, ancres, espacements), longueur, post LinkedIn.
 """
 import copy
+import difflib
 import json
 import re
 import sys
@@ -17,7 +18,7 @@ sys.path.insert(0, str(RACINE / "serie" / "moteur"))
 import build  # noqa: E402
 
 NUIT = {"hook_number", "gag_waiting", "gag_clock", "steps"}
-PAPIER = {"population_split", "face_to_face", "result_dots", "typo", "flow_door", "remaining_dots", "id_card", "two_groups", "result_bars"}
+PAPIER = {"population_split", "face_to_face", "result_dots", "typo", "flow_door", "remaining_dots", "id_card", "two_groups", "result_bars", "ai_scan", "studies_stack", "metric", "key_points"}
 REQUIS = {
     "hook_number": ["header", "number", "unit", "caption", "people", "lit", "lit_at", "footnote", "cam_at"],
     "gag_waiting": ["door", "chairs", "occupied", "cam_at"], "gag_clock": ["label", "cam_at"],
@@ -26,10 +27,11 @@ REQUIS = {
     "face_to_face": ["card_title", "card_value", "card_note", "label", "at", "cam_at"],
     "result_dots": ["title", "groups", "diff", "diff_at", "cam_at"], "typo": ["text", "cam_at"],
     "flow_door": ["from_label", "to_label", "at", "cam_at"], "remaining_dots": ["n", "k", "value", "label", "at", "group_label", "cam_at"],
-    "id_card": ["rows", "cam_at"], "two_groups": ["groups", "cam_at"], "result_bars": ["title", "groups", "cam_at"],
+    "id_card": ["rows", "cam_at"], "studies_stack": ["n_studies", "at", "cam_at"], "metric": ["title", "metrics", "cam_at"], "key_points": ["points", "cam_at"],
+    "ai_scan": ["input_icon", "input_label", "ai_label", "output_label", "at", "cam_at"], "two_groups": ["groups", "cam_at"], "result_bars": ["title", "groups", "cam_at"],
 }
 HAUT = {"hook_number": 980, "gag_waiting": 660, "gag_clock": 660, "population_split": 1250, "face_to_face": 1100, "result_dots": 1270,
-        "typo": 680, "flow_door": 850, "remaining_dots": 1100, "id_card": 1100, "result_bars": 1150}
+        "typo": 680, "flow_door": 850, "remaining_dots": 1100, "id_card": 1100, "result_bars": 1150, "ai_scan": 1180, "studies_stack": 1150, "metric": 1050}
 SANS_CHIFFRE = {"y", "people", "lit", "chairs", "occupied", "dot_value", "icon", "type", "words_file", "audio", "voice", "sfx", "duration"}
 NOMBRE = re.compile(r"\d+(?:[   ]\d{3})*(?:[.,]\d+)?")
 PROMESSE = "Une étude par jour, vérifiée à la source."
@@ -93,11 +95,19 @@ def main():
     # 2. phrases : texte dit sans chiffres, longueur, phrases imposées
     sents = film.get("sentences", [])
     mots = sum(len(s["text"].split()) for s in sents)
-    if not 150 <= mots <= 240:
-        err.append(f"script de {mots} mots (attendu 150 à 240)")
+    if not 200 <= mots <= 290:
+        err.append(f"script de {mots} mots (attendu 200 à 290)")
     for i, s in enumerate(sents):
         if re.search(r"\d", s["text"]):
             err.append(f"phrase {i} : chiffres dans le texte dit (écrire en lettres, mettre les chiffres dans display) : {s['text']}")
+        if s.get("display") and s.get("mode", "sub") == "sub":
+            # le sous-titre doit montrer TOUT le texte dit : seuls les chiffres et symboles peuvent remplacer des mots
+            dit, vu = s["text"].split(), s["display"].split()
+            sm = difflib.SequenceMatcher(None, [build.norm(w) for w in dit], [build.norm(w) for w in vu], autojunk=False)
+            for op, i1, i2, j1, j2 in sm.get_opcodes():
+                if op != "equal" and not re.search(r"[\d%‰×±≈<>=+−]", " ".join(vu[j1:j2])):
+                    err.append(f"phrase {i} : le sous-titre s'écarte du texte dit (« {' '.join(dit[i1:i2])} » / « {' '.join(vu[j1:j2])} ») : "
+                               "display = texte dit mot pour mot, seuls les nombres passent en chiffres")
         for x in NOMBRE.findall(s.get("display", "")):
             if not prouve(nombre(x)):
                 err.append(f"phrase {i} : « {x} » affiché sans fait correspondant dans faits.json")
@@ -145,14 +155,30 @@ def main():
             for ic in re.findall(r"'icon': '([^']+)'", str(st)):
                 if ic not in build.ICONS:
                     err.append(f"icône inconnue « {ic} » (permises : {', '.join(build.ICONS)})")
+            if t == "metric" and not 1 <= len(st.get("metrics", [])) <= 3:
+                err.append("metric : 1 à 3 mesures")
+            if t == "key_points" and not 2 <= len(st.get("points", [])) <= 4:
+                err.append("key_points : 2 à 4 constats")
+            for pt in st.get("points", []) if t == "key_points" else []:
+                if len(pt.get("text", "")) > 70:
+                    err.append(f"key_points : constat trop long ({len(pt['text'])} caractères, 70 au plus) : {pt['text']}")
+            if t == "ai_scan" and st.get("input_icon") not in build.ICONS:
+                err.append(f"ai_scan : input_icon « {st.get('input_icon')} » inconnue (permises : {', '.join(build.ICONS)})")
+            for g in st.get("groups", []) if t in ("population_split", "result_dots", "result_bars", "two_groups") else []:
+                if len(str(g.get("label", ""))) > 22:
+                    err.append(f"{t} : nom de groupe trop long « {g.get('label')} » (22 caractères au plus, ex. « Sans IA » / « Avec IA »)")
             if k + 1 < len(sts):
                 h = HAUT.get(t, 1100)
                 if t == "steps":
                     h = 170 + 330 * len(st.get("steps", [])) + 200
+                if t == "key_points":
+                    h = 260 + 226 * len(st.get("points", []))
                 if t == "two_groups":
                     h = max(1100, 170 + 196 * max(len(g.get("steps", [])) for g in st.get("groups", [{}])) + 300)
                 if sts[k + 1].get("y", 0) < st.get("y", 0) + h:
                     err.append(f"{zone} : la station {k + 1} doit être à y ≥ {st.get('y', 0) + h} (sinon elle chevauche la précédente)")
+        if zone == "paper" and not any(st.get("type") == "ai_scan" for st in sts):
+            err.append("paper : une station ai_scan (ce que fait l'IA) est obligatoire, juste après id_card")
         if zone == "night" and sts and sts[-1].get("type") == "steps" and len(sts[-1]["steps"]) > 4:
             err.append("steps : 4 étapes au plus")
 

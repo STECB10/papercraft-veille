@@ -1,0 +1,13 @@
+{
+ "voix": "AfbuxQ9DVtS4azaxN1W7",
+ "model_id": "eleven_v4",
+ "language_code": "fr",
+ "voice_settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75,
+  "style": 0.0,
+  "use_speaker_boost": true,
+  "speed": 1.0
+ },
+ "source": "réglages par défaut de la voix Léo (API GET /v1/voices/AfbuxQ9DVtS4azaxN1W7/settings), figés le 2026-10-24"
+}

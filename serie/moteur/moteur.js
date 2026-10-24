@@ -118,6 +118,17 @@
           t + (n > 1 ? i / (n - 1) * d * 0.85 : 0));
       });
     });
+    q('[data-fx="ring"]').forEach(function (el) {
+      var t = num(el, 'data-t', 0), d = num(el, 'data-d', 1.1), off = num(el, 'data-off', 0);
+      tl.to(el, { strokeDashoffset: off, duration: d, ease: 'power2.out', immediateRender: false }, t);
+    });
+    q('[data-fx="scan"]').forEach(function (el) {
+      var t = num(el, 'data-t', 0), d = num(el, 'data-d', 1.5), dy = num(el, 'data-dy', 160);
+      gsap.set(el, { opacity: 0, y: 0 });
+      tl.to(el, { opacity: 1, duration: 0.15, ease: 'none', immediateRender: false }, t);
+      tl.fromTo(el, { y: 0 }, { y: dy, duration: d / 2, ease: 'sine.inOut', yoyo: true, repeat: 1, immediateRender: false }, t);
+      tl.to(el, { opacity: 0, duration: 0.25, ease: 'power1.in', immediateRender: false }, t + d);
+    });
     q('[data-fx="spin"]').forEach(function (el) {
       tl.fromTo(el, { rotation: 0 }, { rotation: 1080, duration: num(el, 'data-d', 2), ease: 'power1.inOut', transformOrigin: '50% 100%', immediateRender: false }, num(el, 'data-t', 0));
     });

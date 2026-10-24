@@ -15,6 +15,7 @@ Les temps de film.json sont des nombres (secondes) ou des ancres sur la voix, r�
   + ou - un décalage en secondes : "s7-0.1", "s14:venir+0.2"
 Ainsi, quand la voix change, toute l'animation se recale seule.
 """
+import difflib
 import html
 import json
 import math
@@ -27,7 +28,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 W, H = 1080, 1350
 FOLD_DUR = 1.0  # durée d'un pli (pivot et fin)
 # décalage vertical de la caméra par type de station, pour centrer le contenu au-dessus des sous-titres
-CAM_DY = {"gag_waiting": 230, "gag_clock": 200, "steps": 40, "face_to_face": 170, "flow_door": 150, "remaining_dots": 110,
+CAM_DY = {"ai_scan": 20, "metric": 110, "key_points": 110, "studies_stack": 40, "gag_waiting": 230, "gag_clock": 200, "steps": 40, "face_to_face": 170, "flow_door": 150, "remaining_dots": 110,
           "id_card": 60, "two_groups": 0, "result_bars": 20}
 STEP_DY = 360
 
@@ -104,11 +105,12 @@ class Clock:
 
 
 ICONS = ["camera", "magnifier", "phone", "chair", "door", "check", "fundus", "doc", "clock", "calendar", "chart", "chip",
-         "heart", "pill", "hospital", "eye", "brain", "stethoscope", "user", "users", "message"]
+         "heart", "pill", "hospital", "eye", "brain", "stethoscope", "user", "users", "message", "xray", "ecg", "skin", "mic"]
 
 TIME_KEYS = {"at", "cam_at", "start", "end", "lit_at", "count_at", "count_end", "split_at", "accent_at", "diff_at",
              "fold_at", "wordmark_at", "button_at", "click_at", "source_at", "note_at", "caption_at", "card_at",
-             "door_at", "walk_at", "label_at", "check_at", "mark_at"}
+             "door_at", "walk_at", "label_at", "check_at", "mark_at",
+             "scan_at", "core_at", "out_at", "total_at", "patients_at"}
 
 
 def resolve(obj, clock):
@@ -166,6 +168,14 @@ def icon(name, stroke="currentColor", sw=3):
         return f'<svg viewBox="0 0 100 100" {s}><circle cx="36" cy="34" r="15"/><path d="M8 88c0-17 13-28 28-28s28 11 28 28"/><circle cx="70" cy="30" r="12"/><path d="M66 56c14-2 28 8 28 26"/></svg>'
     if name == "message":
         return f'<svg viewBox="0 0 100 100" {s}><path d="M12 18h76v52H44L24 86V70H12z"/><path d="M28 38h44M28 52h30"/></svg>'
+    if name == "xray":
+        return f'<svg viewBox="0 0 100 100" {s}><rect x="10" y="8" width="80" height="84" rx="6"/><path d="M50 18v64"/><path d="M50 30c-10 0-22 4-26 10M50 42c-12 0-24 4-28 12M50 54c-12 0-22 4-26 12M50 30c10 0 22 4 26 10M50 42c12 0 24 4 28 12M50 54c12 0 22 4 26 12"/></svg>'
+    if name == "ecg":
+        return f'<svg viewBox="0 0 100 100" {s}><rect x="8" y="16" width="84" height="68" rx="6"/><path d="M14 54h18l6-14 8 30 8-36 6 20h26"/></svg>'
+    if name == "skin":
+        return f'<svg viewBox="0 0 100 100" {s}><path d="M8 62c14-8 28-8 42 0s28 8 42 0"/><path d="M8 78c14-8 28-8 42 0s28 8 42 0"/><circle cx="50" cy="38" r="12"/><path d="M50 14v6M50 56v6M26 38h6M68 38h6"/></svg>'
+    if name == "mic":
+        return f'<svg viewBox="0 0 100 100" {s}><rect x="36" y="8" width="28" height="52" rx="14"/><path d="M22 46a28 28 0 0 0 56 0"/><path d="M50 74v16M36 90h28"/></svg>'
     if name == "fundus":
         return (f'<svg viewBox="0 0 200 200" fill="none" stroke-linecap="round"><circle cx="100" cy="100" r="92" stroke="{stroke}" stroke-width="{sw}"/>'
                 f'<circle cx="132" cy="96" r="15" stroke="{stroke}" stroke-width="{sw}"/><g stroke="{stroke}" stroke-width="{sw*0.7:.1f}" opacity=".8">'
@@ -181,15 +191,36 @@ def person_svg(x, y, h, color, extra_attrs="", cls="pers"):
 
 
 # --------------------------------------------------------------------------------------------- sous-titres
+def display_times(spoken, disp, ws):
+    """Heure d'apparition de chaque mot affiché : alignement sur le texte dit (mot pour mot), les chiffres
+    affichés (« 36 % ») prennent le temps des mots qu'ils remplacent (« trente-six pour cent »)."""
+    times = [None] * len(disp)
+    sm = difflib.SequenceMatcher(None, [norm(w) for w in spoken], [norm(w) for w in disp], autojunk=False)
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        if op == "equal":
+            for k in range(i2 - i1):
+                times[j1 + k] = ws[i1 + k]["s"]
+            continue
+        if j2 == j1:
+            continue
+        if i2 > i1:
+            t0, t1 = ws[i1]["s"], ws[i2 - 1]["e"]
+        else:
+            t0 = t1 = ws[i1 - 1]["e"] if i1 > 0 else ws[0]["s"]
+        n = j2 - j1
+        for k in range(n):
+            times[j1 + k] = t0 + (t1 - t0) * k / n
+    return times
+
+
 def build_subs(film, dark_ranges):
     out = []
     for sent in film["sentences"]:
         if sent.get("mode", "sub") != "sub":
             continue
         ws = sent["_ws"]
-        n = len(ws)
         disp = sent.get("display", sent["text"]).split()
-        times = [ws[min(n - 1, math.floor(k * n / len(disp)))]["s"] for k in range(len(disp))]
+        times = display_times(sent["text"].split(), disp, ws)
         end = ws[-1]["e"]
         chunks, cur = [], []
         for k, tok in enumerate(disp):
@@ -241,7 +272,7 @@ def night_station(st):
     h = []
     if t == "hook_number":
         cap = st.get("caption_at", 2.3)
-        h.append(f'<div class="mono" style="left:70px;top:{y0+56}px;color:var(--ink-dim)" data-a="rise" data-t="0.35">{esc(st["header"])}</div>')
+        h.append(f'<div class="mono" style="left:70px;top:{y0+52}px;width:640px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:22px;color:var(--ink-dim)" data-a="rise" data-t="0.35">{esc(st["header"])}</div>')
         h.append(f'<div class="rule" style="left:70px;top:{y0+94}px;width:620px" data-a="wipe" data-t="0.45"></div>')
         h.append(f'<div class="num" style="left:52px;top:{y0+130}px;font-size:280px" data-a="big" data-t="0.02" data-d="1.0">{esc(st["number"])}<span class="unit">{esc(st["unit"])}</span></div>')
         h.append(f'<div class="cap" style="left:72px;top:{y0+440}px;width:600px" data-a="rise" data-t="{cap:.2f}">{esc(st["caption"])}</div>')
@@ -250,7 +281,7 @@ def night_station(st):
             h.append(person_svg(80 + i * 128, y0 + 570, 170, "var(--paper-dim)", f'data-a="pop" data-t="{0.35 + i*0.09:.2f}"{fade}'))
         lx = 80 + st["lit"] * 128
         h.append(person_svg(lx, y0 + 570, 170, "var(--carbon)", f'data-a="step" data-t="{st["lit_at"]:.2f}"', cls="pers lit"))
-        h.append(f'<div class="mono" style="left:72px;top:{y0+776}px;color:var(--ink-dim);font-size:15px" data-a="rise" data-t="{cap+0.6:.2f}">{esc(st["footnote"])}</div>')
+        h.append(f'<div class="mono" style="left:72px;top:{y0+776}px;color:var(--ink-dim);font-size:24px" data-a="rise" data-t="{cap+0.6:.2f}">{esc(st["footnote"])}</div>')
     elif t == "gag_waiting":
         ta = st["cam_at"]
         h.append(f'<div class="mono" style="left:500px;top:{y0+40}px;width:240px;text-align:center;color:var(--ink)" data-a="rise" data-t="{ta+0.25:.2f}">{esc(st["door"])}</div>')
@@ -347,23 +378,23 @@ def paper_station(st, film):
         hsvg = gy0 + max(rows, math.ceil(max(li, ri) / bc)) * cell + 20
         h.append(f'<svg class="dots" style="left:0;top:0;width:{W}px;height:{hsvg:.0f}px;overflow:visible" viewBox="0 0 {W} {hsvg:.0f}" '
                  f'data-fx="popdots" data-t="{ct+0.1:.2f}" data-split="{sp:.2f}" data-acc="{st["groups"][1].get("accent_at", sp + 1):.2f}">{"".join(circles)}</svg>')
-        h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{gy0+rows*cell+18}px;color:var(--ink-dim);font-size:14px" data-a="rise" data-t="{ct+0.9:.2f}" data-o="{sp:.2f}">1 point = {st["dot_value"]} patients</div>')
+        h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{gy0+rows*cell+18}px;color:var(--ink-dim);font-size:24px" data-a="rise" data-t="{ct+0.9:.2f}" data-o="{sp:.2f}">1 point = {st["dot_value"]} patients</div>')
         by = gy0 + math.ceil(max(li, ri) / bc) * cell + 22
         g0, g1 = st["groups"]
-        h.append(f'<div class="mono" style="left:{lx0-20:.0f}px;top:{by:.0f}px;width:{bc*cell+40}px;text-align:center;color:var(--ink-dim);font-size:15px" data-a="rise" data-t="{sp+0.6:.2f}">{esc(g0["label"])}<br>{fmt_int(g0["n"])}</div>')
-        h.append(f'<div class="mono" style="left:{rx0-20:.0f}px;top:{by:.0f}px;width:{bc*cell+40}px;text-align:center;color:var(--carbon-deep);font-size:15px" data-a="rise" data-t="{sp+0.7:.2f}">{esc(g1["label"])}<br>{fmt_int(g1["n"])}</div>')
+        h.append(f'<div class="glab" style="left:{lx0-40:.0f}px;top:{by:.0f}px;width:{bc*cell+80}px" data-a="rise" data-t="{sp+0.6:.2f}">{esc(g0["label"])}<span class="gn">{fmt_int(g0["n"])} patients</span></div>')
+        h.append(f'<div class="glab acc" style="left:{rx0-40:.0f}px;top:{by:.0f}px;width:{bc*cell+80}px" data-a="rise" data-t="{sp+0.7:.2f}">{esc(g1["label"])}<span class="gn">{fmt_int(g1["n"])} patients</span></div>')
         acc = g1.get("accent_at", sp + 1)
-        h.append(f'<div class="pill acc" style="left:{rx0 + bc*cell/2 - 92:.0f}px;top:{gy0-64}px" data-a="pop" data-t="{acc:.2f}">IA</div>')
-        h.append(f'<div class="ico" style="left:{rx0 + bc*cell/2 + 6:.0f}px;top:{gy0-70}px;width:56px;height:56px;color:var(--carbon-deep)" data-a="pop" data-t="{acc+0.6:.2f}">{icon("fundus", sw=6)}</div>')
+        h.append(f'<div class="pill acc" style="left:{rx0 + bc*cell/2 - 150:.0f}px;top:{gy0-70}px" data-a="pop" data-t="{acc:.2f}">Avec IA</div>')
+        h.append(f'<div class="ico" style="left:{rx0 + bc*cell/2 + 70:.0f}px;top:{gy0-70}px;width:56px;height:56px;color:var(--carbon-deep)" data-a="pop" data-t="{acc+0.6:.2f}">{icon("fundus", sw=6)}</div>')
     elif t == "face_to_face":
         at = st["at"]
         h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{y0+80}px;color:var(--ink-dim)" data-a="rise" data-t="{st.get("label_at", at+1.1):.2f}">{esc(st["label"])}</div>')
         h.append(person_svg(140, y0 + 220, 340, "var(--ink)", f'data-a="slideL" data-t="{at:.2f}"'))
         h.append(person_svg(804, y0 + 220, 340, "var(--carbon)", f'data-a="slideR" data-t="{at+0.15:.2f}"'))
         h.append(f'<div class="card" style="left:335px;top:{y0+250}px;width:410px" data-a="pop" data-t="{st.get("card_at", at+0.55):.2f}">'
-                 f'<div class="mono s" style="color:var(--ink-dim);font-size:15px">{esc(st["card_title"])}</div>'
+                 f'<div class="mono s" style="color:var(--ink-dim);font-size:24px">{esc(st["card_title"])}</div>'
                  f'<div class="cardv">{esc(st["card_value"])}</div>'
-                 f'<div class="mono s" style="color:var(--carbon-deep);font-size:13px;margin-top:12px;letter-spacing:.08em">{esc(st["card_note"])}</div></div>')
+                 f'<div class="mono s" style="color:var(--carbon-deep);font-size:22px;margin-top:12px;letter-spacing:.04em">{esc(st["card_note"])}</div></div>')
         h.append(f'<div class="ico" style="left:510px;top:{y0+520}px;width:60px;height:60px;color:var(--carbon-deep)" data-a="pop" data-t="{st.get("check_at", at+1.6):.2f}">{icon("check")}</div>')
     elif t == "result_dots":
         h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{y0+50}px;color:var(--ink-dim)" data-a="rise" data-t="{st["cam_at"]+0.3:.2f}">{esc(st["title"])}</div>')
@@ -383,8 +414,9 @@ def paper_station(st, film):
             h.append(f'<div class="num" style="left:{x0:.0f}px;width:{bw}px;text-align:center;top:{y0+120}px;font-size:124px;color:{colr}" data-a="big" data-t="{g["at"]-0.05:.2f}" data-d="0.5">'
                      f'<span data-fx="count" data-t="{g["at"]:.2f}" data-d="1.0" data-to="{str(g["value"]).replace(",", ".")}" data-dec="1">0</span><span class="unit">%</span></div>')
             lc = "var(--carbon-deep)" if g.get("accent") else "var(--ink-dim)"
-            h.append(f'<div class="mono" style="left:{x0-20:.0f}px;width:{bw+40}px;text-align:center;top:{y0+290+hpx+20}px;color:{lc};font-size:14px" data-a="rise" data-t="{g["at"]+0.3:.2f}">{esc(g["label"])}<br>{g["k"]} / {g["n"]}</div>')
-        h.append(f'<div class="pill acc" style="left:{W/2-120:.0f}px;top:{y0+290+hpx+74}px;width:240px;text-align:center" data-a="pop" data-t="{st["diff_at"]:.2f}">{esc(st["diff"])}</div>')
+            acc_cls = " acc" if g.get("accent") else ""
+            h.append(f'<div class="glab{acc_cls}" style="left:{x0-30:.0f}px;width:{bw+60}px;top:{y0+290+hpx+22}px" data-a="rise" data-t="{g["at"]+0.3:.2f}">{esc(g["label"])}<span class="gn">{g["k"]} sur {g["n"]}</span></div>')
+        h.append(f'<div class="pillwrap" style="left:0;width:{W}px;top:{y0+290+hpx+128}px" data-a="pop" data-t="{st["diff_at"]:.2f}"><span class="pill acc">{esc(st["diff"])}</span></div>')
     elif t == "typo":
         ws = film["sentences"][st["sentence"]]["_ws"]
         h.append(f'<div class="typo" style="left:90px;width:{W-180}px;top:{y0+400}px">{typo_words(st["text"], ws, st.get("italic"))}</div>')
@@ -408,7 +440,7 @@ def paper_station(st, film):
         h.append(f'<div class="idcard" style="left:90px;top:{y0+100}px;width:{W-180}px;height:{70 + len(rows)*118}px" data-a="pop" data-t="{st["cam_at"]+0.15:.2f}"></div>')
         for i, r in enumerate(rows):
             ry = y0 + 140 + i * 118
-            h.append(f'<div class="mono" style="left:130px;top:{ry+14}px;width:250px;color:var(--ink-dim);font-size:16px" data-a="rise" data-t="{r["at"]-0.05:.2f}">{esc(r["label"])}</div>')
+            h.append(f'<div class="mono" style="left:130px;top:{ry+14}px;width:250px;color:var(--ink-dim);font-size:24px" data-a="rise" data-t="{r["at"]-0.05:.2f}">{esc(r["label"])}</div>')
             acc = "color:var(--carbon-deep);" if r.get("accent") else ""
             h.append(f'<div class="idv" style="left:390px;top:{ry}px;width:{W-90-390-40}px;{acc}" data-a="rise" data-t="{r["at"]:.2f}">{esc(r["value"])}</div>')
             if i < len(rows) - 1:
@@ -422,7 +454,7 @@ def paper_station(st, film):
             h.append(f'<div class="gcol{" acc" if acc else ""}" style="left:{x0:.0f}px;top:{y0+100}px;width:{cw:.0f}px;height:{140 + len(g["steps"])*196}px" data-a="pop" data-t="{g["at"]:.2f}"></div>')
             h.append(f'<div class="pill{" acc" if acc else ""}" style="left:{x0+28:.0f}px;top:{y0+130}px" data-a="pop" data-t="{g["at"]+0.1:.2f}">{esc(g["label"])}</div>')
             if g.get("sub"):
-                h.append(f'<div class="mono" style="left:{x0+30:.0f}px;top:{y0+188}px;width:{cw-60:.0f}px;color:var(--ink-dim);font-size:14px;letter-spacing:.08em" data-a="rise" data-t="{g["at"]+0.25:.2f}">{esc(g["sub"])}</div>')
+                h.append(f'<div class="mono" style="left:{x0+30:.0f}px;top:{y0+188}px;width:{cw-60:.0f}px;color:var(--ink-dim);font-size:24px;letter-spacing:.04em" data-a="rise" data-t="{g["at"]+0.25:.2f}">{esc(g["sub"])}</div>')
             for k, stp in enumerate(g["steps"]):
                 sy = y0 + 240 + k * 196
                 colr = "var(--carbon-deep)" if acc else "var(--ink)"
@@ -447,10 +479,118 @@ def paper_station(st, film):
             h.append(f'<div class="num" style="left:{x-40:.0f}px;width:{bw+80}px;text-align:center;top:{base-hgt-130:.0f}px;font-size:104px;color:{colr}" data-a="big" data-t="{g["at"]-0.05:.2f}" data-d="0.5">'
                      f'<span data-fx="count" data-t="{g["at"]:.2f}" data-d="1.0" data-to="{str(g["value"]).replace(",", ".")}" data-dec="{dec}">0</span><span class="unit">{esc(st.get("unit", ""))}</span></div>')
             lc = "var(--carbon-deep)" if g.get("accent") else "var(--ink-dim)"
-            h.append(f'<div class="mono" style="left:{x-30:.0f}px;width:{bw+60}px;text-align:center;top:{base+18}px;color:{lc};font-size:14px" data-a="rise" data-t="{g["at"]+0.3:.2f}">{esc(g["label"])}</div>')
+            acc_cls = " acc" if g.get("accent") else ""
+            h.append(f'<div class="glab{acc_cls}" style="left:{x-50:.0f}px;width:{bw+100}px;top:{base+20}px" data-a="rise" data-t="{g["at"]+0.3:.2f}">{esc(g["label"])}</div>')
         h.append(f'<div class="rule" style="left:{x0-30:.0f}px;top:{base}px;width:{len(gs)*bw+(len(gs)-1)*gap+60:.0f}px" data-a="wipe" data-t="{st["cam_at"]+0.4:.2f}"></div>')
         if st.get("diff"):
-            h.append(f'<div class="pill acc" style="left:{W/2-150:.0f}px;top:{base+90}px;width:300px;text-align:center" data-a="pop" data-t="{st["diff_at"]:.2f}">{esc(st["diff"])}</div>')
+            h.append(f'<div class="pillwrap" style="left:0;width:{W}px;top:{base+110}px" data-a="pop" data-t="{st["diff_at"]:.2f}"><span class="pill acc">{esc(st["diff"])}</span></div>')
+    elif t == "ai_scan":
+        # ce que fait l'IA : ce qui entre -> l'IA qui analyse (balayage, réseau qui s'allume) -> ce qui sort
+        ta, at = st["cam_at"], st["at"]
+        sa = st.get("scan_at", at + 0.8)
+        ca = st.get("core_at", sa + 0.3)
+        oa = st.get("out_at", ca + 1.4)
+        h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{y0+30}px;color:var(--ink-dim)" data-a="rise" data-t="{ta+0.2:.2f}">{esc(st.get("title", "Ce que fait l'IA"))}</div>')
+        # 1. entrée
+        h.append(f'<div class="aibox" style="left:80px;top:{y0+100}px;width:{W-160}px;height:250px" data-a="pop" data-t="{at-0.1:.2f}"></div>')
+        h.append(f'<div class="scanglow" style="left:110px;top:{y0+130}px;width:200px;height:190px" data-a="fade" data-t="{sa:.2f}" data-o="{sa+1.6:.2f}"></div>')
+        h.append(f'<div class="ico" style="left:130px;top:{y0+150}px;width:160px;height:150px;color:var(--ink)" data-a="draw" data-t="{at:.2f}">{icon(st.get("input_icon", "doc"))}</div>')
+        h.append(f'<div class="scanbeam" style="left:110px;top:{y0+138}px;width:200px" data-fx="scan" data-t="{sa:.2f}" data-d="1.5" data-dy="170"></div>')
+        h.append(f'<div class="aikick" style="left:340px;top:{y0+150}px" data-a="rise" data-t="{at+0.1:.2f}">Ce qui entre</div>')
+        h.append(f'<div class="ailab" style="left:340px;top:{y0+192}px;width:{W-160-300}px" data-a="rise" data-t="{at+0.2:.2f}">{esc(st["input_label"])}</div>')
+        # 2. l'IA
+        h.append(f'<div class="dash" style="left:{W/2-1.5:.0f}px;top:{y0+362}px;height:76px" data-a="grow" data-t="{ca-0.35:.2f}"></div>')
+        h.append(f'<div class="aicore" style="left:80px;top:{y0+450}px;width:{W-160}px;height:250px" data-a="pop" data-t="{ca-0.1:.2f}"></div>')
+        nodes = [(0, [62, 125, 188]), (1, [40, 94, 156, 210]), (2, [62, 125, 188]), (3, [125])]
+        pts = [(30 + c * 70, y) for c, ys in nodes for y in ys]
+        edges = "".join(f'<path d="M{x1} {y1}L{x2} {y2}"/>' for (x1, y1) in pts for (x2, y2) in pts if x2 - x1 == 70)
+        base_n = "".join(f'<circle cx="{x}" cy="{y}" r="11" fill="#1B1D25" stroke="#A3A9FF" stroke-opacity=".5" stroke-width="2"/>' for x, y in pts)
+        lit_n = "".join(f'<circle cx="{x}" cy="{y}" r="11" fill="#5D68FF"/>' for x, y in pts)
+        h.append(f'<svg class="dots" style="left:120px;top:{y0+450}px;width:270px;height:250px" viewBox="0 0 270 250" data-a="fade" data-t="{ca:.2f}">'
+                 f'<g fill="none" stroke="#A3A9FF" stroke-opacity=".28" stroke-width="2">{edges}</g>{base_n}</svg>')
+        h.append(f'<svg class="dots" style="left:120px;top:{y0+450}px;width:270px;height:250px" viewBox="0 0 270 250" data-fx="litdots" data-t="{ca+0.2:.2f}" data-d="1.0">{lit_n}</svg>')
+        h.append(f'<div class="aikick lt" style="left:430px;top:{y0+500}px" data-a="rise" data-t="{ca+0.1:.2f}">{esc(st.get("ai_name", "L'IA"))}</div>')
+        h.append(f'<div class="ailab lt" style="left:430px;top:{y0+542}px;width:{W-160-390}px" data-a="rise" data-t="{ca+0.25:.2f}">{esc(st["ai_label"])}</div>')
+        # 3. sortie
+        h.append(f'<div class="dash" style="left:{W/2-1.5:.0f}px;top:{y0+712}px;height:76px" data-a="grow" data-t="{oa-0.35:.2f}"></div>')
+        h.append(f'<div class="aibox out" style="left:80px;top:{y0+800}px;width:{W-160}px;height:250px" data-a="pop" data-t="{oa-0.1:.2f}"></div>')
+        h.append(f'<div class="ico" style="left:140px;top:{y0+865}px;width:120px;height:120px;color:var(--carbon-deep)" data-a="pop" data-t="{oa+0.15:.2f}">{icon("check")}</div>')
+        h.append(f'<div class="aikick" style="left:300px;top:{y0+850}px;color:var(--carbon-deep)" data-a="rise" data-t="{oa:.2f}">Ce qui sort</div>')
+        h.append(f'<div class="ailab big" style="left:300px;top:{y0+892}px;width:{W-160-260}px" data-a="rise" data-t="{oa+0.1:.2f}">{esc(st["output_label"])}</div>')
+        if st.get("output_note"):
+            h.append(f'<div class="ainote" style="left:300px;top:{y0+1000}px;width:{W-160-260}px" data-a="rise" data-t="{oa+0.5:.2f}">{esc(st["output_note"])}</div>')
+    elif t == "studies_stack":
+        # méta-analyse / revue : les études regroupées, une icône-feuille par étude (ou par lot d'études)
+        ta, at = st["cam_at"], st["at"]
+        n = int(st["n_studies"])
+        per = max(1, math.ceil(n / 40))
+        k = math.ceil(n / per)
+        cols = 8 if k > 16 else (6 if k > 9 else 4)
+        cw, ch = 104, 124
+        gx = (W - cols * cw) / 2
+        h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{y0+30}px;color:var(--ink-dim)" data-a="rise" data-t="{ta+0.2:.2f}">{esc(st.get("title", "Les études regroupées"))}</div>')
+        h.append(f'<div class="num center" style="left:0;width:{W}px;top:{y0+90}px;font-size:170px" data-a="big" data-t="{at-0.05:.2f}" data-d="0.6">'
+                 f'<span data-fx="count" data-t="{at:.2f}" data-d="{min(1.4, 0.4 + k * 0.03):.2f}" data-to="{n}" data-dec="0">0</span></div>')
+        h.append(f'<div class="glab" style="left:0;width:{W}px;top:{y0+270}px" data-a="rise" data-t="{at+0.3:.2f}">{esc(st.get("label", "études"))}</div>')
+        gy = y0 + 360
+        for i in range(k):
+            x, y = gx + (i % cols) * cw + 12, gy + (i // cols) * ch
+            acc = "var(--carbon-deep)" if i % 7 == 3 else "var(--ink)"
+            h.append(f'<div class="ico" style="left:{x:.0f}px;top:{y:.0f}px;width:80px;height:100px;color:{acc}" data-a="pop" data-t="{at + 0.15 + (i / max(1, k - 1)) * 1.2:.2f}">{icon("doc", sw=4)}</div>')
+        rows = math.ceil(k / cols)
+        by = gy + rows * ch + 10
+        if per > 1:
+            h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{by}px;color:var(--ink-dim);font-size:22px" data-a="rise" data-t="{at+1.0:.2f}">1 feuille = {per} études</div>')
+            by += 46
+        if st.get("n_patients"):
+            pa = st.get("patients_at", at + 1.6)
+            h.append(f'<div class="glab acc" style="left:0;width:{W}px;top:{by+20}px;font-size:40px" data-a="rise" data-t="{pa:.2f}">'
+                     f'<span data-fx="count" data-t="{pa:.2f}" data-d="1.0" data-to="{int(st["n_patients"])}" data-dec="0">0</span> patients au total</div>')
+            by += 80
+        if st.get("sub"):
+            h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{by+24}px;color:var(--ink-dim)" data-a="rise" data-t="{st.get("patients_at", at + 1.6) + 0.4:.2f}">{esc(st["sub"])}</div>')
+    elif t == "metric":
+        # performance d'un modèle ou résultat regroupé : 1 à 3 jauges circulaires qui se remplissent
+        ms = st["metrics"]
+        m = len(ms)
+        size = {1: 440, 2: 400, 3: 300}[m]
+        gap = 40
+        x0 = (W - m * size - (m - 1) * gap) / 2
+        top = y0 + 150
+        h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{y0+40}px;color:var(--ink-dim)" data-a="rise" data-t="{st["cam_at"]+0.25:.2f}">{esc(st["title"])}</div>')
+        h.append(f'<div class="rule" style="left:120px;top:{y0+80}px;width:{W-240}px" data-a="wipe" data-t="{st["cam_at"]+0.35:.2f}"></div>')
+        for i, g in enumerate(ms):
+            x = x0 + i * (size + gap)
+            mx = float(g.get("max", 100))
+            frac = max(0.0, min(1.0, float(g["num"]) / mx))
+            acc = g.get("accent", i == 0)
+            col = "#5D68FF" if acc else "#16171C"
+            r, sw = 44, 7
+            circ = 2 * math.pi * r
+            h.append(f'<svg class="dots" style="left:{x:.0f}px;top:{top}px;width:{size}px;height:{size}px" viewBox="0 0 100 100" data-a="fade" data-t="{g["at"]-0.3:.2f}">'
+                     f'<circle cx="50" cy="50" r="{r}" fill="none" stroke="#16171C" stroke-opacity=".10" stroke-width="{sw}"/>'
+                     f'<circle cx="50" cy="50" r="{r}" fill="none" stroke="{col}" stroke-width="{sw}" stroke-linecap="round" transform="rotate(-90 50 50)" '
+                     f'stroke-dasharray="{circ:.2f}" stroke-dashoffset="{circ:.2f}" data-fx="ring" data-t="{g["at"]:.2f}" data-d="1.1" data-off="{circ * (1 - frac):.2f}"/></svg>')
+            dec = len(str(g["value"]).split(",")[1]) if "," in str(g["value"]) else 0
+            fs = {1: 150, 2: 128, 3: 96}[m]
+            colr = "var(--ink)" if acc else "var(--ink-dim)"
+            h.append(f'<div class="num" style="left:{x:.0f}px;width:{size}px;text-align:center;top:{top + size/2 - fs*0.48:.0f}px;font-size:{fs}px;color:{colr}" data-a="big" data-t="{g["at"]-0.05:.2f}" data-d="0.5">'
+                     f'<span data-fx="count" data-t="{g["at"]:.2f}" data-d="1.0" data-to="{str(g["value"]).replace(",", ".")}" data-dec="{dec}">0</span><span class="unit">{esc(g.get("unit", ""))}</span></div>')
+            acc_cls = " acc" if acc else ""
+            h.append(f'<div class="glab{acc_cls}" style="left:{x-20:.0f}px;width:{size+40}px;top:{top+size+28}px" data-a="rise" data-t="{g["at"]+0.3:.2f}">{esc(g["label"])}'
+                     + (f'<span class="gn">{esc(g["note"])}</span>' if g.get("note") else "") + '</div>')
+        if st.get("caption"):
+            h.append(f'<div class="cap center" style="left:110px;width:{W-220}px;top:{top+size+150}px;font-size:34px;color:var(--ink-dim)" data-a="rise" data-t="{st.get("caption_at", ms[-1]["at"] + 0.8):.2f}">{esc(st["caption"])}</div>')
+    elif t == "key_points":
+        # constats numérotés (revue, cohorte, étude qualitative…), chacun au mot qui l'énonce
+        pts = st["points"]
+        h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{y0+40}px;color:var(--ink-dim)" data-a="rise" data-t="{st["cam_at"]+0.25:.2f}">{esc(st.get("title", "Ce qu'il faut retenir"))}</div>')
+        hh = 200 if len(pts) <= 3 else 176
+        for i, pt in enumerate(pts):
+            y = y0 + 110 + i * (hh + 26)
+            h.append(f'<div class="aibox" style="left:80px;top:{y}px;width:{W-160}px;height:{hh}px" data-a="slideL" data-t="{pt["at"]-0.1:.2f}"></div>')
+            h.append(f'<div class="kpn" style="left:120px;top:{y + hh/2 - 52:.0f}px" data-a="pop" data-t="{pt["at"]:.2f}">{i + 1}</div>')
+            h.append(f'<div class="ailab" style="left:250px;top:{y + hh/2 - 50:.0f}px;width:{W-160-210}px;height:100px;display:flex;align-items:center" data-a="rise" data-t="{pt["at"]+0.1:.2f}">{esc(pt["text"])}</div>')
     elif t == "remaining_dots":
         at = st["at"]
         cols, cell, r = 23, 22, 7
@@ -460,7 +600,7 @@ def paper_station(st, film):
         h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{y0+210}px;color:var(--ink-dim)" data-a="rise" data-t="{at+0.5:.2f}">{esc(st["label"])}</div>')
         h.append(f'<svg class="dots" style="left:{x0:.0f}px;top:{y0+290}px;width:{wpx}px;height:{hpx}px" viewBox="0 0 {wpx} {hpx}" data-fx="litdots" data-t="{at+0.15:.2f}" data-d="1.0">{base}</svg>')
         h.append(f'<svg class="dots" style="left:{x0:.0f}px;top:{y0+290}px;width:{wpx}px;height:{hpx}px" viewBox="0 0 {wpx} {hpx}" data-a="fade" data-t="{st["cam_at"]+0.1:.2f}">{lit}</svg>')
-        h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{y0+290+hpx+20}px;color:var(--carbon-deep);font-size:14px" data-a="rise" data-t="{st["cam_at"]+0.35:.2f}">{esc(st["group_label"])} · {st["k"]} venus · {st["n"]-st["k"]} absents</div>')
+        h.append(f'<div class="mono center" style="left:0;width:{W}px;top:{y0+290+hpx+20}px;color:var(--carbon-deep);font-size:24px" data-a="rise" data-t="{st["cam_at"]+0.35:.2f}">{esc(st["group_label"])} · {st["k"]} venus · {st["n"]-st["k"]} absents</div>')
     return "\n".join(h)
 
 
@@ -550,8 +690,8 @@ def build(project):
     <div class="wordmark" style="left:0;width:{W}px;top:640px" data-a="big" data-t="{en['wordmark_at']-0.05:.2f}" data-d="0.7">Papercraft<span>.AI</span></div>
     <div class="btn" id="btn" style="left:{W/2-120:.0f}px;top:800px;width:240px" data-a="pop" data-t="{en['button_at']:.2f}"><span id="btnlabel">{esc(en['button'])}</span><span id="btnok">{check_svg}Abonné</span></div>
     <div class="ripple" id="ripple" style="left:{W/2-70:.0f}px;top:768px"></div>
-    <div class="mono center" style="left:0;width:{W}px;top:960px;color:var(--paper-dim);font-size:15px;letter-spacing:.1em" data-a="rise" data-t="{en['source_at']:.2f}">{esc(en['source'])}</div>
-    <div class="mono center" style="left:0;width:{W}px;top:992px;color:var(--paper-dim);font-size:13px;letter-spacing:.06em;text-transform:none" data-a="rise" data-t="{en['source_at']+0.15:.2f}">{esc(en['doi'])}</div>
+    <div class="mono center" style="left:0;width:{W}px;top:960px;color:var(--paper-dim);font-size:24px;letter-spacing:.1em" data-a="rise" data-t="{en['source_at']:.2f}">{esc(en['source'])}</div>
+    <div class="mono center" style="left:0;width:{W}px;top:992px;color:var(--paper-dim);font-size:24px;letter-spacing:.06em;text-transform:none" data-a="rise" data-t="{en['source_at']+0.15:.2f}">{esc(en['doi'])}</div>
     <svg id="cursor" viewBox="0 0 24 34" style="left:0;top:0;width:34px;height:48px"><path d="M2 2v26l7-6 5 10 4-2-5-10h9z" fill="#F7F3EC" stroke="#16171C" stroke-width="1.6" stroke-linejoin="round"/></svg>
   </div>
 
@@ -610,6 +750,12 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
                 sfx += [["ping", g["at"], 0.13] for g in st["groups"] if g.get("accent")]
                 if st.get("diff_at"):
                     sfx.append(["pop", st["diff_at"], 0.18])
+            if st["type"] == "metric":
+                sfx += [["ping", g["at"], 0.13] for g in st["metrics"]]
+            if st["type"] == "studies_stack":
+                sfx += [["pop", st["at"], 0.16]]
+            if st["type"] == "key_points":
+                sfx += [["whoosh-short", pt["at"], 0.1] for pt in st["points"]]
             if st["type"] == "result_dots":
                 sfx += [["ping", g["at"], 0.13] for g in st["groups"] if g.get("accent")]
                 sfx.append(["pop", st["diff_at"], 0.18])
