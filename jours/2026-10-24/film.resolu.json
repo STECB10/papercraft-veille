@@ -142,7 +142,7 @@
    {
     "type": "steps",
     "y": 1640,
-    "cam_at": 13.5,
+    "cam_at": 13.51,
     "mark_at": 15.82,
     "title": "Trois options de traitement",
     "steps": [
@@ -155,7 +155,7 @@
      {
       "icon": "user",
       "label": "02 · Dialyse par le ventre",
-      "at": 18.23,
+      "at": 18.25,
       "_y": 2140
      },
      {
@@ -207,12 +207,12 @@
      {
       "label": "Durée",
       "value": "12 mois",
-      "at": 36.54
+      "at": 36.52
      },
      {
       "label": "Relecture",
       "value": "Outil de langage + humains, en aveugle",
-      "at": 37.5
+      "at": 37.48
      }
     ]
    },
@@ -285,12 +285,12 @@
      }
     ],
     "diff": "+16,6 points · IC 95 % : 7,5 à 25,7",
-    "diff_at": 61.98
+    "diff_at": 62.0
    },
    {
     "type": "result_bars",
     "y": 3500,
-    "cam_at": 67.28,
+    "cam_at": 67.27,
     "title": "Indécis sur leur choix, après la vidéo",
     "unit": "%",
     "groups": [
@@ -299,7 +299,7 @@
       "value": "13,2",
       "num": 13.2,
       "accent": true,
-      "at": 68.62
+      "at": 68.61
      },
      {
       "label": "Soins habituels",
@@ -319,10 +319,10 @@
    }
   ],
   "start": 27.06,
-  "end": 79.86999999999999
+  "end": 79.77
  },
  "end": {
-  "fold_at": 78.82,
+  "fold_at": 78.72,
   "promise": "Une étude par jour, vérifiée à la source.",
   "promise_italic": "vérifiée",
   "wordmark_at": 82.2,
@@ -332,7 +332,7 @@
   "source": "Volandes et al. · JAMA Internal Medicine · octobre 2026",
   "doi": "doi:10.1001/jamainternmed.2026.5989",
   "source_at": 80.4,
-  "start": 78.77,
+  "start": 78.67,
   "end": 86.6
  },
  "duration": 86.6,
