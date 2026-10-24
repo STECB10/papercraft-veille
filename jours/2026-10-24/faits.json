@@ -1,82 +1,87 @@
 [
  {
   "id": "f1",
-  "valeur": 453,
-  "citation": "A total of 453 patients were included"
+  "valeur": 27,
+  "citation": "Of the 27 included studies"
  },
  {
   "id": "f2",
-  "valeur": 228,
-  "citation": "228 intervention [50.3%]"
+  "valeur": 23,
+  "citation": "Of the 27 included studies, 23 were conducted exclusively in ED settings"
  },
  {
   "id": "f3",
-  "valeur": 225,
-  "citation": "225 control [49.7%]"
+  "valeur": 13,
+  "citation": "comprising 13 studies in the quantitative evidence stream and 14 in the narrative synthesis"
  },
  {
   "id": "f4",
-  "valeur": 12,
-  "citation": "12 ambulatory clinics"
+  "valeur": 14,
+  "citation": "13 studies in the quantitative evidence stream and 14 in the narrative synthesis"
  },
  {
   "id": "f5",
-  "valeur": 12,
-  "citation": "with 12-month follow-up"
+  "valeur": 2010,
+  "citation": "between January 1, 2010, and December 31, 2025"
  },
  {
   "id": "f6",
-  "valeur": 65,
-  "citation": "65 years or older"
+  "valeur": 2025,
+  "citation": "between January 1, 2010, and December 31, 2025"
  },
  {
   "id": "f7",
-  "valeur": 2021,
-  "citation": "June 2021 to March 2025"
+  "valeur": 4,
+  "citation": "Only the 4 adult emergency department critical-care or deterioration studies"
  },
  {
   "id": "f8",
-  "valeur": 2025,
-  "citation": "June 2021 to March 2025"
+  "valeur": 0.874,
+  "citation": "AUC 0.874; 95% CI 0.845-0.898"
  },
  {
   "id": "f9",
-  "valeur": 56.6,
-  "citation": "56.6% vs 40.0%"
+  "valeur": 0.845,
+  "citation": "AUC 0.874; 95% CI 0.845-0.898"
  },
  {
   "id": "f10",
-  "valeur": 40.0,
-  "citation": "56.6% vs 40.0%"
+  "valeur": 0.898,
+  "citation": "AUC 0.874; 95% CI 0.845-0.898"
  },
  {
   "id": "f11",
-  "valeur": 16.6,
-  "citation": "rate difference, 16.6%"
- },
- {
-  "id": "f12",
-  "valeur": 7.5,
-  "citation": "95% CI, 7.5%-25.7%"
+  "valeur": 94.4,
+  "citation": "I ²=94.4%"
  },
  {
   "id": "f13",
-  "valeur": 25.7,
-  "citation": "95% CI, 7.5%-25.7%"
+  "valeur": 12,
+  "citation": "12-38 fewer missed critical illness cases"
  },
  {
   "id": "f14",
-  "valeur": 95,
-  "citation": "95% CI, 7.5%-25.7%"
+  "valeur": 38,
+  "citation": "12-38 fewer missed critical illness cases"
  },
  {
   "id": "f15",
-  "valeur": 13.2,
-  "citation": "30 of 227 [13.2%]"
+  "valeur": 45,
+  "citation": "45-120 additional false-positive escalations per 10,000 ED visits"
  },
  {
   "id": "f16",
-  "valeur": 41.3,
-  "citation": "92 of 223 [41.3%]"
+  "valeur": 120,
+  "citation": "45-120 additional false-positive escalations per 10,000 ED visits"
+ },
+ {
+  "id": "f18",
+  "valeur": 95,
+  "citation": "95% CI"
+ },
+ {
+  "id": "f17",
+  "valeur": 10000,
+  "calcul": "10 * 1000"
  }
 ]

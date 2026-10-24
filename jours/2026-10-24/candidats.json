@@ -1,7 +1,31 @@
 [
  {
-  "score": 14,
+  "score": 19,
   "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "prospectif",
+   "multicentrique",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42896140",
+  "pmid": "42896140",
+  "pmcid": "PMC13679870",
+  "doi": "10.2196/93931",
+  "titre": "Technological Integration in Triage With AI and Machine Learning Compared With Conventional Triage and Narrative Synthesis of Telehealth for Patient Prioritization in Emergency and Acute Care Settings: Systematic Review and Meta-Analysis.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-10-19",
+  "auteurs": "Ashour FOM, Sami W, Alrimawi I, Rizvi MR, El-Banna MM.",
+  "types": "meta-analysis systematic review review-article journal article",
+  "acces_libre": true,
+  "type_etude": "méta-analyse",
+  "resume": "Background Conventional triage relies on clinician judgment and limited information available at first contact. AI and machine learning (ML) may improve early risk stratification, whereas tele-triage and patient-facing tools primarily support remote assessment, access, and care routing. Objective This study aimed to evaluate the diagnostic and prognostic performance of AI- and ML-assisted triage systems and summarize evidence on tele-triage, workflow, implementation, economic, and equity outcomes. Methods Comparative studies published between January 1, 2010, and December 31, 2025, evaluating AI-, ML-, natural language processing-, telehealth-, or digitally enhanced triage. At first, clinical contacts were included. PubMed/MEDLINE, CINAHL, Web of Science, Scopus, preprint servers, trial registries, and conference proceedings were searched. Screening and data extraction were performed independently in duplicate. Risk of bias was assessed using design-appropriate tools. Clinically comparable area under the receiver operating characteristic curve (AUC) estimates were synthesized using random-effects meta-analysis; heterogeneous diagnostic, operational, implementation, economic, and equity outcomes were summarized narratively. Exploratory scenario modeling projected effects per 10,000 emergency department (ED) visits. Results Twenty-seven studies were included, comprising 13 studies in the quantitative evidence stream and 14 in the narrative synthesis. Four adult ED studies evaluating critical care or deterioration outcomes demonstrated high pooled discrimination for AI-assisted triage (AUC 0.874; 95% CI 0.845-0.898; I ²=94.4%; 95% prediction interval 0.803-0.922). Four studies reported directly extractable within-study comparisons favoring AI-assisted models (AUC differences of 0.097, 0.120, 0.108, and 0.065), although these could not be pooled because paired variance estimates were unavailable. Admission/disposition studies reported AI-model AUCs ranging from 0.80 to 0.93 and were summarized descriptively because extreme heterogeneity precluded meaningful pooling. Two pediatric studies (AUCs of 0.85-0.99) were summarized descriptively. Prediction-model studies were primarily limited by deficiencies in model analysis, calibration reporting, and external validation. Narrative evidence suggested improved front-door operational metrics with tele-triage, including reported reductions of 15%-40% in time to clinical assessment and 2-8 percentage points in left-without-being-seen rates, whereas patient-facing symptom checkers generally favored sensitivity over specificity. Exploratory scenario modeling illustrated that, under specified prevalence and threshold assumptions, AI-assisted triage could be associated with 12-38 fewer missed critical illness cases and 45-120 additional false-positive escalations per 10,000 ED visits. Economic and equity findings were assumption-dependent projections rather than observed clinical, cost-effectiveness, or equity outcomes. Conclusions AI- and ML-assisted triage models demonstrate promising discrimination for adult ED risk stratification; however, AUC-based discrimination does not establish superiority at clinically relevant decision thresholds, improved patient outcomes, or readiness for clinical implementation. Interpretation is limited by substantial heterogeneity, incomplete threshold-level performance and calibration reporting, limited external validation, and sparse pediatric evidence. Prospective multicenter validation, workflow assessment, subgroup calibration and equity auditing, and formal economic evaluation are required before routine implementation."
+ },
+ {
+  "score": 18,
+  "raisons": [
+   "IA dans le titre",
    "essai tiré au sort",
    "prospectif",
    "revue majeure",
@@ -17,71 +41,13 @@
   "auteurs": "Li P, Gong H, Liu H, Han S, Lu Y, Yan Y.",
   "types": "research-article journal article",
   "acces_libre": true,
+  "type_etude": "essai tiré au sort",
   "resume": "Unlabelled Urology education must prepare learners to integrate anatomical visualization, diagnostic reasoning, technical performance, communication, and ethical judgment, often under restricted working hours and limited access to high-fidelity cases. This viewpoint argues that large language models (LLMs) and metaverse-related technologies should be integrated as complementary, supervised educational tools rather than treated as autonomous replacements for educators or clinical experience. LLMs can support cognitive apprenticeship, documentation practice, assessment, and communication simulations, whereas extended reality, cloud computing, and virtual digital humans can support spatial, procedural, and remote learning. Our aim is to articulate 3 key messages: first, the educational value of these technologies depends on alignment with defined urological competencies; second, implementation should proceed in stages from governed data infrastructure to intelligent interaction and immersive multimodal training; and third, educational effectiveness must be established through prospective evaluations of transfer to clinical performance, not through technical novelty alone. We emphasize the need for rigorous randomized controlled trials, identify requirements for haptic and biomechanical fidelity, and discuss hallucination, bias, privacy, accountability, and deskilling. The responsible future of intelligent urology education will therefore require collaboration among learners, educators, clinicians, engineers, ethicists, institutions, and professional bodies."
  },
  {
-  "score": 13,
+  "score": 16,
   "raisons": [
-   "essai tiré au sort",
-   "prospectif",
-   "multicentrique",
-   "n = 516"
-  ],
-  "id": "MED:42886317",
-  "pmid": "42886317",
-  "pmcid": null,
-  "doi": "10.1007/s40120-026-01060-5",
-  "titre": "Neutrophil to Lymphocyte Ratio and Neurological Outcome in Ischemic Stroke at 4.5 to 24 Hours: A Post Hoc Analysis of TRACE-III Trial.",
-  "revue": "Neurology and therapy",
-  "date": "2026-10-16",
-  "auteurs": "Hao M, Ma Y, Wang L, Jin A, Law ZK, Campbell BCV, Schwamm LH, Parsons MW, Fisher M, Xu Y, Xu A, Cao Z, Wang L, Wu S, Wang Y, Xiong Y.",
-  "types": "journal article",
-  "acces_libre": false,
-  "resume": "Introduction Whether neutrophil to lymphocyte ratio (NLR), as a marker of increased inflammatory response, modifies the efficacy and safety of tenecteplase is uncertain in patients 4.5-24 h after stroke onset. We investigated this in the Tenecteplase Reperfusion Therapy in Acute Ischemic Cerebrovascular Events-III (TRACE-III) trial. Methods TRACE-III was a phase 3, multicenter, prospective, open-label, randomized, blinded-endpoint trial that enrolled 516 patients from 58 centers in China between January 2022 and November 2023. Patients had anterior large vessel occlusion and evidence of salvageable brain tissue on perfusion imaging, presented 4.5-24 h after symptom onset, and were randomized 1:1 to intravenous tenecteplase (intervention) or standard medical treatment (control). The primary efficacy and safety outcomes were modified Rankin scale score of 0-1 at 90 days and symptomatic intracranial hemorrhage or death, respectively. This post hoc analysis in 513 patients with complete admission NLR data compared outcomes in patients with elevated NLR (> first quartile) and non-elevated NLR (≤ first quartile). Results In the elevated NLR group (> 3.0), tenecteplase was associated with increased functional independence (61 [30.2%] vs. 36 [19.6%]; adjusted relative rate [aRR] 1.51; 95% confidence interval [CI] 1.05-2.17; P = 0.03) compared to standard medical treatment. This benefit was not observed in the non-elevated NLR group (26 [41.9%] vs. 25 [38.5%]; aRR 1.12; 95% CI 0.73-1.73). Safety outcomes did not differ in either the elevated or non-elevated NLR groups. Conclusion Baseline NLR may provide a potential signal for differential treatment response to intravenous tenecteplase in patients with acute ischemic stroke, although these exploratory findings require further validation in independent studies. Trial registration TRACE-III is registered with ClinicalTrials.gov, NCT05141305."
- },
- {
-  "score": 13,
-  "raisons": [
-   "essai tiré au sort",
-   "multicentrique",
-   "n = 453",
-   "revue majeure"
-  ],
-  "id": "MED:42911803",
-  "pmid": "42911803",
-  "pmcid": null,
-  "doi": "10.1001/jamainternmed.2026.5989",
-  "titre": "Video Decision Support and Advance Care Planning in Older Adults With Advanced Kidney Disease: The VIDEO-KD Randomized Clinical Trial.",
-  "revue": "JAMA internal medicine",
-  "date": "2026-10-22",
-  "auteurs": "Volandes AE, Lakin JR, Chang Y, Lindvall C, Quintiliani LM, Lundquist AL, Liu A, Tamura MK, Unruh M, Wong SPY, Davis AD, Garde C, Henault L, Samarakoon U, Hanchate A, Mandel E, Green JA, Lawson K, Ran",
-  "types": "im journal article",
-  "acces_libre": false,
-  "resume": "Older adults with advanced chronic kidney disease (CKD) face consequential decisions about whether to initiate dialysis, yet advance care planning (ACP), the communication that prepares patients for such decisions, is documented infrequently in ambulatory settings. To determine whether a video decision aid about treatment options for advanced CKD, combined with patient-created video declarations, increases ACP documentation among older adults with advanced CKD. This multicenter, parallel-group randomized clinical trial was conducted at 12 ambulatory clinics from June 2021 to March 2025, with 12-month follow-up. Participants were adults 65 years or older with advanced CKD. Outcome assessors were masked to group assignment. Data were analyzed in April 2026. Intervention participants viewed a certified video decision aid depicting 3 treatment options for advanced CKD (hemodialysis, peritoneal dialysis, and conservative kidney management) and then created a video declaration, a recorded statement of goals, values, and treatment preferences in video, audio, or written format, that was sent to their treating clinician. Control participants received usual medical care. The primary outcome was ACP documentation in the electronic health record within 12 months of enrollment or death, whichever came sooner. Documentation was ascertained by validated natural language processing-assisted human adjudication. Prespecified secondary outcomes included documented discussion of kidney failure treatment options and stated treatment preferences. A total of 453 patients were included (228 intervention [50.3%] and 225 control [49.7%]; mean [SD] age, 78.8 [6.4] years; 190 women [41.9%]; 4 American Indian or Alaska Native [1.1%], 8 Asian [1.8%], 38 Black [8.4%], 35 Hispanic or Latino [7.7%], 3 Native Hawaiian or other Pacific Islander [0.7%], and 375 White [82.8%] individuals). At 12 months, ACP documentation was higher in the intervention group than the control group (56.6% vs 40.0%; rate difference, 16.6%; 95% CI, 7.5%-25.7%; P < .001), as was documented discussion of kidney failure treatment options (46.1% vs 31.6%; rate difference, 14.5%; 95% CI, 5.6%-23.4%; P = .001). After viewing the video, fewer intervention participants than controls at enrollment were undecided about treatment (30 of 227 [13.2%] vs 92 of 223 [41.3%]), and more preferred conservative kidney management (115 of 227 [50.7%] vs 71 of 223 [31.8%]; P < .001 for the overall distribution). This randomized clinical trial found that, among older adults with advanced CKD, a video decision aid increased ACP documentation and reduced the proportion of patients who were undecided about treatment. ClinicalTrials.gov Identifier: NCT04347629."
- },
- {
-  "score": 12,
-  "raisons": [
-   "essai tiré au sort",
-   "multicentrique",
-   "n = 3305",
-   "texte intégral libre"
-  ],
-  "id": "MED:42897130",
-  "pmid": "42897130",
-  "pmcid": "PMC13680378",
-  "doi": "10.1038/s41392-026-02945-5",
-  "titre": "Real-world renoprotective effects of polyethylene glycol-loxenatide in type 2 diabetes: a multicenter, ambispective cohort study.",
-  "revue": "Signal transduction and targeted therapy",
-  "date": "2026-10-20",
-  "auteurs": "Ye J, Li J, Chen Y, Chen F, Zhu D, Zhang C, Chen Q, Tian Y, Yang S, Xu W, Xie B, Chen ZS, Hou K.",
-  "types": "research-article multicenter study journal article",
-  "acces_libre": true,
-  "resume": "Patients with type 2 diabetes mellitus and chronic kidney disease face persistent risks despite standard care. Polyethylene glycol-loxenatide lacks real-world renoprotective evidence in high-risk Chinese populations relative to non-incretin-based standard care. This multicenter, ambispective cohort study enrolled 3305 patients with type 2 diabetes mellitus, renal impairment, and elevated cardiovascular risk at six Chinese tertiary institutions (median follow-up 36.4 months; trial registration: ChiCTR2300073001). Data were extracted via an artificial intelligence-enhanced pipeline. Co-primary analyzes comprised multivariable-adjusted Cox regression and 1:1 propensity score matching (332 per group); pre-specified landmark analyzes at 6 and 12 months addressed immortal time bias. Polyethylene glycol-loxenatide was associated with a reduced risk of the primary kidney composite outcome in the original cohort (hazard ratio [HR], 0.49; 95% CI, 0.25-0.95; P = 0.035), which was corroborated in the propensity score matched cohort (HR, 0.44; 95% CI, 0.20-0.97; P = 0.043) and progressive across 6-month (HR, 0.40; 95% CI, 0.19-0.84) and 12-month (HR, 0.33; 95% CI, 0.14-0.75) landmarks. While a reduction in 3-point major adverse cardiovascular events was observed in the unmatched cohort (HR, 0.60; 95% CI, 0.43-0.85; P = 0.004), this association was not sustained in the matched analysis (HR, 0.92; 95% CI, 0.57-1.48; P = 0.735). In conclusion, long-term therapy was associated with an attenuated risk of major renal events. Given the null findings in the matched cohort, the cardiovascular observations are exploratory and require randomized confirmation."
- },
- {
-  "score": 12,
-  "raisons": [
+   "IA dans le titre",
    "prospectif",
    "multicentrique",
    "n = 5273",
@@ -98,25 +64,70 @@
   "auteurs": "Hong G, Jiang F, Xie Y, Huang X, Shen R, Wang Y, Zhu M, Wang H, Yang H, Nie Y, Lin Z, Chen R, Ouyang N, Lin T, Wu S.",
   "types": "research-article journal article",
   "acces_libre": true,
+  "type_etude": "performance diagnostique",
   "resume": "Accurate prediction of lymph node metastasis (LNM) and survival outcomes is crucial for personalized treatment in bladder cancer, yet remains clinically challenging. This study aimed to develop a Cytology-based multitask predictive Network (CytoNet) to simultaneously predict LNM and disease-free survival (DFS) in bladder cancer, and to evaluate its generalizability in cervical and thyroid cancers. This study included a multicenter cohort of 5273 patients, with bladder cancer (n = 1134), cervical cancer (n = 598), and thyroid cancer (n = 3541). CytoNet was constructed through a three-stage pipeline comprising self-supervised pretraining, supervised fine-tuning, and multitask prediction. In bladder cancer, CytoNet achieved an area under the curve (AUC) of 0.831-0.881 for LNM prediction and a C index of 0.680-0.710 for DFS prediction across all cohorts, outperforming single-task models and standard radiological assessments. In cervical cancer, CytoNet demonstrated robust performance for both LNM prediction (AUC 0.847-0.862) and DFS prediction (C index 0.690-0.709), while in thyroid cancer, it achieved an AUC of 0.819-0.855 for LNM prediction. In conclusion, CytoNet represents a reliable tool for predicting LNM and prognosis from cytopathology images across multiple cancer types, showing potential as a valuable adjunct to current clinical decision-making. Further prospective validation is warranted to assess its clinical utility."
  },
  {
-  "score": 11,
+  "score": 15,
   "raisons": [
+   "IA dans le titre",
    "essai tiré au sort",
-   "revue majeure",
-   "texte intégral libre"
+   "prospectif",
+   "multicentrique"
   ],
-  "id": "MED:42884177",
-  "pmid": "42884177",
-  "pmcid": "PMC13665136",
-  "doi": "10.3390/ijms27198936",
-  "titre": "Beyond Taxonomy: Fungal Nutraceutical Supplementation Modifies the Functional Potential of the Gut Microbiome in Colorectal Cancer.",
-  "revue": "International journal of molecular sciences",
-  "date": "2026-10-08",
-  "auteurs": "Rodríguez-Costas N, Rodríguez-Blanco A, Expósito CR, Cubiella J, Stompel ES, Fernández-de-Ana Portela C, Martín AID, Taboada-Rodríguez P, Silva BF, Fernández MDR, Zarraquiños S, Remedios D, Gómez CAS,",
-  "types": "brief-report randomized controlled trial journal article",
-  "acces_libre": true,
-  "resume": "The gut microbiome is increasingly recognized as an important determinant of host immune regulation, intestinal homeostasis, and recovery after colorectal cancer (CRC) surgery. Although our previous randomized, double-blind, placebo-controlled clinical trial demonstrated that fungal nutraceutical supplementation with Micodigest ® was associated with favorable taxonomic and systemic inflammatory changes in patients undergoing CRC surgery with curative intent, the functional consequences of this intervention remain poorly understood. Here, we performed a functional metagenomic analysis of fecal samples collected from patients enrolled in the original clinical trial to investigate whether Micodigest ® supplementation was associated with changes in the functional potential of the gut microbiome. A total of 37 patients were analyzed, including 24 receiving Micodigest ® and 13 receiving placebo, with paired samples collected before supplementation and after 4-6 weeks of intervention. Shallow shotgun metagenomic sequencing was performed, and microbial functional potential was characterized using KEGG Orthologues (KOs). Differential abundance analysis identified 14 significantly different KOs between groups at baseline and 23 after intervention, with no overlap between the two sets of orthologues. Following supplementation, Micodigest ® -treated patients exhibited increased representation of functions related to CRISPR-associated systems, bacteriophage biology, and chitin-derived carbohydrate utilization, together with reduced representation of nutrient acquisition systems, conjugative transfer, sulfur metabolism, and components of the Wood-Ljungdahl pathway. These functional signatures suggest coordinated changes in microbial ecological adaptation, nutrient utilization, genetic exchange, and metabolic activity following fungal nutraceutical supplementation. Integration with previously reported taxonomic and inflammatory findings supports the hypothesis that Micodigest ® may promote coordinated remodeling of the gut microbiome and host-microbiota interactions during the perioperative period. Although the present study cannot establish causality or directly infer microbial activity from metagenomic potential, these findings provide novel functional insights into the microbiome response to fungal nutraceutical supplementation in patients with CRC and highlight functional metagenomics as a valuable complement to taxonomic profiling."
+  "id": "MED:42863380",
+  "pmid": "42863380",
+  "pmcid": null,
+  "doi": "10.1016/j.jsurg.2026.104210",
+  "titre": "Expanded Longitudinal Validation of Adaptive Learning Stability in AI-Assisted Neurosurgical Residency Training.",
+  "revue": "Journal of surgical education",
+  "date": "2026-10-12",
+  "auteurs": "Mustafayev B, Mustafayeva A, Bakhtiyarov A, Nikatov K, Satylkhan B, Mustafayev A.",
+  "types": "validation study randomized controlled trial journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "Objective To evaluate the longitudinal stability, reproducibility, and robustness of Adaptive Learning Stability (ALS) within an expanded AI-assisted neurosurgical residency cohort during a 12-month observation cycle. Design This was a prospective controlled educational study. Residents completed 4 consecutive quarterly checkpoints integrating cognitive, technical, and decision-making assessments over 12 months. The RCKaS-AI framework incorporated predictive analytics, individualized adaptive remediation, and mentor-validated feedback pathways. Primary analysis evaluated longitudinal entrustment trajectory stability across checkpoints. Secondary analyses included inter-resident variance dynamics, remediation frequency, faculty workload, and predictive agreement between forecasted and observed competency progression. Setting Two accredited neurosurgical residency programs in Kazakhstan, from January 2025 to January 2026. Participants Sixty-four neurosurgical residents randomized into standard RCKaS (n = 32) and AI-enhanced RCKaS-AI (n = 32) cohorts. Results Both cohorts demonstrated progressive improvement in entrustment scores across sequential checkpoints. In the RCKaS-AI cohort, mean entrustment scores increased from 59.1 ± 12.8 at CP1 to 94.3 ± 6.9 at CP4, compared with 58.4 ± 13.1 to 85.7 ± 10.4 under standard RCKaS conditions (p = 0.001). Inter-resident variance decreased by 41% in the AI-assisted cohort versus 18% in the standard cohort. Residents within the RCKaS-AI framework achieved entrustment level 4 significantly earlier than controls (38 ± 7 weeks vs 50 ± 9 weeks, p = 0.003). Mean remediation frequency decreased from 3.4 ± 1.1 to 1.9 ± 0.7 sessions per resident, while faculty workload declined by 34%. Predictive analytics demonstrated strong agreement between forecasted and observed competency trajectories (r = 0.84; 95% CI, 0.77-0.89). Conclusions Expanded longitudinal implementation of the RCKaS-AI framework demonstrated reproducible stabilization of competency trajectories during neurosurgical residency training. These findings support the robustness of adaptive AI-assisted feedback systems as a practical mechanism for longitudinal competency regulation within structured surgical education programs. Further multicenter validation is required to evaluate external reproducibility across broader residency environments."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "multicentrique"
+  ],
+  "id": "MED:42893738",
+  "pmid": "42893738",
+  "pmcid": null,
+  "doi": "10.1016/j.ahj.2026.107631",
+  "titre": "A randomized controlled trial of a novel AI-based prognostic decision support tool integrated into the electronic health record for ischemic heart disease: Rationale and design of the PM Heart trial.",
+  "revue": "American heart journal",
+  "date": "2026-10-18",
+  "auteurs": "Ringgaard AK, Rand SA, Zheng C, Møller MEE, Christensen AH, Riis-Jensen AC, Wimmer B, Høfsten DE, Bundgaard JS, Valder F, Gjødsbøl IM, Gørtz M, Hartlev M, Svendsen MN, Ostrowski SR, Sørensen E, Peders",
+  "types": "journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "Background Ischemic heart disease (IHD) is the leading global cause of years of life lost. Although the clinical presentation and progression of IHD differ widely, clinical management is relatively uniform. To improve risk stratification and clinical management, we developed a decision support tool - the PMHeart IHD Algorithm (also named PMHNet) - based on extensive clinical, registry and biochemical data. This algorithm automatically calculates one-year survival following an IHD event. We hypothesize that presenting the prognoses calculated by the PMHeart IHD Algorithm to the treating physicians will improve both the clinical management and outcome of the individual patient. Objective The objectives of the PM Heart trial include clinical and technical aspects. First, the primary aim is to investigate if the clinical use of the prognosis calculated by the algorithm improves patient prognosis and minimizes the risk of re-hospitalization, compared to standard of care. A secondary objective is to generate knowledge on how decision support tools in cardiology may be implemented, received, and used directly in clinical practice. Methods The PMHeart IHD Aalgorithm has been integrated into the electronic health record (EHR) system (Sundhedsplatformen (SP), EPIC) for clinical use. The PM Heart trial is designed as a multicenter, prospective, randomized, open-label, clinical trial, automatically enrolling and randomizing hospitalized patients with coronary artery disease at the cardiology departments in The Capital Region and Region Zealand in Denmark. Patients are randomized (1:1 ratio) immediately after coronary angiography, to either show or hide the calculated PMHeart IHD -prognosis or not in the electronic health record. Results The primary outcome is a composite outcome consisting of re-admissions within 30 days and one-year survival rates after randomization. Inclusion began September 2023, and follow-up is expected to finish in 2026. Conclusions We present the design of and rationale for the PM Heart trial. Our aim is to assess the clinical value of implementing an artificial intelligence-based decision support tool in clinical practice."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "prospectif",
+   "revue majeure"
+  ],
+  "id": "MED:42896174",
+  "pmid": "42896174",
+  "pmcid": null,
+  "doi": "10.2196/105599",
+  "titre": "Mapping Technologies, Support Functions, Evaluation Outcomes, and Safety Governance Related to Conversational AI Agents for Psychological Support of Patients With Cancer: Scoping Review.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-10-19",
+  "auteurs": "Shen Z, Shi S, Mao L, Li C, Xie J.",
+  "types": "scoping review review journal article",
+  "acces_libre": false,
+  "type_etude": "méta-analyse",
+  "resume": "Background Psychological distress and unmet psychosocial needs are common across the cancer continuum. Conversational AI agents may offer scalable support, but their technologies, support functions, evaluation approaches, and safety governance remain fragmented. Objective This review aimed to map the technologies, psychological support functions, evaluation outcomes, and safety governance of conversational AI used by patients with cancer and cancer survivors. Methods We conducted a scoping review following Joanna Briggs Institute (JBI) methodology and the PRISMA-ScR (Preferred Reporting Items for Systematic Reviews and Meta-Analyses Extension for Scoping Reviews). Thirteen databases and additional registers were searched through May 5, 2026. Eligible reports examined conversational agents in real or simulated patient-facing oncology contexts with explicit psychological or psychosocial relevance. We summarized system forms and support functions by project and other characteristics by report. No formal critical appraisal was undertaken. Results We included 24 reports representing 25 study units and 23 underlying projects. Large language model (LLM) or generative AI systems accounted for 39.1% (9/23) of projects. Information or education (23/23, 100%) and symptom or self-management support (n=20, 87%) were the most frequently mapped functions, although these counts included delivered, planned, simulated, co-designed, and participant-reported functions. Structured psychological or behavioral components were delivered in 21.7% (5/23) of projects. An explicit theoretical or conceptual framework was reported in 25% (6/24) of reports. Reports or plans to assess acceptability or user experience (17/24, 70.8%) and engagement (13/24, 54.2%) were more common than reports or plans to assess psychosocial clinical outcomes (8/24, 33.3%) or safety and adverse events (4/24, 16.7%). Human or expert oversight was reported in 62.5% (15/24) of reports, crisis escalation or referral in 33.3% (8/24) of reports, and user-facing AI identity disclosure in 12.5% (3/24) of reports. Conclusions Conversational AI research in psycho-oncology spans heterogeneous technologies and stages of development. Clinical and safety evaluation, theoretical foundations, population representation, and oversight responsibilities remain incompletely reported. These findings represent a map of reporting patterns and do not establish effectiveness or safety. Future studies should evaluate psychosocial benefit and safety prospectively and define professional oversight and referral responsibilities. Trial registration OSF Registries UM65W; https://osf.io/um65w."
  }
 ]

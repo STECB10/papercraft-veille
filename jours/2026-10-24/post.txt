@@ -1,7 +1,7 @@
-Une vidéo avant la dialyse : plus de souhaits de soins notés au dossier chez les patients âgés.
+Les outils d'IA de tri aux urgences repèrent bien les patients graves, mais le bénéfice pour les patients reste à prouver.
 
-Chez des patients de 65 ans ou plus atteints d'une maladie rénale avancée, une vidéo sur les trois options de traitement, suivie d'un message vidéo envoyé au médecin, change-t-elle ce qui est noté au dossier ? Dans cet essai tiré au sort (453 patients, 12 cliniques), 56,6 % des dossiers du groupe vidéo mentionnent les souhaits de soins après un an, contre 40,0 % avec les soins habituels (+16,6 points, IC 95 % : 7,5 à 25,7). L'essai mesure les notes au dossier, relues avec l'aide d'un outil de langage puis par des humains, pas la qualité des soins reçus.
+Cette méta-analyse a regroupé 27 études publiées entre 2010 et 2025. Pour 4 études chez l'adulte, la performance regroupée de l'IA atteint 0,874 (IC 95 % : 0,845–0,898, maximum 1), avec de très fortes différences entre études (94,4 %). Les auteurs rappellent que cela ne prouve pas une meilleure prise en charge des patients.
 
-Source : Volandes et al., JAMA Internal Medicine, octobre 2026. https://doi.org/10.1001/jamainternmed.2026.5989
+Source : Ashour et al., Journal of Medical Internet Research, octobre 2026. https://doi.org/10.2196/93931
 
-#IA #Néphrologie #EssaiClinique #Santé
+#IA #Urgences #Triage #SantéNumérique

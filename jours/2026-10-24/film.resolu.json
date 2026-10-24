@@ -2,108 +2,106 @@
  "id": "2026-10-24",
  "sentences": [
   {
-   "text": "Quarante pour cent seulement.",
-   "display": "40 % seulement.",
-   "box": "seulement."
+   "text": "Votre passage aux urgences commence par un tri.",
+   "box": "tri."
   },
   {
-   "text": "Ce sont des patients âgés, atteints d'une maladie rénale avancée.",
-   "box": "avancée."
-  },
-  {
-   "text": "Un an après, c'est la part dont le dossier note leurs souhaits de soins.",
-   "box": "souhaits",
+   "text": "Les urgences débordent, et l'attente s'allonge.",
+   "box": "l'attente",
    "pause_apres": 2.5
   },
   {
-   "text": "Avec les soins habituels.",
-   "box": "habituels."
+   "text": "À l'arrivée, un soignant décide qui sera vu en premier.",
+   "box": "premier."
   },
   {
-   "text": "Pourtant, ils devront bientôt choisir parmi trois options.",
-   "box": "trois"
+   "text": "Il juge vite, avec très peu d'informations sur le patient.",
+   "box": "peu"
   },
   {
-   "text": "L'hémodialyse."
+   "text": "Des outils d'IA lisent les données du patient dès son arrivée.",
+   "box": "d'IA"
   },
   {
-   "text": "La dialyse par le ventre."
+   "text": "Ils calculent un risque d'aggravation, que l'équipe peut consulter.",
+   "box": "d'aggravation,"
   },
   {
-   "text": "Ou des soins sans dialyse.",
-   "peak": "sans dialyse",
-   "pause_apres": 0.3
-  },
-  {
-   "text": "Une simple vidéo peut-elle ouvrir la discussion ?",
+   "text": "Les chercheurs ont voulu savoir si ces outils repèrent bien les patients graves.",
    "mode": "type",
    "pause_apres": 1.4
   },
   {
-   "text": "C'est un essai tiré au sort, dans douze cliniques.",
-   "box": "sort,"
+   "text": "C'est une méta-analyse : elle regroupe les résultats de plusieurs études.",
+   "box": "méta-analyse"
   },
   {
-   "text": "Quatre cent cinquante-trois patients de plus de soixante-cinq ans.",
-   "display": "453 patients de plus de 65 ans.",
-   "box": "patients"
+   "text": "Vingt-sept études, publiées entre deux mille dix et deux mille vingt-cinq.",
+   "box": "études,",
+   "display": "27 études, publiées entre 2010 et 2025."
   },
   {
-   "text": "Le critère : les souhaits de soins notés au dossier, en un an.",
-   "box": "dossier,"
+   "text": "Vingt-trois ont été menées dans des services d'urgences.",
+   "box": "d'urgences.",
+   "display": "23 ont été menées dans des services d'urgences."
   },
   {
-   "text": "Des relecteurs, aidés d'un outil de langage, ne savent pas qui a vu la vidéo.",
-   "box": "outil"
+   "text": "L'IA reçoit les données du patient, calcule son risque d'aggravation, et affiche un score.",
+   "box": "score."
   },
   {
-   "text": "Le groupe un regarde une vidéo sur trois options de traitement.",
-   "box": "vidéo"
+   "text": "Treize études ont été regroupées par calcul, quatorze résumées par écrit.",
+   "box": "calcul,",
+   "display": "13 études ont été regroupées par calcul, 14 résumées par écrit."
   },
   {
-   "text": "Il enregistre ensuite un message de ses souhaits.",
-   "box": "message"
+   "text": "Quatre portaient sur des adultes, avec l'aggravation comme critère.",
+   "box": "l'aggravation",
+   "display": "4 portaient sur des adultes, avec l'aggravation comme critère."
   },
   {
-   "text": "Ce message est envoyé à son médecin.",
-   "box": "médecin."
+   "text": "Leur performance regroupée atteint zéro virgule huit sept quatre, sur un maximum de un.",
+   "box": "performance",
+   "peak": "0,874",
+   "display": "Leur performance regroupée atteint 0,874, sur un maximum de 1."
   },
   {
-   "text": "Le groupe deux reçoit les soins habituels.",
-   "box": "habituels."
+   "text": "L'intervalle de confiance va de zéro virgule huit quatre cinq à zéro virgule huit neuf huit.",
+   "box": "L'intervalle",
+   "display": "L'intervalle de confiance va de 0,845 à 0,898."
   },
   {
-   "text": "Au bout d'un an, cinquante-sept pour cent des dossiers du groupe un notent leurs souhaits.",
-   "display": "Au bout d'un an, 56,6 % des dossiers du groupe 1 notent leurs souhaits.",
-   "box": "dossiers"
+   "text": "Dans quatre études, la comparaison directe favorisait l'IA face au tri habituel.",
+   "box": "favorisait",
+   "display": "Dans 4 études, la comparaison directe favorisait l'IA face au tri habituel."
   },
   {
-   "text": "Contre quarante pour cent avec les soins habituels.",
-   "display": "Contre 40 % avec les soins habituels.",
-   "box": "habituels."
+   "text": "Mais elles divergent beaucoup : quatre-vingt-quatorze virgule quatre pour cent d'hétérogénéité.",
+   "box": "divergent",
+   "display": "Mais elles divergent beaucoup : 94,4 % d'hétérogénéité."
   },
   {
-   "text": "Soit seize virgule six points de plus.",
-   "display": "Soit +16,6 points de plus.",
-   "peak": "points"
+   "text": "Une simulation pour dix mille passages compte douze à trente-huit cas graves manqués en moins.",
+   "box": "simulation",
+   "display": "Une simulation pour 10 000 passages compte 12 à 38 cas graves manqués en moins."
   },
   {
-   "text": "L'intervalle de confiance va de sept virgule cinq à vingt-cinq virgule sept.",
-   "display": "L'intervalle de confiance à 95 % va de 7,5 à 25,7.",
-   "box": "L'intervalle"
+   "text": "Mais aussi quarante-cinq à cent vingt fausses alertes en plus.",
+   "box": "fausses",
+   "display": "Mais aussi 45 à 120 fausses alertes en plus."
   },
   {
-   "text": "Après la vidéo, treize pour cent hésitent encore sur leur choix, contre quarante et un.",
-   "display": "Après la vidéo, 13,2 % hésitent encore sur leur choix, contre 41,3 %.",
-   "box": "hésitent"
-  },
-  {
-   "text": "L'essai mesure les notes au dossier, pas la qualité des soins.",
+   "text": "Cela ne prouve pas que les patients vont mieux.",
    "mode": "type"
   },
   {
-   "text": "Une vidéo a donc fait noter plus de souhaits au dossier.",
-   "peak": "plus",
+   "text": "Et la plupart des modèles manquent encore de validation externe.",
+   "box": "validation"
+  },
+  {
+   "text": "À retenir : l'IA trie bien sur le papier, mais le bénéfice pour les patients reste à prouver.",
+   "box": "prouver.",
+   "peak": "à prouver",
    "pause_apres": 0.3
   },
   {
@@ -117,51 +115,57 @@
  ],
  "night": {
   "start": 0.0,
-  "end": 21.81,
+  "end": 22.89,
   "stations": [
    {
     "type": "hook_number",
     "y": 0,
     "cam_at": 0.0,
-    "header": "Essai randomisé · 12 cliniques · 2021–2025",
-    "number": "40,0",
-    "unit": "%",
-    "caption": "des patients âgés ont leurs souhaits de soins notés au dossier",
-    "caption_at": 2.26,
+    "header": "Méta-analyse · Urgences · 2010–2025",
+    "number": "27",
+    "unit": "études",
+    "caption": "testent un tri des urgences assisté par l'IA",
+    "caption_at": 2.2,
     "people": 5,
     "lit": 2,
-    "lit_at": 0.67,
-    "footnote": "Soins habituels · à 12 mois"
+    "lit_at": 0.38,
+    "footnote": "Études publiées entre 2010 et 2025"
    },
    {
-    "type": "gag_clock",
+    "type": "gag_waiting",
     "y": 980,
-    "cam_at": 9.18,
-    "label": "un an"
+    "cam_at": 2.92,
+    "door": "Urgences",
+    "chairs": 6,
+    "occupied": 4
    },
    {
     "type": "steps",
     "y": 1640,
-    "cam_at": 13.51,
-    "mark_at": 15.82,
-    "title": "Trois options de traitement",
+    "cam_at": 8.51,
+    "mark_at": 12.64,
+    "title": "Le tri aux urgences",
     "steps": [
      {
-      "icon": "hospital",
-      "label": "01 · Hémodialyse",
-      "at": 17.0,
+      "icon": "door",
+      "label": "01 · Arrivée",
+      "at": 8.66,
       "_y": 1810
      },
      {
-      "icon": "user",
-      "label": "02 · Dialyse par le ventre",
-      "at": 18.25,
+      "icon": "stethoscope",
+      "label": "02 · Tri par un soignant",
+      "note": "très peu d'informations",
+      "at": 10.02,
+      "note_at": 13.78,
       "_y": 2140
      },
      {
-      "icon": "heart",
-      "label": "03 · Soins sans dialyse",
-      "at": 19.82,
+      "icon": "chip",
+      "label": "03 · Outil d'IA",
+      "note": "risque d'aggravation",
+      "at": 16.34,
+      "note_at": 20.2,
       "_y": 2470
      }
     ]
@@ -169,173 +173,139 @@
   ]
  },
  "pivot": {
-  "text": "Une simple vidéo peut-elle ouvrir la discussion ?",
-  "italic": "vidéo",
-  "fold_at": 27.11,
-  "start": 21.81,
-  "end": 28.16
+  "text": "Les chercheurs ont voulu savoir si ces outils repèrent bien les patients graves.",
+  "italic": "graves",
+  "fold_at": 27.06,
+  "start": 22.89,
+  "end": 28.11
  },
  "paper": {
   "stations": [
    {
     "type": "id_card",
     "y": 0,
-    "cam_at": 26.74,
+    "cam_at": 28.61,
     "title": "L'étude en bref",
     "rows": [
      {
       "label": "Type",
-      "value": "Essai tiré au sort",
-      "at": 27.64
-     },
-     {
-      "label": "Lieu",
-      "value": "12 cliniques",
-      "at": 28.78
-     },
-     {
-      "label": "Patients",
-      "value": "453 · 65 ans ou plus",
-      "at": 30.92
-     },
-     {
-      "label": "Critère principal",
-      "value": "Souhaits notés au dossier",
-      "at": 33.16,
+      "value": "Méta-analyse",
+      "at": 29.3,
       "accent": true
      },
      {
-      "label": "Durée",
-      "value": "12 mois",
-      "at": 36.52
+      "label": "Études",
+      "value": "27",
+      "at": 33.62
      },
      {
-      "label": "Relecture",
-      "value": "Outil de langage + humains, en aveugle",
-      "at": 37.48
+      "label": "Période",
+      "value": "2010–2025",
+      "at": 35.02
+     },
+     {
+      "label": "Lieu",
+      "value": "23 aux urgences",
+      "at": 39.1
+     },
+     {
+      "label": "Mesure",
+      "value": "Prédire l'aggravation",
+      "at": 39.64
      }
     ]
    },
    {
-    "type": "two_groups",
+    "type": "ai_scan",
     "y": 1100,
-    "cam_at": 41.99,
-    "groups": [
-     {
-      "label": "Groupe 1 · vidéo",
-      "sub": "228 patients",
-      "accent": true,
-      "at": 42.24,
-      "steps": [
-       {
-        "icon": "eye",
-        "text": "Vidéo : trois options de traitement",
-        "at": 43.66
-       },
-       {
-        "icon": "message",
-        "text": "Message vidéo de ses souhaits",
-        "at": 46.84
-       },
-       {
-        "icon": "stethoscope",
-        "text": "Message envoyé à son médecin",
-        "at": 49.72
-       }
-      ]
-     },
-     {
-      "label": "Groupe 2 · soins habituels",
-      "sub": "225 patients",
-      "at": 50.67,
-      "steps": [
-       {
-        "icon": "stethoscope",
-        "text": "Soins médicaux habituels",
-        "at": 52.04
-       },
-       {
-        "icon": "doc",
-        "text": "Aucune vidéo, aucun message",
-        "at": 52.64
-       }
-      ]
-     }
-    ]
+    "cam_at": 39.95,
+    "input_icon": "doc",
+    "input_label": "Données du patient à l'arrivée",
+    "ai_label": "calcule le risque d'aggravation",
+    "output_label": "Un score de risque",
+    "at": 41.2,
+    "core_at": 42.24,
+    "out_at": 44.82
    },
    {
-    "type": "result_bars",
-    "y": 2300,
-    "cam_at": 53.04,
-    "title": "Souhaits de soins notés au dossier · à 12 mois",
-    "unit": "%",
-    "groups": [
+    "type": "studies_stack",
+    "y": 2280,
+    "cam_at": 45.46,
+    "n_studies": 27,
+    "label": "études",
+    "sub": "2010–2025 · 13 regroupées par calcul",
+    "at": 45.76
+   },
+   {
+    "type": "metric",
+    "y": 3430,
+    "cam_at": 53.81,
+    "title": "Prédire l'aggravation aux urgences",
+    "metrics": [
      {
-      "label": "Groupe 1 · vidéo",
-      "value": "56,6",
-      "num": 56.6,
-      "accent": true,
-      "at": 55.5
-     },
-     {
-      "label": "Soins habituels",
-      "value": "40,0",
-      "num": 40.0,
-      "at": 58.12
+      "label": "Performance regroupée (AUC)",
+      "value": "0,874",
+      "num": 0.874,
+      "max": 1,
+      "note": "IC 95 % : 0,845–0,898",
+      "at": 54.3,
+      "accent": true
      }
     ],
-    "diff": "+16,6 points · IC 95 % : 7,5 à 25,7",
-    "diff_at": 62.0
+    "caption": "4 études chez l'adulte",
+    "caption_at": 50.24
    },
    {
-    "type": "result_bars",
-    "y": 3500,
-    "cam_at": 67.27,
-    "title": "Indécis sur leur choix, après la vidéo",
-    "unit": "%",
-    "groups": [
+    "type": "key_points",
+    "y": 4480,
+    "cam_at": 65.0,
+    "title": "Ce qu'il faut retenir",
+    "points": [
      {
-      "label": "Groupe 1 · vidéo",
-      "value": "13,2",
-      "num": 13.2,
-      "accent": true,
-      "at": 68.61
+      "text": "4 études : l'IA devant le tri habituel",
+      "at": 67.78
      },
      {
-      "label": "Soins habituels",
-      "value": "41,3",
-      "num": 41.3,
-      "at": 71.24
+      "text": "Études très différentes : 94,4 % d'hétérogénéité",
+      "at": 70.72
+     },
+     {
+      "text": "Simulation : 12 à 38 cas graves manqués en moins",
+      "at": 75.52
+     },
+     {
+      "text": "Mais 45 à 120 fausses alertes en plus",
+      "at": 83.3
      }
     ]
    },
    {
     "type": "typo",
-    "y": 4700,
-    "cam_at": 72.19,
-    "text": "L'essai mesure les notes au dossier, pas la qualité des soins.",
-    "italic": "pas",
-    "sentence": 22
+    "y": 5650,
+    "cam_at": 84.81,
+    "text": "Cela ne prouve pas que les patients vont mieux.",
+    "italic": "mieux.",
+    "sentence": 19
    }
   ],
-  "start": 27.06,
-  "end": 79.77
+  "start": 27.009999999999998,
+  "end": 97.77
  },
  "end": {
-  "fold_at": 78.72,
+  "fold_at": 96.72,
   "promise": "Une étude par jour, vérifiée à la source.",
   "promise_italic": "vérifiée",
-  "wordmark_at": 82.2,
+  "wordmark_at": 100.04,
   "button": "Suivre",
-  "button_at": 82.8,
-  "click_at": 83.8,
-  "source": "Volandes et al. · JAMA Internal Medicine · octobre 2026",
-  "doi": "doi:10.1001/jamainternmed.2026.5989",
-  "source_at": 80.4,
-  "start": 78.67,
-  "end": 86.6
+  "button_at": 100.64,
+  "click_at": 101.64,
+  "source": "Ashour et al. · J Med Internet Res · octobre 2026",
+  "doi": "doi:10.2196/93931",
+  "source_at": 98.35,
+  "start": 96.67,
+  "end": 104.4
  },
- "duration": 86.6,
+ "duration": 104.4,
  "audio": "assets/audio/mix.wav",
  "words_file": "onsets.json"
 }
