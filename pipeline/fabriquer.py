@@ -39,9 +39,16 @@ def controles(jour, mp4, duree):
     v = [s for s in info["streams"] if s["codec_type"] == "video"][0]
     if (v["width"], v["height"]) != (1080, 1350):
         err.append(f"format {v['width']}x{v['height']}")
-    noir = sum(float(x) for x in re.findall(r"black_duration:([\d.]+)", mesure(["ffmpeg", "-hide_banner", "-i", str(mp4), "-vf", "blackdetect=d=0.6:pix_th=0.08", "-an", "-f", "null", "-"])))
-    if noir > 3.2:
-        err.append(f"{noir:.1f} s d'écran noir (3,2 s au plus : le pivot)")
+    plages = re.findall(r"black_start:([\d.]+) black_end:([\d.]+) black_duration:([\d.]+)",
+                        mesure(["ffmpeg", "-hide_banner", "-i", str(mp4), "-vf", "blackdetect=d=0.6:pix_th=0.08", "-an", "-f", "null", "-"]))
+    noir = sum(float(d) for _, _, d in plages)
+    # le pivot est un texte sur noir : sa durée dépend de la phrase dite. On tolère cette durée + 0,8 s (fondus), 3,2 s au moins.
+    pv = lire_json(jour / "film.resolu.json", {}).get("pivot", {})
+    pivot = float(pv["fold_at"]) - float(pv["start"]) if "fold_at" in pv and "start" in pv else 0.0
+    max_noir = max(3.2, pivot + 0.8)
+    if noir > max_noir:
+        detail = ", ".join(f"{float(a):.1f}–{float(b):.1f} s" for a, b, _ in plages)
+        err.append(f"{noir:.1f} s d'écran noir ({max_noir:.1f} s au plus, pivot de {pivot:.1f} s compris) : {detail}")
     gel = re.findall(r"freeze_duration: ([\d.]+)", mesure(["ffmpeg", "-hide_banner", "-i", str(mp4), "-vf", "freezedetect=n=0.002:d=2.5", "-an", "-f", "null", "-"]))
     if gel:
         err.append(f"image figée {', '.join(gel)} s")
