@@ -1,0 +1,341 @@
+{
+ "id": "2026-10-24",
+ "sentences": [
+  {
+   "text": "Quarante pour cent seulement.",
+   "display": "40 % seulement.",
+   "box": "seulement."
+  },
+  {
+   "text": "Ce sont des patients âgés, atteints d'une maladie rénale avancée.",
+   "box": "avancée."
+  },
+  {
+   "text": "Un an après, c'est la part dont le dossier note leurs souhaits de soins.",
+   "box": "souhaits",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Avec les soins habituels.",
+   "box": "habituels."
+  },
+  {
+   "text": "Pourtant, ils devront bientôt choisir parmi trois options.",
+   "box": "trois"
+  },
+  {
+   "text": "L'hémodialyse."
+  },
+  {
+   "text": "La dialyse par le ventre."
+  },
+  {
+   "text": "Ou des soins sans dialyse.",
+   "peak": "sans dialyse",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une simple vidéo peut-elle ouvrir la discussion ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "C'est un essai tiré au sort, dans douze cliniques.",
+   "box": "sort,"
+  },
+  {
+   "text": "Quatre cent cinquante-trois patients de plus de soixante-cinq ans.",
+   "display": "453 patients de plus de 65 ans.",
+   "box": "patients"
+  },
+  {
+   "text": "Le critère : les souhaits de soins notés au dossier, en un an.",
+   "box": "dossier,"
+  },
+  {
+   "text": "Des relecteurs, aidés d'un outil de langage, ne savent pas qui a vu la vidéo.",
+   "box": "outil"
+  },
+  {
+   "text": "Le groupe un regarde une vidéo sur trois options de traitement.",
+   "box": "vidéo"
+  },
+  {
+   "text": "Il enregistre ensuite un message de ses souhaits.",
+   "box": "message"
+  },
+  {
+   "text": "Ce message est envoyé à son médecin.",
+   "box": "médecin."
+  },
+  {
+   "text": "Le groupe deux reçoit les soins habituels.",
+   "box": "habituels."
+  },
+  {
+   "text": "Au bout d'un an, cinquante-sept pour cent des dossiers du groupe un notent leurs souhaits.",
+   "display": "Au bout d'un an, 56,6 % des dossiers du groupe 1 notent leurs souhaits.",
+   "box": "dossiers"
+  },
+  {
+   "text": "Contre quarante pour cent avec les soins habituels.",
+   "display": "Contre 40 % avec les soins habituels.",
+   "box": "habituels."
+  },
+  {
+   "text": "Soit seize virgule six points de plus.",
+   "display": "Soit +16,6 points de plus.",
+   "peak": "points"
+  },
+  {
+   "text": "L'intervalle de confiance va de sept virgule cinq à vingt-cinq virgule sept.",
+   "display": "L'intervalle de confiance à 95 % va de 7,5 à 25,7.",
+   "box": "L'intervalle"
+  },
+  {
+   "text": "Après la vidéo, treize pour cent hésitent encore sur leur choix, contre quarante et un.",
+   "display": "Après la vidéo, 13,2 % hésitent encore sur leur choix, contre 41,3 %.",
+   "box": "hésitent"
+  },
+  {
+   "text": "L'essai mesure les notes au dossier, pas la qualité des soins.",
+   "mode": "type"
+  },
+  {
+   "text": "Une vidéo a donc fait noter plus de souhaits au dossier.",
+   "peak": "plus",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 21.81,
+  "stations": [
+   {
+    "type": "hook_number",
+    "y": 0,
+    "cam_at": 0.0,
+    "header": "Essai randomisé · 12 cliniques · 2021–2025",
+    "number": "40,0",
+    "unit": "%",
+    "caption": "des patients âgés ont leurs souhaits de soins notés au dossier",
+    "caption_at": 2.26,
+    "people": 5,
+    "lit": 2,
+    "lit_at": 0.67,
+    "footnote": "Soins habituels · à 12 mois"
+   },
+   {
+    "type": "gag_clock",
+    "y": 980,
+    "cam_at": 9.18,
+    "label": "un an"
+   },
+   {
+    "type": "steps",
+    "y": 1640,
+    "cam_at": 13.5,
+    "mark_at": 15.82,
+    "title": "Trois options de traitement",
+    "steps": [
+     {
+      "icon": "hospital",
+      "label": "01 · Hémodialyse",
+      "at": 17.0,
+      "_y": 1810
+     },
+     {
+      "icon": "user",
+      "label": "02 · Dialyse par le ventre",
+      "at": 18.23,
+      "_y": 2140
+     },
+     {
+      "icon": "heart",
+      "label": "03 · Soins sans dialyse",
+      "at": 19.82,
+      "_y": 2470
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Une simple vidéo peut-elle ouvrir la discussion ?",
+  "italic": "vidéo",
+  "fold_at": 27.11,
+  "start": 21.81,
+  "end": 28.16
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "y": 0,
+    "cam_at": 26.74,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Essai tiré au sort",
+      "at": 27.64
+     },
+     {
+      "label": "Lieu",
+      "value": "12 cliniques",
+      "at": 28.78
+     },
+     {
+      "label": "Patients",
+      "value": "453 · 65 ans ou plus",
+      "at": 30.92
+     },
+     {
+      "label": "Critère principal",
+      "value": "Souhaits notés au dossier",
+      "at": 33.16,
+      "accent": true
+     },
+     {
+      "label": "Durée",
+      "value": "12 mois",
+      "at": 36.54
+     },
+     {
+      "label": "Relecture",
+      "value": "Outil de langage + humains, en aveugle",
+      "at": 37.5
+     }
+    ]
+   },
+   {
+    "type": "two_groups",
+    "y": 1100,
+    "cam_at": 41.99,
+    "groups": [
+     {
+      "label": "Groupe 1 · vidéo",
+      "sub": "228 patients",
+      "accent": true,
+      "at": 42.24,
+      "steps": [
+       {
+        "icon": "eye",
+        "text": "Vidéo : trois options de traitement",
+        "at": 43.66
+       },
+       {
+        "icon": "message",
+        "text": "Message vidéo de ses souhaits",
+        "at": 46.84
+       },
+       {
+        "icon": "stethoscope",
+        "text": "Message envoyé à son médecin",
+        "at": 49.72
+       }
+      ]
+     },
+     {
+      "label": "Groupe 2 · soins habituels",
+      "sub": "225 patients",
+      "at": 50.67,
+      "steps": [
+       {
+        "icon": "stethoscope",
+        "text": "Soins médicaux habituels",
+        "at": 52.04
+       },
+       {
+        "icon": "doc",
+        "text": "Aucune vidéo, aucun message",
+        "at": 52.64
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "result_bars",
+    "y": 2300,
+    "cam_at": 53.04,
+    "title": "Souhaits de soins notés au dossier · à 12 mois",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Groupe 1 · vidéo",
+      "value": "56,6",
+      "num": 56.6,
+      "accent": true,
+      "at": 55.5
+     },
+     {
+      "label": "Soins habituels",
+      "value": "40,0",
+      "num": 40.0,
+      "at": 58.12
+     }
+    ],
+    "diff": "+16,6 points · IC 95 % : 7,5 à 25,7",
+    "diff_at": 61.98
+   },
+   {
+    "type": "result_bars",
+    "y": 3500,
+    "cam_at": 67.28,
+    "title": "Indécis sur leur choix, après la vidéo",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Groupe 1 · vidéo",
+      "value": "13,2",
+      "num": 13.2,
+      "accent": true,
+      "at": 68.62
+     },
+     {
+      "label": "Soins habituels",
+      "value": "41,3",
+      "num": 41.3,
+      "at": 71.24
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "y": 4700,
+    "cam_at": 72.19,
+    "text": "L'essai mesure les notes au dossier, pas la qualité des soins.",
+    "italic": "pas",
+    "sentence": 22
+   }
+  ],
+  "start": 27.06,
+  "end": 79.86999999999999
+ },
+ "end": {
+  "fold_at": 78.82,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 82.2,
+  "button": "Suivre",
+  "button_at": 82.8,
+  "click_at": 83.8,
+  "source": "Volandes et al. · JAMA Internal Medicine · octobre 2026",
+  "doi": "doi:10.1001/jamainternmed.2026.5989",
+  "source_at": 80.4,
+  "start": 78.77,
+  "end": 86.6
+ },
+ "duration": 86.6,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

@@ -80,6 +80,27 @@
   "resume": "Patients with type 2 diabetes mellitus and chronic kidney disease face persistent risks despite standard care. Polyethylene glycol-loxenatide lacks real-world renoprotective evidence in high-risk Chinese populations relative to non-incretin-based standard care. This multicenter, ambispective cohort study enrolled 3305 patients with type 2 diabetes mellitus, renal impairment, and elevated cardiovascular risk at six Chinese tertiary institutions (median follow-up 36.4 months; trial registration: ChiCTR2300073001). Data were extracted via an artificial intelligence-enhanced pipeline. Co-primary analyzes comprised multivariable-adjusted Cox regression and 1:1 propensity score matching (332 per group); pre-specified landmark analyzes at 6 and 12 months addressed immortal time bias. Polyethylene glycol-loxenatide was associated with a reduced risk of the primary kidney composite outcome in the original cohort (hazard ratio [HR], 0.49; 95% CI, 0.25-0.95; P = 0.035), which was corroborated in the propensity score matched cohort (HR, 0.44; 95% CI, 0.20-0.97; P = 0.043) and progressive across 6-month (HR, 0.40; 95% CI, 0.19-0.84) and 12-month (HR, 0.33; 95% CI, 0.14-0.75) landmarks. While a reduction in 3-point major adverse cardiovascular events was observed in the unmatched cohort (HR, 0.60; 95% CI, 0.43-0.85; P = 0.004), this association was not sustained in the matched analysis (HR, 0.92; 95% CI, 0.57-1.48; P = 0.735). In conclusion, long-term therapy was associated with an attenuated risk of major renal events. Given the null findings in the matched cohort, the cardiovascular observations are exploratory and require randomized confirmation."
  },
  {
+  "score": 12,
+  "raisons": [
+   "prospectif",
+   "multicentrique",
+   "n = 5273",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42904771",
+  "pmid": "42904771",
+  "pmcid": "PMC13685576",
+  "doi": "10.1002/advs.76577",
+  "titre": "Multitask Deep Learning Model for Predicting Lymph Node Metastasis and Disease-Free Survival From Cytology Images in Bladder Cancer: A Multicenter Study With Pan-Cytology Validation.",
+  "revue": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "date": "2026-10-21",
+  "auteurs": "Hong G, Jiang F, Xie Y, Huang X, Shen R, Wang Y, Zhu M, Wang H, Yang H, Nie Y, Lin Z, Chen R, Ouyang N, Lin T, Wu S.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "resume": "Accurate prediction of lymph node metastasis (LNM) and survival outcomes is crucial for personalized treatment in bladder cancer, yet remains clinically challenging. This study aimed to develop a Cytology-based multitask predictive Network (CytoNet) to simultaneously predict LNM and disease-free survival (DFS) in bladder cancer, and to evaluate its generalizability in cervical and thyroid cancers. This study included a multicenter cohort of 5273 patients, with bladder cancer (n = 1134), cervical cancer (n = 598), and thyroid cancer (n = 3541). CytoNet was constructed through a three-stage pipeline comprising self-supervised pretraining, supervised fine-tuning, and multitask prediction. In bladder cancer, CytoNet achieved an area under the curve (AUC) of 0.831-0.881 for LNM prediction and a C index of 0.680-0.710 for DFS prediction across all cohorts, outperforming single-task models and standard radiological assessments. In cervical cancer, CytoNet demonstrated robust performance for both LNM prediction (AUC 0.847-0.862) and DFS prediction (C index 0.690-0.709), while in thyroid cancer, it achieved an AUC of 0.819-0.855 for LNM prediction. In conclusion, CytoNet represents a reliable tool for predicting LNM and prognosis from cytopathology images across multiple cancer types, showing potential as a valuable adjunct to current clinical decision-making. Further prospective validation is warranted to assess its clinical utility."
+ },
+ {
   "score": 11,
   "raisons": [
    "essai tiré au sort",
@@ -97,24 +118,5 @@
   "types": "brief-report randomized controlled trial journal article",
   "acces_libre": true,
   "resume": "The gut microbiome is increasingly recognized as an important determinant of host immune regulation, intestinal homeostasis, and recovery after colorectal cancer (CRC) surgery. Although our previous randomized, double-blind, placebo-controlled clinical trial demonstrated that fungal nutraceutical supplementation with Micodigest ® was associated with favorable taxonomic and systemic inflammatory changes in patients undergoing CRC surgery with curative intent, the functional consequences of this intervention remain poorly understood. Here, we performed a functional metagenomic analysis of fecal samples collected from patients enrolled in the original clinical trial to investigate whether Micodigest ® supplementation was associated with changes in the functional potential of the gut microbiome. A total of 37 patients were analyzed, including 24 receiving Micodigest ® and 13 receiving placebo, with paired samples collected before supplementation and after 4-6 weeks of intervention. Shallow shotgun metagenomic sequencing was performed, and microbial functional potential was characterized using KEGG Orthologues (KOs). Differential abundance analysis identified 14 significantly different KOs between groups at baseline and 23 after intervention, with no overlap between the two sets of orthologues. Following supplementation, Micodigest ® -treated patients exhibited increased representation of functions related to CRISPR-associated systems, bacteriophage biology, and chitin-derived carbohydrate utilization, together with reduced representation of nutrient acquisition systems, conjugative transfer, sulfur metabolism, and components of the Wood-Ljungdahl pathway. These functional signatures suggest coordinated changes in microbial ecological adaptation, nutrient utilization, genetic exchange, and metabolic activity following fungal nutraceutical supplementation. Integration with previously reported taxonomic and inflammatory findings supports the hypothesis that Micodigest ® may promote coordinated remodeling of the gut microbiome and host-microbiota interactions during the perioperative period. Although the present study cannot establish causality or directly infer microbial activity from metagenomic potential, these findings provide novel functional insights into the microbiome response to fungal nutraceutical supplementation in patients with CRC and highlight functional metagenomics as a valuable complement to taxonomic profiling."
- },
- {
-  "score": 11,
-  "raisons": [
-   "essai tiré au sort",
-   "prospectif",
-   "multicentrique"
-  ],
-  "id": "MED:42863380",
-  "pmid": "42863380",
-  "pmcid": null,
-  "doi": "10.1016/j.jsurg.2026.104210",
-  "titre": "Expanded Longitudinal Validation of Adaptive Learning Stability in AI-Assisted Neurosurgical Residency Training.",
-  "revue": "Journal of surgical education",
-  "date": "2026-10-12",
-  "auteurs": "Mustafayev B, Mustafayeva A, Bakhtiyarov A, Nikatov K, Satylkhan B, Mustafayev A.",
-  "types": "validation study randomized controlled trial journal article",
-  "acces_libre": false,
-  "resume": "Objective To evaluate the longitudinal stability, reproducibility, and robustness of Adaptive Learning Stability (ALS) within an expanded AI-assisted neurosurgical residency cohort during a 12-month observation cycle. Design This was a prospective controlled educational study. Residents completed 4 consecutive quarterly checkpoints integrating cognitive, technical, and decision-making assessments over 12 months. The RCKaS-AI framework incorporated predictive analytics, individualized adaptive remediation, and mentor-validated feedback pathways. Primary analysis evaluated longitudinal entrustment trajectory stability across checkpoints. Secondary analyses included inter-resident variance dynamics, remediation frequency, faculty workload, and predictive agreement between forecasted and observed competency progression. Setting Two accredited neurosurgical residency programs in Kazakhstan, from January 2025 to January 2026. Participants Sixty-four neurosurgical residents randomized into standard RCKaS (n = 32) and AI-enhanced RCKaS-AI (n = 32) cohorts. Results Both cohorts demonstrated progressive improvement in entrustment scores across sequential checkpoints. In the RCKaS-AI cohort, mean entrustment scores increased from 59.1 ± 12.8 at CP1 to 94.3 ± 6.9 at CP4, compared with 58.4 ± 13.1 to 85.7 ± 10.4 under standard RCKaS conditions (p = 0.001). Inter-resident variance decreased by 41% in the AI-assisted cohort versus 18% in the standard cohort. Residents within the RCKaS-AI framework achieved entrustment level 4 significantly earlier than controls (38 ± 7 weeks vs 50 ± 9 weeks, p = 0.003). Mean remediation frequency decreased from 3.4 ± 1.1 to 1.9 ± 0.7 sessions per resident, while faculty workload declined by 34%. Predictive analytics demonstrated strong agreement between forecasted and observed competency trajectories (r = 0.84; 95% CI, 0.77-0.89). Conclusions Expanded longitudinal implementation of the RCKaS-AI framework demonstrated reproducible stabilization of competency trajectories during neurosurgical residency training. These findings support the robustness of adaptive AI-assisted feedback systems as a practical mechanism for longitudinal competency regulation within structured surgical education programs. Further multicenter validation is required to evaluate external reproducibility across broader residency environments."
  }
 ]
