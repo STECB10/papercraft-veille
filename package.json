@@ -1,0 +1,13 @@
+{
+  "name": "motion-design-claude-code",
+  "private": true,
+  "description": "Launch motion design with Claude Code (HyperFrames 0.8.82 pinned, official HeyGen skills audited at commit 93ab289)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.82",
+    "@hyperframes/core": "0.8.82"
+  }
+}

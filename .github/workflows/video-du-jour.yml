@@ -1,0 +1,77 @@
+name: Vidéo du jour
+on:
+  schedule:
+    - cron: "17 5 * * *"        # chaque matin vers 6 h 17 (heure d'hiver de Paris), 7 h 17 en été
+  workflow_dispatch:            # bouton « Run workflow » pour lancer à la main
+permissions:
+  contents: write
+  id-token: write
+concurrency:
+  group: video-du-jour
+  cancel-in-progress: false
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
+      PUBLICATION_AUTO: ${{ vars.PUBLICATION_AUTO }}
+      GH_TOKEN: ${{ github.token }}
+      HYPERFRAMES_NO_TELEMETRY: "1"
+      DO_NOT_TRACK: "1"
+      HYPERFRAMES_SKIP_SKILLS: "1"
+      HYPERFRAMES_NO_UPDATE_CHECK: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm }
+      - name: Outils
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          npm ci --no-audit --no-fund
+          npx hyperframes browser ensure
+          echo "DATE_DU_JOUR=$(TZ=Europe/Paris date +%F)" >> "$GITHUB_ENV"
+      - name: Veille (Europe PMC)
+        id: veille
+        run: python3 pipeline/veille.py
+      - name: Étude, script et post (Claude)
+        id: claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          allowed_bots: "*"
+          prompt: "/etude-du-jour"
+          claude_args: '--max-turns 90 --allowedTools "Bash,Read,Write,Edit,Glob,Grep"'
+      - name: Vérification indépendante des chiffres
+        id: verif
+        run: python3 pipeline/verifier.py
+      - name: Fabrication (voix, animation, musique, rendu, contrôles)
+        id: fab
+        run: python3 pipeline/fabriquer.py
+      - name: Envoi Telegram (ou publication directe)
+        id: envoi
+        run: python3 pipeline/publication.py envoyer
+      - name: Garder la trace
+        if: always()
+        run: |
+          git config user.name "papercraft-bot" && git config user.email "papercraft-bot@users.noreply.github.com"
+          git add pipeline/historique.json jours/*/*.json jours/*/*.txt jours/*/*.md 2>/dev/null || true
+          git reset -q -- "jours/*/onsets.json" "jours/*/meta.json" "jours/*/hyperframes.json" 2>/dev/null || true
+          git commit -qm "Jour ${DATE_DU_JOUR}" && git push -q || echo "rien à enregistrer"
+      - name: Alerte en cas d'échec
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          import os, sys
+          sys.path.insert(0, "pipeline")
+          from commun import tg_message
+          etapes = [("veille", "veille"), ("claude", "écriture par Claude"), ("verif", "vérification des chiffres"), ("fab", "fabrication de la vidéo"), ("envoi", "envoi")]
+          lien = f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}"
+          tg_message(f"⚠️ Pas de vidéo aujourd'hui ({os.environ.get('DATE_DU_JOUR')}). Le bot a échoué. Détail : {lien}\nTransmets ce lien à Claude pour qu'il corrige.")
+          PY

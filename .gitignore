@@ -1,0 +1,9 @@
+node_modules/
+.env
+jours/*/assets/
+jours/*/renders/
+jours/*/snapshots/
+jours/*/index.html
+jours/*/*.mp4
+*.wav
+.DS_Store

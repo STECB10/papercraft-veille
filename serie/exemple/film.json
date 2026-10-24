@@ -1,0 +1,85 @@
+{
+  "id": "pilote-tanzanie",
+  "duration": 57.3,
+  "audio": "assets/audio/mix.wav",
+  "words_file": "onsets.json",
+  "voice": {"name": "Léo", "voice_id": "AfbuxQ9DVtS4azaxN1W7", "model": "eleven_v4", "language": "fr"},
+  "sentences": [
+    {"text": "Moins d'une personne sur cinq.", "box": "personne"},
+    {"text": "En Tanzanie, c'est la part des patients diabétiques qui vont chez l'ophtalmologue quand leur dépistage le demande.", "box": "l'ophtalmologue"},
+    {"text": "Le parcours habituel est long.", "box": "long."},
+    {"text": "Une photo des yeux.", "box": "photo"},
+    {"text": "Une lecture par un expert, plus tard.", "box": "expert,"},
+    {"text": "Un appel, des semaines après.", "box": "semaines"},
+    {"text": "Une équipe a voulu raccourcir ce chemin.", "mode": "type"},
+    {"text": "Deux mille trois cent soixante-dix-huit patients tirés au sort.", "box": "sort.", "display": "2 378 patients tirés au sort."},
+    {"text": "Pour la moitié, une IA lit les photos sur place.", "box": "IA"},
+    {"text": "Le résultat est expliqué avant de partir, en face à face.", "box": "face."},
+    {"text": "Trente-six pour cent vont alors à la consultation.", "box": "consultation.", "display": "36 % vont alors à la consultation."},
+    {"text": "Contre dix-huit avec le parcours habituel.", "box": "habituel.", "display": "Contre 18 % avec le parcours habituel."},
+    {"text": "Presque deux fois plus.", "peak": "deux fois"},
+    {"text": "L'essai ne dit pas si l'IA voit mieux.", "mode": "type"},
+    {"text": "Il montre qu'un résultat immédiat fait venir les patients.", "box": "immédiat"},
+    {"text": "Mais plus de six sur dix manquent encore le rendez-vous.", "box": "rendez-vous.", "display": "Mais plus de 6 sur 10 manquent encore le rendez-vous."},
+    {"text": "Une étude par jour, vérifiée à la source.", "mode": "none"},
+    {"text": "Papercraft.", "mode": "none"}
+  ],
+  "night": {
+    "start": 0, "end": "s5.e+0.25",
+    "stations": [
+      {"type": "hook_number", "y": 0, "cam_at": 0,
+       "header": "Essai randomisé · Tanzanie · 2023–2024",
+       "number": "18,2", "unit": "%",
+       "caption": "des patients à orienter vont à la consultation d'ophtalmologie",
+       "caption_at": "s1:patients",
+       "people": 5, "lit": 3, "lit_at": "s0:cinq",
+       "footnote": "Parcours habituel · dans les 8 semaines"},
+      {"type": "gag_waiting", "y": 980, "cam_at": "s1.e+0.3",
+       "door": "Ophtalmologie", "chairs": 6, "occupied": 2},
+      {"type": "steps", "y": 1640, "cam_at": "s2-0.1", "mark_at": "s2:long",
+       "title": "Le parcours habituel",
+       "steps": [
+         {"icon": "camera", "label": "01 · Photo des yeux", "at": "s3-0.1"},
+         {"icon": "magnifier", "label": "02 · Lecture par un expert", "note": "plus tard", "at": "s4-0.05", "note_at": "s4:plus"},
+         {"icon": "phone", "label": "03 · Appel", "note": "des semaines après", "at": "s5-0.05", "note_at": "s5:des", "alert": "Appel manqué", "chips": ["S+1", "S+2", "S+3"]}
+       ]}
+    ]
+  },
+  "pivot": {"text": "Une équipe a voulu raccourcir ce chemin.", "italic": "raccourcir", "fold_at": "s6.e+0.12"},
+  "paper": {
+    "stations": [
+      {"type": "population_split", "y": 0, "cam_at": "s7-0.5",
+       "total": 2378, "total_label": "patients tirés au sort", "dot_value": 10,
+       "count_at": "s7-0.05", "count_end": "s7:patients", "split_at": "s7:tirés",
+       "groups": [
+         {"label": "Parcours habituel", "n": 1186},
+         {"label": "Résultat sur place · IA", "n": 1192, "accent": true, "accent_at": "s8:IA"}
+       ]},
+      {"type": "face_to_face", "y": 1250, "cam_at": "s9-0.2",
+       "card_title": "Résultat", "card_value": "À revoir", "card_note": "Orientation en ophtalmologie",
+       "label": "Avant de quitter la salle", "at": "s9", "card_at": "s9:expliqué", "label_at": "s9:avant", "check_at": "s9.e-0.1"},
+      {"type": "result_dots", "y": 2350, "cam_at": "s10-0.3",
+       "title": "Patients à orienter · présents en 8 semaines",
+       "groups": [
+         {"label": "Parcours habituel", "n": 467, "k": 85, "value": "18,2", "at": "s11-0.05"},
+         {"label": "Résultat sur place · IA", "n": 437, "k": 157, "value": "35,9", "accent": true, "at": "s10-0.05"}
+       ],
+       "diff": "+17,7 points", "diff_at": "s12-0.05"},
+      {"type": "typo", "y": 3620, "cam_at": "s13-0.25",
+       "text": "L'essai ne dit pas si l'IA voit mieux.", "italic": "mieux."},
+      {"type": "flow_door", "y": 4300, "cam_at": "s14-0.25",
+       "from_label": "Résultat immédiat", "to_label": "Ophtalmologie",
+       "at": "s14", "card_at": "s14:résultat", "door_at": "s14:immédiat", "walk_at": "s14:venir"},
+      {"type": "remaining_dots", "y": 5150, "cam_at": "s15-0.3",
+       "n": 437, "k": 157, "value": "64", "label": "manquent encore le rendez-vous", "at": "s15:plus",
+       "group_label": "Résultat sur place · IA"}
+    ]
+  },
+  "end": {
+    "fold_at": "s15.e+0.2",
+    "promise": "Une étude par jour, vérifiée à la source.", "promise_italic": "vérifiée",
+    "wordmark_at": "s17", "button": "Suivre", "button_at": "s17+0.6", "click_at": "s17+1.6",
+    "source": "Cleland et al. · The Lancet Global Health · octobre 2026", "doi": "doi:10.1016/j.langlo.2026.104062",
+    "source_at": "s16:vérifiée-0.2"
+  }
+}
