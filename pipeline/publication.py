@@ -68,12 +68,17 @@ def publier(date):
 def noter_historique(date, statut):
     h = lire_json(HISTORIQUE, [])
     etude = lire_json(JOURS / date / "etude.json", {})
+    doi = (etude.get("doi") or "").lower()
     for e in h:
         if e.get("date") == date:
+            # plusieurs runs le même jour : l'entrée suit l'étude envoyée en dernier, les précédentes restent exclues de la veille
+            if doi and e.get("doi") and e["doi"] != doi:
+                e["doi_ecartes"] = sorted(set(e.get("doi_ecartes", [])) | {e["doi"]})
+                e["doi"], e["titre"] = doi, etude.get("titre", "")
             e["statut"] = statut
             break
     else:
-        h.append({"date": date, "doi": (etude.get("doi") or "").lower(), "titre": etude.get("titre", ""), "statut": statut})
+        h.append({"date": date, "doi": doi, "titre": etude.get("titre", ""), "statut": statut})
     ecrire_json(HISTORIQUE, h)
 
 

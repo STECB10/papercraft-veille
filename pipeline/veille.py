@@ -9,7 +9,7 @@ import re
 import sys
 import urllib.parse
 
-from commun import HISTORIQUE, dossier_du_jour, ecrire_json, http, lire_json
+from commun import HISTORIQUE, JOURS, dossier_du_jour, ecrire_json, http, lire_json
 
 API = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
 SUJET = ('("artificial intelligence" OR "machine learning" OR "deep learning" OR "large language model" OR '
@@ -61,6 +61,18 @@ def propre(t):
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", t or ""))).strip()
 
 
+def deja_vues(jour):
+    """DOI des études déjà traitées : l'historique (étude retenue et études remplacées le même jour)
+    et, par sécurité, l'etude.json de chaque autre jour, au cas où l'historique aurait manqué un run."""
+    deja = set()
+    for e in lire_json(HISTORIQUE, []):
+        deja.update(d.lower() for d in [e.get("doi")] + e.get("doi_ecartes", []) if d)
+    for f in JOURS.glob("*/etude.json"):
+        if f.parent != jour and (d := (lire_json(f, {}).get("doi") or "").lower()):
+            deja.add(d)
+    return deja
+
+
 def noter(r, deja):
     titre, resume = propre(r.get("title")), propre(r.get("abstractText"))
     types = " ".join(r.get("pubTypeList", {}).get("pubType", [])).lower()
@@ -108,7 +120,7 @@ def main():
     jour = dossier_du_jour()
     jour.mkdir(parents=True, exist_ok=True)
     fin = dt.date.today()
-    deja = {e["doi"].lower() for e in lire_json(HISTORIQUE, [])}
+    deja = deja_vues(jour)
     res = chercher((fin - dt.timedelta(days=21)).isoformat(), fin.isoformat())
     notes = [n for n in (noter(r, deja) for r in res) if n]
     notes.sort(key=lambda n: (-n["score"], n["date"] or ""), reverse=False)
