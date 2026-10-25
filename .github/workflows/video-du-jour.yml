@@ -2,6 +2,8 @@ name: Vidéo du jour
 on:
   schedule:
     - cron: "17 5 * * *"        # chaque matin vers 6 h 17 (heure d'hiver de Paris), 7 h 17 en été
+    - cron: "47 5 * * *"        # secours : si le run de 6 h 17 a échoué
+    - cron: "23 6 * * *"        # secours : si les deux précédents ont échoué
   workflow_dispatch:            # bouton « Run workflow » pour lancer à la main
 permissions:
   contents: write
@@ -25,12 +27,27 @@ jobs:
       HYPERFRAMES_SKIP_SKILLS: "1"
       HYPERFRAMES_NO_UPDATE_CHECK: "1"
     steps:
+      - name: Déjà fait aujourd'hui ?
+        id: garde
+        run: |
+          DATE=$(TZ=Europe/Paris date +%F)
+          echo "DATE_DU_JOUR=$DATE" >> "$GITHUB_ENV"
+          if gh release view "jour-$DATE" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "La vidéo du $DATE existe déjà (release jour-$DATE) : rien à faire."
+            echo "deja=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "deja=false" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@v4
+        if: steps.garde.outputs.deja != 'true'
       - uses: actions/setup-python@v5
+        if: steps.garde.outputs.deja != 'true'
         with: { python-version: "3.12" }
       - uses: actions/setup-node@v4
+        if: steps.garde.outputs.deja != 'true'
         with: { node-version: "22", cache: npm }
       - name: Outils
+        if: steps.garde.outputs.deja != 'true'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           npm ci --no-audit --no-fund
@@ -38,9 +55,11 @@ jobs:
           echo "DATE_DU_JOUR=$(TZ=Europe/Paris date +%F)" >> "$GITHUB_ENV"
       - name: Veille (Europe PMC)
         id: veille
+        if: steps.garde.outputs.deja != 'true'
         run: python3 pipeline/veille.py
       - name: Étude, script et post (Claude)
         id: claude
+        if: steps.garde.outputs.deja != 'true'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -50,17 +69,20 @@ jobs:
           claude_args: '--max-turns 90 --allowedTools "Bash,Read,Write,Edit,Glob,Grep"'
       - name: Vérification indépendante des chiffres
         id: verif
+        if: steps.garde.outputs.deja != 'true'
         run: |
           python3 pipeline/nombres.py
           python3 pipeline/verifier.py
       - name: Fabrication (voix, animation, musique, rendu, contrôles)
         id: fab
+        if: steps.garde.outputs.deja != 'true'
         run: python3 pipeline/fabriquer.py
       - name: Envoi Telegram (ou publication directe)
         id: envoi
+        if: steps.garde.outputs.deja != 'true'
         run: python3 pipeline/publication.py envoyer
       - name: Garder la trace
-        if: always()
+        if: always() && steps.garde.outputs.deja != 'true'
         run: |
           git config user.name "papercraft-bot" && git config user.email "papercraft-bot@users.noreply.github.com"
           git add pipeline/historique.json jours/*/*.json jours/*/*.txt jours/*/*.md 2>/dev/null || true
