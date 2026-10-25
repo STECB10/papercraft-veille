@@ -235,18 +235,24 @@ def build_subs(film, dark_ranges):
         if cur:
             chunks.append(cur)
         box = sent.get("box")
-        peak_toks = sent.get("peak", "").split()
+        # le pic est la suite exacte de mots (pas chaque mot isolé : « trop » peut revenir ailleurs dans la phrase)
+        peak = [norm(p) for p in sent.get("peak", "").split()]
+        dn = [norm(d) for d in disp]
+        j0 = next((j for j in range(len(dn) - len(peak) + 1) if peak and dn[j:j + len(peak)] == peak), None)
+        peak_idx = set(range(j0, j0 + len(peak))) if j0 is not None else set()
         for c_i, ch in enumerate(chunks):
             t_in = times[ch[0][1]]
             t_out = times[chunks[c_i + 1][0][1]] - 0.02 if c_i + 1 < len(chunks) else end + 0.3
             dark = any(a <= t_in < b for a, b in dark_ranges)
             spans = []
+            pk_seen = False
             for tok, k in ch:
                 t = times[k]
                 if box and tok == box:
                     spans.append(f'<span class="w kw" data-t="{t:.2f}"><span class="bx"></span><span class="tx">{esc(tok)}</span></span>')
-                elif peak_toks and tok in peak_toks:
-                    first = tok == peak_toks[0]
+                elif k in peak_idx:
+                    # le trait part du premier mot du pic dans chaque morceau (un pic peut être coupé entre deux morceaux)
+                    first, pk_seen = not pk_seen, True
                     stroke = '<span class="pkline"></span>' if first else ""
                     spans.append(f'<span class="w pk{" pk0" if first else ""}" data-t="{t:.2f}">{esc(tok)}{stroke}</span>')
                 else:

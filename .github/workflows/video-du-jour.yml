@@ -53,13 +53,23 @@ jobs:
           npm ci --no-audit --no-fund
           npx hyperframes browser ensure
           echo "DATE_DU_JOUR=$(TZ=Europe/Paris date +%F)" >> "$GITHUB_ENV"
+      - name: Reprise ? (film.json du jour déjà validé)
+        id: reprise
+        if: steps.garde.outputs.deja != 'true'
+        run: |
+          if [ -f "jours/$DATE_DU_JOUR/film.json" ] && python3 pipeline/verifier.py; then
+            echo "film.json du $DATE_DU_JOUR déjà validé : veille et Claude sautées, reprise à la fabrication."
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
       - name: Veille (Europe PMC)
         id: veille
-        if: steps.garde.outputs.deja != 'true'
+        if: steps.garde.outputs.deja != 'true' && steps.reprise.outputs.ok != 'true'
         run: python3 pipeline/veille.py
       - name: Étude, script et post (Claude)
         id: claude
-        if: steps.garde.outputs.deja != 'true'
+        if: steps.garde.outputs.deja != 'true' && steps.reprise.outputs.ok != 'true'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
