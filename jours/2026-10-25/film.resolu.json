@@ -98,7 +98,7 @@
  ],
  "night": {
   "start": 0.0,
-  "end": 22.27,
+  "end": 22.25,
   "stations": [
    {
     "type": "hook_number",
@@ -117,7 +117,7 @@
    {
     "type": "gag_waiting",
     "y": 980,
-    "cam_at": 14.14,
+    "cam_at": 14.12,
     "door": "Urgences",
     "chairs": 6,
     "occupied": 4
@@ -141,7 +141,7 @@
       "icon": "clock",
       "label": "02 · Trop confiant",
       "note": "une urgence attend",
-      "at": 20.28,
+      "at": 20.3,
       "note_at": 21.14,
       "alert": "Urgence retardée",
       "_y": 2140
@@ -153,9 +153,9 @@
  "pivot": {
   "text": "Une IA peut-elle estimer le risque de chaque patient dès son arrivée ?",
   "italic": "IA",
-  "fold_at": 28.49,
-  "start": 22.27,
-  "end": 29.54
+  "fold_at": 28.48,
+  "start": 22.25,
+  "end": 29.53
  },
  "paper": {
   "stations": [
@@ -168,7 +168,7 @@
      {
       "label": "Critère",
       "value": "Repérer les cas graves (AUC)",
-      "at": 31.56
+      "at": 31.58
      },
      {
       "label": "Type",
@@ -203,7 +203,7 @@
    {
     "type": "studies_stack",
     "y": 2280,
-    "cam_at": 45.26,
+    "cam_at": 45.25,
     "n_studies": 27,
     "label": "études",
     "title": "2 876 références triées",
@@ -213,7 +213,7 @@
    {
     "type": "metric",
     "y": 3430,
-    "cam_at": 51.22,
+    "cam_at": 51.23,
     "title": "Repérer les cas graves · adulte, urgences",
     "metrics": [
      {
@@ -246,7 +246,7 @@
       "value": "+0,065",
       "num": 0.065,
       "max": 1,
-      "at": 81.12
+      "at": 81.1
      },
      {
       "label": "Gain maximal",
@@ -293,11 +293,11 @@
     "sentence": 16
    }
   ],
-  "start": 28.439999999999998,
-  "end": 104.57
+  "start": 28.43,
+  "end": 104.55
  },
  "end": {
-  "fold_at": 103.52,
+  "fold_at": 103.5,
   "promise": "Une étude par jour, vérifiée à la source.",
   "promise_italic": "vérifiée",
   "wordmark_at": 107.3,
@@ -306,8 +306,8 @@
   "click_at": 108.9,
   "source": "Ashour et al. · Journal of Medical Internet Research · octobre 2026",
   "doi": "doi:10.2196/93931",
-  "source_at": 105.53,
-  "start": 103.47,
+  "source_at": 105.52,
+  "start": 103.45,
   "end": 111.7
  },
  "duration": 111.7,

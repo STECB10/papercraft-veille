@@ -21,6 +21,21 @@ def run(*cmd, **kw):
     subprocess.run([str(c) for c in cmd], check=True, env=ENV, **kw)
 
 
+def rendre(*cmd, **kw):
+    """Rendu HyperFrames, sortie relayée ligne à ligne : s'arrête net si la timeline n'a pas été enregistrée
+    (sub_timeline_readiness_timeout), au lieu de laisser sortir une vidéo sans animation."""
+    print("→", " ".join(str(c) for c in cmd), flush=True)
+    p = subprocess.Popen([str(c) for c in cmd], env=ENV, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1, **kw)
+    for ligne in p.stdout:
+        print(ligne, end="", flush=True)
+        if "sub_timeline_readiness_timeout" in ligne:
+            p.kill()
+            p.wait()
+            raise SystemExit("rendu arrêté : la timeline « main » n'a pas été enregistrée (sub_timeline_readiness_timeout), moteur.js a échoué")
+    if p.wait():
+        raise subprocess.CalledProcessError(p.returncode, cmd)
+
+
 def mesure(cmd):
     return subprocess.run(cmd, capture_output=True, text=True, env=ENV).stderr
 
@@ -75,12 +90,13 @@ def main():
         run(py, RACINE / "pipeline" / "voix.py")
     run(py, MOTEUR / "audio.py", "montage", jour)
     run(py, MOTEUR / "build.py", jour)
+    run("node", MOTEUR / "controle_page.mjs", jour, cwd=RACINE)
     run(py, MOTEUR / "musique.py", jour)
     run(py, MOTEUR / "audio.py", "mix", jour)
     run(py, MOTEUR / "normaliser.py", jour)
     rendu = jour / "renders" / "rendu.mp4"
     rendu.parent.mkdir(exist_ok=True)
-    run("npx", "hyperframes", "render", jour, "--workers", "auto", "--quiet", "--output", rendu, cwd=RACINE)
+    rendre("npx", "hyperframes", "render", jour, "--workers", "auto", "--quiet", "--output", rendu, cwd=RACINE)
     duree = float(lire_json(jour / "film.json")["duration"])
     final = jour / "final.mp4"
     for crf in (19, 22, 25):
