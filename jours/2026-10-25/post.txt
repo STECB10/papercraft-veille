@@ -1,0 +1,7 @@
+Une IA de triage repère bien les patients graves aux urgences, mais son effet sur les patients reste à prouver.
+
+Cette revue systématique avec méta-analyse a regroupé 27 études (2010 à 2025) pour savoir si l'IA aide à repérer les patients graves dès l'arrivée aux urgences. Pour quatre études chez l'adulte, l'AUC regroupée est de 0,874 (IC 95 % : 0,845 à 0,898), avec de fortes différences d'une étude à l'autre. Les auteurs rappellent qu'un bon AUC ne prouve pas un meilleur devenir des patients : peu de validations externes, pas de test en conditions réelles.
+
+Source : Ashour et al., Journal of Medical Internet Research, octobre 2026. https://doi.org/10.2196/93931
+
+#IA #Urgences #Triage #SantéNumérique

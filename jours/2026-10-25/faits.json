@@ -1,0 +1,15 @@
+[
+ {"id": "f1", "valeur": 27, "citation": "leaving 27 studies"},
+ {"id": "f2", "valeur": 2010, "citation": "published between January 1, 2010, and December 31, 2025"},
+ {"id": "f3", "valeur": 2025, "citation": "published between January 1, 2010, and December 31, 2025"},
+ {"id": "f4", "valeur": 2876, "citation": "yielding 2876 records before deduplication"},
+ {"id": "f5", "valeur": 0.874, "citation": "AUC 0.874; 95% CI 0.845-0.898"},
+ {"id": "f6", "valeur": 0.845, "citation": "AUC 0.874; 95% CI 0.845-0.898"},
+ {"id": "f7", "valeur": 0.898, "citation": "AUC 0.874; 95% CI 0.845-0.898"},
+ {"id": "f8", "valeur": 95, "citation": "AUC 0.874; 95% CI 0.845-0.898"},
+ {"id": "f9", "valeur": 94.4, "citation": "I ²=94.4%"},
+ {"id": "f10", "valeur": 0.065, "citation": "AUC differences of 0.097, 0.120, 0.108, and 0.065"},
+ {"id": "f11", "valeur": 0.12, "citation": "AUC differences of 0.097, 0.120, 0.108, and 0.065"},
+ {"id": "f12", "valeur": 10.2196, "citation": "DOI : 10.2196/93931"},
+ {"id": "f13", "valeur": 93931, "citation": "DOI : 10.2196/93931"}
+]

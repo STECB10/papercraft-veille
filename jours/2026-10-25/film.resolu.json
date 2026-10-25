@@ -1,0 +1,316 @@
+{
+ "id": "2026-10-25",
+ "sentences": [
+  {
+   "text": "Aux urgences, qui doit passer en premier, et qui peut attendre ?",
+   "box": "premier,"
+  },
+  {
+   "text": "À l'arrivée, une infirmière évalue chaque patient avec une échelle de gravité.",
+   "box": "gravité."
+  },
+  {
+   "text": "Pourtant, ce tri repose sur peu d'informations, et deux soignants concluent parfois différemment.",
+   "box": "différemment.",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Un tri trop prudent encombre le service, un tri trop confiant fait attendre une urgence.",
+   "box": "urgence.",
+   "peak": "trop confiant"
+  },
+  {
+   "text": "Une IA peut-elle estimer le risque de chaque patient dès son arrivée ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Les chercheurs ont voulu savoir si ces modèles repèrent bien les patients graves.",
+   "box": "graves.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "C'est une revue systématique avec méta-analyse de vingt-sept études, publiées de deux mille dix à deux mille vingt-cinq.",
+   "display": "C'est une revue systématique avec méta-analyse de 27 études, publiées de 2010 à 2025.",
+   "box": "méta-analyse",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Dans ces études, l'IA reçoit le dossier du patient et calcule un risque d'aggravation.",
+   "box": "patient"
+  },
+  {
+   "text": "Pour les trouver, deux relecteurs ont trié séparément deux mille huit cent soixante-seize références.",
+   "display": "Pour les trouver, deux relecteurs ont trié séparément 2 876 références.",
+   "box": "relecteurs",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "L'AUC va de zéro à un : plus elle approche de un, mieux l'IA distingue les cas graves.",
+   "box": "mieux",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Résultat : chez l'adulte aux urgences, l'AUC regroupée de quatre études atteint zéro virgule huit cent soixante-quatorze.",
+   "display": "Résultat : chez l'adulte aux urgences, l'AUC regroupée de quatre études atteint 0,874.",
+   "box": "0,874.",
+   "peak": "regroupée",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "L'intervalle de confiance va de zéro virgule huit cent quarante-cinq à zéro virgule huit cent quatre-vingt-dix-huit.",
+   "display": "L'intervalle de confiance va de 0,845 à 0,898.",
+   "box": "confiance",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Toutefois, les études diffèrent beaucoup entre elles, avec une hétérogénéité de quatre-vingt-quatorze virgule quatre pour cent.",
+   "display": "Toutefois, les études diffèrent beaucoup entre elles, avec une hétérogénéité de 94,4 %.",
+   "box": "hétérogénéité"
+  },
+  {
+   "text": "Dans quatre études comparatives, l'IA devançait aussi le tri de référence, de zéro virgule zéro soixante-cinq à zéro virgule cent vingt d'AUC.",
+   "display": "Dans quatre études comparatives, l'IA devançait aussi le tri de référence, de 0,065 à 0,120 d'AUC.",
+   "box": "devançait",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Mais un bon AUC ne prouve pas que les patients vont mieux.",
+   "mode": "type"
+  },
+  {
+   "text": "En effet, ces modèles sont surtout testés sur des dossiers passés, et rarement validés dans d'autres hôpitaux.",
+   "box": "dossiers"
+  },
+  {
+   "text": "À retenir : l'IA repère bien les cas graves, mais il faut encore la tester en conditions réelles.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 22.27,
+  "stations": [
+   {
+    "type": "hook_number",
+    "y": 0,
+    "cam_at": 0.0,
+    "header": "Urgences · tri à l'arrivée",
+    "number": "1",
+    "unit": "seul tri",
+    "caption": "pour décider qui est vu en premier",
+    "caption_at": 1.42,
+    "people": 5,
+    "lit": 2,
+    "lit_at": 1.78,
+    "footnote": "Échelle de gravité · quelques minutes"
+   },
+   {
+    "type": "gag_waiting",
+    "y": 980,
+    "cam_at": 14.14,
+    "door": "Urgences",
+    "chairs": 6,
+    "occupied": 4
+   },
+   {
+    "type": "steps",
+    "y": 1640,
+    "cam_at": 16.93,
+    "mark_at": 17.7,
+    "title": "Les deux erreurs de tri",
+    "steps": [
+     {
+      "icon": "users",
+      "label": "01 · Trop prudent",
+      "note": "le service s'encombre",
+      "at": 17.7,
+      "note_at": 18.24,
+      "_y": 1810
+     },
+     {
+      "icon": "clock",
+      "label": "02 · Trop confiant",
+      "note": "une urgence attend",
+      "at": 20.28,
+      "note_at": 21.14,
+      "alert": "Urgence retardée",
+      "_y": 2140
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Une IA peut-elle estimer le risque de chaque patient dès son arrivée ?",
+  "italic": "IA",
+  "fold_at": 28.49,
+  "start": 22.27,
+  "end": 29.54
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "y": 0,
+    "cam_at": 28.15,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Critère",
+      "value": "Repérer les cas graves (AUC)",
+      "at": 31.56
+     },
+     {
+      "label": "Type",
+      "value": "Revue systématique + méta-analyse",
+      "at": 33.54
+     },
+     {
+      "label": "Études",
+      "value": "27",
+      "at": 35.68,
+      "accent": true
+     },
+     {
+      "label": "Période",
+      "value": "2010–2025",
+      "at": 36.84
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "y": 1100,
+    "cam_at": 39.92,
+    "input_icon": "doc",
+    "input_label": "Dossier, constantes, notes de triage",
+    "ai_label": "estime le risque d'aggravation",
+    "output_label": "Score de risque",
+    "at": 41.64,
+    "core_at": 43.3,
+    "out_at": 43.84
+   },
+   {
+    "type": "studies_stack",
+    "y": 2280,
+    "cam_at": 45.26,
+    "n_studies": 27,
+    "label": "études",
+    "title": "2 876 références triées",
+    "sub": "2010–2025 · surtout aux urgences",
+    "at": 46.68
+   },
+   {
+    "type": "metric",
+    "y": 3430,
+    "cam_at": 51.22,
+    "title": "Repérer les cas graves · adulte, urgences",
+    "metrics": [
+     {
+      "label": "AUC regroupée",
+      "value": "0,874",
+      "num": 0.874,
+      "max": 1,
+      "note": "IC 95 % : 0,845–0,898",
+      "at": 60.98,
+      "accent": true
+     },
+     {
+      "label": "Écart entre études",
+      "value": "94,4",
+      "num": 94.4,
+      "unit": "%",
+      "note": "hétérogénéité (I²)",
+      "at": 75.22
+     }
+    ]
+   },
+   {
+    "type": "metric",
+    "y": 4480,
+    "cam_at": 78.64,
+    "title": "Gain d'AUC face au tri de référence",
+    "metrics": [
+     {
+      "label": "Gain minimal",
+      "value": "+0,065",
+      "num": 0.065,
+      "max": 1,
+      "at": 81.12
+     },
+     {
+      "label": "Gain maximal",
+      "value": "+0,120",
+      "num": 0.12,
+      "max": 1,
+      "at": 85.36,
+      "accent": true
+     }
+    ],
+    "caption": "4 études comparatives",
+    "caption_at": 79.18
+   },
+   {
+    "type": "typo",
+    "y": 5530,
+    "cam_at": 88.09,
+    "text": "Mais un bon AUC ne prouve pas que les patients vont mieux.",
+    "italic": "mieux.",
+    "sentence": 14
+   },
+   {
+    "type": "key_points",
+    "y": 6210,
+    "cam_at": 91.46,
+    "title": "Ce qui manque encore",
+    "points": [
+     {
+      "text": "Surtout testés sur des dossiers passés",
+      "at": 94.16
+     },
+     {
+      "text": "Rarement validés dans d'autres hôpitaux",
+      "at": 95.64
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "y": 6922,
+    "cam_at": 97.7,
+    "text": "À retenir : l'IA repère bien les cas graves, mais il faut encore la tester en conditions réelles.",
+    "italic": "tester",
+    "sentence": 16
+   }
+  ],
+  "start": 28.439999999999998,
+  "end": 104.57
+ },
+ "end": {
+  "fold_at": 103.52,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 107.3,
+  "button": "Suivre",
+  "button_at": 107.9,
+  "click_at": 108.9,
+  "source": "Ashour et al. · Journal of Medical Internet Research · octobre 2026",
+  "doi": "doi:10.2196/93931",
+  "source_at": 105.53,
+  "start": 103.47,
+  "end": 111.7
+ },
+ "duration": 111.7,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}
