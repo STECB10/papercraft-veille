@@ -190,6 +190,13 @@ def main():
         if zone == "night" and sts and sts[-1].get("type") == "steps" and len(sts[-1]["steps"]) > 4:
             err.append("steps : 4 étapes au plus")
 
+    # textes que le moteur retrouve mot pour mot parmi les phrases dites (sinon « phrase introuvable » au rendu)
+    dites = {s.get("text") for s in sents}
+    for nom, txt in [("paper station typo", st.get("text")) for st in film.get("paper", {}).get("stations", []) if st.get("type") == "typo"] \
+            + [("pivot.text", film.get("pivot", {}).get("text")), ("end.promise", film.get("end", {}).get("promise"))]:
+        if txt not in dites:
+            err.append(f"{nom} : « {txt} » doit reprendre exactement une phrase de sentences (même ponctuation, rien en plus)")
+
     # 5. ancres : résolues sur une voix fictive (un mot par seconde)
     try:
         faux = []

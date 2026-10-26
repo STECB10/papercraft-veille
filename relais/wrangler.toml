@@ -1,0 +1,9 @@
+name = "papercraft-relais"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+REPO = "STECB10/papercraft-veille"
+
+[triggers]
+crons = ["* * * * *"]
