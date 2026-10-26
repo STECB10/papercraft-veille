@@ -34,7 +34,7 @@ REQUIS = {
     "diagnostic_grid": ["total", "sick", "found", "at", "cam_at"], "survival_curves": ["times", "groups", "cam_at"],
     "chat": ["messages", "cam_at"], "image_scan": ["image", "at", "cam_at"],
 }
-SANS_CHIFFRE = {"y", "people", "lit", "chairs", "occupied", "dot_value", "icon", "type", "words_file", "audio", "voice", "sfx", "duration",
+SANS_CHIFFRE = {"y", "people", "lit", "chairs", "occupied", "dot_value", "icon", "type", "words_file", "audio", "voice", "sfx", "duration", "lead",
                 "max", "lines", "null", "log", "from", "image", "modality", "tear"}
 NOMBRE = re.compile(r"\d+(?:[   ]\d{3})*(?:[.,]\d+)?")
 PROMESSE = "Une étude par jour, vérifiée à la source."

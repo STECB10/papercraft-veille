@@ -14,13 +14,15 @@ import shutil
 import subprocess
 import sys
 
+from audio import LEAD
+
 RACINE = pathlib.Path(__file__).resolve().parents[2]
 MOTEUR = RACINE / "serie" / "moteur"
 
 
 def faux_mots(film):
-    """Débit d'environ 2,7 mots par seconde, silences de fin de phrase et pauses voulues (pause_apres)."""
-    mots, t = [], 0.35
+    """Débit d'environ 2,7 mots par seconde, silences de fin de phrase et pauses voulues (pause_apres), après l'entrée muette."""
+    mots, t = [], LEAD + 0.1
     for s in film["sentences"]:
         for w in s["text"].split():
             d = 0.12 + 0.045 * len(w)
@@ -44,7 +46,7 @@ def main():
     film = json.loads(film_path.read_text(encoding="utf-8"))
     mots, duree = faux_mots(film)
     (out / "onsets.json").write_text(json.dumps({"words": mots}, ensure_ascii=False), encoding="utf-8")
-    film.update(duration=duree, words_file="onsets.json", audio="assets/audio/mix.wav")
+    film.update(duration=duree, words_file="onsets.json", audio="assets/audio/mix.wav", lead=LEAD)
     (out / "film.json").write_text(json.dumps(film, ensure_ascii=False, indent=1), encoding="utf-8")
     a = out / "assets" / "audio"
     a.mkdir(parents=True, exist_ok=True)

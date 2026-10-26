@@ -7,6 +7,8 @@
 
 Silences voulus : chaque phrase de film.json peut porter "pause_apres" (secondes ajoutées au milieu du silence qui
 la suit). Usage de la série : 2,5 s pour le moment muet, 1,4 s après la phrase du pivot, 0,3 s avant la promesse.
+Entrée : LEAD secondes de silence avant le premier mot (les lecteurs mangent souvent le tout début d'une vidéo) ;
+film.json["lead"] le dit à build.py, qui y cale aussi les temps écrits en chiffres (0 = la voix commence).
 """
 import json
 import pathlib
@@ -16,6 +18,7 @@ import sys
 HERE = pathlib.Path(__file__).resolve().parent
 SFX_DIR = HERE.parent / "audio" / "sfx"
 TAIL = 3.6
+LEAD = 0.8
 
 
 def norm(w):
@@ -45,7 +48,7 @@ def montage(proj):
             cuts.append((round((end + nxt) / 2, 3), gap))
     cuts.sort()
     bounds = [0.0] + [c for c, _ in cuts] + [raw_len]
-    parts, labels = [], []
+    parts, labels = [f"anullsrc=r=44100:cl=mono,atrim=0:{LEAD:.3f}[lead]"], ["[lead]"]
     for k in range(len(bounds) - 1):
         x0, x1 = bounds[k], bounds[k + 1]
         ch = f"[0]atrim={x0:.3f}:{x1:.3f},asetpts=PTS-STARTPTS"
@@ -59,7 +62,7 @@ def montage(proj):
             labels.append(f"[g{k}]")
 
     def shift(t):
-        return round(t + sum(g for c, g in cuts if t > c), 3)
+        return round(t + LEAD + sum(g for c, g in cuts if t > c), 3)
 
     last_end = shift(words[-1]["end"])
     total = round(last_end + TAIL + 0.05, 1)
@@ -71,6 +74,7 @@ def montage(proj):
     subprocess.run([sys.executable, str(HERE / "onsets.py"), str(a / "voix-montage.wav"), "--transcript", str(a / "voix-montage-mots.json"),
                     "--out", str(proj / "onsets.json")], check=True, capture_output=True)
     film["duration"] = total
+    film["lead"] = LEAD
     film["audio"] = "assets/audio/mix.wav"
     film["words_file"] = "onsets.json"
     (proj / "film.json").write_text(json.dumps(film, ensure_ascii=False, indent=1), encoding="utf-8")

@@ -118,6 +118,7 @@ def ci_of(obj):
 class Clock:
     def __init__(self, film, words):
         self.words = words
+        self.lead = float(film.get("lead", 0) or 0)   # temps écrits en chiffres : comptés depuis la fin de l'entrée muette
         self.sent = []
         i = 0
         for sent in film["sentences"]:
@@ -138,13 +139,13 @@ class Clock:
         if v is None:
             return None
         if isinstance(v, (int, float)):
-            return float(v)
+            return float(v) + self.lead
         s = str(v).strip()
         m = re.match(r"^(.*?)\s*([+-]\s*\d+(?:\.\d+)?)?$", s)
         base, off = m.group(1), m.group(2)
         off = float(off.replace(" ", "")) if off else 0.0
         if re.match(r"^-?\d+(\.\d+)?$", base):
-            return float(base) + off
+            return float(base) + off + self.lead
         end = False
         if base.endswith(".e"):
             base, end = base[:-2], True
@@ -552,14 +553,16 @@ def night_station(st):
     y0 = st["y"]
     h = []
     if t == "hook_number":
-        cap = st.get("caption_at", 2.3)
-        h.append(f'<div class="mono" style="left:70px;top:{y0+52}px;width:640px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:26px;color:var(--ink-dim)" data-a="rise" data-t="0.35">{esc(st["header"])}</div>')
-        h.append(f'<div class="rule" style="left:70px;top:{y0+98}px;width:620px" data-a="wipe" data-t="0.45"></div>')
-        h.append(f'<div class="num" style="left:52px;top:{y0+130}px;font-size:280px" data-a="big" data-t="0.02" data-d="1.0">{esc(st["number"])}<span class="unit">{esc(st["unit"])}</span></div>')
+        # pendant l'entrée muette, l'en-tête s'écrit ; le chiffre tombe avec le premier mot (cam_at)
+        ta = st["cam_at"]
+        cap = st.get("caption_at", ta + 2.3)
+        h.append(f'<div class="mono" style="left:70px;top:{y0+52}px;width:640px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:26px;color:var(--ink-dim)" data-a="rise" data-t="{max(0.15, ta - 0.5):.2f}">{esc(st["header"])}</div>')
+        h.append(f'<div class="rule" style="left:70px;top:{y0+98}px;width:620px" data-a="wipe" data-t="{max(0.25, ta - 0.4):.2f}"></div>')
+        h.append(f'<div class="num" style="left:52px;top:{y0+130}px;font-size:280px" data-a="big" data-t="{ta + 0.02:.2f}" data-d="1.0">{esc(st["number"])}<span class="unit">{esc(st["unit"])}</span></div>')
         h.append(f'<div class="cap" style="left:72px;top:{y0+440}px;width:600px" data-a="rise" data-t="{cap:.2f}">{esc(st["caption"])}</div>')
         for i in range(st["people"]):
             fade = f' data-o="{st["lit_at"]:.2f}"' if i == st["lit"] else ""
-            h.append(person_svg(80 + i * 128, y0 + 570, 170, "var(--ink-faint2)", f'data-a="up" data-t="{0.35 + i*0.09:.2f}"{fade}'))
+            h.append(person_svg(80 + i * 128, y0 + 570, 170, "var(--ink-faint2)", f'data-a="up" data-t="{ta + 0.35 + i*0.09:.2f}"{fade}'))
         lx = 80 + st["lit"] * 128
         h.append(person_svg(lx, y0 + 570, 170, "var(--carbon)", f'data-a="step" data-t="{st["lit_at"]:.2f}"', cls="pers lit"))
         h.append(f'<div class="mono" style="left:72px;top:{y0+776}px;color:var(--ink-dim);font-size:26px" data-a="rise" data-t="{cap+0.6:.2f}">{esc(st["footnote"])}</div>')
@@ -1302,6 +1305,7 @@ def build(project):
     words = [{"w": w["w"], "s": float(w.get("s", w.get("start"))), "e": float(w.get("e", w.get("end")))} for w in words]
     clock = Clock(film, words)
     resolve(film, clock)
+    film["night"]["start"] = 0.0      # la feuille est sur la table dès la première image ; son contenu arrive après l'entrée
     D = float(film["duration"])
 
     def find_sentence(text):
@@ -1463,7 +1467,7 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
     # Bruits de papier pour les gestes de papier (feuille posée, pli, déchirure), un « ping » pour le résultat qui
     # compte, un « pop » pour l'écart ; rien sur chaque élément qui apparaît. [nom, seconde, volume]
     if film.get("sfx", True):
-        sfx = [["impact-bass-1", 0.0, 0.24]]
+        sfx = [["impact-bass-1", night["stations"][0]["cam_at"], 0.24]]
         for st in night["stations"]:
             if st["type"] == "hook_number":
                 sfx.append(["pop", st["lit_at"], 0.18])
