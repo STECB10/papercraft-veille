@@ -8,6 +8,7 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 
 Tu travailles seul, sans humain à qui poser une question. La date est dans la variable d'environnement `DATE_DU_JOUR`
 (dossier `jours/$DATE_DU_JOUR/`). Lis d'abord : `serie/REGLES-CONTENU.md`, `serie/FILM-SCHEMA.md`,
+`serie/frame.md` (la charte visuelle : sections « Choisir la mise en scène » et « Règles de fond »),
 `serie/exemple/film.json` (pilote validé pour le style, mais trop court en contenu) et `serie/exemple/SCRIPT.md`.
 
 ## 1. Choisir
@@ -38,10 +39,13 @@ connecteurs logiques, intro qui raconte, méthode et résultats expliqués pas �
 qui capte, la toute première) → contexte (4 à 5 phrases : la situation, qui est concerné, comment on fait
 aujourd'hui, ce qui coince, ce que fait l'IA testée) → question de
 l'étude → carte d'identité (`id_card`) → ce que fait l'IA (`ai_scan` : ce qui entre, ce que l'IA en fait, ce qui
-sort, chaque bloc apparaît au mot qui le nomme) → méthode puis résultats **adaptés au type d'étude** (tableau « La
-trame s'adapte au type d'étude » de REGLES-CONTENU.md : `two_groups` et `result_dots` pour deux groupes comparés,
-`metric` pour une performance, `studies_stack` pour une méta-analyse ou une revue, `key_points` pour des constats) →
-1 résultat secondaire utile → portée et limite (une phrase `typo`) → phrase à retenir → promesse → « Papercraft. ».
+sort, chaque bloc apparaît au mot qui le nomme ; `modality` selon ce que l'IA lit) → méthode puis résultats **adaptés
+au type d'étude et à ce que dit la voix** (tableaux de `serie/frame.md`, section « Choisir la mise en scène », et de
+REGLES-CONTENU.md : par exemple `population_split` puis `two_groups` et `result_bars` avec `ci` pour un essai,
+`diagnostic_grid` ou `roc_curve` pour une performance, `forest_plot` ou `studies_stack` pour une méta-analyse, `chat`
+pour une IA conversationnelle, `image_scan` quand l'IA lit une image) → 1 résultat secondaire utile → portée et limite
+(une phrase `typo`) → phrase à retenir (une phrase `typo`) → promesse → « Papercraft. ». Dès que la source donne un
+intervalle de confiance pour le résultat principal, il est dans `ci`.
 Le champ `type_etude` de candidats.json donne une première indication ; vérifie-le dans source.txt.
 Français simple, phrases courtes (8 à 14 mots), vouvoiement implicite, aucun anglicisme évitable, jamais « l'IA bat
 les médecins » si l'étude ne le teste pas, jamais un avant/après pour deux groupes tirés au sort, jamais de « deux groupes » inventés pour une étude qui n'en
@@ -49,8 +53,10 @@ compare pas.
 Texte dit : chiffres en lettres (« trente-six pour cent ») ; `display` : chiffres (« 36 % »), et sinon le
 texte dit **mot pour mot, en entier** (le vérificateur refuse tout mot retiré ou reformulé). Sigles lisibles :
 écris « IA », jamais « I.A. ». Choisis des stations qui montrent chaque idée au moment où elle est dite, avec des
-ancres sur les mots (voir FILM-SCHEMA.md). La nuit montre le problème (`hook_number`, un moment muet `gag_clock` ou
-`gag_waiting`, `steps`) ; le papier montre l'étude. Respecte les espacements y.
+ancres sur les mots (voir FILM-SCHEMA.md). La table montre le problème (`hook_number`, un moment muet `gag_clock` ou
+`gag_waiting`, `steps`) ; la feuille montre l'étude, une planche par écran. N'écris pas de `y` : le moteur place les
+planches. N'écris jamais un chiffre dans une planche s'il n'est pas dans la fiche des faits (une courbe de suivi ou un
+forest plot seulement si la source donne chaque valeur).
 
 ## 4. Post : `post.txt`
 

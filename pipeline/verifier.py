@@ -3,7 +3,7 @@
 
 Usage : python3 pipeline/verifier.py        (lit jours/<date>/)  -> code 0 si tout est bon, sinon la liste des erreurs
 Contrôles : fiche de l'étude, citations exactes de faits.json présentes dans source.txt, chaque chiffre affiché ou dit
-présent dans faits.json, structure de film.json (stations, ancres, espacements), longueur, post LinkedIn.
+présent dans faits.json, structure de film.json (planches de la charte serie/frame.md, ancres), longueur, post LinkedIn.
 """
 import copy
 import difflib
@@ -18,21 +18,24 @@ sys.path.insert(0, str(RACINE / "serie" / "moteur"))
 import build  # noqa: E402
 
 NUIT = {"hook_number", "gag_waiting", "gag_clock", "steps"}
-PAPIER = {"population_split", "face_to_face", "result_dots", "typo", "flow_door", "remaining_dots", "id_card", "two_groups", "result_bars", "ai_scan", "studies_stack", "metric", "key_points"}
+PAPIER = {"population_split", "face_to_face", "result_dots", "typo", "flow_door", "remaining_dots", "id_card", "two_groups", "result_bars", "ai_scan", "studies_stack", "metric", "key_points",
+          "result_strips", "forest_plot", "roc_curve", "diagnostic_grid", "survival_curves", "chat", "image_scan"}
 REQUIS = {
     "hook_number": ["header", "number", "unit", "caption", "people", "lit", "lit_at", "footnote", "cam_at"],
     "gag_waiting": ["door", "chairs", "occupied", "cam_at"], "gag_clock": ["label", "cam_at"],
     "steps": ["title", "steps", "cam_at"],
     "population_split": ["total", "total_label", "dot_value", "count_at", "split_at", "groups", "cam_at"],
     "face_to_face": ["card_title", "card_value", "card_note", "label", "at", "cam_at"],
-    "result_dots": ["title", "groups", "diff", "diff_at", "cam_at"], "typo": ["text", "cam_at"],
+    "result_dots": ["title", "groups", "cam_at"], "typo": ["text", "cam_at"],
     "flow_door": ["from_label", "to_label", "at", "cam_at"], "remaining_dots": ["n", "k", "value", "label", "at", "group_label", "cam_at"],
     "id_card": ["rows", "cam_at"], "studies_stack": ["n_studies", "at", "cam_at"], "metric": ["title", "metrics", "cam_at"], "key_points": ["points", "cam_at"],
     "ai_scan": ["input_icon", "input_label", "ai_label", "output_label", "at", "cam_at"], "two_groups": ["groups", "cam_at"], "result_bars": ["title", "groups", "cam_at"],
+    "result_strips": ["title", "groups", "cam_at"], "forest_plot": ["studies", "pooled", "cam_at"], "roc_curve": ["auc", "cam_at"],
+    "diagnostic_grid": ["total", "sick", "found", "at", "cam_at"], "survival_curves": ["times", "groups", "cam_at"],
+    "chat": ["messages", "cam_at"], "image_scan": ["image", "at", "cam_at"],
 }
-HAUT = {"hook_number": 980, "gag_waiting": 660, "gag_clock": 660, "population_split": 1250, "face_to_face": 1100, "result_dots": 1270,
-        "typo": 680, "flow_door": 850, "remaining_dots": 1100, "id_card": 1100, "result_bars": 1150, "ai_scan": 1180, "studies_stack": 1150, "metric": 1050}
-SANS_CHIFFRE = {"y", "people", "lit", "chairs", "occupied", "dot_value", "icon", "type", "words_file", "audio", "voice", "sfx", "duration"}
+SANS_CHIFFRE = {"y", "people", "lit", "chairs", "occupied", "dot_value", "icon", "type", "words_file", "audio", "voice", "sfx", "duration",
+                "max", "lines", "null", "log", "from", "image", "modality", "tear"}
 NOMBRE = re.compile(r"\d+(?:[   ]\d{3})*(?:[.,]\d+)?")
 PROMESSE = "Une étude par jour, vérifiée à la source."
 
@@ -172,21 +175,53 @@ def main():
                     err.append(f"key_points : constat trop long ({len(pt['text'])} caractères, 70 au plus) : {pt['text']}")
             if t == "ai_scan" and st.get("input_icon") not in build.ICONS:
                 err.append(f"ai_scan : input_icon « {st.get('input_icon')} » inconnue (permises : {', '.join(build.ICONS)})")
-            for g in st.get("groups", []) if t in ("population_split", "result_dots", "result_bars", "two_groups") else []:
+            for g in st.get("groups", []) if t in ("population_split", "result_dots", "result_bars", "result_strips", "two_groups", "survival_curves") else []:
                 if len(str(g.get("label", ""))) > 22:
                     err.append(f"{t} : nom de groupe trop long « {g.get('label')} » (22 caractères au plus, ex. « Sans IA » / « Avec IA »)")
-            if k + 1 < len(sts):
-                h = HAUT.get(t, 1100)
-                if t == "steps":
-                    h = 170 + 330 * len(st.get("steps", [])) + 200
-                if t == "key_points":
-                    h = 260 + 226 * len(st.get("points", []))
-                if t == "two_groups":
-                    h = max(1100, 170 + 196 * max(len(g.get("steps", [])) for g in st.get("groups", [{}])) + 300)
-                if sts[k + 1].get("y", 0) < st.get("y", 0) + h:
-                    err.append(f"{zone} : la station {k + 1} doit être à y ≥ {st.get('y', 0) + h} (sinon elle chevauche la précédente)")
+            for g in st.get("groups", []) if t in ("result_bars", "result_strips", "result_dots") else []:
+                if "num" not in g and t != "result_dots":
+                    err.append(f"{t} : chaque groupe a « value » (texte affiché) et « num » (nombre)")
+            if t == "result_dots" and not (st.get("diff") or st.get("ci")):
+                err.append("result_dots : il faut « ci » (écart et intervalle) ou « diff »")
+            ci = st.get("ci")
+            if isinstance(ci, dict):
+                if not all(x in ci for x in ("num", "low", "high")):
+                    err.append(f"{t} : ci doit avoir num, low et high (et value, le texte affiché, ex. « +0,09 »)")
+                elif not float(ci["low"]) <= float(ci["num"]) <= float(ci["high"]):
+                    err.append(f"{t} : ci incohérent (low ≤ num ≤ high)")
+            if t == "ai_scan" and st.get("modality") and st["modality"] not in build.MODALITIES:
+                err.append(f"ai_scan : modality « {st['modality']} » inconnue (permises : {', '.join(build.MODALITIES)})")
+            if t == "image_scan" and st.get("image") not in build.IMAGES:
+                err.append(f"image_scan : image « {st.get('image')} » inconnue (permises : {', '.join(build.IMAGES)})")
+            if t == "roc_curve" and not all(x in st.get("auc", {}) for x in ("value", "num", "at")):
+                err.append("roc_curve : auc doit avoir value, num et at")
+            if t == "diagnostic_grid":
+                tot, sk, fd, fa = (int(st.get(x, 0) or 0) for x in ("total", "sick", "found", "false_alarms"))
+                if not (0 < fd <= sk <= tot <= 100 and fa <= tot - sk):
+                    err.append("diagnostic_grid : il faut found ≤ sick ≤ total ≤ 100 et false_alarms ≤ total − sick (représentation pour 100 patients au besoin)")
+            if t == "survival_curves":
+                for g in st.get("groups", []):
+                    if len(g.get("values", [])) != len(st.get("times", [])):
+                        err.append("survival_curves : chaque groupe a une valeur par temps de « times »")
+            if t == "forest_plot":
+                if not 2 <= len(st.get("studies", [])) <= 12:
+                    err.append("forest_plot : 2 à 12 études (au-delà, studies_stack et l'intervalle de l'effet regroupé)")
+                for s in st.get("studies", []) + ([st["pooled"]] if st.get("pooled") else []):
+                    if not float(s.get("low", 0)) <= float(s.get("value", 0)) <= float(s.get("high", 0)):
+                        err.append(f"forest_plot : « {s.get('label')} » incohérent (low ≤ value ≤ high)")
+            if t == "chat":
+                ms = st.get("messages", [])
+                if not 1 <= len(ms) <= 4:
+                    err.append("chat : 1 à 4 messages")
+                for m in ms:
+                    if m.get("text"):
+                        err.append("chat : pas de texte dans les bulles (jamais de dialogue inventé) : « lines » donne le nombre de lignes muettes")
+                    if m.get("from", "ia") not in ("patient", "ia", "soignant", "question"):
+                        err.append(f"chat : from « {m.get('from')} » inconnu (patient, ia, soignant, question)")
         if zone == "paper" and not any(st.get("type") == "ai_scan" for st in sts):
             err.append("paper : une station ai_scan (ce que fait l'IA) est obligatoire, juste après id_card")
+        if zone == "paper" and sum(1 for s in sts if s.get("type") == "typo") > 2:
+            err.append("paper : 2 planches typo au plus (la nuance, puis la phrase à retenir)")
         if zone == "night" and sts and sts[-1].get("type") == "steps" and len(sts[-1]["steps"]) > 4:
             err.append("steps : 4 étapes au plus")
 

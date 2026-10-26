@@ -93,7 +93,6 @@ fois. Aucun élément n'arrive en simple fondu : il se trace, se lève, se dépl
 | `annoter` | un seul geste : marqueur (boucle, soulignement ou crochet) 0,6 s, puis trait de liaison 0,3 s, puis note mono 0,3 s | l'écart, le mot qui compte, une note de méthode (« 3 modules · 30 min au total ») |
 | `intervalle` | ligne d'échelle tracée, ligne « aucun effet » en pointillé (0, ou 1 pour un rapport), la moustache grandit depuis son centre (0,6 s), le point carbone se pose (0,25 s), les bornes s'impriment | chaque fois que la source donne un intervalle de confiance : il est TOUJOURS montré |
 | `schéma` | blocs de haut en bas reliés par des flèches tracées, chacun au mot qui le nomme | ce que fait l'IA, un parcours de soin |
-| `recul` | on part du détail (un chiffre) et la caméra recule pour montrer la figure entière | rare, une fois par film au plus |
 
 ### Plier (le papier découpé)
 
@@ -110,49 +109,50 @@ fois. Aucun élément n'arrive en simple fondu : il se trace, se lève, se dépl
 
 | Geste | Mouvement | Quand |
 |---|---|---|
-| `onde` | 31 barres d'encre qui vibrent (images clés tirées d'une graine fixe), puis s'aplatissent quand la voix s'arrête | l'IA écoute une voix |
+| `onde` | 40 barres d'encre qui vibrent (images clés tirées d'une graine fixe), puis s'aplatissent quand la voix s'arrête | l'IA écoute une voix |
 | `balayer` | une bande carbone translucide traverse l'image ou le noyau (0,8 à 1,2 s, linéaire), puis des repères d'angle se verrouillent (échelle 1,7 → 1, 0,4 s power3.out) sur ce qui est trouvé | l'IA lit une image |
 | `flux` | des points arrivent d'un peu partout et se rangent en grille (0,8 s power3.out, décalage 0,015 s) | des données qui entrent, une population en points |
-| `jauge` | filet fin + trait de 9 px qui se remplit jusqu'à valeur ÷ maximum, en même temps que le chiffre roule | sensibilité, spécificité, score sur 5, pourcentage |
+| `jauge` | filet fin + trait de 11 px qui se remplit jusqu'à valeur ÷ maximum, en même temps que le chiffre roule | sensibilité, spécificité, score sur 5, pourcentage |
 | `noyau IA` | carte encre : nœuds carbone qui apparaissent, liens tracés, le nœud central pulse trois fois | le moment où l'IA travaille |
 | `conversation` | bulles qui se posent (échelle 0,96 → 1, y 24 px), points de saisie, lignes qui s'écrivent | une IA conversationnelle |
 
 ## Les planches
 
-Chaque planche a un nom de moteur (entre crochets) que `film.json` utilise. « Existe » : le moteur la sait déjà ;
-« à refaire » : elle existe mais doit suivre cette charte ; « nouvelle » : à construire. Les dispositions détaillées
-et le minutage de référence sont dans `serie/reference/planches.html`.
+Chaque planche a un nom de moteur (entre crochets) que `film.json` utilise ; ses champs sont dans
+`serie/FILM-SCHEMA.md`. Le moteur (`serie/moteur/`) les dessine toutes ; la référence animée est
+`serie/reference/planches.html`, et `python3 serie/moteur/essai.py serie/moteur/essai-planches.json <dossier>` les
+rejoue toutes (données fictives) avec une voix simulée.
 
 ### Sur la table (le constat)
 
-| Planche | Ce qu'elle montre | Gestes | État |
-|---|---|---|---|
-| Accroche chiffrée [`hook_number`] | le chiffre qui pose le problème, en Bodoni, et des silhouettes dont une passe au carbone | `barre` ou roulement, `se lever` | à refaire (table) |
-| Moment muet [`gag_clock`, `gag_waiting`] | l'attente, sans voix | horloge, salle d'attente | à refaire (table) |
-| Parcours actuel [`steps`] | 2 à 4 étapes du soin d'aujourd'hui | `schéma`, `annoter` sur l'étape qui coince | à refaire (collisions) |
+| Planche | Ce qu'elle montre | Gestes |
+|---|---|---|
+| Accroche chiffrée [`hook_number`] | le chiffre qui pose le problème, en Bodoni, et des silhouettes dont une passe au carbone | `barre` ou roulement, `se lever` |
+| Moment muet [`gag_clock`, `gag_waiting`] | l'attente, sans voix | horloge, salle d'attente |
+| Parcours actuel [`steps`] | 2 à 4 étapes du soin d'aujourd'hui | `schéma`, `annoter` sur l'étape qui coince |
 
 ### Dans la feuille (l'étude)
 
-| Planche | Ce qu'elle montre | Gestes | État |
-|---|---|---|---|
-| L'étude en bref [`id_card`] | type, lieu, effectif, durée, critère : 4 à 6 lignes qui remplissent la hauteur | lignes tracées, valeurs qui s'impriment | à refaire |
-| Ce que fait l'IA [`ai_scan`] | Fig. : ce qui entre → noyau IA → ce qui sort, le mot clé annoté | `schéma`, `noyau IA`, `annoter`, plus le geste de la modalité (tableau plus bas) | à refaire |
-| Tirage au sort [`population_split`] | l'effectif exact qui se lève puis se partage sous deux languettes | `se lever`, `déplier`, `répartir` | à refaire |
-| Deux groupes [`two_groups`] | ce que vit chaque groupe, côte à côte, marges égales | `schéma` en deux colonnes | à refaire |
-| Résultat en barres [`result_bars`] | Fig. : axe gradué, une barre par groupe, l'écart annoté, puis l'intervalle | `tracer`, `barre`, `annoter`, `intervalle` | à refaire |
-| Résultat en bandes [`result_strips`] | variante papier : bandes qui se déplient d'une fente, étiquette de l'écart suspendue | `déplier`, `suspendre` | nouvelle |
-| Résultat en points [`result_dots`] | une proportion par groupe en points-patients exacts, puis l'intervalle | `flux`, `répartir`, `jauge`, `intervalle` | à refaire |
-| Mesures [`metric`] | 1 à 3 mesures (score sur 5, sensibilité…) en jauges | `jauge` | à refaire |
-| Grille diagnostique [`diagnostic_grid`] | 100 patients (ou l'effectif exact s'il est sous 100) : malades cerclés, repérés en carbone, manqués vides, fausses alertes à l'encre | `flux`, `balayer`, `jauge` | nouvelle |
-| Courbe ROC [`roc_curve`] | la courbe face à la diagonale du hasard, l'aire qui se remplit, l'AUC exacte | `tracer`, roulement | nouvelle |
-| Courbes de suivi [`survival_curves`] | deux courbes en escalier dans le temps, l'écart annoté | `tracer`, `annoter` | nouvelle |
-| Forest plot [`forest_plot`] | une ligne par étude (carré + moustache), puis le losange regroupé qui tombe, « ← favorise le témoin / favorise l'IA → » | `tracer`, `intervalle` | nouvelle |
-| Études regroupées [`studies_stack`] | la pile de feuilles (une par étude, par lots au-delà de 40) | `se lever` en feuilles | à refaire |
-| Conversation [`chat`] | l'échange patient ↔ IA et la note donnée par les évaluateurs | `conversation`, `annoter` | nouvelle |
-| Imagerie [`image_scan`] | l'image redessinée au trait (fond d'œil, radio du thorax, peau, mammographie, coupe de scanner), balayée, les signes verrouillés, le délai de résultat | `tracer`, `balayer` | nouvelle |
-| Constats [`key_points`] | 2 à 4 constats numérotés en Bodoni, qui remplissent la hauteur | lignes qui s'impriment | à refaire |
-| Nuance [`typo`] | la phrase de limite ou la phrase à retenir, seule, en grande typo | `déchirer` avant (une fois), texte qui monte | à refaire |
-| Source | auteur et al., revue en Bodoni italique, mois, année, DOI | s'imprime | existe |
+| Planche | Ce qu'elle montre | Gestes |
+|---|---|---|
+| L'étude en bref [`id_card`] | type, lieu, effectif, durée, critère : 4 à 6 lignes qui remplissent la hauteur | lignes tracées, valeurs qui s'impriment |
+| Ce que fait l'IA [`ai_scan`] | Fig. : ce qui entre → noyau IA → ce qui sort, le mot clé annoté | `schéma`, `noyau IA`, `annoter`, plus le geste de la modalité (tableau plus bas) |
+| Tirage au sort [`population_split`] | l'effectif exact qui se lève puis se partage sous deux languettes | `se lever`, `déplier`, `répartir` |
+| Deux groupes [`two_groups`] | ce que vit chaque groupe, côte à côte, marges égales | `schéma` en deux colonnes |
+| Résultat en barres [`result_bars`] | Fig. : axe gradué, une barre par groupe, l'écart annoté, puis l'intervalle | `tracer`, `barre`, `annoter`, `intervalle` |
+| Résultat en bandes [`result_strips`] | variante papier : bandes qui se déplient d'une fente, étiquette de l'écart suspendue | `déplier`, `suspendre` |
+| Résultat en points [`result_dots`] | une proportion par groupe en points-patients exacts, puis l'intervalle | `flux`, `répartir`, `jauge`, `intervalle` |
+| Mesures [`metric`] | 1 à 3 mesures (score sur 5, sensibilité…) en jauges | `jauge` |
+| Grille diagnostique [`diagnostic_grid`] | 100 patients (ou l'effectif exact s'il est sous 100) : malades cerclés, repérés en carbone, manqués vides, fausses alertes à l'encre | `flux`, `balayer`, `jauge` |
+| Courbe ROC [`roc_curve`] | la courbe face à la diagonale du hasard, l'aire qui se remplit, l'AUC exacte | `tracer`, roulement |
+| Courbes de suivi [`survival_curves`] | deux courbes en escalier dans le temps, l'écart annoté | `tracer`, `annoter` |
+| Forest plot [`forest_plot`] | une ligne par étude (carré + moustache), puis le losange regroupé qui tombe, « ← favorise le témoin / favorise l'IA → » | `tracer`, `intervalle` |
+| Études regroupées [`studies_stack`] | la pile de feuilles (une par étude, par lots au-delà de 40) | `se lever` en feuilles |
+| Conversation [`chat`] | l'échange patient ↔ IA et la note donnée par les évaluateurs | `conversation`, `annoter` |
+| Imagerie [`image_scan`] | l'image redessinée au trait (fond d'œil, radio du thorax, peau, mammographie, coupe de scanner), balayée, les signes verrouillés, le délai de résultat | `tracer`, `balayer` |
+| Constats [`key_points`] | 2 à 4 constats numérotés en Bodoni, qui remplissent la hauteur | lignes qui s'impriment |
+| Nuance [`typo`] | la phrase de limite ou la phrase à retenir, seule, en grande typo | `déchirer` avant (une fois), texte qui monte |
+| Source | auteur et al., revue en Bodoni italique, mois, année, DOI | s'imprime |
 
 ### La fin
 
@@ -227,6 +227,6 @@ résultats, et le geste qui montre ce que l'IA lit.
 
 Le moteur reste celui de la série (`serie/moteur/`) ; ces blocs du registre HyperFrames (`npx hyperframes add <nom>`)
 servent de source pour les gestes : `chart-story` (barres aux valeurs exactes), `vox-annotate` (annoter),
-`svg-stroke-trace` (tracer), `pull-back-reveal` (recul), `count-up` (roulement), `torn-paper-rip` (déchirer),
+`svg-stroke-trace` (tracer), `count-up` (roulement), `torn-paper-rip` (déchirer),
 `paper-collage-reveal`, `focus-rack`, `scan-band` et `yt-circle-pointer` (balayer, repères), `mk-progress-stat`
 (jauge), `oscilloscope-trace` (signal), `ai-chat-reveal` (conversation), `grain-overlay` (grain du papier).

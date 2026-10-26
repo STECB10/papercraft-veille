@@ -49,12 +49,16 @@ montrent. Ne jamais forcer une étude dans une trame qui ne lui va pas (pas de �
 
 | Type d'étude | Méthode à expliquer | Résultats | Stations conseillées |
 |---|---|---|---|
-| Essai tiré au sort, comparaison de groupes | qui reçoit quoi, par qui, quand, dans chaque groupe | valeur de chaque groupe (n/N), écart, IC | `two_groups`, `population_split`, `result_dots` ou `result_bars` |
-| Performance d'un modèle (diagnostic, détection) | sur quelles données l'IA a été entraînée et testée, contre quelle référence | sensibilité, spécificité, AUC, comparaison aux soignants s'il y en a une | `metric`, `result_bars` |
-| Cohorte, prédiction | qui a été suivi, combien de temps, quelles données entrent dans le modèle | ce que le modèle prédit et avec quelle précision, les facteurs qui comptent | `metric`, `key_points`, `result_bars` |
-| Méta-analyse, revue systématique | combien d'études, de patients, sur quelle période, comment elles ont été choisies | le résultat regroupé (avec IC et hétérogénéité si elle est donnée), ce qui varie d'une étude à l'autre | `studies_stack`, `metric` ou `result_bars`, `key_points` |
+| Essai tiré au sort, comparaison de groupes | qui reçoit quoi, par qui, quand, dans chaque groupe | valeur de chaque groupe (n/N), écart, IC | `population_split`, `two_groups`, `result_bars`, `result_strips` ou `result_dots` (avec `ci`), `metric` |
+| Précision diagnostique (détection) | sur quelles données l'IA a été testée, contre quelle référence | sensibilité, spécificité, comparaison aux soignants s'il y en a une | `image_scan` si l'IA lit une image, `diagnostic_grid`, `metric` |
+| Modèle prédictif, cohorte | qui a été suivi, combien de temps, quelles données entrent dans le modèle | AUC, ce que le modèle prédit, les facteurs qui comptent | `roc_curve` (AUC), `survival_curves` (valeurs dans le temps), `metric`, `key_points` |
+| Méta-analyse, revue systématique | combien d'études, de patients, sur quelle période, comment elles ont été choisies | le résultat regroupé (avec IC et hétérogénéité si elle est donnée), ce qui varie d'une étude à l'autre | `studies_stack`, `forest_plot` (effet de chaque étude), `metric`, `key_points` |
 | Revue de littérature | quel champ, combien de travaux, la question posée | les 3 ou 4 grands constats, ce qui manque encore | `studies_stack`, `key_points` |
+| IA conversationnelle (chatbot, patient virtuel) | qui parle à l'IA, de quoi, qui juge les réponses | notes des évaluateurs, comparaison de groupes s'il y en a | `chat`, `metric`, `result_bars` |
 | Autre (qualitative, enquête, économie…) | ce qui a été fait, concrètement | les constats principaux, chiffrés si possible | `key_points`, `result_bars`, `metric` |
+
+La mise en scène détaillée (quelle planche selon ce que dit la voix et ce que lit l'IA, quels gestes) est dans
+`serie/frame.md`, section « Choisir la mise en scène ».
 
 ## L'IA au centre
 

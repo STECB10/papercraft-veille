@@ -1,0 +1,539 @@
+{
+ "id": "2026-10-26",
+ "sentences": [
+  {
+   "text": "Annoncer une maladie grave peut-il s'apprendre avec une IA, en trente minutes ?",
+   "display": "Annoncer une maladie grave peut-il s'apprendre avec une IA, en 30 minutes ?",
+   "box": "IA,"
+  },
+  {
+   "text": "Ces conversations de fin de vie sont difficiles, et les soignants manquent d'occasions de s'y entraîner.",
+   "box": "entraîner.",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Aujourd'hui, la référence est le jeu de rôle avec un acteur, une méthode chère et peu disponible.",
+   "box": "acteur,"
+  },
+  {
+   "text": "Résultat : beaucoup de soignants s'exercent peu.",
+   "box": "peu.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Un patient virtuel peut-il vraiment former des soignants ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "C'est un essai tiré au sort, mené à Rochester aux États-Unis, en deux mille vingt-quatre.",
+   "display": "C'est un essai tiré au sort, mené à Rochester aux États-Unis, en 2024.",
+   "box": "sort,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Cinquante et un étudiants et soignants ont participé, répartis en vingt-cinq et vingt-six.",
+   "display": "51 étudiants et soignants ont participé, répartis en 25 et 26.",
+   "box": "participé,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Le soignant parle à voix haute à SOPHIE, un patient virtuel créé par IA.",
+   "box": "SOPHIE,"
+  },
+  {
+   "text": "L'IA joue une personne atteinte d'un cancer avancé, puis donne un retour immédiat.",
+   "box": "immédiat.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Avant tout, chacun a mené un entretien filmé avec un acteur.",
+   "box": "filmé",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Un groupe a ensuite fait trois modules avec SOPHIE, pendant trente minutes.",
+   "display": "Un groupe a ensuite fait trois modules avec SOPHIE, pendant 30 minutes.",
+   "box": "SOPHIE,"
+  },
+  {
+   "text": "L'autre a lu des documents pendant la même durée.",
+   "box": "lu",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Enfin, chacun a refait un entretien, noté par quatre évaluateurs qui ignoraient le groupe.",
+   "box": "ignoraient",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat principal : le score global de communication, noté entre zéro et un, a progressé de zéro virgule quinze avec SOPHIE.",
+   "display": "Résultat principal : le score global de communication, noté entre 0 et 1, a progressé de 0,15 avec SOPHIE.",
+   "box": "progressé",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Dans le groupe qui a lu, il n'a progressé que de zéro virgule zéro six.",
+   "display": "Dans le groupe qui a lu, il n'a progressé que de 0,06.",
+   "box": "lu,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "L'écart est de zéro virgule zéro neuf, avec un intervalle de confiance de zéro virgule zéro quatre à zéro virgule quatorze.",
+   "display": "L'écart est de 0,09, avec un intervalle de confiance de 0,04 à 0,14.",
+   "box": "L'écart",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Les participants ont aussi déclaré plus de confiance avec SOPHIE : quatre virgule trente et un sur cinq, contre trois virgule quatre-vingt-trois.",
+   "display": "Les participants ont aussi déclaré plus de confiance avec SOPHIE : 4,31 sur 5, contre 3,83.",
+   "box": "confiance",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "L'essai ne montre ni l'effet durable, ni l'effet auprès de vrais patients.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Le groupe témoin a seulement lu, sans comparaison avec un entraînement humain.",
+   "box": "témoin",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Pour s'exercer aux annonces difficiles, un patient virtuel fait mieux que la lecture.",
+   "box": "patient",
+   "pause_apres": 0.3,
+   "peak": "mieux"
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s3.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "y": 0,
+    "cam_at": 0,
+    "header": "Essai randomisé · États-Unis · 2024",
+    "number": "30",
+    "unit": "min",
+    "caption": "d'entraînement avec un patient virtuel IA",
+    "caption_at": "s0:minutes",
+    "people": 5,
+    "lit": 3,
+    "lit_at": "s0:IA",
+    "footnote": "Annoncer une maladie grave"
+   },
+   {
+    "type": "gag_clock",
+    "y": 980,
+    "cam_at": "s1.e+0.3",
+    "label": "peu d'occasions de s'entraîner"
+   },
+   {
+    "type": "steps",
+    "y": 1640,
+    "cam_at": "s2-0.1",
+    "mark_at": "s2:référence",
+    "title": "L'entraînement habituel",
+    "steps": [
+     {
+      "icon": "users",
+      "label": "01 · Un acteur joue le patient",
+      "at": "s2:acteur,-0.1"
+     },
+     {
+      "icon": "calendar",
+      "label": "02 · Cher, peu disponible",
+      "note": "chère",
+      "at": "s2:chère-0.05",
+      "note_at": "s2:chère"
+     },
+     {
+      "icon": "user",
+      "label": "03 · Peu de pratique",
+      "at": "s3-0.05",
+      "alert": "Soignants démunis"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Un patient virtuel peut-il vraiment former des soignants ?",
+  "italic": "former",
+  "fold_at": "s4.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "population_split",
+    "cam_at": "s5-0.25",
+    "total": 51,
+    "total_label": "participants",
+    "dot_value": 1,
+    "count_at": "s5:essai",
+    "count_end": "s5:Rochester",
+    "split_at": "s5:États-Unis",
+    "groups": [
+     {
+      "label": "Lecture seule",
+      "n": 25
+     },
+     {
+      "label": "Avec SOPHIE",
+      "n": 26,
+      "accent_at": "s5:deux"
+     }
+    ]
+   },
+   {
+    "type": "image_scan",
+    "cam_at": "s6-0.25",
+    "image": "fundus",
+    "title": "Ce que l'IA lit",
+    "at": "s6",
+    "scan_at": "s6:étudiants",
+    "lock_at": "s6:participé",
+    "out_at": "s6:répartis",
+    "found_label": "Signes de rétinopathie",
+    "result_label": "Résultat en 1 minute"
+   },
+   {
+    "type": "chat",
+    "cam_at": "s7-0.25",
+    "title": "Conversation de test",
+    "messages": [
+     {
+      "from": "patient",
+      "lines": 2,
+      "at": "s7:parle"
+     },
+     {
+      "from": "ia",
+      "lines": 4,
+      "at": "s7:SOPHIE,"
+     }
+    ],
+    "rating": {
+     "value": "4/5",
+     "label": "note des évaluateurs",
+     "at": "s7:virtuel"
+    }
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s8-0.25",
+    "input_icon": "ecg",
+    "input_label": "Électrocardiogramme de 10 secondes",
+    "ai_label": "repère une fibrillation atriale",
+    "output_label": "Alerte au cardiologue",
+    "at": "s8:L'IA",
+    "core_at": "s8:personne",
+    "out_at": "s8:retour"
+   },
+   {
+    "type": "diagnostic_grid",
+    "cam_at": "s9-0.25",
+    "total": 100,
+    "sick": 20,
+    "found": 18,
+    "false_alarms": 8,
+    "at": "s9",
+    "sick_at": "s9:chacun",
+    "scan_at": "s9:entretien",
+    "sens": {
+     "value": "90",
+     "num": 90,
+     "at": "s9:avec",
+     "label": "Sensibilité · 18 sur 20"
+    },
+    "spec": {
+     "value": "90",
+     "num": 90,
+     "at": "s9:acteur.",
+     "label": "Spécificité · 72 sur 80"
+    }
+   },
+   {
+    "type": "roc_curve",
+    "cam_at": "s10-0.25",
+    "auc": {
+     "value": "0,87",
+     "num": 0.87,
+     "at": "s10:SOPHIE,",
+     "note": "IC 95 % : 0,85 à 0,90"
+    },
+    "curve_at": "s10:modules"
+   },
+   {
+    "type": "survival_curves",
+    "cam_at": "s11-0.25",
+    "title": "Sans réhospitalisation",
+    "times": [
+     0,
+     3,
+     6,
+     9,
+     12,
+     15,
+     18,
+     21,
+     24
+    ],
+    "x_label": "Mois de suivi",
+    "groups": [
+     {
+      "label": "Sans IA",
+      "values": [
+       100,
+       95,
+       90,
+       85,
+       81,
+       78,
+       75,
+       72,
+       70
+      ],
+      "at": "s11:lu"
+     },
+     {
+      "label": "Avec IA",
+      "values": [
+       100,
+       97,
+       95,
+       92,
+       90,
+       88,
+       87,
+       85,
+       84
+      ],
+      "accent": true,
+      "at": "s11:lu"
+     }
+    ],
+    "note": {
+     "text": "À 12 mois : 9 points d'écart",
+     "time": 12,
+     "at": "s11:durée."
+    }
+   },
+   {
+    "type": "forest_plot",
+    "cam_at": "s12-0.25",
+    "title": "Six études, un effet regroupé",
+    "null": 1,
+    "studies": [
+     {
+      "label": "Martin 2021",
+      "value": 0.8,
+      "low": 0.62,
+      "high": 1.03,
+      "weight": 3
+     },
+     {
+      "label": "Okafor 2022",
+      "value": 0.71,
+      "low": 0.5,
+      "high": 1.0,
+      "weight": 2
+     },
+     {
+      "label": "Liu 2022",
+      "value": 0.86,
+      "low": 0.74,
+      "high": 0.99,
+      "weight": 5
+     },
+     {
+      "label": "Garcia 2023",
+      "value": 0.93,
+      "low": 0.7,
+      "high": 1.24,
+      "weight": 2
+     },
+     {
+      "label": "Sato 2024",
+      "value": 0.78,
+      "low": 0.66,
+      "high": 0.92,
+      "weight": 4
+     },
+     {
+      "label": "Novak 2024",
+      "value": 1.05,
+      "low": 0.8,
+      "high": 1.38,
+      "weight": 1
+     }
+    ],
+    "pooled": {
+     "label": "Effet regroupé",
+     "value": 0.84,
+     "low": 0.77,
+     "high": 0.91,
+     "at": "s12:évaluateurs",
+     "text": "RR 0,84 · IC 95 % : 0,77 à 0,91"
+    },
+    "at": "s12:chacun"
+   },
+   {
+    "type": "result_strips",
+    "cam_at": "s13-0.25",
+    "title": "Progrès du score global, de 0 à 1",
+    "groups": [
+     {
+      "label": "Lecture seule",
+      "value": "0,06",
+      "num": 0.06,
+      "at": "s13:global"
+     },
+     {
+      "label": "Avec SOPHIE",
+      "value": "0,15",
+      "num": 0.15,
+      "accent": true,
+      "at": "s13:quinze"
+     }
+    ],
+    "ci": {
+     "value": "+0,09",
+     "num": 0.09,
+     "low": 0.04,
+     "high": 0.14,
+     "at": "s13:SOPHIE."
+    }
+   },
+   {
+    "type": "result_dots",
+    "cam_at": "s14-0.25",
+    "title": "Entretien jugé réussi",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Lecture seule",
+      "n": 25,
+      "k": 12,
+      "value": "48",
+      "num": 48,
+      "at": "s14:groupe"
+     },
+     {
+      "label": "Avec SOPHIE",
+      "n": 26,
+      "k": 20,
+      "value": "76,9",
+      "num": 76.9,
+      "accent": true,
+      "at": "s14:progressé"
+     }
+    ],
+    "diff": "+28,9 points · IC 95 % : 3,1 à 54,7",
+    "diff_at": "s14:six."
+   },
+   {
+    "type": "result_bars",
+    "cam_at": "s15-0.25",
+    "title": "Progrès du score global (de 0 à 1)",
+    "groups": [
+     {
+      "label": "Avec SOPHIE",
+      "value": "0,15",
+      "num": 0.15,
+      "accent": true,
+      "at": "s15:L'écart"
+     },
+     {
+      "label": "Lecture seule",
+      "value": "0,06",
+      "num": 0.06,
+      "at": "s15:est"
+     },
+     {
+      "label": "Acteur",
+      "value": "0,11",
+      "num": 0.11,
+      "at": "s15:zéro"
+     }
+    ],
+    "diff": "+0,09 · IC 95 % : 0,04 à 0,14",
+    "diff_at": "s15:intervalle"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s16-0.25",
+    "title": "Repérer les cas graves",
+    "metrics": [
+     {
+      "label": "AUC regroupée",
+      "value": "0,874",
+      "num": 0.874,
+      "max": 1,
+      "note": "IC 95 % : 0,845–0,898",
+      "at": "s16:participants",
+      "accent": true
+     },
+     {
+      "label": "Confiance",
+      "value": "4,31",
+      "num": 4.31,
+      "max": 5,
+      "unit": "/5",
+      "at": "s16:quatre"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s17-0.25",
+    "text": "L'essai ne montre ni l'effet durable, ni l'effet auprès de vrais patients.",
+    "italic": "vrais"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s18-0.25",
+    "title": "Les limites",
+    "points": [
+     {
+      "text": "Groupe témoin : lecture seule",
+      "at": "s18:groupe"
+     },
+     {
+      "text": "Pas de comparaison avec un acteur humain",
+      "at": "s18:sans"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s19-0.25",
+    "text": "Pour s'exercer aux annonces difficiles, un patient virtuel fait mieux que la lecture.",
+    "italic": "mieux"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s19.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s21",
+  "button": "Suivre",
+  "button_at": "s21+0.6",
+  "click_at": "s21+1.6",
+  "source": "Haut et al. · JMIR Medical Education · octobre 2026",
+  "doi": "doi:10.2196/93034",
+  "source_at": "s20:vérifiée-0.2"
+ }
+}

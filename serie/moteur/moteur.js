@@ -72,7 +72,15 @@
       var IN = {
         rise: [{ opacity: 0, y: 26, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.55, ease: 'power3.out' }],
         big: [{ opacity: 0, scale: 1.3, filter: 'blur(22px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', ease: 'expo.out' }],
-        pop: [{ opacity: 0, scale: 0.55, y: 12 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: 'back.out(1.9)' }],
+        pop: [{ opacity: 0, scale: 0.9, y: 12 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: 'power3.out' }],
+        print: [{ opacity: 0, y: 10, filter: 'blur(3px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.4, ease: 'power2.out' }],
+        up: [{ opacity: 0, scaleY: 0, transformOrigin: '50% 100%' }, { opacity: 1, scaleY: 1, duration: 0.32, ease: 'power2.out' }],
+        hingeT: [{ opacity: 0, rotationX: -90, transformPerspective: 900, transformOrigin: '50% 0%' }, { opacity: 1, rotationX: 0, duration: 0.55, ease: 'power3.out' }],
+        hingeB: [{ opacity: 0, rotationX: -90, transformPerspective: 900, transformOrigin: '50% 100%' }, { opacity: 1, rotationX: 0, duration: 0.75, ease: 'power3.out' }],
+        growc: [{ scaleX: 0, transformOrigin: '50% 50%' }, { scaleX: 1, duration: 0.6, ease: 'power3.out' }],
+        fill: [{ scaleX: 0, transformOrigin: '0% 50%' }, { scaleX: 1, duration: 0.9, ease: 'power2.out' }],
+        lock: [{ opacity: 0, scale: 1.7, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: 0.4, ease: 'power3.out' }],
+        drop: [{ opacity: 0, y: -60, scaleX: 2.2, transformOrigin: '50% 50%' }, { opacity: 1, y: 0, scaleX: 1, duration: 0.55, ease: 'power3.in' }],
         step: [{ opacity: 0, y: 0 }, { opacity: 1, y: -34, duration: 0.6, ease: 'power3.out' }],
         fade: [{ opacity: 0 }, { opacity: 1, duration: 0.5, ease: 'power1.out' }],
         wipe: [{ scaleX: 0, transformOrigin: '0% 50%' }, { scaleX: 1, duration: 0.7, ease: 'power3.inOut' }],
@@ -85,12 +93,15 @@
       q('[data-a]').forEach(function (el) {
         var a = el.getAttribute('data-a'), t = num(el, 'data-t', 0);
         if (a === 'draw') {
+          // trait révélé par son tiret ; le tiret dépasse la longueur (pas de point d'extrémité visible avant le tracé)
+          var dd = num(el, 'data-d', 0.9), stg = num(el, 'data-stg', 0.12), ez = el.getAttribute('data-ease') || 'power2.inOut';
           gsap.set(el, { opacity: 0 });
           tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.1, immediateRender: false }, t);
-          q('path,rect,circle', el).forEach(function (sh, i) {
+          q('path,rect,circle,polyline,line', el).forEach(function (sh, i) {
+            if (!sh.getAttribute('stroke') && !(el.classList.contains('ico'))) return;
             var len = sh.getTotalLength ? sh.getTotalLength() : 600;
-            gsap.set(sh, { strokeDasharray: len, strokeDashoffset: len });
-            tl.fromTo(sh, { strokeDashoffset: len }, { strokeDashoffset: 0, duration: 0.9, ease: 'power2.inOut', immediateRender: false }, t + i * 0.12);
+            gsap.set(sh, { strokeDasharray: len + ' ' + (len + 12), strokeDashoffset: len + 6 });
+            tl.fromTo(sh, { strokeDashoffset: len + 6 }, { strokeDashoffset: 0, duration: dd, ease: ez, immediateRender: false }, t + i * stg);
           });
           return;
         }
@@ -102,6 +113,7 @@
           from.transformOrigin = el.classList.contains('center') || el.classList.contains('wordmark') ? '50% 60%' : '0% 70%';
         }
         if (a === 'pop' || a === 'step') from.transformOrigin = '50% 100%';
+        if (a === 'pop' && el.classList.contains('cipt')) from.transformOrigin = '50% 50%';
         gsap.set(el, from);
         tl.fromTo(el, from, to, t);
         var o = el.getAttribute('data-o');
@@ -113,17 +125,69 @@
     bloc('effets', function () {
       q('[data-fx="count"]').forEach(function (el) {
         var t = num(el, 'data-t', 0), d = num(el, 'data-d', 1), to = num(el, 'data-to', 0), dec = num(el, 'data-dec', 0);
+        var pre = el.getAttribute('data-pre') || '';
         var o = { v: 0 };
-        el.textContent = fr(0, dec);
+        el.textContent = pre + fr(0, dec);
         tl.to(o, { v: to, duration: d, ease: 'power2.out', immediateRender: false,
-          onUpdate: function () { el.textContent = fr(o.v, dec); } }, t);
+          onUpdate: function () { el.textContent = pre + fr(o.v, dec); } }, t);
+      });
+      // silhouettes ou points qui se lèvent, puis rejoignent leur groupe ; le groupe IA passe au carbone
+      q('[data-fx="split"]').forEach(function (el) {
+        var t = num(el, 'data-t', 0), mt = num(el, 'data-mt', -1), ct = num(el, 'data-ct', -1);
+        var dot = el.getAttribute('data-in') === 'dot';
+        var from = dot ? { opacity: 0, scale: 0, transformOrigin: '50% 50%' } : { opacity: 0, scaleY: 0, transformOrigin: '50% 100%' };
+        var to = dot ? { opacity: 1, scale: 1, duration: 0.3, ease: 'power2.out', immediateRender: false } : { opacity: 1, scaleY: 1, duration: 0.32, ease: 'power2.out', immediateRender: false };
+        gsap.set(el, from);
+        tl.fromTo(el, from, to, t);
+        if (mt >= 0) tl.to(el, { x: num(el, 'data-dx', 0), y: num(el, 'data-dy', 0), duration: 0.7, ease: 'power3.inOut', immediateRender: false }, mt);
+        if (ct >= 0) tl.to(el, dot ? { backgroundColor: '#5D68FF', duration: 0.3, immediateRender: false } : { color: '#5D68FF', duration: 0.3, immediateRender: false }, ct);
+      });
+      // points qui arrivent d'un peu partout et se rangent (flux)
+      q('[data-fx="flydots"]').forEach(function (svg) {
+        var t = num(svg, 'data-t', 0);
+        q('circle', svg).forEach(function (c) {
+          var from = { x: num(c, 'data-fx0', 0), y: num(c, 'data-fy0', 0), opacity: 0 };
+          gsap.set(c, from);
+          tl.fromTo(c, from, { x: 0, y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', immediateRender: false }, t + num(c, 'data-ap', 0));
+        });
+      });
+      // bande de balayage (horizontale ou verticale) qui traverse son cadre une fois
+      q('[data-fx="band"]').forEach(function (el) {
+        var t = num(el, 'data-t', 0), d = num(el, 'data-d', 1);
+        var from = { opacity: 0 }, to = { duration: d, ease: 'none', immediateRender: false };
+        if (el.hasAttribute('data-y0')) { from.y = num(el, 'data-y0', 0); to.y = num(el, 'data-y1', 0); }
+        if (el.hasAttribute('data-x0')) { from.x = num(el, 'data-x0', 0); to.x = num(el, 'data-x1', 0); }
+        gsap.set(el, from);
+        tl.fromTo(el, from, to, t);
+        tl.to(el, { opacity: 1, duration: 0.12, ease: 'none', immediateRender: false }, t);
+        tl.to(el, { opacity: 0, duration: 0.2, ease: 'none', immediateRender: false }, t + d - 0.2);
+      });
+      // onde de la voix : chaque barre suit des images clés tirées d'une graine fixe (build.py)
+      q('[data-fx="wave"]').forEach(function (el) {
+        var t = num(el, 'data-t', 0), d = num(el, 'data-d', 1), ap = num(el, 'data-ap', t - 0.3);
+        var ks = (el.getAttribute('data-k') || '0.1').split(',').map(parseFloat);
+        gsap.set(el, { opacity: 0, scaleY: 0.1 });
+        tl.to(el, { opacity: 1, duration: 0.2, immediateRender: false }, ap);
+        tl.to(el, { keyframes: { scaleY: ks }, duration: d, ease: 'none', immediateRender: false }, t);
+      });
+      q('[data-fx="pulse"]').forEach(function (el) {
+        tl.to(el, { scale: 1.35, duration: 0.3, ease: 'sine.inOut', yoyo: true, repeat: 5, immediateRender: false }, num(el, 'data-fxt', 0));
+      });
+      q('[data-fx="typing"]').forEach(function (el) {
+        tl.to(el, { y: -8, duration: 0.18, ease: 'sine.inOut', yoyo: true, repeat: 3, immediateRender: false }, num(el, 'data-t', 0));
+      });
+      // changements d'état (grille diagnostique) : [[t, fond, ombre intérieure], ...]
+      q('[data-tint]').forEach(function (el) {
+        JSON.parse(el.getAttribute('data-tint') || '[]').forEach(function (k) {
+          tl.to(el, { backgroundColor: k[1], boxShadow: k[2], duration: 0.2, ease: 'none', immediateRender: false }, k[0]);
+        });
       });
       q('[data-fx="popdots"]').forEach(function (svg) {
         var t = num(svg, 'data-t', 0), sp = num(svg, 'data-split', t + 2), acc = num(svg, 'data-acc', sp + 1);
         q('circle', svg).forEach(function (c) {
           var ap = num(c, 'data-ap', 0), dl = num(c, 'data-dl', 0);
           gsap.set(c, { opacity: 0, scale: 0, transformOrigin: '50% 50%' });
-          tl.fromTo(c, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(2)', immediateRender: false }, t + ap);
+          tl.fromTo(c, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.35, ease: 'power2.out', immediateRender: false }, t + ap);
           tl.to(c, { x: num(c, 'data-dx', 0), y: num(c, 'data-dy', 0), duration: 0.9, ease: 'power3.inOut', immediateRender: false }, sp + dl);
           if (c.classList.contains('pdR')) tl.to(c, { fill: '#5D68FF', fillOpacity: 1, duration: 0.35, ease: 'none', immediateRender: false }, acc + dl * 0.7);
         });
@@ -132,7 +196,7 @@
         var t = num(svg, 'data-t', 0), d = num(svg, 'data-d', 1), cs = q('circle', svg), n = cs.length;
         cs.forEach(function (c, i) {
           gsap.set(c, { opacity: 0, scale: 0.2, transformOrigin: '50% 50%' });
-          tl.fromTo(c, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.25, ease: 'back.out(2)', immediateRender: false },
+          tl.fromTo(c, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.25, ease: 'power2.out', immediateRender: false },
             t + (n > 1 ? i / (n - 1) * d * 0.85 : 0));
         });
       });
@@ -191,10 +255,26 @@
       var p0 = F.paper[0], p1 = F.paper[1];
       gsap.set('#pworld', { y: F.pcam[0][1] });
       for (var j = 1; j < F.pcam.length; j++) {
-        tl.to('#pworld', { y: F.pcam[j][1], duration: 1.0, ease: 'power3.inOut', immediateRender: false }, F.pcam[j][0]);
+        if (F.pcam[j][2] === 'set') tl.set('#pworld', { y: F.pcam[j][1] }, F.pcam[j][0] - 0.02);
+        else tl.to('#pworld', { y: F.pcam[j][1], duration: 1.0, ease: 'power3.inOut', immediateRender: false }, F.pcam[j][0]);
       }
-      gsap.set('#pcam', { y: 0, scale: 1.0, transformOrigin: '50% 40%' });
-      tl.to('#pcam', { y: -36, scale: 1.025, duration: p1 - p0, ease: 'none', immediateRender: false }, p0);
+      gsap.set('#pcam', { y: 0, scale: 1.0, transformOrigin: '50% 50%' });
+      tl.to('#pcam', { y: -10, scale: 1.015, duration: p1 - p0, ease: 'none', immediateRender: false }, p0);
+    });
+
+    // ---------------------------------------------------------------- déchirure : la planche se déchire et révèle le verso (la nuance)
+    bloc('déchirure', function () {
+      var T = F.tear;
+      if (!T) return;
+      var a = T.at;
+      gsap.set(['#tearT', '#tearB', '#verso'], { autoAlpha: 0 });
+      tl.set(['#tearT', '#tearB', '#verso'], { autoAlpha: 1 }, a);
+      tl.fromTo('#tearT', { y: 0, rotation: 0, transformOrigin: '0% 100%' }, { y: -10, rotation: -0.8, duration: 0.25, ease: 'power1.out', immediateRender: false }, a);
+      tl.to('#tearT', { y: -1000, rotation: -9, duration: 0.8, ease: 'power3.in', immediateRender: false }, a + 0.25);
+      tl.fromTo('#tearB', { y: 0, rotation: 0, transformOrigin: '100% 0%' }, { y: 6, rotation: 0.5, duration: 0.25, ease: 'power1.out', immediateRender: false }, a);
+      tl.to('#tearB', { y: 1100, rotation: 6, duration: 0.85, ease: 'power3.in', immediateRender: false }, a + 0.25);
+      tl.set(['#tearT', '#tearB'], { autoAlpha: 0 }, a + 1.15);
+      if (T.out) tl.to('#verso', { y: -1350, duration: 1.0, ease: 'power3.inOut', immediateRender: false }, T.out);
     });
 
     // ---------------------------------------------------------------- fin : le papier se replie, la nuit revient, la promesse, le logo, le clic
