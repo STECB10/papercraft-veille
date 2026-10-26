@@ -22,7 +22,7 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        cas: ["2026-10-26"]
+        cas: ["2026-10-26", "statique:2026-10-24"]
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -38,11 +38,11 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: "22", cache: npm }
       - name: Outils
-        timeout-minutes: 10
+        timeout-minutes: 15
         run: |
-          # un miroir apt muet a déjà figé cette étape 25 min : délais courts, et chaque commande dit quand elle commence
-          APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
-          echo "apt…"; sudo timeout 300 apt-get $APT update -qq && sudo timeout 300 apt-get $APT install -y -qq ffmpeg > /dev/null
+          # « statique » : teste le ffmpeg de secours (celui qu'on prend quand apt ne répond pas)
+          if [[ "${{ matrix.cas }}" == statique:* ]]; then export FFMPEG_STATIQUE=1; fi
+          echo "ffmpeg…"; bash pipeline/installer-ffmpeg.sh
           echo "npm…"; timeout 300 npm ci --no-audit --no-fund
           echo "navigateur…"; timeout 300 npx hyperframes browser ensure
           CAS="${{ matrix.cas }}"
@@ -98,7 +98,8 @@ jobs:
           f = json.load(open(jour / "film.json"))
           cas = "${{ matrix.cas }}"
           quoi = {"bot:": "film réécrit par Claude avec la nouvelle charte",
-                  "neuf:": "étude toute nouvelle, écrite par Claude avec la nouvelle charte"}.get(cas[:cas.find(":") + 1], "ancienne étude, nouveau moteur")
+                  "neuf:": "étude toute nouvelle, écrite par Claude avec la nouvelle charte",
+                  "statique:": "ancienne étude, ffmpeg de secours (test de l'installation)"}.get(cas[:cas.find(":") + 1], "ancienne étude, nouveau moteur")
           planches = ", ".join(s["type"] for s in f["paper"]["stations"])
           titre = json.load(open(jour / "etude.json")).get("titre", "") if (jour / "etude.json").exists() else ""
           cap = (f"Essai DA v2 · {d} · {quoi}\n{titre[:200]}\nPlanches : {planches}\n"
