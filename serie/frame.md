@@ -1,33 +1,34 @@
 ---
-version: 1
-name: "Papercraft.AI · Une étude par jour : frame de la série"
+version: 2
+name: "Papercraft.AI · Une étude par jour : charte de la série"
 description: >
-  Frame spec commun à toutes les vidéos quotidiennes de la page LinkedIn Papercraft.AI : une étude IA & santé expliquée
-  en 45 à 60 s, en français, en 4:5. Direction retenue sur le pilote : « La feuille » (chaque étude est une feuille de
-  papier, l'article lui-même) avec les « points-patients » pour chaque chiffre. Deux mondes : le CONSTAT se joue sur la
-  feuille posée dans la nuit ; après le PIVOT (un pli qui balaie l'écran), L'ÉTUDE et ses résultats se jouent dans le
-  monde papier ; la carte de fin revient à la nuit et replie la feuille en logo. Un seul accent, le carbone #5D68FF,
-  réservé à la boîte du mot-clé de chaque sous-titre, aux 3 ou 4 traits de pic et au groupe « IA » des résultats.
-  Chaque projet quotidien copie ce fichier en <projet>/frame.md et n'y ajoute que la géométrie de son monde.
+  Charte commune à toutes les vidéos quotidiennes de la page LinkedIn Papercraft.AI : une étude IA & santé expliquée
+  en 80 à 100 s, en français, en 4:5. Direction validée le 26 octobre 2026 : « La Revue papier ». La rigueur d'une
+  figure de revue scientifique qui se dessine devant le spectateur (piste A), les gestes de papier découpé aux
+  moments forts (piste B : silhouettes qui se lèvent, bandes et étiquettes qui se déplient, déchirure), et le
+  vocabulaire « instrument » pour montrer ce que l'IA lit (piste C : onde, balayage, particules, jauges), le tout
+  sur papier. Plus aucun fond nuit. Un seul accent, le carbone #5D68FF.
+  Références animées : serie/reference/planches.html (chaque planche de cette charte, jouée sur de vrais chiffres).
 unit: 1080×1350 (4:5), 30 i/s
-principle: lisible sans le son · une seule chose à regarder à la fois · un accent, un mécanisme de surlignage · la voix déclenche chaque apparition · chaque chiffre vient de la fiche des faits
+principle: >
+  lisible sans le son · une seule planche à l'écran, qui remplit le cadre · une idée dite = un geste · tout se trace,
+  rien ne se pose en fondu · un accent · chaque chiffre vient de la fiche des faits, avec son intervalle s'il existe
 
 colors:
-  canvas: "#0B0C10"          # nuit : monde du constat + carte de fin (le « night » du site)
-  canvas-2: "#13141A"
-  canvas-3: "#1B1D25"
+  table: "#E3DBCB"           # la table (kraft clair) : le monde du constat, sous la feuille, et la carte de fin
+  table-2: "#D6CCB8"         # ombre portée sur la table
   paper: "#ECE6DA"           # la feuille, et le sol plein cadre du monde de l'étude
-  paper-2: "#DCD4C4"
-  paper-3: "#C7BDA9"         # le coin plié, l'ombre du pli
-  paper-hi: "#F7F3EC"        # texte dans la boîte d'accent
-  paper-dim: "#9A958C"       # texte secondaire sur la nuit, points inactifs
-  ink: "#16171C"             # encre sur papier
-  ink-dim: "#57544E"         # encre secondaire, groupe témoin
-  accent: "#5D68FF"          # LE carbone : boîte du mot-clé, traits de pic, groupe IA
-  accent-soft: "#A3A9FF"     # carbone sur la nuit (petits éléments)
-  accent-deep: "#3A44D6"     # carbone pour du texte sur papier
-  hairline-dark: "rgba(236,230,218,.14)"
-  hairline-light: "rgba(22,23,28,.16)"
+  paper-lift: "#F4EFE6"      # une feuille posée sur une autre (relief), languettes, cartes
+  paper-hi: "#F7F3EC"        # texte dans la boîte d'accent, étiquettes suspendues, bulles
+  paper-2: "#DCD4C4"         # aplat secondaire, hachures du groupe témoin, bulle « patient »
+  paper-3: "#C7BDA9"         # coin plié, verso révélé par la déchirure
+  ink: "#16171C"             # encre : texte, traits, et SEULEMENT de petites surfaces (carte « noyau IA », bulle IA)
+  ink-dim: "#57544E"         # encre secondaire, groupe témoin, étiquettes
+  ink-faint: "rgba(22,23,28,.16)"  # points et silhouettes inactifs, grilles
+  accent: "#5D68FF"          # LE carbone : boîte du mot-clé, groupe IA, barre IA, point de l'écart, balayage
+  accent-deep: "#3A44D6"     # carbone pour du texte et des traits fins sur papier (annotations, « Fig. 3 »)
+  accent-soft: "#A3A9FF"     # carbone sur une petite surface encre uniquement
+  hairline: "rgba(22,23,28,.16)"
 
 # woff2 locaux uniquement (assets/fonts/), jamais d'@import réseau. Toutes SIL OFL (@fontsource).
 fonts:
@@ -37,105 +38,195 @@ fonts:
 
 layout:
   canvas: "1080 × 1350"
-  side-margins: "64 px minimum, égales à gauche et à droite"
-  title-safe: "rien d'important au-dessus de y 70"
+  side-margins: "72 px à gauche et à droite"
+  kicker: "y 66 : étiquette mono de la planche (« Fig. 3 · Progrès du score global »), filet d'encre à y 114 sur toute la largeur utile"
+  title: "y 150 : titre Bodoni de la planche s'il y en a un (une ligne)"
+  stage: "zone utile y 150 à 1060 : la planche l'occupe à 60 % au moins de sa hauteur (jamais une carte en haut et le vide en dessous)"
   subtitle-band: "y 1108 à 1196 : le sous-titre seul, rien d'autre"
-  bottom-safe: "y 1210 à 1350 : aucune information (l'interface LinkedIn mobile s'y superpose) ; seul le décor flou peut y passer"
-  stage: "la scène utile est y 70 à 1090 : c'est là que la caméra cadre chaque sujet"
+  bottom-safe: "y 1210 à 1350 : aucune information (l'interface LinkedIn mobile s'y superpose)"
+  one-plate: "une seule planche dans le cadre : la précédente est entièrement sortie avant que la suivante ne commence (jamais un bout de texte coupé en haut)"
+  no-collision: "aucun élément n'en recouvre un autre au repos : icône à côté de son étiquette, jamais dessus ; 24 px d'air au moins entre deux blocs de texte"
 
 typography:
-  subtitle:   { fontFamily: "Schibsted Grotesk", px: 54, weight: 600, lineHeight: 66, tracking: "-0.015em", note: "la phrase de la voix, centrée en BAS (bande y 1108 à 1196), 52 à 56 px, 32 caractères au plus par morceau (une phrase plus longue se découpe en morceaux qui se remplacent), mot à mot sur ses temps ; ombre légère ; papier sur la nuit, encre sur le papier. Jamais en haut à gauche." }
-  type:       { fontFamily: "Bodoni Moda", px: 72, weight: 400, lineHeight: 1.08, tracking: "-0.03em", note: "SEULEMENT les 2 ou 3 moments typographiques du storyboard (le pivot, la nuance) : la phrase EST l'image, centrée, 72 px au plus, italique Bodoni pour le mot qui porte ; pas de sous-titre en bas pendant ce temps." }
-  numeral:    { fontFamily: "Bodoni Moda", px: 260, weight: 400, lineHeight: 1, tracking: "-0.03em", note: "les chiffres clés (pourcentages, effectifs) ; le signe % à 0,5 em ; virgule décimale française ; chiffres tabulaires pendant le roulement." }
-  numeral-mid: { fontFamily: "Bodoni Moda", px: 110, weight: 400, note: "chiffres au-dessus des barres ou des blocs de points" }
-  label:      { fontFamily: "IBM Plex Mono", px: 17, weight: 400, tracking: "0.14em", upper: true, note: "étiquettes de figure, groupes, semaines (S+1), source" }
-  body:       { fontFamily: "Schibsted Grotesk", px: 26, weight: 500, lineHeight: 1.35, note: "une ligne d'explication imprimée sur la feuille, rare" }
-  italic-note: { fontFamily: "Bodoni Moda", px: 40, style: italic, note: "annotations à la main de la feuille : « plus tard », « des semaines après »" }
-
-components:
-  sheet:
-    look: "feuille A4 (ratio 1:1,414) couleur paper, coin supérieur droit plié (triangle paper-3 de 64 px), pli diagonal du bas-gauche au haut-droit à peine visible (filet sombre 0,15 % + filet clair), ombre 0 60px 140px rgba(0,0,0,.6) sur la nuit. Elle est vue inclinée (rotateX 12 à 22°, rotateZ ±3 à 5°) : jamais de face et plate."
-    content: "tout ce qui est imprimé dessus est à l'encre (ink, ink-dim) : en-tête mono (type d'étude · pays · années), figures au trait, chiffres Bodoni ; le carbone seulement pour ce que la voix désigne."
-  fold (MÉCANISME SIGNATURE n° 1, transition d'acte):
-    motion: "un reflet blanc (barre de 3 px floutée 1,5 px) glisse le long de la diagonale en 0,25 s, puis la moitié de la feuille se rabat (rotation 3D autour de la diagonale, 0,45 s expo.inOut) en emportant la caméra ; le flou de mouvement masque la couture. C'est le pivot de chaque film (nuit → papier) et la fin (papier → logo)."
-    rule: "1 à 3 plis par film, jamais un pli « pour décorer »."
-  patient-dots (MÉCANISME SIGNATURE n° 2, chaque chiffre):
-    look: "un point = un patient ; grille régulière (pas de 22 à 38 px, rayon 7 à 9 px) ; inactifs ink à 20 % sur papier, paper à 28 % sur la nuit ; actifs ink (groupe témoin) ou accent (groupe IA)."
-    motion: "les points arrivent en rafale (0,005 s d'écart), se partagent en deux au tirage au sort, s'allument un par un au rythme du chiffre qui roule, tombent (flou vertical) quand un patient décroche ; ils peuvent se regrouper en barre."
-    rule: "le nombre de points et de points allumés est EXACTEMENT celui de la fiche des faits (85 sur 467, pas « environ »). Au-delà de 600 points, un point = 10 patients, et l'étiquette le dit."
-  silhouettes:
-    look: "personnage plat : tête ronde + corps en pilule (symbole #pers, viewBox 0 0 40 100), sans visage ; encre ou papier, une seule en accent quand la voix la désigne."
-  line-icons:
-    look: "icônes au trait (stroke 3 à 4 px, bouts ronds) : appareil photo, loupe, téléphone, porte, calendrier, fond d'œil… dessinées en SVG inline, une seule couleur ; jamais d'icône dans une pastille ronde, jamais d'emoji."
-  key-word-box (LE mécanisme de surlignage, un par phrase):
-    look: "petit rectangle accent, coins 3 px, qui déborde le mot de 0,14 em de chaque côté ; le mot passe en paper-hi dedans. Jamais une boîte noire."
-    motion: "la boîte se trace depuis la gauche (scaleX 0 → 1, 0,16 s power3.out), 0 à 2 images avant que le mot soit dit."
-    rule: "UNE boîte par phrase, sur le mot nommé [boîte : …] dans le storyboard."
-  peak-stroke (les 3 ou 4 pics du film):
-    look: "trait accent de 6 px, bouts ronds, légèrement montant (-1,2°), qui s'efface en fin de course, SOUS le mot-clé seulement."
-    motion: "se trace depuis la gauche (0,3 à 0,5 s power2.out) pendant que le mot est dit."
-  word-by-word:
-    rule: "chaque mot du sous-titre apparaît SUR son temps, gris (35 %) : fromTo {opacity:0, y:6, blur 4px} → {opacity:1, y:0, blur 0} en 0,14 s, immediateRender:false, puis il passe à pleine couleur en 0,2 s. Avant une couture, le sous-titre sort : opacité 1 → 0 et flou 0 → 6 px en 0,14 s."
-  counter:
-    description: "chiffre Bodoni qui roule jusqu'à sa valeur (chiffres tabulaires, virgule française), ou qui fonce entier depuis la caméra (trop grand et flou, puis se pose). Jamais posé en fondu."
-  bars:
-    description: "barres de figure de revue : groupe témoin hachuré à l'encre (135°, 2 px / 12 px) avec contour ink-dim, groupe IA plein accent ; ligne de base ink 2 px ; étiquettes mono sous les barres ; les deux barres ont des marges égales."
-  source-card:
-    description: "carte imprimée sur la feuille : premier auteur et « et al. », revue en Bodoni italique, mois et année, DOI en mono 15 px, type d'étude (essai randomisé, étude observationnelle, préprint non relu)."
-  end-card:
-    description: "nuit ; la feuille se replie en glyphe Papercraft (le chemin M1.5 1.5H13L18.5 7V24.5H1.5Z + le coin + le pli en accent-soft, trait 1,5) ; « Papercraft.AI » en Bodoni ; la promesse « Une étude par jour, vérifiée à la source. » en type ; UN bouton « Suivre » (pilule paper, texte ink, Schibsted 600) ; le curseur arrive en un geste et clique ; 2 à 3 s de tenue vivante (dérive, grain) avant le noir."
-  cursor:
-    description: "flèche blanche à contour sombre et ombre ; elle arrive en UN mouvement courbe (0,4 à 0,5 s power3.out) et clique directement : pression (scale .85, 0,06 s) + anneau accent qui s'étend et s'efface. Jamais d'hésitation."
-  ground-dark:
-    background: "canvas plein + 1 halo accent doux (14 à 22 %, flou 110 px) derrière l'élément principal + grain 7 %. Couche class=\"clip\" sur toute la durée, jamais sur #root."
-  ground-light:
-    background: "paper plein + un halo accent très doux (8 à 10 %) + le pli diagonal à peine visible + le coin plié en haut à droite du cadre + grain 5 % en multiply. Texte en ink."
+  subtitle:  { fontFamily: "Schibsted Grotesk", px: 54, weight: 600, lineHeight: 66, tracking: "-0.015em", note: "la phrase de la voix, centrée dans la bande du bas, mot à mot, 32 caractères au plus par morceau ; encre sur papier" }
+  title:     { fontFamily: "Bodoni Moda", px: 57, weight: 400, tracking: "-0.02em", note: "titre de planche (« Six études, un effet regroupé »)" }
+  type:      { fontFamily: "Bodoni Moda", px: 72, weight: 400, lineHeight: 1.12, tracking: "-0.025em", note: "la nuance et la phrase à retenir, centrées ; italique carbone pour le mot qui porte ; PAS de sous-titre pendant ce temps (le texte n'est jamais affiché deux fois)" }
+  numeral:   { fontFamily: "Bodoni Moda", px: "140 à 260", weight: 400, tracking: "-0.03em", note: "chiffre clé seul ; virgule décimale française ; % à 0,5 em ; chiffres tabulaires pendant le roulement" }
+  numeral-mid: { fontFamily: "Bodoni Moda", px: "60 à 110", weight: 400, note: "valeurs au-dessus des barres, sensibilité, AUC, valeurs de l'intervalle" }
+  annotation: { fontFamily: "Bodoni Moda", px: "45 à 63", style: italic, color: accent-deep, note: "l'écart annoté (« +0,09 »), « À 12 mois : 9 points d'écart »" }
+  body:      { fontFamily: "Schibsted Grotesk", px: "42 à 48", weight: "500 à 600", lineHeight: 1.3, note: "texte d'un schéma ou d'une carte, rare" }
+  label:     { fontFamily: "IBM Plex Mono", px: "27 (26 minimum)", weight: 400, tracking: "0.14em", upper: true, note: "kicker, axes, groupes, notes d'annotation, source. Rien n'est écrit en dessous de 26 px : sur un téléphone, 26 px font 9 px." }
 
 camera:
-  rig: "#stage (1080×1350, overflow hidden, perspective 1600px) > #drift > #cam (échelle, rotation autour de 540 675) > #world (translation)"
-  world: "la feuille est le monde : 1500 × 2120 px (ratio A4) dans la nuit ; les sujets y sont imprimés de HAUT en BAS, la caméra DESCEND la feuille (le format vertical s'y prête) ; après le pli, la caméra est DANS la feuille (papier plein cadre) et continue de descendre."
-  drift: "dérive lente qui ne s'arrête jamais : 2 à 4 % d'échelle et 12 à 30 px par plan, alternée d'un plan à l'autre ; crans de 0,12 à 0,3 s (expo.inOut) vers le prochain sujet."
-  depth: "trois niveaux : avant-plan flou (bord d'une autre feuille, points géants flous, silhouette floue), sujet net, fond flou (le reste de la feuille au-dessus)."
-
-negative:
-  - "Aucun chiffre, nom, date ou citation qui ne soit pas dans la fiche des faits du SCRIPT.md."
-  - "Pas de « avant / après » pour comparer deux groupes tirés au sort : deux groupes côte à côte, marges égales."
-  - "Pas de deuxième mécanisme de surlignage : la boîte du mot-clé est la SEULE façon de souligner un mot du sous-titre ; le trait marque les 3 ou 4 pics."
-  - "Pas de grande phrase : sous-titre 52 à 56 px, moment typographique 72 px au plus ; pas de mot géant, pas de grosse boîte. Rien d'autre que le sous-titre dans la bande y 1108 à 1196 ; rien d'important sous y 1210."
-  - "Une seule chose à regarder à la fois : la caméra isole le sujet de la phrase."
-  - "Pas d'aller-retour de caméra ; pas d'hésitation du curseur."
-  - "Pas de décor sans sens (barres grises « pour remplir », symboles abstraits, compteurs qui ne disent rien)."
-  - "Pas d'autre teinte que l'accent ; pas de rouge « danger », pas de vert « succès »."
-  - "Pas d'image médicale réelle, de logo d'hôpital, de figure copiée de l'article : tout est redessiné au trait."
-  - "Pas d'Inter, Space Grotesk, Geist, system-ui. Pas d'emoji. Pas d'icône dans une pastille ronde."
-  - "Pas d'easing élastique ou rebondissant ; pas de repeat:-1 ; pas de tween de letterSpacing."
+  rig: "#stage (1080×1350, overflow hidden, perspective 1600px) > #drift > #cam > #world"
+  drift: "le monde respire toujours : échelle 1,035 → 1 sur la durée de la planche (sans arrêt), ou 1 → 1,04 sur une planche de silhouettes"
+  cran: "on passe d'une planche à la suivante par un cran de caméra vers le bas (0,6 s expo.inOut) ; la planche suivante est espacée d'une hauteur de cadre au moins"
+  table: "dans le monde du constat, la table est vue en légère plongée (rotationX 8 à 14°, perspective 900) : la feuille posée dessus a une ombre portée réelle"
+  never: "pas d'aller-retour, pas de zoom décoratif, pas de secousse"
 ---
 
-# Papercraft.AI · Une étude par jour : frame de la série
+# Papercraft.AI · Une étude par jour : charte de la série
 
-**Le monde.** Chaque étude est une feuille de papier : l'article lui-même. Le film commence dans la nuit, sur la
-feuille inclinée, imprimée à l'encre comme une figure de revue. La caméra descend la feuille, d'un sujet imprimé au
-suivant (le terrain, le problème, le parcours actuel, le chiffre de départ). Au **pivot**, un reflet glisse le long de
-la diagonale et la feuille se plie : on traverse le pli et l'on atterrit **dans** la feuille, papier plein cadre, où se
-joue l'étude (la population en points, le tirage au sort, le résultat qui roule, la nuance). La **source** s'imprime en
-bas de la feuille. À la **fin**, retour à la nuit : la feuille se replie en glyphe Papercraft, la promesse, le bouton
-« Suivre ».
+## L'idée
 
-**La lecture.** Tout ce que l'on lit est en Schibsted Grotesk : la phrase de la voix en sous-titre centré en bas, mot
-à mot, avec exactement un mot-clé par phrase dans une petite boîte carbone qui se trace d'abord. Un trait carbone sous
-le mot-clé marque les 3 ou 4 pics. Les chiffres, les moments typographiques et les annotations « à la main » sont en
-Bodoni Moda ; les étiquettes de figure, les groupes et la source en IBM Plex Mono.
+Chaque étude est une feuille de papier : l'article lui-même. Le film commence **sur la table** (kraft clair), où la
+feuille est posée en légère plongée, imprimée à l'encre comme une figure de revue : c'est le **constat** (le
+problème, qui est concerné, comment on fait aujourd'hui). Au **pivot**, la feuille se plie et l'on entre **dans la
+feuille**, papier plein cadre : c'est **l'étude** (carte d'identité, ce que fait l'IA, méthode, résultats). La
+**nuance** arrive par une déchirure qui révèle le verso. La **fin** revient sur la table : la feuille se replie en
+glyphe Papercraft, la promesse, le bouton « Suivre ».
 
-**Les chiffres.** Chaque chiffre est montré deux fois : en Bodoni qui roule, et en points-patients qui s'allument.
-Le nombre de points est exact. Le groupe témoin est à l'encre, le groupe IA en carbone : c'est la seule autre place
-de l'accent.
+Tout est papier : aucune planche n'a de fond nuit. L'encre ne couvre que de petites surfaces (la carte « noyau IA »,
+la bulle de l'IA, une pastille), jamais un fond de scène.
 
-**Images de référence** (pilote) : `pilote-tanzanie/styleframes/png/A1.png` (la feuille dans la nuit, le chiffre qui
-arrive), `A2.png` (la caméra descend le parcours imprimé), `A3.png` (le monde papier, les barres), `C3.png` (les
-points-patients comptés).
+## Les trois familles de gestes
 
-## Géométrie du monde (à remplir par chaque projet)
+Un geste montre une idée **au moment où la voix la dit** (ancre sur le mot qui la nomme). Deux gestes au plus à la
+fois. Aucun élément n'arrive en simple fondu : il se trace, se lève, se déplie ou se dépose.
 
-Chaque `<projet>/frame.md` ajoute ici les coordonnées de ses stations sur la feuille (x, y dans le monde de
-1500 × 2120 px, la caméra cam(x, y, échelle) = point au centre du cadre) et, si le monde est complexe, un
-`reference/feuille.html` exécutable que chaque plan copie à l'identique.
+### Tracer (la figure de revue)
+
+| Geste | Mouvement | Quand |
+|---|---|---|
+| `tracer` | trait révélé par son tiret (`strokeDashoffset`), 0,4 à 0,8 s power2.out ; les axes avant les données | axes, flèches de schéma, courbes, contours d'image |
+| `barre` | `scaleY` 0 → 1 depuis la ligne de base, 0,7 à 0,8 s power3.out ; la valeur roule en même temps jusqu'à son chiffre exact | une valeur par groupe |
+| `annoter` | un seul geste : marqueur (boucle, soulignement ou crochet) 0,6 s, puis trait de liaison 0,3 s, puis note mono 0,3 s | l'écart, le mot qui compte, une note de méthode (« 3 modules · 30 min au total ») |
+| `intervalle` | ligne d'échelle tracée, ligne « aucun effet » en pointillé (0, ou 1 pour un rapport), la moustache grandit depuis son centre (0,6 s), le point carbone se pose (0,25 s), les bornes s'impriment | chaque fois que la source donne un intervalle de confiance : il est TOUJOURS montré |
+| `schéma` | blocs de haut en bas reliés par des flèches tracées, chacun au mot qui le nomme | ce que fait l'IA, un parcours de soin |
+| `recul` | on part du détail (un chiffre) et la caméra recule pour montrer la figure entière | rare, une fois par film au plus |
+
+### Plier (le papier découpé)
+
+| Geste | Mouvement | Quand |
+|---|---|---|
+| `se lever` | silhouettes (tête ronde + corps en pilule) qui se dressent depuis la feuille : `scaleY` 0 → 1 depuis leurs pieds, 0,32 s, décalage 0,02 s | un effectif de personnes (60 au plus ; au-delà, points-patients) |
+| `répartir` | les silhouettes ou les points rejoignent leur groupe (0,7 s power3.inOut, ordre tiré au sort mais fixe), puis le groupe IA passe au carbone une à une | le tirage au sort, une répartition |
+| `déplier` | charnière 3D : `rotationX` −90° → 0 (perspective 520), depuis le bas pour une bande, depuis le haut pour une languette ou une étiquette, 0,5 à 0,8 s power3.out | languettes de groupes, bandes-résultats, étiquette suspendue |
+| `suspendre` | une punaise se pose, la ficelle descend, l'étiquette se déplie et se penche (−6° → −2°) | l'écart et son intervalle, sur une planche « bandes » |
+| `plier` | le pli de la feuille (mécanisme signature) : reflet qui glisse le long de la diagonale 0,25 s, puis la moitié se rabat 0,45 s expo.inOut | le pivot (une fois) et la fin (une fois) |
+| `déchirer` | tension 0,25 s, puis les deux moitiés partent (haut vers le haut, bas vers le bas, 0,8 s power3.in) avec un bord fibreux blanc de 3 px ; révèle le verso paper-3 | la nuance ou la limite (une fois par film au plus) |
+
+### Mesurer (l'instrument, sur papier)
+
+| Geste | Mouvement | Quand |
+|---|---|---|
+| `onde` | 31 barres d'encre qui vibrent (images clés tirées d'une graine fixe), puis s'aplatissent quand la voix s'arrête | l'IA écoute une voix |
+| `balayer` | une bande carbone translucide traverse l'image ou le noyau (0,8 à 1,2 s, linéaire), puis des repères d'angle se verrouillent (échelle 1,7 → 1, 0,4 s power3.out) sur ce qui est trouvé | l'IA lit une image |
+| `flux` | des points arrivent d'un peu partout et se rangent en grille (0,8 s power3.out, décalage 0,015 s) | des données qui entrent, une population en points |
+| `jauge` | filet fin + trait de 9 px qui se remplit jusqu'à valeur ÷ maximum, en même temps que le chiffre roule | sensibilité, spécificité, score sur 5, pourcentage |
+| `noyau IA` | carte encre : nœuds carbone qui apparaissent, liens tracés, le nœud central pulse trois fois | le moment où l'IA travaille |
+| `conversation` | bulles qui se posent (échelle 0,96 → 1, y 24 px), points de saisie, lignes qui s'écrivent | une IA conversationnelle |
+
+## Les planches
+
+Chaque planche a un nom de moteur (entre crochets) que `film.json` utilise. « Existe » : le moteur la sait déjà ;
+« à refaire » : elle existe mais doit suivre cette charte ; « nouvelle » : à construire. Les dispositions détaillées
+et le minutage de référence sont dans `serie/reference/planches.html`.
+
+### Sur la table (le constat)
+
+| Planche | Ce qu'elle montre | Gestes | État |
+|---|---|---|---|
+| Accroche chiffrée [`hook_number`] | le chiffre qui pose le problème, en Bodoni, et des silhouettes dont une passe au carbone | `barre` ou roulement, `se lever` | à refaire (table) |
+| Moment muet [`gag_clock`, `gag_waiting`] | l'attente, sans voix | horloge, salle d'attente | à refaire (table) |
+| Parcours actuel [`steps`] | 2 à 4 étapes du soin d'aujourd'hui | `schéma`, `annoter` sur l'étape qui coince | à refaire (collisions) |
+
+### Dans la feuille (l'étude)
+
+| Planche | Ce qu'elle montre | Gestes | État |
+|---|---|---|---|
+| L'étude en bref [`id_card`] | type, lieu, effectif, durée, critère : 4 à 6 lignes qui remplissent la hauteur | lignes tracées, valeurs qui s'impriment | à refaire |
+| Ce que fait l'IA [`ai_scan`] | Fig. : ce qui entre → noyau IA → ce qui sort, le mot clé annoté | `schéma`, `noyau IA`, `annoter`, plus le geste de la modalité (tableau plus bas) | à refaire |
+| Tirage au sort [`population_split`] | l'effectif exact qui se lève puis se partage sous deux languettes | `se lever`, `déplier`, `répartir` | à refaire |
+| Deux groupes [`two_groups`] | ce que vit chaque groupe, côte à côte, marges égales | `schéma` en deux colonnes | à refaire |
+| Résultat en barres [`result_bars`] | Fig. : axe gradué, une barre par groupe, l'écart annoté, puis l'intervalle | `tracer`, `barre`, `annoter`, `intervalle` | à refaire |
+| Résultat en bandes [`result_strips`] | variante papier : bandes qui se déplient d'une fente, étiquette de l'écart suspendue | `déplier`, `suspendre` | nouvelle |
+| Résultat en points [`result_dots`] | une proportion par groupe en points-patients exacts, puis l'intervalle | `flux`, `répartir`, `jauge`, `intervalle` | à refaire |
+| Mesures [`metric`] | 1 à 3 mesures (score sur 5, sensibilité…) en jauges | `jauge` | à refaire |
+| Grille diagnostique [`diagnostic_grid`] | 100 patients (ou l'effectif exact s'il est sous 100) : malades cerclés, repérés en carbone, manqués vides, fausses alertes à l'encre | `flux`, `balayer`, `jauge` | nouvelle |
+| Courbe ROC [`roc_curve`] | la courbe face à la diagonale du hasard, l'aire qui se remplit, l'AUC exacte | `tracer`, roulement | nouvelle |
+| Courbes de suivi [`survival_curves`] | deux courbes en escalier dans le temps, l'écart annoté | `tracer`, `annoter` | nouvelle |
+| Forest plot [`forest_plot`] | une ligne par étude (carré + moustache), puis le losange regroupé qui tombe, « ← favorise le témoin / favorise l'IA → » | `tracer`, `intervalle` | nouvelle |
+| Études regroupées [`studies_stack`] | la pile de feuilles (une par étude, par lots au-delà de 40) | `se lever` en feuilles | à refaire |
+| Conversation [`chat`] | l'échange patient ↔ IA et la note donnée par les évaluateurs | `conversation`, `annoter` | nouvelle |
+| Imagerie [`image_scan`] | l'image redessinée au trait (fond d'œil, radio du thorax, peau, mammographie, coupe de scanner), balayée, les signes verrouillés, le délai de résultat | `tracer`, `balayer` | nouvelle |
+| Constats [`key_points`] | 2 à 4 constats numérotés en Bodoni, qui remplissent la hauteur | lignes qui s'impriment | à refaire |
+| Nuance [`typo`] | la phrase de limite ou la phrase à retenir, seule, en grande typo | `déchirer` avant (une fois), texte qui monte | à refaire |
+| Source | auteur et al., revue en Bodoni italique, mois, année, DOI | s'imprime | existe |
+
+### La fin
+
+Retour sur la table. La feuille se replie en glyphe Papercraft (le chemin M1.5 1.5H13L18.5 7V24.5H1.5Z, le coin et le
+pli en carbone), « Papercraft.AI » en Bodoni, la promesse « Une étude par jour, vérifiée à la source. » en type, un
+bouton « Suivre » (pilule encre, texte paper-hi) que le curseur clique en un seul geste, 2 à 3 s de tenue vivante.
+
+## Choisir la mise en scène
+
+Le récit est toujours le même (accroche → contexte → question → l'étude en bref → ce que fait l'IA → méthode →
+résultats → portée et limite → phrase à retenir → promesse). Ce qui change, ce sont les planches de la méthode et des
+résultats, et le geste qui montre ce que l'IA lit.
+
+### Selon le type d'étude
+
+| Type d'étude | Méthode | Résultats |
+|---|---|---|
+| Essai tiré au sort | Tirage au sort, Deux groupes | Résultat en barres (valeur continue) ou en points (proportion), Intervalle, Mesures pour un résultat secondaire |
+| Précision diagnostique | Ce que fait l'IA (avec la référence comparée) | Grille diagnostique, Mesures (sensibilité, spécificité) |
+| Modèle prédictif | Ce que fait l'IA (les données qui entrent) | Courbe ROC si une AUC est donnée, Mesures, Constats (facteurs qui comptent) |
+| Cohorte, survie | Parcours, L'étude en bref (durée de suivi) | Courbes de suivi si la source donne des valeurs dans le temps, sinon Intervalle sur le rapport de risque |
+| Méta-analyse | Études regroupées | Forest plot si la source donne l'effet de chaque étude, sinon Intervalle sur l'effet regroupé ; Constats |
+| Revue de littérature | Études regroupées | Constats |
+| IA conversationnelle | Conversation | Mesures (notes des évaluateurs), Résultat en barres si deux groupes |
+| Qualitative, enquête | L'étude en bref | Constats, Mesures |
+
+### Selon ce que la voix dit ou montre
+
+| La voix dit… | On montre… |
+|---|---|
+| un nombre de personnes | autant de silhouettes qui se lèvent (60 au plus), sinon autant de points ; au-delà de 600, 1 point = 10 patients et l'étiquette le dit |
+| qu'on a tiré au sort | `répartir` sous deux languettes nommées comme les groupes |
+| une valeur pour chaque groupe | une barre (ou une bande) par groupe, la valeur qui roule |
+| un écart | `annoter` l'écart sur la figure |
+| un intervalle de confiance | `intervalle`, avec la ligne « aucun effet » |
+| une sensibilité, une spécificité | la grille diagnostique ou une jauge |
+| une AUC | la courbe ROC |
+| une durée, une attente | l'horloge ou le calendrier sur la table |
+| une étape du soin | une ligne du parcours, au mot qui la nomme |
+| une limite | la nuance, une fois précédée de la déchirure |
+| le mot le plus important de la phrase | la boîte carbone du sous-titre, une par phrase |
+
+### Selon ce que l'IA lit (planche « Ce que fait l'IA »)
+
+| L'IA lit… | Geste d'entrée | Dessin |
+|---|---|---|
+| une image (photo, radio, scanner, peau) | `balayer` puis repères verrouillés | l'image redessinée au trait, jamais une image réelle |
+| une voix | `onde` | micro au trait |
+| un texte, une question | `conversation` | bulles, lignes qui s'écrivent |
+| un signal (ECG, capteur, montre) | tracé d'oscilloscope qui défile | grille fine, tracé à l'encre |
+| un dossier, des données | lignes de tableau qui défilent, les variables utiles surlignées | tableau au trait |
+
+## Règles de fond (elles ne changent pas)
+
+- Aucun chiffre, nom, date ou citation qui ne soit pas dans la fiche des faits. Les effectifs de points et de
+  silhouettes sont exacts.
+- Une forme dessinée sans donnée (une courbe ROC tracée à partir de la seule AUC, une image redessinée) porte la
+  mention mono « schéma » ; jamais de courbe inventée présentée comme celle de l'article.
+- Dans une conversation, les bulles ne contiennent que des phrases citées par la source (traduites et signalées
+  comme telles) ou des lignes muettes ; jamais un dialogue inventé.
+- Pas de « avant / après » pour deux groupes tirés au sort : deux groupes côte à côte, marges égales.
+- Le groupe témoin est à l'encre (hachures pour une barre), le groupe IA en carbone. Pas d'autre teinte : pas de rouge
+  « danger », pas de vert « succès ».
+- La boîte du mot-clé est la seule façon de surligner un mot du sous-titre ; les annotations au marqueur sont sur la
+  figure, jamais dans le sous-titre.
+- Pas d'Inter, Space Grotesk, Geist, system-ui. Pas d'emoji. Pas d'icône dans une pastille ronde. Pas d'image
+  médicale réelle, de logo d'hôpital ni de figure copiée de l'article : tout est redessiné au trait.
+- Pas d'easing élastique ni rebondissant, pas de `repeat: -1`, pas de tween de `letterSpacing`. Tout est piloté par
+  la timeline (rejouable à n'importe quelle image) : les tirages « au hasard » viennent d'une graine fixe.
+
+## Blocs HyperFrames dont s'inspirer
+
+Le moteur reste celui de la série (`serie/moteur/`) ; ces blocs du registre HyperFrames (`npx hyperframes add <nom>`)
+servent de source pour les gestes : `chart-story` (barres aux valeurs exactes), `vox-annotate` (annoter),
+`svg-stroke-trace` (tracer), `pull-back-reveal` (recul), `count-up` (roulement), `torn-paper-rip` (déchirer),
+`paper-collage-reveal`, `focus-rack`, `scan-band` et `yt-circle-pointer` (balayer, repères), `mk-progress-stat`
+(jauge), `oscilloscope-trace` (signal), `ai-chat-reveal` (conversation), `grain-overlay` (grain du papier).

@@ -13,4 +13,5 @@ Secrets (Settings → Secrets and variables → Actions) : `CLAUDE_CODE_OAUTH_TO
 Variable facultative : `PUBLICATION_AUTO` = `oui` pour publier sans validation.
 
 Règles de contenu : `serie/REGLES-CONTENU.md`. Format de l'animation : `serie/FILM-SCHEMA.md`.
+Charte visuelle : `serie/frame.md` ; ses planches jouées en animation : `serie/reference/planches.html`.
 Méthode et moteur dérivés de `motion-design-claude-code` (MIT, Colin Blain). Effets sonores : Pixabay Content License.
