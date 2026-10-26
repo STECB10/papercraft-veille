@@ -1,0 +1,82 @@
+[
+ {
+  "id": "f1",
+  "valeur": 2024,
+  "citation": "from June to December 2024"
+ },
+ {
+  "id": "f2",
+  "valeur": 51,
+  "citation": "We enrolled 51 participants"
+ },
+ {
+  "id": "f3",
+  "valeur": 25,
+  "citation": "Characteristics | Control (N=25) | SOPHIE (N=26) | Total (N=51)"
+ },
+ {
+  "id": "f4",
+  "valeur": 26,
+  "citation": "Characteristics | Control (N=25) | SOPHIE (N=26) | Total (N=51)"
+ },
+ {
+  "id": "f5",
+  "valeur": 30,
+  "citation": "for 30 minutes, combining dialogue"
+ },
+ {
+  "id": "f6",
+  "valeur": 0.06,
+  "citation": "overall score (control Δ=0.06; SOPHIE Δ=0.15)"
+ },
+ {
+  "id": "f7",
+  "valeur": 0.15,
+  "citation": "overall score (control Δ=0.06; SOPHIE Δ=0.15)"
+ },
+ {
+  "id": "f8",
+  "valeur": 9,
+  "citation": "overall communication score (β=.09, 95% CI .04-.14; P =.001)"
+ },
+ {
+  "id": "f9",
+  "valeur": 4,
+  "citation": "overall communication score (β=.09, 95% CI .04-.14; P =.001)"
+ },
+ {
+  "id": "f10",
+  "valeur": 14,
+  "citation": "overall communication score (β=.09, 95% CI .04-.14; P =.001)"
+ },
+ {
+  "id": "f11",
+  "valeur": 95,
+  "citation": "overall communication score (β=.09, 95% CI .04-.14; P =.001)"
+ },
+ {
+  "id": "f12",
+  "valeur": 0.09,
+  "calcul": "f8/100"
+ },
+ {
+  "id": "f13",
+  "valeur": 0.04,
+  "calcul": "f9/100"
+ },
+ {
+  "id": "f14",
+  "valeur": 0.14,
+  "calcul": "f10/100"
+ },
+ {
+  "id": "f15",
+  "valeur": 4.31,
+  "citation": "mean score of 4.31 vs 3.83 on a 5-point Likert scale"
+ },
+ {
+  "id": "f16",
+  "valeur": 3.83,
+  "citation": "mean score of 4.31 vs 3.83 on a 5-point Likert scale"
+ }
+]

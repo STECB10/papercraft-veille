@@ -1,0 +1,131 @@
+[
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "n = 5273",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42904771",
+  "pmid": "42904771",
+  "pmcid": "PMC13685576",
+  "doi": "10.1002/advs.76577",
+  "titre": "Multitask Deep Learning Model for Predicting Lymph Node Metastasis and Disease-Free Survival From Cytology Images in Bladder Cancer: A Multicenter Study With Pan-Cytology Validation.",
+  "revue": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "date": "2026-10-21",
+  "auteurs": "Hong G, Jiang F, Xie Y, Huang X, Shen R, Wang Y, Zhu M, Wang H, Yang H, Nie Y, Lin Z, Chen R, Ouyang N, Lin T, Wu S.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "type_etude": "performance diagnostique",
+  "resume": "Accurate prediction of lymph node metastasis (LNM) and survival outcomes is crucial for personalized treatment in bladder cancer, yet remains clinically challenging. This study aimed to develop a Cytology-based multitask predictive Network (CytoNet) to simultaneously predict LNM and disease-free survival (DFS) in bladder cancer, and to evaluate its generalizability in cervical and thyroid cancers. This study included a multicenter cohort of 5273 patients, with bladder cancer (n = 1134), cervical cancer (n = 598), and thyroid cancer (n = 3541). CytoNet was constructed through a three-stage pipeline comprising self-supervised pretraining, supervised fine-tuning, and multitask prediction. In bladder cancer, CytoNet achieved an area under the curve (AUC) of 0.831-0.881 for LNM prediction and a C index of 0.680-0.710 for DFS prediction across all cohorts, outperforming single-task models and standard radiological assessments. In cervical cancer, CytoNet demonstrated robust performance for both LNM prediction (AUC 0.847-0.862) and DFS prediction (C index 0.690-0.709), while in thyroid cancer, it achieved an AUC of 0.819-0.855 for LNM prediction. In conclusion, CytoNet represents a reliable tool for predicting LNM and prognosis from cytopathology images across multiple cancer types, showing potential as a valuable adjunct to current clinical decision-making. Further prospective validation is warranted to assess its clinical utility."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "multicentrique"
+  ],
+  "id": "MED:42863380",
+  "pmid": "42863380",
+  "pmcid": null,
+  "doi": "10.1016/j.jsurg.2026.104210",
+  "titre": "Expanded Longitudinal Validation of Adaptive Learning Stability in AI-Assisted Neurosurgical Residency Training.",
+  "revue": "Journal of surgical education",
+  "date": "2026-10-12",
+  "auteurs": "Mustafayev B, Mustafayeva A, Bakhtiyarov A, Nikatov K, Satylkhan B, Mustafayev A.",
+  "types": "validation study randomized controlled trial journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "Objective To evaluate the longitudinal stability, reproducibility, and robustness of Adaptive Learning Stability (ALS) within an expanded AI-assisted neurosurgical residency cohort during a 12-month observation cycle. Design This was a prospective controlled educational study. Residents completed 4 consecutive quarterly checkpoints integrating cognitive, technical, and decision-making assessments over 12 months. The RCKaS-AI framework incorporated predictive analytics, individualized adaptive remediation, and mentor-validated feedback pathways. Primary analysis evaluated longitudinal entrustment trajectory stability across checkpoints. Secondary analyses included inter-resident variance dynamics, remediation frequency, faculty workload, and predictive agreement between forecasted and observed competency progression. Setting Two accredited neurosurgical residency programs in Kazakhstan, from January 2025 to January 2026. Participants Sixty-four neurosurgical residents randomized into standard RCKaS (n = 32) and AI-enhanced RCKaS-AI (n = 32) cohorts. Results Both cohorts demonstrated progressive improvement in entrustment scores across sequential checkpoints. In the RCKaS-AI cohort, mean entrustment scores increased from 59.1 ± 12.8 at CP1 to 94.3 ± 6.9 at CP4, compared with 58.4 ± 13.1 to 85.7 ± 10.4 under standard RCKaS conditions (p = 0.001). Inter-resident variance decreased by 41% in the AI-assisted cohort versus 18% in the standard cohort. Residents within the RCKaS-AI framework achieved entrustment level 4 significantly earlier than controls (38 ± 7 weeks vs 50 ± 9 weeks, p = 0.003). Mean remediation frequency decreased from 3.4 ± 1.1 to 1.9 ± 0.7 sessions per resident, while faculty workload declined by 34%. Predictive analytics demonstrated strong agreement between forecasted and observed competency trajectories (r = 0.84; 95% CI, 0.77-0.89). Conclusions Expanded longitudinal implementation of the RCKaS-AI framework demonstrated reproducible stabilization of competency trajectories during neurosurgical residency training. These findings support the robustness of adaptive AI-assisted feedback systems as a practical mechanism for longitudinal competency regulation within structured surgical education programs. Further multicenter validation is required to evaluate external reproducibility across broader residency environments."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42902927",
+  "pmid": "42902927",
+  "pmcid": "PMC13683997",
+  "doi": "10.2196/93034",
+  "titre": "Effects of a Generative AI Virtual Patient on Serious Illness Communication Skills: Randomized Controlled Trial.",
+  "revue": "JMIR medical education",
+  "date": "2026-10-20",
+  "auteurs": "Haut KG, Hasan M, Carroll T, Epstein RM, Sen T, Hoque E.",
+  "types": "research-article randomized controlled trial journal article",
+  "acces_libre": true,
+  "type_etude": "essai tiré au sort",
+  "resume": "Background Serious illness communication (SIC) is a critical skill in medical education, especially in end-of-life care, yet clinicians often lack sufficient opportunities for deliberate practice. Standardized patients (SPs) remain the gold standard for SIC training, but they are limited by cost, availability, and consistency. To support wider access to SIC training, scalable alternatives are needed. Objective The aim of this study is to evaluate whether SOPHIE (Standardized Online Patient for Healthcare Interaction Education), an AI-powered virtual patient that provides real-time dialogue and automated feedback, improves SIC skills among clinicians and trainees. Methods We conducted a single-blind, parallel-group, randomized controlled trial from June to December 2024 via videoconferencing. Participants were randomized in a 1:1 ratio to the intervention (SOPHIE training) or control (reading module) group. Blinded SP actors and 4 independent raters evaluated outcomes preintervention and postintervention. The intervention group completed 3 interactive SOPHIE modules (Empathize, Be Explicit, and Empower) for 30 minutes, combining dialogue with an interactive virtual patient and automated feedback. Control participants reviewed reading materials covering the same framework for the same duration. The primary outcome was the change in communication skills (Empathize, Be Explicit, and Empower) assessed by SPs and blinded raters using a rubric based on an established clinical communication training framework. Secondary outcomes included self-reported confidence in communication skills. Results Fifty-one medical, nursing, and physician assistant students and practicing clinicians (mean age 30.6, SD 13.2 years; women: 40/51, 78.4%) were recruited from academic and clinical settings. Participants were stratified by training level and randomized; all completed the study. Compared with controls, SOPHIE participants demonstrated significantly greater improvement in Empower (β=.11, 95% CI .04-.17; P =.002), Be Explicit (β=.08, 95% CI .03-.13; P =.002), Empathize (β=.07, 95% CI .01-.13; P =.03), and overall communication score (β=.09, 95% CI .04-.14; P =.001). Here, β represents the additional pre-to-post improvement in the SOPHIE arm relative to the control arm, estimated from linear mixed effects models. SOPHIE participants also reported higher confidence in their communication skills than controls (mean score of 4.31 vs 3.83 on a 5-point Likert scale; P =.009). Conclusions Training with an AI-powered virtual patient significantly improved SIC skills and confidence compared with reading modules. Generative AI-based simulations may provide a scalable, accessible, and effective adjunct or alternative to traditional SP training in clinical education."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "texte intégral libre"
+  ],
+  "id": "MED:42864862",
+  "pmid": "42864862",
+  "pmcid": "PMC13671426",
+  "doi": "10.1080/17581966.2026.2743569",
+  "titre": "Potential to improve early detection of lung cancer through expansion of focused and opportunistic screening approaches: a scoping review focusing on potential expansion of screening risk factors and adoption of artificial intelligence models.",
+  "revue": "Lung cancer management",
+  "date": "2026-10-12",
+  "auteurs": "Mok TSK, Finley C, Köksal D, Li MSC, Shum E, Velotta JB, Yang PC.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue systématique",
+  "resume": "Background Low-dose computerized tomography (LDCT) is the gold standard for lung cancer (LC) screening, but access is hindered by strict eligibility criteria and limited infrastructure in low/middle-income countries. A combination of approaches, including expanded screening eligibility criteria and artificial intelligence (AI), could improve detection of early LC in patients excluded by current screening criteria. Areas covered A scoping review was conducted (PubMed, Cochrane library, congresses) to explore two potentially complementary approaches to enhance LC screening. The first identified LC risk factors and their potential inclusion in expanded screening criteria, allowing more people at risk to become eligible for screening; the second examined studies involving AI-augmented imaging (CXR or LDCT) to improve workflow, triage, and opportunistic nodule detection. Expert opinion/commentary Several robustly evidenced risk factors for LC were identified that are not included in current screening programs; widening of eligibility criteria could be considered based on local risk profile but requires further research to demonstrate benefit. Opportunistic use of AI-tools to assess incidental chest images may identify patients with pulmonary nodules requiring further investigation but their role in population-level LC screening requires prospective validation in diverse healthcare systems."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42899077",
+  "pmid": "42899077",
+  "pmcid": "PMC13678652",
+  "doi": "10.1093/ehjdh/ztag148",
+  "titre": "Deep learning-based echocardiography for cardiac assessment: a systematic literature review and meta-analysis.",
+  "revue": "European heart journal. Digital health",
+  "date": "2026-10-19",
+  "auteurs": "Romano-Martinez A, Zeid S, Krolevets M, Kontohow-Beckers K, Ten Cate V, Lurz P, Engelhardt S, Kramer S, Troebs SO, Wild PS.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "type_etude": "méta-analyse",
+  "resume": "Aims Artificial intelligence, particularly deep learning (DL), has shown significant potential for enhancing the assessment of echocardiograms in clinical practice. This systematic review and meta-analysis aimed to evaluate the performance of DL models and to identify factors affecting their performance. Methods and results A systematic review of the PubMed, CENTRAL, and Web of Science databases was conducted, yielding 16 248 potential publications. Of these, 160 studies met the inclusion criteria. Only studies applying fully automated DL networks to echocardiographic loops were considered. Performance estimates were pooled using a random-effects meta-analysis. The studies were categorized into five distinct groups: prediction of disease or mortality, replication of established measures, segmentation of cardiac chambers, classification of chamber views, and assessment of image quality. High heterogeneity that could not be resolved was observed in studies focusing on cardiac chamber segmentation and classification. Model performance was influenced by a variety of different factors, including medical target and input characteristics such as video resolution, number of frames used, and total participants included during training. Conclusion DL models achieve high performance across various applications in echocardiography. In selected tasks, they may reduce reliance on expert input and support greater automation of echocardiographic workflows. However, further validation, assessment of clinical utility, and evaluation in real-world settings are required before widespread clinical adoption."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42902899",
+  "pmid": "42902899",
+  "pmcid": "PMC13683989",
+  "doi": "10.2196/101721",
+  "titre": "Mobile AI-Assisted Oral Lesion Triage for Community Oral Cancer Screening: Prospective Field Evaluation Study.",
+  "revue": "JMIR mHealth and uHealth",
+  "date": "2026-10-20",
+  "auteurs": "Liu HY, Huang YC, Chen SW, Wei LY, Chou CY, Lee JJ, Chen SJ, Lee CC.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "type_etude": "revue de littérature",
+  "resume": "Background AI-based tools for oral cancer screening have shown promising performance in curated image datasets, but their performance in real-world mobile community screening workflows remains less clear. Objective This study evaluated the prospective field performance of a parameter-locked, mobile AI-assisted oral lesion triage system embedded in a human-supervised community oral cancer screening workflow. Methods We conducted a prospective community-based field evaluation in eastern Taiwan from June 17 to December 31, 2025. Trained nonspecialist personnel acquired standard white-light intraoral images using handheld mobile devices during routine screening. The AI system incorporated on-site image quality assessment and lesion-level risk stratification into green, yellow, and red triage categories. Technically inadequate images after repeated acquisition attempts were classified as ungradable and excluded from performance analysis. Three board-certified oral and maxillofacial specialists established an operational clinical reference standard through structured image review and consensus adjudication. The primary outcome was lesion-level identification of high-risk lesions requiring specialist referral, defined as red versus nonred triage. Diagnostic performance was estimated with Wilson 95% CIs; precision-recall performance and preconsensus specialist agreement were also assessed. Results Among 602 screened participants, 4283 interpretable intraoral images were included in expert adjudication and lesion-level analysis. The AI system flagged 68 red lesions; 12 (17.6%) were confirmed as high risk, and 4 additional high-risk lesions were identified during expert review, yielding 16 high-risk events for the primary red-triage analysis. For high-risk lesion identification, sensitivity was 75% (12/16; 95% CI 50.5%-89.8%) and positive predictive value was 17.6% (12/68; 95% CI 10.4%-28.4%); specificity, negative predictive value, and accuracy were 98.6% (3928/3984), 99.9% (3928/3932), and 98.5% (3940/4000), respectively. Area under the receiver operating characteristic curve values were 0.957 for red, 0.931 for yellow, and 0.964 for green triage; precision-recall analysis showed area under the precision-recall curve values of 0.8235, 0.9052, and 0.9476, respectively. Preconsensus specialist agreement was high, with a Fleiss κ of 0.921 and a Gwet AC1 of 0.981. Conclusions This mobile AI-assisted oral lesion triage system was feasibly integrated into a real-world community screening workflow operated by trained nonspecialist personnel. In this low-prevalence field setting, red triage showed moderate sensitivity and modest positive predictive value, supporting its use as human-supervised referral-prioritization support rather than autonomous diagnosis. Further multicenter studies with blinded assessment, participant-level outcomes, workflow-efficiency measures, and longitudinal follow-up are needed before clinical impact and scalability can be determined."
+ }
+]

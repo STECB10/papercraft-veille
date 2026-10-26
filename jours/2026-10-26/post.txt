@@ -1,0 +1,9 @@
+Un patient virtuel basé sur l'IA aide les soignants à mieux annoncer une maladie grave, plus qu'une simple lecture.
+
+Cet essai tiré au sort, mené à Rochester (États-Unis), a comparé 30 minutes d'entraînement avec SOPHIE, un patient virtuel génératif qui commente la conversation, à la lecture de documents. Les 51 participants, étudiants et soignants, ont été notés avant et après par des évaluateurs qui ignoraient leur groupe : le score global de communication a progressé de 0,15 avec SOPHIE, contre 0,06 avec la lecture.
+
+À nuancer : une seule séance, des entretiens simulés, et aucune comparaison avec un entraînement humain.
+
+Source : Haut et al., JMIR Medical Education, octobre 2026. https://doi.org/10.2196/93034
+
+#IA #FormationMédicale #Communication #SantéNumérique
