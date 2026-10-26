@@ -347,7 +347,7 @@ def svg_layer(x, y, w, h, inner, a=None, t=0.0, extra="", vb=None):
 
 def kicker(y0, text, t, fig=None, right=None):
     lab = (f'<span class="fig">Fig. {fig}</span> · ' if fig else "") + esc(text)
-    out = [f'<div class="kick" style="left:{ML}px;top:{y0+58}px;width:{CW}px" data-a="rise" data-t="{t:.2f}">{lab}</div>',
+    out = [f'<div class="kick" style="left:{ML}px;top:{y0+58}px;width:{CW - (len(right) * 21 + 60 if right else 0)}px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" data-a="rise" data-t="{t:.2f}">{lab}</div>',
            f'<div class="krule" style="left:{ML}px;top:{y0+106}px;width:{CW}px" data-a="wipe" data-t="{t+0.1:.2f}"></div>']
     if right:
         out.append(f'<div class="kick" style="right:{ML+48}px;top:{y0+58}px;text-align:right" data-a="rise" data-t="{t+0.15:.2f}">{esc(right)}</div>')
@@ -372,7 +372,7 @@ def ci_panel(y0, top, ci, t, x0=120, x1=960, label=None):
     dec = ci.get("dec", 2)
     lab = label or f'{ci.get("label", "Écart")} · intervalle de confiance à 95 %'
     h.append(f'<div class="kick" style="left:{x0:.0f}px;top:{y0+top:.0f}px;width:{x1-x0:.0f}px" data-a="rise" data-t="{t:.2f}">{esc(lab)}</div>')
-    ay = top + 150
+    ay = top + 172
     h.append(svg_layer(x0 - 10, y0 + ay - 10, x1 - x0 + 20, 20, f'<path d="M10 10H{x1-x0+10:.0f}" stroke="{INK}" stroke-opacity=".45" stroke-width="2.5"/>', "draw", t + 0.05, 'data-d="0.5"'))
     zx = X(nul)
     h.append(f'<div class="zero" style="left:{zx-1.5:.0f}px;top:{y0+ay-62:.0f}px;height:80px" data-a="fade" data-t="{t+0.2:.2f}"></div>')
@@ -388,7 +388,7 @@ def ci_panel(y0, top, ci, t, x0=120, x1=960, label=None):
     px = X(ci["num"])
     h.append(f'<div class="cipt" style="left:{px-15:.0f}px;top:{y0+wy-15:.0f}px" data-a="pop" data-t="{t+0.7:.2f}"></div>')
     if ci.get("value"):
-        h.append(f'<div class="cival" style="left:{px-120:.0f}px;width:240px;top:{y0+wy-86:.0f}px" data-a="rise" data-t="{t+0.8:.2f}">{esc(ci["value"])}</div>')
+        h.append(f'<div class="cival" style="left:{px-120:.0f}px;width:240px;top:{y0+wy-78:.0f}px" data-a="rise" data-t="{t+0.8:.2f}">{esc(ci["value"])}</div>')
     for v, k in ((lo, 0), (hi, 1)):
         h.append(f'<div class="kick" style="left:{X(v)-90:.0f}px;width:180px;top:{y0+ay+18:.0f}px;text-align:center" data-a="rise" data-t="{t+0.9+k*0.1:.2f}">{fr(v, dec)}</div>')
     return h
@@ -467,6 +467,10 @@ def display_times(spoken, disp, ws):
         n = j2 - j1
         for k in range(n):
             times[j1 + k] = t0 + (t1 - t0) * k / n
+    # une ponctuation isolée (« ? », « ! », « : », « ; ») apparaît avec le mot qui la précède, pas après le silence
+    for j, w in enumerate(disp):
+        if j and not norm(w) and times[j - 1] is not None:
+            times[j] = times[j - 1] + 0.05
     return times
 
 
@@ -522,8 +526,10 @@ def build_subs(film, skip=()):
 def typo_words(text, ws, italic):
     toks = text.split()
     spans = []
+    t = ws[0]["s"]
     for k, tok in enumerate(toks):
-        t = ws[min(k, len(ws) - 1)]["s"]
+        # la ponctuation isolée suit le mot d'avant (le « ? » ne doit pas attendre la fin du silence)
+        t = t + 0.05 if k and not norm(tok) else ws[min(k, len(ws) - 1)]["s"]
         it = " it" if italic and norm(tok) == norm(italic) else ""
         spans.append(f'<span class="tw{it}" data-t="{t:.2f}">{esc(tok)}</span>')
     return " ".join(spans)
@@ -558,7 +564,7 @@ def night_station(st):
         h.append(f'<div class="mono" style="left:72px;top:{y0+776}px;color:var(--ink-dim);font-size:26px" data-a="rise" data-t="{cap+0.6:.2f}">{esc(st["footnote"])}</div>')
     elif t == "gag_waiting":
         ta = st["cam_at"]
-        h.append(f'<div class="mono" style="left:500px;top:{y0+40}px;width:240px;text-align:center;color:var(--ink)" data-a="rise" data-t="{ta+0.25:.2f}">{esc(st["door"])}</div>')
+        h.append(f'<div class="mono" style="left:500px;top:{y0+26}px;width:240px;text-align:center;color:var(--ink)" data-a="rise" data-t="{ta+0.25:.2f}">{esc(st["door"])}</div>')
         h.append(f'<div class="ico door" style="left:520px;top:{y0+80}px;width:200px;height:320px;color:var(--ink)" data-a="draw" data-t="{ta+0.1:.2f}">{icon("door")}</div>')
         h.append(f'<div class="doorlight" style="left:526px;top:{y0+86}px;width:188px;height:308px" data-a="fade" data-t="{ta+0.6:.2f}"></div>')
         h.append(f'<div class="clock" style="left:220px;top:{y0+60}px" data-a="pop" data-t="{ta+0.3:.2f}"><div class="hand" data-fx="spin" data-t="{ta+0.5:.2f}" data-d="2.4"></div><div class="hand2" data-fx="spin2" data-t="{ta+0.5:.2f}" data-d="2.4"></div><div class="pin"></div></div>')
@@ -950,9 +956,9 @@ def paper_station(st, film, fig=None):
             frac = max(0.0, min(1.0, float(g["num"]) / mx))
             acc = g.get("accent", i == 0)
             a = " acc" if acc else ""
-            h.append(f'<div class="mlab{a}" style="left:{ML}px;top:{ry:.0f}px;width:470px" data-a="rise" data-t="{g["at"]-0.1:.2f}">{esc(g["label"])}</div>')
+            h.append(f'<div class="mlab{a}" style="left:{ML}px;top:{ry:.0f}px;width:{CW if big else 400}px" data-a="rise" data-t="{g["at"]-0.1:.2f}">{esc(g["label"])}</div>')
             val = str(g["value"])
-            h.append(f'<div class="mval{a}" style="left:{ML if big else 460}px;width:{CW if big else W-ML-460}px;top:{ry+(150 if big else -30):.0f}px;{"text-align:left;font-size:220px" if big else ""}" data-a="big" data-t="{g["at"]-0.05:.2f}" data-d="0.5">'
+            h.append(f'<div class="mval{a}" style="left:{ML if big else 490}px;width:{CW if big else W-ML-490}px;top:{ry+(150 if big else -30):.0f}px;{"text-align:left;font-size:220px" if big else ""}" data-a="big" data-t="{g["at"]-0.05:.2f}" data-d="0.5">'
                      f'<span data-fx="count" data-t="{g["at"]:.2f}" data-d="1.0" data-to="{g["num"]}" data-dec="{decs(val)}" data-pre="{"+" if val.startswith("+") else ""}">0</span><span class="unit">{esc(g.get("unit", ""))}</span></div>')
             if big:
                 ry += 290
@@ -965,7 +971,8 @@ def paper_station(st, film, fig=None):
             if g.get("note"):
                 h.append(f'<div class="kick{a}" style="left:{ML}px;top:{ry+156:.0f}px;width:{CW}px" data-a="rise" data-t="{g["at"]+0.4:.2f}">{esc(g["note"])}</div>')
         if st.get("caption"):
-            h.append(f'<div class="cap" style="left:{ML}px;top:{y0+min(1010, top + m*rh):.0f}px;width:{CW}px;color:var(--ink-dim)" data-a="rise" data-t="{st.get("caption_at", ms[-1]["at"] + 0.8):.2f}">{esc(st["caption"])}</div>')
+            cap_y = top + (640 if big else m * rh)
+            h.append(f'<div class="cap" style="left:{ML}px;top:{y0+min(1010, cap_y):.0f}px;width:{CW}px;color:var(--ink-dim)" data-a="rise" data-t="{st.get("caption_at", ms[-1]["at"] + 0.8):.2f}">{esc(st["caption"])}</div>')
 
     elif t == "key_points":
         pts = st["points"]
@@ -1154,7 +1161,7 @@ def paper_station(st, film, fig=None):
             h.append(f'<div class="kick sm" style="left:40px;width:110px;top:{Y(v)-14:.0f}px;text-align:right" data-a="fade" data-t="{t0+0.5:.2f}">{fr(v, 0)} %</div>')
         step_ = max(1, len(times) // 6)
         for v in times[::step_]:
-            h.append(f'<div class="kick sm center" style="left:{X(v)-50:.0f}px;width:100px;top:{pyb+14:.0f}px" data-a="fade" data-t="{t0+0.55:.2f}">{fr(v, 0)}</div>')
+            h.append(f'<div class="kick sm center" style="left:{X(v)-30:.0f}px;width:60px;top:{pyb+14:.0f}px" data-a="fade" data-t="{t0+0.55:.2f}">{fr(v, 0)}</div>')
         h.append(f'<div class="kick center" style="left:{px0}px;width:{px1-px0}px;top:{pyb+56:.0f}px" data-a="rise" data-t="{t0+0.6:.2f}">{esc(st.get("x_label", "Mois de suivi"))}</div>')
         ends = []
         for k, g in enumerate(gs):
@@ -1409,8 +1416,7 @@ def build(project):
     <div class="wordmark" style="left:0;width:{W}px;top:640px" data-a="big" data-t="{en['wordmark_at']-0.05:.2f}" data-d="0.7">Papercraft<span>.AI</span></div>
     <div class="btn" id="btn" style="left:{W/2-120:.0f}px;top:800px;width:240px" data-a="pop" data-t="{en['button_at']:.2f}"><span id="btnlabel">{esc(en['button'])}</span><span id="btnok">{check_svg}Abonné</span></div>
     <div class="ripple" id="ripple" style="left:{W/2-70:.0f}px;top:768px"></div>
-    <div class="mono center" style="left:0;width:{W}px;top:960px;color:var(--ink-dim);font-size:26px;letter-spacing:.1em" data-a="rise" data-t="{en['source_at']:.2f}">{esc(en['source'])}</div>
-    <div class="mono center" style="left:0;width:{W}px;top:1000px;color:var(--ink-dim);font-size:26px;letter-spacing:.06em;text-transform:none" data-a="rise" data-t="{en['source_at']+0.15:.2f}">{esc(en['doi'])}</div>
+    <div class="srcblock" style="left:90px;width:{W-180}px;top:940px" data-a="rise" data-t="{en['source_at']:.2f}"><div class="mono">{esc(en['source'])}</div><div class="mono doi">{esc(en['doi'])}</div></div>
     <svg id="cursor" viewBox="0 0 24 34" style="left:0;top:0;width:34px;height:48px"><path d="M2 2v26l7-6 5 10 4-2-5-10h9z" fill="#F7F3EC" stroke="#16171C" stroke-width="1.6" stroke-linejoin="round"/></svg>
   </div>
 

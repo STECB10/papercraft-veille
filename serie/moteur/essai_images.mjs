@@ -35,6 +35,43 @@ for (const [i, [nom, t]] of moments.entries()) {
   await page.evaluate(t => window.__seek(t), t);
   const f = path.join(projet, `m${String(i).padStart(2, '0')}.png`);
   await page.screenshot({ path: f });
+  const chev = await page.evaluate(() => {
+    // chevauchements visibles : texte sur texte, ou texte sur un dessin (icône, barre, silhouette, point…)
+    const vu = el => {
+      const r = el.getBoundingClientRect();
+      if (r.width < 2 || r.height < 2 || r.bottom < 0 || r.top > 1350 || r.right < 0 || r.left > 1080) return null;
+      for (let e = el; e && e !== document.body; e = e.parentElement) {
+        const cs = getComputedStyle(e);
+        if (cs.visibility === 'hidden' || cs.display === 'none' || parseFloat(cs.opacity) < 0.5) return null;
+      }
+      return r;
+    };
+    const TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.chunk';
+    const OBJ = '.ico,.bar,.strip,.sil,.pdot,.dd,.msheet,.spot,.sq,.cipt,.wbar,.pers';
+    // la table est inclinée (boîtes gonflées) et la déchirure copie volontairement la planche : on les laisse de côté
+    const ok = e => !e.closest('.tearh') && !e.closest('#night');
+    const txt = [...document.querySelectorAll(TXT)].filter(e => ok(e) && !e.parentElement.closest(TXT)).map(e => [e, vu(e)]).filter(x => x[1]);
+    const obj = [...document.querySelectorAll(OBJ)].filter(ok).map(e => [e, vu(e)]).filter(x => x[1]);
+    const inter = (a, b) => Math.max(0, Math.min(a.right, b.right) - Math.max(a.left, b.left)) * Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top));
+    const nom = e => (e.className.baseVal ?? e.className).split(' ')[0] + ' « ' + (e.textContent || '').trim().slice(0, 30) + ' »';
+    const out = [];
+    for (let i = 0; i < txt.length; i++) {
+      const [a, ra] = txt[i];
+      for (let j = i + 1; j < txt.length; j++) {
+        const [b, rb] = txt[j];
+        if (a.contains(b) || b.contains(a)) continue;
+        const s = inter(ra, rb);
+        if (s > 0.12 * Math.min(ra.width * ra.height, rb.width * rb.height)) out.push(nom(a) + ' / ' + nom(b));
+      }
+      for (const [b, rb] of obj) {
+        if (a.contains(b) || b.contains(a)) continue;
+        const s = inter(ra, rb);
+        if (s > 0.12 * Math.min(ra.width * ra.height, rb.width * rb.height)) out.push(nom(a) + ' / ' + nom(b));
+      }
+    }
+    return out;
+  });
+  if (chev.length) console.log(`chevauchement à ${t.toFixed(2)} s (${nom}) :\n  ` + [...new Set(chev)].join('\n  '));
   fichiers.push([f, nom, t]);
 }
 await nav.close();

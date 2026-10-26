@@ -226,6 +226,9 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 .btn #btnok svg{width:28px;height:28px}
 .ripple{width:140px;height:140px;border-radius:50%;border:3px solid var(--carbon);opacity:0}
 #cursor{display:block;opacity:0;z-index:5}
+.srcblock{text-align:center;display:flex;flex-direction:column;gap:6px}
+.srcblock .mono{color:var(--ink-dim);font-size:26px;letter-spacing:.1em;line-height:1.35}
+.srcblock .doi{letter-spacing:.06em;text-transform:none}
 
 /* ------------------------------------------------------------------ sous-titres : bande y 1108–1196, encre sur papier */
 .chunk{position:absolute;left:64px;right:64px;top:1112px;height:84px;display:flex;justify-content:center;align-items:center;
