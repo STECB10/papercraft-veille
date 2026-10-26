@@ -371,6 +371,7 @@ def ci_panel(y0, top, ci, t, x0=120, x1=960, label=None):
     X = lambda v: x0 + (v - d0) / (d1 - d0) * (x1 - x0)
     dec = ci.get("dec", 2)
     lab = label or f'{ci.get("label", "Écart")} · intervalle de confiance à 95 %'
+    h.append(f'<div class="tint" style="left:{x0-48:.0f}px;top:{y0+top-24:.0f}px;width:{x1-x0+96:.0f}px;height:{top+232-top:.0f}px" data-a="fade" data-t="{t-0.15:.2f}"></div>')
     h.append(f'<div class="kick" style="left:{x0:.0f}px;top:{y0+top:.0f}px;width:{x1-x0:.0f}px" data-a="rise" data-t="{t:.2f}">{esc(lab)}</div>')
     ay = top + 172
     h.append(svg_layer(x0 - 10, y0 + ay - 10, x1 - x0 + 20, 20, f'<path d="M10 10H{x1-x0+10:.0f}" stroke="{INK}" stroke-opacity=".45" stroke-width="2.5"/>', "draw", t + 0.05, 'data-d="0.5"'))
@@ -699,6 +700,7 @@ def paper_station(st, film, fig=None):
         mod = st.get("modality") or MODALITY.get(st.get("input_icon", "doc"), "donnees")
         h += kicker(y0, st.get("title", "Ce que fait l'IA"), t0 + 0.2, fig)
         # 1. ce qui entre
+        h.append(f'<div class="tint" style="left:{ML-24}px;top:{y0+146}px;width:{CW+48}px;height:280px" data-a="fade" data-t="{at-0.25:.2f}"></div>')
         h.append(iconbox(st.get("input_icon", "doc"), ML + 8, y0 + 168, 160, 160, "var(--ink)", at))
         h.append(f'<div class="kick" style="left:290px;top:{y0+168}px" data-a="rise" data-t="{at+0.1:.2f}">Ce qui entre</div>')
         h.append(f'<div class="ailab" style="left:290px;top:{y0+206}px;width:{W-ML-290}px" data-a="print" data-t="{at+0.2:.2f}">{esc(st["input_label"])}</div>')

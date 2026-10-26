@@ -15,9 +15,11 @@ principle: >
   rien ne se pose en fondu · un accent · chaque chiffre vient de la fiche des faits, avec son intervalle s'il existe
 
 colors:
-  table: "#E3DBCB"           # la table (kraft clair) : le monde du constat, sous la feuille, et la carte de fin
-  table-2: "#D6CCB8"         # ombre portée sur la table
-  paper: "#ECE6DA"           # la feuille, et le sol plein cadre du monde de l'étude
+  table: "#FAFAF8"           # le fond : blanc légèrement froid (retour du 26 octobre : plus de jaune en fond)
+  table-2: "#ECEEF3"         # bords du fond, ombre froide
+  blank: "#FCFCFA"           # le fond des planches de l'étude
+  tint: "#EEF0FF"            # aplat carbone très clair : derrière l'intervalle, derrière « ce qui entre »
+  paper: "#ECE6DA"           # la feuille (le constat, le pivot) et les objets de papier : fiche, languettes, petites feuilles
   paper-lift: "#F4EFE6"      # une feuille posée sur une autre (relief), languettes, cartes
   paper-hi: "#F7F3EC"        # texte dans la boîte d'accent, étiquettes suspendues, bulles
   paper-2: "#DCD4C4"         # aplat secondaire, hachures du groupe témoin, bulle « patient »
@@ -77,7 +79,7 @@ feuille**, papier plein cadre : c'est **l'étude** (carte d'identité, ce que fa
 **nuance** arrive par une déchirure qui révèle le verso. La **fin** revient sur la table : la feuille se replie en
 glyphe Papercraft, la promesse, le bouton « Suivre ».
 
-Tout est papier : aucune planche n'a de fond nuit. L'encre ne couvre que de petites surfaces (la carte « noyau IA »,
+Tout est papier sur fond blanc : aucune planche n'a de fond nuit, la feuille garde sa couleur papier, le verso de la nuance est carbone. L'encre ne couvre que de petites surfaces (la carte « noyau IA »,
 la bulle de l'IA, une pastille), jamais un fond de scène.
 
 ## Les trois familles de gestes
@@ -105,7 +107,7 @@ fois. Aucun élément n'arrive en simple fondu : il se trace, se lève, se dépl
 | `suspendre` | une punaise se pose, la ficelle descend, l'étiquette se déplie et se penche (−6° → −2°) | l'écart et son intervalle, sur une planche « bandes » |
 | `poser` | une nouvelle feuille glisse par-dessus la précédente et se pose, avec son ombre ; la précédente s'enfonce et s'assombrit | chaque nouvelle planche de l'étude |
 | `plier` | le pli de la feuille (mécanisme signature) : reflet qui glisse le long de la diagonale 0,25 s, puis la moitié se rabat 0,45 s expo.inOut | le pivot (une fois) et la fin (une fois) |
-| `déchirer` | tension 0,25 s, puis les deux moitiés partent (haut vers le haut, bas vers le bas, 0,8 s power3.in) avec un bord fibreux blanc de 3 px ; révèle le verso paper-3 | la nuance ou la limite (une fois par film au plus) |
+| `déchirer` | tension 0,25 s, puis les deux moitiés partent (haut vers le haut, bas vers le bas, 0,8 s power3.in) avec un bord fibreux blanc de 3 px ; révèle le verso carbone, texte blanc | la nuance ou la limite (une fois par film au plus) |
 
 ### Mesurer (l'instrument, sur papier)
 
