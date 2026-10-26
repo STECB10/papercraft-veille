@@ -262,6 +262,17 @@
       tl.to('#pcam', { y: -10, scale: 1.015, duration: p1 - p0, ease: 'none', immediateRender: false }, p0);
     });
 
+    // ---------------------------------------------------------------- lumière qui glisse sur le papier : le monde respire toujours
+    // (sans elle, une planche posée est une image figée que le contrôle de fabrication refuse)
+    bloc('lumière', function () {
+      [['#plight', F.paper[0], F.paper[1]], ['#vlight', F.paper[0], F.paper[1]], ['#pvlight', F.pivot.start, F.pivot.fold_at + F.fold]].forEach(function (L) {
+        if (!document.querySelector(L[0])) return;
+        var d = Math.max(1, L[2] - L[1]), per = 6.5, n = Math.max(0, Math.ceil(d / per) - 1);
+        gsap.set(L[0], { x: -240, y: -60 });
+        tl.fromTo(L[0], { x: -240, y: -60 }, { x: 260, y: 140, duration: per, ease: 'sine.inOut', yoyo: true, repeat: n, immediateRender: false }, L[1]);
+      });
+    });
+
     // ---------------------------------------------------------------- déchirure : la planche se déchire et révèle le verso (la nuance)
     bloc('déchirure', function () {
       var T = F.tear;

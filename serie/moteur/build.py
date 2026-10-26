@@ -1405,11 +1405,11 @@ def build(project):
 
   <div id="paper" class="clip" data-start="{paper['start']:.3f}" data-duration="{paper['end']-paper['start']:.3f}" data-track-index="3">
     <div class="foldsheet" id="psheet">
-      <div class="pground"></div><div class="pcrease"></div>
+      <div class="pground"></div><div class="plight" id="plight"></div><div class="pcrease"></div>
       <div id="pcam"><div id="pworld" style="height:{world_h}px">
 {paper_html}
       </div>
-      <div id="verso">{verso_html}</div>
+      <div id="verso"><div class="plight" id="vlight"></div>{verso_html}</div>
       {tear_html}
       </div>
       <div class="pcorner"></div>
@@ -1420,7 +1420,7 @@ def build(project):
 
   <div id="pivot" class="clip" data-start="{pv['start']:.3f}" data-duration="{pv['end']-pv['start']:.3f}" data-track-index="4">
     <div class="foldsheet" id="pvsheet">
-      <div class="pvground"></div>
+      <div class="pvground"></div><div class="plight" id="pvlight"></div>
       <div class="typo pvtext" style="left:80px;width:{W-160}px;top:500px">{typo_words(pv['text'], pv_ws, pv.get('italic'))}</div>
     </div>
     <div class="flapwrap"><div class="flap nightflap" id="pvflap"></div></div>
