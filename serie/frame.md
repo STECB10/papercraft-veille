@@ -60,7 +60,8 @@ typography:
 camera:
   rig: "#stage (1080×1350, overflow hidden, perspective 1600px) > #drift > #cam > #world"
   drift: "le monde respire toujours : échelle 1,035 → 1 sur la durée de la planche (sans arrêt), ou 1 → 1,04 sur une planche de silhouettes"
-  cran: "on passe d'une planche à la suivante par un cran de caméra vers le bas (0,6 s expo.inOut) ; la planche suivante est espacée d'une hauteur de cadre au moins"
+  cran: "sur la table, la caméra descend la feuille par crans (1 s power3.inOut)"
+  feuilles: "dans l'étude, chaque planche est une nouvelle feuille posée par-dessus la précédente (0,85 s power3.out, du bas puis de la droite en alternance) ; la précédente s'enfonce (échelle 0,93) et s'assombrit"
   table: "dans le monde du constat, la table est vue en légère plongée (rotationX 8 à 14°, perspective 900) : la feuille posée dessus a une ombre portée réelle"
   never: "pas d'aller-retour, pas de zoom décoratif, pas de secousse"
 ---
@@ -102,6 +103,7 @@ fois. Aucun élément n'arrive en simple fondu : il se trace, se lève, se dépl
 | `répartir` | les silhouettes ou les points rejoignent leur groupe (0,7 s power3.inOut, ordre tiré au sort mais fixe), puis le groupe IA passe au carbone une à une | le tirage au sort, une répartition |
 | `déplier` | charnière 3D : `rotationX` −90° → 0 (perspective 520), depuis le bas pour une bande, depuis le haut pour une languette ou une étiquette, 0,5 à 0,8 s power3.out | languettes de groupes, bandes-résultats, étiquette suspendue |
 | `suspendre` | une punaise se pose, la ficelle descend, l'étiquette se déplie et se penche (−6° → −2°) | l'écart et son intervalle, sur une planche « bandes » |
+| `poser` | une nouvelle feuille glisse par-dessus la précédente et se pose, avec son ombre ; la précédente s'enfonce et s'assombrit | chaque nouvelle planche de l'étude |
 | `plier` | le pli de la feuille (mécanisme signature) : reflet qui glisse le long de la diagonale 0,25 s, puis la moitié se rabat 0,45 s expo.inOut | le pivot (une fois) et la fin (une fois) |
 | `déchirer` | tension 0,25 s, puis les deux moitiés partent (haut vers le haut, bas vers le bas, 0,8 s power3.in) avec un bord fibreux blanc de 3 px ; révèle le verso paper-3 | la nuance ou la limite (une fois par film au plus) |
 
@@ -135,7 +137,7 @@ rejoue toutes (données fictives) avec une voix simulée.
 
 | Planche | Ce qu'elle montre | Gestes |
 |---|---|---|
-| L'étude en bref [`id_card`] | type, lieu, effectif, durée, critère : 4 à 6 lignes qui remplissent la hauteur | lignes tracées, valeurs qui s'impriment |
+| L'étude en bref [`id_card`] | fiche bristol scotchée : marge carbone, une ligne réglée par information (type, lieu, effectif, durée, critère) | `déplier`, valeurs qui s'impriment |
 | Ce que fait l'IA [`ai_scan`] | Fig. : ce qui entre → noyau IA → ce qui sort, le mot clé annoté | `schéma`, `noyau IA`, `annoter`, plus le geste de la modalité (tableau plus bas) |
 | Tirage au sort [`population_split`] | l'effectif exact qui se lève puis se partage sous deux languettes | `se lever`, `déplier`, `répartir` |
 | Deux groupes [`two_groups`] | ce que vit chaque groupe, côte à côte, marges égales | `schéma` en deux colonnes |
@@ -147,7 +149,7 @@ rejoue toutes (données fictives) avec une voix simulée.
 | Courbe ROC [`roc_curve`] | la courbe face à la diagonale du hasard, l'aire qui se remplit, l'AUC exacte | `tracer`, roulement |
 | Courbes de suivi [`survival_curves`] | deux courbes en escalier dans le temps, l'écart annoté | `tracer`, `annoter` |
 | Forest plot [`forest_plot`] | une ligne par étude (carré + moustache), puis le losange regroupé qui tombe, « ← favorise le témoin / favorise l'IA → » | `tracer`, `intervalle` |
-| Études regroupées [`studies_stack`] | la pile de feuilles (une par étude, par lots au-delà de 40) | `se lever` en feuilles |
+| Études regroupées [`studies_stack`] | une petite feuille imprimée par étude (par lots au-delà de 40), lâchée sur la table | feuilles qui tombent et se posent |
 | Conversation [`chat`] | l'échange patient ↔ IA et la note donnée par les évaluateurs | `conversation`, `annoter` |
 | Imagerie [`image_scan`] | l'image redessinée au trait (fond d'œil, radio du thorax, peau, mammographie, coupe de scanner), balayée, les signes verrouillés, le délai de résultat | `tracer`, `balayer` |
 | Constats [`key_points`] | 2 à 4 constats numérotés en Bodoni, qui remplissent la hauteur | lignes qui s'impriment |
@@ -159,6 +161,12 @@ rejoue toutes (données fictives) avec une voix simulée.
 Retour sur la table. La feuille se replie en glyphe Papercraft (le chemin M1.5 1.5H13L18.5 7V24.5H1.5Z, le coin et le
 pli en carbone), « Papercraft.AI » en Bodoni, la promesse « Une étude par jour, vérifiée à la source. » en type, un
 bouton « Suivre » (pilule encre, texte paper-hi) que le curseur clique en un seul geste, 2 à 3 s de tenue vivante.
+
+## Les sons
+
+Peu, au bon moment, jamais à la chaîne : des bruits de papier pour les gestes de papier (la feuille posée, le pli, la
+déchirure), un « ping » quand arrive le résultat qui compte, un « pop » pour l'écart. Rien sur chaque élément qui
+apparaît, jamais deux bruitages à moins de 1,2 s (le moteur trie lui-même). La musique et la voix restent devant.
 
 ## Choisir la mise en scène
 
