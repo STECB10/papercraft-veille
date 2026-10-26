@@ -33,3 +33,8 @@ All files are distributed under the [Pixabay Content License](https://pixabay.co
 - Redistribution as part of derivative works (such as videos rendered with HyperFrames)
 
 without any attribution requirement.
+
+## Bruits de papier (série Papercraft.AI)
+
+`papier-pose.mp3` (feuille posée), `papier-dechire.mp3` (déchirure) et `papier-pli.mp3` (pli) sont synthétisés avec
+ffmpeg (bruit filtré et enveloppé, aucun enregistrement tiers) : libres de droits.

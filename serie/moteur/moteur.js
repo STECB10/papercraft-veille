@@ -105,6 +105,14 @@
           });
           return;
         }
+        if (a === 'deal') {
+          // une feuille lâchée sur la table : tombe d'un peu plus haut, tourne et se pose à son angle
+          var r = num(el, 'data-rot', 0);
+          var f0 = { opacity: 0, y: -160, rotation: r * 3, scale: 1.18 };
+          gsap.set(el, f0);
+          tl.fromTo(el, f0, { opacity: 1, y: 0, rotation: r, scale: 1, duration: 0.5, ease: 'power3.out', immediateRender: false }, t);
+          return;
+        }
         var spec = IN[a];
         if (!spec) return;
         var from = Object.assign({}, spec[0]), to = Object.assign({}, spec[1], { immediateRender: false });
@@ -251,13 +259,31 @@
     bloc('plis (pivot)', function () { fold(tl, '#pvsheet', '#pvflap', '#pvstreak', F.pivot.fold_at); });
 
     // ---------------------------------------------------------------- monde papier : caméra à crans + dérive lente
-    bloc('caméras (papier)', function () {
+    bloc('feuilles (papier)', function () {
+      // chaque planche est une feuille posée sur la précédente, qui s'enfonce et s'assombrit
+      var P = F.plates || [];
+      P.forEach(function (p, i) {
+        var el = document.getElementById('plate' + i);
+        if (!el) return;
+        var t = p[0], mode = p[1];
+        if (i === 0) { gsap.set(el, { autoAlpha: 1 }); return; }
+        gsap.set(el, { autoAlpha: 0 });
+        tl.set(el, { autoAlpha: 1 }, t);
+        var prev = document.getElementById('plate' + (i - 1));
+        if (mode === 'tear') {
+          if (prev) tl.set(prev, { autoAlpha: 0 }, t + 0.02);
+          return;
+        }
+        var from = mode === 'up' ? { x: 0, y: 1520, rotation: 4 } : { x: 1260, y: 50, rotation: -5 };
+        tl.fromTo(el, from, { x: 0, y: 0, rotation: 0, duration: 0.85, ease: 'power3.out', immediateRender: false }, t);
+        if (prev) {
+          var dim = prev.querySelector('.pdim');
+          tl.fromTo(prev, { scale: 1 }, { scale: 0.93, duration: 0.85, ease: 'power2.out', immediateRender: false }, t);
+          if (dim) tl.fromTo(dim, { opacity: 0 }, { opacity: 1, duration: 0.85, ease: 'power1.out', immediateRender: false }, t);
+          tl.set(prev, { autoAlpha: 0 }, t + 0.9);
+        }
+      });
       var p0 = F.paper[0], p1 = F.paper[1];
-      gsap.set('#pworld', { y: F.pcam[0][1] });
-      for (var j = 1; j < F.pcam.length; j++) {
-        if (F.pcam[j][2] === 'set') tl.set('#pworld', { y: F.pcam[j][1] }, F.pcam[j][0] - 0.02);
-        else tl.to('#pworld', { y: F.pcam[j][1], duration: 1.0, ease: 'power3.inOut', immediateRender: false }, F.pcam[j][0]);
-      }
       gsap.set('#pcam', { y: 0, scale: 1.0, transformOrigin: '50% 50%' });
       tl.to('#pcam', { y: -10, scale: 1.015, duration: p1 - p0, ease: 'none', immediateRender: false }, p0);
     });
@@ -265,7 +291,7 @@
     // ---------------------------------------------------------------- lumière qui glisse sur le papier : le monde respire toujours
     // (sans elle, une planche posée est une image figée que le contrôle de fabrication refuse)
     bloc('lumière', function () {
-      [['#plight', F.paper[0], F.paper[1]], ['#vlight', F.paper[0], F.paper[1]], ['#pvlight', F.pivot.start, F.pivot.fold_at + F.fold]].forEach(function (L) {
+      [['#paper .plight', F.paper[0], F.paper[1]], ['#pvlight', F.pivot.start, F.pivot.fold_at + F.fold]].forEach(function (L) {
         if (!document.querySelector(L[0])) return;
         var d = Math.max(1, L[2] - L[1]), per = 6.5, n = Math.max(0, Math.ceil(d / per) - 1);
         gsap.set(L[0], { x: -240, y: -60 });
@@ -278,14 +304,13 @@
       var T = F.tear;
       if (!T) return;
       var a = T.at;
-      gsap.set(['#tearT', '#tearB', '#verso'], { autoAlpha: 0 });
-      tl.set(['#tearT', '#tearB', '#verso'], { autoAlpha: 1 }, a);
+      gsap.set(['#tearT', '#tearB'], { autoAlpha: 0 });
+      tl.set(['#tearT', '#tearB'], { autoAlpha: 1 }, a);
       tl.fromTo('#tearT', { y: 0, rotation: 0, transformOrigin: '0% 100%' }, { y: -10, rotation: -0.8, duration: 0.25, ease: 'power1.out', immediateRender: false }, a);
       tl.to('#tearT', { y: -1000, rotation: -9, duration: 0.8, ease: 'power3.in', immediateRender: false }, a + 0.25);
       tl.fromTo('#tearB', { y: 0, rotation: 0, transformOrigin: '100% 0%' }, { y: 6, rotation: 0.5, duration: 0.25, ease: 'power1.out', immediateRender: false }, a);
       tl.to('#tearB', { y: 1100, rotation: 6, duration: 0.85, ease: 'power3.in', immediateRender: false }, a + 0.25);
       tl.set(['#tearT', '#tearB'], { autoAlpha: 0 }, a + 1.15);
-      if (T.out) tl.to('#verso', { y: -1350, duration: 1.0, ease: 'power3.inOut', immediateRender: false }, T.out);
     });
 
     // ---------------------------------------------------------------- fin : le papier se replie, la nuit revient, la promesse, le logo, le clic

@@ -667,17 +667,23 @@ def paper_station(st, film, fig=None):
     h = []
 
     if t == "id_card":
+        # fiche bristol posée et scotchée : marge carbone, lignes réglées, une ligne par information
         rows = st["rows"]
         n = len(rows)
-        h += kicker(y0, st.get("title", "L'étude en bref"), t0 + 0.25)
-        rh = min(190, 880 / n)
-        fs = 56 if n <= 5 else 48
+        rh = min(170, 760 / n)
+        ch = 150 + n * rh
+        cy = 150 + (880 - ch) / 2
+        fs = 54 if n <= 5 else 46
+        h.append(f'<div class="bristol" style="left:{ML}px;top:{y0+cy:.0f}px;width:{CW}px;height:{ch:.0f}px" data-a="hingeT" data-t="{t0+0.15:.2f}"></div>')
+        h.append(f'<div class="tape" style="left:{W/2-110:.0f}px;top:{y0+cy-26:.0f}px" data-a="pop" data-t="{t0+0.5:.2f}"></div>')
+        h.append(f'<div class="kick" style="left:{ML+48}px;top:{y0+cy+44:.0f}px" data-a="rise" data-t="{t0+0.45:.2f}"><span class="fig">{esc(st.get("title", "L\'étude en bref"))}</span></div>')
+        h.append(f'<div class="bmargin" style="left:{ML+290}px;top:{y0+cy+110:.0f}px;height:{ch-140:.0f}px" data-a="grow" data-t="{t0+0.55:.2f}"></div>')
         for i, r in enumerate(rows):
-            ry = y0 + 160 + i * rh
+            ry = y0 + cy + 110 + i * rh
             acc = " acc" if r.get("accent") else ""
-            h.append(f'<div class="kick" style="left:{ML}px;top:{ry+22:.0f}px;width:250px" data-a="rise" data-t="{r["at"]-0.05:.2f}">{esc(r["label"])}</div>')
-            h.append(f'<div class="idv{acc}" style="left:340px;top:{ry+6:.0f}px;width:{W-ML-340}px;font-size:{fs}px" data-a="print" data-t="{r["at"]:.2f}">{esc(r["value"])}</div>')
-            h.append(f'<div class="hair" style="left:{ML}px;top:{ry+rh-16:.0f}px;width:{CW}px" data-a="wipe" data-t="{r["at"]+0.1:.2f}"></div>')
+            h.append(f'<div class="hair blue" style="left:{ML+30}px;top:{ry+rh-10:.0f}px;width:{CW-60}px" data-a="wipe" data-t="{t0+0.6+i*0.06:.2f}"></div>')
+            h.append(f'<div class="kick" style="left:{ML+48}px;top:{ry+rh/2-30:.0f}px;width:225px" data-a="rise" data-t="{r["at"]-0.05:.2f}">{esc(r["label"])}</div>')
+            h.append(f'<div class="idv{acc}" style="left:{ML+320}px;top:{ry+rh/2-fs*0.62:.0f}px;width:{CW-350}px;font-size:{fs}px" data-a="print" data-t="{r["at"]:.2f}">{esc(r["value"])}</div>')
 
     elif t == "ai_scan":
         at = st["at"]
@@ -935,6 +941,9 @@ def paper_station(st, film, fig=None):
         h.append(tt)
         top = tb + 50
         rh = min(300, (1030 - top) / m)
+        big = m == 1
+        if big:
+            top = tb + 170
         for i, g in enumerate(ms):
             ry = y0 + top + i * rh
             mx = float(g.get("max", 100))
@@ -943,8 +952,10 @@ def paper_station(st, film, fig=None):
             a = " acc" if acc else ""
             h.append(f'<div class="mlab{a}" style="left:{ML}px;top:{ry:.0f}px;width:470px" data-a="rise" data-t="{g["at"]-0.1:.2f}">{esc(g["label"])}</div>')
             val = str(g["value"])
-            h.append(f'<div class="mval{a}" style="left:460px;width:{W-ML-460}px;top:{ry-30:.0f}px" data-a="big" data-t="{g["at"]-0.05:.2f}" data-d="0.5">'
+            h.append(f'<div class="mval{a}" style="left:{ML if big else 460}px;width:{CW if big else W-ML-460}px;top:{ry+(150 if big else -30):.0f}px;{"text-align:left;font-size:220px" if big else ""}" data-a="big" data-t="{g["at"]-0.05:.2f}" data-d="0.5">'
                      f'<span data-fx="count" data-t="{g["at"]:.2f}" data-d="1.0" data-to="{g["num"]}" data-dec="{decs(val)}" data-pre="{"+" if val.startswith("+") else ""}">0</span><span class="unit">{esc(g.get("unit", ""))}</span></div>')
+            if big:
+                ry += 290
             h.append(f'<div class="track" style="left:{ML}px;top:{ry+128:.0f}px;width:{CW}px" data-a="wipe" data-t="{g["at"]-0.2:.2f}"></div>')
             cip = parse_ci(g.get("note"))
             if cip:
@@ -974,26 +985,31 @@ def paper_station(st, film, fig=None):
         h.append(f'<div class="rule" style="left:{W/2-60:.0f}px;top:{y0+900}px;width:120px" data-a="wipe" data-t="{ws[-1]["s"]:.2f}"></div>')
 
     elif t == "studies_stack":
+        # méta-analyse ou revue : une petite feuille imprimée par étude (par lot au-delà de 40), lâchée sur la table
         at = st["at"]
         n = int(st["n_studies"])
         per = max(1, math.ceil(n / 40))
         k = math.ceil(n / per)
-        cols = 8 if k > 16 else (6 if k > 9 else 4)
+        cols = 8 if k > 24 else (6 if k > 12 else 4)
         rows = math.ceil(k / cols)
-        cw_ = 104
-        ch_ = min(124, 440 / rows)
-        gx = (W - cols * cw_) / 2
+        cw_ = 116 if cols == 8 else (140 if cols == 6 else 170)
+        sh = min(150, 470 / rows) - 16
+        sw_ = sh * 0.74
+        gx = (W - cols * cw_) / 2 + (cw_ - sw_) / 2
         h += kicker(y0, st.get("title", "Les études regroupées"), t0 + 0.2)
         h.append(f'<div class="num center" style="left:0;width:{W}px;top:{y0+150}px;font-size:170px" data-a="big" data-t="{at-0.05:.2f}" data-d="0.6">'
                  f'<span data-fx="count" data-t="{at:.2f}" data-d="{min(1.4, 0.4 + k * 0.03):.2f}" data-to="{n}" data-dec="0">0</span></div>')
-        h.append(f'<div class="glab" style="left:0;width:{W}px;top:{y0+340}px" data-a="rise" data-t="{at+0.3:.2f}">{esc(st.get("label", "études"))}</div>')
+        h.append(f'<div class="glab" style="left:0;width:{W}px;top:{y0+336}px" data-a="rise" data-t="{at+0.3:.2f}">{esc(st.get("label", "études"))}</div>')
         gy = y0 + 430
-        ih = min(100, ch_ - 18)
+        rnd = random.Random(31)
         for i in range(k):
-            x, y = gx + (i % cols) * cw_ + 12, gy + (i // cols) * ch_
-            acc = "var(--carbon-deep)" if i % 7 == 3 else "var(--ink)"
-            h.append(f'<div class="ico" style="left:{x:.0f}px;top:{y:.0f}px;width:{ih*0.8:.0f}px;height:{ih:.0f}px;color:{acc}" data-a="up" data-t="{at + 0.15 + (i / max(1, k - 1)) * 1.2:.2f}">{icon("doc", sw=4)}</div>')
-        by = gy + rows * ch_ + 10
+            x = gx + (i % cols) * cw_ + rnd.uniform(-8, 8)
+            y = gy + (i // cols) * (sh + 16) + rnd.uniform(-5, 5)
+            rot = rnd.uniform(-6, 6)
+            acc = " acc" if i % 7 == 3 else ""
+            lines = "".join(f'<i style="top:{18 + j*13*(sh/120):.0f}px;width:{[70, 56, 64, 44][j % 4]}%"></i>' for j in range(5))
+            h.append(f'<div class="msheet{acc}" style="left:{x:.0f}px;top:{y:.0f}px;width:{sw_:.0f}px;height:{sh:.0f}px" data-a="deal" data-rot="{rot:.1f}" data-t="{at + 0.15 + (i / max(1, k - 1)) * 1.2:.2f}">{lines}</div>')
+        by = gy + rows * (sh + 16) + 6
         if per > 1:
             h.append(f'<div class="kick center" style="left:0;width:{W}px;top:{by:.0f}px" data-a="rise" data-t="{at+1.0:.2f}">1 feuille = {per} études</div>')
             by += 46
@@ -1316,29 +1332,26 @@ def build(project):
             st["sentence"] = find_sentence(st["text"])
             skip_subs.add(st["sentence"])
     tear_i = next((i for i, st in enumerate(pst) if st["type"] == "typo" and i > 0), None) if paper.get("tear", True) else None
+    # chaque planche est une feuille : la suivante est posée par-dessus (du bas, puis de la droite, en alternance),
+    # la précédente s'enfonce et s'assombrit ; la première nuance arrive par une déchirure qui révèle le verso
     fig = 0
-    blocks = []
+    plates, pin = [], []
     for i, st in enumerate(pst):
-        st["y"] = i * PLATE
+        st["y"] = 0
         if st["type"] in FIG_TYPES:
             fig += 1
             st["_fig"] = fig
-        if i != tear_i:
-            blocks.append(paper_station(st, film, st.get("_fig")))
-    paper_html = "\n".join(blocks)
-    world_h = len(pst) * PLATE + 400
-    pcam, tear = [], None
-    for i, st in enumerate(pst):
-        if i == tear_i:
-            tear = {"at": round(st["cam_at"] - 0.45, 3)}
-            continue
-        mode = "set" if tear_i is not None and i == tear_i + 1 else "tween"
-        pcam.append([st["cam_at"], -st["y"], mode])
-    verso_html = tear_html = ""
-    if tear is not None:
-        vst = dict(pst[tear_i], y=0)
-        verso_html = paper_station(vst, film)
-        prev = dict(pst[tear_i - 1], y=0)
+        verso = i == tear_i
+        inner = paper_station(st, film, st.get("_fig"))
+        plates.append(f'<div class="plate{" verso" if verso else ""}" id="plate{i}"><div class="pground"></div><div class="plight"></div>'
+                      f'<div class="pcrease"></div>{inner}<div class="pdim"></div></div>')
+        mode = "first" if i == 0 else ("tear" if verso else ("up" if i % 2 else "right"))
+        pin.append([round(st["cam_at"] - (0.45 if verso else 0.05), 3), mode])
+    paper_html = "\n".join(plates)
+    tear, tear_html = None, ""
+    if tear_i is not None:
+        tear = {"at": pin[tear_i][0]}
+        prev = pst[tear_i - 1]
         copy = paper_station(prev, film, prev.get("_fig"))
         rnd = random.Random(11)
         pts = [(x, 620 + (rnd.random() - .5) * 46) for x in range(0, W + 36, 36)]
@@ -1346,10 +1359,8 @@ def build(project):
         bot_clip = "polygon(" + ",".join(f"{x}px {yy:.0f}px" for x, yy in pts) + f",{W}px {H}px,0 {H}px)"
         edge = " ".join(f"{x},{yy:.0f}" for x, yy in pts)
         fib = f'<svg class="lay" style="left:0;top:0;width:{W}px;height:{H}px" viewBox="0 0 {W} {H}"><polyline points="{edge}" fill="none" stroke="#FFFDF8" stroke-width="7" stroke-linejoin="round"/></svg>'
-        tear_html = (f'<div class="tearh" id="tearT" style="clip-path:{top_clip}"><div class="pground"></div>{copy}{fib}</div>'
-                     f'<div class="tearh" id="tearB" style="clip-path:{bot_clip}"><div class="pground"></div>{copy}{fib}</div>')
-        if tear_i + 1 < len(pst):
-            tear["out"] = pst[tear_i + 1]["cam_at"]
+        tear_html = (f'<div class="tearh" id="tearT" style="clip-path:{top_clip}"><div class="pground"></div><div class="pcrease"></div>{copy}{fib}</div>'
+                     f'<div class="tearh" id="tearB" style="clip-path:{bot_clip}"><div class="pground"></div><div class="pcrease"></div>{copy}{fib}</div>')
 
     pv_k = find_sentence(pv["text"])
     pv_ws = film["sentences"][pv_k]["_ws"]
@@ -1358,7 +1369,7 @@ def build(project):
     skip_subs |= {pv_k, en_k}
     subs = build_subs(film, skip_subs)
 
-    runtime = {"duration": D, "fold": FOLD_DUR, "ncam": ncam, "pcam": pcam, "tear": tear,
+    runtime = {"duration": D, "fold": FOLD_DUR, "ncam": ncam, "plates": pin, "tear": tear,
                "night": [night["start"], night["end"]], "paper": [paper["start"], paper["end"]],
                "pivot": {"start": pv["start"], "fold_at": pv["fold_at"]},
                "end": {"start": en["start"], "fold_at": en["fold_at"], "click_at": en["click_at"], "button_at": en["button_at"]}}
@@ -1405,11 +1416,9 @@ def build(project):
 
   <div id="paper" class="clip" data-start="{paper['start']:.3f}" data-duration="{paper['end']-paper['start']:.3f}" data-track-index="3">
     <div class="foldsheet" id="psheet">
-      <div class="pground"></div><div class="plight" id="plight"></div><div class="pcrease"></div>
-      <div id="pcam"><div id="pworld" style="height:{world_h}px">
+      <div class="pground"></div>
+      <div id="pcam">
 {paper_html}
-      </div>
-      <div id="verso"><div class="plight" id="vlight"></div>{verso_html}</div>
       {tear_html}
       </div>
       <div class="pcorner"></div>
@@ -1442,52 +1451,63 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
 """
     (proj / "index.html").write_text(doc, encoding="utf-8")
 
-    # bruitages déduits de la structure (mêmes règles chaque jour) : [nom, seconde, volume]
+    # bruitages déduits de la structure : peu, au bon moment, jamais à la chaîne (retour du 26 octobre).
+    # Bruits de papier pour les gestes de papier (feuille posée, pli, déchirure), un « ping » pour le résultat qui
+    # compte, un « pop » pour l'écart ; rien sur chaque élément qui apparaît. [nom, seconde, volume]
     if film.get("sfx", True):
-        sfx = [["impact-bass-1", 0.0, 0.26]]
+        sfx = [["impact-bass-1", 0.0, 0.24]]
         for st in night["stations"]:
             if st["type"] == "hook_number":
-                sfx.append(["pop", st["lit_at"], 0.2])
+                sfx.append(["pop", st["lit_at"], 0.18])
             if st["type"] == "steps":
                 for s in st["steps"]:
                     if s.get("alert"):
-                        sfx.append(["notification", s.get("note_at", s["at"] + 0.5), 0.16])
-        sfx += [["whoosh-short", t + 0.05, 0.12] for t, _ in ncam[1:]]
-        sfx.append(["whoosh-cinematic", pv["fold_at"] - 0.1, 0.26])
+                        sfx.append(["notification", s.get("note_at", s["at"] + 0.5), 0.14])
+        sfx += [["whoosh-short", st["cam_at"] + 0.05, 0.08] for st in night["stations"][1:]]
+        sfx += [["papier-pli", pv["fold_at"] - 0.05, 0.32], ["whoosh-cinematic", pv["fold_at"] - 0.1, 0.12]]
+        for p in pin[1:]:
+            if p[1] in ("up", "right"):
+                sfx.append(["papier-pose", p[0] + 0.12, 0.2])
+        if tear:
+            sfx.append(["papier-dechire", tear["at"] + 0.2, 0.34])
         for st in pst:
             ty = st["type"]
             if ty == "population_split":
-                sfx += [["pop", st["count_at"], 0.16], ["whoosh-short", st["split_at"], 0.14],
-                        ["ping", st["groups"][1].get("accent_at", st["split_at"] + 1), 0.13]]
+                sfx.append(["ping", st["groups"][1].get("accent_at", st["split_at"] + 1), 0.12])
             if ty in ("result_bars", "result_strips", "result_dots"):
                 sfx += [["ping", g["at"], 0.13] for g in st["groups"] if g.get("accent")]
                 c = ci_of(st)
                 at = (c or {}).get("at") or st.get("diff_at")
                 if at:
-                    sfx.append(["pop", at, 0.18])
+                    sfx.append(["pop", at + 0.2, 0.16])
             if ty == "metric":
-                sfx += [["ping", g["at"], 0.13] for g in st["metrics"]]
-            if ty == "studies_stack":
-                sfx += [["pop", st["at"], 0.16]]
-            if ty == "key_points":
-                sfx += [["whoosh-short", pt["at"], 0.1] for pt in st["points"]]
+                sfx += [["ping", g["at"], 0.12] for g in st["metrics"] if g.get("accent")]
             if ty == "forest_plot" and st.get("pooled"):
-                sfx.append(["pop", st["pooled"].get("at", st["cam_at"] + 2.5) + 0.4, 0.18])
+                sfx.append(["pop", st["pooled"].get("at", st["cam_at"] + 2.5) + 0.5, 0.16])
             if ty == "roc_curve":
-                sfx.append(["ping", st["auc"]["at"], 0.13])
-            if ty == "diagnostic_grid":
-                sfx.append(["whoosh-short", st.get("scan_at", st["cam_at"] + 2.2), 0.12])
-                if st.get("sens"):
-                    sfx.append(["ping", st["sens"]["at"], 0.13])
+                sfx.append(["ping", st["auc"]["at"], 0.12])
+            if ty == "diagnostic_grid" and st.get("sens"):
+                sfx.append(["ping", st["sens"]["at"], 0.12])
             if ty == "image_scan":
-                sfx += [["whoosh-short", st.get("scan_at", st["cam_at"] + 1.4), 0.12], ["ping", st.get("lock_at", st["cam_at"] + 2.7), 0.14]]
-            if ty == "chat":
-                sfx += [["pop", m_["at"], 0.12] for m_ in st["messages"][:4]]
-        sfx += [["whoosh-short", p[0] + 0.05, 0.1] for p in pcam[1:]]
-        if tear:
-            sfx.append(["whoosh-cinematic", tear["at"] + 0.2, 0.22])
-        sfx += [["whoosh-cinematic", en["fold_at"] - 0.1, 0.22], ["chime", en["wordmark_at"], 0.2], ["click", en["click_at"], 0.45]]
+                sfx.append(["ping", st.get("lock_at", st["cam_at"] + 2.7), 0.12])
+            if ty == "chat" and st.get("rating"):
+                sfx.append(["pop", st["rating"].get("at", st["cam_at"] + 3), 0.14])
+        sfx += [["papier-pli", en["fold_at"] - 0.05, 0.28], ["whoosh-cinematic", en["fold_at"] - 0.1, 0.1],
+                ["chime", en["wordmark_at"], 0.18], ["click", en["click_at"], 0.4]]
         sfx = sorted([[n, round(max(0.0, t), 3), v] for n, t, v in sfx], key=lambda e: e[1])
+        # jamais deux bruitages à moins de 1,2 s : on garde le plus important (papier et fin d'abord)
+        rang = {"impact-bass-1": 0, "papier-pli": 0, "papier-dechire": 0, "click": 0, "chime": 0, "whoosh-cinematic": 0,
+                "papier-pose": 1, "ping": 2, "pop": 2, "notification": 2, "whoosh-short": 3}
+        garde = []
+        for e in sfx:
+            proche = [g for g in garde if abs(g[1] - e[1]) < 1.2 and rang.get(g[0], 3) and rang.get(e[0], 3)]
+            if not proche:
+                garde.append(e)
+            elif rang.get(e[0], 3) < min(rang.get(g[0], 3) for g in proche):
+                for g in proche:
+                    garde.remove(g)
+                garde.append(e)
+        sfx = sorted(garde, key=lambda e: e[1])
         (proj / "assets" / "audio").mkdir(parents=True, exist_ok=True)
         (proj / "assets" / "audio" / "sfx-events.json").write_text(json.dumps(sfx, ensure_ascii=False), encoding="utf-8")
     for s in film["sentences"]:

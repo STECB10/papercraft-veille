@@ -82,6 +82,39 @@ def parler(texte):
     return re.sub(r"\s+", " ", t).strip()
 
 
+CHIFFRES = {"zéro": 0, "un": 1, "deux": 2, "trois": 3, "quatre": 4, "cinq": 5, "six": 6, "sept": 7, "huit": 8, "neuf": 9}
+
+
+def decimales(texte):
+    """Corrige les décimales lues chiffre par chiffre : « zéro virgule huit quatre cinq » -> « zéro virgule huit cent
+    quarante-cinq » (la voix lirait sinon « huit, quatre, cinq »). Les zéros de tête restent : « zéro virgule zéro six »."""
+    toks = texte.split(" ")
+    out, i = [], 0
+    while i < len(toks):
+        out.append(toks[i])
+        if toks[i].lower() == "virgule":
+            j, digits, fin = i + 1, [], ""
+            while j < len(toks):
+                mot = toks[j]
+                nu = mot.rstrip(".,;:!?»)")
+                if nu.lower() not in CHIFFRES:
+                    break
+                digits.append(CHIFFRES[nu.lower()])
+                j += 1
+                if nu != mot:
+                    fin = mot[len(nu):]
+                    break
+            zeros = len(digits) - len("".join(map(str, digits)).lstrip("0"))
+            reste = digits[zeros:]
+            if len(reste) >= 2:
+                mots = ["zéro"] * zeros + [entier(int("".join(map(str, reste))))]
+                out.append(" ".join(mots) + fin)
+                i = j
+                continue
+        i += 1
+    return " ".join(out)
+
+
 def main():
     sys.path.insert(0, __file__.rsplit("/", 1)[0])
     from commun import dossier_du_jour, ecrire_json, lire_json
@@ -93,6 +126,10 @@ def main():
             s.setdefault("display", s["text"])
             s["text"] = parler(s["text"])
             n += 1
+        lu = decimales(s["text"])
+        if lu != s["text"]:
+            s["text"] = lu
+            n += 1
     ecrire_json(jour / "film.json", film)
     print(f"nombres : {n} phrase(s) réécrite(s) en toutes lettres")
 
@@ -101,5 +138,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "test":
         for x in ["0,845", "2 378 patients", "36 %", "18,2 %", "71", "80", "81", "91", "200", "201", "1 000", "2026", "0,05", "1 500 000", "21"]:
             print(f"{x!r:>18} -> {parler(x)}")
+        for x in ["zéro virgule huit quatre cinq à zéro virgule huit neuf huit.", "zéro virgule zéro six", "zéro virgule zéro huit neuf,", "quatre virgule trois"]:
+            print(f"{x!r:>60} -> {decimales(x)}")
     else:
         main()
