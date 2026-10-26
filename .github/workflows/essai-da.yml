@@ -38,10 +38,13 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: "22", cache: npm }
       - name: Outils
+        timeout-minutes: 10
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-          npm ci --no-audit --no-fund
-          npx hyperframes browser ensure
+          # un miroir apt muet a déjà figé cette étape 25 min : délais courts, et chaque commande dit quand elle commence
+          APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
+          echo "apt…"; sudo timeout 300 apt-get $APT update -qq && sudo timeout 300 apt-get $APT install -y -qq ffmpeg > /dev/null
+          echo "npm…"; timeout 300 npm ci --no-audit --no-fund
+          echo "navigateur…"; timeout 300 npx hyperframes browser ensure
           CAS="${{ matrix.cas }}"
           echo "DATE_DU_JOUR=${CAS#*:}" >> "$GITHUB_ENV"
       - name: Réécriture du film par Claude (cas « bot »)
