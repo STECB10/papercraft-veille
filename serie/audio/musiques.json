@@ -1,3 +1,6 @@
 [
- {"fichier": "papercraft-musique-v2.mp3", "drop": 21.30, "titre": "Série v2 (ElevenLabs Music v2.5, 62 s, instrumentale)"}
+ {"fichier": "papercraft-pizzicato.mp3", "drop": 18.50, "titre": "Pizzicato et marimba, 104 BPM (ElevenLabs Music v2.5, 150 s, instrumentale)"},
+ {"fichier": "papercraft-pulsation.mp3", "drop": 20.00, "titre": "Pulsation tech légère, 110 BPM (ElevenLabs Music v2.5, 148 s, instrumentale, pas d'intro calme)"},
+ {"fichier": "papercraft-musique-v2.mp3", "drop": 21.30, "titre": "Série v2 (ElevenLabs Music v2.5, 62 s, instrumentale)"},
+ {"fichier": "papercraft-piano.mp3", "drop": 20.30, "titre": "Piano feutré et nappes, 96 BPM (ElevenLabs Music v2.5, 148 s, instrumentale)"}
 ]

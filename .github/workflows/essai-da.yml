@@ -2,6 +2,7 @@ name: Essai DA (rejouer des études passées)
 # Rejoue des films déjà écrits avec le moteur de la branche (vraie voix, vraie musique, vrai rendu) et envoie les
 # vidéos sur Telegram pour validation. Ne publie rien, ne crée aucune release, n'enregistre rien dans le dépôt.
 # « bot » : Claude réécrit d'abord le film d'une date avec la charte de la branche (test du choix des planches).
+# « neuf » : veille du jour puis étude toute nouvelle écrite par Claude (rien n'est enregistré dans le dépôt).
 on:
   push:
     branches: [claude/dreamy-galileo-d42d5s]
@@ -21,7 +22,7 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        cas: ["2026-10-24", "2026-10-25", "bot:2026-10-25"]
+        cas: ["2026-10-26", "neuf:2026-10-27"]
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -42,14 +43,17 @@ jobs:
           npm ci --no-audit --no-fund
           npx hyperframes browser ensure
           CAS="${{ matrix.cas }}"
-          echo "DATE_DU_JOUR=${CAS#bot:}" >> "$GITHUB_ENV"
+          echo "DATE_DU_JOUR=${CAS#*:}" >> "$GITHUB_ENV"
       - name: Réécriture du film par Claude (cas « bot »)
         if: startsWith(matrix.cas, 'bot:')
         run: |
           cd "jours/$DATE_DU_JOUR"
           rm -f film.json film.resolu.json faits.json SCRIPT.md post.txt etude.json source.txt
+      - name: Veille (cas « neuf »)
+        if: startsWith(matrix.cas, 'neuf:')
+        run: python3 pipeline/veille.py
       - name: "Étude, script et post (Claude en ligne de commande, l'action GitHub refuse les push)"
-        if: startsWith(matrix.cas, 'bot:')
+        if: startsWith(matrix.cas, 'bot:') || startsWith(matrix.cas, 'neuf:')
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
@@ -83,14 +87,19 @@ jobs:
           python3 - <<'PY'
           import json, os, sys
           sys.path.insert(0, "pipeline")
+          sys.path.insert(0, "serie/moteur")
           from commun import JOURS, env, tg
+          from musique import morceau_du_jour
           d = os.environ["DATE_DU_JOUR"]
           jour = JOURS / d
           f = json.load(open(jour / "film.json"))
           cas = "${{ matrix.cas }}"
-          quoi = "film réécrit par Claude avec la nouvelle charte" if cas.startswith("bot:") else "même film, nouveau moteur"
+          quoi = {"bot:": "film réécrit par Claude avec la nouvelle charte",
+                  "neuf:": "étude toute nouvelle, écrite par Claude avec la nouvelle charte"}.get(cas[:cas.find(":") + 1], "ancienne étude, nouveau moteur")
           planches = ", ".join(s["type"] for s in f["paper"]["stations"])
-          cap = f"Essai DA v2 · {d} · {quoi}\nPlanches : {planches}\n(test : rien n'est publié)"
+          titre = json.load(open(jour / "etude.json")).get("titre", "") if (jour / "etude.json").exists() else ""
+          cap = (f"Essai DA v2 · {d} · {quoi}\n{titre[:200]}\nPlanches : {planches}\n"
+                 f"Musique : {morceau_du_jour(jour)['titre']}\n(test : rien n'est publié)")
           tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": cap[:1000], "supports_streaming": "true"},
              [("video", jour / "final.mp4")], timeout=600)
           PY
