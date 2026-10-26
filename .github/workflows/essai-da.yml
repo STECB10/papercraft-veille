@@ -1,0 +1,97 @@
+name: Essai DA (rejouer des études passées)
+# Rejoue des films déjà écrits avec le moteur de la branche (vraie voix, vraie musique, vrai rendu) et envoie les
+# vidéos sur Telegram pour validation. Ne publie rien, ne crée aucune release, n'enregistre rien dans le dépôt.
+# « bot » : Claude réécrit d'abord le film d'une date avec la charte de la branche (test du choix des planches).
+on:
+  push:
+    branches: [claude/dreamy-galileo-d42d5s]
+    paths: [".github/workflows/essai-da.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: essai-da
+  cancel-in-progress: true
+jobs:
+  essai:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        cas: ["2026-10-24", "2026-10-25", "2026-10-26", "bot:2026-10-25"]
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      HYPERFRAMES_NO_TELEMETRY: "1"
+      DO_NOT_TRACK: "1"
+      HYPERFRAMES_SKIP_SKILLS: "1"
+      HYPERFRAMES_NO_UPDATE_CHECK: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm }
+      - name: Outils
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          npm ci --no-audit --no-fund
+          npx hyperframes browser ensure
+          CAS="${{ matrix.cas }}"
+          echo "DATE_DU_JOUR=${CAS#bot:}" >> "$GITHUB_ENV"
+      - name: Réécriture du film par Claude (cas « bot »)
+        if: startsWith(matrix.cas, 'bot:')
+        run: |
+          cd "jours/$DATE_DU_JOUR"
+          rm -f film.json film.resolu.json faits.json SCRIPT.md post.txt etude.json source.txt
+      - name: Étude, script et post (Claude)
+        if: startsWith(matrix.cas, 'bot:')
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          allowed_bots: "*"
+          prompt: "/etude-du-jour"
+          claude_args: '--max-turns 90 --allowedTools "Bash,Read,Write,Edit,Glob,Grep"'
+      - name: Vérification
+        run: |
+          python3 pipeline/nombres.py
+          python3 pipeline/verifier.py
+      - name: Fabrication
+        run: python3 pipeline/fabriquer.py
+      - name: Planches du film
+        run: |
+          python3 - <<'PY'
+          import json, os
+          f = json.load(open(f"jours/{os.environ['DATE_DU_JOUR']}/film.json"))
+          print("table :", [s["type"] for s in f["night"]["stations"]])
+          print("feuille :", [s["type"] for s in f["paper"]["stations"]])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: essai-${{ strategy.job-index }}
+          path: |
+            jours/${{ env.DATE_DU_JOUR }}/final.mp4
+            jours/${{ env.DATE_DU_JOUR }}/film.json
+          if-no-files-found: ignore
+      - name: Envoi Telegram (validation, rien n'est publié)
+        run: |
+          python3 - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, "pipeline")
+          from commun import JOURS, env, tg
+          d = os.environ["DATE_DU_JOUR"]
+          jour = JOURS / d
+          f = json.load(open(jour / "film.json"))
+          cas = "${{ matrix.cas }}"
+          quoi = "film réécrit par Claude avec la nouvelle charte" if cas.startswith("bot:") else "même film, nouveau moteur"
+          planches = ", ".join(s["type"] for s in f["paper"]["stations"])
+          cap = f"Essai DA v2 · {d} · {quoi}\nPlanches : {planches}\n(test : rien n'est publié)"
+          tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": cap[:1000], "supports_streaming": "true"},
+             [("video", jour / "final.mp4")], timeout=600)
+          PY
