@@ -1,0 +1,383 @@
+{
+ "id": "2026-10-27",
+ "sentences": [
+  {
+   "text": "Six cent deux habitants ont ouvert la bouche devant un téléphone pour se faire dépister.",
+   "display": "602 habitants ont ouvert la bouche devant un téléphone pour se faire dépister.",
+   "box": "téléphone",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Ces campagnes se déroulent loin des spécialistes de la bouche.",
+   "box": "loin",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Des personnels formés, non spécialistes, photographient l'intérieur de la bouche.",
+   "box": "photographient"
+  },
+  {
+   "text": "Or, une lésion débutante est discrète, difficile à reconnaître.",
+   "box": "discrète,",
+   "peak": "discrète",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Une équipe a développé une IA installée sur un téléphone mobile.",
+   "box": "IA"
+  },
+  {
+   "text": "Elle vérifie la netteté de la photo, puis classe chaque lésion en vert, jaune ou rouge.",
+   "box": "classe"
+  },
+  {
+   "text": "Le rouge signale une lésion à haut risque, à montrer à un spécialiste.",
+   "box": "rouge",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Fonctionne-t-elle vraiment sur le terrain ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Les chercheurs ont voulu savoir si le tri rouge repère les lésions à haut risque.",
+   "box": "rouge",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "C'est une étude diagnostique prospective, menée à Taïwan de juin à décembre deux mille vingt-cinq.",
+   "display": "C'est une étude diagnostique prospective, menée à Taïwan de juin à décembre 2025.",
+   "box": "prospective,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Quatre mille huit cent seize photos ont été prises chez six cent deux participants.",
+   "display": "4 816 photos ont été prises chez 602 participants.",
+   "box": "photos",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Concrètement, l'IA reçoit les photos, repère chaque lésion, puis la classe en vert, jaune ou rouge.",
+   "box": "l'IA",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Trois spécialistes ont relu toutes les images pour fixer la référence.",
+   "box": "spécialistes",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Quatre mille deux cent quatre-vingt-trois images exploitables ont été analysées.",
+   "display": "4 283 images exploitables ont été analysées.",
+   "box": "exploitables",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Résultat : l'IA a classé soixante-huit lésions en rouge, et douze étaient bien à haut risque.",
+   "display": "Résultat : l'IA a classé 68 lésions en rouge, et 12 étaient bien à haut risque.",
+   "box": "rouge,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Les spécialistes en ont repéré quatre autres, soit seize lésions à haut risque au total.",
+   "display": "Les spécialistes en ont repéré 4 autres, soit 16 lésions à haut risque au total.",
+   "box": "total.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "La sensibilité atteint donc soixante-quinze pour cent, intervalle de confiance : cinquante virgule cinq à quatre-vingt-neuf virgule huit.",
+   "display": "La sensibilité atteint donc 75 %, intervalle de confiance : 50,5 à 89,8.",
+   "box": "sensibilité",
+   "peak": "sensibilité",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Soit douze lésions dangereuses retrouvées sur seize.",
+   "display": "Soit 12 lésions dangereuses retrouvées sur 16.",
+   "box": "dangereuses",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "En revanche, seules dix-sept virgule six pour cent des alertes rouges étaient justifiées.",
+   "display": "En revanche, seules 17,6 % des alertes rouges étaient justifiées.",
+   "box": "justifiées.",
+   "peak": "seules",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Pourtant, quatre-vingt-dix-huit virgule six pour cent des lésions sans risque n'ont déclenché aucune alerte rouge.",
+   "display": "Pourtant, 98,6 % des lésions sans risque n'ont déclenché aucune alerte rouge.",
+   "box": "aucune",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Seize cas seulement, et aucune biopsie : la prudence s'impose.",
+   "mode": "type",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Cette IA oriente vers le spécialiste, sans remplacer son diagnostic.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 35.07,
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0.8,
+    "header": "Étude diagnostique · Taïwan · 2025",
+    "number": "602",
+    "unit": "habitants",
+    "caption": "photographiés par téléphone pour un dépistage du cancer de la bouche",
+    "caption_at": 1.48,
+    "people": 5,
+    "lit": 3,
+    "lit_at": 0.82,
+    "footnote": "Dépistage communautaire · est de Taïwan",
+    "y": 0
+   },
+   {
+    "type": "gag_waiting",
+    "cam_at": 8.98,
+    "door": "Chirurgie orale",
+    "chairs": 6,
+    "occupied": 2,
+    "y": 1380
+   },
+   {
+    "type": "steps",
+    "cam_at": 11.51,
+    "mark_at": 18.52,
+    "title": "Le dépistage sur le terrain",
+    "steps": [
+     {
+      "icon": "camera",
+      "label": "01 · Photo de la bouche",
+      "note": "par un personnel formé",
+      "at": 11.56,
+      "note_at": 12.32,
+      "_y": 2510
+     },
+     {
+      "icon": "chip",
+      "label": "02 · Tri par l'IA",
+      "note": "vert, jaune ou rouge",
+      "at": 25.39,
+      "note_at": 29.24,
+      "_y": 2840
+     },
+     {
+      "icon": "stethoscope",
+      "label": "03 · Avis du spécialiste",
+      "note": "pour le rouge",
+      "at": 31.31,
+      "note_at": 34.22,
+      "_y": 3170
+     }
+    ],
+    "y": 2340
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Fonctionne-t-elle vraiment sur le terrain ?",
+  "italic": "vraiment",
+  "fold_at": 39.46,
+  "start": 35.07,
+  "end": 40.51
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": 39.16,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Étude diagnostique prospective",
+      "at": 45.34
+     },
+     {
+      "label": "Lieu",
+      "value": "Est de Taïwan",
+      "at": 46.86
+     },
+     {
+      "label": "Période",
+      "value": "Juin à décembre 2025",
+      "at": 47.76
+     },
+     {
+      "label": "Participants",
+      "value": "602 personnes",
+      "at": 53.16
+     },
+     {
+      "label": "Photos",
+      "value": "4 816 photos de la bouche",
+      "at": 51.62
+     },
+     {
+      "label": "Critère",
+      "value": "Lésions à haut risque (rouge)",
+      "at": 41.22,
+      "accent": true
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 54.81,
+    "input_icon": "camera",
+    "modality": "image",
+    "input_label": "Photos de la bouche",
+    "ai_label": "Repère et classe chaque lésion",
+    "output_label": "Vert · jaune · rouge",
+    "at": 57.02,
+    "scan_at": 57.76,
+    "core_at": 56.04,
+    "out_at": 60.04,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "key_points",
+    "cam_at": 61.98,
+    "title": "Comment l'IA a été jugée",
+    "points": [
+     {
+      "text": "3 spécialistes relisent toutes les images",
+      "at": 62.28
+     },
+     {
+      "text": "Référence fixée ensemble, sans biopsie systématique",
+      "at": 65.08
+     },
+     {
+      "text": "4 283 images exploitables analysées",
+      "at": 66.53
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "key_points",
+    "cam_at": 70.57,
+    "title": "Les lésions à haut risque",
+    "points": [
+     {
+      "text": "68 lésions classées en rouge par l'IA",
+      "at": 73.0
+     },
+     {
+      "text": "12 confirmées à haut risque",
+      "at": 75.02
+     },
+     {
+      "text": "4 trouvées en plus par les spécialistes",
+      "at": 78.74
+     },
+     {
+      "text": "16 lésions à haut risque au total",
+      "at": 79.88
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "metric",
+    "cam_at": 81.99,
+    "title": "Sensibilité du tri rouge",
+    "metrics": [
+     {
+      "label": "Sensibilité",
+      "value": "75",
+      "num": 75,
+      "unit": "%",
+      "note": "IC 95 % : 50,5–89,8",
+      "at": 82.44,
+      "accent": true
+     }
+    ],
+    "caption": "12 lésions sur 16 retrouvées",
+    "caption_at": 90.42,
+    "y": 0,
+    "_fig": 2
+   },
+   {
+    "type": "metric",
+    "cam_at": 93.3,
+    "title": "Fiabilité des alertes",
+    "metrics": [
+     {
+      "label": "Alertes justifiées",
+      "value": "17,6",
+      "num": 17.6,
+      "unit": "%",
+      "at": 94.52,
+      "accent": true
+     },
+     {
+      "label": "Sans risque, sans alerte",
+      "value": "98,6",
+      "num": 98.6,
+      "unit": "%",
+      "at": 99.71
+     }
+    ],
+    "y": 0,
+    "_fig": 3
+   },
+   {
+    "type": "typo",
+    "cam_at": 105.19,
+    "text": "Seize cas seulement, et aucune biopsie : la prudence s'impose.",
+    "italic": "prudence",
+    "sentence": 20,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 110.03,
+    "text": "Cette IA oriente vers le spécialiste, sans remplacer son diagnostic.",
+    "italic": "oriente",
+    "sentence": 21,
+    "y": 0
+   }
+  ],
+  "start": 39.410000000000004,
+  "end": 114.95
+ },
+ "end": {
+  "fold_at": 113.9,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 117.39,
+  "button": "Suivre",
+  "button_at": 117.99,
+  "click_at": 118.99,
+  "source": "Liu et al. · JMIR mHealth and uHealth · octobre 2026",
+  "doi": "doi:10.2196/101721",
+  "source_at": 115.64,
+  "start": 113.85000000000001,
+  "end": 121.7
+ },
+ "duration": 121.7,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

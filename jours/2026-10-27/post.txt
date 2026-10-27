@@ -1,0 +1,7 @@
+Une IA sur téléphone repère 12 des 16 lésions de la bouche à haut risque, mais ses alertes rouges se trompent souvent.
+
+À Taïwan, des personnels formés ont photographié la bouche de 602 habitants lors d'un dépistage du cancer. Une IA a classé chaque lésion en vert, jaune ou rouge, puis trois spécialistes ont relu toutes les images. Pour les lésions à haut risque, la sensibilité est de 75 % (IC 95 % : 50,5 à 89,8), et 17,6 % des alertes rouges étaient justifiées. Étude prospective, sans biopsie : l'IA aide à orienter, elle ne pose pas le diagnostic.
+
+Source : Liu et al., JMIR mHealth and uHealth, octobre 2026. https://doi.org/10.2196/101721
+
+#IA #Dépistage #CancerDeLaBouche #SantéPublique

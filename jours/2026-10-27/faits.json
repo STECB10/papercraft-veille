@@ -1,0 +1,77 @@
+[
+ {
+  "id": "f1",
+  "valeur": 602,
+  "citation": "Among 602 screened participants"
+ },
+ {
+  "id": "f2",
+  "valeur": 4816,
+  "citation": "Of 4816 acquired intraoral images, 533 (11.1%) were excluded"
+ },
+ {
+  "id": "f3",
+  "valeur": 533,
+  "citation": "Of 4816 acquired intraoral images, 533 (11.1%) were excluded"
+ },
+ {
+  "id": "f4",
+  "valeur": 4283,
+  "citation": "leaving 4283 (88.9%) interpretable images"
+ },
+ {
+  "id": "f5",
+  "valeur": 68,
+  "citation": "The AI system flagged 68 red lesions"
+ },
+ {
+  "id": "f6",
+  "valeur": 12,
+  "citation": "12 (17.6%) were confirmed as high risk"
+ },
+ {
+  "id": "f7",
+  "valeur": 17.6,
+  "citation": "12 (17.6%) were confirmed as high risk"
+ },
+ {
+  "id": "f8",
+  "valeur": 4,
+  "citation": "4 additional high-risk lesions were identified during expert review"
+ },
+ {
+  "id": "f9",
+  "valeur": 16,
+  "citation": "yielding 16 high-risk events"
+ },
+ {
+  "id": "f10",
+  "valeur": 75,
+  "citation": "sensitivity was 75% (12/16; 95% CI 50.5%-89.8%)"
+ },
+ {
+  "id": "f11",
+  "valeur": 50.5,
+  "citation": "sensitivity was 75% (12/16; 95% CI 50.5%-89.8%)"
+ },
+ {
+  "id": "f12",
+  "valeur": 89.8,
+  "citation": "sensitivity was 75% (12/16; 95% CI 50.5%-89.8%)"
+ },
+ {
+  "id": "f13",
+  "valeur": 98.6,
+  "citation": "specificity, negative predictive value, and accuracy were 98.6% (3928/3984)"
+ },
+ {
+  "id": "f14",
+  "valeur": 2025,
+  "citation": "from June 17 to December 31, 2025"
+ },
+ {
+  "id": "f15",
+  "valeur": 95,
+  "citation": "95% CI 50.5%-89.8%"
+ }
+]
