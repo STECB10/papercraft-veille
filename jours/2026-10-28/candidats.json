@@ -1,0 +1,130 @@
+[
+ {
+  "score": 17,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique",
+   "revue majeure"
+  ],
+  "id": "MED:42930596",
+  "pmid": "42930596",
+  "pmcid": null,
+  "doi": "10.3390/medsci14060677",
+  "titre": "AI-Guided Histopathological and Molecular Phenotyping of Salivary Glands in Sjögren's Disease: Subtyping, Mechanistic Insights, and Translational Implications-A Systematic Review and Structured Functional Synthesis.",
+  "revue": "Medical sciences (Basel, Switzerland)",
+  "date": "2026-10-15",
+  "auteurs": "Ardila CM, Pineda-Vélez E, Vivares-Builes AM.",
+  "types": "systematic review review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background/objectives Salivary-gland biopsy is central to Sjögren's disease (SjD) assessment, but conventional measures incompletely capture glandular heterogeneity. This systematic review evaluated artificial intelligence (AI)/machine learning (ML) applications to SjD salivary-gland histopathology and molecular profiling, including biological and translational validation. Methods PubMed, Scopus, and Embase were searched. Eligible studies used salivary-gland tissue as the primary analytical substrate or provided substantive glandular validation of systemic AI/ML findings. Evidence was synthesized functionally because of methodological heterogeneity. Results Twenty-five studies were included. AI/ML identified histopathological and molecular phenotypes spanning immune/interferon activation, tissue architecture and immune-cell organization, epithelial stress and metabolic/cell-death remodeling, and translational response. Only a limited subset progressed beyond computational or tissue-level confirmation to functional perturbation, pharmacological testing, in vivo validation, or human treatment-response assessment. Recurrent public-dataset reuse, small cohorts, heterogeneous pipelines, and limited independent validation constrained reproducibility. Conclusions AI/ML supports multidimensional SjD glandular phenotyping and shows emerging translational potential, but demonstrated clinical or therapeutic utility remains unestablished. Prospective multicenter validation is required before AI-derived glandular phenotypes can inform routine patient stratification or therapeutic decision-making."
+ },
+ {
+  "score": 17,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique",
+   "revue majeure"
+  ],
+  "id": "MED:42930604",
+  "pmid": "42930604",
+  "pmcid": null,
+  "doi": "10.3390/medsci14060685",
+  "titre": "Before Sepsis Strikes: Artificial Intelligence for Early Prediction of Postoperative Sepsis and Sepsis-Related Complications After Major Abdominal Surgery-A Systematic Review.",
+  "revue": "Medical sciences (Basel, Switzerland)",
+  "date": "2026-10-19",
+  "auteurs": "Alghoul WII, Alabid I, Abedi MM, Patni MM, George BT, Kar SS, Dube R, Al-Shammari WBJ, Osman MOE, Neyyappadath RJ, Nagabhatla S, Ahmed ASS.",
+  "types": "systematic review review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Postoperative sepsis and related infectious complications remain major causes of morbidity after abdominal surgery. Artificial intelligence (AI) and machine learning (ML) models may support earlier risk stratification, but their generalizability and clinical readiness remain uncertain. Methods We systematically searched PubMed, Scopus, and CENTRAL from inception to 10 August 2026 for studies developing, validating, or evaluating AI/ML models for postoperative sepsis, postoperative infection/surgical-site infection (SSI), anastomotic leakage, or postoperative pancreatic fistula (POPF) after major abdominal or general surgery. SSI, anastomotic leakage, and POPF were analyzed as distinct postoperative endpoints and were not treated as proxy definitions of clinical sepsis. Study selection and data extraction were performed independently by two reviewers, and risk of bias and applicability were assessed using PROBAST + AI. Owing to substantial clinical and methodological heterogeneity, results were synthesized narratively. The review was registered in PROSPERO (CRD420261492111). Results Forty-five studies were included: 11 addressed sepsis-related outcomes, including six studies with a primary sepsis-related modeled endpoint whose definitions ranged from consensus Sepsis-3 criteria to coded or SIRS-based definitions and a qSOFA-based proxy; 19 evaluated postoperative infection/SSI; eight anastomotic leakage; five POPF; and two broader postoperative complications. Performance varied according to outcome, surgical population, prediction timing, predictor availability, and validation strategy. Fifteen of 45 studies provided strict temporal, geographic/external-center, or independent-investigator evaluation of the principal model, with variable preservation of performance outside development settings. More complex ML methods did not reliably outperform conventional regression. Explicit calibration analysis was reported in 9/45 studies, decision-curve or net-benefit analysis in 7/45, and no study prospectively evaluated the impact of model-guided care on clinical outcomes. Certainty of evidence was very low for primary postoperative sepsis/septic-shock prediction, low for postoperative infection/SSI, and very low for anastomotic leakage and POPF. Conclusions Although several AI/ML models showed promising predictive performance, the available evidence remains insufficient to support routine use of AI/ML prediction models across major abdominal surgical populations. Future studies should prioritize clearly defined clinical use cases, multicenter external validation, calibration, prospective workflow evaluation, and demonstration of actionable clinical benefit before routine implementation."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "multicentrique"
+  ],
+  "id": "MED:42863380",
+  "pmid": "42863380",
+  "pmcid": null,
+  "doi": "10.1016/j.jsurg.2026.104210",
+  "titre": "Expanded Longitudinal Validation of Adaptive Learning Stability in AI-Assisted Neurosurgical Residency Training.",
+  "revue": "Journal of surgical education",
+  "date": "2026-10-12",
+  "auteurs": "Mustafayev B, Mustafayeva A, Bakhtiyarov A, Nikatov K, Satylkhan B, Mustafayev A.",
+  "types": "validation study randomized controlled trial journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "Objective To evaluate the longitudinal stability, reproducibility, and robustness of Adaptive Learning Stability (ALS) within an expanded AI-assisted neurosurgical residency cohort during a 12-month observation cycle. Design This was a prospective controlled educational study. Residents completed 4 consecutive quarterly checkpoints integrating cognitive, technical, and decision-making assessments over 12 months. The RCKaS-AI framework incorporated predictive analytics, individualized adaptive remediation, and mentor-validated feedback pathways. Primary analysis evaluated longitudinal entrustment trajectory stability across checkpoints. Secondary analyses included inter-resident variance dynamics, remediation frequency, faculty workload, and predictive agreement between forecasted and observed competency progression. Setting Two accredited neurosurgical residency programs in Kazakhstan, from January 2025 to January 2026. Participants Sixty-four neurosurgical residents randomized into standard RCKaS (n = 32) and AI-enhanced RCKaS-AI (n = 32) cohorts. Results Both cohorts demonstrated progressive improvement in entrustment scores across sequential checkpoints. In the RCKaS-AI cohort, mean entrustment scores increased from 59.1 ± 12.8 at CP1 to 94.3 ± 6.9 at CP4, compared with 58.4 ± 13.1 to 85.7 ± 10.4 under standard RCKaS conditions (p = 0.001). Inter-resident variance decreased by 41% in the AI-assisted cohort versus 18% in the standard cohort. Residents within the RCKaS-AI framework achieved entrustment level 4 significantly earlier than controls (38 ± 7 weeks vs 50 ± 9 weeks, p = 0.003). Mean remediation frequency decreased from 3.4 ± 1.1 to 1.9 ± 0.7 sessions per resident, while faculty workload declined by 34%. Predictive analytics demonstrated strong agreement between forecasted and observed competency trajectories (r = 0.84; 95% CI, 0.77-0.89). Conclusions Expanded longitudinal implementation of the RCKaS-AI framework demonstrated reproducible stabilization of competency trajectories during neurosurgical residency training. These findings support the robustness of adaptive AI-assisted feedback systems as a practical mechanism for longitudinal competency regulation within structured surgical education programs. Further multicenter validation is required to evaluate external reproducibility across broader residency environments."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "texte intégral libre"
+  ],
+  "id": "MED:42864862",
+  "pmid": "42864862",
+  "pmcid": "PMC13671426",
+  "doi": "10.1080/17581966.2026.2743569",
+  "titre": "Potential to improve early detection of lung cancer through expansion of focused and opportunistic screening approaches: a scoping review focusing on potential expansion of screening risk factors and adoption of artificial intelligence models.",
+  "revue": "Lung cancer management",
+  "date": "2026-10-12",
+  "auteurs": "Mok TSK, Finley C, Köksal D, Li MSC, Shum E, Velotta JB, Yang PC.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue systématique",
+  "resume": "Background Low-dose computerized tomography (LDCT) is the gold standard for lung cancer (LC) screening, but access is hindered by strict eligibility criteria and limited infrastructure in low/middle-income countries. A combination of approaches, including expanded screening eligibility criteria and artificial intelligence (AI), could improve detection of early LC in patients excluded by current screening criteria. Areas covered A scoping review was conducted (PubMed, Cochrane library, congresses) to explore two potentially complementary approaches to enhance LC screening. The first identified LC risk factors and their potential inclusion in expanded screening criteria, allowing more people at risk to become eligible for screening; the second examined studies involving AI-augmented imaging (CXR or LDCT) to improve workflow, triage, and opportunistic nodule detection. Expert opinion/commentary Several robustly evidenced risk factors for LC were identified that are not included in current screening programs; widening of eligibility criteria could be considered based on local risk profile but requires further research to demonstrate benefit. Opportunistic use of AI-tools to assess incidental chest images may identify patients with pulmonary nodules requiring further investigation but their role in population-level LC screening requires prospective validation in diverse healthcare systems."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "n = 1114"
+  ],
+  "id": "MED:42939064",
+  "pmid": "42939064",
+  "pmcid": null,
+  "doi": "10.3390/bioengineering13101209",
+  "titre": "Artificial Intelligence in the Assessment and Management of Spasticity: A Scoping Review.",
+  "revue": "Bioengineering (Basel, Switzerland)",
+  "date": "2026-10-16",
+  "auteurs": "Cao R, Li R, Ser JS, Tan YL, Chen J.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Spasticity is a prevalent and disabling consequence of upper motor neuron disorders, yet its assessment and management remains clinically challenging. Artificial intelligence (AI) may offer opportunities to enhance the objective assessment, prediction, and management of spasticity; however, the current evidence base has not been comprehensively characterised. This review systematically mapped evidence on the application of AI across the continuum of spasticity care and identified key evidence gaps to inform future research. PubMed, Embase, CINAHL, and Web of Science were searched for peer-reviewed English-language studies evaluating AI in adult spasticity. Two reviewers independently screened studies, extracted data, and assessed methodological quality using NHLBI tools and PROBAST + AI. This scoping review was prospectively registered with the Open Science Framework Registries. The search yielded 1832 records, of which 21 studies were included after screening. One additional study was identified through citation searching, bringing the total to 22 studies involving 1114 participants. Applications spanned four clinical domains: discrimination between spastic and healthy individuals ( n = 2), severity assessment ( n = 18), risk prediction ( n = 1), and treatment response prediction ( n = 1). Most studies focused on post-stroke upper limb spasticity. Surface electromyography was the most frequently used input modality, often integrated with kinematic or kinetic sensors. Conventional machine learning predominated, with reported accuracies of 74-96% and the Modified Ashworth Scale as the most common reference standard. All 22 studies were at high overall risk of bias on PROBAST + AI, and none performed external validation, highlighting substantial methodological limitations that constrain clinical translation."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42899077",
+  "pmid": "42899077",
+  "pmcid": "PMC13678652",
+  "doi": "10.1093/ehjdh/ztag148",
+  "titre": "Deep learning-based echocardiography for cardiac assessment: a systematic literature review and meta-analysis.",
+  "revue": "European heart journal. Digital health",
+  "date": "2026-10-19",
+  "auteurs": "Romano-Martinez A, Zeid S, Krolevets M, Kontohow-Beckers K, Ten Cate V, Lurz P, Engelhardt S, Kramer S, Troebs SO, Wild PS.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "type_etude": "méta-analyse",
+  "resume": "Aims Artificial intelligence, particularly deep learning (DL), has shown significant potential for enhancing the assessment of echocardiograms in clinical practice. This systematic review and meta-analysis aimed to evaluate the performance of DL models and to identify factors affecting their performance. Methods and results A systematic review of the PubMed, CENTRAL, and Web of Science databases was conducted, yielding 16 248 potential publications. Of these, 160 studies met the inclusion criteria. Only studies applying fully automated DL networks to echocardiographic loops were considered. Performance estimates were pooled using a random-effects meta-analysis. The studies were categorized into five distinct groups: prediction of disease or mortality, replication of established measures, segmentation of cardiac chambers, classification of chamber views, and assessment of image quality. High heterogeneity that could not be resolved was observed in studies focusing on cardiac chamber segmentation and classification. Model performance was influenced by a variety of different factors, including medical target and input characteristics such as video resolution, number of frames used, and total participants included during training. Conclusion DL models achieve high performance across various applications in echocardiography. In selected tasks, they may reduce reliance on expert input and support greater automation of echocardiographic workflows. However, further validation, assessment of clinical utility, and evaluation in real-world settings are required before widespread clinical adoption."
+ }
+]

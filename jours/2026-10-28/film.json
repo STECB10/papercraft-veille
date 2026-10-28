@@ -1,0 +1,294 @@
+{
+ "id": "2026-10-28",
+ "sentences": [
+  {
+   "text": "Cent soixante études ont testé une IA sur l'échographie du cœur.",
+   "display": "160 études ont testé une IA sur l'échographie du cœur.",
+   "box": "études"
+  },
+  {
+   "text": "Cet examen est sans danger et disponible dans la plupart des cabinets.",
+   "box": "cabinets."
+  },
+  {
+   "text": "Pourtant, chaque mesure demande un expert, et deux experts divergent parfois.",
+   "box": "expert,",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Des modèles d'apprentissage profond, un type d'IA, analysent ces vidéos.",
+   "box": "vidéos."
+  },
+  {
+   "text": "Ils mesurent le cœur, repèrent des maladies, ou reconnaissent la vue filmée.",
+   "box": "maladies,"
+  },
+  {
+   "text": "Mais chaque équipe teste son modèle à sa façon, sur ses propres images.",
+   "box": "façon,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Alors, que valent vraiment ces modèles ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, des chercheurs ont réuni toutes ces études dans une méta-analyse.",
+   "box": "méta-analyse.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Ils ont fouillé plusieurs bases de données, où seize mille deux cent quarante-huit publications sont apparues.",
+   "display": "Ils ont fouillé plusieurs bases de données, où 16 248 publications sont apparues.",
+   "box": "publications"
+  },
+  {
+   "text": "Après lecture de six cent trente-cinq textes complets, cent soixante études ont été retenues.",
+   "display": "Après lecture de 635 textes complets, 160 études ont été retenues.",
+   "box": "retenues.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Seules comptaient celles où l'IA travaille seule, sans retouche manuelle des images.",
+   "box": "seule,",
+   "peak": "sans retouche"
+  },
+  {
+   "text": "Autrement dit, c'est une méta-analyse de cent soixante études, répartie en cinq tâches.",
+   "display": "Autrement dit, c'est une méta-analyse de 160 études, répartie en 5 tâches.",
+   "box": "tâches.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Concrètement, l'IA reçoit la vidéo de l'échographie, l'analyse, puis rend une mesure, un diagnostic ou le contour des cavités.",
+   "box": "vidéo",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Premier constat : les modèles obtiennent de bonnes performances, quelle que soit la tâche.",
+   "box": "bonnes",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Pourtant, les résultats varient beaucoup : l'hétérogénéité atteint quatre-vingt-dix-huit virgule deux pour cent pour la segmentation.",
+   "display": "Pourtant, les résultats varient beaucoup : l'hétérogénéité atteint 98,2 % pour la segmentation.",
+   "box": "varient",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Autre limite : seulement cinquante-trois virgule quatre pour cent des études ont testé leur modèle sur des données externes.",
+   "display": "Autre limite : seulement 53,4 % des études ont testé leur modèle sur des données externes.",
+   "box": "externes.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Autrement dit, près d'une étude sur deux n'a jamais quitté ses propres données.",
+   "box": "deux",
+   "peak": "propres données"
+  },
+  {
+   "text": "En revanche, diagnostiquer une sténose reste plus difficile pour ces modèles.",
+   "box": "sténose",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "En pratique, le cardiologue s'appuie aussi sur le Doppler, que ces modèles n'avaient pas.",
+   "box": "Doppler,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Cette méta-analyse mesure la performance des modèles, pas leur bénéfice pour les patients.",
+   "mode": "type",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Prometteurs, ces modèles doivent encore être validés en vie réelle.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0,
+    "header": "Méta-analyse · Échographie cardiaque · IA",
+    "number": "160",
+    "unit": "études",
+    "caption": "testent une IA sur l'échographie du cœur",
+    "caption_at": "s0:études",
+    "people": 5,
+    "lit": 3,
+    "lit_at": "s0:soixante",
+    "footnote": "Chaque équipe, ses propres images"
+   },
+   {
+    "type": "gag_clock",
+    "label": "chaque mesure, à la main",
+    "cam_at": "s2.e+0.3"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s5:façon,",
+    "title": "De la vidéo au résultat",
+    "steps": [
+     {
+      "icon": "heart",
+      "label": "01 · Vidéo du cœur",
+      "at": "s3:analysent"
+     },
+     {
+      "icon": "chip",
+      "label": "02 · Mesure ou diagnostic par l'IA",
+      "at": "s4-0.05"
+     },
+     {
+      "icon": "chart",
+      "label": "03 · Test propre à chaque équipe",
+      "note": "résultats difficiles à comparer",
+      "at": "s5-0.05",
+      "note_at": "s5:façon,"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Alors, que valent vraiment ces modèles ?",
+  "italic": "vraiment",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "studies_stack",
+    "cam_at": "s7-0.3",
+    "n_studies": 160,
+    "label": "études retenues",
+    "sub": "sur 16 248 publications",
+    "at": "s9:études",
+    "title": "Études regroupées"
+   },
+   {
+    "type": "id_card",
+    "cam_at": "s11-0.25",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Méta-analyse",
+      "at": "s11:méta-analyse",
+      "accent": true
+     },
+     {
+      "label": "Études",
+      "value": "160",
+      "at": "s11:cent"
+     },
+     {
+      "label": "Tâches",
+      "value": "5",
+      "at": "s11:cinq"
+     },
+     {
+      "label": "Mesuré",
+      "value": "Performance des modèles",
+      "at": "s11.e-0.3"
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s12-0.25",
+    "input_icon": "heart",
+    "input_label": "Vidéo d'échographie du cœur",
+    "ai_label": "Analyse la vidéo, seule",
+    "output_label": "Mesure, diagnostic, contour",
+    "modality": "image",
+    "at": "s12:vidéo",
+    "scan_at": "s12:l'analyse,",
+    "core_at": "s12:l'IA",
+    "out_at": "s12:mesure,"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s13-0.25",
+    "title": "Ce que montre la méta-analyse",
+    "caption": "Bonnes performances, résultats très variables",
+    "caption_at": "s13:bonnes",
+    "metrics": [
+     {
+      "label": "Hétérogénéité · segmentation",
+      "value": "98,2",
+      "num": 98.2,
+      "unit": "%",
+      "at": "s14:quatre-vingt-dix-huit"
+     },
+     {
+      "label": "Études testées en externe",
+      "value": "53,4",
+      "num": 53.4,
+      "unit": "%",
+      "at": "s15:cinquante-trois",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s17-0.25",
+    "title": "Un point faible",
+    "points": [
+     {
+      "text": "Sténose : plus difficile pour les modèles",
+      "at": "s17:sténose"
+     },
+     {
+      "text": "Le Doppler leur manquait",
+      "at": "s18:Doppler,"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s19-0.25",
+    "text": "Cette méta-analyse mesure la performance des modèles, pas leur bénéfice pour les patients.",
+    "italic": "bénéfice"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s20-0.25",
+    "text": "Prometteurs, ces modèles doivent encore être validés en vie réelle.",
+    "italic": "validés"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s20.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s22",
+  "button": "Suivre",
+  "button_at": "s22+0.6",
+  "click_at": "s22+1.6",
+  "source": "Romano-Martinez et al. · European Heart Journal – Digital Health · octobre 2026",
+  "doi": "doi:10.1093/ehjdh/ztag148",
+  "source_at": "s21:vérifiée-0.2"
+ },
+ "duration": 124.0,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

@@ -1,0 +1,7 @@
+Une IA qui lit l'échographie du cœur : bonnes performances en moyenne, mais des résultats très variables.
+
+Cette méta-analyse a réuni 160 études où une IA analyse seule des vidéos d'échographie cardiaque (mesures, diagnostic, contours des cavités), parmi 16 248 publications repérées. Les modèles sont performants, mais la variabilité entre études reste très élevée, et 53,4 % seulement ont été testés sur des données externes. Elle mesure la performance, pas le bénéfice pour les patients.
+
+Source : Romano-Martinez et al., European Heart Journal – Digital Health, octobre 2026. https://doi.org/10.1093/ehjdh/ztag148
+
+#IA #Cardiologie #Échographie #Santé
