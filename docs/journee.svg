@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 640" width="1060" height="640" role="img"><title>Une journée : le relais lance le workflow, qui interroge Europe PMC, confie l'étude à Claude, fait la voix, fabrique la vidéo et l'envoie sur Telegram ; le clic Publier relance l'écoute, qui publie sur LinkedIn.</title><style>
+svg{color:#1d2421;font-family:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif}
+text{font-size:13px;fill:#1d2421}
+.t-small{font-size:11.5px;fill:#5d6762}.t-mono{font-family:Menlo,'IBM Plex Mono',monospace;font-size:11.5px}.t-bold{font-weight:600}
+.box{fill:#fff;stroke:#1d2421;stroke-width:1.2}.box-ai{fill:#e2efec;stroke:#0d6b5f;stroke-width:1.5}
+.box-hu{fill:#f7ead9;stroke:#b25f00;stroke-width:1.5}.box-off{fill:none;stroke:#5d6762;stroke-width:1.2;stroke-dasharray:5 4}
+.zone{fill:none;stroke:#c9cfcb;stroke-width:1.5;stroke-dasharray:6 5}
+.edge{fill:none;stroke:#1d2421;stroke-width:1.3}.edge-ai{fill:none;stroke:#0d6b5f;stroke-width:1.6}
+.edge-hu{fill:none;stroke:#b25f00;stroke-width:1.6}.edge-off{fill:none;stroke:#5d6762;stroke-width:1.3;stroke-dasharray:5 4}
+.life{stroke:#c9cfcb;stroke-width:1.2;stroke-dasharray:3 4}
+.ai-text{fill:#0d6b5f}.hu-text{fill:#b25f00}
+.head{fill:#1d2421}.head-ai{fill:#0d6b5f}.head-hu{fill:#b25f00}.head-off{fill:#5d6762}
+</style><rect x="0" y="0" width="1060" height="640" fill="#ffffff"/>
+          <defs>
+            <marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="head"/></marker>
+            <marker id="c-ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="head-ai"/></marker>
+            <marker id="c-hu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="head-hu"/></marker>
+          </defs>
+          <rect x="20" y="16" width="120" height="40" rx="4" class="box"/><text x="80" y="41" text-anchor="middle" class="t-bold">Relais</text>
+          <rect x="170" y="16" width="120" height="40" rx="4" class="box"/><text x="230" y="41" text-anchor="middle" class="t-bold">GitHub Actions</text>
+          <rect x="320" y="16" width="120" height="40" rx="4" class="box"/><text x="380" y="41" text-anchor="middle" class="t-bold">Europe PMC</text>
+          <rect x="470" y="16" width="120" height="40" rx="4" class="box-ai"/><text x="530" y="41" text-anchor="middle" class="t-bold">Claude Code</text>
+          <rect x="620" y="16" width="120" height="40" rx="4" class="box"/><text x="680" y="41" text-anchor="middle" class="t-bold">ElevenLabs</text>
+          <rect x="770" y="16" width="120" height="40" rx="4" class="box-hu"/><text x="830" y="41" text-anchor="middle" class="t-bold">Humain (Telegram)</text>
+          <rect x="920" y="16" width="120" height="40" rx="4" class="box"/><text x="980" y="41" text-anchor="middle" class="t-bold">LinkedIn</text>
+          <line x1="80" y1="56" x2="80" y2="628" class="life"/>
+          <line x1="230" y1="56" x2="230" y2="628" class="life"/>
+          <line x1="380" y1="56" x2="380" y2="628" class="life"/>
+          <line x1="530" y1="56" x2="530" y2="628" class="life"/>
+          <line x1="680" y1="56" x2="680" y2="628" class="life"/>
+          <line x1="830" y1="56" x2="830" y2="628" class="life"/>
+          <line x1="980" y1="56" x2="980" y2="628" class="life"/>
+
+          <line x1="82" y1="90" x2="228" y2="90" class="edge" marker-end="url(#c)"/><text x="155" y="83" text-anchor="middle" class="t-small">6 h 15 : lance</text>
+          <line x1="232" y1="128" x2="378" y2="128" class="edge" marker-end="url(#c)"/><text x="305" y="121" text-anchor="middle" class="t-small">études IA et santé</text>
+          <line x1="378" y1="166" x2="232" y2="166" class="edge" marker-end="url(#c)"/><text x="305" y="159" text-anchor="middle" class="t-small">résultats → 6 notées</text>
+          <line x1="232" y1="204" x2="528" y2="204" class="edge-ai" marker-end="url(#c-ai)"/><text x="380" y="197" text-anchor="middle" class="t-mono ai-text">/etude-du-jour</text>
+          <line x1="528" y1="242" x2="382" y2="242" class="edge-ai" marker-end="url(#c-ai)"/><text x="455" y="235" text-anchor="middle" class="t-small ai-text">texte intégral</text>
+          <rect x="520" y="258" width="20" height="44" class="box-ai"/><text x="548" y="276" class="t-small">fiche des faits, script, post ;</text><text x="548" y="292" class="t-small">vérifie jusqu'à VALIDÉ</text>
+          <line x1="232" y1="322" x2="678" y2="322" class="edge" marker-end="url(#c)"/><text x="455" y="315" text-anchor="middle" class="t-small">2 prises de voix + transcription</text>
+          <rect x="220" y="338" width="20" height="44" class="box"/><text x="248" y="356" class="t-small">animation, musique,</text><text x="248" y="372" class="t-small">rendu, contrôles</text>
+          <line x1="232" y1="402" x2="828" y2="402" class="edge" marker-end="url(#c)"/><text x="530" y="395" text-anchor="middle" class="t-small">vidéo + post · ✅ Publier / ❌ Rejeter</text>
+          <line x1="828" y1="450" x2="82" y2="450" class="edge-hu" marker-end="url(#c-hu)"/><text x="455" y="443" text-anchor="middle" class="t-small hu-text">✅ Publier (le relais voit le clic)</text>
+          <line x1="82" y1="498" x2="228" y2="498" class="edge" marker-end="url(#c)"/><text x="155" y="491" text-anchor="middle" class="t-small">lance l'écoute</text>
+          <line x1="232" y1="546" x2="978" y2="546" class="edge" marker-end="url(#c)"/><text x="605" y="539" text-anchor="middle" class="t-small">publie la vidéo et le post (Upload-Post)</text>
+          <line x1="232" y1="594" x2="828" y2="594" class="edge" marker-end="url(#c)"/><text x="530" y="587" text-anchor="middle" class="t-small">« publiée sur LinkedIn »</text>
+        </svg>

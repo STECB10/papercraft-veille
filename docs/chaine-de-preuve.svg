@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1090 430" width="1090" height="430" role="img"><title>Chaîne de preuve : source, fiche des faits citée mot pour mot, script et post, vérificateur qui renvoie à Claude en cas de refus ; puis deux prises de voix comparées à leur transcription, rendu, contrôles vidéo et validation humaine.</title><style>
+svg{color:#1d2421;font-family:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif}
+text{font-size:13px;fill:#1d2421}
+.t-small{font-size:11.5px;fill:#5d6762}.t-mono{font-family:Menlo,'IBM Plex Mono',monospace;font-size:11.5px}.t-bold{font-weight:600}
+.box{fill:#fff;stroke:#1d2421;stroke-width:1.2}.box-ai{fill:#e2efec;stroke:#0d6b5f;stroke-width:1.5}
+.box-hu{fill:#f7ead9;stroke:#b25f00;stroke-width:1.5}.box-off{fill:none;stroke:#5d6762;stroke-width:1.2;stroke-dasharray:5 4}
+.zone{fill:none;stroke:#c9cfcb;stroke-width:1.5;stroke-dasharray:6 5}
+.edge{fill:none;stroke:#1d2421;stroke-width:1.3}.edge-ai{fill:none;stroke:#0d6b5f;stroke-width:1.6}
+.edge-hu{fill:none;stroke:#b25f00;stroke-width:1.6}.edge-off{fill:none;stroke:#5d6762;stroke-width:1.3;stroke-dasharray:5 4}
+.life{stroke:#c9cfcb;stroke-width:1.2;stroke-dasharray:3 4}
+.ai-text{fill:#0d6b5f}.hu-text{fill:#b25f00}
+.head{fill:#1d2421}.head-ai{fill:#0d6b5f}.head-hu{fill:#b25f00}.head-off{fill:#5d6762}
+</style><rect x="0" y="0" width="1090" height="430" fill="#ffffff"/>
+          <defs>
+            <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="head"/></marker>
+            <marker id="b-ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="head-ai"/></marker>
+            <marker id="b-hu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="head-hu"/></marker>
+          </defs>
+          <text x="20" y="30" class="t-small">LE TEXTE</text>
+          <rect x="20" y="44" width="180" height="76" rx="4" class="box"/>
+          <text x="32" y="68" class="t-bold">source.txt</text>
+          <text x="32" y="88" class="t-small">résumé + texte intégral libre</text>
+          <text x="32" y="105" class="t-small">le seul texte autorisé</text>
+          <rect x="240" y="44" width="200" height="76" rx="4" class="box-ai"/>
+          <text x="252" y="68" class="t-bold">faits.json</text>
+          <text x="252" y="88" class="t-small">valeur + citation mot pour mot,</text>
+          <text x="252" y="105" class="t-small">ou calcul à partir d'un fait</text>
+          <rect x="480" y="44" width="200" height="76" rx="4" class="box-ai"/>
+          <text x="492" y="68" class="t-bold">Script, film, post</text>
+          <text x="492" y="88" class="t-small">chiffres en lettres à la voix,</text>
+          <text x="492" y="105" class="t-small">en chiffres à l'écran</text>
+          <line x1="202" y1="82" x2="238" y2="82" class="edge" marker-end="url(#b)"/>
+          <line x1="442" y1="82" x2="478" y2="82" class="edge" marker-end="url(#b)"/>
+          <text x="340" y="140" text-anchor="middle" class="t-small ai-text">écrits par Claude</text>
+
+          <polygon points="790,40 870,82 790,124 710,82" class="box"/>
+          <text x="790" y="78" text-anchor="middle" class="t-bold">Vérificateur</text>
+          <text x="790" y="94" text-anchor="middle" class="t-small">verifier.py</text>
+          <line x1="682" y1="82" x2="708" y2="82" class="edge" marker-end="url(#b)"/>
+          <path d="M790 40 C790 8, 580 8, 580 42" class="edge-ai" marker-end="url(#b-ai)"/>
+          <text x="685" y="14" text-anchor="middle" class="t-small ai-text">REFUSÉ : liste des erreurs, Claude corrige</text>
+          <text x="890" y="52" class="t-small">citation trouvée mot pour mot</text>
+          <text x="890" y="68" class="t-small">valeur présente dans la citation</text>
+          <text x="890" y="84" class="t-small">calcul exact</text>
+          <text x="890" y="100" class="t-small">tout chiffre affiché a son fait</text>
+          <text x="890" y="116" class="t-small">sous-titres = texte dit</text>
+          <text x="890" y="132" class="t-small">200 à 290 mots</text>
+          <polyline points="790,124 790,190 110,190 110,226" class="edge" marker-end="url(#b)"/>
+          <text x="800" y="160" class="t-small">VALIDÉ</text>
+
+          <text x="20" y="214" class="t-small">LA VIDÉO</text>
+          <rect x="20" y="228" width="180" height="70" rx="4" class="box"/>
+          <text x="32" y="252" class="t-bold">2 prises de voix</text>
+          <text x="32" y="272" class="t-small">ElevenLabs, voix Léo</text>
+          <rect x="240" y="228" width="180" height="70" rx="4" class="box"/>
+          <text x="252" y="252" class="t-bold">Transcription</text>
+          <text x="252" y="272" class="t-small">Scribe, mot par mot</text>
+          <polygon points="530,222 610,263 530,304 450,263" class="box"/>
+          <text x="530" y="259" text-anchor="middle" class="t-bold">Alignement</text>
+          <text x="530" y="275" text-anchor="middle" class="t-small">≤ 5 % d'écarts</text>
+          <rect x="640" y="228" width="170" height="70" rx="4" class="box"/>
+          <text x="652" y="252" class="t-bold">Rendu</text>
+          <text x="652" y="272" class="t-small">HyperFrames + musique</text>
+          <polygon points="900,222 980,263 900,304 820,263" class="box"/>
+          <text x="900" y="259" text-anchor="middle" class="t-bold">Contrôles</text>
+          <text x="900" y="275" text-anchor="middle" class="t-small">ffmpeg</text>
+          <line x1="202" y1="263" x2="238" y2="263" class="edge" marker-end="url(#b)"/>
+          <line x1="422" y1="263" x2="448" y2="263" class="edge" marker-end="url(#b)"/>
+          <line x1="612" y1="263" x2="638" y2="263" class="edge" marker-end="url(#b)"/>
+          <line x1="812" y1="263" x2="818" y2="263" class="edge" marker-end="url(#b)"/>
+          <text x="530" y="330" text-anchor="middle" class="t-small">on garde la prise qui dit le texte mot pour mot</text>
+          <text x="900" y="322" text-anchor="middle" class="t-small">durée exacte, pas d'écran noir</text>
+          <text x="900" y="338" text-anchor="middle" class="t-small">ni d'image figée, son à −16 LUFS</text>
+          <polyline points="980,263 1040,263 1040,360" class="edge" marker-end="url(#b)"/>
+          <rect x="880" y="362" width="200" height="56" rx="4" class="box-hu"/>
+          <text x="892" y="386" class="t-bold">Validation sur Telegram</text>
+          <text x="892" y="404" class="t-small">regarder, publier ou non</text>
+        </svg>
