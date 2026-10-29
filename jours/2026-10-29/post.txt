@@ -1,0 +1,7 @@
+Une IA peut-elle noter la spasticité à votre place ? 22 études ont essayé, aucune n'est encore validée à l'extérieur.
+
+Cette revue exploratoire a fouillé quatre bases de données et retenu 22 études, soit 1 114 participants adultes. Dans 18 d'entre elles, l'IA estime la sévérité de la spasticité, le plus souvent à partir de l'électromyographie de surface. La précision annoncée va de 74 à 96 %, mais les 22 études ont un risque de biais élevé et aucune n'a été validée sur des données extérieures.
+
+Source : Cao et al., Bioengineering, octobre 2026. https://doi.org/10.3390/bioengineering13101209
+
+#IA #Spasticité #Rééducation #AVC

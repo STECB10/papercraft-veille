@@ -1,0 +1,57 @@
+[
+ {
+  "id": "f1",
+  "valeur": 1832,
+  "citation": "1832 records"
+ },
+ {
+  "id": "f2",
+  "valeur": 22,
+  "citation": "22 studies involving 1114 participants"
+ },
+ {
+  "id": "f3",
+  "valeur": 1114,
+  "citation": "22 studies involving 1114 participants"
+ },
+ {
+  "id": "f4",
+  "valeur": 18,
+  "citation": "severity assessment ( n = 18)"
+ },
+ {
+  "id": "f5",
+  "valeur": 2,
+  "citation": "discrimination between spastic and healthy individuals ( n = 2)"
+ },
+ {
+  "id": "f6",
+  "valeur": 1,
+  "citation": "risk prediction ( n = 1)"
+ },
+ {
+  "id": "f7",
+  "valeur": 1,
+  "citation": "treatment response prediction ( n = 1)"
+ },
+ {
+  "id": "f8",
+  "valeur": 74,
+  "citation": "accuracies of 74-96%"
+ },
+ {
+  "id": "f9",
+  "valeur": 96,
+  "citation": "accuracies of 74-96%"
+ },
+ {
+  "id": "f10",
+  "valeur": 22,
+  "citation": "All 22 studies were at high overall risk of bias"
+ },
+ {
+  "id": "f11",
+  "valeur": 4,
+  "calcul": "f2 - f4"
+ }
+]

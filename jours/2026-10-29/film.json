@@ -1,0 +1,281 @@
+{
+ "id": "2026-10-29",
+ "sentences": [
+  {
+   "text": "Une IA peut-elle noter la spasticité à la place de votre main ?",
+   "box": "main"
+  },
+  {
+   "text": "Vingt-deux études ont déjà tenté l'expérience chez des adultes dont les muscles se raidissent après une lésion neurologique.",
+   "box": "neurologique.",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Aujourd'hui, le soignant mobilise le membre, puis note la raideur sur l'échelle d'Ashworth modifiée.",
+   "box": "note",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Or cette note repose sur le ressenti de l'examinateur, ce qui complique le suivi d'un patient d'une séance à l'autre.",
+   "box": "ressenti",
+   "peak": "ressenti"
+  },
+  {
+   "text": "Des chercheurs ont donc voulu confier cette mesure à des algorithmes, qui lisent des capteurs posés sur le membre.",
+   "box": "algorithmes,"
+  },
+  {
+   "text": "Que valent vraiment ces outils d'IA ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Les auteurs ont voulu cartographier tout ce qui existe sur le sujet, et repérer ce qui manque encore.",
+   "box": "cartographier",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Il s'agit d'une revue exploratoire : quatre bases de données ont donné mille huit cent trente-deux références.",
+   "display": "Il s'agit d'une revue exploratoire : 4 bases de données ont donné 1 832 références.",
+   "box": "exploratoire",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Au final, vingt-deux études ont été retenues, soit mille cent quatorze participants au total.",
+   "display": "Au final, 22 études ont été retenues, soit 1 114 participants au total.",
+   "box": "retenues,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Dans la plupart des travaux, un signal d'électromyographie de surface, parfois couplé à des capteurs de mouvement, est lu par l'IA, qui en déduit un niveau de raideur.",
+   "box": "l'IA,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Concrètement, dix-huit études sur vingt-deux cherchent ainsi à évaluer la sévérité de la spasticité.",
+   "display": "Concrètement, 18 études sur 22 cherchent ainsi à évaluer la sévérité de la spasticité.",
+   "box": "sévérité",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Les quatre autres distinguent les patients des personnes saines, prédisent un risque ou prédisent la réponse à un traitement.",
+   "box": "réponse",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : ces algorithmes annoncent une précision allant de soixante-quatorze à quatre-vingt-seize pour cent.",
+   "display": "Résultat : ces algorithmes annoncent une précision allant de 74 à 96 %.",
+   "box": "précision",
+   "peak": "74 à 96 %",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Ces chiffres sont comparés à l'échelle d'Ashworth modifiée, la référence la plus utilisée dans ces travaux.",
+   "box": "référence",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Les vingt-deux études présentent un risque de biais élevé, et aucune n'a été validée sur des données extérieures.",
+   "mode": "type",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Autrement dit, la promesse est réelle, mais elle reste à confirmer avant d'entrer dans votre pratique.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s4.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0,
+    "header": "Revue exploratoire · 2026",
+    "number": "22",
+    "unit": "études",
+    "caption": "ont déjà testé l'IA pour évaluer la spasticité",
+    "caption_at": "s1.w0",
+    "people": 5,
+    "lit": 3,
+    "lit_at": "s0:main",
+    "footnote": "Adultes spastiques · échelle d'Ashworth modifiée"
+   },
+   {
+    "type": "gag_clock",
+    "cam_at": "s1.e+0.3",
+    "label": "un examen au ressenti"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s2-0.1",
+    "mark_at": "s3.w6",
+    "title": "L'évaluation aujourd'hui",
+    "steps": [
+     {
+      "icon": "user",
+      "label": "01 · Mobiliser le membre",
+      "at": "s2.w3"
+     },
+     {
+      "icon": "doc",
+      "label": "02 · Noter la raideur",
+      "note": "au ressenti",
+      "note_at": "s3.w6",
+      "at": "s2.w7"
+     },
+     {
+      "icon": "chart",
+      "label": "03 · Suivre le patient",
+      "at": "s3.w13"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Que valent vraiment ces outils d'IA ?",
+  "italic": "vraiment",
+  "fold_at": "s5.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s6-0.2",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Objectif",
+      "value": "Cartographier l'IA",
+      "at": "s6.w4"
+     },
+     {
+      "label": "Type",
+      "value": "Revue exploratoire",
+      "at": "s7.w3",
+      "accent": true
+     },
+     {
+      "label": "Recherche",
+      "value": "4 bases de données",
+      "at": "s7.w6"
+     },
+     {
+      "label": "Références",
+      "value": "1 832 trouvées",
+      "at": "s7.w12"
+     }
+    ]
+   },
+   {
+    "type": "studies_stack",
+    "cam_at": "s8-0.25",
+    "n_studies": 22,
+    "label": "études retenues",
+    "n_patients": 1114,
+    "sub": "participants au total",
+    "at": "s8.w2",
+    "patients_at": "s8.w8"
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s9-0.25",
+    "input_icon": "ecg",
+    "modality": "signal",
+    "input_label": "Signal EMG de surface",
+    "ai_label": "Estime la sévérité",
+    "output_label": "Niveau de raideur",
+    "output_note": "Comparé à l'échelle d'Ashworth",
+    "at": "s9.w5",
+    "scan_at": "s9.w18",
+    "core_at": "s9.w20",
+    "out_at": "s9.w24"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s10-0.25",
+    "title": "À quoi sert l'IA",
+    "points": [
+     {
+      "text": "18 études : évaluer la sévérité",
+      "at": "s10.w1"
+     },
+     {
+      "text": "2 études : distinguer patients et sujets sains",
+      "at": "s11.w3"
+     },
+     {
+      "text": "1 étude : prédire un risque",
+      "at": "s11.w9"
+     },
+     {
+      "text": "1 étude : prédire la réponse au traitement",
+      "at": "s11.w13"
+     }
+    ]
+   },
+   {
+    "type": "metric",
+    "cam_at": "s12-0.25",
+    "title": "Précision annoncée",
+    "metrics": [
+     {
+      "label": "Plus basse",
+      "value": "74",
+      "num": 74,
+      "unit": "%",
+      "at": "s12.w9"
+     },
+     {
+      "label": "Plus haute",
+      "value": "96",
+      "num": 96,
+      "unit": "%",
+      "accent": true,
+      "at": "s12.w11"
+     }
+    ],
+    "caption": "Référence : échelle d'Ashworth modifiée",
+    "caption_at": "s13.w5"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s14-0.25",
+    "text": "Les vingt-deux études présentent un risque de biais élevé, et aucune n'a été validée sur des données extérieures.",
+    "italic": "aucune"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s15-0.25",
+    "text": "Autrement dit, la promesse est réelle, mais elle reste à confirmer avant d'entrer dans votre pratique.",
+    "italic": "confirmer"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s15.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s17",
+  "button": "Suivre",
+  "button_at": "s17+0.6",
+  "click_at": "s17+1.6",
+  "source": "Cao et al. · Bioengineering · octobre 2026",
+  "doi": "doi:10.3390/bioengineering13101209",
+  "source_at": "s16:vérifiée-0.2"
+ },
+ "duration": 111.3,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}
