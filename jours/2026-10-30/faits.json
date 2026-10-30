@@ -1,0 +1,20 @@
+[
+ {"id":"f1","valeur":7,"citation":"Small unruptured intracranial aneurysms (UIAs; ≤ 7 mm)"},
+ {"id":"f2","valeur":10,"calcul":"10"},
+ {"id":"f3","valeur":2019,"citation":"Ten studies (2019-2025)"},
+ {"id":"f4","valeur":2025,"citation":"Ten studies (2019-2025)"},
+ {"id":"f5","valeur":5409,"citation":"5409 patients"},
+ {"id":"f6","valeur":7057,"citation":"7057 aneurysms"},
+ {"id":"f7","valeur":62,"citation":"62 models"},
+ {"id":"f8","valeur":0.793,"citation":"Pooled AUC was 0.793"},
+ {"id":"f9","valeur":0.754,"citation":"95% CI 0.754-0.827"},
+ {"id":"f10","valeur":0.827,"citation":"95% CI 0.754-0.827"},
+ {"id":"f11","valeur":95,"citation":"95% CI 0.754-0.827"},
+ {"id":"f12","valeur":0.713,"citation":"sensitivity of 0.713"},
+ {"id":"f13","valeur":0.78,"citation":"specificity of 0.780"},
+ {"id":"f14","valeur":71.3,"calcul":"f12*100"},
+ {"id":"f15","valeur":78,"calcul":"f13*100"},
+ {"id":"f16","valeur":0.779,"citation":"statistical models (0.779)"},
+ {"id":"f17","valeur":0.741,"citation":"DL (0.741)"},
+ {"id":"f18","valeur":9,"calcul":"9"}
+]

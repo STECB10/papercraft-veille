@@ -1,0 +1,320 @@
+{
+ "id": "2026-10-30",
+ "sentences": [
+  {
+   "text": "Faut-il opérer un petit anévrisme cérébral, ou simplement le surveiller ?",
+   "box": "opérer"
+  },
+  {
+   "text": "Ces anévrismes cérébraux de sept millimètres ou moins portent un risque de rupture important.",
+   "box": "rupture",
+   "display": "Ces anévrismes cérébraux de 7 millimètres ou moins portent un risque de rupture important.",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Pour décider, les médecins s'appuient sur des scores de risque, comme PHASES ou ELAPSS.",
+   "box": "PHASES"
+  },
+  {
+   "text": "Pourtant, pour ces petits anévrismes, ces scores ne font guère mieux que le hasard.",
+   "peak": "le hasard",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Des chercheurs ont donc testé des modèles d'IA, qui apprennent à prédire la rupture à partir de données de patients.",
+   "box": "patients."
+  },
+  {
+   "text": "Ces modèles d'IA prédisent-ils vraiment mieux le risque de rupture ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Les auteurs ont réalisé une méta-analyse, c'est-à-dire une synthèse chiffrée de plusieurs études.",
+   "box": "méta-analyse,"
+  },
+  {
+   "text": "Ils ont regroupé dix études, publiées entre deux mille dix-neuf et deux mille vingt-cinq.",
+   "box": "études,",
+   "display": "Ils ont regroupé 10 études, publiées entre 2019 et 2025."
+  },
+  {
+   "text": "Elles portent sur cinq mille quatre cent neuf patients, sept mille cinquante-sept anévrismes et soixante-deux modèles.",
+   "box": "anévrismes",
+   "display": "Elles portent sur 5 409 patients, 7 057 anévrismes et 62 modèles.",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Les données d'un anévrisme entrent dans le modèle, qui estime son risque de rupture.",
+   "box": "modèle,"
+  },
+  {
+   "text": "Pour comparer ces modèles, ils ont retenu l'aire sous la courbe, qui mesure la qualité de la prédiction.",
+   "box": "l'aire"
+  },
+  {
+   "text": "Résultat : en regroupant les études, l'aire sous la courbe regroupée atteint zéro virgule sept cent quatre-vingt-treize.",
+   "box": "atteint",
+   "display": "Résultat : en regroupant les études, l'aire sous la courbe regroupée atteint 0,793.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "L'intervalle de confiance à quatre-vingt-quinze pour cent va de zéro virgule sept cent cinquante-quatre à zéro virgule huit cent vingt-sept.",
+   "box": "confiance",
+   "display": "L'intervalle de confiance à 95 % va de 0,754 à 0,827.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "La sensibilité est de soixante et onze pour cent, et la spécificité de soixante-dix-huit pour cent.",
+   "box": "spécificité",
+   "display": "La sensibilité est de 71 %, et la spécificité de 78 %.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Selon la famille, l'apprentissage automatique classique obtient le meilleur score, avec zéro virgule huit cent vingt-sept.",
+   "box": "meilleur",
+   "display": "Selon la famille, l'apprentissage automatique classique obtient le meilleur score, avec 0,827."
+  },
+  {
+   "text": "Les modèles statistiques atteignent zéro virgule sept cent soixante-dix-neuf, et l'apprentissage profond zéro virgule sept cent quarante et un.",
+   "box": "profond",
+   "display": "Les modèles statistiques atteignent 0,779, et l'apprentissage profond 0,741.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "En revanche, neuf études sur dix présentent un risque élevé de biais.",
+   "box": "biais.",
+   "display": "En revanche, 9 études sur 10 présentent un risque élevé de biais.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Ces résultats restent à confirmer dans des registres prospectifs.",
+   "mode": "type",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "L'IA semble prédire mieux que les scores classiques, mais la preuve reste fragile.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s4.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0,
+    "header": "Méta-analyse · 10 études · 2019–2025",
+    "number": "7",
+    "unit": "mm",
+    "caption": "ou moins : un petit anévrisme cérébral, non rompu",
+    "caption_at": "s1:sept",
+    "people": 5,
+    "lit": 3,
+    "lit_at": "s0:opérer",
+    "footnote": "Anévrismes intracrâniens non rompus"
+   },
+   {
+    "type": "gag_clock",
+    "label": "Opérer ou surveiller ?",
+    "cam_at": "s1.e+0.3"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s2-0.1",
+    "mark_at": "s3:hasard",
+    "title": "La décision aujourd'hui",
+    "steps": [
+     {
+      "icon": "brain",
+      "label": "01 · Imagerie de l'anévrisme",
+      "at": "s2"
+     },
+     {
+      "icon": "chart",
+      "label": "02 · Score de risque",
+      "note": "à peine mieux que le hasard",
+      "at": "s2:scores",
+      "note_at": "s3:hasard"
+     },
+     {
+      "icon": "stethoscope",
+      "label": "03 · Opérer ou surveiller",
+      "at": "s3"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Ces modèles d'IA prédisent-ils vraiment mieux le risque de rupture ?",
+  "italic": "vraiment",
+  "fold_at": "s5.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "title": "L'étude en bref",
+    "cam_at": "s6-0.3",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Méta-analyse",
+      "at": "s6:méta-analyse,",
+      "accent": true
+     },
+     {
+      "label": "Études",
+      "value": "10 · de 2019 à 2025",
+      "at": "s7:dix"
+     },
+     {
+      "label": "Patients",
+      "value": "5 409",
+      "at": "s8:cinq"
+     },
+     {
+      "label": "Anévrismes",
+      "value": "7 057",
+      "at": "s8:sept"
+     },
+     {
+      "label": "Modèles d'IA",
+      "value": "62",
+      "at": "s8:soixante-deux"
+     },
+     {
+      "label": "Mesure",
+      "value": "Aire sous la courbe",
+      "at": "s8.e"
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "title": "Ce que fait l'IA",
+    "input_icon": "brain",
+    "input_label": "Données d'un anévrisme",
+    "ai_label": "Estime le risque de rupture",
+    "output_label": "Risque de rupture",
+    "modality": "donnees",
+    "at": "s9:données",
+    "core_at": "s9:modèle,",
+    "out_at": "s9:risque",
+    "cam_at": "s9-0.25"
+   },
+   {
+    "type": "roc_curve",
+    "auc": {
+     "value": "0,793",
+     "num": 0.793,
+     "at": "s11:atteint",
+     "note": "IC 95 % : 0,754 à 0,827"
+    },
+    "curve_at": "s10:l'aire",
+    "cam_at": "s10-0.25"
+   },
+   {
+    "type": "metric",
+    "title": "Prédire la rupture",
+    "metrics": [
+     {
+      "label": "Sensibilité",
+      "value": "71",
+      "num": 71,
+      "unit": "%",
+      "at": "s13:sensibilité",
+      "accent": true
+     },
+     {
+      "label": "Spécificité",
+      "value": "78",
+      "num": 78,
+      "unit": "%",
+      "at": "s13:spécificité"
+     }
+    ],
+    "cam_at": "s13-0.25"
+   },
+   {
+    "type": "result_bars",
+    "title": "Aire sous la courbe par famille",
+    "groups": [
+     {
+      "label": "Apprentissage auto",
+      "value": "0,827",
+      "num": 0.827,
+      "at": "s14:classique",
+      "accent": true
+     },
+     {
+      "label": "Modèles statistiques",
+      "value": "0,779",
+      "num": 0.779,
+      "at": "s15:statistiques"
+     },
+     {
+      "label": "Apprentissage profond",
+      "value": "0,741",
+      "num": 0.741,
+      "at": "s15:profond"
+     }
+    ],
+    "cam_at": "s14-0.25"
+   },
+   {
+    "type": "metric",
+    "title": "Qualité des études",
+    "metrics": [
+     {
+      "label": "Études à risque élevé de biais",
+      "value": "9",
+      "num": 9,
+      "max": 10,
+      "unit": "sur 10",
+      "at": "s16:neuf"
+     }
+    ],
+    "cam_at": "s16-0.25"
+   },
+   {
+    "type": "typo",
+    "text": "Ces résultats restent à confirmer dans des registres prospectifs.",
+    "italic": "confirmer",
+    "cam_at": "s17-0.25"
+   },
+   {
+    "type": "typo",
+    "text": "L'IA semble prédire mieux que les scores classiques, mais la preuve reste fragile.",
+    "italic": "fragile.",
+    "cam_at": "s18-0.25"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s18.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s20",
+  "button": "Suivre",
+  "button_at": "s20+0.6",
+  "click_at": "s20+1.6",
+  "source": "Kamandi et al. · Journal of Imaging Informatics in Medicine · octobre 2026",
+  "doi": "doi:10.1007/s10278-026-02419-8",
+  "source_at": "s19:vérifiée-0.2"
+ },
+ "duration": 120.0,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

@@ -1,0 +1,7 @@
+Prédire la rupture d'un petit anévrisme cérébral : l'IA fait mieux que le hasard, mais la preuve reste fragile.
+
+Cette méta-analyse a regroupé dix études (5 409 patients, 62 modèles d'IA) sur les anévrismes cérébraux de 7 mm ou moins. L'aire sous la courbe regroupée atteint 0,793 (IC 95 % : 0,754 à 0,827), avec une sensibilité de 71 % et une spécificité de 78 %. Neuf études sur dix présentent un risque élevé de biais.
+
+Source : Kamandi et al., Journal of Imaging Informatics in Medicine, octobre 2026. https://doi.org/10.1007/s10278-026-02419-8
+
+#IA #Neurochirurgie #Anévrisme #MétaAnalyse

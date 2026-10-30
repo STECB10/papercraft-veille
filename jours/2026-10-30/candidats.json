@@ -1,0 +1,132 @@
+[
+ {
+  "score": 17,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique",
+   "revue majeure"
+  ],
+  "id": "MED:42930596",
+  "pmid": "42930596",
+  "pmcid": null,
+  "doi": "10.3390/medsci14060677",
+  "titre": "AI-Guided Histopathological and Molecular Phenotyping of Salivary Glands in Sjögren's Disease: Subtyping, Mechanistic Insights, and Translational Implications-A Systematic Review and Structured Functional Synthesis.",
+  "revue": "Medical sciences (Basel, Switzerland)",
+  "date": "2026-10-15",
+  "auteurs": "Ardila CM, Pineda-Vélez E, Vivares-Builes AM.",
+  "types": "systematic review review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background/objectives Salivary-gland biopsy is central to Sjögren's disease (SjD) assessment, but conventional measures incompletely capture glandular heterogeneity. This systematic review evaluated artificial intelligence (AI)/machine learning (ML) applications to SjD salivary-gland histopathology and molecular profiling, including biological and translational validation. Methods PubMed, Scopus, and Embase were searched. Eligible studies used salivary-gland tissue as the primary analytical substrate or provided substantive glandular validation of systemic AI/ML findings. Evidence was synthesized functionally because of methodological heterogeneity. Results Twenty-five studies were included. AI/ML identified histopathological and molecular phenotypes spanning immune/interferon activation, tissue architecture and immune-cell organization, epithelial stress and metabolic/cell-death remodeling, and translational response. Only a limited subset progressed beyond computational or tissue-level confirmation to functional perturbation, pharmacological testing, in vivo validation, or human treatment-response assessment. Recurrent public-dataset reuse, small cohorts, heterogeneous pipelines, and limited independent validation constrained reproducibility. Conclusions AI/ML supports multidimensional SjD glandular phenotyping and shows emerging translational potential, but demonstrated clinical or therapeutic utility remains unestablished. Prospective multicenter validation is required before AI-derived glandular phenotypes can inform routine patient stratification or therapeutic decision-making."
+ },
+ {
+  "score": 17,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique",
+   "revue majeure"
+  ],
+  "id": "MED:42930604",
+  "pmid": "42930604",
+  "pmcid": null,
+  "doi": "10.3390/medsci14060685",
+  "titre": "Before Sepsis Strikes: Artificial Intelligence for Early Prediction of Postoperative Sepsis and Sepsis-Related Complications After Major Abdominal Surgery-A Systematic Review.",
+  "revue": "Medical sciences (Basel, Switzerland)",
+  "date": "2026-10-19",
+  "auteurs": "Alghoul WII, Alabid I, Abedi MM, Patni MM, George BT, Kar SS, Dube R, Al-Shammari WBJ, Osman MOE, Neyyappadath RJ, Nagabhatla S, Ahmed ASS.",
+  "types": "systematic review review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Postoperative sepsis and related infectious complications remain major causes of morbidity after abdominal surgery. Artificial intelligence (AI) and machine learning (ML) models may support earlier risk stratification, but their generalizability and clinical readiness remain uncertain. Methods We systematically searched PubMed, Scopus, and CENTRAL from inception to 10 August 2026 for studies developing, validating, or evaluating AI/ML models for postoperative sepsis, postoperative infection/surgical-site infection (SSI), anastomotic leakage, or postoperative pancreatic fistula (POPF) after major abdominal or general surgery. SSI, anastomotic leakage, and POPF were analyzed as distinct postoperative endpoints and were not treated as proxy definitions of clinical sepsis. Study selection and data extraction were performed independently by two reviewers, and risk of bias and applicability were assessed using PROBAST + AI. Owing to substantial clinical and methodological heterogeneity, results were synthesized narratively. The review was registered in PROSPERO (CRD420261492111). Results Forty-five studies were included: 11 addressed sepsis-related outcomes, including six studies with a primary sepsis-related modeled endpoint whose definitions ranged from consensus Sepsis-3 criteria to coded or SIRS-based definitions and a qSOFA-based proxy; 19 evaluated postoperative infection/SSI; eight anastomotic leakage; five POPF; and two broader postoperative complications. Performance varied according to outcome, surgical population, prediction timing, predictor availability, and validation strategy. Fifteen of 45 studies provided strict temporal, geographic/external-center, or independent-investigator evaluation of the principal model, with variable preservation of performance outside development settings. More complex ML methods did not reliably outperform conventional regression. Explicit calibration analysis was reported in 9/45 studies, decision-curve or net-benefit analysis in 7/45, and no study prospectively evaluated the impact of model-guided care on clinical outcomes. Certainty of evidence was very low for primary postoperative sepsis/septic-shock prediction, low for postoperative infection/SSI, and very low for anastomotic leakage and POPF. Conclusions Although several AI/ML models showed promising predictive performance, the available evidence remains insufficient to support routine use of AI/ML prediction models across major abdominal surgical populations. Future studies should prioritize clearly defined clinical use cases, multicenter external validation, calibration, prospective workflow evaluation, and demonstration of actionable clinical benefit before routine implementation."
+ },
+ {
+  "score": 17,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "prospectif",
+   "multicentrique",
+   "revue majeure"
+  ],
+  "id": "MED:42945375",
+  "pmid": "42945375",
+  "pmcid": null,
+  "doi": "10.2196/86091",
+  "titre": "Beyond Time Saved: A Framework for Comprehensive Evaluation of AI Clinical Documentation.",
+  "revue": "JMIR medical informatics",
+  "date": "2026-10-27",
+  "auteurs": "Sze Min EV.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "type_etude": "méta-analyse",
+  "resume": "Unlabelled Ambient AI scribes have been rapidly adopted across health care organizations to mitigate documentation burden and burnout. Initial single-system reports described substantial time savings, but more recent multisite evaluations and meta-analyses describe modest, heterogeneous effects with generally low methodological quality. Most evaluations emphasize efficiency and satisfaction, leaving potential effects on communication quality, narrative preservation, cognitive performance, and equity largely unmeasured. This viewpoint aimed to characterize evaluation patterns in prominent ambient AI scribe implementations, explain why unmeasured domains warrant investigation for patient safety and care quality, and propose an expanded framework with feasible research priorities. This analytic viewpoint mapped evaluation domain coverage in a purposive, illustrative sample of prominent implementation reports published through April 2026, then synthesized findings with literature on clinical communication, narrative medicine, automation effects, and health equity. Reporting was guided by Scale for the Assessment of Narrative Review Articles (SANRA) principles for narrative reviews; PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) was not used because the work is a domain-coverage characterization rather than an evidence synthesis estimating effects. A single reviewer (VSME) performed selection and extraction, consistent with the viewpoint's illustrative intent. Across the included implementations, evaluation consistently measured documentation time, after-hours work, and clinician satisfaction. Within this illustrative sample of 6 independently peer-reviewed real-world implementation evaluations, we did not identify any that reported systematic assessment of patient-clinician communication using validated instruments, structured comparison of AI-generated against human-generated notes for narrative fidelity, longitudinal evaluation of cognitive or educational effects, or equity analyses stratified by language and demographic group. The absence in this purposive sample reflects an absence of public reporting rather than proof that no organization has measured these dimensions internally. Limited error analyses found frequent omissions, with accuracy declining as encounter complexity increased. Evidence from multilingual and interpreter-mediated encounters was notably sparse. Current evidence supports continued implementation with quality safeguards in settings where benefits are demonstrated locally rather than universal adoption on the strength of early single-system reports. Organizations implementing ambient AI scribes should consider embedding prospective evaluation across 4 domains: validated communication quality measurement, structured narrative content comparison, longitudinal cognitive and training studies, and equity analyses across languages and demographics. Three near-term priorities offer immediate feasibility for organizations with evaluation capacity: (1) deploying validated communication instruments such as the Communication Assessment Tool or Consumer Assessment of Health Care Providers and Systems (CAHPS) within ongoing rollouts; (2) launching multisite longitudinal trainee cohorts comparing programs with and without ambient AI exposure; and (3) oversampling multilingual and interpreter-mediated encounters for stratified equity analyses. Narrative preservation requires foundational methodological work before implementation-ready measures exist. Editors, implementers, and vendors can each act now: editors by requiring domain-coverage reporting; implementers by preregistering evaluation plans before rollout; vendors by publishing stratified performance data as a routine condition of deployment. The goal is to preserve documented efficiency gains while generating evidence about communication, narrative, reasoning, and equity dimensions that current evaluations leave unmeasured."
+ },
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "prospectif",
+   "multicentrique",
+   "n = 5409"
+  ],
+  "id": "MED:42944966",
+  "pmid": "42944966",
+  "pmcid": null,
+  "doi": "10.1007/s10278-026-02419-8",
+  "titre": "Artificial Intelligence for Rupture Risk Stratification of Small Unruptured Intracranial Aneurysms (≤ 7 mm): A Systematic Review and Meta-analysis.",
+  "revue": "Journal of imaging informatics in medicine",
+  "date": "2026-10-27",
+  "auteurs": "Kamandi N, Mohammadzadeh S, Mirzai M, Ghasemi M, Elyassirad D, Asef Agah SA, Firouznia K.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "type_etude": "méta-analyse",
+  "resume": "Small unruptured intracranial aneurysms (UIAs; ≤ 7 mm) carry collectively significant rupture risk, yet conventional scoring tools (PHASES, ELAPSS) perform near chance-level in this subgroup. This systematic review and meta-analysis evaluated the pooled diagnostic accuracy of AI-based models for rupture risk prediction in small UIAs and compared performance across algorithmic architectures. Prospectively registered with PROSPERO (CRD420251142915) and conducted per PRISMA-DTA/PRISMA-S standards. MEDLINE, Scopus, and Web of Science were searched in October 2025 and updated on June 2026. Eligible studies applied machine learning (ML), deep learning (DL), radiomics, or computational fluid dynamics-integrated models to small UIAs. Area under the receiver operating characteristic curve (AUC) was pooled via a three-level random-effects model with restricted maximum likelihood estimation and Knapp-Hartung correction; heterogeneity was explored through multivariable meta-regression. Bias and reporting quality were assessed using QUADAS-3 and METRICS, respectively. Ten studies (2019-2025) encompassing 5409 patients, 7057 aneurysms, and 62 models were included. Pooled AUC was 0.793 (95% CI 0.754-0.827), with sensitivity of 0.713 and specificity of 0.780. Conventional ML achieved the highest AUC (0.827), followed by statistical models (0.779) and DL (0.741). Meta-regression explained 76.2% of variance; statistical model family was the sole significant predictor of inferior performance (p = 0.002). Nine of ten studies carried high risk of bias. No publication bias was detected (p = 0.186). AI-based models, particularly conventional ML ensemble architectures, demonstrate moderate-to-good discriminative accuracy for small UIA rupture risk stratification, meaningfully surpassing conventional scoring tools. Multicenter prospective registries, pre-rupture imaging protocols, and explainable AI frameworks are essential to support transparent neurosurgical decision-making."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "multicentrique"
+  ],
+  "id": "MED:42863380",
+  "pmid": "42863380",
+  "pmcid": null,
+  "doi": "10.1016/j.jsurg.2026.104210",
+  "titre": "Expanded Longitudinal Validation of Adaptive Learning Stability in AI-Assisted Neurosurgical Residency Training.",
+  "revue": "Journal of surgical education",
+  "date": "2026-10-12",
+  "auteurs": "Mustafayev B, Mustafayeva A, Bakhtiyarov A, Nikatov K, Satylkhan B, Mustafayev A.",
+  "types": "validation study randomized controlled trial journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "Objective To evaluate the longitudinal stability, reproducibility, and robustness of Adaptive Learning Stability (ALS) within an expanded AI-assisted neurosurgical residency cohort during a 12-month observation cycle. Design This was a prospective controlled educational study. Residents completed 4 consecutive quarterly checkpoints integrating cognitive, technical, and decision-making assessments over 12 months. The RCKaS-AI framework incorporated predictive analytics, individualized adaptive remediation, and mentor-validated feedback pathways. Primary analysis evaluated longitudinal entrustment trajectory stability across checkpoints. Secondary analyses included inter-resident variance dynamics, remediation frequency, faculty workload, and predictive agreement between forecasted and observed competency progression. Setting Two accredited neurosurgical residency programs in Kazakhstan, from January 2025 to January 2026. Participants Sixty-four neurosurgical residents randomized into standard RCKaS (n = 32) and AI-enhanced RCKaS-AI (n = 32) cohorts. Results Both cohorts demonstrated progressive improvement in entrustment scores across sequential checkpoints. In the RCKaS-AI cohort, mean entrustment scores increased from 59.1 ± 12.8 at CP1 to 94.3 ± 6.9 at CP4, compared with 58.4 ± 13.1 to 85.7 ± 10.4 under standard RCKaS conditions (p = 0.001). Inter-resident variance decreased by 41% in the AI-assisted cohort versus 18% in the standard cohort. Residents within the RCKaS-AI framework achieved entrustment level 4 significantly earlier than controls (38 ± 7 weeks vs 50 ± 9 weeks, p = 0.003). Mean remediation frequency decreased from 3.4 ± 1.1 to 1.9 ± 0.7 sessions per resident, while faculty workload declined by 34%. Predictive analytics demonstrated strong agreement between forecasted and observed competency trajectories (r = 0.84; 95% CI, 0.77-0.89). Conclusions Expanded longitudinal implementation of the RCKaS-AI framework demonstrated reproducible stabilization of competency trajectories during neurosurgical residency training. These findings support the robustness of adaptive AI-assisted feedback systems as a practical mechanism for longitudinal competency regulation within structured surgical education programs. Further multicenter validation is required to evaluate external reproducibility across broader residency environments."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "texte intégral libre"
+  ],
+  "id": "MED:42864862",
+  "pmid": "42864862",
+  "pmcid": "PMC13671426",
+  "doi": "10.1080/17581966.2026.2743569",
+  "titre": "Potential to improve early detection of lung cancer through expansion of focused and opportunistic screening approaches: a scoping review focusing on potential expansion of screening risk factors and adoption of artificial intelligence models.",
+  "revue": "Lung cancer management",
+  "date": "2026-10-12",
+  "auteurs": "Mok TSK, Finley C, Köksal D, Li MSC, Shum E, Velotta JB, Yang PC.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue systématique",
+  "resume": "Background Low-dose computerized tomography (LDCT) is the gold standard for lung cancer (LC) screening, but access is hindered by strict eligibility criteria and limited infrastructure in low/middle-income countries. A combination of approaches, including expanded screening eligibility criteria and artificial intelligence (AI), could improve detection of early LC in patients excluded by current screening criteria. Areas covered A scoping review was conducted (PubMed, Cochrane library, congresses) to explore two potentially complementary approaches to enhance LC screening. The first identified LC risk factors and their potential inclusion in expanded screening criteria, allowing more people at risk to become eligible for screening; the second examined studies involving AI-augmented imaging (CXR or LDCT) to improve workflow, triage, and opportunistic nodule detection. Expert opinion/commentary Several robustly evidenced risk factors for LC were identified that are not included in current screening programs; widening of eligibility criteria could be considered based on local risk profile but requires further research to demonstrate benefit. Opportunistic use of AI-tools to assess incidental chest images may identify patients with pulmonary nodules requiring further investigation but their role in population-level LC screening requires prospective validation in diverse healthcare systems."
+ }
+]
