@@ -1,0 +1,350 @@
+{
+ "id": "2026-10-31",
+ "sentences": [
+  {
+   "text": "Sur ces soixante photos de patients, trente n'existent pas.",
+   "display": "Sur ces 60 photos de patients, 30 n'existent pas.",
+   "box": "n'existent",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "En chirurgie plastique, les internes apprennent à diagnostiquer à partir de photographies de vrais patients.",
+   "box": "internes",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "En effet, ces images sont difficiles à réunir, car la loi protège les données et certaines maladies sont rares.",
+   "box": "difficiles",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "De plus, les banques d'images manquent parfois de diversité, par exemple sur le type de peau.",
+   "box": "diversité,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Désormais, une IA sait fabriquer des photos cliniques réalistes à partir d'une simple description écrite.",
+   "box": "IA",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Reste à savoir si des chirurgiens les jugent aussi crédibles et utiles que de vraies photos.",
+   "box": "crédibles",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Les chercheurs ont voulu savoir si ces images valent de vraies photographies.",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Dans un service universitaire, cette étude en double aveugle a réuni quarante-sept chirurgiens, dont quarante internes.",
+   "display": "Dans un service universitaire, cette étude en double aveugle a réuni 47 chirurgiens, dont 40 internes.",
+   "box": "aveugle",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Chacun a noté soixante images, trente fabriquées par l'IA et trente vraies, sans savoir lesquelles.",
+   "display": "Chacun a noté 60 images, 30 fabriquées par l'IA et 30 vraies, sans savoir lesquelles.",
+   "box": "lesquelles.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "On décrit un patient par écrit à un générateur d'images, accessible par ChatGPT.",
+   "box": "générateur",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Il produit alors la photo d'un patient fictif, validée avant l'étude par deux chirurgiens expérimentés.",
+   "box": "fictif,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Pour chaque image, ils donnaient une note de réalisme et une note d'utilité pour enseigner, de zéro à dix.",
+   "display": "Pour chaque image, ils donnaient une note de réalisme et une note d'utilité pour enseigner, de 0 à 10.",
+   "box": "d'utilité",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Premier résultat, le réalisme est comparable, avec huit virgule quarante-six pour l'IA contre huit virgule trente-six pour les vraies photos.",
+   "display": "Premier résultat, le réalisme est comparable, avec 8,46 pour l'IA contre 8,36 pour les vraies photos.",
+   "peak": "comparable,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Cet écart n'est pas statistiquement significatif.",
+   "box": "significatif.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "En revanche, les images de l'IA sont jugées plus utiles pour enseigner, avec neuf virgule treize contre huit virgule soixante-quinze.",
+   "display": "En revanche, les images de l'IA sont jugées plus utiles pour enseigner, avec 9,13 contre 8,75.",
+   "peak": "utiles",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Enfin, quinze pour cent des vraies photos montrent des éléments artificiels, contre seulement deux pour cent des images de l'IA.",
+   "display": "Enfin, 15 % des vraies photos montrent des éléments artificiels, contre seulement 2 % des images de l'IA.",
+   "peak": "artificiels,",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "L'étude porte sur un seul centre, et mesure l'impression des chirurgiens, pas leur diagnostic.",
+   "mode": "type",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Ces images sont crédibles et utiles aux yeux des chirurgiens, mais leur effet sur l'apprentissage reste à prouver.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 37.17,
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0.8,
+    "header": "Double aveugle · Chirurgie plastique · 2026",
+    "number": "30",
+    "unit": "photos",
+    "caption": "sur 60 photos de patients n'existent pas : elles sont fabriquées par une IA",
+    "caption_at": 1.72,
+    "people": 5,
+    "lit": 2,
+    "lit_at": 2.9,
+    "footnote": "Photos cliniques · réelles ou générées par IA",
+    "y": 0
+   },
+   {
+    "type": "gag_clock",
+    "cam_at": 10.56,
+    "label": "une autorisation par patient",
+    "y": 1380
+   },
+   {
+    "type": "steps",
+    "cam_at": 13.21,
+    "mark_at": 14.7,
+    "title": "Les banques d'images réelles",
+    "steps": [
+     {
+      "icon": "doc",
+      "label": "01 · Données protégées",
+      "note": "maladies rares",
+      "at": 16.18,
+      "note_at": 18.76,
+      "_y": 2540
+     },
+     {
+      "icon": "users",
+      "label": "02 · Peu de diversité",
+      "note": "type de peau",
+      "at": 22.4,
+      "note_at": 24.72,
+      "_y": 2870
+     },
+     {
+      "icon": "chip",
+      "label": "03 · Photo fabriquée par IA",
+      "at": 26.88,
+      "_y": 3200
+     }
+    ],
+    "y": 2370
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Les chercheurs ont voulu savoir si ces images valent de vraies photographies.",
+  "italic": "voulu",
+  "fold_at": 41.38,
+  "start": 37.17,
+  "end": 42.43
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "title": "L'étude en bref",
+    "cam_at": 42.83,
+    "rows": [
+     {
+      "label": "Lieu",
+      "value": "Un service universitaire",
+      "at": 43.44
+     },
+     {
+      "label": "Type",
+      "value": "Double aveugle, ordre tiré au sort",
+      "at": 45.7
+     },
+     {
+      "label": "Chirurgiens",
+      "value": "47, dont 40 internes",
+      "at": 47.26,
+      "accent": true
+     },
+     {
+      "label": "Images",
+      "value": "60 : 30 de l'IA, 30 réelles",
+      "at": 51.58
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "input_icon": "message",
+    "modality": "texte",
+    "input_label": "Description écrite d'un patient",
+    "ai_label": "Fabrique une photo clinique",
+    "output_label": "Image d'un patient fictif",
+    "output_note": "Validée par 2 chirurgiens",
+    "ai_name": "Générateur d'images",
+    "at": 57.36,
+    "core_at": 58.56,
+    "out_at": 63.0,
+    "cam_at": 56.51,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "key_points",
+    "title": "Ce que les chirurgiens notent",
+    "cam_at": 68.5,
+    "points": [
+     {
+      "text": "Le réalisme de l'image, noté de 0 à 10",
+      "at": 70.76
+     },
+     {
+      "text": "Son utilité pour enseigner, notée de 0 à 10",
+      "at": 72.04
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "result_bars",
+    "title": "Réalisme perçu",
+    "unit": "sur 10",
+    "cam_at": 75.53,
+    "groups": [
+     {
+      "label": "Photos réelles",
+      "value": "8,36",
+      "num": 8.36,
+      "at": 81.04
+     },
+     {
+      "label": "Images de l'IA",
+      "value": "8,46",
+      "num": 8.46,
+      "at": 78.84,
+      "accent": true
+     }
+    ],
+    "diff": "+0,10",
+    "diff_at": 84.29,
+    "y": 0,
+    "_fig": 2
+   },
+   {
+    "type": "result_bars",
+    "title": "Utilité pour enseigner",
+    "unit": "sur 10",
+    "cam_at": 87.34,
+    "groups": [
+     {
+      "label": "Photos réelles",
+      "value": "8,75",
+      "num": 8.75,
+      "at": 93.0
+     },
+     {
+      "label": "Images de l'IA",
+      "value": "9,13",
+      "num": 9.13,
+      "accent": true,
+      "at": 91.55
+     }
+    ],
+    "diff": "+0,38",
+    "diff_at": 93.98,
+    "y": 0,
+    "_fig": 3
+   },
+   {
+    "type": "result_bars",
+    "title": "Éléments artificiels signalés",
+    "unit": "%",
+    "cam_at": 95.34,
+    "groups": [
+     {
+      "label": "Photos réelles",
+      "value": "15",
+      "num": 15,
+      "at": 96.33
+     },
+     {
+      "label": "Images de l'IA",
+      "value": "2",
+      "num": 2,
+      "accent": true,
+      "at": 99.77
+     }
+    ],
+    "diff": "−13 points",
+    "diff_at": 101.5,
+    "y": 0,
+    "_fig": 4
+   },
+   {
+    "type": "typo",
+    "text": "L'étude porte sur un seul centre, et mesure l'impression des chirurgiens, pas leur diagnostic.",
+    "italic": "l'impression",
+    "cam_at": 102.96,
+    "sentence": 16,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "text": "Ces images sont crédibles et utiles aux yeux des chirurgiens, mais leur effet sur l'apprentissage reste à prouver.",
+    "italic": "prouver.",
+    "cam_at": 108.64,
+    "sentence": 17,
+    "y": 0
+   }
+  ],
+  "start": 41.330000000000005,
+  "end": 115.83
+ },
+ "end": {
+  "fold_at": 114.78,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 118.61,
+  "button": "Suivre",
+  "button_at": 119.21,
+  "click_at": 120.21,
+  "source": "Schonauer et al. · Plast Reconstr Surg Glob Open · octobre 2026",
+  "doi": "doi:10.1097/gox.0000000000008221",
+  "source_at": 116.82,
+  "start": 114.73,
+  "end": 123.0
+ },
+ "duration": 123.0,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

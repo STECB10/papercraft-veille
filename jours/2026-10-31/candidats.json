@@ -1,0 +1,131 @@
+[
+ {
+  "score": 19,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "prospectif",
+   "multicentrique",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42945375",
+  "pmid": "42945375",
+  "pmcid": "PMC13712405",
+  "doi": "10.2196/86091",
+  "titre": "Beyond Time Saved: A Framework for Comprehensive Evaluation of AI Clinical Documentation.",
+  "revue": "JMIR medical informatics",
+  "date": "2026-10-27",
+  "auteurs": "Sze Min EV.",
+  "types": "research-article review journal article",
+  "acces_libre": true,
+  "type_etude": "méta-analyse",
+  "resume": "Unlabelled Ambient AI scribes have been rapidly adopted across health care organizations to mitigate documentation burden and burnout. Initial single-system reports described substantial time savings, but more recent multisite evaluations and meta-analyses describe modest, heterogeneous effects with generally low methodological quality. Most evaluations emphasize efficiency and satisfaction, leaving potential effects on communication quality, narrative preservation, cognitive performance, and equity largely unmeasured. This viewpoint aimed to characterize evaluation patterns in prominent ambient AI scribe implementations, explain why unmeasured domains warrant investigation for patient safety and care quality, and propose an expanded framework with feasible research priorities. This analytic viewpoint mapped evaluation domain coverage in a purposive, illustrative sample of prominent implementation reports published through April 2026, then synthesized findings with literature on clinical communication, narrative medicine, automation effects, and health equity. Reporting was guided by Scale for the Assessment of Narrative Review Articles (SANRA) principles for narrative reviews; PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) was not used because the work is a domain-coverage characterization rather than an evidence synthesis estimating effects. A single reviewer (VSME) performed selection and extraction, consistent with the viewpoint's illustrative intent. Across the included implementations, evaluation consistently measured documentation time, after-hours work, and clinician satisfaction. Within this illustrative sample of 6 independently peer-reviewed real-world implementation evaluations, we did not identify any that reported systematic assessment of patient-clinician communication using validated instruments, structured comparison of AI-generated against human-generated notes for narrative fidelity, longitudinal evaluation of cognitive or educational effects, or equity analyses stratified by language and demographic group. The absence in this purposive sample reflects an absence of public reporting rather than proof that no organization has measured these dimensions internally. Limited error analyses found frequent omissions, with accuracy declining as encounter complexity increased. Evidence from multilingual and interpreter-mediated encounters was notably sparse. Current evidence supports continued implementation with quality safeguards in settings where benefits are demonstrated locally rather than universal adoption on the strength of early single-system reports. Organizations implementing ambient AI scribes should consider embedding prospective evaluation across 4 domains: validated communication quality measurement, structured narrative content comparison, longitudinal cognitive and training studies, and equity analyses across languages and demographics. Three near-term priorities offer immediate feasibility for organizations with evaluation capacity: (1) deploying validated communication instruments such as the Communication Assessment Tool or Consumer Assessment of Health Care Providers and Systems (CAHPS) within ongoing rollouts; (2) launching multisite longitudinal trainee cohorts comparing programs with and without ambient AI exposure; and (3) oversampling multilingual and interpreter-mediated encounters for stratified equity analyses. Narrative preservation requires foundational methodological work before implementation-ready measures exist. Editors, implementers, and vendors can each act now: editors by requiring domain-coverage reporting; implementers by preregistering evaluation plans before rollout; vendors by publishing stratified performance data as a routine condition of deployment. The goal is to preserve documented efficiency gains while generating evidence about communication, narrative, reasoning, and equity dimensions that current evaluations leave unmeasured."
+ },
+ {
+  "score": 17,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "prospectif",
+   "multicentrique",
+   "revue majeure"
+  ],
+  "id": "MED:42958114",
+  "pmid": "42958114",
+  "pmcid": null,
+  "doi": "10.1186/s12886-026-05483-4",
+  "titre": "Artificial intelligence across the cataract care continuum: a systematic scoping review introducing the CAICC framework and the surgical complexity prediction gap.",
+  "revue": "BMC ophthalmology",
+  "date": "2026-10-27",
+  "auteurs": "Tjokrovonco LM, Kartasasmita AS, Kartiwa RA, Virgana R, Prabaswara C, Azuraa AN.",
+  "types": "scoping review im systematic review journal article",
+  "acces_libre": false,
+  "type_etude": "méta-analyse",
+  "resume": "Cataracts remain a leading cause of reversible blindness, and artificial intelligence (AI) applications now span the cataract care pathway. However, the distribution of these applications and their validation maturity remain unclear. This review mapped AI across the care continuum, summarized task-specific performance, characterized validation maturity, and identified evidence gaps. The Preferred Reporting Items for Systematic Reviews and Meta-Analyses Extension for Scoping Reviews (PRISMA-ScR) was followed. PubMed, Scopus, the Cochrane Library, WorldCat, and the American Academy of Ophthalmology Meeting Archive were searched; the final search was completed on 20 July 2025. Eligible studies were English-language primary research published from 1 January 2020 through 20 July 2025. A review-specific cataract artificial intelligence clinical continuum (CAICC) evidence-mapping framework was developed during data charting and synthesis. Two reviewers independently conducted study selection, data extraction, endpoint adjudication, and validation-maturity assessment. Performance was summarized descriptively; validation maturity characterized evaluation independence and clinical stage, not risk of bias or overall methodological quality. Of 361 reports sought for retrieval, 122 (33.8%) were not retrieved; 113/122 (92.6%) were considered plausibly eligible from available metadata. The final synthesis included 185 studies: detection (n = 52), characterization (n = 50), personalized surgical planning (n = 27), intelligent surgery (n = 28), recovery (n = 24), and patient engagement (n = 4). Among 181 validation-applicable included studies, internal testing was the most frequent highest-maturity category (123/181, 68.0%), followed by external testing (33/181, 18.2%), prospective single-center evaluation (6/181, 3.3%), and prospective multicenter evaluation (2/181, 1.1%); 17/181 (9.4%) had no independent or unclear testing. Among the retrieved and included studies, no comprehensive clinically validated multimodal preoperative cataract surgical-complexity model was identified. Most included studies remained at internal validation stages, and prospective multicenter evaluation was rare. Because 122/361 reports sought for retrieval were unavailable and most were considered plausibly eligible, retrieval bias may affect the comprehensiveness of the evidence map. Future research should prioritize multimodal preoperative surgical-complexity prediction, independent external testing, and prospective multicenter evaluation of locked models. Open Science Framework (OSF), DOI 10.17605/OSF.IO/ZKM86."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "multicentrique"
+  ],
+  "id": "MED:42863380",
+  "pmid": "42863380",
+  "pmcid": null,
+  "doi": "10.1016/j.jsurg.2026.104210",
+  "titre": "Expanded Longitudinal Validation of Adaptive Learning Stability in AI-Assisted Neurosurgical Residency Training.",
+  "revue": "Journal of surgical education",
+  "date": "2026-10-12",
+  "auteurs": "Mustafayev B, Mustafayeva A, Bakhtiyarov A, Nikatov K, Satylkhan B, Mustafayev A.",
+  "types": "validation study randomized controlled trial journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "Objective To evaluate the longitudinal stability, reproducibility, and robustness of Adaptive Learning Stability (ALS) within an expanded AI-assisted neurosurgical residency cohort during a 12-month observation cycle. Design This was a prospective controlled educational study. Residents completed 4 consecutive quarterly checkpoints integrating cognitive, technical, and decision-making assessments over 12 months. The RCKaS-AI framework incorporated predictive analytics, individualized adaptive remediation, and mentor-validated feedback pathways. Primary analysis evaluated longitudinal entrustment trajectory stability across checkpoints. Secondary analyses included inter-resident variance dynamics, remediation frequency, faculty workload, and predictive agreement between forecasted and observed competency progression. Setting Two accredited neurosurgical residency programs in Kazakhstan, from January 2025 to January 2026. Participants Sixty-four neurosurgical residents randomized into standard RCKaS (n = 32) and AI-enhanced RCKaS-AI (n = 32) cohorts. Results Both cohorts demonstrated progressive improvement in entrustment scores across sequential checkpoints. In the RCKaS-AI cohort, mean entrustment scores increased from 59.1 ± 12.8 at CP1 to 94.3 ± 6.9 at CP4, compared with 58.4 ± 13.1 to 85.7 ± 10.4 under standard RCKaS conditions (p = 0.001). Inter-resident variance decreased by 41% in the AI-assisted cohort versus 18% in the standard cohort. Residents within the RCKaS-AI framework achieved entrustment level 4 significantly earlier than controls (38 ± 7 weeks vs 50 ± 9 weeks, p = 0.003). Mean remediation frequency decreased from 3.4 ± 1.1 to 1.9 ± 0.7 sessions per resident, while faculty workload declined by 34%. Predictive analytics demonstrated strong agreement between forecasted and observed competency trajectories (r = 0.84; 95% CI, 0.77-0.89). Conclusions Expanded longitudinal implementation of the RCKaS-AI framework demonstrated reproducible stabilization of competency trajectories during neurosurgical residency training. These findings support the robustness of adaptive AI-assisted feedback systems as a practical mechanism for longitudinal competency regulation within structured surgical education programs. Further multicenter validation is required to evaluate external reproducibility across broader residency environments."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "texte intégral libre"
+  ],
+  "id": "MED:42948812",
+  "pmid": "42948812",
+  "pmcid": "PMC13713066",
+  "doi": "10.1097/gox.0000000000008221",
+  "titre": "Artificial Intelligence-generated Clinical Images for Plastic Surgery Education: A Prospective Randomized Double-blind Study.",
+  "revue": "Plastic and reconstructive surgery. Global open",
+  "date": "2026-10-27",
+  "auteurs": "Schonauer F, Cavaliere A, Zaporojan T, De Gregorio L, Errico C, D'Andrea F, La Padula S.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "type_etude": "essai tiré au sort",
+  "resume": "Background High-quality clinical images are essential for plastic surgery education and board examinations, but privacy concerns and limited case diversity constrain their use. The educational validity of generative artificial intelligence (AI) images remains uncertain. Methods In a prospective randomized double-blind study, 47 plastic surgeons (40 residents, 7 senior surgeons) each evaluated 60 randomized AI-generated and real clinical images depicting board-style scenarios. Participants rated realism and educational usefulness (0-10), suitability for replacing real photographs (yes/no), and artificial elements (yes/no). Participant-level means and proportions were compared using paired t tests and Wilcoxon tests. Test-retest reliability at 1 month was assessed using intraclass correlation coefficients. Results Realism ratings did not differ significantly between AI-generated and real images (8.46 versus 8.36; P = 0.5044). AI-generated images received higher educational usefulness ratings (9.13 versus 8.75; P = 0.0035). Replacement endorsement did not differ significantly (0.95 versus 0.93; P = 0.4140). Artificial elements were reported less frequently in AI-generated images (0.02 versus 0.15; P 0.8). Conclusions AI-generated images received high realism ratings and slightly higher educational usefulness ratings than real photographs in this cohort. These findings support curated AI imagery as a potentially privacy-preserving educational resource. Diagnostic performance, learning outcomes, and demographic bias require evaluation before widespread curricular or examination use."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "texte intégral libre"
+  ],
+  "id": "MED:42864862",
+  "pmid": "42864862",
+  "pmcid": "PMC13671426",
+  "doi": "10.1080/17581966.2026.2743569",
+  "titre": "Potential to improve early detection of lung cancer through expansion of focused and opportunistic screening approaches: a scoping review focusing on potential expansion of screening risk factors and adoption of artificial intelligence models.",
+  "revue": "Lung cancer management",
+  "date": "2026-10-12",
+  "auteurs": "Mok TSK, Finley C, Köksal D, Li MSC, Shum E, Velotta JB, Yang PC.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue systématique",
+  "resume": "Background Low-dose computerized tomography (LDCT) is the gold standard for lung cancer (LC) screening, but access is hindered by strict eligibility criteria and limited infrastructure in low/middle-income countries. A combination of approaches, including expanded screening eligibility criteria and artificial intelligence (AI), could improve detection of early LC in patients excluded by current screening criteria. Areas covered A scoping review was conducted (PubMed, Cochrane library, congresses) to explore two potentially complementary approaches to enhance LC screening. The first identified LC risk factors and their potential inclusion in expanded screening criteria, allowing more people at risk to become eligible for screening; the second examined studies involving AI-augmented imaging (CXR or LDCT) to improve workflow, triage, and opportunistic nodule detection. Expert opinion/commentary Several robustly evidenced risk factors for LC were identified that are not included in current screening programs; widening of eligibility criteria could be considered based on local risk profile but requires further research to demonstrate benefit. Opportunistic use of AI-tools to assess incidental chest images may identify patients with pulmonary nodules requiring further investigation but their role in population-level LC screening requires prospective validation in diverse healthcare systems."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique"
+  ],
+  "id": "MED:42945747",
+  "pmid": "42945747",
+  "pmcid": null,
+  "doi": "10.1016/j.ijmedinf.2026.106785",
+  "titre": "Explainable artificial intelligence in clinical decision support systems: a systematic review of techniques, clinical applications, evaluation, and future directions.",
+  "revue": "International journal of medical informatics",
+  "date": "2026-10-26",
+  "auteurs": "Zandkarimi E, Ghorbanzadeh K.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Explainable artificial intelligence (XAI) has emerged as an important approach for improving the transparency and interpretability of artificial intelligence (AI)-based clinical decision support systems (CDSSs). However, evidence regarding the models and explainability techniques used in healthcare, their clinical evaluation, methodological quality, and progression toward real-world implementation remains fragmented. This systematic review aimed to synthesize and critically evaluate the current evidence on XAI-enabled CDSSs, with particular emphasis on AI and XAI methods, clinical applications, validation, explainability evaluation, implementation, and methodological limitations. Methods A systematic review was conducted in accordance with the PRISMA 2020 statement. The protocol was prospectively registered in PROSPERO (CRD420261449460). PubMed/MEDLINE, Scopus, and Web of Science Core Collection were searched from database inception through 30 June 2026 (searches run on 15 July 2026). Eligible studies were peer-reviewed original research articles that applied artificial intelligence within healthcare clinical decision support systems, incorporated at least one explainability or interpretability technique, and demonstrated a direct role in clinical decision-making or decision support. Studies limited to prediction, classification, diagnosis, or prognostic modeling without a decision-support component were excluded. Two reviewers jointly screened titles and abstracts, independently assessed full texts, and independently extracted data using a standardized form informed by the CHARMS checklist. Risk of bias and applicability of prediction model studies were assessed using PROBAST, and reporting completeness was evaluated against relevant TRIPOD + AI recommendations where applicable. Due to substantial clinical, methodological, and statistical heterogeneity, findings were synthesized narratively in accordance with SWiM guidance. Results Of 2008 identified records, 68 studies met the eligibility criteria and were included in the qualitative synthesis. Publications increased substantially in 2025-2026, accounting for 47 of the 68 included studies. China and India contributed the largest number of studies (11 each), followed by the United States (10). Critical care/intensive care medicine and cardiology were the most frequently represented clinical specialties (13 studies each). Numeric patient-level sample size was reported in 35 studies. Among these, the median sample size was 973 (IQR 303-10,015; range 57-106,449), while the mean was 11,944, indicating a markedly right-skewed distribution. Internal validation was reported in 51 studies (75.0 %), whereas external validation was reported in 17 studies (25.0 %). Most systems remained at the research-prototype stage (n = 63, 92.6 %). One study (1.5 %) reported pilot testing in a clinical workflow, while only two studies (2.9 %) reported real-world or routine clinical deployment. Implementation status was unclear or not reported in two studies (2.9 %). Of the 63 studies for which PROBAST was applicable, 3 (4.8 %) were judged at low overall risk of bias and 3 (4.8 %) at high risk; the remainder were rated Unclear mainly because of incomplete reporting. Five studies describing non-prediction CDSS designs were classified as PROBAST not applicable. Clinician involvement was reported in 53 studies. Formal user studies with structured evaluation protocols were reported in 39 studies (57.4 %), but rigorous assessment of effects on decision quality or patient outcomes remained rare. Conclusions XAI-enabled CDSS research has expanded rapidly, yet remains largely confined to model development and technical explainability rather than rigorous clinical translation. Although SHAP and gradient-boosting methods currently predominate, external validation, real-world deployment, standardized evaluation of explanation quality, and meaningful human-centered assessment are still limited. Future work must prioritize multicenter external validation, transparent reporting, rigorous assessment of explanation fidelity and stability, active clinician and patient involvement, and prospective evaluation of effects on decision-making and patient outcomes. Closing the gap between algorithmic performance and clinically meaningful utility is essential for the safe, trustworthy, and responsible adoption of these systems."
+ }
+]

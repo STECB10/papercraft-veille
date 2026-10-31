@@ -1,0 +1,7 @@
+Des photos de patients fabriquées par une IA ont été jugées aussi réalistes que de vraies photos.
+
+Des chirurgiens plasticiens ont-ils pu distinguer de vraies photos cliniques d'images générées par IA ? 47 chirurgiens (dont 40 internes) ont noté 60 images, 30 réelles et 30 générées, sans savoir lesquelles. Réalisme comparable (8,46 contre 8,36), utilité pour enseigner un peu supérieure pour l'IA (9,13 contre 8,75). L'étude mesure l'impression des chirurgiens, pas l'apprentissage.
+
+Source : Schonauer et al., Plastic and Reconstructive Surgery Global Open, octobre 2026. https://doi.org/10.1097/gox.0000000000008221
+
+#IA #ChirurgiePlastique #Enseignement #Santé

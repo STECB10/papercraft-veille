@@ -1,0 +1,77 @@
+[
+ {
+  "id": "f1",
+  "valeur": 47,
+  "citation": "47 plastic surgeons"
+ },
+ {
+  "id": "f2",
+  "valeur": 40,
+  "citation": "40 residents"
+ },
+ {
+  "id": "f3",
+  "valeur": 7,
+  "citation": "7 senior surgeons"
+ },
+ {
+  "id": "f4",
+  "valeur": 60,
+  "citation": "each evaluated 60 randomized AI-generated and real clinical images"
+ },
+ {
+  "id": "f5",
+  "valeur": 30,
+  "citation": "30 AI-generated images and 30 real clinical photographs"
+ },
+ {
+  "id": "f6",
+  "valeur": 8.46,
+  "citation": "The mean participant-level realism score was 8.46 for AI-generated images and 8.36 for real images"
+ },
+ {
+  "id": "f7",
+  "valeur": 8.36,
+  "citation": "The mean participant-level realism score was 8.46 for AI-generated images and 8.36 for real images"
+ },
+ {
+  "id": "f8",
+  "valeur": 9.13,
+  "citation": "The mean usefulness score was 9.13 for AI-generated images and 8.75 for real images"
+ },
+ {
+  "id": "f9",
+  "valeur": 8.75,
+  "citation": "The mean usefulness score was 9.13 for AI-generated images and 8.75 for real images"
+ },
+ {
+  "id": "f10",
+  "valeur": 0.38,
+  "citation": "the absolute difference in mean scores was modest (0.38 points on a 10-point scale)"
+ },
+ {
+  "id": "f11",
+  "valeur": 10,
+  "citation": "0.38 points on a 10-point scale"
+ },
+ {
+  "id": "f12",
+  "valeur": 15,
+  "citation": "fewer reports of artificial or unconvincing elements (2% versus 15% affirmative responses)"
+ },
+ {
+  "id": "f13",
+  "valeur": 2,
+  "citation": "fewer reports of artificial or unconvincing elements (2% versus 15% affirmative responses)"
+ },
+ {
+  "id": "f14",
+  "valeur": 13,
+  "calcul": "f12 - f13"
+ },
+ {
+  "id": "f15",
+  "valeur": 0.1,
+  "calcul": "f6 - f7"
+ }
+]
