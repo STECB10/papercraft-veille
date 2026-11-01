@@ -302,5 +302,9 @@
   "source": "Tjokrovonco et al. · BMC Ophthalmology · octobre 2026",
   "doi": "doi:10.1186/s12886-026-05483-4",
   "source_at": "s21:vérifiée-0.2"
- }
+ },
+ "duration": 127.8,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
 }
