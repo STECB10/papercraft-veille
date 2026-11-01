@@ -1,0 +1,67 @@
+[
+ {
+  "id": "f1",
+  "valeur": 185,
+  "citation": "The final synthesis included 185 studies"
+ },
+ {
+  "id": "f2",
+  "valeur": 2020,
+  "citation": "from 1 January 2020 through 20 July 2025"
+ },
+ {
+  "id": "f3",
+  "valeur": 2025,
+  "citation": "from 1 January 2020 through 20 July 2025"
+ },
+ {
+  "id": "f4",
+  "valeur": 52,
+  "citation": "detection (n = 52)"
+ },
+ {
+  "id": "f5",
+  "valeur": 50,
+  "citation": "characterization (n = 50)"
+ },
+ {
+  "id": "f6",
+  "valeur": 181,
+  "citation": "Among 181 validation-applicable included studies"
+ },
+ {
+  "id": "f7",
+  "valeur": 123,
+  "citation": "(123/181, 68.0%)"
+ },
+ {
+  "id": "f8",
+  "valeur": 68.0,
+  "citation": "(123/181, 68.0%)"
+ },
+ {
+  "id": "f9",
+  "valeur": 33,
+  "citation": "external testing (33/181, 18.2%)"
+ },
+ {
+  "id": "f10",
+  "valeur": 18.2,
+  "citation": "external testing (33/181, 18.2%)"
+ },
+ {
+  "id": "f11",
+  "valeur": 1.1,
+  "citation": "prospective multicenter evaluation (2/181, 1.1%)"
+ },
+ {
+  "id": "f12",
+  "valeur": 361,
+  "citation": "Of 361 reports sought for retrieval, 122 (33.8%) were not retrieved"
+ },
+ {
+  "id": "f13",
+  "valeur": 122,
+  "citation": "Of 361 reports sought for retrieval, 122 (33.8%) were not retrieved"
+ }
+]

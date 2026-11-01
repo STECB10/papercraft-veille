@@ -1,0 +1,306 @@
+{
+ "id": "2026-11-01",
+ "sentences": [
+  {
+   "text": "Cent quatre-vingt-cinq études d'IA sur la cataracte depuis deux mille vingt, mais sont-elles solides?",
+   "display": "185 études d'IA sur la cataracte depuis 2020, mais sont-elles solides?",
+   "box": "solides?",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "La cataracte est une cause majeure de cécité, mais on peut la guérir.",
+   "box": "guérir."
+  },
+  {
+   "text": "Pourtant, le chemin du soin est long.",
+   "box": "long.",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Il faut repérer la maladie, planifier l'opération, opérer, puis suivre la récupération.",
+   "box": "suivre"
+  },
+  {
+   "text": "Or, des outils d'IA sont apparus à presque chaque étape de ce parcours.",
+   "box": "d'IA",
+   "peak": "chaque étape"
+  },
+  {
+   "text": "Ils lisent des images, calculent la lentille ou prédisent la récupération.",
+   "box": "prédisent"
+  },
+  {
+   "text": "Mais on ignore à quel point ces outils sont réellement prouvés.",
+   "box": "prouvés.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Les chercheurs ont voulu cartographier ces outils et mesurer leur niveau de preuve.",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Il s'agit d'une revue de la littérature, dans cinq bases, de deux mille vingt à juillet deux mille vingt-cinq.",
+   "display": "Il s'agit d'une revue de la littérature, dans cinq bases, de 2020 à juillet 2025.",
+   "box": "revue",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Deux relecteurs ont trié les articles, et cent quatre-vingt-cinq études sont retenues.",
+   "display": "Deux relecteurs ont trié les articles, et 185 études sont retenues.",
+   "box": "retenues.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Dans ces études, une IA reçoit des images ou des données de l'œil.",
+   "box": "reçoit"
+  },
+  {
+   "text": "Elle les analyse, puis repère la cataracte, prépare l'opération ou prédit la suite.",
+   "box": "analyse,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "La détection compte cinquante-deux études, la caractérisation cinquante.",
+   "display": "La détection compte 52 études, la caractérisation 50.",
+   "box": "détection",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Chaque étude a reçu un niveau de test, le plus abouti.",
+   "box": "niveau",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Résultat : sur cent quatre-vingt-une études évaluables, cent vingt-trois, soit soixante-huit pour cent, restent au test interne.",
+   "display": "Résultat : sur 181 études évaluables, 123, soit 68 %, restent au test interne.",
+   "box": "interne.",
+   "peak": "soixante-huit pour cent",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Autrement dit, deux études sur trois n'ont été testées que sur leurs données de départ.",
+   "box": "départ.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Seules trente-trois études, soit dix-huit pour cent, ont un test externe.",
+   "display": "Seules 33 études, soit 18 %, ont un test externe.",
+   "box": "externe.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Et seulement deux, soit un pour cent, ont été évaluées de façon prospective, dans plusieurs centres.",
+   "display": "Et seulement 2, soit 1 %, ont été évaluées de façon prospective, dans plusieurs centres.",
+   "box": "prospective,",
+   "peak": "un pour cent",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Autre manque : aucun modèle validé ne prédit la difficulté de l'opération, et quatre études seulement visent le patient.",
+   "box": "aucun",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Cent vingt-deux articles sur trois cent soixante et un restent introuvables, ce qui peut fausser la carte.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Beaucoup d'IA brillent sur leurs propres données, très peu ont fait leurs preuves en conditions réelles.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s6.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0,
+    "header": "Revue de la littérature · 2020–2025",
+    "number": "185",
+    "unit": "études",
+    "caption": "d'IA sur la cataracte, depuis 2020",
+    "caption_at": "s0:études",
+    "people": 5,
+    "lit": 3,
+    "lit_at": "s0:solides",
+    "footnote": "Publiées de 2020 à juillet 2025"
+   },
+   {
+    "type": "gag_clock",
+    "label": "un chemin long",
+    "cam_at": "s2.e+0.3"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s3.e",
+    "title": "Le parcours de soin",
+    "steps": [
+     {
+      "icon": "eye",
+      "label": "01 · Repérer la maladie",
+      "at": "s3:repérer"
+     },
+     {
+      "icon": "calendar",
+      "label": "02 · Planifier l'opération",
+      "at": "s3:planifier"
+     },
+     {
+      "icon": "hospital",
+      "label": "03 · Opérer",
+      "at": "s3:opérer"
+     },
+     {
+      "icon": "heart",
+      "label": "04 · Suivre la récupération",
+      "at": "s3:suivre"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Les chercheurs ont voulu cartographier ces outils et mesurer leur niveau de preuve.",
+  "italic": "cartographier",
+  "fold_at": "s7.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s8-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Revue de la littérature",
+      "at": "s8:revue"
+     },
+     {
+      "label": "Bases",
+      "value": "5 bases",
+      "at": "s8:cinq"
+     },
+     {
+      "label": "Période",
+      "value": "2020 – juillet 2025",
+      "at": "s8:deux"
+     },
+     {
+      "label": "Relecture",
+      "value": "2 relecteurs indépendants",
+      "at": "s9:Deux"
+     },
+     {
+      "label": "Retenues",
+      "value": "185 études",
+      "at": "s9:cent",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s10-0.3",
+    "input_icon": "eye",
+    "input_label": "Images ou données de l'œil",
+    "ai_label": "Analyse, repère, prédit",
+    "output_label": "Détection, plan, suite",
+    "modality": "image",
+    "at": "s10:images",
+    "core_at": "s11:analyse",
+    "out_at": "s11:repère"
+   },
+   {
+    "type": "studies_stack",
+    "cam_at": "s12-0.3",
+    "n_studies": 185,
+    "label": "études d'IA retenues",
+    "sub": "52 en détection · 50 en caractérisation",
+    "title": "Études regroupées",
+    "at": "s12-0.05"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s13-0.2",
+    "title": "Niveau de test le plus abouti",
+    "metrics": [
+     {
+      "label": "Test interne · 123 sur 181",
+      "value": "68,0",
+      "num": 68.0,
+      "unit": "%",
+      "at": "s14:soixante-huit"
+     },
+     {
+      "label": "Test externe · 33 sur 181",
+      "value": "18,2",
+      "num": 18.2,
+      "unit": "%",
+      "at": "s16:trente-trois"
+     },
+     {
+      "label": "Multicentrique · 2 sur 181",
+      "value": "1,1",
+      "num": 1.1,
+      "unit": "%",
+      "at": "s17:deux",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s18-0.25",
+    "title": "Ce qui manque",
+    "points": [
+     {
+      "text": "Aucun modèle validé de difficulté opératoire",
+      "at": "s18:aucun"
+     },
+     {
+      "text": "Quatre études seulement pour le patient",
+      "at": "s18:quatre"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s19-0.25",
+    "text": "Cent vingt-deux articles sur trois cent soixante et un restent introuvables, ce qui peut fausser la carte.",
+    "italic": "fausser"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s20-0.25",
+    "text": "Beaucoup d'IA brillent sur leurs propres données, très peu ont fait leurs preuves en conditions réelles.",
+    "italic": "preuves"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s20.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s22",
+  "button": "Suivre",
+  "button_at": "s22+0.6",
+  "click_at": "s22+1.6",
+  "source": "Tjokrovonco et al. · BMC Ophthalmology · octobre 2026",
+  "doi": "doi:10.1186/s12886-026-05483-4",
+  "source_at": "s21:vérifiée-0.2"
+ }
+}

@@ -1,0 +1,132 @@
+[
+ {
+  "score": 19,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "prospectif",
+   "multicentrique",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42958114",
+  "pmid": "42958114",
+  "pmcid": "PMC13718037",
+  "doi": "10.1186/s12886-026-05483-4",
+  "titre": "Artificial intelligence across the cataract care continuum: a systematic scoping review introducing the CAICC framework and the surgical complexity prediction gap.",
+  "revue": "BMC ophthalmology",
+  "date": "2026-10-27",
+  "auteurs": "Tjokrovonco LM, Kartasasmita AS, Kartiwa RA, Virgana R, Prabaswara C, Azuraa AN.",
+  "types": "scoping review systematic review review-article journal article",
+  "acces_libre": true,
+  "type_etude": "méta-analyse",
+  "resume": "Background Cataracts remain a leading cause of reversible blindness, and artificial intelligence (AI) applications now span the cataract care pathway. However, the distribution of these applications and their validation maturity remain unclear. This review mapped AI across the care continuum, summarized task-specific performance, characterized validation maturity, and identified evidence gaps. Methods The Preferred Reporting Items for Systematic Reviews and Meta-Analyses Extension for Scoping Reviews (PRISMA-ScR) was followed. PubMed, Scopus, the Cochrane Library, WorldCat, and the American Academy of Ophthalmology Meeting Archive were searched; the final search was completed on 20 July 2025. Eligible studies were English-language primary research published from 1 January 2020 through 20 July 2025. A review-specific cataract artificial intelligence clinical continuum (CAICC) evidence-mapping framework was developed during data charting and synthesis. Two reviewers independently conducted study selection, data extraction, endpoint adjudication, and validation-maturity assessment. Performance was summarized descriptively; validation maturity characterized evaluation independence and clinical stage, not risk of bias or overall methodological quality. Results Of 361 reports sought for retrieval, 122 (33.8%) were not retrieved; 113/122 (92.6%) were considered plausibly eligible from available metadata. The final synthesis included 185 studies: detection (n = 52), characterization (n = 50), personalized surgical planning (n = 27), intelligent surgery (n = 28), recovery (n = 24), and patient engagement (n = 4). Among 181 validation-applicable included studies, internal testing was the most frequent highest-maturity category (123/181, 68.0%), followed by external testing (33/181, 18.2%), prospective single-center evaluation (6/181, 3.3%), and prospective multicenter evaluation (2/181, 1.1%); 17/181 (9.4%) had no independent or unclear testing. Among the retrieved and included studies, no comprehensive clinically validated multimodal preoperative cataract surgical-complexity model was identified. Conclusions Most included studies remained at internal validation stages, and prospective multicenter evaluation was rare. Because 122/361 reports sought for retrieval were unavailable and most were considered plausibly eligible, retrieval bias may affect the comprehensiveness of the evidence map. Future research should prioritize multimodal preoperative surgical-complexity prediction, independent external testing, and prospective multicenter evaluation of locked models. Registration Open Science Framework (OSF), DOI 10.17605/OSF.IO/ZKM86."
+ },
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "n = 24150",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42955350",
+  "pmid": "42955350",
+  "pmcid": "PMC13718382",
+  "doi": "10.2196/94543",
+  "titre": "Reporting Gaps and Challenges in Randomized Trials of Generative AI for Medical Use: Insights From a Systematic Review.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-10-28",
+  "auteurs": "Ko JE, Hwang JW, Kim SM, Kwon JY.",
+  "types": "systematic review review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue systématique",
+  "resume": "Background Generative AI (GenAI) is being deployed rapidly in medicine, and evidence of its clinical safety and efficacy depends on transparent reporting of randomized controlled trials (RCTs). The CONSORT-AI (Consolidated Standards of Reporting Trials-AI) extension is a benchmark for AI trial reporting, but it was drafted for conventional AI, and its applicability to GenAI has not been examined. Objective This study aimed to assess item-level adherence to the CONSORT-AI among RCTs evaluating GenAI for medical purposes and to distinguish deficiencies attributable to nonadherence from those attributable to items that do not correspond to how GenAI interventions are specified or delivered. Methods PubMed, CENTRAL (Cochrane Central Register of Controlled Trials), and Embase were searched for peer-reviewed, English-language RCTs published from 2022 to April 3, 2026, supplemented by backward and forward citation searching, in which patients, health care professionals, or laypeople received a GenAI intervention for a medical purpose; non-GenAI, nonmedical, nonrandomized, and non-peer-reviewed reports were excluded. Two reviewers independently screened studies, extracted data, and rated CONSORT-AI items as reported, partially reported, not reported, or not applicable using signaling questions, with disagreements resolved by a third reviewer (Cohen κ=0.81 and prevalence-adjusted, bias-adjusted κ=0.84). Risk of bias was not assessed, as the target was reporting adherence. Adherence was the proportion of reports rated \"reported\" per item; item-level adherence was compared across 9 characteristics using Fisher exact and Freeman-Halton tests (2-sided α=.05). Results From 16,485 retrieved records, 74 reports from 73 RCTs (24,150 participants; median 100, IQR 50.0-247.0) were included. Large language models (LLMs) accounted for 98.6% (73/74) of interventions, with 60.8% (45/74) using GPT-family models. Item-level reporting adherence ranged from 0% (0/72) to 98.6% (73/74). High adherence occurred in general metadata and output specification items (range 59-73, 79.7%-98.6%). Conversely, reporting was poor for input and technical execution domains, input data eligibility (3/73, 4.1%), input acquisition/selection (9/74, 12.2%), algorithm versioning (17/74, 23.0%), trial setting integration (21/74, 28.4%), human-AI interaction (25/74, 33.8%), performance error (27/74, 36.5%), and open access/code (31/74, 41.9%). Input quality handling (Item 5[iii]) was completely unreported (0/72). Only 9 of 74 (12.2%) reports explicitly cited CONSORT-AI. While citing reports showed higher compliance for interaction and data sharing, major technical gaps persisted regardless of citation. Conclusions This review provides the first empirical audit distinguishing general nonadherence from structural mismatches where deterministic CONSORT-AI items fail to capture GenAI mechanics. Differing from traditional AI evaluations, it reveals that key reproducibility drivers-system prompts, inference settings, and access modalities-are omitted from current standards. These empirical findings highlight critical reporting gaps in medical GenAI trials and identify domains for a tailored extension to current reporting standards, although the evidence is limited by the use of nonvalidated signaling questions. Establishing GenAI-specific trial guidelines will ensure that clinical decisions, regulatory approvals, and patient safety safeguards are grounded in reproducible and trustworthy evidence."
+ },
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique",
+   "n = 9700"
+  ],
+  "id": "MED:42960901",
+  "pmid": "42960901",
+  "pmcid": null,
+  "doi": "10.4317/medoral.28284",
+  "titre": "Artificial Intelligence for Assessing the Relationship Between Mandibular Third Molars and the Inferior Alveolar Nerve on Panoramic Radiographs: A Systematic Review.",
+  "revue": "Medicina oral, patologia oral y cirugia bucal",
+  "date": "2026-11-01",
+  "auteurs": "Elwy FK, Parra-Moreno J, González-Navarro B, Egido-Moreno S, López-López J.",
+  "types": "systematic review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Extracting mandibular third molars is a common procedure that carries a risk of injury to the inferior alveolar nerve (IAN). Panoramic radiographs (PR) are commonly used for preoperative assessment of the mandibular third molars, but they are not very reliable for evaluating the relationship of the IAN. This systematic review aims to evaluate the accuracy of artificial intelligence (AI) models in assessing the relationship between mandibular third molars and the IAN. Materials and methods We conducted systematic searches in MEDLINE (via PubMed), the Cochrane Library, Embase, and Scopus for studies published between January 2020 and April 2026. Eligible studies evaluated artificial intelligence systems that analyze panoramic radiographs to assess the relationship between mandibular third molars and the IAN, using cone-beam computed tomography (CBCT) or expert assessments as references. The studies had to report key diagnostic performance metrics. Two independent reviewers carried out study selection, data extraction, and risk-of-bias assessments using the QUADAS-2 tool. Results We included eleven studies with more than 9,700 patients. The AI models reviewed, including architectures such as ResNet, VGG, and YOLO, demonstrated promising diagnostic performance. Their accuracy ranged from 0.630 to 0.896, with sensitivity and specificity reaching up to 0.92 and 0.95, respectively. No single architecture was consistently superior, but AI models outperformed less experienced human observers in the studies that included this comparison. Validation against CBCT usually yielded more reliable performance metrics than validation based solely on expert opinion. Conclusions AI models show promise as decision-support tools in the radiographic assessment of the relationship between mandibular third molars and the inferior alveolar nerve on panoramic radiographs. However, variations in datasets, reference standards, and validation methods across studies mean that no single architecture can yet be considered superior. Larger, multicenter, prospective studies with external validation are necessary to confirm these systems' performance before they can be widely used in clinical practice."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "multicentrique"
+  ],
+  "id": "MED:42863380",
+  "pmid": "42863380",
+  "pmcid": null,
+  "doi": "10.1016/j.jsurg.2026.104210",
+  "titre": "Expanded Longitudinal Validation of Adaptive Learning Stability in AI-Assisted Neurosurgical Residency Training.",
+  "revue": "Journal of surgical education",
+  "date": "2026-10-12",
+  "auteurs": "Mustafayev B, Mustafayeva A, Bakhtiyarov A, Nikatov K, Satylkhan B, Mustafayev A.",
+  "types": "validation study randomized controlled trial journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "Objective To evaluate the longitudinal stability, reproducibility, and robustness of Adaptive Learning Stability (ALS) within an expanded AI-assisted neurosurgical residency cohort during a 12-month observation cycle. Design This was a prospective controlled educational study. Residents completed 4 consecutive quarterly checkpoints integrating cognitive, technical, and decision-making assessments over 12 months. The RCKaS-AI framework incorporated predictive analytics, individualized adaptive remediation, and mentor-validated feedback pathways. Primary analysis evaluated longitudinal entrustment trajectory stability across checkpoints. Secondary analyses included inter-resident variance dynamics, remediation frequency, faculty workload, and predictive agreement between forecasted and observed competency progression. Setting Two accredited neurosurgical residency programs in Kazakhstan, from January 2025 to January 2026. Participants Sixty-four neurosurgical residents randomized into standard RCKaS (n = 32) and AI-enhanced RCKaS-AI (n = 32) cohorts. Results Both cohorts demonstrated progressive improvement in entrustment scores across sequential checkpoints. In the RCKaS-AI cohort, mean entrustment scores increased from 59.1 ± 12.8 at CP1 to 94.3 ± 6.9 at CP4, compared with 58.4 ± 13.1 to 85.7 ± 10.4 under standard RCKaS conditions (p = 0.001). Inter-resident variance decreased by 41% in the AI-assisted cohort versus 18% in the standard cohort. Residents within the RCKaS-AI framework achieved entrustment level 4 significantly earlier than controls (38 ± 7 weeks vs 50 ± 9 weeks, p = 0.003). Mean remediation frequency decreased from 3.4 ± 1.1 to 1.9 ± 0.7 sessions per resident, while faculty workload declined by 34%. Predictive analytics demonstrated strong agreement between forecasted and observed competency trajectories (r = 0.84; 95% CI, 0.77-0.89). Conclusions Expanded longitudinal implementation of the RCKaS-AI framework demonstrated reproducible stabilization of competency trajectories during neurosurgical residency training. These findings support the robustness of adaptive AI-assisted feedback systems as a practical mechanism for longitudinal competency regulation within structured surgical education programs. Further multicenter validation is required to evaluate external reproducibility across broader residency environments."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42956332",
+  "pmid": "42956332",
+  "pmcid": "PMC13719008",
+  "doi": "10.2196/105569",
+  "titre": "Comparing Text-Based and Virtual Reality-Based Approaches for AI-Enhanced Instruction in Functional Communication Training: Exploratory Randomized Trial.",
+  "revue": "JMIR serious games",
+  "date": "2026-10-29",
+  "auteurs": "King SA, Flores L, Cho E, Ross MK, Glazek C, Coghlan C, Bell T.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "type_etude": "essai tiré au sort",
+  "resume": "Background Training practitioners to implement functional communication training (FCT) is resource intensive. Emerging technologies, such as virtual reality (VR) and chatbots, may deliver training at scale. Their comparative effectiveness and whether skills taught in one modality transfer to another remain uncertain. Objective This exploratory study evaluated the effect of multicomponent training packages featuring either VR or a chatbot on (1) posttraining performance on FCT implementation probes administered in both formats and (2) changes in participants' self-perceived knowledge, confidence, and usefulness. Methods A convenience sample of 23 university students (mean age=24 y; 15/23, 65% female) were recruited through classroom announcements and peer referrals. Eligible participants (at least 18 years of age, available to attend trainings, and who had no history of discomfort associated with VR) were randomly assigned to either VR (n=12) or chatbot (n=11) training. Groups did not differ significantly across demographic characteristics. In-person trainings consisted of video-recorded instruction and rehearsal of steps in VR or with the chatbot during a single session. Approximate times of sessions, including tutorials and assessments, were 45 minutes (VR) and 55 minutes (chatbot). All participants' performance on FCT procedures was measured using 2 formats: a VR-based observed mastery probe (OMP) and a text-based probe (TBP). Participants also completed a survey measuring their self-perceptions. Results The number of FCT steps participants performed correctly (of 18) was analyzed using a binomial generalized linear mixed model, with random intercepts for participant and fixed effects of training group (chatbot vs VR), time (pretest vs posttest), and probe modality (OMP vs TBP); α =.05. Results indicated a main effect of time (odds ratio [OR] 36.09, 95% CI 20.75-62.75; P P .001). At posttest, the chatbot group significantly outperformed the VR group on the TBP (OR 4.14, 95% CI 1.20-14.24; P= .049), completing, on average, 4 more steps in the procedure (average marginal effect 0.22, 95% CI 0.04-0.41). Differences between groups on the OMP were not significant (OR 0.61, 95% CI 0.18-2.07; P =.43). Across all self-report measures, there was no differential improvement by training condition at posttest. Conclusions This study provides the first comparison of chatbot- and VR-based training for FCT. This extends prior work that compared VR against didactic instruction or assessed performance using a single modality. Findings contribute to the field by supporting the viability of text-based chatbots in training and underscoring the importance of the alignment between training and assessment modalities. Chatbot-enhanced training systems may extend access to evidence-based techniques, such as FCT, in areas with limited training resources. More work is needed to confirm effects and demonstrate applicability to practice."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "texte intégral libre"
+  ],
+  "id": "MED:42864862",
+  "pmid": "42864862",
+  "pmcid": "PMC13671426",
+  "doi": "10.1080/17581966.2026.2743569",
+  "titre": "Potential to improve early detection of lung cancer through expansion of focused and opportunistic screening approaches: a scoping review focusing on potential expansion of screening risk factors and adoption of artificial intelligence models.",
+  "revue": "Lung cancer management",
+  "date": "2026-10-12",
+  "auteurs": "Mok TSK, Finley C, Köksal D, Li MSC, Shum E, Velotta JB, Yang PC.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue systématique",
+  "resume": "Background Low-dose computerized tomography (LDCT) is the gold standard for lung cancer (LC) screening, but access is hindered by strict eligibility criteria and limited infrastructure in low/middle-income countries. A combination of approaches, including expanded screening eligibility criteria and artificial intelligence (AI), could improve detection of early LC in patients excluded by current screening criteria. Areas covered A scoping review was conducted (PubMed, Cochrane library, congresses) to explore two potentially complementary approaches to enhance LC screening. The first identified LC risk factors and their potential inclusion in expanded screening criteria, allowing more people at risk to become eligible for screening; the second examined studies involving AI-augmented imaging (CXR or LDCT) to improve workflow, triage, and opportunistic nodule detection. Expert opinion/commentary Several robustly evidenced risk factors for LC were identified that are not included in current screening programs; widening of eligibility criteria could be considered based on local risk profile but requires further research to demonstrate benefit. Opportunistic use of AI-tools to assess incidental chest images may identify patients with pulmonary nodules requiring further investigation but their role in population-level LC screening requires prospective validation in diverse healthcare systems."
+ }
+]

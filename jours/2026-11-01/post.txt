@@ -1,0 +1,8 @@
+185 études d'IA sur la cataracte : plus de deux sur trois n'ont été testées qu'en interne.
+
+Cette revue de la littérature a cartographié les outils d'IA à chaque étape du soin de la cataracte, du repérage au suivi, entre 2020 et juillet 2025. Sur 181 études évaluables, 123 (68 %) s'arrêtent au test interne, 33 (18 %) ont un test externe et 2 seulement (1 %) une évaluation prospective multicentrique. Aucun modèle complet et validé ne prédit la difficulté de l'opération.
+Limite : 122 articles sur 361 n'ont pas pu être récupérés.
+
+Source : Tjokrovonco et al., BMC Ophthalmology, octobre 2026. https://doi.org/10.1186/s12886-026-05483-4
+
+#IA #Cataracte #Ophtalmologie #SantéNumérique
