@@ -1,0 +1,112 @@
+[
+ {
+  "id": "f1",
+  "valeur": 3670,
+  "citation": "Twenty-three studies involving 3670 subjects"
+ },
+ {
+  "id": "f2",
+  "valeur": 23,
+  "citation": "Across 23 studies"
+ },
+ {
+  "id": "f3",
+  "valeur": 2025,
+  "citation": "October 22, 2025"
+ },
+ {
+  "id": "f4",
+  "valeur": 0.91,
+  "citation": "sensitivity of 0.91"
+ },
+ {
+  "id": "f5",
+  "valeur": 0.87,
+  "citation": "0.87-0.93"
+ },
+ {
+  "id": "f6",
+  "valeur": 0.93,
+  "citation": "0.87-0.93"
+ },
+ {
+  "id": "f7",
+  "valeur": 0.92,
+  "citation": "specificity of 0.92"
+ },
+ {
+  "id": "f8",
+  "valeur": 0.89,
+  "citation": "0.89-0.94"
+ },
+ {
+  "id": "f9",
+  "valeur": 0.94,
+  "citation": "0.89-0.94"
+ },
+ {
+  "id": "f10",
+  "valeur": 0.96,
+  "citation": "AUC of 0.96"
+ },
+ {
+  "id": "f11",
+  "valeur": 0.98,
+  "citation": "0.94-0.98"
+ },
+ {
+  "id": "f12",
+  "valeur": 0.98,
+  "citation": "AUC of 0.98 (95% CI: 0.97-0.99)"
+ },
+ {
+  "id": "f13",
+  "valeur": 0.97,
+  "citation": "0.97-0.99"
+ },
+ {
+  "id": "f14",
+  "valeur": 0.99,
+  "citation": "0.97-0.99"
+ },
+ {
+  "id": "f15",
+  "valeur": 95,
+  "citation": "95% CI"
+ },
+ {
+  "id": "f16",
+  "valeur": 91.0,
+  "calcul": "f4*100"
+ },
+ {
+  "id": "f17",
+  "valeur": 92.0,
+  "calcul": "f7*100"
+ },
+ {
+  "id": "f18",
+  "valeur": 87.0,
+  "calcul": "f5*100"
+ },
+ {
+  "id": "f19",
+  "valeur": 93.0,
+  "calcul": "f6*100"
+ },
+ {
+  "id": "f20",
+  "valeur": 89.0,
+  "calcul": "f8*100"
+ },
+ {
+  "id": "f21",
+  "valeur": 94.0,
+  "calcul": "f9*100"
+ },
+ {
+  "id": "f22",
+  "valeur": 100,
+  "calcul": "100"
+ }
+]

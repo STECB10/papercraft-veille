@@ -1,0 +1,7 @@
+Une IA qui lit l'imagerie du cerveau repère bien la démence frontotemporelle, mais la preuve reste fragile.
+
+Cette méta-analyse a regroupé 23 études, soit 3 670 personnes, pour mesurer la précision des IA qui lisent l'imagerie cérébrale. Résultat : une sensibilité de 91 % et une spécificité de 92 %, avec une aire sous la courbe de 0,96. Les auteurs soulignent toutefois des biais fréquents et des études très hétérogènes : une validation prospective est nécessaire.
+
+Source : Li et al., European Radiology, octobre 2026. https://doi.org/10.1007/s00330-026-13016-2
+
+#IA #Neurologie #Imagerie #Démence

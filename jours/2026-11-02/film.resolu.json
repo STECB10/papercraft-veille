@@ -1,0 +1,333 @@
+{
+ "id": "2026-11-02",
+ "sentences": [
+  {
+   "text": "Une IA peut-elle repérer une démence frontotemporelle sur une imagerie du cerveau ?",
+   "box": "IA"
+  },
+  {
+   "text": "Cette maladie altère le comportement et le langage, et son diagnostic repose surtout sur l'imagerie du cerveau.",
+   "box": "diagnostic",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Aujourd'hui, un spécialiste lit ces images, puis les confronte aux symptômes du patient.",
+   "box": "spécialiste"
+  },
+  {
+   "text": "Pourtant, cette lecture demande du temps et une vraie expertise, ce qui peut ralentir le diagnostic.",
+   "box": "temps",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Des chercheurs ont donc entraîné des IA à lire ces images.",
+   "box": "IA",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Concrètement, l'IA observe le cerveau, puis indique si la maladie est présente ou non.",
+   "box": "indique"
+  },
+  {
+   "text": "Les chercheurs ont voulu savoir si ces IA sont vraiment fiables.",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, ils ont réalisé une méta-analyse : ils ont regroupé les études déjà publiées.",
+   "box": "regroupé",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Ils ont fouillé quatre bases de données, jusqu'en octobre deux mille vingt-cinq.",
+   "display": "Ils ont fouillé quatre bases de données, jusqu'en octobre 2025.",
+   "box": "quatre"
+  },
+  {
+   "text": "Au total, vingt-trois études ont été retenues, soit trois mille six cent soixante-dix personnes.",
+   "display": "Au total, 23 études ont été retenues, soit 3 670 personnes.",
+   "box": "études",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Dans chacune, une IA lit une image du cerveau et indique si la maladie est présente.",
+   "box": "image"
+  },
+  {
+   "text": "Elle est comparée à des personnes sans trouble cognitif, qui servent de référence.",
+   "box": "référence.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Premier résultat : la sensibilité regroupée atteint quatre-vingt-onze pour cent.",
+   "display": "Premier résultat : la sensibilité regroupée atteint 91 %.",
+   "box": "sensibilité"
+  },
+  {
+   "text": "Autrement dit, sur cent personnes malades, quatre-vingt-onze sont bien repérées par l'IA.",
+   "display": "Autrement dit, sur 100 personnes malades, 91 sont bien repérées par l'IA.",
+   "peak": "bien repérées",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "De même, la spécificité atteint quatre-vingt-douze pour cent, donc les personnes saines sont bien reconnues.",
+   "display": "De même, la spécificité atteint 92 %, donc les personnes saines sont bien reconnues.",
+   "box": "spécificité",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Enfin, l'aire sous la courbe, qui résume la performance, atteint zéro virgule quatre-vingt-seize.",
+   "display": "Enfin, l'aire sous la courbe, qui résume la performance, atteint 0,96.",
+   "box": "courbe,",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Pour l'aphasie sémantique, qui touche le sens des mots, elle monte à zéro virgule quatre-vingt-dix-huit.",
+   "display": "Pour l'aphasie sémantique, qui touche le sens des mots, elle monte à 0,98.",
+   "box": "sémantique,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Selon la technique d'imagerie, elle reste comprise entre zéro virgule quatre-vingt-quatorze et zéro virgule quatre-vingt-dix-huit.",
+   "display": "Selon la technique d'imagerie, elle reste comprise entre 0,94 et 0,98.",
+   "box": "technique",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Mais la preuve reste fragile : biais fréquents et études très différentes.",
+   "mode": "type",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Une aide prometteuse au diagnostic, mais une validation prospective s'impose avant tout usage seul.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 34.53,
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0.8,
+    "header": "Méta-analyse · Imagerie du cerveau",
+    "number": "3 670",
+    "unit": "personnes",
+    "caption": "étudiées pour tester des IA qui lisent l'imagerie du cerveau",
+    "caption_at": 6.24,
+    "people": 5,
+    "lit": 2,
+    "lit_at": 1.18,
+    "footnote": "Démence frontotemporelle · 23 études",
+    "y": 0
+   },
+   {
+    "type": "steps",
+    "cam_at": 12.94,
+    "mark_at": 21.12,
+    "title": "Le diagnostic aujourd'hui",
+    "steps": [
+     {
+      "icon": "brain",
+      "label": "01 · Image du cerveau",
+      "at": 13.14,
+      "_y": 1550
+     },
+     {
+      "icon": "magnifier",
+      "label": "02 · Lecture par un spécialiste",
+      "note": "du temps et de l'expertise",
+      "at": 14.9,
+      "note_at": 20.26,
+      "_y": 1880
+     },
+     {
+      "icon": "stethoscope",
+      "label": "03 · Mise en regard des symptômes",
+      "at": 16.26,
+      "_y": 2210
+     }
+    ],
+    "y": 1380
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Les chercheurs ont voulu savoir si ces IA sont vraiment fiables.",
+  "italic": "fiables.",
+  "fold_at": 37.9,
+  "start": 34.53,
+  "end": 38.949999999999996
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "studies_stack",
+    "cam_at": 39.44,
+    "n_studies": 23,
+    "label": "études regroupées",
+    "n_patients": 3670,
+    "sub": "Recherche jusqu'en octobre 2025",
+    "title": "Une méta-analyse",
+    "at": 43.32,
+    "patients_at": 54.62,
+    "y": 0
+   },
+   {
+    "type": "id_card",
+    "cam_at": 45.9,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Méta-analyse",
+      "at": 46.1
+     },
+     {
+      "label": "Bases de données",
+      "value": "4",
+      "at": 46.9
+     },
+     {
+      "label": "Études",
+      "value": "23",
+      "at": 51.7
+     },
+     {
+      "label": "Personnes",
+      "value": "3 670",
+      "at": 54.62,
+      "accent": true
+     },
+     {
+      "label": "Mesures",
+      "value": "Sensibilité · spécificité",
+      "at": 55.14
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 55.91,
+    "input_icon": "brain",
+    "input_label": "Imagerie du cerveau (IRM, TEP)",
+    "ai_label": "Cherche les signes de la maladie",
+    "output_label": "Malade ou non",
+    "output_note": "Comparé à des personnes sans trouble cognitif",
+    "modality": "image",
+    "title": "Ce que fait l'IA",
+    "at": 58.22,
+    "core_at": 57.54,
+    "out_at": 59.46,
+    "scan_at": 57.9,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "metric",
+    "cam_at": 66.07,
+    "title": "Performance regroupée",
+    "metrics": [
+     {
+      "label": "Sensibilité",
+      "value": "91",
+      "num": 91,
+      "unit": "%",
+      "note": "IC 95 % : 87 à 93",
+      "at": 67.78,
+      "accent": true
+     },
+     {
+      "label": "Spécificité",
+      "value": "92",
+      "num": 92,
+      "unit": "%",
+      "note": "IC 95 % : 89 à 94",
+      "at": 77.72
+     }
+    ],
+    "y": 0,
+    "_fig": 2
+   },
+   {
+    "type": "roc_curve",
+    "cam_at": 83.3,
+    "auc": {
+     "value": "0,96",
+     "num": 0.96,
+     "at": 87.0,
+     "note": "IC 95 % : 0,94 à 0,98"
+    },
+    "curve_at": 84.9,
+    "y": 0,
+    "_fig": 3
+   },
+   {
+    "type": "metric",
+    "cam_at": 89.68,
+    "title": "Aire sous la courbe · forme sémantique",
+    "metrics": [
+     {
+      "label": "Aphasie sémantique",
+      "value": "0,98",
+      "num": 0.98,
+      "max": 1,
+      "note": "IC 95 % : 0,97 à 0,99",
+      "at": 93.0,
+      "accent": true
+     }
+    ],
+    "caption": "Selon l'imagerie : de 0,94 à 0,98",
+    "caption_at": 97.96,
+    "y": 0,
+    "_fig": 4
+   },
+   {
+    "type": "typo",
+    "cam_at": 102.81,
+    "text": "Mais la preuve reste fragile : biais fréquents et études très différentes.",
+    "italic": "fragile",
+    "sentence": 18,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 108.03,
+    "text": "Une aide prometteuse au diagnostic, mais une validation prospective s'impose avant tout usage seul.",
+    "italic": "prometteuse",
+    "sentence": 19,
+    "y": 0
+   }
+  ],
+  "start": 37.85,
+  "end": 114.95
+ },
+ "end": {
+  "fold_at": 113.9,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 117.97,
+  "button": "Suivre",
+  "button_at": 118.57,
+  "click_at": 119.57,
+  "source": "Li et al. · European Radiology · octobre 2026",
+  "doi": "doi:10.1007/s00330-026-13016-2",
+  "source_at": 116.02,
+  "start": 113.85000000000001,
+  "end": 122.3
+ },
+ "duration": 122.3,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}
