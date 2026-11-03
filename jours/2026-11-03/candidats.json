@@ -1,0 +1,131 @@
+[
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "n = 24150",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42955350",
+  "pmid": "42955350",
+  "pmcid": "PMC13718382",
+  "doi": "10.2196/94543",
+  "titre": "Reporting Gaps and Challenges in Randomized Trials of Generative AI for Medical Use: Insights From a Systematic Review.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-10-28",
+  "auteurs": "Ko JE, Hwang JW, Kim SM, Kwon JY.",
+  "types": "systematic review review-article journal article",
+  "acces_libre": true,
+  "type_etude": "revue systématique",
+  "resume": "Background Generative AI (GenAI) is being deployed rapidly in medicine, and evidence of its clinical safety and efficacy depends on transparent reporting of randomized controlled trials (RCTs). The CONSORT-AI (Consolidated Standards of Reporting Trials-AI) extension is a benchmark for AI trial reporting, but it was drafted for conventional AI, and its applicability to GenAI has not been examined. Objective This study aimed to assess item-level adherence to the CONSORT-AI among RCTs evaluating GenAI for medical purposes and to distinguish deficiencies attributable to nonadherence from those attributable to items that do not correspond to how GenAI interventions are specified or delivered. Methods PubMed, CENTRAL (Cochrane Central Register of Controlled Trials), and Embase were searched for peer-reviewed, English-language RCTs published from 2022 to April 3, 2026, supplemented by backward and forward citation searching, in which patients, health care professionals, or laypeople received a GenAI intervention for a medical purpose; non-GenAI, nonmedical, nonrandomized, and non-peer-reviewed reports were excluded. Two reviewers independently screened studies, extracted data, and rated CONSORT-AI items as reported, partially reported, not reported, or not applicable using signaling questions, with disagreements resolved by a third reviewer (Cohen κ=0.81 and prevalence-adjusted, bias-adjusted κ=0.84). Risk of bias was not assessed, as the target was reporting adherence. Adherence was the proportion of reports rated \"reported\" per item; item-level adherence was compared across 9 characteristics using Fisher exact and Freeman-Halton tests (2-sided α=.05). Results From 16,485 retrieved records, 74 reports from 73 RCTs (24,150 participants; median 100, IQR 50.0-247.0) were included. Large language models (LLMs) accounted for 98.6% (73/74) of interventions, with 60.8% (45/74) using GPT-family models. Item-level reporting adherence ranged from 0% (0/72) to 98.6% (73/74). High adherence occurred in general metadata and output specification items (range 59-73, 79.7%-98.6%). Conversely, reporting was poor for input and technical execution domains, input data eligibility (3/73, 4.1%), input acquisition/selection (9/74, 12.2%), algorithm versioning (17/74, 23.0%), trial setting integration (21/74, 28.4%), human-AI interaction (25/74, 33.8%), performance error (27/74, 36.5%), and open access/code (31/74, 41.9%). Input quality handling (Item 5[iii]) was completely unreported (0/72). Only 9 of 74 (12.2%) reports explicitly cited CONSORT-AI. While citing reports showed higher compliance for interaction and data sharing, major technical gaps persisted regardless of citation. Conclusions This review provides the first empirical audit distinguishing general nonadherence from structural mismatches where deterministic CONSORT-AI items fail to capture GenAI mechanics. Differing from traditional AI evaluations, it reveals that key reproducibility drivers-system prompts, inference settings, and access modalities-are omitted from current standards. These empirical findings highlight critical reporting gaps in medical GenAI trials and identify domains for a tailored extension to current reporting standards, although the evidence is limited by the use of nonvalidated signaling questions. Establishing GenAI-specific trial guidelines will ensure that clinical decisions, regulatory approvals, and patient safety safeguards are grounded in reproducible and trustworthy evidence."
+ },
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique",
+   "n = 9700"
+  ],
+  "id": "MED:42960901",
+  "pmid": "42960901",
+  "pmcid": null,
+  "doi": "10.4317/medoral.28284",
+  "titre": "Artificial Intelligence for Assessing the Relationship Between Mandibular Third Molars and the Inferior Alveolar Nerve on Panoramic Radiographs: A Systematic Review.",
+  "revue": "Medicina oral, patologia oral y cirugia bucal",
+  "date": "2026-11-01",
+  "auteurs": "Elwy FK, Parra-Moreno J, González-Navarro B, Egido-Moreno S, López-López J.",
+  "types": "systematic review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Extracting mandibular third molars is a common procedure that carries a risk of injury to the inferior alveolar nerve (IAN). Panoramic radiographs (PR) are commonly used for preoperative assessment of the mandibular third molars, but they are not very reliable for evaluating the relationship of the IAN. This systematic review aims to evaluate the accuracy of artificial intelligence (AI) models in assessing the relationship between mandibular third molars and the IAN. Materials and methods We conducted systematic searches in MEDLINE (via PubMed), the Cochrane Library, Embase, and Scopus for studies published between January 2020 and April 2026. Eligible studies evaluated artificial intelligence systems that analyze panoramic radiographs to assess the relationship between mandibular third molars and the IAN, using cone-beam computed tomography (CBCT) or expert assessments as references. The studies had to report key diagnostic performance metrics. Two independent reviewers carried out study selection, data extraction, and risk-of-bias assessments using the QUADAS-2 tool. Results We included eleven studies with more than 9,700 patients. The AI models reviewed, including architectures such as ResNet, VGG, and YOLO, demonstrated promising diagnostic performance. Their accuracy ranged from 0.630 to 0.896, with sensitivity and specificity reaching up to 0.92 and 0.95, respectively. No single architecture was consistently superior, but AI models outperformed less experienced human observers in the studies that included this comparison. Validation against CBCT usually yielded more reliable performance metrics than validation based solely on expert opinion. Conclusions AI models show promise as decision-support tools in the radiographic assessment of the relationship between mandibular third molars and the inferior alveolar nerve on panoramic radiographs. However, variations in datasets, reference standards, and validation methods across studies mean that no single architecture can yet be considered superior. Larger, multicenter, prospective studies with external validation are necessary to confirm these systems' performance before they can be widely used in clinical practice."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42956332",
+  "pmid": "42956332",
+  "pmcid": "PMC13719008",
+  "doi": "10.2196/105569",
+  "titre": "Comparing Text-Based and Virtual Reality-Based Approaches for AI-Enhanced Instruction in Functional Communication Training: Exploratory Randomized Trial.",
+  "revue": "JMIR serious games",
+  "date": "2026-10-29",
+  "auteurs": "King SA, Flores L, Cho E, Ross MK, Glazek C, Coghlan C, Bell T.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "type_etude": "essai tiré au sort",
+  "resume": "Background Training practitioners to implement functional communication training (FCT) is resource intensive. Emerging technologies, such as virtual reality (VR) and chatbots, may deliver training at scale. Their comparative effectiveness and whether skills taught in one modality transfer to another remain uncertain. Objective This exploratory study evaluated the effect of multicomponent training packages featuring either VR or a chatbot on (1) posttraining performance on FCT implementation probes administered in both formats and (2) changes in participants' self-perceived knowledge, confidence, and usefulness. Methods A convenience sample of 23 university students (mean age=24 y; 15/23, 65% female) were recruited through classroom announcements and peer referrals. Eligible participants (at least 18 years of age, available to attend trainings, and who had no history of discomfort associated with VR) were randomly assigned to either VR (n=12) or chatbot (n=11) training. Groups did not differ significantly across demographic characteristics. In-person trainings consisted of video-recorded instruction and rehearsal of steps in VR or with the chatbot during a single session. Approximate times of sessions, including tutorials and assessments, were 45 minutes (VR) and 55 minutes (chatbot). All participants' performance on FCT procedures was measured using 2 formats: a VR-based observed mastery probe (OMP) and a text-based probe (TBP). Participants also completed a survey measuring their self-perceptions. Results The number of FCT steps participants performed correctly (of 18) was analyzed using a binomial generalized linear mixed model, with random intercepts for participant and fixed effects of training group (chatbot vs VR), time (pretest vs posttest), and probe modality (OMP vs TBP); α =.05. Results indicated a main effect of time (odds ratio [OR] 36.09, 95% CI 20.75-62.75; P P .001). At posttest, the chatbot group significantly outperformed the VR group on the TBP (OR 4.14, 95% CI 1.20-14.24; P= .049), completing, on average, 4 more steps in the procedure (average marginal effect 0.22, 95% CI 0.04-0.41). Differences between groups on the OMP were not significant (OR 0.61, 95% CI 0.18-2.07; P =.43). Across all self-report measures, there was no differential improvement by training condition at posttest. Conclusions This study provides the first comparison of chatbot- and VR-based training for FCT. This extends prior work that compared VR against didactic instruction or assessed performance using a single modality. Findings contribute to the field by supporting the viability of text-based chatbots in training and underscoring the importance of the alignment between training and assessment modalities. Chatbot-enhanced training systems may extend access to evidence-based techniques, such as FCT, in areas with limited training resources. More work is needed to confirm effects and demonstrate applicability to practice."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42960110",
+  "pmid": "42960110",
+  "pmcid": "PMC13718289",
+  "doi": "10.1016/j.isci.2026.117725",
+  "titre": "Artificial intelligence across the gastric cancer care continuum: Clinical evidence, multimodal integration, and translation.",
+  "revue": "iScience",
+  "date": "2026-10-22",
+  "auteurs": "Yang J, Tang J, He J.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue de littérature",
+  "resume": "Artificial intelligence (AI) is increasingly being applied across the gastric cancer care continuum, but its clinical maturity differs substantially among endoscopy, cross-sectional imaging, digital pathology, prognostic modeling, treatment selection, and surgical support. Existing reviews have often focused on individual modalities or summarized algorithmic performance without systematically distinguishing technical feasibility from translational readiness. We conducted a structured narrative review of studies indexed in PubMed/MEDLINE and the Web of Science Core Collection from January 2022 through July 2026, supplemented by backward and forward citation tracking. Earlier landmark studies were retained when necessary to explain the development of major applications. Priority was given to prospective, multicenter, externally validated, and clinically actionable studies. Evidence maturity was assessed according to study design, validation breadth, workflow relevance, calibration and clinical-utility assessment, and implementation evidence. The main constraint on gastric cancer AI is no longer pattern-recognition capability but the absence of reproducible clinical benefit under real-world conditions. Priorities include multiregional prospective validation, standardized calibration and decision curve assessment, comparison of clinicians with and without AI, integration into existing workflows, evaluation of economic and patient-level outcomes, and post-deployment monitoring."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42956087",
+  "pmid": "42956087",
+  "pmcid": "PMC13718742",
+  "doi": "10.2196/108250",
+  "titre": "The Current Roles of AI in Public Health Practice: Scoping Review.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-10-29",
+  "auteurs": "Harrison S, Tatton C, Melendez-Torres GJ, Kirby J, Robinson S, Mutanda D, Davies A, Armitage JM, Aslam RW, Arthur T, Chandan JS, Garside R, Thompson Coon J, Evans R.",
+  "types": "scoping review review-article journal article",
+  "acces_libre": true,
+  "type_etude": "revue systématique",
+  "resume": "Background AI is a broad field encompassing various techniques, which include algorithms that learn from data to perform automated tasks without explicit human programming. Public health aims to protect and improve the health of communities and populations at the local, regional, national, and global levels, but it typically has limited resources. While AI may lead to improved efficiency or effectiveness of public health interventions, the adoption of AI interventions should be informed by evidence of effective use in practice. Objective This review aims to summarize how AI-assisted interventions are currently used by public health professionals. Methods We conducted a scoping review to identify the current uses of AI in public health. We searched MEDLINE (Ovid), Embase (Ovid), Web of Science (Core Collection), and Scopus for relevant reports published between January 1, 2020, and July 24, 2025. Two reviewers independently screened reports. Eligible reports were primary studies (experimental or observational), commentaries, and editorials that discussed how AI tools have been used in practice in public health contexts relevant to high-income countries, excluding outbreaks. Data were extracted by one reviewer and checked by a second. Results We screened 5400 records and 155 full texts, including 8 reports. These reports discussed a variety of uses of AI tools across public health domains: 3 reports used chatbots in different settings, 1 report used machine learning to forecast health service demand, 2 reports used AI for symptom checking, and 2 reports used AI for evidence synthesis. While assessing the effectiveness of AI tools for public health was beyond the scope of this review, and most reports did not robustly evaluate effectiveness, the evidence for the effectiveness of AI tools was nonetheless mixed. One report described a chatbot that users found helpful, while another found a specific chatbot to be ineffective, highlighting its potential to undermine trust in the organization that developed it. Another report highlighted both benefits and drawbacks of a large language model used to communicate with socially isolated individuals. The main finding of this review was that even with a comprehensive search across multiple databases, there were few reports of how AI tools are being used in practice in public health contexts. Conclusions The lack of evidence from public health practice, excluding outbreaks, makes it difficult to know which uses of AI, if any, would be useful to incorporate into practice in high-income countries. In the absence of evidence, new interventions, including those using AI, should be evaluated to ensure they are effective (and cost-effective). These evaluations should be widely and accessibly disseminated to create an evidence base that other public health teams could use to inform their own decisions around AI tools."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42961493",
+  "pmid": "42961493",
+  "pmcid": "PMC13721850",
+  "doi": "10.2196/100747",
+  "titre": "Trust, Risk, and Uncertainty Surrounding the Use of AI in Health Care: Scoping Review of Studies on Public Perception.",
+  "revue": "JMIR AI",
+  "date": "2026-10-30",
+  "auteurs": "Godinho Nascimento H, Abdulkarim S, Torres-Espin A, Soltani S, Arikati G, Meyer SB.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "méta-analyse",
+  "resume": "Background While AI has existed for decades, the introduction of generative AI tools and subsequent advancements in their capability and public use resulted in a shift in public awareness and perceptions of AI. In response, the research community has grown increasingly interested in understanding public perceptions of AI use in various contexts, including health care. Public perceptions shape AI acceptance and consequently integration into health care. It is thus crucial to understand public trust in AI and perceptions of risk as we consider its implementation moving forward. Objective This study aimed to (1) document the extent of what is known within the literature regarding public perceptions of AI applications in health; (2) interrogate existing definitions and theories of trust being used to guide investigations of public trust in AI; and (3) identify practice and policy considerations and support the design, deployment, and regulation of these technologies in a manner that is trustworthy. Methods The Arksey and O'Malley scoping review framework and the PRISMA-ScR (Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for Scoping Reviews) guidelines were used to review publications between 2022 and 2024 across 4 databases, resulting in the inclusion of 41 papers for review. Key findings were then charted and organized into tables to help answer the proposed research questions. Results Public trust in AI in health care was shaped by discourse relating to AI performance and concerns related to depersonalization, loss of human connection, privacy, bias, and transparency. Trust was found to be higher when AI was supporting rather than replacing health care professionals and was influenced by emotional responses, anthropomorphism, demographic factors, and institutional trust. Furthermore, trust extended beyond algorithms to software interfaces, providers, developers, and governing institutions, highlighting the importance of governance and oversight. Conceptualizations of trust varied widely, and trust was defined through vulnerability, competence, benevolence, and integrity. Different theories identified suggested that trust operates across individual, social, institutional, and technological levels. Finally, trust was closely linked to risk and uncertainty, where perceived risk reduced acceptance, while AI literacy, transparency, and explainability mitigated concerns and fostered trust. Conclusions Trust in AI is not uniform, and as such, efforts to build and measure trust must account for these nuances to effectively mitigate risk and support informed, ethical AI integration and deployment. On the basis of the findings of this review, we propose a multilevel conceptual framework that provides a general understanding of public trust in AI within a health care context that may guide research and policy and practice considerations. Our findings highlight the importance of considering public trust when implementing AI in health care and may support AI communication strategies, policy development, and trustworthy AI development."
+ }
+]

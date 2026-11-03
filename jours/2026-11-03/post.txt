@@ -1,0 +1,7 @@
+Les essais d'IA générative décrivent rarement ce qu'ils ont testé : 12,2 % citent la grille de rapport CONSORT-AI.
+
+Des chercheurs ont examiné 74 rapports d'essais tirés au sort d'IA générative (73 essais, 24 150 participants). Deux relecteurs ont vérifié, point par point, le respect de cette grille. Les informations générales sont bien décrites, mais seulement 23 % indiquent la version du modèle et 4,1 % les données que l'IA pouvait recevoir. Revue systématique : elle mesure la qualité des rapports, pas l'efficacité des IA.
+
+Source : Ko et al., Journal of Medical Internet Research, octobre 2026. https://doi.org/10.2196/94543
+
+#IA #SantéNumérique #IAGénérative #RechercheClinique

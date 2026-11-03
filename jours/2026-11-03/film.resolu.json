@@ -1,0 +1,350 @@
+{
+ "id": "2026-11-03",
+ "sentences": [
+  {
+   "text": "Quand une IA générative est testée sur des patients, sait-on vraiment laquelle ?",
+   "box": "laquelle"
+  },
+  {
+   "text": "Ces modèles de langage arrivent très vite en médecine.",
+   "box": "médecine."
+  },
+  {
+   "text": "Pour juger leur sécurité et leur utilité, la référence reste l'essai tiré au sort.",
+   "box": "référence",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Pourtant, ces modèles changent souvent de version, parfois sans que personne ne l'annonce.",
+   "box": "version,",
+   "peak": "sans que personne",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Un essai n'a donc de valeur que si ses auteurs décrivent précisément le modèle, ses consignes et son accès.",
+   "box": "valeur"
+  },
+  {
+   "text": "Une grille de rapport existe, nommée CONSORT-AI, mais elle a été écrite pour des IA plus classiques.",
+   "box": "classiques."
+  },
+  {
+   "text": "Les essais d'IA générative respectent-ils vraiment cette grille ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, des chercheurs ont recensé les essais tirés au sort d'IA générative depuis deux mille vingt-deux.",
+   "box": "chercheurs",
+   "display": "Pour le savoir, des chercheurs ont recensé les essais tirés au sort d'IA générative depuis 2022.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Cette revue systématique a trié seize mille quatre cent quatre-vingt-cinq références.",
+   "box": "systématique",
+   "display": "Cette revue systématique a trié 16 485 références.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Soixante-quatorze rapports ont été retenus, issus de soixante-treize essais et de vingt-quatre mille cent cinquante participants.",
+   "box": "essais",
+   "display": "74 rapports ont été retenus, issus de 73 essais et de 24 150 participants.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Presque toujours, l'IA lit un texte, puis un modèle de langage rédige une réponse.",
+   "box": "texte,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Deux relecteurs ont noté, chacun de leur côté, chaque point de la grille.",
+   "box": "relecteurs",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : informations générales et réponses de l'IA sont bien décrites, de soixante-dix-neuf virgule sept à quatre-vingt-dix-huit virgule six pour cent.",
+   "box": "décrites,",
+   "display": "Résultat : informations générales et réponses de l'IA sont bien décrites, de 79,7 à 98,6 %.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "En revanche, seulement quatre virgule un pour cent précisent quelles données l'IA pouvait recevoir.",
+   "box": "données",
+   "peak": "seulement",
+   "display": "En revanche, seulement 4,1 % précisent quelles données l'IA pouvait recevoir.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Seulement vingt-trois pour cent indiquent la version du modèle utilisé.",
+   "box": "version",
+   "display": "Seulement 23 % indiquent la version du modèle utilisé.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Et trente-trois virgule huit pour cent décrivent comment l'humain et l'IA interagissent.",
+   "box": "interagissent.",
+   "display": "Et 33,8 % décrivent comment l'humain et l'IA interagissent.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Enfin, seuls douze virgule deux pour cent citent la grille CONSORT-AI, et aucun ne traite la qualité des données.",
+   "box": "grille",
+   "peak": "aucun",
+   "display": "Enfin, seuls 12,2 % citent la grille CONSORT-AI, et aucun ne traite la qualité des données.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Elle mesure la qualité des rapports, pas l'efficacité des IA, avec des questions non validées.",
+   "mode": "type"
+  },
+  {
+   "text": "Sans version, consignes ni accès décrits, un essai d'IA ne peut pas être reproduit.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 35.13,
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0.8,
+    "header": "Revue systématique · IA générative · 2022–2026",
+    "number": "12,2",
+    "unit": "%",
+    "caption": "des rapports d'essais citent la grille de rapport CONSORT-AI",
+    "caption_at": 7.4,
+    "people": 5,
+    "lit": 3,
+    "lit_at": 4.52,
+    "footnote": "74 rapports d'essais d'IA générative",
+    "y": 0
+   },
+   {
+    "type": "gag_clock",
+    "cam_at": 14.37,
+    "label": "versions qui changent",
+    "y": 1380
+   },
+   {
+    "type": "steps",
+    "cam_at": 22.19,
+    "mark_at": 23.38,
+    "title": "Ce que doit dire un essai",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "01 · Le modèle testé",
+      "note": "version, consignes, accès",
+      "at": 26.12,
+      "note_at": 27.04,
+      "_y": 2540
+     },
+     {
+      "icon": "doc",
+      "label": "02 · La grille CONSORT-AI",
+      "note": "écrite pour l'IA classique",
+      "at": 29.26,
+      "note_at": 34.4,
+      "_y": 2870
+     }
+    ],
+    "y": 2370
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Les essais d'IA générative respectent-ils vraiment cette grille ?",
+  "italic": "vraiment",
+  "fold_at": 40.99,
+  "start": 35.13,
+  "end": 42.04
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": 40.48,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Sujet",
+      "value": "Essais d'IA générative",
+      "at": 43.2
+     },
+     {
+      "label": "Période",
+      "value": "2022 – avril 2026",
+      "at": 45.68
+     },
+     {
+      "label": "Type",
+      "value": "Revue systématique",
+      "at": 47.56,
+      "accent": true
+     },
+     {
+      "label": "Rapports",
+      "value": "74 (73 essais)",
+      "at": 52.42
+     },
+     {
+      "label": "Participants",
+      "value": "24 150",
+      "at": 58.12
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 59.42,
+    "input_icon": "message",
+    "input_label": "Un texte saisi",
+    "ai_label": "Un modèle de langage rédige",
+    "output_label": "Une réponse écrite",
+    "modality": "texte",
+    "at": 61.6,
+    "core_at": 62.64,
+    "out_at": 63.92,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "key_points",
+    "cam_at": 65.03,
+    "title": "La méthode",
+    "points": [
+     {
+      "text": "Deux relecteurs notent chaque rapport",
+      "at": 65.62
+     },
+     {
+      "text": "Chaque point : rapporté ou non",
+      "at": 68.32
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "key_points",
+    "cam_at": 69.6,
+    "title": "Ce qui est bien décrit",
+    "points": [
+     {
+      "text": "Informations générales",
+      "at": 71.04
+     },
+     {
+      "text": "Réponses de l'IA",
+      "at": 72.44
+     },
+     {
+      "text": "79,7 % à 98,6 % des rapports",
+      "at": 74.66
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "metric",
+    "cam_at": 78.68,
+    "title": "Ce qui manque",
+    "metrics": [
+     {
+      "label": "Données d'entrée",
+      "value": "4,1",
+      "num": 4.1,
+      "unit": "%",
+      "note": "3 sur 73",
+      "at": 80.32,
+      "accent": true
+     },
+     {
+      "label": "Version du modèle",
+      "value": "23",
+      "num": 23.0,
+      "unit": "%",
+      "note": "17 sur 74",
+      "at": 85.44
+     },
+     {
+      "label": "Humain et IA",
+      "value": "33,8",
+      "num": 33.8,
+      "unit": "%",
+      "note": "25 sur 74",
+      "at": 89.3
+     }
+    ],
+    "y": 0,
+    "_fig": 2
+   },
+   {
+    "type": "metric",
+    "cam_at": 94.16,
+    "title": "Citent CONSORT-AI",
+    "metrics": [
+     {
+      "label": "Rapports",
+      "value": "12,2",
+      "num": 12.2,
+      "unit": "%",
+      "note": "9 sur 74",
+      "at": 95.62,
+      "accent": true
+     }
+    ],
+    "caption": "Qualité des données : 0 sur 72",
+    "caption_at": 99.44,
+    "y": 0,
+    "_fig": 3
+   },
+   {
+    "type": "typo",
+    "cam_at": 102.06,
+    "text": "Elle mesure la qualité des rapports, pas l'efficacité des IA, avec des questions non validées.",
+    "italic": "efficacité",
+    "sentence": 17,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 107.47,
+    "text": "Sans version, consignes ni accès décrits, un essai d'IA ne peut pas être reproduit.",
+    "italic": "reproduit.",
+    "sentence": 18,
+    "y": 0
+   }
+  ],
+  "start": 40.940000000000005,
+  "end": 114.23
+ },
+ "end": {
+  "fold_at": 113.18,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 117.15,
+  "button": "Suivre",
+  "button_at": 117.75,
+  "click_at": 118.75,
+  "source": "Ko et al. · Journal of Medical Internet Research · octobre 2026",
+  "doi": "doi:10.2196/94543",
+  "source_at": 115.22,
+  "start": 113.13000000000001,
+  "end": 121.6
+ },
+ "duration": 121.6,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

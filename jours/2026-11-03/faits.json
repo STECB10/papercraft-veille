@@ -1,0 +1,87 @@
+[
+ {
+  "id": "f1",
+  "valeur": 16485,
+  "citation": "From 16485 retrieved records"
+ },
+ {
+  "id": "f2",
+  "valeur": 74,
+  "citation": "74 reports from 73 RCTs"
+ },
+ {
+  "id": "f3",
+  "valeur": 73,
+  "citation": "74 reports from 73 RCTs"
+ },
+ {
+  "id": "f4",
+  "valeur": 24150,
+  "citation": "24150 participants"
+ },
+ {
+  "id": "f5",
+  "valeur": 2022,
+  "citation": "published from 2022 to April 3, 2026"
+ },
+ {
+  "id": "f6",
+  "valeur": 2026,
+  "citation": "published from 2022 to April 3, 2026"
+ },
+ {
+  "id": "f7",
+  "valeur": 98.6,
+  "citation": "Large language models (LLMs) accounted for 98.6% (73/74) of interventions"
+ },
+ {
+  "id": "f8",
+  "valeur": 79.7,
+  "citation": "(range 59-73, 79.7%-98.6%)"
+ },
+ {
+  "id": "f9",
+  "valeur": 4.1,
+  "citation": "input data eligibility (3/73, 4.1%)"
+ },
+ {
+  "id": "f10",
+  "valeur": 3,
+  "citation": "input data eligibility (3/73, 4.1%)"
+ },
+ {
+  "id": "f11",
+  "valeur": 23.0,
+  "citation": "algorithm versioning (17/74, 23.0%)"
+ },
+ {
+  "id": "f12",
+  "valeur": 17,
+  "citation": "algorithm versioning (17/74, 23.0%)"
+ },
+ {
+  "id": "f13",
+  "valeur": 33.8,
+  "citation": "human-AI interaction (25/74, 33.8%)"
+ },
+ {
+  "id": "f14",
+  "valeur": 25,
+  "citation": "human-AI interaction (25/74, 33.8%)"
+ },
+ {
+  "id": "f15",
+  "valeur": 12.2,
+  "citation": "Only 9 of 74 (12.2%) reports explicitly cited CONSORT-AI"
+ },
+ {
+  "id": "f16",
+  "valeur": 9,
+  "citation": "Only 9 of 74 (12.2%) reports explicitly cited CONSORT-AI"
+ },
+ {
+  "id": "f17",
+  "valeur": 72,
+  "citation": "completely unreported (0/72)"
+ }
+]
