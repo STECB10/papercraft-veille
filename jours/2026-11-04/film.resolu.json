@@ -1,0 +1,367 @@
+{
+ "id": "2026-11-04",
+ "sentences": [
+  {
+   "text": "Comprenez-vous vraiment le compte rendu de votre mammographie ?",
+   "box": "compte",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Or, pour la compréhension, seules quarante virgule quatre pour cent des notes données aux radiologues atteignent quatre ou cinq sur cinq.",
+   "display": "Or, pour la compréhension, seules 40,4 % des notes données aux radiologues atteignent 4 ou 5 sur 5.",
+   "box": "seules",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "De plus en plus de patients accèdent directement à leurs comptes rendus d'imagerie.",
+   "box": "directement",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Pourtant, ces textes, écrits par des radiologues, restent souvent difficiles à comprendre.",
+   "box": "difficiles",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Une piste consiste à demander à une IA de les reformuler en mots simples.",
+   "box": "IA",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Ce résumé s'ajouterait au compte rendu, sous supervision médicale.",
+   "box": "supervision",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une équipe a voulu savoir si les patients préfèrent la version de l'IA.",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Il s'agit d'une étude prospective, menée dans plusieurs centres.",
+   "box": "prospective,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Trois cent quatorze patients ont donné deux mille neuf cent soixante-cinq évaluations.",
+   "display": "314 patients ont donné 2 965 évaluations.",
+   "box": "évaluations.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Dix comptes rendus ont été reformulés par ChatGPT, cinq échographies et cinq mammographies.",
+   "display": "10 comptes rendus ont été reformulés par ChatGPT, 5 échographies et 5 mammographies.",
+   "box": "ChatGPT,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "La consigne était de tenir en cinquante mots au plus.",
+   "display": "La consigne était de tenir en 50 mots au plus.",
+   "box": "mots",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Chaque patient lisait deux versions du même compte rendu, celle du radiologue et celle de l'IA.",
+   "box": "deux",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "L'origine des textes était cachée, et leur ordre tiré au sort.",
+   "box": "cachée,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Pour chaque texte, ils notaient la simplicité, la compréhension et l'empathie sur cinq, puis choisissaient leur préféré.",
+   "display": "Pour chaque texte, ils notaient la simplicité, la compréhension et l'empathie sur 5, puis choisissaient leur préféré.",
+   "box": "préféré.",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Résultat principal : l'IA est préférée dans soixante-trois virgule trois pour cent des évaluations.",
+   "display": "Résultat principal : l'IA est préférée dans 63,3 % des évaluations.",
+   "peak": "préférée",
+   "box": "évaluations.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Autrement dit, mille huit cent soixante-seize fois sur deux mille neuf cent soixante-cinq.",
+   "display": "Autrement dit, 1 876 fois sur 2 965.",
+   "box": "fois",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Côté compréhension, soixante-huit virgule un pour cent des textes de l'IA obtiennent quatre ou cinq, contre quarante virgule quatre pour cent.",
+   "display": "Côté compréhension, 68,1 % des textes de l'IA obtiennent 4 ou 5, contre 40,4 %.",
+   "box": "compréhension,",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Pour la simplicité, c'est soixante-dix pour cent, contre quarante-trois virgule quatre.",
+   "display": "Pour la simplicité, c'est 70 %, contre 43,4.",
+   "box": "simplicité,",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Seuls dix comptes rendus ont été testés, avec un seul modèle.",
+   "display": "Seuls 10 comptes rendus ont été testés, avec un seul modèle.",
+   "mode": "type",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Les patients préfèrent un texte plus simple, sous supervision médicale.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 30.87,
+  "stations": [
+   {
+    "type": "hook_number",
+    "y": 0,
+    "cam_at": 0.8,
+    "header": "Étude prospective · plusieurs centres · 2026",
+    "number": "40,4",
+    "unit": "%",
+    "caption": "des notes données aux comptes rendus de radiologues atteignent 4 ou 5 en compréhension",
+    "caption_at": 6.02,
+    "people": 5,
+    "lit": 2,
+    "lit_at": 6.31,
+    "footnote": "Compréhension · note de 4 ou 5 sur 5"
+   },
+   {
+    "type": "steps",
+    "y": 1380,
+    "cam_at": 11.77,
+    "mark_at": 20.26,
+    "title": "Du compte rendu au patient",
+    "steps": [
+     {
+      "icon": "xray",
+      "label": "01 · Examen d'imagerie",
+      "at": 15.26,
+      "_y": 1550
+     },
+     {
+      "icon": "doc",
+      "label": "02 · Compte rendu du radiologue",
+      "note": "souvent difficile",
+      "at": 14.82,
+      "note_at": 20.26,
+      "_y": 1880
+     },
+     {
+      "icon": "user",
+      "label": "03 · Lecture par le patient",
+      "at": 13.4,
+      "_y": 2210
+     },
+     {
+      "icon": "chip",
+      "label": "04 · Résumé par une IA",
+      "note": "sous supervision médicale",
+      "at": 24.3,
+      "note_at": 29.56,
+      "_y": 2540
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Une équipe a voulu savoir si les patients préfèrent la version de l'IA.",
+  "italic": "préfèrent",
+  "fold_at": 35.16,
+  "start": 30.87,
+  "end": 36.209999999999994
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "y": 0,
+    "cam_at": 36.77,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Prospective · multicentrique",
+      "at": 37.96
+     },
+     {
+      "label": "Patients",
+      "value": "314",
+      "at": 41.78,
+      "accent": true
+     },
+     {
+      "label": "Évaluations",
+      "value": "2 965",
+      "at": 44.32
+     },
+     {
+      "label": "Textes",
+      "value": "10 comptes rendus",
+      "at": 46.16
+     },
+     {
+      "label": "Mesure",
+      "value": "Notes sur 5 · préférence",
+      "at": 67.68
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "y": 0,
+    "cam_at": 45.55,
+    "modality": "texte",
+    "input_icon": "doc",
+    "input_label": "Compte rendu du radiologue",
+    "ai_label": "ChatGPT-4 le reformule",
+    "output_label": "Version simplifiée",
+    "output_note": "50 mots au plus",
+    "ai_name": "ChatGPT-4",
+    "at": 46.16,
+    "core_at": 48.02,
+    "out_at": 54.4,
+    "_fig": 1
+   },
+   {
+    "type": "key_points",
+    "y": 0,
+    "cam_at": 55.92,
+    "title": "Ce que lit chaque patient",
+    "points": [
+     {
+      "text": "Deux versions du même compte rendu",
+      "at": 57.46
+     },
+     {
+      "text": "Origine cachée, ordre tiré au sort",
+      "at": 63.44
+     },
+     {
+      "text": "Notes sur 5, puis version préférée",
+      "at": 67.68
+     }
+    ]
+   },
+   {
+    "type": "metric",
+    "y": 0,
+    "cam_at": 74.13,
+    "title": "Version de l'IA préférée",
+    "metrics": [
+     {
+      "label": "Évaluations en faveur de l'IA",
+      "value": "63,3",
+      "num": 63.3,
+      "unit": "%",
+      "at": 77.4,
+      "accent": true
+     }
+    ],
+    "caption": "1 876 sur 2 965 évaluations",
+    "caption_at": 81.71,
+    "_fig": 2
+   },
+   {
+    "type": "result_bars",
+    "y": 0,
+    "cam_at": 85.79,
+    "title": "Compréhension · notes de 4 ou 5",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Texte du radiologue",
+      "value": "40,4",
+      "num": 40.4,
+      "at": 91.87
+     },
+     {
+      "label": "Texte de l'IA",
+      "value": "68,1",
+      "num": 68.1,
+      "accent": true,
+      "at": 87.34
+     }
+    ],
+    "diff": "+27,7 points",
+    "diff_at": 93.32,
+    "_fig": 3
+   },
+   {
+    "type": "result_bars",
+    "y": 0,
+    "cam_at": 94.44,
+    "title": "Simplicité · notes de 4 ou 5",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Texte du radiologue",
+      "value": "43,4",
+      "num": 43.4,
+      "at": 97.22
+     },
+     {
+      "label": "Texte de l'IA",
+      "value": "70",
+      "num": 70.0,
+      "accent": true,
+      "at": 96.1
+     }
+    ],
+    "diff": "+26,6 points",
+    "diff_at": 98.58,
+    "_fig": 4
+   },
+   {
+    "type": "typo",
+    "y": 0,
+    "cam_at": 99.59,
+    "text": "Seuls dix comptes rendus ont été testés, avec un seul modèle.",
+    "italic": "dix",
+    "sentence": 18
+   },
+   {
+    "type": "typo",
+    "y": 0,
+    "cam_at": 103.98,
+    "text": "Les patients préfèrent un texte plus simple, sous supervision médicale.",
+    "italic": "simple,",
+    "sentence": 19
+   }
+  ],
+  "start": 35.11,
+  "end": 109.27
+ },
+ "end": {
+  "fold_at": 108.22,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 111.8,
+  "button": "Suivre",
+  "button_at": 112.4,
+  "click_at": 113.4,
+  "source": "Magni et al. · Insights into Imaging · novembre 2026",
+  "doi": "doi:10.1186/s13244-026-02423-0",
+  "source_at": 110.02,
+  "start": 108.17,
+  "end": 116.2
+ },
+ "duration": 116.2,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

@@ -1,0 +1,9 @@
+Des patients préfèrent un compte rendu de mammographie simplifié par une IA dans près de deux évaluations sur trois.
+
+Les chercheurs ont voulu savoir si des patients préfèrent la version d'un radiologue ou celle de ChatGPT-4. Dix comptes rendus d'imagerie du sein ont été reformulés en cinquante mots au plus, puis évalués à l'aveugle par 314 patients (2 965 évaluations). L'IA est préférée dans 63,3 % des évaluations, et jugée plus compréhensible (68,1 % de notes de 4 ou 5, contre 40,4 %).
+
+Limite : seulement dix comptes rendus testés, avec un seul modèle, et une supervision médicale reste recommandée.
+
+Source : Magni et al., Insights into Imaging, novembre 2026. https://doi.org/10.1186/s13244-026-02423-0
+
+#IA #Radiologie #CancerDuSein #SantéNumérique

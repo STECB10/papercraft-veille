@@ -1,0 +1,19 @@
+[
+ {"id": "f1", "valeur": 314, "citation": "evaluated by 314 patients (2965 evaluations)"},
+ {"id": "f2", "valeur": 2965, "citation": "evaluated by 314 patients (2965 evaluations)"},
+ {"id": "f3", "valeur": 10, "citation": "10 anonymized breast imaging reports (5 ultrasound, 5 mammography"},
+ {"id": "f4", "valeur": 5, "citation": "(5 ultrasound, 5 mammography"},
+ {"id": "f5", "valeur": 50, "citation": "within a 50-word limit"},
+ {"id": "f6", "valeur": 5, "citation": "5-point Likert scale"},
+ {"id": "f7", "valeur": 63.3, "citation": "AI-generated reports were preferred in 63.3% (1876/2965) of evaluations"},
+ {"id": "f8", "valeur": 1876, "citation": "AI-generated reports were preferred in 63.3% (1876/2965) of evaluations"},
+ {"id": "f9", "valeur": 68.1, "citation": "70.0% vs 43.4% and 68.1% vs 40.4%"},
+ {"id": "f10", "valeur": 40.4, "citation": "70.0% vs 43.4% and 68.1% vs 40.4%"},
+ {"id": "f11", "valeur": 70.0, "citation": "70.0% vs 43.4% and 68.1% vs 40.4%"},
+ {"id": "f12", "valeur": 43.4, "citation": "70.0% vs 43.4% and 68.1% vs 40.4%"},
+ {"id": "f13", "valeur": 27.7, "calcul": "f9 - f10"},
+ {"id": "f14", "valeur": 26.6, "calcul": "f11 - f12"},
+ {"id": "f15", "valeur": 4, "citation": "High simplicity and comprehensibility scores (4-5)"},
+ {"id": "f16", "valeur": 5, "citation": "High simplicity and comprehensibility scores (4-5)"},
+ {"id": "f17", "valeur": 2026, "citation": "Insights into imaging · 2026-11-02"}
+]
