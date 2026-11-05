@@ -1,0 +1,7 @@
+Une IA qui lit un simple électrocardiogramme fait diagnostiquer 36 % de cas de faiblesse cardiaque en plus.
+
+La question : cette alerte aide-t-elle vraiment les médecins ? Les auteurs ont regroupé 3 essais tirés au sort (37 467 adultes) qui comparent l'IA aux soins habituels. Résultat : risque relatif de 1,36 (IC 95 % 1,12 à 1,64) pour les nouveaux diagnostics, sans hausse significative des échographies (1,02). Limite : le suivi est court.
+
+Source : Ahmed et al., Annals of Noninvasive Electrocardiology, novembre 2026. https://doi.org/10.1111/anec.70248
+
+#IA #Cardiologie #Santé #Électrocardiogramme

@@ -1,0 +1,67 @@
+[
+ {
+  "id": "f0",
+  "valeur": 37.467,
+  "citation": "with 37,467 participants"
+ },
+ {
+  "id": "f1",
+  "valeur": 37467,
+  "calcul": "f0 * 1000"
+ },
+ {
+  "id": "f2",
+  "valeur": 1.36,
+  "citation": "RR 1.36, 95% CI 1.12 to 1.64"
+ },
+ {
+  "id": "f3",
+  "valeur": 1.12,
+  "citation": "RR 1.36, 95% CI 1.12 to 1.64"
+ },
+ {
+  "id": "f4",
+  "valeur": 1.64,
+  "citation": "RR 1.36, 95% CI 1.12 to 1.64"
+ },
+ {
+  "id": "f5",
+  "valeur": 95,
+  "citation": "95% CI 1.12 to 1.64"
+ },
+ {
+  "id": "f6",
+  "valeur": 204,
+  "citation": "number needed to screen of 204"
+ },
+ {
+  "id": "f7",
+  "valeur": 1.02,
+  "citation": "RR 1.02, 95% CI 0.96 to 1.09"
+ },
+ {
+  "id": "f8",
+  "valeur": 0.96,
+  "citation": "RR 1.02, 95% CI 0.96 to 1.09"
+ },
+ {
+  "id": "f9",
+  "valeur": 1.09,
+  "citation": "RR 1.02, 95% CI 0.96 to 1.09"
+ },
+ {
+  "id": "f10",
+  "valeur": 36,
+  "citation": "by approximately 36% compared with standard care"
+ },
+ {
+  "id": "f11",
+  "valeur": 20,
+  "citation": "ranged from approximately 20% to 34% across studies"
+ },
+ {
+  "id": "f12",
+  "valeur": 34,
+  "citation": "ranged from approximately 20% to 34% across studies"
+ }
+]

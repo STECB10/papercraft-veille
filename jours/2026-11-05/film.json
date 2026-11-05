@@ -1,0 +1,324 @@
+{
+ "id": "2026-11-05",
+ "sentences": [
+  {
+   "text": "Votre électrocardiogramme de routine cache peut-être une faiblesse du cœur.",
+   "box": "faiblesse"
+  },
+  {
+   "text": "Quand le cœur pompe mal sans symptôme, la maladie reste invisible jusqu'à un événement grave.",
+   "box": "invisible",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Pourtant, l'échographie cardiaque, qui le détecte, coûte trop cher pour dépister tout le monde.",
+   "box": "l'échographie",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "En revanche, l'électrocardiogramme est fait chaque jour, mais il repère mal cette faiblesse.",
+   "box": "l'électrocardiogramme"
+  },
+  {
+   "text": "Une IA peut désormais lire ce tracé et signaler les patients dont la fraction d'éjection semble basse.",
+   "box": "IA",
+   "peak": "signaler"
+  },
+  {
+   "text": "Concrètement, le médecin reçoit l'alerte et décide de demander, ou non, une échographie.",
+   "box": "décide",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Mais cette alerte fait-elle vraiment diagnostiquer plus de malades ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, les auteurs ont regroupé trois essais tirés au sort dans une méta-analyse.",
+   "box": "méta-analyse.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Ces essais ont inclus trente-sept mille quatre cent soixante-sept adultes, aux États-Unis, à Taïwan et au Nigeria.",
+   "display": "Ces essais ont inclus 37 467 adultes, aux États-Unis, à Taïwan et au Nigeria.",
+   "box": "adultes,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Dans chaque essai, l'IA lisait l'électrocardiogramme de routine et transmettait son résultat au médecin.",
+   "box": "résultat",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Dans le groupe de comparaison, les médecins travaillaient comme d'habitude, sans alerte.",
+   "box": "comparaison,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Le critère principal était un nouveau diagnostic de fraction d'éjection basse, confirmé par échographie.",
+   "box": "critère",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : avec l'IA, on pose trente-six pour cent de diagnostics en plus, soit un risque relatif de un virgule trente-six.",
+   "display": "Résultat : avec l'IA, on pose 36 % de diagnostics en plus, soit un risque relatif de 1,36.",
+   "box": "diagnostics",
+   "peak": "en plus",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "L'intervalle de confiance à quatre-vingt-quinze pour cent va de un virgule douze à un virgule soixante-quatre.",
+   "display": "L'intervalle de confiance à 95 % va de 1,12 à 1,64.",
+   "box": "L'intervalle",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Autrement dit, il faut dépister deux cent quatre patients pour trouver un cas de plus.",
+   "display": "Autrement dit, il faut dépister 204 patients pour trouver un cas de plus.",
+   "box": "patients",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "En revanche, le nombre d'échographies demandées reste stable, avec un risque relatif de un virgule zéro deux.",
+   "display": "En revanche, le nombre d'échographies demandées reste stable, avec un risque relatif de 1,02.",
+   "box": "demandées",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Enfin, parmi les patients signalés puis examinés, entre vingt et trente-quatre pour cent avaient une fraction d'éjection basse.",
+   "display": "Enfin, parmi les patients signalés puis examinés, entre 20 et 34 % avaient une fraction d'éjection basse.",
+   "box": "signalés",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Reste une limite : le suivi est court, et la survie n'est pas mesurée.",
+   "mode": "type",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "L'IA sur l'électrocardiogramme fait trouver plus de cœurs fragiles, sans multiplier les échographies.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0,
+    "header": "Méta-analyse · 3 essais · 2026",
+    "number": "37 467",
+    "unit": "",
+    "caption": "adultes ont passé un électrocardiogramme de routine dans ces essais",
+    "caption_at": "s1:pompe",
+    "people": 5,
+    "lit": 2,
+    "lit_at": "s0:routine",
+    "footnote": "Essais tirés au sort · dépistage par IA"
+   },
+   {
+    "type": "gag_clock",
+    "label": "souvent trop tard",
+    "cam_at": "s2.e+0.3"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s3:jour",
+    "title": "Le dépistage avec l'IA",
+    "steps": [
+     {
+      "icon": "ecg",
+      "label": "01 · Électrocardiogramme",
+      "note": "examen de routine",
+      "at": "s3-0.05",
+      "note_at": "s3:jour"
+     },
+     {
+      "icon": "chip",
+      "label": "02 · L'IA lit le tracé",
+      "note": "fraction d'éjection basse ?",
+      "at": "s4-0.05",
+      "note_at": "s4:signaler"
+     },
+     {
+      "icon": "stethoscope",
+      "label": "03 · Le médecin décide",
+      "note": "échographie ou non",
+      "at": "s5:médecin",
+      "note_at": "s5:décide"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Mais cette alerte fait-elle vraiment diagnostiquer plus de malades ?",
+  "italic": "vraiment",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.25",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Méta-analyse d'essais tirés au sort",
+      "at": "s7:méta-analyse.",
+      "accent": true
+     },
+     {
+      "label": "Essais",
+      "value": "3",
+      "at": "s7:trois"
+     },
+     {
+      "label": "Participants",
+      "value": "37 467 adultes",
+      "at": "s8:adultes"
+     },
+     {
+      "label": "Pays",
+      "value": "États-Unis · Taïwan · Nigeria",
+      "at": "s8:Nigeria."
+     },
+     {
+      "label": "Critère",
+      "value": "Nouveau diagnostic de fraction d'éjection basse",
+      "at": "s11:critère"
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s9-0.25",
+    "input_icon": "ecg",
+    "modality": "signal",
+    "input_label": "Électrocardiogramme de routine",
+    "ai_label": "Repère une fraction d'éjection basse",
+    "output_label": "Alerte au médecin",
+    "at": "s9",
+    "core_at": "s9:l'IA",
+    "out_at": "s9:résultat"
+   },
+   {
+    "type": "two_groups",
+    "cam_at": "s10-0.25",
+    "groups": [
+     {
+      "label": "Soins habituels",
+      "at": "s10:comparaison,",
+      "steps": [
+       {
+        "icon": "ecg",
+        "text": "Électrocardiogramme de routine",
+        "at": "s10:comparaison,"
+       },
+       {
+        "icon": "stethoscope",
+        "text": "Décision du médecin, sans alerte",
+        "at": "s10:d'habitude,"
+       }
+      ]
+     },
+     {
+      "label": "Avec l'IA",
+      "accent": true,
+      "at": "s10:alerte",
+      "steps": [
+       {
+        "icon": "ecg",
+        "text": "Électrocardiogramme de routine",
+        "at": "s10:alerte"
+       },
+       {
+        "icon": "chip",
+        "text": "Alerte de l'IA au médecin",
+        "at": "s10:alerte+0.3"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "metric",
+    "cam_at": "s12-0.3",
+    "title": "Nouveaux diagnostics, avec l'IA",
+    "metrics": [
+     {
+      "label": "Risque relatif",
+      "value": "1,36",
+      "num": 1.36,
+      "max": 2,
+      "note": "IC 95 % : 1,12–1,64",
+      "at": "s12:risque",
+      "accent": true
+     }
+    ],
+    "caption": "Au-dessus de 1 : plus de diagnostics",
+    "caption_at": "s13:l'intervalle"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s14-0.3",
+    "title": "Et en pratique",
+    "points": [
+     {
+      "text": "204 patients dépistés pour 1 cas de plus",
+      "at": "s14:patients"
+     },
+     {
+      "text": "Échographies demandées : RR 1,02 (0,96–1,09)",
+      "at": "s15:d'échographies"
+     },
+     {
+      "text": "Alertes confirmées par échographie : 20 à 34 %",
+      "at": "s16:signalés"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s17-0.25",
+    "text": "Reste une limite : le suivi est court, et la survie n'est pas mesurée.",
+    "italic": "court,"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s18-0.25",
+    "text": "L'IA sur l'électrocardiogramme fait trouver plus de cœurs fragiles, sans multiplier les échographies.",
+    "italic": "cœurs"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s18.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s20",
+  "button": "Suivre",
+  "button_at": "s20+0.6",
+  "click_at": "s20+1.6",
+  "source": "Ahmed et al. · Annals of Noninvasive Electrocardiology · novembre 2026",
+  "doi": "doi:10.1111/anec.70248",
+  "source_at": "s19:vérifiée-0.2"
+ },
+ "duration": 124.2,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}
