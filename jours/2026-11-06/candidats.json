@@ -1,0 +1,131 @@
+[
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique",
+   "n = 9700"
+  ],
+  "id": "MED:42960901",
+  "pmid": "42960901",
+  "pmcid": null,
+  "doi": "10.4317/medoral.28284",
+  "titre": "Artificial Intelligence for Assessing the Relationship Between Mandibular Third Molars and the Inferior Alveolar Nerve on Panoramic Radiographs: A Systematic Review.",
+  "revue": "Medicina oral, patologia oral y cirugia bucal",
+  "date": "2026-11-01",
+  "auteurs": "Elwy FK, Parra-Moreno J, González-Navarro B, Egido-Moreno S, López-López J.",
+  "types": "systematic review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Extracting mandibular third molars is a common procedure that carries a risk of injury to the inferior alveolar nerve (IAN). Panoramic radiographs (PR) are commonly used for preoperative assessment of the mandibular third molars, but they are not very reliable for evaluating the relationship of the IAN. This systematic review aims to evaluate the accuracy of artificial intelligence (AI) models in assessing the relationship between mandibular third molars and the IAN. Materials and methods We conducted systematic searches in MEDLINE (via PubMed), the Cochrane Library, Embase, and Scopus for studies published between January 2020 and April 2026. Eligible studies evaluated artificial intelligence systems that analyze panoramic radiographs to assess the relationship between mandibular third molars and the IAN, using cone-beam computed tomography (CBCT) or expert assessments as references. The studies had to report key diagnostic performance metrics. Two independent reviewers carried out study selection, data extraction, and risk-of-bias assessments using the QUADAS-2 tool. Results We included eleven studies with more than 9,700 patients. The AI models reviewed, including architectures such as ResNet, VGG, and YOLO, demonstrated promising diagnostic performance. Their accuracy ranged from 0.630 to 0.896, with sensitivity and specificity reaching up to 0.92 and 0.95, respectively. No single architecture was consistently superior, but AI models outperformed less experienced human observers in the studies that included this comparison. Validation against CBCT usually yielded more reliable performance metrics than validation based solely on expert opinion. Conclusions AI models show promise as decision-support tools in the radiographic assessment of the relationship between mandibular third molars and the inferior alveolar nerve on panoramic radiographs. However, variations in datasets, reference standards, and validation methods across studies mean that no single architecture can yet be considered superior. Larger, multicenter, prospective studies with external validation are necessary to confirm these systems' performance before they can be widely used in clinical practice."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42960110",
+  "pmid": "42960110",
+  "pmcid": "PMC13718289",
+  "doi": "10.1016/j.isci.2026.117725",
+  "titre": "Artificial intelligence across the gastric cancer care continuum: Clinical evidence, multimodal integration, and translation.",
+  "revue": "iScience",
+  "date": "2026-10-22",
+  "auteurs": "Yang J, Tang J, He J.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue de littérature",
+  "resume": "Artificial intelligence (AI) is increasingly being applied across the gastric cancer care continuum, but its clinical maturity differs substantially among endoscopy, cross-sectional imaging, digital pathology, prognostic modeling, treatment selection, and surgical support. Existing reviews have often focused on individual modalities or summarized algorithmic performance without systematically distinguishing technical feasibility from translational readiness. We conducted a structured narrative review of studies indexed in PubMed/MEDLINE and the Web of Science Core Collection from January 2022 through July 2026, supplemented by backward and forward citation tracking. Earlier landmark studies were retained when necessary to explain the development of major applications. Priority was given to prospective, multicenter, externally validated, and clinically actionable studies. Evidence maturity was assessed according to study design, validation breadth, workflow relevance, calibration and clinical-utility assessment, and implementation evidence. The main constraint on gastric cancer AI is no longer pattern-recognition capability but the absence of reproducible clinical benefit under real-world conditions. Priorities include multiregional prospective validation, standardized calibration and decision curve assessment, comparison of clinicians with and without AI, integration into existing workflows, evaluation of economic and patient-level outcomes, and post-deployment monitoring."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "n = 80033"
+  ],
+  "id": "MED:42922241",
+  "pmid": "42922241",
+  "pmcid": null,
+  "doi": "10.7417/ct.2026.2172",
+  "titre": "Artificial Intelligence in Breast Cancer Diagnosis, Treatment, and Perioperative Management: A Systematic Review of Current Applications and Future Perspectives.",
+  "revue": "La Clinica terapeutica",
+  "date": "2026-11-01",
+  "auteurs": "Mostafa AF, Mady R, Abu Halimah JH, Hassan N, Elshebiny AA, Abdelazeem MAA, Salem LN, Abdrabo AA, Ibrahem M, Elzeiny A, Abdelaziz SMME, Hakami AH, Sayegh AA, Hegazy HA, Ahmed IS.",
+  "types": "systematic review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Breast cancer is the most frequently diagnosed malignancy in women globally, accounting for approximately 2.30 million new cases and 666,103 deaths in 2022. Artificial intelligence technologies including machine learning, deep learning, radiomics, and natural language processing have been widely applied across the breast cancer care continuum. However, no systematic review restricted to primary studies with patient-level or image-level data has synthesized evidence spanning all clinical domains simultaneously. Objectives To evaluate the performance, methodological quality, and clinical relevance of artificial intelligence primary studies across screening and diagnostic imaging, digital pathology, radiomics, perioperative management, prognostic prediction, and natural language processing in breast cancer. Methods PubMed/MEDLINE, Scopus, Web of Science, Embase, and the Cochrane Library were searched from January 2015 to May 2026. Eligibility was restricted to original primary research reporting patient-level or image-level data; secondary syntheses were explicitly excluded. Risk of bias was assessed using QUADAS-2 and PROBAST. Reporting followed PRISMA 2020 guidelines. Results Of 5,275 identified records, 17 primary studies met eligibility criteria. In screening mammography (seven studies; n = 7,540 to 144,231 examinations), deep learning achieved area under the receiver operating characteristic curve (AUC) values of 0.876 to 0.939; a randomised trial in 80,033 women demonstrated non-inferiority to double reading with a 44.3% reduction in radiologist workload. In digital pathology (five studies; 270 to 44,732 whole-slide images), deep learning achieved AUC 0.985 to 0.994, exceeding unassisted pathologist performance in lymph node metastasis detection. Magnetic resonance imaging radiomics predicted pathological complete response in HER2-positive breast cancer with AUC 0.80. No breast cancer-specific perioperative primary study met the eligibility criteria. Deep survival networks achieved concordance index 0.626 versus 0.612 for Cox regression in breast cancer cohorts. Natural language processing identified metastatic recurrence in breast cancer clinical records with sensitivity 83% and specificity 73%. Risk of bias was low to moderate for imaging and pathology studies and high for small sample radiomics studies. Density-stratified performance was reported by only two imaging studies, and receptor status prediction from haematoxylin and eosin staining had not been validated as a safe alternative to immunohistochemistry. Conclusions Artificial intelligence demonstrated clinically meaningful performance across the five domains with eligible primary studies. Breast cancer-specific perioperative and intensive care primary studies were absent, representing the largest evidence gap. External validation, demographic diversity, and prospective clinical integration evidence remained the most consistently identified limitations. Prediction of molecular receptor status without immunohistochemistry requires rigorous prospective safety validation before it can complement standard testing."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "n = 1156",
+   "texte intégral libre"
+  ],
+  "id": "MED:42908321",
+  "pmid": "42908321",
+  "pmcid": "PMC13700530",
+  "doi": "10.1080/22221751.2026.2746253",
+  "titre": "An interpretable machine learning model integrating mucosal and cellular immunity to predict SARS-CoV-2 reinfection: a multicenter cohort study.",
+  "revue": "Emerging microbes & infections",
+  "date": "2026-10-21",
+  "auteurs": "Ran J, Zhang W, Zhang W, Huang H, Gong L, Yin S, Chen Y, Wang A, Min H, Zhu L, Chu J, Qin Y, Huang R, Wu C, Chen Y.",
+  "types": "research-article validation study multicenter study journal article",
+  "acces_libre": true,
+  "type_etude": "performance diagnostique",
+  "resume": "SARS-CoV-2 reinfection remains a significant public health challenge that requires accurate risk assessment across populations. Using prospectively collected data from two independent cohorts, we developed and externally validated an interpretable machine learning model for predicting symptomatic SARS-CoV-2 reinfection. The cohort comprised 1,156 adults from Wuxi and Nantong, China, with a median follow-up duration of 10 months. Reinfection occurred in 128 participants (11.1%). The model integrated eighteen clinical and immune features, and ultimately identified spike-specific nasal secretory immunoglobulin A (sIgA) and spike-specific CD4 + central memory T cells (T CM ) as key predictors. Developed using the extreme gradient boosting (XGB) algorithm, the prediction model achieved an AUC of 0.835 in the internal validation cohort and demonstrated strong discrimination in the external validation cohort. SHAP analysis revealed that higher nasal spike-specific sIgA was associated with lower risk, while spike-specific CD4 + T CM cells exhibited a non-linear association with reinfection. This interpretable immune-based model provides a framework for immune-informed risk stratification, enabling better prediction and management of SARS-CoV-2 reinfection risk in settings with heterogeneous population immunity."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "n = 2500",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42936677",
+  "pmid": "42936677",
+  "pmcid": "PMC13700963",
+  "doi": "10.1093/ehjdh/ztag165",
+  "titre": "Real-world implementation of AI-assisted PERT-workflow and its association with care processes and budget impact: a retrospective cohort study.",
+  "revue": "European heart journal. Digital health",
+  "date": "2026-10-22",
+  "auteurs": "Messiha D, Nensa F, Haubold J, Pinsdorf D, Forsting M, Engel F, Al-Rashid F, Petrikhovich O, Knuschke R, Lortz J, Rassaf T, Rammos C.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "type_etude": "cohorte / prédiction",
+  "resume": "Aims Pulmonary embolism (PE) remains a major cause of morbidity and mortality. In intermediate-high and high-risk PE, timely escalation beyond anticoagulation is critical, yet real-world pathways are often delayed. Pulmonary embolism response teams (PERTs) improve decision-making, but activation remains inconsistent. Whether artificial intelligence (AI)-enabled triage strengthens PERT and improves acute PE care has not been elucidated so far. Methods and results We retrospectively screened 2500 patients presenting to our university hospital with a symptomatic central or segmental PE between 08/2022 and 07/2024. Clinical and economic outcomes were compared during a 1-year timeframe before and after implementation of an AI algorithm that analyses CT scans, flags suspected PE, and supports PERT triage. 424 patients met inclusion criteria. AI-supported triage increased PERT activation from 9.2% to 84.5% ( P P P Conclusion Implementation of an AI-supported PERT workflow was associated with significant improvements in PE care processes, including higher PERT activation rates and shorter diagnostic and treatment intervals. Numerical reductions in mortality, hospital/ICU length-of-stay did not reach statistical significance. The exploratory budget impact model suggested potential cost savings, mainly driven by trends in reduced resource utilization; however, these findings require prospective validation using adequately powered clinical endpoints."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure"
+  ],
+  "id": "MED:42970578",
+  "pmid": "42970578",
+  "pmcid": null,
+  "doi": "10.2196/100388",
+  "titre": "Investigating Patient Trust and Intention to Act in AI-Supported Clinical Decisions: Cross-Sectional Survey.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-02",
+  "auteurs": "Rossi S, Shamnath A, Reading Turchioe M, Lovett Novak L, Salwei ME, Buitron I, Xu X, Benda N.",
+  "types": "journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "Background In health systems, AI is increasingly being implemented as a form of clinical decision support (CDS). Research on patient perspectives, however, lags behind clinician-focused studies. Before the introduction of AI-based tools, clinicians often used and continue to use rule-based guidelines and risk calculators (RCs) to inform decision-making. Prior research has shown that RCs for CDS have mixed effects on patient adherence to treatment recommendations, whereas for AI-based tools, the effect is still not clear. Objective This study aims to assess differences in patients' behavioral intentions, trust, and preferences for clinical recommendations provided by doctors alone, doctors supported by RCs, and doctors supported by AI-based risk predictions. We also evaluate how sociodemographic characteristics affect these perceptions. Methods We surveyed 1185 US-based adults. Participants rated their likelihood of taking recommended clinical actions (behavioral intentions) across 6 clinical scenarios, where they were randomized to a different recommendation source (doctor, doctor + RC, and doctor + AI). Participants also rated their trust in the recommendation, indicated their preferred source for recommendations, and provided qualitative feedback. Results Behavioral intentions differed by recommendation source such that the doctor + RC condition had greater odds of behavioral intention than the doctor + AI condition. Behavioral intentions were also affected by the clinical condition. Participants had greater odds of trusting doctors alone over doctor + RC, and both doctors alone and doctor + RC had greater trust than doctor + AI. However, a plurality of participants ultimately preferred a doctor using an RC for making recommendations. Several sociodemographic differences were detected, namely, participants with higher subjective numeracy and literacy had higher odds of taking clinical action and higher trust across decision-support sources. We detected qualitative themes in the following categories: decision quality and reliability; trust and perceptions; patient-centeredness and autonomy; fairness, transparency, and ethics. Across categories, participants reported skepticism toward all decision sources and potential misunderstanding of AI's ability to personalize risk predictions. Some participants also stated that they had no additional concerns or were uncertain regarding their feelings. Conclusions These findings reveal novel, nuanced patient preferences shaped by task and context, offering guidance for aligning AI-supported care with patient values. Patients were not aligned on the recommendation source across intentions, trust, and preferences. Taken together, our results indicate that patients prefer doctors working with easy-to-understand, explainable support but are still learning to trust these tools. Our findings also highlight the continued importance of the clinical context and its interaction with computer-assisted decision support. Future work should evaluate how we can transparently convey to patients the use of AI in clinical decision-making, embedded within the given clinical context. This may present an opportunity to bolster, rather than erode, patient trust."
+ }
+]

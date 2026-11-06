@@ -1,0 +1,7 @@
+Une alerte d'IA sur les scanners a fait passer l'activation de l'équipe d'urgence embolie de 9,2 % à 84,5 %.
+
+Cette étude rétrospective, menée dans un hôpital universitaire allemand, compare deux périodes d'un an, avant et après une IA qui repère l'embolie pulmonaire sur scanner et alerte l'équipe. Sur 424 patients, l'équipe a été activée bien plus souvent et le délai avant un traitement avancé a presque diminué de moitié. La baisse de mortalité à 30 jours (25 % à 21 %) n'est pas significative : il s'agit d'une association, pas d'une preuve.
+
+Source : Messiha et al., European Heart Journal Digital Health, octobre 2026. https://doi.org/10.1093/ehjdh/ztag165
+
+#IA #EmbolieUrgence #Radiologie #SantéNumérique

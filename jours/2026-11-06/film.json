@@ -1,0 +1,327 @@
+{
+ "id": "2026-11-06",
+ "sentences": [
+  {
+   "text": "Une embolie pulmonaire grave se joue souvent en quelques heures.",
+   "box": "heures."
+  },
+  {
+   "text": "Pour ces patients, la PERT, une équipe de spécialistes, décide du traitement, mais elle n'est pas toujours appelée.",
+   "box": "appelée.",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Dans un hôpital allemand, elle n'était activée que dans neuf virgule deux pour cent des cas.",
+   "display": "Dans un hôpital allemand, elle n'était activée que dans 9,2 % des cas.",
+   "box": "activée",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Le scanner est lu par le radiologue, puis l'équipe n'est appelée que si le médecin y pense.",
+   "box": "pense.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Cet hôpital a donc ajouté une IA qui analyse chaque scanner et alerte l'équipe.",
+   "box": "IA"
+  },
+  {
+   "text": "Les chercheurs ont voulu savoir si cette alerte change la prise en charge.",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Il s'agit d'une étude rétrospective, menée dans un hôpital allemand, sur deux périodes d'un an.",
+   "box": "rétrospective,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Sur deux mille cinq cents scanners positifs examinés, quatre cent vingt-quatre patients ont été retenus.",
+   "display": "Sur 2 500 scanners positifs examinés, 424 patients ont été retenus.",
+   "box": "retenus.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Cela fait cent quatre-vingt-un patients avant l'IA, puis deux cent quarante-trois patients après.",
+   "display": "Cela fait 181 patients avant l'IA, puis 243 patients après.",
+   "box": "après.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Concrètement, l'IA lit chaque scanner et, si elle trouve une embolie, alerte le radiologue et la PERT.",
+   "box": "alerte",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat principal : l'équipe a été activée pour neuf virgule deux pour cent des patients avant l'IA.",
+   "display": "Résultat principal : l'équipe a été activée pour 9,2 % des patients avant l'IA.",
+   "box": "activée",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Après l'IA, c'était quatre-vingt-quatre virgule cinq pour cent, soit plus de neuf fois plus souvent.",
+   "display": "Après l'IA, c'était 84,5 %, soit plus de neuf fois plus souvent.",
+   "box": "souvent.",
+   "peak": "neuf fois",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Pour les traitements avancés, le délai est passé d'environ trente-six à dix-huit virgule neuf heures, soit environ cinquante pour cent de moins.",
+   "display": "Pour les traitements avancés, le délai est passé d'environ 36 à 18,9 heures, soit environ 50 % de moins.",
+   "box": "délai",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Le compte rendu du scanner est arrivé plus vite, et la mortalité à trente jours a baissé de vingt-cinq à vingt et un pour cent, sans écart significatif.",
+   "display": "Le compte rendu du scanner est arrivé plus vite, et la mortalité à 30 jours a baissé de 25 à 21 %, sans écart significatif.",
+   "box": "mortalité",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "L'IA repère bien les embolies, mais sa valeur prédictive négative n'est que de soixante et un virgule cinq pour cent.",
+   "display": "L'IA repère bien les embolies, mais sa valeur prédictive négative n'est que de 61,5 %.",
+   "box": "négative",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Dans un seul hôpital, l'IA et l'activation automatique sont arrivées ensemble : on ne peut parler que d'association.",
+   "mode": "type",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Une alerte automatique accélère l'équipe, mais le radiologue garde le dernier mot.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s4.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0,
+    "header": "Cohorte rétrospective · Allemagne · 2022–2024",
+    "number": "9,2",
+    "unit": "%",
+    "caption": "des cas éligibles : l'équipe PERT est activée",
+    "caption_at": "s2:activée",
+    "people": 5,
+    "lit": 1,
+    "lit_at": "s2:neuf",
+    "footnote": "Avant l'IA · hôpital universitaire"
+   },
+   {
+    "type": "gag_clock",
+    "cam_at": "s1.e+0.3",
+    "label": "quelques heures"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.2",
+    "mark_at": "s3:appelée",
+    "title": "Le parcours avant l'IA",
+    "steps": [
+     {
+      "icon": "xray",
+      "label": "01 · Scanner",
+      "at": "s3:scanner"
+     },
+     {
+      "icon": "magnifier",
+      "label": "02 · Lecture par le radiologue",
+      "at": "s3:radiologue"
+     },
+     {
+      "icon": "phone",
+      "label": "03 · Appel à la PERT",
+      "note": "si le médecin y pense",
+      "at": "s3:appelée",
+      "note_at": "s3:si",
+      "alert": "Pas d'appel"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Les chercheurs ont voulu savoir si cette alerte change la prise en charge.",
+  "italic": "change",
+  "fold_at": "s5.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s6-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type d'étude",
+      "value": "Cohorte rétrospective",
+      "at": "s6:rétrospective,"
+     },
+     {
+      "label": "Lieu",
+      "value": "1 hôpital, Allemagne",
+      "at": "s6:allemand,"
+     },
+     {
+      "label": "Période",
+      "value": "2 périodes d'un an",
+      "at": "s6:périodes"
+     },
+     {
+      "label": "Patients",
+      "value": "424 sur 2 500 scanners",
+      "at": "s7:retenus."
+     },
+     {
+      "label": "Groupes",
+      "value": "181 avant · 243 après",
+      "at": "s8:après.",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s9-0.3",
+    "input_icon": "xray",
+    "input_label": "Scanner des poumons",
+    "ai_label": "Repère une embolie et alerte",
+    "output_label": "Alerte à l'équipe",
+    "output_note": "Radiologue de garde + PERT",
+    "modality": "image",
+    "at": "s9:scanner",
+    "scan_at": "s9:lit",
+    "core_at": "s9.w1",
+    "out_at": "s9:alerte"
+   },
+   {
+    "type": "result_bars",
+    "cam_at": "s10-0.3",
+    "title": "Équipe PERT activée",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Avant l'IA",
+      "value": "9,2",
+      "num": 9.2,
+      "at": "s10:neuf"
+     },
+     {
+      "label": "Avec l'IA",
+      "value": "84,5",
+      "num": 84.5,
+      "accent": true,
+      "at": "s11+0.4"
+     }
+    ],
+    "diff": "+75,3 points",
+    "diff_at": "s11:souvent."
+   },
+   {
+    "type": "result_bars",
+    "cam_at": "s12-0.3",
+    "title": "Délai avant traitement avancé",
+    "unit": "h",
+    "groups": [
+     {
+      "label": "Avant l'IA",
+      "value": "36",
+      "num": 36,
+      "at": "s12:environ"
+     },
+     {
+      "label": "Avec l'IA",
+      "value": "18,9",
+      "num": 18.9,
+      "accent": true,
+      "at": "s12:virgule"
+     }
+    ],
+    "diff": "environ −50 %",
+    "diff_at": "s12:cinquante"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s13-0.3",
+    "title": "Autres constats",
+    "points": [
+     {
+      "text": "Compte rendu du scanner : 1,3 h contre 2,1 h",
+      "at": "s13:compte"
+     },
+     {
+      "text": "Mortalité à 30 jours : 21 % contre 25 % (non significatif)",
+      "at": "s13:mortalité"
+     }
+    ]
+   },
+   {
+    "type": "metric",
+    "cam_at": "s14-0.3",
+    "title": "Performance de l'IA",
+    "metrics": [
+     {
+      "label": "Sensibilité",
+      "value": "93",
+      "num": 93,
+      "unit": "%",
+      "at": "s14+0.2"
+     },
+     {
+      "label": "Spécificité",
+      "value": "96",
+      "num": 96,
+      "unit": "%",
+      "at": "s14+1.0"
+     },
+     {
+      "label": "Valeur prédictive négative",
+      "value": "61,5",
+      "num": 61.5,
+      "unit": "%",
+      "accent": true,
+      "at": "s14:négative"
+     }
+    ],
+    "caption": "Un scanner négatif n'exclut pas l'embolie",
+    "caption_at": "s14:négative+1.0"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s15-0.25",
+    "text": "Dans un seul hôpital, l'IA et l'activation automatique sont arrivées ensemble : on ne peut parler que d'association.",
+    "italic": "association."
+   },
+   {
+    "type": "typo",
+    "cam_at": "s16-0.25",
+    "text": "Une alerte automatique accélère l'équipe, mais le radiologue garde le dernier mot.",
+    "italic": "accélère"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s16.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s18",
+  "button": "Suivre",
+  "button_at": "s18+0.6",
+  "click_at": "s18+1.6",
+  "source": "Messiha et al. · European Heart Journal Digital Health · octobre 2026",
+  "doi": "doi:10.1093/ehjdh/ztag165",
+  "source_at": "s17:vérifiée-0.2"
+ }
+}

@@ -1,0 +1,102 @@
+[
+ {
+  "id": "f1",
+  "valeur": 2500,
+  "citation": "Out of 2500 PE-positive CT scans screened over 2 years"
+ },
+ {
+  "id": "f2",
+  "valeur": 424,
+  "citation": "a total of 424 patients with acute central or segmental PE were included"
+ },
+ {
+  "id": "f3",
+  "valeur": 181,
+  "citation": "181 in the pre-AI PERT era"
+ },
+ {
+  "id": "f4",
+  "valeur": 243,
+  "citation": "243 in the post-implementation AI-PERT era"
+ },
+ {
+  "id": "f5",
+  "valeur": 9.2,
+  "citation": "the PERT was formally activated in only 9.2% of PE cases"
+ },
+ {
+  "id": "f6",
+  "valeur": 84.5,
+  "citation": "PERT activation increased to 84.5% of PE cases"
+ },
+ {
+  "id": "f7",
+  "valeur": 1.3,
+  "citation": "1.3 ± 0.5 h vs. 2.1 ± 0.6 h"
+ },
+ {
+  "id": "f8",
+  "valeur": 2.1,
+  "citation": "1.3 ± 0.5 h vs. 2.1 ± 0.6 h"
+ },
+ {
+  "id": "f9",
+  "valeur": 36,
+  "citation": "approximately 36 h"
+ },
+ {
+  "id": "f10",
+  "valeur": 18.9,
+  "citation": "approximately 18.9 h"
+ },
+ {
+  "id": "f11",
+  "valeur": 50,
+  "citation": "roughly a 50% reduction"
+ },
+ {
+  "id": "f12",
+  "valeur": 93,
+  "citation": "a sensitivity of 93%"
+ },
+ {
+  "id": "f13",
+  "valeur": 96,
+  "citation": "a specificity of 96%"
+ },
+ {
+  "id": "f14",
+  "valeur": 61.5,
+  "citation": "negative predictive value of 61,5%"
+ },
+ {
+  "id": "f15",
+  "valeur": 25,
+  "citation": "from 25% to 21%"
+ },
+ {
+  "id": "f16",
+  "valeur": 21,
+  "citation": "from 25% to 21%"
+ },
+ {
+  "id": "f17",
+  "valeur": 30,
+  "citation": "30-day outcome were recorded"
+ },
+ {
+  "id": "f18",
+  "valeur": 2022,
+  "citation": "between 08/2022 and 07/2024"
+ },
+ {
+  "id": "f19",
+  "valeur": 2024,
+  "citation": "between 08/2022 and 07/2024"
+ },
+ {
+  "id": "f20",
+  "valeur": 75.3,
+  "calcul": "f6 - f5"
+ }
+]
