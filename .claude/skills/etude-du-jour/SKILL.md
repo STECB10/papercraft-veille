@@ -47,7 +47,9 @@ sort, chaque bloc apparaît au mot qui le nomme ; `modality` selon ce que l'IA l
 au type d'étude et à ce que dit la voix** (tableaux de `serie/frame.md`, section « Choisir la mise en scène », et de
 REGLES-CONTENU.md : par exemple `population_split` puis `two_groups` et `result_bars` avec `ci` pour un essai,
 `diagnostic_grid` ou `roc_curve` pour une performance, `forest_plot` ou `studies_stack` pour une méta-analyse, `chat`
-pour une IA conversationnelle, `image_scan` quand l'IA lit une image) → 1 résultat secondaire utile → portée et limite
+pour une IA conversationnelle, `image_scan` quand l'IA lit une image ; et pour varier : `flow_chart` quand la source
+donne les effectifs de chaque étape, `big_stat` pour LE résultat à retenir, `timeline` pour un suivi dans le temps ;
+jamais exactement la même suite de planches que la veille) → 1 résultat secondaire utile → portée et limite
 (une phrase `typo`) → phrase à retenir (une phrase `typo`) → promesse → « Papercraft. ». Dès que la source donne un
 intervalle de confiance pour le résultat principal, il est dans `ci`.
 Le champ `type_etude` de candidats.json donne une première indication ; vérifie-le dans source.txt.

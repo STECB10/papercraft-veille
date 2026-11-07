@@ -32,6 +32,7 @@ import sys
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import accroches  # noqa: E402
+import planches  # noqa: E402
 from accroches import GAGS, HOOKS  # noqa: E402
 W, H = 1080, 1350
 FOLD_DUR = 1.0      # durée d'un pli (pivot et fin)
@@ -544,6 +545,7 @@ def typo_words(text, ws, italic):
 NIGHT_H = {**{k: accroches.HOOK_H for k in HOOKS}, "gag_waiting": 440, "gag_clock": 470, "gag_calendar": 470, "gag_pile": 470}
 NIGHT_DY = {"gag_waiting": 230, "gag_clock": 200, "gag_calendar": 200, "gag_pile": 200, "steps": 40}
 EDITIONS = json.loads((HERE / "editions.json").read_text(encoding="utf-8"))["rotation"]
+ENTREES = ("up", "right", "left", "drop", "turn", "flip")   # entrées de planche (moteur.js, bloc « feuilles »)
 EDITION = EDITIONS[0]
 
 
@@ -645,14 +647,15 @@ def night_station(st, film=None):
 # --------------------------------------------------------------------------------------------- dans la feuille (l'étude)
 # Chaque planche est dessinée en coordonnées d'écran (0 à 1350) décalées de y0 : la caméra la cadre plein écran.
 FIG_TYPES = {"ai_scan", "result_bars", "result_dots", "result_strips", "metric", "forest_plot", "roc_curve",
-             "diagnostic_grid", "survival_curves", "image_scan", "chat"}
+             "diagnostic_grid", "survival_curves", "image_scan", "chat", "flow_chart"}
 
 
-def bar_value(x, w, top, g, t, cls="bval", unit=""):
+def bar_value(x, w, top, g, t, cls="bval", unit="", pad=120, px=None):
     val = str(g["value"])
     pre = "+" if val.strip().startswith("+") else ""
-    return (f'<div class="{cls}" style="left:{x-60:.0f}px;width:{w+120:.0f}px;top:{top:.0f}px" data-a="big" data-t="{t-0.05:.2f}" data-d="0.5">'
-            f'<span data-fx="count" data-t="{t:.2f}" data-d="1.0" data-to="{g["num"]}" data-dec="{decs(val)}" data-pre="{pre}">0</span>'
+    fs = f"font-size:{px}px;" if px else ""
+    return (f'<div class="{cls}" style="left:{x-pad/2:.0f}px;width:{w+pad:.0f}px;top:{top:.0f}px;{fs}" data-fit="1" data-fmin="44" data-a="big" data-t="{t-0.05:.2f}" data-d="0.5">'
+            f'<span data-fx="count" data-t="{t:.2f}" data-d="1.0" data-to="{g["num"]}" data-dec="{decs(val)}" data-pre="{pre}">{esc(val)}</span>'
             f'<span class="unit">{esc(unit)}</span></div>')
 
 
@@ -702,6 +705,9 @@ def paper_station(st, film, fig=None):
     y0 = st["y"]
     t0 = st.get("cam_at", 0)
     h = []
+    if t in planches.TYPES:
+        planches.B = sys.modules[__name__]
+        return "\n".join(planches.station(st, film, fig, y0, t0))
 
     if t == "id_card":
         # fiche bristol posée et scotchée : marge carbone, lignes réglées, une ligne par information
@@ -898,7 +904,8 @@ def paper_station(st, film, fig=None):
                          f'<div class="sval{acc}"><span data-fx="count" data-t="{g["at"]+0.1:.2f}" data-d="0.8" data-to="{g["num"]}" data-dec="{decs(g["value"])}" data-pre="{"+" if str(g["value"]).startswith("+") else ""}">0</span>{esc(unit)}</div></div>')
             else:
                 h.append(f'<div class="bar{acc}" style="left:{x:.0f}px;top:{base-hgt:.0f}px;width:{bw}px;height:{hgt:.0f}px" data-a="growup" data-t="{g["at"]:.2f}"></div>')
-                h.append(bar_value(x, bw, base - hgt - 90, g, g["at"], "bval" + acc, unit))
+                # trois groupes : valeurs un peu plus petites, boîtes plus étroites (jamais deux valeurs qui se touchent)
+                h.append(bar_value(x, bw, base - hgt - 90, g, g["at"], "bval" + acc, unit, *((70, 64) if ng >= 3 else (120, None))))
             lw = bw + gap - 16
             h.append(f'<div class="kick{acc} center" style="left:{x+bw/2-lw/2:.0f}px;width:{lw:.0f}px;top:{base+22:.0f}px" data-a="rise" data-t="{g["at"]+0.3:.2f}">{esc(g["label"])}</div>')
         nums = [float(g["num"]) for g in gs]
@@ -1394,7 +1401,8 @@ def build(project):
         inner = paper_station(st, film, st.get("_fig"))
         plates.append(f'<div class="plate{" verso" if verso else ""}" id="plate{i}"><div class="pground"></div><div class="plight"></div>'
                       f'<div class="pcrease"></div>{inner}<div class="pdim"></div></div>')
-        mode = "first" if i == 0 else ("tear" if verso else ("up" if i % 2 else "right"))
+        ent = EDITION.get("entrees") or ["up", "right"]
+        mode = "first" if i == 0 else ("tear" if verso else ent[(i - 1) % len(ent)])
         pin.append([round(st["cam_at"] - (0.45 if verso else 0.05), 3), mode])
     paper_html = "\n".join(plates)
     tear, tear_html = None, ""
@@ -1439,7 +1447,7 @@ def build(project):
 </style>
 </head>
 <body>
-<div id="root" data-composition-id="main" data-start="0" data-duration="{D}" data-width="{W}" data-height="{H}">
+<div id="root" class="ed-{EDITION['id']} tex-{EDITION.get('texture', 'uni')} kw-{EDITION.get('mot_cle', 'boite')}" data-composition-id="main" data-start="0" data-duration="{D}" data-width="{W}" data-height="{H}">
   <div id="bgnight" class="clip" data-start="0" data-duration="{D}" data-track-index="0"><div class="tablebg"></div><div class="halo" id="nhalo"></div></div>
 
   <div id="night" class="clip" data-start="{night['start']}" data-duration="{night['end']-night['start']:.3f}" data-track-index="1">
@@ -1524,7 +1532,7 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
         sfx += [["whoosh-short", st["cam_at"] + 0.05, 0.08] for st in night["stations"][1:]]
         sfx += [["papier-pli", pv["fold_at"] - 0.05, 0.32], ["whoosh-cinematic", pv["fold_at"] - 0.1, 0.12]]
         for p in pin[1:]:
-            if p[1] in ("up", "right"):
+            if p[1] in ENTREES:
                 sfx.append(["papier-pose", p[0] + 0.12, 0.2])
         if tear:
             sfx.append(["papier-dechire", tear["at"] + 0.2, 0.34])
@@ -1544,6 +1552,10 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
                 sfx.append(["pop", st["pooled"].get("at", st["cam_at"] + 2.5) + 0.5, 0.16])
             if ty == "roc_curve":
                 sfx.append(["ping", st["auc"]["at"], 0.12])
+            if ty == "big_stat":
+                sfx.append(["ping", st["at"] + 0.9, 0.13])
+            if ty == "flow_chart" and st.get("stages"):
+                sfx.append(["pop", st["stages"][-1]["at"], 0.14])
             if ty == "diagnostic_grid" and st.get("sens"):
                 sfx.append(["ping", st["sens"]["at"], 0.12])
             if ty == "image_scan":

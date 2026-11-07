@@ -26,7 +26,8 @@ Règle : un élément apparaît au mot qui le nomme ; la caméra (`cam_at`) part
 ```
 `duration`, `audio`, `words_file` sont remplis par la chaîne. `night.end` = fin de la dernière phrase du problème + 0,25.
 `edition` (facultatif) force une édition de `serie/moteur/editions.json` ; sinon le moteur fait tourner les éditions
-(palette, sens de la feuille) d'un jour à l'autre : ne la fixe pas sans raison.
+(palette, papier des planches, style du mot-clé des sous-titres, façon dont les planches arrivent) d'un jour à
+l'autre : ne la fixe pas sans raison. Les planches de l'étude ne reprennent jamais exactement la suite de la veille.
 
 ## sentences
 
@@ -139,6 +140,18 @@ HR), "at": "<ancre>"}`. Le moteur dessine l'écart annoté et la figure de l'int
 - `image_scan` l'IA lit une image : `image` (fundus, xray, skin, mammo, ct), `title?`, `at`, `scan_at?`, `lock_at?`
   (au mot qui nomme ce qui est trouvé), `out_at?`, `found_label` (ex. « Signes de rétinopathie »), `result_label?`
   (ex. « Résultat en 1 minute »), `cam_at`. L'image est redessinée au trait (mention « schéma »).
+- `flow_chart` **le parcours des participants**, en entonnoir (comme le diagramme de flux de l'article) : `title?`,
+  `stages`: 2 à 5 × `{label (40 caractères au plus), n (effectif affiché, « 2 378 »), at, accent?}` (de l'effectif de
+  départ à celui qui est analysé ; la dernière étape passe à l'accent sauf si une autre porte `accent`),
+  `excluded?`: [`{after (index de l'étape après laquelle on sort), label (26 caractères au plus), n, at}`], `cam_at`.
+  Pour un essai, une cohorte ou un dépistage dont la source donne les effectifs de chaque étape.
+- `big_stat` **LE résultat, en grand** : `title?`, `value` (« 35,9 », « 6 sur 10 », 9 caractères au plus), `num?`,
+  `unit?` (« % » : un anneau se trace jusqu'à la valeur), `label` (ce que dit le chiffre, 90 caractères au plus),
+  `label_at?`, `compare?`: `{value, unit?, label, at}` (le groupe comparé : son anneau se trace à l'intérieur), `at`,
+  `cam_at`. Une fois par film au plus, pour le résultat qu'on doit retenir.
+- `timeline` **la chronologie de l'étude** : `title?`, `events`: 2 à 5 × `{when (« Mars 2023 », « 10 mois », 16
+  caractères au plus), label (60 au plus), at, accent?}`, `cam_at`. Pour une cohorte, un suivi, des inclusions sur
+  plusieurs années (chaque date doit être un fait).
 - `key_points` constats numérotés (revue, cohorte, limites) : `title?`, `points`: 2 à 4 × `{text (70 caractères au
   plus), at}`, `cam_at`.
 - `typo` phrase en grande typo : `text` (= une phrase de `sentences`, mot pour mot), `italic`, `cam_at`. Deux au plus :

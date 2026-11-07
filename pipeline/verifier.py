@@ -19,7 +19,7 @@ import build  # noqa: E402
 
 NUIT = set(build.HOOKS) | set(build.GAGS) | {"steps"}
 PAPIER = {"population_split", "face_to_face", "result_dots", "typo", "flow_door", "remaining_dots", "id_card", "two_groups", "result_bars", "ai_scan", "studies_stack", "metric", "key_points",
-          "result_strips", "forest_plot", "roc_curve", "diagnostic_grid", "survival_curves", "chat", "image_scan"}
+          "result_strips", "forest_plot", "roc_curve", "diagnostic_grid", "survival_curves", "chat", "image_scan"} | set(build.planches.TYPES)
 REQUIS = {
     "hook_number": ["header", "number", "caption", "caption_at", "cam_at"],
     "hook_question": ["header", "text", "italic", "cam_at"],
@@ -38,9 +38,10 @@ REQUIS = {
     "result_strips": ["title", "groups", "cam_at"], "forest_plot": ["studies", "pooled", "cam_at"], "roc_curve": ["auc", "cam_at"],
     "diagnostic_grid": ["total", "sick", "found", "at", "cam_at"], "survival_curves": ["times", "groups", "cam_at"],
     "chat": ["messages", "cam_at"], "image_scan": ["image", "at", "cam_at"],
+    "flow_chart": ["stages", "cam_at"], "big_stat": ["value", "label", "at", "cam_at"], "timeline": ["events", "cam_at"],
 }
 SANS_CHIFFRE = {"y", "people", "lit", "chairs", "occupied", "dot_value", "icon", "type", "words_file", "audio", "voice", "sfx", "duration", "lead",
-                "max", "lines", "null", "log", "from", "image", "modality", "tear", "visual", "edition", "italic", "roll"}
+                "max", "lines", "null", "log", "from", "image", "modality", "tear", "visual", "edition", "italic", "roll", "after"}
 # connecteurs et tournures de l'oral qui relient une phrase à la précédente (début de phrase, minuscules)
 LIAISONS = ("et ", "et,", "mais", "or ", "or,", "donc", "alors", "pourtant", "cependant", "toutefois", "en effet", "en revanche", "autrement dit",
             "concrètement", "résultat", "pour le savoir", "pour ", "ainsi", "puis", "ensuite", "enfin", "d'abord", "d'ailleurs", "par exemple",
@@ -143,6 +144,11 @@ def controle_accroche(sts, film, jour):
         av = fv["night"]["stations"]
         if av[0].get("type") == t:
             err.append(f"accroche « {t} » déjà utilisée la veille ({veille}) : choisir une autre accroche ({', '.join(x for x in build.HOOKS if x != t)})")
+        hier = [s.get("type") for s in fv.get("paper", {}).get("stations", [])]
+        auj = [s.get("type") for s in film.get("paper", {}).get("stations", [])]
+        if hier and auj == hier:
+            err.append(f"les planches de l'étude reprennent exactement la suite de la veille ({veille}) : {', '.join(auj)}. "
+                       "Varier au moins une planche (flow_chart, big_stat, timeline, result_strips, key_points…)")
         gv = next((s.get("type") for s in av if s.get("type", "").startswith("gag_")), None)
         g = next((s.get("type") for s in sts if s.get("type", "").startswith("gag_")), None)
         if g and g == gv:
@@ -333,6 +339,34 @@ def main():
                 for s in st.get("studies", []) + ([st["pooled"]] if st.get("pooled") else []):
                     if not float(s.get("low", 0)) <= float(s.get("value", 0)) <= float(s.get("high", 0)):
                         err.append(f"forest_plot : « {s.get('label')} » incohérent (low ≤ value ≤ high)")
+            if t == "flow_chart":
+                sg = st.get("stages", [])
+                if not 2 <= len(sg) <= 5:
+                    err.append("flow_chart : 2 à 5 étapes")
+                for x in sg:
+                    if len(x.get("label", "")) > 40:
+                        err.append(f"flow_chart : étiquette trop longue « {x.get('label')} » (40 caractères au plus)")
+                    if not re.search(r"\d", str(x.get("n", ""))):
+                        err.append(f"flow_chart : chaque étape a son effectif « n » (texte affiché, ex. « 2 378 »)")
+                for e in st.get("excluded", []):
+                    if not 0 <= int(e.get("after", -1)) < len(sg) - 1:
+                        err.append("flow_chart : excluded.after = l'index de l'étape après laquelle on sort (0 = entre la 1re et la 2e)")
+                    if len(e.get("label", "")) > 26:
+                        err.append(f"flow_chart : exclusion trop longue « {e.get('label')} » (26 caractères au plus)")
+            if t == "big_stat":
+                if len(str(st.get("value", ""))) > 9:
+                    err.append("big_stat : value de 9 caractères au plus (« 35,9 », « 6 sur 10 »)")
+                if len(st.get("label", "")) > 90:
+                    err.append("big_stat : label de 90 caractères au plus")
+                if st.get("compare") and not isinstance(st["compare"], dict):
+                    err.append("big_stat : compare = {value, unit?, label, at}")
+            if t == "timeline":
+                ev = st.get("events", [])
+                if not 2 <= len(ev) <= 5:
+                    err.append("timeline : 2 à 5 étapes")
+                for e in ev:
+                    if len(str(e.get("when", ""))) > 16 or len(e.get("label", "")) > 60:
+                        err.append(f"timeline : « when » 16 caractères au plus, « label » 60 au plus ({e.get('when')})")
             if t == "chat":
                 ms = st.get("messages", [])
                 if not 1 <= len(ms) <= 4:

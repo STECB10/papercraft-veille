@@ -270,3 +270,41 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 .folder{height:34px;border-radius:4px;background:var(--paper-lift);border:2px solid rgba(22,23,28,.35);box-shadow:0 10px 16px -10px rgba(22,23,28,.5)}
 .folder::before{content:"";position:absolute;left:18px;top:-12px;width:90px;height:12px;border-radius:4px 4px 0 0;background:var(--paper-2);border:2px solid rgba(22,23,28,.35);border-bottom:none}
 .hwrap>*{position:absolute}
+
+/* ------------------------------------------------------------------ éditions : papier des planches et mot-clé des sous-titres */
+.tex-lignes .plate:not(.verso)>.pground{background:repeating-linear-gradient(180deg,transparent 0 63px,rgba(93,104,255,.10) 63px 65px),var(--blank)}
+.tex-points .plate:not(.verso)>.pground{background:radial-gradient(circle,rgba(22,23,28,.13) 1.6px,transparent 2.2px) 0 0/36px 36px,var(--blank)}
+.tex-millimetre .plate:not(.verso)>.pground{background:
+  linear-gradient(rgba(93,104,255,.10) 1.5px,transparent 1.5px) 0 0/90px 90px,linear-gradient(90deg,rgba(93,104,255,.10) 1.5px,transparent 1.5px) 0 0/90px 90px,
+  linear-gradient(rgba(93,104,255,.045) 1px,transparent 1px) 0 0/18px 18px,linear-gradient(90deg,rgba(93,104,255,.045) 1px,transparent 1px) 0 0/18px 18px,var(--blank)}
+.tex-marge .plate:not(.verso)>.pground{background:linear-gradient(90deg,transparent 0 44px,rgba(93,104,255,.30) 44px 46px,transparent 46px),
+  repeating-linear-gradient(180deg,transparent 0 71px,rgba(22,23,28,.06) 71px 72px),var(--blank)}
+.tex-quadrille .plate:not(.verso)>.pground{background:linear-gradient(rgba(22,23,28,.055) 1px,transparent 1px) 0 0/45px 45px,
+  linear-gradient(90deg,rgba(22,23,28,.055) 1px,transparent 1px) 0 0/45px 45px,var(--blank)}
+/* feutre : le mot passe sous un trait de surligneur ; souligné : un trait épais sous le mot (texte à l'encre) */
+.kw-feutre .chunk .kw .bx{top:.42em;bottom:.04em;left:-.08em;right:-.08em;border-radius:3px;background:rgba(93,104,255,.42)}
+.kw-feutre .chunk .kw .tx{color:var(--ink);text-shadow:0 2px 16px rgba(255,255,255,.95)}
+.kw-souligne .chunk .kw .bx{top:auto;bottom:-.06em;height:.14em;left:0;right:0;border-radius:6px;background:var(--carbon)}
+.kw-souligne .chunk .kw .tx{color:var(--ink);text-shadow:0 2px 16px rgba(255,255,255,.95)}
+
+/* ------------------------------------------------------------------ planches ajoutées (serie/moteur/planches.py) */
+.fcard{background:var(--paper);border:2px solid rgba(22,23,28,.10);border-radius:16px;box-shadow:0 26px 44px -30px rgba(22,23,28,.6),0 1px 0 rgba(22,23,28,.06)}
+.fcard.acc{background:var(--carbon)}
+.fnum{font:400 72px/1 'Bodoni Moda';letter-spacing:-.02em;color:var(--ink);text-align:center;white-space:nowrap;font-variant-numeric:lining-nums}
+.fnum.acc{color:var(--paper-hi)}
+.flab{font:600 32px/1.15 'Schibsted Grotesk';color:var(--ink-dim);text-align:center;white-space:nowrap}
+.flab.acc{color:var(--paper-hi)}
+.fexcl{font:500 27px/1.3 'IBM Plex Mono';letter-spacing:.04em;text-transform:uppercase;color:var(--ink-dim);white-space:nowrap}
+.fexcl b{font:italic 400 44px/1 'Bodoni Moda';letter-spacing:0;text-transform:none;color:var(--ink);margin-right:8px}
+.bstat{font:400 200px/1 'Bodoni Moda';letter-spacing:-.03em;color:var(--carbon-deep);text-align:center;white-space:nowrap;font-variant-numeric:lining-nums}
+.bstat .unit{font-size:.42em;letter-spacing:0;margin-left:.04em}
+.blab{font:600 44px/1.2 'Schibsted Grotesk';letter-spacing:-.01em;color:var(--ink);text-align:center}
+.bcmp{font:500 28px/1.4 'IBM Plex Mono';letter-spacing:.06em;text-transform:uppercase;color:var(--ink-dim);text-align:center;white-space:nowrap}
+.bcmp b{font:400 48px/1 'Bodoni Moda';letter-spacing:-.01em;text-transform:none;color:var(--ink);margin:0 6px}
+.tlrail{width:4px;border-radius:2px;background:rgba(22,23,28,.14)}
+.tlfill{width:6px;border-radius:3px;background:var(--carbon)}
+.tldot{width:38px;height:38px;border-radius:50%;background:var(--paper-hi);border:6px solid var(--ink)}
+.tldot.acc{border-color:var(--carbon);background:var(--carbon)}
+.tlwhen{font:400 72px/1 'Bodoni Moda';letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.tlwhen.acc{color:var(--carbon-deep)}
+.tllab{font:500 38px/1.2 'Schibsted Grotesk';color:var(--ink-dim)}

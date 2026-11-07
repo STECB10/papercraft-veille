@@ -46,7 +46,7 @@ for (const [i, [nom, t]] of moments.entries()) {
       }
       return r;
     };
-    const TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.chunk';
+    const TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.chunk,.fnum,.flab,.fexcl,.bstat,.blab,.bcmp,.tlwhen,.tllab';
     const OBJ = '.ico,.bar,.strip,.sil,.pdot,.dd,.msheet,.spot,.sq,.cipt,.wbar,.pers';
     // la table est inclinée (boîtes gonflées) et la déchirure copie volontairement la planche : on les laisse de côté
     const ok = e => !e.closest('.tearh') && !e.closest('#night');

@@ -72,7 +72,7 @@
       }
     });
     // garde-fou : tout texte d'une feuille ou d'une planche qui dépasserait le bord est réduit jusqu'à tenir (60 % au plus)
-    var TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit';
+    var TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit,.fnum,.flab,.fexcl,.bstat,.blab,.bcmp,.tlwhen,.tllab';
     function pos(el, stop) { var x = 0; for (var e = el; e && e !== stop; e = e.offsetParent) x += e.offsetLeft; return x; }
     [['#nsheet', 780], ['.plate', 1080]].forEach(function (B) {
       q(B[0]).forEach(function (box) {
@@ -317,8 +317,19 @@
           if (prev) tl.set(prev, { autoAlpha: 0 }, t + 0.02);
           return;
         }
-        var from = mode === 'up' ? { x: 0, y: 1520, rotation: 4 } : { x: 1260, y: 50, rotation: -5 };
-        tl.fromTo(el, from, { x: 0, y: 0, rotation: 0, duration: 0.85, ease: 'power3.out', immediateRender: false }, t);
+        // la nouvelle feuille arrive selon l'édition : du bas, de la droite, de la gauche, d'en haut (lâchée),
+        // en tournant comme une page (charnière à gauche) ou en basculant depuis le haut ; jamais en fondu
+        var FROM = {
+          up: { x: 0, y: 1520, rotation: 4 }, right: { x: 1260, y: 50, rotation: -5 }, left: { x: -1260, y: 40, rotation: 5 },
+          drop: { x: 30, y: -1500, rotation: -6 },
+          turn: { rotationY: -88, transformOrigin: '0% 50%', transformPerspective: 2200, x: 0, y: 0, rotation: 0 },
+          flip: { rotationX: 88, transformOrigin: '50% 0%', transformPerspective: 2400, x: 0, y: 0, rotation: 0 }
+        };
+        var from = FROM[mode] || FROM.up;
+        var to = { x: 0, y: 0, rotation: 0, duration: 0.85, ease: 'power3.out', immediateRender: false };
+        if (mode === 'turn') { to.rotationY = 0; to.duration = 0.95; to.ease = 'power2.out'; }
+        if (mode === 'flip') { to.rotationX = 0; to.duration = 0.9; to.ease = 'power3.out'; }
+        tl.fromTo(el, from, to, t);
         if (prev) {
           var dim = prev.querySelector('.pdim');
           tl.fromTo(prev, { scale: 1 }, { scale: 0.93, duration: 0.85, ease: 'power2.out', immediateRender: false }, t);

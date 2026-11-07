@@ -160,6 +160,9 @@ rejoue toutes (données fictives) avec une voix simulée.
 | Études regroupées [`studies_stack`] | une petite feuille imprimée par étude (par lots au-delà de 40), lâchée sur la table | feuilles qui tombent et se posent |
 | Conversation [`chat`] | l'échange patient ↔ IA et la note donnée par les évaluateurs | `conversation`, `annoter` |
 | Imagerie [`image_scan`] | l'image redessinée au trait (fond d'œil, radio du thorax, peau, mammographie, coupe de scanner), balayée, les signes verrouillés, le délai de résultat | `tracer`, `balayer` |
+| Parcours des participants [`flow_chart`] | Fig. : l'entonnoir des effectifs, une carte par étape (largeur selon l'effectif), les exclusions sur le côté | `déplier`, `tracer`, roulement |
+| Le résultat en grand [`big_stat`] | le chiffre à retenir seul, en Bodoni accent ; pour un %, un anneau qui se trace, l'anneau du groupe comparé dedans | roulement, `tracer` |
+| Chronologie [`timeline`] | une ligne qui descend, une date par étape (inclusions, suivi, analyse) | `tracer`, points qui se posent |
 | Constats [`key_points`] | 2 à 4 constats numérotés en Bodoni, qui remplissent la hauteur | lignes qui s'impriment |
 | Nuance [`typo`] | la phrase de limite ou la phrase à retenir, seule, en grande typo | `déchirer` avant (une fois), texte qui monte |
 | Source | auteur et al., revue en Bodoni italique, mois, année, DOI | s'imprime |
@@ -180,8 +183,10 @@ texte qui déborderait. Le contrôle d'avant rendu (`controle_page.mjs`) refuse 
 
 ## Les éditions
 
-Une édition = l'accent, ses nuances, la teinte du papier et de la table, le sens dans lequel la feuille est posée et
-l'alignement de l'accroche (à gauche ou centrée). Elles tournent d'un jour à l'autre, dans l'ordre de
+Une édition = l'accent, ses nuances, la teinte du papier et de la table, le sens dans lequel la feuille est posée,
+l'alignement de l'accroche (à gauche ou centrée), le papier des planches de l'étude (lignes, points, millimétré, marge,
+quadrillé, toujours très léger), le style du mot-clé des sous-titres (boîte, feutre, souligné) et la façon dont une
+nouvelle planche arrive (du bas, de côté, lâchée d'en haut, tournée comme une page, basculée depuis le haut). Elles tournent d'un jour à l'autre, dans l'ordre de
 `serie/moteur/editions.json` : carbone (#5D68FF), ocre (#B86E08), sarcelle (#0F8A86), framboise (#C8366C), pétrole
 (#1D6FA5). Dans un film, la règle ne change pas : un seul accent, pour le groupe IA, la boîte du mot-clé, l'écart et le
 verso de la nuance ; le groupe témoin reste à l'encre. Aucune édition rouge ou verte (pas de « danger », pas de
@@ -203,10 +208,10 @@ résultats, et le geste qui montre ce que l'IA lit.
 
 | Type d'étude | Méthode | Résultats |
 |---|---|---|
-| Essai tiré au sort | Tirage au sort, Deux groupes | Résultat en barres (valeur continue) ou en points (proportion), Intervalle, Mesures pour un résultat secondaire |
+| Essai tiré au sort | Tirage au sort ou Parcours des participants, Deux groupes | Résultat en barres (valeur continue) ou en points (proportion), Intervalle, Le résultat en grand, Mesures pour un résultat secondaire |
 | Précision diagnostique | Ce que fait l'IA (avec la référence comparée) | Grille diagnostique, Mesures (sensibilité, spécificité) |
 | Modèle prédictif | Ce que fait l'IA (les données qui entrent) | Courbe ROC si une AUC est donnée, Mesures, Constats (facteurs qui comptent) |
-| Cohorte, survie | Parcours, L'étude en bref (durée de suivi) | Courbes de suivi si la source donne des valeurs dans le temps, sinon Intervalle sur le rapport de risque |
+| Cohorte, survie | Parcours, L'étude en bref (durée de suivi), Chronologie, Parcours des participants | Courbes de suivi si la source donne des valeurs dans le temps, sinon Intervalle sur le rapport de risque |
 | Méta-analyse | Études regroupées | Forest plot si la source donne l'effet de chaque étude, sinon Intervalle sur l'effet regroupé ; Constats |
 | Revue de littérature | Études regroupées | Constats |
 | IA conversationnelle | Conversation | Mesures (notes des évaluateurs), Résultat en barres si deux groupes |
