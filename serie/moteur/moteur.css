@@ -329,3 +329,24 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 /* fil de progression */
 #prog{z-index:10;pointer-events:none}
 .progb{position:absolute;left:0;top:0;width:100%;height:5px;background:var(--carbon);opacity:.85}
+
+/* ------------------------------------------------------------------ couverture (première image du film) */
+#cover{z-index:7}
+#coverin{position:absolute;inset:0;box-shadow:0 40px 90px rgba(22,23,28,.35)}
+#coverin>*{position:absolute}
+.cvbg{inset:0;background:radial-gradient(130% 90% at 50% 30%,var(--paper-hi) 0%,var(--paper) 70%,var(--paper-2) 100%)}
+.cvfold{right:0;top:0;width:110px;height:110px;background:linear-gradient(225deg,var(--table) 50%,var(--paper-3) 50%)}
+.cvk{font:500 26px/1.3 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim)}
+.cvrule{height:2px;background:rgba(22,23,28,.3)}
+.cvnum{font:400 330px/.95 'Bodoni Moda';letter-spacing:-.035em;color:var(--carbon-deep);text-align:center;white-space:nowrap;font-variant-numeric:lining-nums}
+.cvnum.acc{color:var(--carbon-deep)}
+.cvnum .unit{font-size:.42em;letter-spacing:0;margin-left:.04em}
+.cvunit{font:italic 400 88px/1.1 'Bodoni Moda';color:var(--ink);text-align:center;white-space:nowrap}
+.cvcap{font:600 54px/1.2 'Schibsted Grotesk';letter-spacing:-.015em;color:var(--ink);text-align:center}
+.cvq{font:400 110px/1.06 'Bodoni Moda';letter-spacing:-.025em;color:var(--ink);text-align:center;white-space:nowrap}
+.cvit{font-style:italic;color:var(--carbon-deep);text-decoration:underline;text-decoration-color:var(--carbon);text-decoration-thickness:.07em;text-underline-offset:.12em}
+.cvhl{background:linear-gradient(transparent 52%,rgba(93,104,255,.32) 52%,rgba(93,104,255,.32) 94%,transparent 94%)}
+.cvlab{font:600 44px/1.2 'Schibsted Grotesk';color:var(--ink);text-align:center;white-space:nowrap}
+.cvsep{width:3px;background:repeating-linear-gradient(180deg,rgba(22,23,28,.45) 0 10px,transparent 10px 20px)}
+.cvglyph{fill:none;stroke:var(--ink);stroke-width:1;stroke-linejoin:round;stroke-linecap:round}
+.cvglyph .g3{stroke:var(--carbon)}

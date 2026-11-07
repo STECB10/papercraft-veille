@@ -55,7 +55,7 @@ def main():
     subprocess.run([sys.executable, str(MOTEUR / "build.py"), str(out)], check=True)
     res = json.loads((out / "film.resolu.json").read_text(encoding="utf-8"))
     # moments clés : chaque planche une fois posée (juste avant la suivante), le pivot, la déchirure, la fin
-    temps = []
+    temps = [("couverture", 0.0)]
     sts = res["night"]["stations"]
     for i, st in enumerate(sts):
         nxt = sts[i + 1]["cam_at"] if i + 1 < len(sts) else res["night"]["end"]

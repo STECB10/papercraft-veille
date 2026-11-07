@@ -78,6 +78,10 @@ Choisir : un chiffre frappant et parlant → `hook_number` ; une question qui co
 une IA qui lit une image, un tracé ou un organe → `hook_image` ; une comparaison → `hook_versus` ; un titre qui dit
 tout ou une étude sans chiffre d'accroche → `hook_headline`. Varie aussi d'un jour à l'autre.
 
+La **couverture** (image 0 du film, celle du fil LinkedIn) est tirée automatiquement de l'accroche : soigne donc le
+chiffre et la légende, la question, le titre ou le face-à-face, ils s'afficheront en très grand. `"couverture": false`
+à la racine la retire (à éviter).
+
 **2. Un moment muet (facultatif, jamais le même que la veille)** :
 - `gag_clock` (horloge qui tourne) : `label` (ex. « des semaines »), `cam_at`.
 - `gag_calendar` (page de calendrier dont les jours se barrent) : `label` (ex. « des mois d'attente »), `cam_at`.

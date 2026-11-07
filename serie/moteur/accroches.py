@@ -468,3 +468,111 @@ def gag_station(st):
                      f'data-t="{ta + 0.3 + i * 0.2:.2f}"></div>')
         h.append(f'<div class="note" style="left:0;width:780px;text-align:center;top:{y0 + 430}px" data-a="rise" data-t="{ta + 1.0:.2f}" data-fit="1" data-fmin="34">{_esc(st["label"])}</div>')
     return "\n".join(h)
+
+
+# --------------------------------------------------------------------------------------------- la couverture (première image)
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+
+
+def cover(film, edition, date, t_out):
+    """La première image du film : une couverture plein cadre tirée de l'accroche (c'est elle que LinkedIn montre dans
+    le fil avant la lecture). Immobile dès l'image 0, elle se soulève quand la voix commence et révèle la table.
+    Rien n'y est inventé : chiffre, question, face-à-face ou titre viennent de l'accroche, déjà vérifiée."""
+    h0 = film["night"]["stations"][0]
+    t = h0["type"]
+    W_, X, CWc = 1080, 90, 900
+    g = []
+    jour = f"{date.day} {MOIS[date.month - 1]} {date.year}" if date else ""
+    g.append(f'<div class="cvk" style="left:{X}px;top:70px;width:{CWc}px">Papercraft.AI · l\'étude du jour</div>')
+    g.append(f'<div class="cvk" style="left:{X}px;top:70px;width:{CWc}px;text-align:right">{_esc(jour)}</div>')
+    g.append(f'<div class="cvrule" style="left:{X}px;top:118px;width:{CWc}px"></div>')
+    top, bot = 190, 990
+    blocs = []          # (hauteur, html à placer à y) : on centre l'ensemble entre top et bot
+    if t == "hook_number":
+        unit = h0.get("unit", "") or ""
+        inline = unit.strip() in UNITES_COURTES or len(unit.strip()) <= 2
+        px = 330
+        while px > 140:
+            wid = mesure.largeur(str(h0["number"]), "bodoni400", px, -0.035) + (mesure.largeur(unit, "bodoni400", px * 0.42) + 0.06 * px if inline and unit else 0)
+            if wid <= CWc - 10:
+                break
+            px -= 6
+        u = f'<span class="unit">{_esc(unit)}</span>' if inline and unit else ""
+        blocs.append((px * 0.95, lambda y, px=px, u=u: f'<div class="cvnum" style="left:{X}px;top:{y:.0f}px;width:{CWc}px;font-size:{px}px" data-fit="1" data-fmin="120">{_esc(h0["number"])}{u}</div>'))
+        if unit and not inline:
+            upx, _ = mesure.ajuster(unit, "bodoni400i", CWc, 92, 50, max_lignes=1)
+            blocs.append((upx * 1.15, lambda y, upx=upx: f'<div class="cvunit" style="left:{X}px;top:{y:.0f}px;width:{CWc}px;font-size:{upx}px" data-fit="1" data-fmin="44">{_esc(unit)}</div>'))
+        cpx, cls = mesure.ajuster(h0.get("caption", ""), "schib600", CWc, 56, 36, max_lignes=3, interligne=1.2)
+        blocs.append((24, lambda y: ""))
+        blocs.append((len(cls) * cpx * 1.2, lambda y, cpx=cpx, n=len(cls): f'<div class="cvcap" style="left:{X}px;top:{y:.0f}px;width:{CWc}px;font-size:{cpx}px" data-fit="1" data-fh="{n * cpx * 1.2 + 6:.0f}" data-fmin="30">{_esc(h0.get("caption", ""))}</div>'))
+    elif t in ("hook_question", "hook_image", "hook_headline"):
+        if t == "hook_question":
+            txt, mark = h0.get("text") or film["sentences"][0]["text"], (h0.get("italic") or "")
+        elif t == "hook_image":
+            txt, mark = h0.get("title", ""), ""
+        else:
+            txt, mark = h0.get("headline", ""), (h0.get("mark") or "")
+        if t == "hook_image":   # le dessin de l'étude, au trait, au-dessus du titre
+            name = h0.get("image", "xray")
+            if name in B.IMG:
+                art = (f'<svg class="lay" style="left:{W_ / 2 - 170:.0f}px;top:{{y:.0f}}px;width:340px;height:340px" viewBox="0 0 360 360">'
+                       + B.image_svg(name) + '</svg>')
+                blocs.append((380, lambda y, art=art: art.replace("{y:.0f}", f"{y:.0f}")))
+            elif name == "ecg":
+                d = B.ecg_path(CWc, 220, 4)
+                blocs.append((280, lambda y, d=d: f'<svg class="lay" style="left:{X}px;top:{y:.0f}px;width:{CWc}px;height:220px" viewBox="0 0 {CWc} 220"><path d="{d}" stroke="var(--ink)" stroke-width="6" fill="none"/></svg>'))
+            else:
+                blocs.append((320, lambda y, name=name: f'<div class="ico" style="left:{W_ / 2 - 140:.0f}px;top:{y:.0f}px;width:280px;height:280px;color:var(--ink)">{B.icon(name, sw=2.2)}</div>'))
+        room = bot - top - 40 - sum(b[0] for b in blocs)
+        px, ls = mesure.ajuster(txt, "bodoni400", CWc, 124, 60, max_lignes=7, interligne=1.06, boite_h=room)
+        mk = [B.norm(w) for w in mark.split()]
+        toks = txt.split()
+        dn = [B.norm(w) for w in toks]
+        j0 = next((j for j in range(len(dn) - len(mk) + 1) if mk and dn[j:j + len(mk)] == mk), None)
+        hl = set(range(j0, j0 + len(mk))) if j0 is not None else set()
+        spans, wi = [], 0
+        for line in ls:
+            for tok in line.split():
+                if wi in hl:
+                    cls_ = "cvit" if t == "hook_question" else "cvhl"
+                    spans.append(f'<span class="{cls_}">{_esc(tok)}</span>')
+                else:
+                    spans.append(_esc(tok))
+                wi += 1
+            spans.append("<br>")
+        html = " ".join(spans[:-1]).replace(" <br> ", "<br>")
+        blocs.append((len(ls) * px * 1.06, lambda y, px=px, html=html, n=len(ls): f'<div class="cvq" style="left:{X}px;top:{y:.0f}px;width:{CWc}px;font-size:{px}px" data-fit="1" data-fh="{n * px * 1.06 + 8:.0f}" data-fmin="50">{html}</div>'))
+    elif t == "hook_versus":
+        L, R = h0["left"], h0["right"]
+        cw, gap = 420, 60
+        lpx = 44
+        blocs.append((lpx * 1.3, lambda y: "".join(f'<div class="cvlab" style="left:{X + k * (cw + gap)}px;top:{y:.0f}px;width:{cw}px" data-fit="1" data-fmin="28">{_esc(s.get("label", ""))}</div>' for k, s in enumerate((L, R)))))
+        def nums(y):
+            out = []
+            for k, s in enumerate((L, R)):
+                x = X + k * (cw + gap)
+                if s.get("number") not in (None, ""):
+                    u = s.get("unit", "") or ""
+                    out.append(f'<div class="cvnum{" acc" if k else ""}" style="left:{x}px;top:{y:.0f}px;width:{cw}px;font-size:230px" data-fit="1" data-fmin="100">{_esc(s["number"])}<span class="unit">{_esc(u)}</span></div>')
+                else:
+                    out.append(f'<div class="cvnum acc" style="left:{x}px;top:{y:.0f}px;width:{cw}px;font-size:250px;font-style:italic">?</div>')
+            out.append(f'<div class="cvsep" style="left:{X + cw + gap / 2 - 2:.0f}px;top:{y - 70:.0f}px;height:330px"></div>')
+            return "".join(out)
+        blocs.append((240, nums))
+        if h0.get("caption"):
+            cpx, cls = mesure.ajuster(h0["caption"], "schib600", CWc, 50, 34, max_lignes=3, interligne=1.2)
+            blocs.append((40, lambda y: ""))
+            blocs.append((len(cls) * cpx * 1.2, lambda y, cpx=cpx, n=len(cls): f'<div class="cvcap" style="left:{X}px;top:{y:.0f}px;width:{CWc}px;font-size:{cpx}px" data-fit="1" data-fh="{n * cpx * 1.2 + 6:.0f}" data-fmin="30">{_esc(h0["caption"])}</div>'))
+    tot = sum(b[0] for b in blocs)
+    y = top + max(0, (bot - top - tot) / 2)
+    for hgt, fn in blocs:
+        g.append(fn(y))
+        y += hgt
+    if h0.get("header"):
+        g.append(f'<div class="cvrule" style="left:{X}px;top:1040px;width:{CWc}px"></div>')
+        g.append(f'<div class="cvk" style="left:{X}px;top:1062px;width:{CWc}px;white-space:nowrap" data-fit="1" data-fmin="20">{_esc(h0["header"])}</div>')
+    glyph = ('<svg class="cvglyph" viewBox="0 0 20 26" style="left:{x}px;top:1110px;width:44px;height:57px"><path d="M1.5 1.5H13L18.5 7V24.5H1.5Z"/>'
+             '<path d="M13 1.5V7H18.5"/><path class="g3" d="M1.5 24.5L18.5 7"/></svg>').format(x=X + CWc - 44)
+    g.append(glyph)
+    return (f'<div id="cover" class="clip" data-start="0" data-duration="{t_out + 0.9:.2f}" data-track-index="7">'
+            f'<div id="coverin"><div class="cvbg"></div><div class="cvfold"></div>' + "\n".join(x for x in g if x) + '</div></div>')

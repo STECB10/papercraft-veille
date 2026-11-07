@@ -74,7 +74,7 @@
     // garde-fou : tout texte d'une feuille ou d'une planche qui dépasserait le bord est réduit jusqu'à tenir (60 % au plus)
     var TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit,.tilev,.fnum,.flab,.fexcl,.bstat,.blab,.bcmp,.tlwhen,.tllab';
     function pos(el, stop) { var x = 0; for (var e = el; e && e !== stop; e = e.offsetParent) x += e.offsetLeft; return x; }
-    [['#nsheet', 780], ['.plate', 1080]].forEach(function (B) {
+    [['#nsheet', 780], ['.plate', 1080], ['#coverin', 1080]].forEach(function (B) {
       q(B[0]).forEach(function (box) {
         q(TXT, box).forEach(function (el) {
           if (el.closest('.tearh') || /\brot/.test(el.className) || (el.parentElement && el.parentElement.closest(TXT))) return;
@@ -443,6 +443,15 @@
           tl.to(line, { scaleX: 1, duration: 0.5, ease: 'power3.inOut', immediateRender: false }, num(last, 'data-t', 0));
         }
       });
+    });
+
+    // ---------------------------------------------------------------- couverture : immobile dès l'image 0, puis elle se soulève (feuille qu'on retire)
+    bloc('couverture', function () {
+      var c = document.getElementById('coverin');
+      if (!c) return;
+      var t = typeof F.cover_out === 'number' ? F.cover_out : 0.5;
+      gsap.set(c, { y: 0, rotation: 0, transformOrigin: '20% 100%' });
+      tl.to(c, { y: -1550, rotation: -6, duration: 0.7, ease: 'power3.in', immediateRender: false }, t);
     });
 
     // ---------------------------------------------------------------- fil de progression en haut du cadre (on sait où l'on en est)

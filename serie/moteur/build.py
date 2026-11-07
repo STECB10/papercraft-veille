@@ -1499,6 +1499,22 @@ def build(project):
                "pivot": {"start": pv["start"], "fold_at": pv["fold_at"]},
                "end": {"start": en["start"], "fold_at": en["fold_at"], "click_at": en["click_at"], "button_at": en["button_at"]}}
 
+    # la couverture : première image du film (LinkedIn la montre dans le fil), se soulève quand la voix commence
+    lead = float(film.get("lead", 0) or 0)
+    cover_out = round(max(0.45, lead - 0.3), 2)
+    cover_html = ""
+    if film.get("couverture", True) and night["stations"] and night["stations"][0]["type"] in HOOKS:
+        import datetime
+        try:
+            dte = datetime.date.fromisoformat(proj.name[:10])
+        except ValueError:
+            try:
+                dte = datetime.date.fromisoformat(str(film.get("id", ""))[:10])
+            except ValueError:
+                dte = None
+        cover_html = accroches.cover(film, EDITION, dte, cover_out)
+    runtime["cover_out"] = cover_out
+
     css = (HERE / "moteur.css").read_text(encoding="utf-8")
     js = (HERE / "moteur.js").read_text(encoding="utf-8")
     check_svg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
@@ -1561,6 +1577,8 @@ def build(project):
     <div class="streak" id="pvstreak"></div>
   </div>
 
+  {cover_html}
+
   <div id="subs" class="clip" data-start="0" data-duration="{D}" data-track-index="8">
 {subs}
   </div>
@@ -1583,6 +1601,8 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
     # compte, un « pop » pour l'écart ; rien sur chaque élément qui apparaît. [nom, seconde, volume]
     if film.get("sfx", True):
         sfx = [["impact-bass-1", night["stations"][0]["cam_at"], 0.24]]
+        if cover_html:
+            sfx.append(["whoosh-short", cover_out + 0.05, 0.1])     # la couverture se soulève
         for st in night["stations"]:
             if st["type"] == "hook_number" and accroches.visual_kind(st) in ("grid", "people", "icon"):
                 sfx.append(["pop", st.get("lit_at", st.get("caption_at", st["cam_at"] + 2.3) + 0.6), 0.16])

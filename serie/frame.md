@@ -181,6 +181,14 @@ chaque texte avec les chasses réelles des polices (`serie/moteur/mesure.py`) : 
 grande taille qui tient dans la feuille, chaque bloc est posé sous le précédent, et `moteur.js` réduit encore tout
 texte qui déborderait. Le contrôle d'avant rendu (`controle_page.mjs`) refuse un texte coupé ou qui sort de sa feuille.
 
+## La couverture (première image)
+
+L'image 0 est une couverture plein cadre, immobile : c'est elle que LinkedIn montre dans le fil avant la lecture. Le
+moteur la tire seul de l'accroche (le chiffre et sa légende, la question avec son mot clé souligné, le face-à-face, le
+titre surligné, ou le dessin de l'étude et son titre), avec « Papercraft.AI · l'étude du jour », la date et l'en-tête
+de l'étude. Quand la voix commence, elle se soulève comme une feuille qu'on retire et révèle la table. Rien n'y est
+écrit qui ne soit déjà dans l'accroche.
+
 ## Les éditions
 
 Une édition = l'accent, ses nuances, la teinte du papier et de la table, le sens dans lequel la feuille est posée,
