@@ -1,0 +1,7 @@
+Un algorithme a prédit les réinfections au Covid à partir de l'immunité du nez et des lymphocytes T.
+
+Cette cohorte prospective chinoise a suivi 1 156 adultes pendant 10 mois (médiane). Un modèle d'apprentissage automatique a combiné des données cliniques et immunitaires pour prédire une réinfection avec symptômes. Son AUC est de 0,835 en validation interne et de 0,996 dans une cohorte externe, mais les deux cohortes viennent de la même province.
+
+Source : Ran et al., Emerging Microbes & Infections, octobre 2026. https://doi.org/10.1080/22221751.2026.2746253
+
+#IA #Santé #Covid #MachineLearning

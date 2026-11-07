@@ -1,0 +1,335 @@
+{
+ "id": "2026-11-07",
+ "sentences": [
+  {
+   "text": "Votre immunité contre le Covid peut-elle annoncer une réinfection ?",
+   "box": "immunité",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Le Covid est devenu endémique, et les réinfections touchent surtout les personnes fragiles.",
+   "box": "fragiles.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Dans cette étude, onze virgule un pour cent des adultes suivis ont été réinfectés.",
+   "display": "Dans cette étude, 11,1 % des adultes suivis ont été réinfectés.",
+   "box": "réinfectés.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Pour cibler la prévention, il faudrait savoir qui est le plus à risque.",
+   "box": "risque.",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Or la protection repose sur plusieurs défenses : les anticorps du sang, ceux du nez et les lymphocytes T.",
+   "box": "défenses",
+   "peak": "plusieurs défenses",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Une équipe chinoise a donc confié ces mesures à un algorithme d'apprentissage automatique.",
+   "box": "algorithme",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Cet algorithme peut-il prédire qui sera réinfecté ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Il s'agit d'une cohorte prospective, menée à Wuxi et Nantong, en Chine.",
+   "box": "cohorte",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Mille cent cinquante-six adultes ont été suivis dix mois, en médiane, pour repérer les réinfections avec symptômes.",
+   "display": "1 156 adultes ont été suivis 10 mois, en médiane, pour repérer les réinfections avec symptômes.",
+   "box": "adultes",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Dix-huit données entrent dans l'algorithme, les unes cliniques, les autres immunitaires.",
+   "display": "18 données entrent dans l'algorithme, les unes cliniques, les autres immunitaires.",
+   "box": "données",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Il en retient deux : les anticorps du nez et un lymphocyte T.",
+   "box": "deux",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Il en tire un risque de réinfection pour chaque personne.",
+   "box": "risque",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Ils l'ont d'abord entraîné sur quatre cents personnes de Wuxi, puis vérifié sur cent soixante-dix autres.",
+   "display": "Ils l'ont d'abord entraîné sur 400 personnes de Wuxi, puis vérifié sur 170 autres.",
+   "box": "entraîné",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Enfin, ils l'ont éprouvé sur cinq cent quatre-vingt-six personnes de Nantong, une autre ville.",
+   "display": "Enfin, ils l'ont éprouvé sur 586 personnes de Nantong, une autre ville.",
+   "box": "éprouvé",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "En vérification interne, l'aire sous la courbe atteint zéro virgule huit cent trente-cinq.",
+   "display": "En vérification interne, l'aire sous la courbe atteint 0,835.",
+   "box": "vérification",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Autrement dit, le modèle distingue assez bien les réinfectés des autres.",
+   "box": "distingue",
+   "peak": "assez bien",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "À Nantong, l'aire sous la courbe monte à zéro virgule neuf cent quatre-vingt-seize.",
+   "display": "À Nantong, l'aire sous la courbe monte à 0,996.",
+   "box": "Nantong,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "La sensibilité atteint cent pour cent, la spécificité quatre-vingt-dix-sept virgule un pour cent.",
+   "display": "La sensibilité atteint 100 %, la spécificité 97,1 %.",
+   "box": "sensibilité",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Cette étude montre une bonne prédiction, pas une réduction des réinfections.",
+   "box": "prédiction,",
+   "peak": "bonne prédiction",
+   "pause_apres": 0.5
+  },
+  {
+   "text": "Mais les deux cohortes viennent de la même province : il faut confirmer ces résultats ailleurs.",
+   "mode": "type",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Retenez que l'immunité du nez compte : plus elle est forte, moins le risque prédit est élevé.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 32.61,
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0.8,
+    "header": "Cohorte prospective · Chine · 2024–2025",
+    "number": "11,1",
+    "unit": "%",
+    "caption": "des adultes suivis ont été réinfectés",
+    "caption_at": 13.1,
+    "people": 5,
+    "lit": 2,
+    "lit_at": 11.51,
+    "footnote": "Réinfection avec symptômes · 10 mois de suivi",
+    "y": 0
+   },
+   {
+    "type": "steps",
+    "cam_at": 16.06,
+    "mark_at": 19.22,
+    "title": "Trois défenses à mesurer",
+    "steps": [
+     {
+      "icon": "doc",
+      "label": "01 · Anticorps du sang",
+      "at": 23.66,
+      "_y": 1550
+     },
+     {
+      "icon": "user",
+      "label": "02 · Anticorps du nez",
+      "at": 25.28,
+      "_y": 1880
+     },
+     {
+      "icon": "heart",
+      "label": "03 · Lymphocytes T",
+      "at": 26.04,
+      "_y": 2210
+     }
+    ],
+    "y": 1380
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Cet algorithme peut-il prédire qui sera réinfecté ?",
+  "italic": "prédire",
+  "fold_at": 38.4,
+  "start": 32.61,
+  "end": 39.449999999999996
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": 38.0,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Cohorte prospective",
+      "at": 38.94
+     },
+     {
+      "label": "Lieu",
+      "value": "Wuxi et Nantong, Chine",
+      "at": 40.8
+     },
+     {
+      "label": "Participants",
+      "value": "1 156 adultes",
+      "at": 44.72
+     },
+     {
+      "label": "Suivi",
+      "value": "10 mois (médiane)",
+      "at": 46.04
+     },
+     {
+      "label": "Critère",
+      "value": "Réinfection avec symptômes",
+      "at": 48.3,
+      "accent": true
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 50.33,
+    "input_icon": "doc",
+    "input_label": "Données cliniques et immunitaires",
+    "ai_label": "Combine et calcule un risque",
+    "output_label": "Risque de réinfection",
+    "modality": "donnees",
+    "at": 51.14,
+    "core_at": 56.38,
+    "out_at": 61.66,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "key_points",
+    "cam_at": 64.46,
+    "title": "Trois groupes de participants",
+    "points": [
+     {
+      "text": "Entraînement : 400 personnes à Wuxi",
+      "at": 65.3
+     },
+     {
+      "text": "Vérification : 170 personnes à Wuxi",
+      "at": 68.12
+     },
+     {
+      "text": "Épreuve : 586 personnes à Nantong",
+      "at": 71.7
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "roc_curve",
+    "cam_at": 75.96,
+    "auc": {
+     "value": "0,835",
+     "num": 0.835,
+     "at": 78.72,
+     "note": "Vérification interne, Wuxi"
+    },
+    "curve_at": 78.32,
+    "y": 0,
+    "_fig": 2
+   },
+   {
+    "type": "metric",
+    "cam_at": 86.1,
+    "title": "Personnes de Nantong",
+    "metrics": [
+     {
+      "label": "AUC",
+      "value": "0,996",
+      "num": 0.996,
+      "max": 1,
+      "at": 88.28,
+      "accent": true
+     },
+     {
+      "label": "Sensibilité",
+      "value": "100",
+      "num": 100,
+      "unit": "%",
+      "at": 91.68
+     },
+     {
+      "label": "Spécificité",
+      "value": "97,1",
+      "num": 97.1,
+      "unit": "%",
+      "at": 93.96
+     }
+    ],
+    "y": 0,
+    "_fig": 3
+   },
+   {
+    "type": "typo",
+    "cam_at": 102.49,
+    "text": "Mais les deux cohortes viennent de la même province : il faut confirmer ces résultats ailleurs.",
+    "italic": "confirmer",
+    "sentence": 19,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 107.77,
+    "text": "Retenez que l'immunité du nez compte : plus elle est forte, moins le risque prédit est élevé.",
+    "italic": "compte",
+    "sentence": 20,
+    "y": 0
+   }
+  ],
+  "start": 38.35,
+  "end": 114.11
+ },
+ "end": {
+  "fold_at": 113.06,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 116.68,
+  "button": "Suivre",
+  "button_at": 117.28,
+  "click_at": 118.28,
+  "source": "Ran et al. · Emerging Microbes & Infections · octobre 2026",
+  "doi": "doi:10.1080/22221751.2026.2746253",
+  "source_at": 114.96,
+  "start": 113.01,
+  "end": 121.0
+ },
+ "duration": 121.0,
+ "lead": 0.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

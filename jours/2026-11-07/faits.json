@@ -1,0 +1,19 @@
+[
+ {"id":"f1","valeur":570,"citation":"Participants from the Wuxi site ( n  = 570)"},
+ {"id":"f2","valeur":586,"citation":"Participants from the Nantong site ( n  = 586)"},
+ {"id":"f3","valeur":1156,"calcul":"f1 + f2"},
+ {"id":"f4","valeur":128,"citation":"128 (11.1%) experienced SARS-CoV-2 reinfection"},
+ {"id":"f5","valeur":11.1,"citation":"128 (11.1%) experienced SARS-CoV-2 reinfection"},
+ {"id":"f6","valeur":10,"citation":"during a median follow-up of 10 months"},
+ {"id":"f7","valeur":18,"citation":"A total of 18 demographic, clinical, and immune variables were considered for model development"},
+ {"id":"f8","valeur":400,"citation":"training cohort ( n  = 400)"},
+ {"id":"f9","valeur":170,"citation":"internal validation cohort ( n  = 170)"},
+ {"id":"f10","valeur":0.835,"citation":"achieving an AUC of 0.835 in the internal validation cohort"},
+ {"id":"f11","valeur":0.996,"citation":"XGB achieved the highest AUC of 0.996 among the evaluated models"},
+ {"id":"f12","valeur":1,"citation":"a sensitivity of 1.000"},
+ {"id":"f13","valeur":0.971,"citation":"a specificity of 0.971"},
+ {"id":"f14","valeur":100,"calcul":"f12 * 100"},
+ {"id":"f15","valeur":97.1,"calcul":"f13 * 100"},
+ {"id":"f16","valeur":2024,"citation":"Between May 2024 and February 2025"},
+ {"id":"f17","valeur":2025,"citation":"Between May 2024 and February 2025"}
+]
