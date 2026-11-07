@@ -1,0 +1,14 @@
+{
+ "nom": "Brick",
+ "voix": "1l3rmH0Phi1EyzL60937",
+ "model_id": "eleven_v4",
+ "language_code": "fr",
+ "voice_settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75,
+  "style": 0.0,
+  "use_speaker_boost": true,
+  "speed": 1.0
+ },
+ "source": "voix choisie le 7 novembre 2026 (retour de Steven : un ton plus naturel, comme un humain qui explique) ; voix française standard, calme et chaleureuse, débit naturel. Pour revenir à Léo : remplacer ce fichier par voix-leo.json (même format)."
+}

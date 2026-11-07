@@ -59,6 +59,36 @@
     }
   }
 
+  // ------------------------------------------------------------------ ajustement : un texte ne déborde jamais de sa boîte
+  // build.py choisit déjà la taille avec les chasses des polices ; ici, sur les vraies polices chargées, on réduit encore
+  // (4 % par pas) tout élément data-fit qui dépasse sa largeur (ou sa hauteur data-fh). Fait avant la timeline : déterministe.
+  function ajuster() {
+    q('[data-fit]').forEach(function (el) {
+      var fh = num(el, 'data-fh', 0), min = num(el, 'data-fmin', 18);
+      var px = parseFloat(getComputedStyle(el).fontSize) || 20, n = 0;
+      while (n++ < 60 && px > min && (el.scrollWidth > el.clientWidth + 1 || (fh > 0 && el.scrollHeight > fh + 1))) {
+        px = Math.max(min, px * 0.96);
+        el.style.fontSize = px.toFixed(1) + 'px';
+      }
+    });
+    // garde-fou : tout texte d'une feuille ou d'une planche qui dépasserait le bord est réduit jusqu'à tenir (60 % au plus)
+    var TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit';
+    function pos(el, stop) { var x = 0; for (var e = el; e && e !== stop; e = e.offsetParent) x += e.offsetLeft; return x; }
+    [['#nsheet', 780], ['.plate', 1080]].forEach(function (B) {
+      q(B[0]).forEach(function (box) {
+        q(TXT, box).forEach(function (el) {
+          if (el.closest('.tearh') || /\brot/.test(el.className) || (el.parentElement && el.parentElement.closest(TXT))) return;
+          var px0 = parseFloat(getComputedStyle(el).fontSize) || 20, px = px0, n = 0;
+          var x = pos(el, box);
+          while (n++ < 30 && px > px0 * 0.6 && (x + Math.max(el.offsetWidth, el.scrollWidth) > B[1] - 12 || el.scrollWidth > el.clientWidth + 2)) {
+            px *= 0.96;
+            el.style.fontSize = px.toFixed(1) + 'px';
+          }
+        });
+      });
+    });
+  }
+
   function build() {
     var tl;
     try { tl = gsap.timeline({ paused: true }); } catch (e) {
@@ -138,6 +168,18 @@
         el.textContent = pre + fr(0, dec);
         tl.to(o, { v: to, duration: d, ease: 'power2.out', immediateRender: false,
           onUpdate: function () { el.textContent = pre + fr(o.v, dec); } }, t);
+      });
+      // grille de 100 de l'accroche : les points s'impriment en vague, puis les « k sur 100 » passent à l'accent
+      q('[data-fx="grid"]').forEach(function (svg) {
+        var t = num(svg, 'data-t', 0), lit = num(svg, 'data-lit', t + 2), nd = num(svg, 'data-n', 18) || 1, k = 0;
+        q('circle', svg).forEach(function (c) {
+          var d = num(c, 'data-i', 0) / nd;
+          gsap.set(c, { opacity: 0, scale: 0.2, transformOrigin: '50% 50%' });
+          tl.fromTo(c, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.3, ease: 'power2.out', immediateRender: false }, t + 0.35 + d * 0.9);
+          if (c.classList.contains('on')) {
+            tl.to(c, { fill: '#5D68FF', duration: 0.25, ease: 'none', immediateRender: false }, lit + (k++) * 0.012);
+          }
+        });
       });
       // silhouettes ou points qui se lèvent, puis rejoignent leur groupe ; le groupe IA passe au carbone
       q('[data-fx="split"]').forEach(function (el) {
@@ -245,8 +287,9 @@
     // ---------------------------------------------------------------- monde nuit : plan incliné, caméra qui descend la feuille
     bloc('caméras (nuit)', function () {
       var nEnd = F.night[1];
-      gsap.set('#nplane', { rotationX: 10, rotationZ: -3.2, scale: 0.93 });
-      tl.to('#nplane', { rotationX: 6, rotationZ: -1.5, scale: 0.99, duration: nEnd, ease: 'none', immediateRender: false }, 0);
+      var tz = typeof F.tilt === 'number' ? F.tilt : -3.2;   // sens et angle de la feuille : selon l'édition du jour
+      gsap.set('#nplane', { rotationX: 10, rotationZ: tz, scale: 0.93 });
+      tl.to('#nplane', { rotationX: 6, rotationZ: tz * 0.47, scale: 0.99, duration: nEnd, ease: 'none', immediateRender: false }, 0);
       gsap.set('#ncam', { y: F.ncam[0][1] });
       for (var i = 1; i < F.ncam.length; i++) {
         tl.to('#ncam', { y: F.ncam[i][1], duration: 1.05, ease: 'power3.inOut', immediateRender: false }, F.ncam[i][0]);
@@ -390,6 +433,7 @@
   }
 
   function lancer() {
+    try { ajuster(); } catch (e) { console.error('[moteur] ajustement : ' + e.stack); }
     try { build(); } catch (e) {
       window.__moteurErreurs.push('build : ' + e.message);
       console.error('[moteur] build en erreur : ' + e.stack);

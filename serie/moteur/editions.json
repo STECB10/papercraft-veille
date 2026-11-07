@@ -1,0 +1,15 @@
+{
+ "_doc": "Éditions de la série : une palette et une mise en page de la table par jour, en rotation (jamais deux jours de suite la même). build.py remplace l'accent carbone du moteur par celui de l'édition. Un seul accent par film. Ordre de la rotation = ordre de la liste. film.json peut forcer une édition (champ « edition »).",
+ "rotation": [
+  {"id": "carbone", "nom": "Carbone", "accent": "#5D68FF", "deep": "#3A44D6", "soft": "#A3A9FF", "tint": "#EEF0FF", "tab": "#E4E7F6",
+   "paper": "#ECE6DA", "table": "#FAFAF8", "table2": "#ECEEF3", "tilt": -3.2, "align": "left"},
+  {"id": "ocre", "nom": "Ocre", "accent": "#B86E08", "deep": "#8A5206", "soft": "#EAC07C", "tint": "#F8EEDC", "tab": "#F1E6D2",
+   "paper": "#EEE5D3", "table": "#FBFAF6", "table2": "#EFEBE2", "tilt": 2.6, "align": "center"},
+  {"id": "sarcelle", "nom": "Sarcelle", "accent": "#0F8A86", "deep": "#0A625F", "soft": "#7FCFCB", "tint": "#E2F3F1", "tab": "#DCEDEA",
+   "paper": "#E7E7DE", "table": "#F8FAF9", "table2": "#E6EEEC", "tilt": -2.4, "align": "left"},
+  {"id": "framboise", "nom": "Framboise", "accent": "#C8366C", "deep": "#9C2452", "soft": "#EFA2BF", "tint": "#FAE6EE", "tab": "#F3DFE7",
+   "paper": "#EFE5DF", "table": "#FBF9F9", "table2": "#F0EAEC", "tilt": 3.0, "align": "center"},
+  {"id": "petrole", "nom": "Pétrole", "accent": "#1D6FA5", "deep": "#145079", "soft": "#8DC0E3", "tint": "#E3EFF8", "tab": "#DDE8F1",
+   "paper": "#E6E6E1", "table": "#F8F9FA", "table2": "#E7ECF1", "tilt": -2.8, "align": "left"}
+ ]
+}

@@ -246,3 +246,27 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 .chunk .kw .tx{position:relative;color:var(--paper-hi);text-shadow:none}
 .chunk .pkline{position:absolute;left:-.02em;bottom:-.14em;width:100px;height:7px;border-radius:7px;transform-origin:0% 50%;
   background:linear-gradient(90deg,var(--carbon) 0%,var(--carbon) 72%,rgba(93,104,255,.15) 100%)}
+
+/* ------------------------------------------------------------------ accroches et moments muets (serie/moteur/accroches.py) */
+.hhead{white-space:nowrap;overflow:visible;line-height:39px}
+.hnum{white-space:nowrap}
+.hunit{font:italic 400 64px/1.1 'Bodoni Moda';color:var(--carbon-deep);white-space:nowrap}
+.htitle{font:400 56px/1.1 'Bodoni Moda';letter-spacing:-.02em;color:var(--ink)}
+.hq{font:400 90px/1.08 'Bodoni Moda';letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.hq .tw,.hline .tw{display:inline-block}
+.hq .tw.it{font-style:italic;color:var(--carbon-deep)}
+.hgrid circle{fill:#B9B1A2}
+.hglow{border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(93,104,255,.30) 0%,rgba(93,104,255,.10) 45%,rgba(93,104,255,0) 70%)}
+.hspot{opacity:.9}
+.vlab{white-space:normal}
+.vnote{color:var(--ink-dim);white-space:normal}
+.clipping{background:var(--paper-hi);border-radius:4px;transform:rotate(-1.2deg);box-shadow:0 30px 50px -30px rgba(22,23,28,.55),0 1px 0 rgba(22,23,28,.06)}
+.hline{font:400 64px/1.12 'Bodoni Moda';letter-spacing:-.02em;color:var(--ink);white-space:nowrap;transform:rotate(-1.2deg);transform-origin:0 50%}
+.hlw{position:relative;z-index:0;isolation:isolate}
+.hlb{position:absolute;left:-.08em;right:-.08em;top:.18em;bottom:.02em;background:rgba(93,104,255,.30);border-radius:3px;z-index:-1}
+.calp{background:var(--paper-hi);border-radius:10px;box-shadow:0 26px 44px -26px rgba(22,23,28,.55)}
+.calh{background:var(--carbon);border-radius:10px 10px 0 0}
+.calr{width:16px;height:46px;border-radius:8px;background:var(--ink)}
+.folder{height:34px;border-radius:4px;background:var(--paper-lift);border:2px solid rgba(22,23,28,.35);box-shadow:0 10px 16px -10px rgba(22,23,28,.5)}
+.folder::before{content:"";position:absolute;left:18px;top:-12px;width:90px;height:12px;border-radius:4px 4px 0 0;background:var(--paper-2);border:2px solid rgba(22,23,28,.35);border-bottom:none}
+.hwrap>*{position:absolute}

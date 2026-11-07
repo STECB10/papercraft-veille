@@ -5,24 +5,52 @@ résultats étaient trop maigres. Le motion design, la musique et la voix sont v
 
 ## Durée et densité
 
-- Durée cible : 80 à 100 s, soit environ 210 à 280 mots dits (retour du 24 octobre : prendre plus de temps
+- Durée cible : 85 à 105 s, soit environ 230 à 300 mots dits (les connecteurs sont courts : ils remplacent des mots, ils n'ajoutent pas de phrases) (retour du 24 octobre : prendre plus de temps
   au début pour que le contexte soit bien compris).
 - Chaque phrase porte une information. Pas de phrase d'ambiance sans fait.
 
-## Style (retour de Steven sur le 2e essai)
+## Parler comme un humain (retour de Steven du 7 novembre 2026)
 
-- **Des phrases complètes, reliées par des connecteurs logiques** : « En effet », « Pourtant », « Pour le savoir »,
-  « Concrètement », « Résultat : », « Autrement dit », « En revanche ». Jamais une suite de fragments ou de chiffres
-  lâchés seuls (« 18 %. Pause. Une photo. Pause. »).
+La voix doit sonner comme quelqu'un qui **explique une étude à un collègue**, pas comme une fiche lue à voix haute.
+Les vidéos d'avant enchaînaient des constats posés l'un après l'autre (« Il s'agit d'une cohorte. Mille adultes ont
+été suivis. Dix-huit données entrent dans l'algorithme. ») : c'est exactement ce qu'il ne faut plus faire.
+
+- **Chaque phrase s'accroche à la précédente.** Au moins 6 phrases sur 10 commencent par un connecteur ou une tournure
+  orale, et jamais trois phrases de suite sans lien (le vérificateur refuse). Varie : aucun connecteur n'ouvre plus de
+  deux phrases.
+  - enchaîner : « Et », « Alors », « Du coup » (rare), « À partir de là », « C'est là qu'… », « Pour le savoir »
+  - opposer : « Mais », « Or », « Pourtant », « Le problème, c'est que… », « En revanche »
+  - expliquer : « Concrètement », « Autrement dit », « En clair », « Par exemple »
+  - ordonner : « D'abord », « Puis », « Ensuite », « Enfin », « Au départ », « Au final »
+  - conclure : « Résultat : », « Bonne nouvelle : », « Attention quand même : », « À retenir : »
+- **Le registre de l'oral, en restant exact** : « ils ont suivi… » plutôt que « … ont été suivis » ; « il n'en garde que
+  deux » plutôt que « il en retient deux » ; des questions qu'on pose au spectateur (« Et le résultat ? ») ; des mots
+  de tous les jours. Jamais d'emphase gratuite (« incroyable », « révolution »), jamais de familiarité appuyée.
+- **Des phrases qui respirent** : 9 à 20 mots en moyenne, longueurs variées (une courte après deux longues), une
+  phrase de moins de 6 mots seulement pour un effet voulu (2 au plus par film). Une virgule ou deux-points là où l'on
+  ferait une pause en parlant.
 - **L'intro raconte** : qui est concerné, quel est le problème, pourquoi c'est important, avant tout chiffre isolé.
   Le premier chiffre arrive dans une phrase qui l'explique.
 - **Expliquer la méthode et les résultats pas à pas**, quitte à ralentir : ce qu'on a mesuré, comment, chez qui, puis
   ce que veut dire le chiffre (« autrement dit, sur dix patients… »).
-- **Respirations** : `pause_apres` de 0,3 à 0,6 s après chaque information clé (question de l'étude, chaque groupe,
-  chaque résultat), en plus des pauses imposées (moment muet, pivot, avant la promesse).
-- Phrases de 9 à 20 mots en moyenne ; une phrase de moins de 6 mots seulement pour un effet voulu (2 au plus par film).
+- **Peu de silences ajoutés** : `pause_apres` 0,3 à 0,5 s aux seuls changements de partie (2 à 7 par film), en plus
+  des pauses imposées (moment muet, pivot, avant la promesse). Entre deux phrases ordinaires, la voix respire seule :
+  des silences partout donnent une lecture hachée.
 - **Nombres** : dans le texte dit, toujours en toutes lettres (« zéro virgule huit cent quarante-cinq »,
   « dix-huit virgule deux pour cent »). `pipeline/nombres.py` convertit automatiquement s'il reste des chiffres.
+
+Avant / après (même étude, mêmes faits) :
+
+| Avant (liste de constats) | Après (quelqu'un qui explique) |
+|---|---|
+| Il s'agit d'une cohorte prospective, menée à Wuxi et Nantong, en Chine. | Pour le savoir, les chercheurs ont mené une cohorte prospective à Wuxi et à Nantong, en Chine. |
+| Mille cent cinquante-six adultes ont été suivis dix mois, en médiane, pour repérer les réinfections avec symptômes. | Concrètement, ils ont suivi mille cent cinquante-six adultes pendant dix mois, en médiane, en notant les réinfections avec symptômes. |
+| Dix-huit données entrent dans l'algorithme, les unes cliniques, les autres immunitaires. Il en retient deux : … | Au départ, dix-huit données entrent dans l'algorithme, cliniques ou immunitaires. Mais il n'en garde que deux : … |
+| En vérification interne, l'aire sous la courbe atteint zéro virgule huit cent trente-cinq. | Résultat : en vérification interne, l'aire sous la courbe atteint zéro virgule huit cent trente-cinq. |
+| À Nantong, l'aire sous la courbe monte à zéro virgule neuf cent quatre-vingt-seize. | À Nantong, c'est encore mieux : l'aire sous la courbe monte à zéro virgule neuf cent quatre-vingt-seize. |
+| Cette étude montre une bonne prédiction, pas une réduction des réinfections. | Attention : l'étude montre une bonne prédiction, pas moins de réinfections. |
+
+Le script complet de cet exemple est dans `serie/exemple/SCRIPT-NATUREL.md`.
 
 ## Ce que chaque script doit dire, dans cet ordre
 

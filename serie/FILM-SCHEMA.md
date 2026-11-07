@@ -25,30 +25,67 @@ Règle : un élément apparaît au mot qui le nomme ; la caméra (`cam_at`) part
  "paper": {"stations": [...]}, "end": {...}}
 ```
 `duration`, `audio`, `words_file` sont remplis par la chaîne. `night.end` = fin de la dernière phrase du problème + 0,25.
+`edition` (facultatif) force une édition de `serie/moteur/editions.json` ; sinon le moteur fait tourner les éditions
+(palette, sens de la feuille) d'un jour à l'autre : ne la fixe pas sans raison.
 
 ## sentences
 
-`{"text": "phrase dite, chiffres EN LETTRES", "display": "phrase affichée, chiffres en chiffres (facultatif)",
+`{"text": "phrase dite, chiffres EN LETTRES, dite comme à l'oral (voir REGLES-CONTENU.md, « Parler comme un humain »)",
+"display": "phrase affichée, chiffres en chiffres (facultatif)",
 "box": "mot affiché encadré (un par phrase)", "peak": "1 ou 2 mots soulignés (3 à 4 fois par film)",
 "mode": "sub" (défaut) | "type" (pivot ou nuance : grande typo, pas de sous-titre) | "none" (fin),
 "pause_apres": secondes de silence ajoutées après la phrase}`
 
-- `pause_apres` : 0.3 à 0.6 après chaque information clé (respiration) ; 2.5 après la phrase où commence le moment muet (si gag), 1.4 sur la phrase du pivot (obligatoire,
-  1.0 à 2.0), 0.3 sur la dernière phrase avant la promesse.
+- `pause_apres` : **peu**, sinon la voix devient hachée. 0,3 à 0,5 aux seuls changements de partie (après le contexte,
+  après la méthode, après le résultat principal : 2 à 7 par film) ; 1.4 sur la phrase du pivot (obligatoire, 1.0 à
+  2.0) ; 2.5 après la phrase où commence le moment muet (si gag) ; 0.3 sur la dernière phrase avant la promesse. Entre
+  deux phrases ordinaires, rien : la voix respire seule.
 - Les deux dernières phrases sont toujours `"Une étude par jour, vérifiée à la source."` (mode none) puis
   `"Papercraft."` (mode none).
 - Un sous-titre affiche 30 caractères au plus par morceau : phrases courtes.
 
 ## Planches de la table (`night.stations`, dans l'ordre)
 
-- `hook_number` (`cam_at` 0) : `header` (mono, ex. « Essai randomisé · Tanzanie · 2023–2024 »), `number`
-  (« 18,2 »), `unit` (« % »), `caption`, `caption_at`, `people` (5), `lit` (index de la silhouette allumée), `lit_at`,
-  `footnote`.
-- `gag_waiting` (moment muet, salle d'attente) : `door` (texte de la porte), `chairs` (6), `occupied` (2), `cam_at`.
-- `gag_clock` (moment muet, horloge qui tourne) : `label` (ex. « des semaines »), `cam_at`.
-- `steps` (parcours en 2 à 4 étapes) : `title`, `cam_at`, `mark_at`, `steps`: [`{icon, label, at, note?, note_at?,
-  alert?, chips?}`]. `note` complète `label` sans le répéter (jamais « cher » puis « chère »). `alert` s'affiche dans
-  l'écran pour l'icône `phone`, sinon en étiquette carbone sous la note.
+**1. L'accroche (toujours la première station, `cam_at` 0).** Cinq mises en scène : choisis celle qui sert le mieux
+l'étude, et **jamais la même que la veille** (le vérificateur refuse). Toutes ont un `header` mono (type d'étude ·
+lieu · années, 60 caractères au plus) et une `footnote?` mono (60 caractères au plus). Le moteur calcule seul les
+tailles : un chiffre ou un titre prend la plus grande taille qui tient, aucun texte ne déborde.
+
+- `hook_number` **un chiffre clé** : `number` (« 11,1 », « 185 », 7 caractères au plus), `unit` (« % », « mm »,
+  ou un mot : « études », « patients » ; 14 caractères au plus), `caption` (ce que veut dire le chiffre, 75 caractères
+  au plus), `caption_at`, `lit_at?`, `icon?`, `visual?`, `ratio?`. Sous le chiffre, une **figure qui dit ce chiffre**,
+  choisie seule par le moteur (ou forcée par `visual`) :
+  `grid` pour un pourcentage (100 points, les k % passent à l'accent au mot `lit_at`) · `sheets` pour un nombre
+  d'études (autant de petites feuilles jusqu'à 48, une pile au-delà) · `people` pour « k sur n » (`ratio`:
+  `{"k": 1, "n": 4}`, deux faits ; k silhouettes s'allument sur n) ou pour un petit effectif de personnes (24 au plus)
+  · `icon` grand dessin au trait de l'objet de l'étude (`icon` : heart, brain, eye, xray, fundus, ecg, skin, pill…) ·
+  `none`. Plus jamais « 5 silhouettes dont une allumée » : `people` et `lit` sont ignorés.
+- `hook_question` **la question en grande typo** : `text` (= la phrase 0 de `sentences`, mot pour mot, 95 caractères
+  au plus), `italic` (le mot clé, souligné à la main au moment où il est dit), `icon?`. Les mots s'écrivent avec la
+  voix ; pas de sous-titre pendant ce temps.
+- `hook_image` **ce que l'étude regarde, redessiné au trait** : `image` (fundus, xray, skin, mammo, ct, `ecg` pour un
+  tracé qui défile, ou une icône : heart, brain, eye, mic…), `title` (une phrase sans chiffre, 60 caractères au plus),
+  `title_at`, `scan_at?`, `lock_at?` (au mot qui nomme ce qu'on cherche : les repères se verrouillent).
+- `hook_versus` **deux chiffres face à face** : `left` et `right` = `{label (24 caractères au plus), number?, unit?,
+  note?, at}` ; `left` porte un chiffre, `right` peut rester sans chiffre (un grand « ? » : le résultat viendra),
+  `caption?` (90 caractères au plus), `caption_at?`. Pour : avant / avec l'IA, deux groupes, IA / soignants.
+- `hook_headline` **le titre de l'étude sur une coupure de papier** : `headline` (le titre traduit en français
+  simple, 120 caractères au plus, aucun chiffre hors fiche), `journal?` (« Revue · mois année »), `mark` (des mots qui
+  se suivent dans `headline`, surlignés au feutre), `mark_at`.
+
+Choisir : un chiffre frappant et parlant → `hook_number` ; une question qui concerne le spectateur → `hook_question` ;
+une IA qui lit une image, un tracé ou un organe → `hook_image` ; une comparaison → `hook_versus` ; un titre qui dit
+tout ou une étude sans chiffre d'accroche → `hook_headline`. Varie aussi d'un jour à l'autre.
+
+**2. Un moment muet (facultatif, jamais le même que la veille)** :
+- `gag_clock` (horloge qui tourne) : `label` (ex. « des semaines »), `cam_at`.
+- `gag_calendar` (page de calendrier dont les jours se barrent) : `label` (ex. « des mois d'attente »), `cam_at`.
+- `gag_pile` (dossiers qui s'empilent : la charge, le retard) : `label` (ex. « trop de dossiers »), `cam_at`.
+- `gag_waiting` (salle d'attente) : `door` (texte de la porte), `chairs` (6), `occupied` (2), `cam_at`.
+
+**3. `steps`** (parcours en 2 à 4 étapes) : `title`, `cam_at`, `mark_at`, `steps`: [`{icon, label, at, note?,
+note_at?, alert?, chips?}`]. `note` complète `label` sans le répéter (jamais « cher » puis « chère »), 28 caractères au
+plus. `alert` s'affiche dans l'écran pour l'icône `phone`, sinon en étiquette sous la note.
 
 ## Planches de la feuille (`paper.stations`, dans l'ordre, une par écran)
 

@@ -7,7 +7,9 @@ description: >
   figure de revue scientifique qui se dessine devant le spectateur (piste A), les gestes de papier découpé aux
   moments forts (piste B : silhouettes qui se lèvent, bandes et étiquettes qui se déplient, déchirure), et le
   vocabulaire « instrument » pour montrer ce que l'IA lit (piste C : onde, balayage, particules, jauges), le tout
-  sur papier. Plus aucun fond nuit. Un seul accent, le carbone #5D68FF.
+  sur papier. Plus aucun fond nuit. Un seul accent par film ; depuis le 7 novembre 2026, l'accent et la teinte du
+  papier changent d'un jour à l'autre (les « éditions » : carbone, ocre, sarcelle, framboise, pétrole), et la vidéo
+  s'ouvre sur l'une de cinq accroches, jamais la même deux jours de suite.
   Références animées : serie/reference/planches.html (chaque planche de cette charte, jouée sur de vrais chiffres).
 unit: 1080×1350 (4:5), 30 i/s
 principle: >
@@ -27,7 +29,7 @@ colors:
   ink: "#16171C"             # encre : texte, traits, et SEULEMENT de petites surfaces (carte « noyau IA », bulle IA)
   ink-dim: "#57544E"         # encre secondaire, groupe témoin, étiquettes
   ink-faint: "rgba(22,23,28,.16)"  # points et silhouettes inactifs, grilles
-  accent: "#5D68FF"          # LE carbone : boîte du mot-clé, groupe IA, barre IA, point de l'écart, balayage
+  accent: "#5D68FF"          # LE carbone (édition par défaut ; les autres éditions le remplacent, voir « Les éditions ») : boîte du mot-clé, groupe IA, barre IA, point de l'écart, balayage
   accent-deep: "#3A44D6"     # carbone pour du texte et des traits fins sur papier (annotations, « Fig. 3 »)
   accent-soft: "#A3A9FF"     # carbone sur une petite surface encre uniquement
   hairline: "rgba(22,23,28,.16)"
@@ -131,8 +133,12 @@ rejoue toutes (données fictives) avec une voix simulée.
 
 | Planche | Ce qu'elle montre | Gestes |
 |---|---|---|
-| Accroche chiffrée [`hook_number`] | le chiffre qui pose le problème, en Bodoni, et des silhouettes dont une passe au carbone | `barre` ou roulement, `se lever` |
-| Moment muet [`gag_clock`, `gag_waiting`] | l'attente, sans voix | horloge, salle d'attente |
+| Accroche chiffrée [`hook_number`] | le chiffre qui pose le problème, en Bodoni, et une figure qui DIT ce chiffre : grille de 100 pour un %, petites feuilles pour des études, k silhouettes sur n, ou grand dessin de l'objet | roulement, `flux`, `se lever`, `tracer` |
+| Question [`hook_question`] | la question d'ouverture en grande typo, mot à mot avec la voix, le mot clé souligné à la main | mots qui montent, `tracer` |
+| Image [`hook_image`] | ce que l'étude regarde, redessiné au trait (fond d'œil, radio, peau, tracé d'ECG, organe), balayé puis verrouillé | `tracer`, `balayer` |
+| Face à face [`hook_versus`] | deux chiffres de part et d'autre d'un filet (ou un chiffre face à un grand « ? ») | roulement, filet qui se trace |
+| Coupure [`hook_headline`] | le titre de l'étude, traduit, sur une coupure de papier scotchée ; la partie clé surlignée au feutre | `poser`, surligner |
+| Moment muet [`gag_clock`, `gag_calendar`, `gag_pile`, `gag_waiting`] | l'attente, le temps, la charge, sans voix | horloge, jours qui se barrent, dossiers qui s'empilent, salle d'attente |
 | Parcours actuel [`steps`] | 2 à 4 étapes du soin d'aujourd'hui | `schéma`, `annoter` sur l'étape qui coince |
 
 ### Dans la feuille (l'étude)
@@ -163,6 +169,23 @@ rejoue toutes (données fictives) avec une voix simulée.
 Retour sur la table. La feuille se replie en glyphe Papercraft (le chemin M1.5 1.5H13L18.5 7V24.5H1.5Z, le coin et le
 pli en carbone), « Papercraft.AI » en Bodoni, la promesse « Une étude par jour, vérifiée à la source. » en type, un
 bouton « Suivre » (pilule encre, texte paper-hi) que le curseur clique en un seul geste, 2 à 3 s de tenue vivante.
+
+## Les accroches (retour du 7 novembre 2026)
+
+Le premier écran ne se ressemble plus d'un jour à l'autre : cinq accroches (tableau ci-dessus), choisies selon l'étude
+et jamais la même deux jours de suite ; le moment muet tourne aussi. Le moteur (`serie/moteur/accroches.py`) mesure
+chaque texte avec les chasses réelles des polices (`serie/moteur/mesure.py`) : un chiffre ou un titre prend la plus
+grande taille qui tient dans la feuille, chaque bloc est posé sous le précédent, et `moteur.js` réduit encore tout
+texte qui déborderait. Le contrôle d'avant rendu (`controle_page.mjs`) refuse un texte coupé ou qui sort de sa feuille.
+
+## Les éditions
+
+Une édition = l'accent, ses nuances, la teinte du papier et de la table, le sens dans lequel la feuille est posée et
+l'alignement de l'accroche (à gauche ou centrée). Elles tournent d'un jour à l'autre, dans l'ordre de
+`serie/moteur/editions.json` : carbone (#5D68FF), ocre (#B86E08), sarcelle (#0F8A86), framboise (#C8366C), pétrole
+(#1D6FA5). Dans un film, la règle ne change pas : un seul accent, pour le groupe IA, la boîte du mot-clé, l'écart et le
+verso de la nuance ; le groupe témoin reste à l'encre. Aucune édition rouge ou verte (pas de « danger », pas de
+« succès »).
 
 ## Les sons
 

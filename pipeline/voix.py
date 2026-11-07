@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Voix du jour : 2 prises ElevenLabs (Léo), transcription Scribe, on garde la prise qui dit le texte mot pour mot.
+"""Voix du jour : 2 prises ElevenLabs (voix de serie/audio/voix.json), transcription Scribe, on garde la prise qui dit le
+texte mot pour mot. Le texte est envoyé d'un seul tenant (phrases séparées par une espace, pas par un retour à la ligne) :
+la voix enchaîne les phrases comme quelqu'un qui parle, au lieu de lire une liste de lignes.
 
 Usage : python3 pipeline/voix.py        (lit jours/<date>/film.json, écrit jours/<date>/assets/audio/voix.mp3 et voix-mots-brut.json)
 Secret : ELEVENLABS_API_KEY
@@ -10,11 +12,12 @@ import sys
 
 from commun import RACINE, dossier_du_jour, env, http, lire_json, multipart
 
-VOIX = "AfbuxQ9DVtS4azaxN1W7"          # Léo, choisie par Steven le 24 octobre 2026
 API = "https://api.elevenlabs.io/v1"
-# Réglages du pilote Tanzanie (tonalité, naturel), retrouvés par pipeline/reglages_voix.py. Un seul modèle : pas de
-# repli sur un autre modèle, qui changerait le timbre de Léo d'une vidéo à l'autre.
-REGLAGES = lire_json(RACINE / "serie" / "audio" / "voix-leo.json", {}) or {}
+# La voix de la série et ses réglages : serie/audio/voix.json (Brick depuis le 7 novembre 2026 ; Léo, l'ancienne voix,
+# reste dans voix-leo.json). Un seul modèle : pas de repli sur un autre, qui changerait le timbre d'une vidéo à l'autre.
+REGLAGES = lire_json(RACINE / "serie" / "audio" / "voix.json", {}) or lire_json(RACINE / "serie" / "audio" / "voix-leo.json", {}) or {}
+VOIX = REGLAGES.get("voix", "AfbuxQ9DVtS4azaxN1W7")
+NOM_VOIX = REGLAGES.get("nom", "Léo")
 MODELE = REGLAGES.get("model_id", "eleven_v4")
 VOICE_SETTINGS = REGLAGES.get("voice_settings")
 
@@ -57,7 +60,7 @@ def tts(texte, cle, graine):
         return http(f"{API}/text-to-speech/{VOIX}?output_format=mp3_44100_128", body,
                     {"xi-api-key": cle, "Accept": "audio/mpeg"}, method="POST", timeout=300, brut=True), MODELE
     except RuntimeError as e:
-        raise SystemExit(f"voix : le modèle {MODELE} de Léo a refusé ({str(e)[:200]})")
+        raise SystemExit(f"voix : le modèle {MODELE} de {NOM_VOIX} a refusé ({str(e)[:200]})")
 
 
 def scribe(chemin, cle):
@@ -71,7 +74,7 @@ def main():
     jour = dossier_du_jour()
     cle = env("ELEVENLABS_API_KEY")
     film = lire_json(jour / "film.json")
-    texte = "\n".join(s["text"] for s in film["sentences"])
+    texte = " ".join(s["text"] for s in film["sentences"])
     texte_mots = [w for s in film["sentences"] for w in s["text"].split()]
     tolerance = max(3, len(texte_mots) // 20)          # 5 % des mots, au moins 3
     a = jour / "assets" / "audio"
@@ -95,7 +98,7 @@ def main():
     if ecarts:
         print(f"voix : {ecarts} variante(s) de transcription recalée(s) sur le script")
     (a / "voix.mp3").write_bytes(p.read_bytes())
-    (a / "voix-mots-brut.json").write_text(json.dumps({"source": f"ElevenLabs {modele}, voix Léo, réglages {VOICE_SETTINGS or 'par défaut'}, Scribe v1", "words": mots},
+    (a / "voix-mots-brut.json").write_text(json.dumps({"source": f"ElevenLabs {modele}, voix {NOM_VOIX}, réglages {VOICE_SETTINGS or 'par défaut'}, Scribe v1", "words": mots},
                                                       ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"voix : {p.name} retenue")
 

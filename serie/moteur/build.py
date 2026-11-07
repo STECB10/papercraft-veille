@@ -30,6 +30,9 @@ import re
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import accroches  # noqa: E402
+from accroches import GAGS, HOOKS  # noqa: E402
 W, H = 1080, 1350
 FOLD_DUR = 1.0      # durée d'un pli (pivot et fin)
 PLATE = 1500        # écart entre deux planches du papier (plus qu'un écran : jamais deux planches dans le cadre)
@@ -178,7 +181,7 @@ TIME_KEYS = {"at", "cam_at", "start", "end", "lit_at", "count_at", "count_end", 
              "fold_at", "wordmark_at", "button_at", "click_at", "source_at", "note_at", "caption_at", "card_at",
              "door_at", "walk_at", "label_at", "check_at", "mark_at",
              "scan_at", "core_at", "out_at", "total_at", "patients_at",
-             "sick_at", "lock_at", "curve_at", "tag_at", "gap_at", "pooled_at"}
+             "sick_at", "lock_at", "curve_at", "tag_at", "gap_at", "pooled_at", "title_at"}
 
 
 def resolve(obj, clock):
@@ -538,8 +541,42 @@ def typo_words(text, ws, italic):
 
 
 # --------------------------------------------------------------------------------------------- la table : feuille inclinée (le constat)
-NIGHT_H = {"hook_number": 860, "gag_waiting": 440, "gag_clock": 470}
-NIGHT_DY = {"gag_waiting": 230, "gag_clock": 200, "steps": 40}
+NIGHT_H = {**{k: accroches.HOOK_H for k in HOOKS}, "gag_waiting": 440, "gag_clock": 470, "gag_calendar": 470, "gag_pile": 470}
+NIGHT_DY = {"gag_waiting": 230, "gag_clock": 200, "gag_calendar": 200, "gag_pile": 200, "steps": 40}
+EDITIONS = json.loads((HERE / "editions.json").read_text(encoding="utf-8"))["rotation"]
+EDITION = EDITIONS[0]
+
+
+def choisir_edition(film, proj):
+    """L'édition du jour (palette, sens de la feuille, alignement de l'accroche) : celle que film.json demande, sinon
+    la rotation sur la date (jamais deux jours de suite la même)."""
+    import datetime
+    voulu = film.get("edition")
+    for e in EDITIONS:
+        if e["id"] == voulu:
+            return e
+    d = None
+    for c in (proj.name, str(film.get("id") or "")):      # le dossier du jour d'abord (jours/<date>), puis l'id du film
+        try:
+            d = datetime.date.fromisoformat(c[:10])
+            break
+        except ValueError:
+            continue
+    d = d or datetime.date.today()
+    return EDITIONS[d.toordinal() % len(EDITIONS)]
+
+
+def recolorer(doc, ed):
+    """Remplace l'accent carbone du moteur (CSS, SVG, JS) par celui de l'édition."""
+    def rgb(hx):
+        hx = hx.lstrip("#")
+        return ",".join(str(int(hx[i:i + 2], 16)) for i in (0, 2, 4))
+    paires = [("#5D68FF", ed["accent"]), ("#3A44D6", ed["deep"]), ("#A3A9FF", ed["soft"]), ("#EEF0FF", ed["tint"]),
+              ("#E4E7F6", ed["tab"]), ("#ECE6DA", ed["paper"]), ("#FAFAF8", ed["table"]), ("#ECEEF3", ed["table2"]),
+              ("93,104,255", rgb(ed["accent"])), ("163,169,255", rgb(ed["soft"])), ("58,68,214", rgb(ed["deep"]))]
+    for a, b in paires:
+        doc = re.sub(re.escape(a), b, doc, flags=re.I)
+    return doc
 
 
 def night_height(st):
@@ -548,24 +585,14 @@ def night_height(st):
     return NIGHT_H.get(st["type"], 700)
 
 
-def night_station(st):
+def night_station(st, film=None):
     t = st["type"]
     y0 = st["y"]
     h = []
-    if t == "hook_number":
-        # pendant l'entrée muette, l'en-tête s'écrit ; le chiffre tombe avec le premier mot (cam_at)
-        ta = st["cam_at"]
-        cap = st.get("caption_at", ta + 2.3)
-        h.append(f'<div class="mono" style="left:70px;top:{y0+52}px;width:640px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:26px;color:var(--ink-dim)" data-a="rise" data-t="{max(0.15, ta - 0.5):.2f}">{esc(st["header"])}</div>')
-        h.append(f'<div class="rule" style="left:70px;top:{y0+98}px;width:620px" data-a="wipe" data-t="{max(0.25, ta - 0.4):.2f}"></div>')
-        h.append(f'<div class="num" style="left:52px;top:{y0+130}px;font-size:280px" data-a="big" data-t="{ta + 0.02:.2f}" data-d="1.0">{esc(st["number"])}<span class="unit">{esc(st["unit"])}</span></div>')
-        h.append(f'<div class="cap" style="left:72px;top:{y0+440}px;width:600px" data-a="rise" data-t="{cap:.2f}">{esc(st["caption"])}</div>')
-        for i in range(st["people"]):
-            fade = f' data-o="{st["lit_at"]:.2f}"' if i == st["lit"] else ""
-            h.append(person_svg(80 + i * 128, y0 + 570, 170, "var(--ink-faint2)", f'data-a="up" data-t="{ta + 0.35 + i*0.09:.2f}"{fade}'))
-        lx = 80 + st["lit"] * 128
-        h.append(person_svg(lx, y0 + 570, 170, "var(--carbon)", f'data-a="step" data-t="{st["lit_at"]:.2f}"', cls="pers lit"))
-        h.append(f'<div class="mono" style="left:72px;top:{y0+776}px;color:var(--ink-dim);font-size:26px" data-a="rise" data-t="{cap+0.6:.2f}">{esc(st["footnote"])}</div>')
+    if t in HOOKS:
+        return accroches.hook_station(st, film, EDITION)
+    if t in ("gag_calendar", "gag_pile"):
+        return accroches.gag_station(st)
     elif t == "gag_waiting":
         ta = st["cam_at"]
         h.append(f'<div class="mono" style="left:500px;top:{y0+26}px;width:240px;text-align:center;color:var(--ink)" data-a="rise" data-t="{ta+0.25:.2f}">{esc(st["door"])}</div>')
@@ -600,7 +627,7 @@ def night_station(st):
             h.append(f'<div class="mono" style="left:270px;top:{sy+8}px;width:470px;color:var(--ink-dim);white-space:normal" data-a="rise" data-t="{at+0.1:.2f}">{esc(s["label"])}</div>')
             ny = sy + 52 if len(s["label"]) <= 30 else sy + 92
             if s.get("note"):
-                h.append(f'<div class="note" style="left:266px;top:{ny}px" data-a="rise" data-t="{na:.2f}">{esc(s["note"])}</div>')
+                h.append(f'<div class="note" style="left:266px;top:{ny}px;width:478px" data-fit="1" data-fmin="30" data-a="rise" data-t="{na:.2f}">{esc(s["note"])}</div>')
             cy = ny + 76
             if s.get("alert") and not inside:
                 h.append(f'<div class="chip acc" style="left:270px;top:{cy}px" data-a="pop" data-t="{na+0.25:.2f}">{esc(s["alert"])}</div>')
@@ -1315,6 +1342,15 @@ def build(project):
         raise SystemExit(f"phrase introuvable : {text}")
 
     night, pv, paper, en = film["night"], film["pivot"], film["paper"], film["end"]
+    global EDITION
+    EDITION = choisir_edition(film, proj)
+    accroches.B = sys.modules[__name__]
+    hook_skip = set()
+    for st in night["stations"]:
+        if st["type"] == "hook_question":
+            # la question est écrite en grande typo sur la feuille : pas de sous-titre en même temps
+            st["_sentence"] = find_sentence(st["text"]) if st.get("text") else 0
+            hook_skip.add(st["_sentence"])
     # temps dérivés : la table s'arrête, la question du pivot, pli vers le papier ; à la fin, pli du papier vers la table
     pv["start"] = night["end"]
     pv["end"] = pv["fold_at"] + FOLD_DUR + 0.05
@@ -1329,7 +1365,7 @@ def build(project):
         st["y"] = y
         y += night_height(st) + NIGHT_GAP
     sheet_h = y + 400
-    night_html = "\n".join(night_station(st) for st in night["stations"])
+    night_html = "\n".join(night_station(st, film) for st in night["stations"])
     ncam = []
     for st in night["stations"]:
         ncam.append([st["cam_at"], -st["y"] + NIGHT_DY.get(st["type"], 0)])
@@ -1339,7 +1375,7 @@ def build(project):
 
     # ---- le papier : une planche par écran ; la première nuance arrive par une déchirure (verso)
     pst = paper["stations"]
-    skip_subs = set()
+    skip_subs = set(hook_skip)
     for st in pst:
         if st["type"] == "typo":
             st["sentence"] = find_sentence(st["text"])
@@ -1382,7 +1418,8 @@ def build(project):
     skip_subs |= {pv_k, en_k}
     subs = build_subs(film, skip_subs)
 
-    runtime = {"duration": D, "fold": FOLD_DUR, "ncam": ncam, "plates": pin, "tear": tear,
+    runtime = {"duration": D, "fold": FOLD_DUR, "ncam": ncam, "plates": pin, "tear": tear, "tilt": EDITION.get("tilt", -3.2),
+               "edition": EDITION["id"],
                "night": [night["start"], night["end"]], "paper": [paper["start"], paper["end"]],
                "pivot": {"start": pv["start"], "fold_at": pv["fold_at"]},
                "end": {"start": en["start"], "fold_at": en["fold_at"], "click_at": en["click_at"], "button_at": en["button_at"]}}
@@ -1461,6 +1498,7 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
 </body>
 </html>
 """
+    doc = recolorer(doc, EDITION)
     (proj / "index.html").write_text(doc, encoding="utf-8")
 
     # bruitages déduits de la structure : peu, au bon moment, jamais à la chaîne (retour du 26 octobre).
@@ -1469,8 +1507,16 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
     if film.get("sfx", True):
         sfx = [["impact-bass-1", night["stations"][0]["cam_at"], 0.24]]
         for st in night["stations"]:
-            if st["type"] == "hook_number":
-                sfx.append(["pop", st["lit_at"], 0.18])
+            if st["type"] == "hook_number" and accroches.visual_kind(st) in ("grid", "people", "icon"):
+                sfx.append(["pop", st.get("lit_at", st.get("caption_at", st["cam_at"] + 2.3) + 0.6), 0.16])
+            if st["type"] == "hook_image":
+                sfx.append(["ping", st.get("lock_at", st.get("title_at", st["cam_at"] + 1.2) + 0.8), 0.12])
+            if st["type"] == "hook_versus":
+                sfx.append(["pop", st["right"].get("at", st["cam_at"] + 2), 0.16])
+            if st["type"] == "hook_headline":
+                sfx.append(["papier-pose", st["cam_at"] + 0.1, 0.18])
+            if st["type"] in ("gag_pile",):
+                sfx.append(["papier-pose", st["cam_at"] + 0.4, 0.14])
             if st["type"] == "steps":
                 for s in st["steps"]:
                     if s.get("alert"):
@@ -1526,7 +1572,7 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
         s.pop("_ws", None)
     (proj / "film.resolu.json").write_text(json.dumps(film, ensure_ascii=False, indent=1), encoding="utf-8")
     nchunks = subs.count('class="chunk')
-    print(f"index.html : {len(doc)//1024} Ko, {D} s, {nchunks} morceaux de sous-titres ; "
+    print(f"index.html : {len(doc)//1024} Ko, {D} s, {nchunks} morceaux de sous-titres, édition {EDITION['id']}, accroche {night['stations'][0]['type']} ; "
           f"table 0–{night['end']:.2f}, pli {pv['fold_at']:.2f}, papier {paper['start']:.2f}–{paper['end']:.2f}"
           + (f", déchirure {tear['at']:.2f}" if tear else "") + f", fin {en['start']:.2f}")
 

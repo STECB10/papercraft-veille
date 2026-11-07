@@ -17,12 +17,17 @@ from commun import RACINE, dossier_du_jour, lire_json
 sys.path.insert(0, str(RACINE / "serie" / "moteur"))
 import build  # noqa: E402
 
-NUIT = {"hook_number", "gag_waiting", "gag_clock", "steps"}
+NUIT = set(build.HOOKS) | set(build.GAGS) | {"steps"}
 PAPIER = {"population_split", "face_to_face", "result_dots", "typo", "flow_door", "remaining_dots", "id_card", "two_groups", "result_bars", "ai_scan", "studies_stack", "metric", "key_points",
           "result_strips", "forest_plot", "roc_curve", "diagnostic_grid", "survival_curves", "chat", "image_scan"}
 REQUIS = {
-    "hook_number": ["header", "number", "unit", "caption", "people", "lit", "lit_at", "footnote", "cam_at"],
+    "hook_number": ["header", "number", "caption", "caption_at", "cam_at"],
+    "hook_question": ["header", "text", "italic", "cam_at"],
+    "hook_image": ["header", "image", "title", "title_at", "cam_at"],
+    "hook_versus": ["header", "left", "right", "cam_at"],
+    "hook_headline": ["header", "headline", "mark", "mark_at", "cam_at"],
     "gag_waiting": ["door", "chairs", "occupied", "cam_at"], "gag_clock": ["label", "cam_at"],
+    "gag_calendar": ["label", "cam_at"], "gag_pile": ["label", "cam_at"],
     "steps": ["title", "steps", "cam_at"],
     "population_split": ["total", "total_label", "dot_value", "count_at", "split_at", "groups", "cam_at"],
     "face_to_face": ["card_title", "card_value", "card_note", "label", "at", "cam_at"],
@@ -35,7 +40,19 @@ REQUIS = {
     "chat": ["messages", "cam_at"], "image_scan": ["image", "at", "cam_at"],
 }
 SANS_CHIFFRE = {"y", "people", "lit", "chairs", "occupied", "dot_value", "icon", "type", "words_file", "audio", "voice", "sfx", "duration", "lead",
-                "max", "lines", "null", "log", "from", "image", "modality", "tear"}
+                "max", "lines", "null", "log", "from", "image", "modality", "tear", "visual", "edition", "italic", "roll"}
+# connecteurs et tournures de l'oral qui relient une phrase à la précédente (début de phrase, minuscules)
+LIAISONS = ("et ", "et,", "mais", "or ", "or,", "donc", "alors", "pourtant", "cependant", "toutefois", "en effet", "en revanche", "autrement dit",
+            "concrètement", "résultat", "pour le savoir", "pour ", "ainsi", "puis", "ensuite", "enfin", "d'abord", "d'ailleurs", "par exemple",
+            "en clair", "bref", "surtout", "car ", "c'est là", "c'est pour", "c'est ", "au final", "au départ", "au bout", "côté ", "quant ",
+            "du côté", "de leur côté", "de son côté", "à l'inverse", "à l'arrivée", "en pratique", "en somme", "reste ", "attention", "bonne nouvelle",
+            "le hic", "le problème", "petit bémol", "seul bémol", "et là", "là,", "ici,", "cette fois", "en moyenne", "au total", "même ", "aussi",
+            "si ", "quand ", "lorsque", "comme ", "parce qu", "grâce à", "sans ", "avec ", "dans ", "chez ", "sur ", "à ", "en ", "plus ", "moins ",
+            "autre ", "autrement", "deuxième", "troisième", "premier", "première", "dernier", "dernière", "voilà", "imaginez", "prenons", "retenez",
+            "ce qu'il faut", "ce que", "la question", "la réponse", "l'idée", "le principe", "le but", "le résultat", "la bonne", "la limite",
+            "une limite", "à noter", "et pour", "et surtout", "mieux", "pire", "en plus", "de plus", "par ailleurs", "néanmoins", "malgré")
+CONNECTEURS_FORTS = ("et ", "mais", "or ", "donc", "alors", "pourtant", "cependant", "toutefois", "en effet", "en revanche", "autrement dit",
+                     "concrètement", "résultat", "ainsi", "puis", "ensuite", "enfin", "d'abord", "d'ailleurs", "au final", "attention", "surtout")
 NOMBRE = re.compile(r"\d+(?:[   ]\d{3})*(?:[.,]\d+)?")
 PROMESSE = "Une étude par jour, vérifiée à la source."
 
@@ -48,6 +65,89 @@ def plat(t):
 
 def nombre(s):
     return float(re.sub(r"[   ]", "", s).replace(",", "."))
+
+
+def film_precedent(jour):
+    """film.json du dernier jour publié avant celui-ci (pour ne jamais ouvrir deux vidéos de suite de la même façon)."""
+    for d in sorted((p for p in jour.parent.iterdir() if p.is_dir() and p.name < jour.name), reverse=True):
+        f = lire_json(d / "film.json")
+        if f and f.get("night", {}).get("stations"):
+            return d.name, f
+    return None, None
+
+
+def controle_accroche(sts, film, jour):
+    err = []
+    if not sts or sts[0].get("type") not in build.HOOKS:
+        return [f"night : la première station est une accroche ({', '.join(build.HOOKS)})"]
+    h = sts[0]
+    t = h["type"]
+    if len(h.get("header", "")) > 60:
+        err.append(f"{t} : header trop long ({len(h['header'])} caractères, 60 au plus) : « {h['header']} »")
+    if len(h.get("footnote", "") or "") > 60:
+        err.append(f"{t} : footnote trop long (60 caractères au plus)")
+    if t == "hook_number":
+        if len(str(h.get("number", ""))) > 7:
+            err.append(f"hook_number : « {h.get('number')} » trop long pour un chiffre clé (7 caractères au plus)")
+        if len(h.get("caption", "")) > 75:
+            err.append(f"hook_number : caption trop longue ({len(h['caption'])} caractères, 75 au plus) : « {h['caption']} »")
+        if len(h.get("unit", "") or "") > 14:
+            err.append("hook_number : unit en un ou deux mots (14 caractères au plus)")
+        if h.get("visual") and h["visual"] not in build.accroches.VISUALS:
+            err.append(f"hook_number : visual « {h['visual']} » inconnu ({', '.join(build.accroches.VISUALS)})")
+        if build.accroches.visual_kind(h) == "grid" and (h.get("unit") or "").strip() != "%":
+            err.append("hook_number : la grille de 100 ne sert qu'à un pourcentage (unit « % »)")
+        if h.get("ratio") and not (isinstance(h["ratio"], dict) and 0 < int(h["ratio"].get("k", 0)) <= int(h["ratio"].get("n", 0)) <= 30):
+            err.append("hook_number : ratio = {\"k\": …, \"n\": …} avec 0 < k ≤ n ≤ 30 (« k sur n », deux faits)")
+    if t == "hook_question":
+        dites = [s["text"] for s in film.get("sentences", [])]
+        if h.get("text") not in dites:
+            err.append("hook_question : text = une phrase de sentences, mot pour mot (en général la première)")
+        elif len(h["text"]) > 95:
+            err.append("hook_question : la question doit tenir en 95 caractères")
+        if h.get("italic") and build.norm(h["italic"]) not in [build.norm(w) for w in h.get("text", "").split()]:
+            err.append("hook_question : italic = un mot de la question")
+    if t == "hook_image" and h.get("image") not in build.IMAGES + ["ecg"] + build.ICONS:
+        err.append(f"hook_image : image « {h.get('image')} » inconnue ({', '.join(build.IMAGES + ['ecg'])} ou une icône)")
+    if t == "hook_image" and len(h.get("title", "")) > 60:
+        err.append("hook_image : title de 60 caractères au plus")
+    if t == "hook_versus":
+        for c in ("left", "right"):
+            if not isinstance(h.get(c), dict) or not h[c].get("label"):
+                err.append(f"hook_versus : {c} = {{label, number?, unit?, at, note?}}")
+            elif len(h[c]["label"]) > 24:
+                err.append(f"hook_versus : label trop long « {h[c]['label']} » (24 caractères au plus)")
+        if not (h.get("left") or {}).get("number"):
+            err.append("hook_versus : le côté gauche porte un chiffre (le droit peut rester « ? »)")
+        if len(h.get("caption", "") or "") > 90:
+            err.append("hook_versus : caption de 90 caractères au plus")
+    if t == "hook_headline":
+        if len(h.get("headline", "")) > 120:
+            err.append("hook_headline : headline de 120 caractères au plus")
+        mk = [build.norm(w) for w in (h.get("mark") or "").split()]
+        dn = [build.norm(w) for w in h.get("headline", "").split()]
+        if not mk or not any(dn[j:j + len(mk)] == mk for j in range(len(dn))):
+            err.append("hook_headline : mark = des mots qui se suivent dans headline")
+    # l'accroche se remplit tout de suite : ses éléments arrivent pendant les trois premières phrases, pas sur un écran vide
+    def phrase_de(ancre):
+        m = re.match(r"^s(\d+)", str(ancre or "s0"))
+        return int(m.group(1)) if m else 0
+    ancres = {"hook_number": [h.get("caption_at"), h.get("lit_at")], "hook_versus": [(h.get("left") or {}).get("at"), (h.get("right") or {}).get("at")],
+              "hook_image": [h.get("title_at"), h.get("lock_at")], "hook_headline": [h.get("mark_at")]}.get(t, [])
+    for a in ancres:
+        if a is not None and phrase_de(a) > 2:
+            err.append(f"{t} : « {a} » arrive trop tard (phrase {phrase_de(a)}) : les éléments de l'accroche apparaissent pendant les phrases 0 à 2")
+    # jamais deux vidéos de suite qui s'ouvrent pareil
+    veille, fv = film_precedent(jour)
+    if fv:
+        av = fv["night"]["stations"]
+        if av[0].get("type") == t:
+            err.append(f"accroche « {t} » déjà utilisée la veille ({veille}) : choisir une autre accroche ({', '.join(x for x in build.HOOKS if x != t)})")
+        gv = next((s.get("type") for s in av if s.get("type", "").startswith("gag_")), None)
+        g = next((s.get("type") for s in sts if s.get("type", "").startswith("gag_")), None)
+        if g and g == gv:
+            err.append(f"moment muet « {g} » déjà utilisé la veille ({veille}) : en prendre un autre ({', '.join(x for x in build.GAGS if x != g)}) ou aucun")
+    return err
 
 
 def main():
@@ -98,16 +198,40 @@ def main():
     # 2. phrases : texte dit sans chiffres, longueur, phrases imposées
     sents = film.get("sentences", [])
     mots = sum(len(s["text"].split()) for s in sents)
-    if not 200 <= mots <= 290:
-        err.append(f"script de {mots} mots (attendu 200 à 290)")
+    if not 210 <= mots <= 300:
+        err.append(f"script de {mots} mots (attendu 210 à 300) : des connecteurs courts (« Et », « Mais », « Or », « Alors »), pas de phrases en plus")
     corps = [s for s in sents if s.get("mode", "sub") == "sub"]
     courtes = [s["text"] for s in corps if len(s["text"].split()) < 6]
     if len(courtes) > 2:
         err.append(f"trop de phrases hachées (moins de 6 mots) : {courtes} ; faire des phrases complètes avec connecteurs")
     if corps and sum(len(s["text"].split()) for s in corps) / len(corps) < 9:
         err.append("phrases trop courtes en moyenne (9 mots au moins) : relier les idées avec des connecteurs logiques")
-    if sum(1 for s in corps if 0.25 <= float(s.get("pause_apres", 0) or 0) <= 0.8) < 3:
-        err.append("ajouter des respirations : pause_apres de 0,3 à 0,6 s après au moins 3 informations clés")
+    respir = [s for s in corps if 0.2 <= float(s.get("pause_apres", 0) or 0) <= 0.8]
+    if len(respir) < 2:
+        err.append("ajouter des respirations : pause_apres de 0,3 à 0,5 s aux changements de partie (2 au moins)")
+    if len(respir) > 7:
+        err.append(f"trop de silences ajoutés ({len(respir)} phrases avec pause_apres) : la voix devient hachée. 7 au plus, "
+                   "aux seuls changements de partie (après le contexte, après la méthode, après le résultat principal…)")
+    # 2 bis. un humain qui parle : les phrases s'enchaînent avec des connecteurs, pas une liste de constats
+    def liaison(txt):
+        t = txt.lower().replace("’", "'").lstrip("«  ")
+        return t.startswith(LIAISONS) or any(c in " " + " ".join(t.split()[:6]) + " " for c in (" donc ", " alors ", " pourtant ", " aussi ", " ainsi ", " en effet ", " cependant "))
+    typos = {st.get("text") for st in film.get("paper", {}).get("stations", []) if st.get("type") == "typo"} | {film.get("pivot", {}).get("text")}
+    suite = [s["text"] for s in corps[1:] if s["text"] not in typos]
+    if suite:
+        lies = [liaison(t) for t in suite]
+        if sum(lies) < 0.6 * len(lies):
+            err.append(f"le texte ressemble à une liste de constats : {sum(lies)} phrase(s) sur {len(lies)} seulement s'enchaînent avec la "
+                       "précédente. Relier au moins 60 % des phrases par un connecteur ou une tournure orale (« Et », « Mais », « Alors », "
+                       "« Concrètement », « Résultat : », « Autrement dit », « Le problème, c'est que… », « Pour le savoir »…)")
+        for k in range(len(lies) - 2):
+            if not any(lies[k:k + 3]):
+                err.append(f"trois phrases de suite sans lien entre elles : « {suite[k][:50]}… » / « {suite[k+1][:50]}… » / « {suite[k+2][:50]}… »")
+                break
+        forts = [next((c for c in CONNECTEURS_FORTS if t.lower().startswith(c)), None) for t in suite]
+        for c in set(f for f in forts if f):
+            if forts.count(c) > 2:
+                err.append(f"« {c.strip().capitalize()} » ouvre {forts.count(c)} phrases : varier les connecteurs (2 fois au plus chacun)")
     for i, s in enumerate(sents):
         if re.search(r"\d", s["text"]):
             err.append(f"phrase {i} : chiffres dans le texte dit (écrire en lettres, mettre les chiffres dans display) : {s['text']}")
@@ -224,6 +348,8 @@ def main():
             err.append("paper : 2 planches typo au plus (la nuance, puis la phrase à retenir)")
         if zone == "night" and sts and sts[-1].get("type") == "steps" and len(sts[-1]["steps"]) > 4:
             err.append("steps : 4 étapes au plus")
+        if zone == "night":
+            err += controle_accroche(sts, film, jour)
 
     # textes que le moteur retrouve mot pour mot parmi les phrases dites (sinon « phrase introuvable » au rendu)
     dites = {s.get("text") for s in sents}

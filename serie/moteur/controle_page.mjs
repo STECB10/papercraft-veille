@@ -45,6 +45,27 @@ try {
     duree: window.__timelines && window.__timelines.main && typeof window.__timelines.main.duration === 'function' ? window.__timelines.main.duration() : 0,
   }));
   for (const b of etat.blocs) erreurs.push(`moteur.js, bloc ${b}`);
+  // texte qui déborde : après l'ajustement de moteur.js, aucun texte ne dépasse sa boîte ni le bord de sa feuille
+  // (géométrie au repos, avant les transformations de l'animation : offsetLeft/offsetTop dans la feuille ou la planche)
+  const debords = await page.evaluate(() => {
+    const TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit';
+    const out = [];
+    const pos = (el, stop) => { let x = 0, y = 0; for (let e = el; e && e !== stop; e = e.offsetParent) { x += e.offsetLeft; y += e.offsetTop; } return [x, y]; };
+    for (const [sel, largeur] of [['#nsheet', 780], ['.plate', 1080]]) {
+      document.querySelectorAll(sel).forEach(box => {
+        box.querySelectorAll(TXT).forEach(el => {
+          if (el.closest('.tearh') || !el.textContent.trim() || el.parentElement.closest(TXT) || /\brot/.test(el.className)) return;
+          const [x] = pos(el, box);
+          const w = Math.max(el.offsetWidth, el.scrollWidth);
+          const nom = (el.className.baseVal ?? el.className).split(' ')[0] + ' « ' + el.textContent.trim().slice(0, 40) + ' »';
+          if (el.scrollWidth > el.clientWidth + 3 && getComputedStyle(el).overflow !== 'visible') out.push(`${nom} coupé (${el.scrollWidth} px pour ${el.clientWidth})`);
+          else if (x + w > largeur + 2 || x < -2) out.push(`${nom} sort de la ${sel === '#nsheet' ? 'feuille' : 'planche'} (de ${x} à ${x + w} px sur ${largeur})`);
+        });
+      });
+    }
+    return out;
+  });
+  for (const d of debords) erreurs.push(`texte qui déborde : ${d}`);
   if (pret && !(etat.duree > 0)) erreurs.push('timeline main vide (durée nulle)');
   if (!erreurs.length) console.log(`page OK : timeline main enregistrée (${etat.duree.toFixed(1)} s), aucune erreur JavaScript`);
 } finally {

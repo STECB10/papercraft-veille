@@ -8,8 +8,12 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 
 Tu travailles seul, sans humain à qui poser une question. La date est dans la variable d'environnement `DATE_DU_JOUR`
 (dossier `jours/$DATE_DU_JOUR/`). Lis d'abord : `serie/REGLES-CONTENU.md`, `serie/FILM-SCHEMA.md`,
-`serie/frame.md` (la charte visuelle : sections « Choisir la mise en scène » et « Règles de fond »),
-`serie/exemple/film.json` (pilote validé pour le style, mais trop court en contenu) et `serie/exemple/SCRIPT.md`.
+`serie/frame.md` (la charte visuelle : sections « Les accroches », « Choisir la mise en scène » et « Règles de fond »),
+`serie/exemple/SCRIPT-NATUREL.md` et `serie/exemple/film-naturel.json` (**la référence pour le ton** : un humain qui
+explique, des phrases reliées par des connecteurs). `serie/exemple/film.json` (le pilote) ne sert plus que pour la
+forme du fichier : son texte haché est justement ce qu'il ne faut plus écrire.
+Regarde aussi le `film.json` de la veille (le dernier dossier de `jours/` avant aujourd'hui) : **l'accroche et le
+moment muet d'aujourd'hui doivent être différents des siens** (le vérificateur refuse sinon).
 
 ## 1. Choisir
 
@@ -35,7 +39,7 @@ rétrospective, préprint non relu).
 ## 3. Script et `film.json`
 
 Suis `serie/REGLES-CONTENU.md` à la lettre (surtout la section « Style » : phrases complètes reliées par des
-connecteurs logiques, intro qui raconte, méthode et résultats expliqués pas à pas, respirations) : 80 à 100 s, 210 à 280 mots dits, dans l'ordre accroche (1 phrase
+connecteurs logiques, intro qui raconte, méthode et résultats expliqués pas à pas, respirations) : 85 à 105 s, 230 à 300 mots dits, dans l'ordre accroche (1 phrase
 qui capte, la toute première) → contexte (4 à 5 phrases : la situation, qui est concerné, comment on fait
 aujourd'hui, ce qui coince, ce que fait l'IA testée) → question de
 l'étude → carte d'identité (`id_card`) → ce que fait l'IA (`ai_scan` : ce qui entre, ce que l'IA en fait, ce qui
@@ -47,14 +51,21 @@ pour une IA conversationnelle, `image_scan` quand l'IA lit une image) → 1 rés
 (une phrase `typo`) → phrase à retenir (une phrase `typo`) → promesse → « Papercraft. ». Dès que la source donne un
 intervalle de confiance pour le résultat principal, il est dans `ci`.
 Le champ `type_etude` de candidats.json donne une première indication ; vérifie-le dans source.txt.
-Français simple, phrases courtes (8 à 14 mots), vouvoiement implicite, aucun anglicisme évitable, jamais « l'IA bat
+Écris comme on parle (section « Parler comme un humain » de REGLES-CONTENU.md) : chaque phrase s'accroche à la
+précédente par un connecteur (« Et », « Mais », « Alors », « Concrètement », « Résultat : », « Autrement dit »…),
+le registre de l'oral (« ils ont suivi… », « il n'en garde que deux »), peu de `pause_apres` (2 à 7, aux changements de
+partie). Relis le texte dit à voix haute dans ta tête : s'il sonne comme une liste, réécris-le.
+Français simple, phrases de 9 à 20 mots, vouvoiement implicite, aucun anglicisme évitable, jamais « l'IA bat
 les médecins » si l'étude ne le teste pas, jamais un avant/après pour deux groupes tirés au sort, jamais de « deux groupes » inventés pour une étude qui n'en
 compare pas.
 Texte dit : chiffres en lettres (« trente-six pour cent ») ; `display` : chiffres (« 36 % »), et sinon le
 texte dit **mot pour mot, en entier** (le vérificateur refuse tout mot retiré ou reformulé). Sigles lisibles :
 écris « IA », jamais « I.A. ». Choisis des stations qui montrent chaque idée au moment où elle est dite, avec des
-ancres sur les mots (voir FILM-SCHEMA.md). La table montre le problème (`hook_number`, un moment muet `gag_clock` ou
-`gag_waiting`, `steps`) ; la feuille montre l'étude, une planche par écran. N'écris pas de `y` : le moteur place les
+ancres sur les mots (voir FILM-SCHEMA.md). La table montre le problème : d'abord **une accroche choisie pour cette étude** parmi `hook_number`,
+`hook_question`, `hook_image`, `hook_versus`, `hook_headline` (FILM-SCHEMA.md dit laquelle selon l'étude ; jamais celle
+de la veille), puis éventuellement un moment muet (`gag_clock`, `gag_calendar`, `gag_pile`, `gag_waiting`, jamais celui
+de la veille), puis `steps` ; la feuille montre l'étude, une planche par écran. Textes courts dans l'accroche
+(caption 75 caractères au plus, header 60) : le moteur ajuste les tailles, mais un texte bref se lit mieux. N'écris pas de `y` : le moteur place les
 planches. N'écris jamais un chiffre dans une planche s'il n'est pas dans la fiche des faits (une courbe de suivi ou un
 forest plot seulement si la source donne chaque valeur).
 
