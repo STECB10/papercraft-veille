@@ -72,7 +72,7 @@
       }
     });
     // garde-fou : tout texte d'une feuille ou d'une planche qui dépasserait le bord est réduit jusqu'à tenir (60 % au plus)
-    var TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit,.fnum,.flab,.fexcl,.bstat,.blab,.bcmp,.tlwhen,.tllab';
+    var TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit,.tilev,.fnum,.flab,.fexcl,.bstat,.blab,.bcmp,.tlwhen,.tllab';
     function pos(el, stop) { var x = 0; for (var e = el; e && e !== stop; e = e.offsetParent) x += e.offsetLeft; return x; }
     [['#nsheet', 780], ['.plate', 1080]].forEach(function (B) {
       q(B[0]).forEach(function (box) {
@@ -394,6 +394,20 @@
       tl.to('#btnok', { opacity: 1, y: 0, duration: 0.3, ease: 'back.out(2)', immediateRender: false }, ck + 0.12);
     });
 
+    // ---------------------------------------------------------------- machine à écrire (pivot de certaines éditions) : lettres puis curseur
+    bloc('machine', function () {
+      q('.tc').forEach(function (c) {
+        gsap.set(c, { opacity: 0 });
+        tl.set(c, { opacity: 1 }, num(c, 'data-t', 0));
+      });
+      q('.caret').forEach(function (c) {
+        var t = num(c, 'data-t', 0);
+        gsap.set(c, { opacity: 0 });
+        tl.set(c, { opacity: 1 }, t);
+        tl.to(c, { opacity: 0, duration: 0.32, ease: 'steps(1)', yoyo: true, repeat: 5, immediateRender: false }, t + 0.3);
+      });
+    });
+
     // ---------------------------------------------------------------- mots typographiés (pivot, nuance, promesse)
     bloc('mots', function () {
       q('.tw').forEach(function (w) {
@@ -429,6 +443,14 @@
           tl.to(line, { scaleX: 1, duration: 0.5, ease: 'power3.inOut', immediateRender: false }, num(last, 'data-t', 0));
         }
       });
+    });
+
+    // ---------------------------------------------------------------- fil de progression en haut du cadre (on sait où l'on en est)
+    bloc('progression', function () {
+      var p = document.querySelector('#prog .progb');
+      if (!p) return;
+      gsap.set(p, { scaleX: 0, transformOrigin: '0% 50%' });
+      tl.fromTo(p, { scaleX: 0 }, { scaleX: 1, duration: Math.max(1, F.duration - 0.2), ease: 'none', immediateRender: false }, 0);
     });
 
     // ---------------------------------------------------------------- grain vivant (12 positions par seconde)

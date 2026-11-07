@@ -1,5 +1,5 @@
 {
- "_doc": "Éditions de la série : une palette et une mise en page de la table par jour, en rotation (jamais deux jours de suite la même). build.py remplace l'accent carbone du moteur par celui de l'édition. Un seul accent par film. Ordre de la rotation = ordre de la liste. film.json peut forcer une édition (champ « edition »). texture : fond des planches de l'étude (lignes, points, millimetre, marge, quadrille, uni). mot_cle : style du mot-clé des sous-titres (boite, feutre, souligne). entrees : façons dont une nouvelle planche arrive, en alternance (up, right, left, drop, turn, flip).",
+ "_doc": "Éditions de la série : une palette et une mise en page de la table par jour, en rotation (jamais deux jours de suite la même). build.py remplace l'accent carbone du moteur par celui de l'édition. Un seul accent par film. Ordre de la rotation = ordre de la liste. film.json peut forcer une édition (champ « edition »). texture : fond des planches de l'étude (lignes, points, millimetre, marge, quadrille, uni). mot_cle : style du mot-clé des sous-titres (boite, feutre, souligne). entrees : façons dont une nouvelle planche arrive, en alternance (up, right, left, drop, turn, flip). pivot : la question du pivot (monte = mots qui montent, machine = lettres tapées, point = grand point d'interrogation derrière). trait : geste sur le mot clé des grandes typos (souligne, cercle). fiche : « L'étude en bref » en fiche bristol ou en tuiles.",
  "rotation": [
   {
    "id": "carbone",
@@ -19,7 +19,10 @@
    "entrees": [
     "up",
     "right"
-   ]
+   ],
+   "pivot": "point",
+   "trait": "souligne",
+   "fiche": "fiche"
   },
   {
    "id": "ocre",
@@ -39,7 +42,10 @@
    "entrees": [
     "turn",
     "up"
-   ]
+   ],
+   "pivot": "machine",
+   "trait": "souligne",
+   "fiche": "tuiles"
   },
   {
    "id": "sarcelle",
@@ -59,7 +65,10 @@
    "entrees": [
     "drop",
     "right"
-   ]
+   ],
+   "pivot": "monte",
+   "trait": "cercle",
+   "fiche": "fiche"
   },
   {
    "id": "framboise",
@@ -79,7 +88,10 @@
    "entrees": [
     "flip",
     "left"
-   ]
+   ],
+   "pivot": "point",
+   "trait": "cercle",
+   "fiche": "tuiles"
   },
   {
    "id": "petrole",
@@ -99,7 +111,10 @@
    "entrees": [
     "left",
     "turn"
-   ]
+   ],
+   "pivot": "machine",
+   "trait": "cercle",
+   "fiche": "tuiles"
   }
  ]
 }

@@ -411,6 +411,9 @@ def main():
         err.append(f"post.txt doit contenir le lien de l'article : {etude.get('lien')}")
     if not lignes or len(lignes[0]) > 160:
         err.append("post.txt : la première ligne (accroche) doit faire 160 caractères au plus")
+    corps_post = [l for l in lignes[1:] if not l.lower().startswith("source") and not l.strip().startswith("#")]
+    if not any(l.rstrip().endswith("?") for l in corps_post):
+        err.append("post.txt : ajouter une question ouverte d'une ligne aux soignants, avant la source (elle lance les commentaires)")
     if len(post) > 1500:
         err.append(f"post.txt trop long ({len(post)} caractères, 1500 au plus)")
     for x in NOMBRE.findall(post.replace(etude.get("lien", ""), "")):

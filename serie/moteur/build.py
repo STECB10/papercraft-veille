@@ -32,6 +32,7 @@ import sys
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import accroches  # noqa: E402
+import mesure  # noqa: E402
 import planches  # noqa: E402
 from accroches import GAGS, HOOKS  # noqa: E402
 W, H = 1080, 1350
@@ -529,16 +530,47 @@ def build_subs(film, skip=()):
     return "\n".join(out)
 
 
-def typo_words(text, ws, italic):
+def typo_words(text, ws, italic, trait=None, mode="monte", px=80):
+    """Grande typo mot à mot sur la voix. trait : geste à la main sur le mot clé (« souligne » : un trait épais qui se
+    trace dessous ; « cercle » : une boucle qui l'entoure). mode « machine » : les lettres se tapent une à une pendant
+    que le mot est dit, un curseur clignote à la fin (pivot)."""
     toks = text.split()
     spans = []
     t = ws[0]["s"]
     for k, tok in enumerate(toks):
         # la ponctuation isolée suit le mot d'avant (le « ? » ne doit pas attendre la fin du silence)
-        t = t + 0.05 if k and not norm(tok) else ws[min(k, len(ws) - 1)]["s"]
-        it = " it" if italic and norm(tok) == norm(italic) else ""
-        spans.append(f'<span class="tw{it}" data-t="{t:.2f}">{esc(tok)}</span>')
-    return " ".join(spans)
+        w = ws[min(k, len(ws) - 1)]
+        t = t + 0.05 if k and not norm(tok) else w["s"]
+        is_it = bool(italic and norm(tok) == norm(italic))
+        it = " it" if is_it else ""
+        deco = ""
+        if is_it and trait:
+            tw_ = mesure.largeur(tok, "bodoni400i", px, -0.025)
+            th = px * 1.12
+            if trait == "cercle":
+                sw_, sh_ = tw_ + px * 0.2, th * 1.04       # la boucle tient dans les espaces entre les mots
+                d = (f"M{sw_ * 0.52:.0f} {sh_ * 0.06:.0f} C {sw_ * 0.86:.0f} {sh_ * 0.04:.0f}, {sw_ * 0.99:.0f} {sh_ * 0.3:.0f}, {sw_ * 0.97:.0f} {sh_ * 0.52:.0f} "
+                     f"C {sw_ * 0.95:.0f} {sh_ * 0.84:.0f}, {sw_ * 0.7:.0f} {sh_ * 0.97:.0f}, {sw_ * 0.47:.0f} {sh_ * 0.95:.0f} "
+                     f"C {sw_ * 0.2:.0f} {sh_ * 0.93:.0f}, {sw_ * 0.02:.0f} {sh_ * 0.78:.0f}, {sw_ * 0.03:.0f} {sh_ * 0.5:.0f} "
+                     f"C {sw_ * 0.04:.0f} {sh_ * 0.2:.0f}, {sw_ * 0.28:.0f} {sh_ * 0.05:.0f}, {sw_ * 0.6:.0f} {sh_ * 0.1:.0f}")
+                deco = (f'<svg class="circ" style="left:{-(sw_ - tw_) / 2:.0f}px;top:{-(sh_ - th) / 2:.0f}px;width:{sw_:.0f}px;height:{sh_:.0f}px" '
+                        f'viewBox="0 0 {sw_:.0f} {sh_:.0f}" data-a="draw" data-t="{w["e"] + 0.15:.2f}" data-d="0.7"><path d="{d}" stroke="var(--carbon)" '
+                        f'stroke-width="{max(4, px * 0.07):.1f}" fill="none" stroke-linecap="round"/></svg>')
+            else:
+                deco = f'<span class="ul" data-a="growx" data-t="{w["e"] + 0.1:.2f}"></span>'
+        if mode == "machine" and norm(tok):
+            n = len(tok)
+            dur = max(0.12, min(0.6, w["e"] - w["s"]))
+            chars = "".join(f'<span class="tc" data-t="{w["s"] + dur * j / n:.2f}">{esc(c)}</span>' for j, c in enumerate(tok))
+            spans.append(f'<span class="tm{it}">{chars}{deco}</span>')
+        elif mode == "machine":
+            spans.append(f'<span class="tm"><span class="tc" data-t="{t:.2f}">{esc(tok)}</span></span>')
+        else:
+            spans.append(f'<span class="tw{it}" data-t="{t:.2f}">{esc(tok)}{deco}</span>')
+    out = " ".join(spans)
+    if mode == "machine":
+        out += f'<span class="caret" data-t="{ws[-1]["e"] + 0.05:.2f}"></span>'
+    return out
 
 
 # --------------------------------------------------------------------------------------------- la table : feuille inclinée (le constat)
@@ -709,7 +741,42 @@ def paper_station(st, film, fig=None):
         planches.B = sys.modules[__name__]
         return "\n".join(planches.station(st, film, fig, y0, t0))
 
-    if t == "id_card":
+    if t == "id_card" and EDITION.get("fiche") == "tuiles":
+        # variante d'édition : une tuile par information, chacune avec son pictogramme, posées une à une
+        rows = st["rows"]
+        n = len(rows)
+        h += kicker(y0, st.get("title", "L'étude en bref"), t0 + 0.2)
+        nr = math.ceil(n / 2)
+        gap = 28
+        th = min(250, (860 - (nr - 1) * gap) / nr)
+        top = y0 + 160 + (860 - (nr * th + (nr - 1) * gap)) / 2
+        tw2 = (CW - gap) / 2
+        for i, r in enumerate(rows):
+            full = n % 2 == 1 and i == n - 1
+            col, row = (0, i // 2) if full else (i % 2, i // 2)
+            x = ML + col * (tw2 + gap)
+            w_ = CW if full else tw2
+            y = top + row * (th + gap)
+            acc = " acc" if r.get("accent") else ""
+            lab = r["label"].lower()
+            ic = ("doc" if any(k in lab for k in ("type", "devis", "méthode")) else
+                  "hospital" if any(k in lab for k in ("lieu", "pays", "centre", "hôpita", "où")) else
+                  "users" if any(k in lab for k in ("patient", "particip", "effectif", "personne", "adulte", "enfant", "inclus", "population")) else
+                  "calendar" if any(k in lab for k in ("durée", "suivi", "période", "année", "date", "quand")) else
+                  "check" if any(k in lab for k in ("critère", "mesur", "objectif", "résultat", "évalu")) else
+                  "chip" if any(k in lab for k in ("ia", "outil", "modèle", "algorithme")) else
+                  "magnifier" if any(k in lab for k in ("étude", "source", "données")) else "doc")
+            col_ic = "var(--paper-hi)" if acc else "var(--ink)"
+            h.append(f'<div class="tile{acc}" style="left:{x:.0f}px;top:{y:.0f}px;width:{w_:.0f}px;height:{th:.0f}px" data-a="hingeT" data-t="{r["at"] - 0.15:.2f}"></div>')
+            isz = min(70, th * 0.3)
+            h.append(iconbox(ic, x + 28, y + 26, isz, isz, col_ic, r["at"] - 0.05, "draw", 'data-d="0.6"'))
+            h.append(f'<div class="kick tilek{acc}" style="left:{x + 40 + isz:.0f}px;top:{y + 26 + isz / 2 - 18:.0f}px;width:{w_ - isz - 70:.0f}px;white-space:nowrap" '
+                     f'data-fit="1" data-fmin="20" data-a="rise" data-t="{r["at"]:.2f}">{esc(r["label"])}</div>')
+            vpx, vls = mesure.ajuster(str(r["value"]), "bodoni400", w_ - 56, 54, 34, max_lignes=2, interligne=1.08, boite_h=th - isz - 56)
+            h.append(f'<div class="tilev{acc}" style="left:{x + 28:.0f}px;top:{y + isz + 46:.0f}px;width:{w_ - 56:.0f}px;font-size:{vpx}px" data-fit="1" '
+                     f'data-fh="{th - isz - 56:.0f}" data-fmin="28" data-a="print" data-t="{r["at"] + 0.1:.2f}">{esc(r["value"])}</div>')
+
+    elif t == "id_card":
         # fiche bristol posée et scotchée : marge carbone, lignes réglées, une ligne par information
         rows = st["rows"]
         n = len(rows)
@@ -1027,7 +1094,7 @@ def paper_station(st, film, fig=None):
 
     elif t == "typo":
         ws = film["sentences"][st["sentence"]]["_ws"]
-        h.append(f'<div class="typo" style="left:90px;width:{W-180}px;top:{y0+330}px">{typo_words(st["text"], ws, st.get("italic"))}</div>')
+        h.append(f'<div class="typo" style="left:90px;width:{W-180}px;top:{y0+330}px">{typo_words(st["text"], ws, st.get("italic"), EDITION.get("trait"))}</div>')
         h.append(f'<div class="rule" style="left:{W/2-60:.0f}px;top:{y0+900}px;width:120px" data-a="wipe" data-t="{ws[-1]["s"]:.2f}"></div>')
 
     elif t == "studies_stack":
@@ -1487,7 +1554,8 @@ def build(project):
   <div id="pivot" class="clip" data-start="{pv['start']:.3f}" data-duration="{pv['end']-pv['start']:.3f}" data-track-index="4">
     <div class="foldsheet" id="pvsheet">
       <div class="pvground"></div><div class="plight" id="pvlight"></div>
-      <div class="typo pvtext" style="left:80px;width:{W-160}px;top:500px">{typo_words(pv['text'], pv_ws, pv.get('italic'))}</div>
+      {'<div class="pvq" data-a="big" data-t="' + format(pv['start'] + 0.1, '.2f') + '" data-d="1.2">?</div>' if EDITION.get('pivot') == 'point' else ''}
+      <div class="typo pvtext pv-{EDITION.get('pivot', 'monte')}" style="left:80px;width:{W-160}px;top:500px">{typo_words(pv['text'], pv_ws, pv.get('italic'), EDITION.get('trait'), 'machine' if EDITION.get('pivot') == 'machine' else 'monte')}</div>
     </div>
     <div class="flapwrap"><div class="flap nightflap" id="pvflap"></div></div>
     <div class="streak" id="pvstreak"></div>
@@ -1497,6 +1565,7 @@ def build(project):
 {subs}
   </div>
   <div id="grain" class="clip" data-start="0" data-duration="{D}" data-track-index="9"><div class="grainin"></div></div>
+  <div id="prog" class="clip" data-start="0" data-duration="{D}" data-track-index="10"><div class="progb"></div></div>
   <audio id="mix" data-start="0" data-duration="{D}" data-track-index="11" src="{film['audio']}" data-volume="1"></audio>
 </div>
 <script>
@@ -1532,7 +1601,9 @@ window.FILM = {json.dumps(runtime, ensure_ascii=False)};
         sfx += [["whoosh-short", st["cam_at"] + 0.05, 0.08] for st in night["stations"][1:]]
         sfx += [["papier-pli", pv["fold_at"] - 0.05, 0.32], ["whoosh-cinematic", pv["fold_at"] - 0.1, 0.12]]
         for p in pin[1:]:
-            if p[1] in ENTREES:
+            if p[1] in ("turn", "flip"):
+                sfx.append(["papier-pli", p[0] + 0.08, 0.2])      # une page qui tourne
+            elif p[1] in ENTREES:
                 sfx.append(["papier-pose", p[0] + 0.12, 0.2])
         if tear:
             sfx.append(["papier-dechire", tear["at"] + 0.2, 0.34])

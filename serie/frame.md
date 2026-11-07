@@ -186,7 +186,10 @@ texte qui déborderait. Le contrôle d'avant rendu (`controle_page.mjs`) refuse 
 Une édition = l'accent, ses nuances, la teinte du papier et de la table, le sens dans lequel la feuille est posée,
 l'alignement de l'accroche (à gauche ou centrée), le papier des planches de l'étude (lignes, points, millimétré, marge,
 quadrillé, toujours très léger), le style du mot-clé des sous-titres (boîte, feutre, souligné) et la façon dont une
-nouvelle planche arrive (du bas, de côté, lâchée d'en haut, tournée comme une page, basculée depuis le haut). Elles tournent d'un jour à l'autre, dans l'ordre de
+nouvelle planche arrive (du bas, de côté, lâchée d'en haut, tournée comme une page, basculée depuis le haut). Elle
+règle aussi la question du pivot (mots qui montent, lettres tapées à la machine avec un curseur, ou grand point
+d'interrogation tracé derrière), le geste à la main sur le mot clé des grandes typos (souligné ou entouré) et la forme
+de « L'étude en bref » (fiche bristol ou tuiles à pictogrammes). Un fil de progression fin court en haut du cadre. Elles tournent d'un jour à l'autre, dans l'ordre de
 `serie/moteur/editions.json` : carbone (#5D68FF), ocre (#B86E08), sarcelle (#0F8A86), framboise (#C8366C), pétrole
 (#1D6FA5). Dans un film, la règle ne change pas : un seul accent, pour le groupe IA, la boîte du mot-clé, l'écart et le
 verso de la nuance ; le groupe témoin reste à l'encre. Aucune édition rouge ou verte (pas de « danger », pas de

@@ -74,7 +74,9 @@ forest plot seulement si la source donne chaque valeur).
 ## 4. Post : `post.txt`
 
 Ligne 1 : une phrase d'accroche (le résultat clé en langage simple, 160 caractères au plus). Puis 2 à 3 phrases : la
-question, les groupes, le résultat principal. Puis « Source : Auteur et al., Revue, mois année. » suivi du lien
+question, les groupes, le résultat principal. Puis **une question ouverte** d'une ligne, posée aux soignants, qui donne
+envie de répondre en commentaire (« Et dans votre service, vous feriez confiance à cette alerte ? ») : pas de question
+fermée vague (« Qu'en pensez-vous ? »). Puis « Source : Auteur et al., Revue, mois année. » suivi du lien
 exact de `etude.json` (`https://doi.org/…`). Puis 3 à 4 hashtags. 1 500 caractères au plus. Aucun chiffre hors fiche.
 
 ## 5. Garder une trace : `SCRIPT.md`

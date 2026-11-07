@@ -114,5 +114,6 @@ chiffres (« trente-six pour cent » → « 36 % »). Jamais de mot retiré, ajo
 
 - Ligne 1 : une phrase d'accroche (le résultat clé en langage simple).
 - 2 à 3 phrases : la question, la méthode (les groupes, les études regroupées…), le résultat principal.
+- Une question ouverte d'une ligne aux soignants, pour lancer les commentaires (« Et vous, dans votre pratique… ? »).
 - La source avec le lien de l'article (https://doi.org/<DOI>).
 - 3 à 4 hashtags.
