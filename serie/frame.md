@@ -186,7 +186,7 @@ texte qui déborderait. Le contrôle d'avant rendu (`controle_page.mjs`) refuse 
 L'image 0 est une couverture plein cadre, immobile : c'est elle que LinkedIn montre dans le fil avant la lecture. Le
 moteur la tire seul de l'accroche (le chiffre et sa légende, la question avec son mot clé souligné, le face-à-face, le
 titre surligné, ou le dessin de l'étude et son titre), avec « Papercraft.AI · l'étude du jour », la date et l'en-tête
-de l'étude. Quand la voix commence, elle se soulève comme une feuille qu'on retire et révèle la table. Rien n'y est
+de l'étude. Elle reste 2,4 à 3,2 s selon la longueur de son texte (le temps de la lire, avec un zoom très lent), puis se soulève comme une feuille qu'on retire, juste avant la voix, et révèle la table. Rien n'y est
 écrit qui ne soit déjà dans l'accroche.
 
 ## Les éditions
@@ -205,6 +205,10 @@ verso de la nuance ; le groupe témoin reste à l'encre. Aucune édition rouge o
 
 ## Les sons
 
+La voix devant (retour du 7 novembre 2026) : elle est ramenée à -16 LUFS avant le mixage ; la musique part dès la
+première image (l'intro du morceau est rallongée pour que son drop tombe quand même au pivot), environ 17 LU sous la
+voix quand elle parle, et remonte dans les silences ; chaque bruitage est ramené à un même niveau puis placé 13 LU sous
+la voix au moins.
 Peu, au bon moment, jamais à la chaîne : des bruits de papier pour les gestes de papier (la feuille posée, le pli, la
 déchirure), un « ping » quand arrive le résultat qui compte, un « pop » pour l'écart. Rien sur chaque élément qui
 apparaît, jamais deux bruitages à moins de 1,2 s (le moteur trie lui-même). La musique et la voix restent devant.

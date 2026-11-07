@@ -1501,7 +1501,7 @@ def build(project):
 
     # la couverture : première image du film (LinkedIn la montre dans le fil), se soulève quand la voix commence
     lead = float(film.get("lead", 0) or 0)
-    cover_out = round(max(0.45, lead - 0.3), 2)
+    cover_out = round(max(0.45, lead - 0.45), 2)
     cover_html = ""
     if film.get("couverture", True) and night["stations"] and night["stations"][0]["type"] in HOOKS:
         import datetime

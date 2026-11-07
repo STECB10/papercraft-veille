@@ -450,7 +450,9 @@
       var c = document.getElementById('coverin');
       if (!c) return;
       var t = typeof F.cover_out === 'number' ? F.cover_out : 0.5;
-      gsap.set(c, { y: 0, rotation: 0, transformOrigin: '20% 100%' });
+      gsap.set(c, { y: 0, rotation: 0, scale: 1, transformOrigin: '20% 100%' });
+      // pendant qu'on la lit, elle respire (zoom très lent) : jamais une image figée
+      tl.fromTo(c, { scale: 1 }, { scale: 1.025, duration: t, ease: 'none', immediateRender: false }, 0);
       tl.to(c, { y: -1550, rotation: -6, duration: 0.7, ease: 'power3.in', immediateRender: false }, t);
     });
 

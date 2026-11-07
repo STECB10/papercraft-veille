@@ -10,8 +10,8 @@ automatiques. **Tu ne places rien** : pas de `y`, le moteur espace lui-même les
 
 ## Temps : toujours des ancres sur la voix
 
-Jamais de secondes écrites à la main (sauf `0` pour le début). Le moteur ajoute seul 0,8 s d'entrée muette avant le
-premier mot (la feuille est posée, l'en-tête s'écrit) : `0` veut dire « quand la voix commence », rien à compter. Ancres :
+Jamais de secondes écrites à la main (sauf `0` pour le début). Le moteur ajoute seul une entrée muette avant le
+premier mot (2,8 à 3,6 s : le temps de lire la couverture) : `0` veut dire « quand la voix commence », rien à compter. Ancres :
 `"s3"` début de la phrase 3 (index dans `sentences`, à partir de 0) · `"s3.e"` fin de la phrase 3 ·
 `"s3:photo"` début du mot « photo » dans la phrase 3 (casse et ponctuation ignorées) · `"s3:photo.e"` fin de ce mot ·
 `"s3.w2"` 3e mot de la phrase · décalage : `"s3-0.2"`, `"s3:photo+0.3"`.
