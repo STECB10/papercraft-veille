@@ -17,6 +17,26 @@ premier mot (2,8 à 3,6 s : le temps de lire la couverture) : `0` veut dire « q
 `"s3.w2"` 3e mot de la phrase · décalage : `"s3-0.2"`, `"s3:photo+0.3"`.
 Règle : un élément apparaît au mot qui le nomme ; la caméra (`cam_at`) part 0,2 à 0,3 s avant la phrase de la station.
 
+### Les planches suivent la voix (retour du 8 novembre 2026, vérifié par `verifier.py`)
+Le vérificateur rejoue le film au débit de la vraie voix (environ 3,5 mots par seconde) et refuse :
+- **un élément hors de l'écran** : chaque ancre d'une planche tombe entre son `cam_at` et le `cam_at` de la planche
+  suivante (sinon il s'anime alors que la caméra n'est pas encore arrivée, ou déjà partie) ;
+- **un élément sur une phrase qui n'en parle pas** : une étape, un constat, un point apparaît sur la phrase qui le dit
+  (ou juste avant / après) ; jamais « Calculateur » pendant une phrase sur l'information des patients ;
+- **le désordre** : les lignes d'une fiche, les étapes, les points apparaissent dans l'ordre où ils sont dessinés (de
+  haut en bas) ; dans `ai_scan`, `at` (ce qui entre) ≤ `core_at` (l'IA) ≤ `out_at` (ce qui sort) ; dans `ratio`,
+  `at` ≤ `ci_at` ≤ `null_at` ;
+- **une planche vide** plus de 3,5 s à son arrivée (premier élément ancré sur la première phrase de la planche) ;
+- **une image figée** plus de 8 s pendant que la voix avance : chaque phrase importante a son geste. Le contexte et le
+  problème aussi : si l'accroche reste à l'écran pendant deux phrases qui parlent d'autre chose, la planche suivante
+  (étapes, moment muet) arrive plus tôt et illustre ces phrases ;
+- **une planche trop brève** : 3,5 s au moins à l'écran (2,5 s pour une accroche ou une grande typo, 2 s pour un
+  moment muet) ;
+- **un rapport dessiné en jauge** : un rapport de cotes, de risques ou de hasards (OR, RR, HR) se montre avec la
+  planche `ratio`, jamais avec `metric` (une jauge remplie à 0,59 se lit « 59 % »).
+Le moteur rattrape en dernier recours un élément qui tomberait hors de l'écran avec la vraie voix (il le ramène dans
+la fenêtre de sa planche), mais le film doit être juste dès le départ.
+
 ## Champs racine
 
 ```json
@@ -161,8 +181,16 @@ HR), "at": "<ancre>"}`. Le moteur dessine l'écart annoté et la figure de l'int
   plusieurs années (chaque date doit être un fait).
 - `findings` **ce qu'on a trouvé, concrètement** (retour du 8 novembre 2026) : `title?` (« Ce qu'on a trouvé », « Ce que
   l'IA entend »…), `items`: 2 à 4 × `{icon, label (34 caractères au plus, ex. « Le son de la voix »), detail (80 au plus,
-  ex. « 96 à 98 % des indices utiles »), tendance? (plus | moins | pareil : une flèche), accent?, at}`, `cam_at`. Pour la
-  partie « concret » : ce que l'IA repère, ce qui diffère entre les groupes, ce qui change sur le terrain.
+  ex. « 96 à 98 % des indices utiles »), detail_at? (la ligne d'explication arrive à part, sur le mot qui la dit),
+  tendance? (plus | moins | pareil : une flèche), accent?, at}`, `cam_at`. Pour la partie « concret » : ce que l'IA
+  repère, ce qui diffère entre les groupes, ce qui change sur le terrain. Un constat par phrase ou par moitié de phrase.
+- `ratio` **un rapport et son intervalle** (rapport de cotes, de risques, de hasards : OR, RR, HR) : `title?`, `value`
+  (texte affiché, « 0,59 », 7 caractères au plus), `num`, `low`, `high` (l'intervalle de confiance à 95 %), `label?`
+  (ce qu'on compare, 70 au plus : « Rapport de cotes face au médecin avec calculateur »), `left?` / `right?` (ce que veut
+  dire chaque côté de 1, 26 au plus : « moins de confiance » / « plus de confiance »), `at` (le chiffre en grand),
+  `ci_at` (l'intervalle se trace, échelle logarithmique), `null_at` (la ligne « 1 = aucune différence »), `caption?` +
+  `caption_at?` (46 au plus : « Loin de 1 : une vraie différence »), `cam_at`. Trois gestes, trois moments de la voix :
+  le chiffre, son intervalle, ce que veut dire 1.
 - `key_points` constats numérotés (revue, cohorte, limites) : `title?`, `points`: 2 à 4 × `{text (70 caractères au
   plus), at}`, `cam_at`.
 - `typo` phrase en grande typo : `text` (= une phrase de `sentences`, mot pour mot), `italic`, `cam_at`. Deux au plus :

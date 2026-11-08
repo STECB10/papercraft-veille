@@ -14,21 +14,22 @@ import shutil
 import subprocess
 import sys
 
-from audio import lead_for
+from audio import DEBIT, lead_for
 
 RACINE = pathlib.Path(__file__).resolve().parents[2]
 MOTEUR = RACINE / "serie" / "moteur"
 
 
 def faux_mots(film):
-    """Débit d'environ 2,7 mots par seconde, silences de fin de phrase et pauses voulues (pause_apres), après l'entrée muette."""
+    """Au débit de la vraie voix (environ 3,5 mots par seconde), silences de fin de phrase et pauses voulues (pause_apres),
+    après l'entrée muette. Sert aussi au vérificateur pour savoir ce qui est à l'écran pendant chaque phrase."""
     mots, t = [], lead_for(film) + 0.1
     for s in film["sentences"]:
         for w in s["text"].split():
-            d = 0.12 + 0.045 * len(w)
+            d = (0.12 + 0.045 * len(w)) * DEBIT
             mots.append({"w": w, "s": round(t, 3), "e": round(t + d, 3)})
-            t += d + 0.06
-        t += 0.32 + float(s.get("pause_apres", 0) or 0)
+            t += d + 0.06 * DEBIT
+        t += 0.32 * DEBIT + float(s.get("pause_apres", 0) or 0)
     return mots, round(t + 3.6, 1)
 
 

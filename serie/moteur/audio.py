@@ -19,6 +19,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 SFX_DIR = HERE.parent / "audio" / "sfx"
 TAIL = 3.6
 LEAD = 0.8
+DEBIT = 0.77      # voix Brick : un mot dure 0,77 × l'estimation de base du banc d'essai (calé sur la vraie voix, 8 novembre 2026)
 VOIX_LUFS = -16.0     # la voix est mise à ce niveau avant tout (montage) : la musique et les bruitages se règlent par rapport à elle
 # bruitages : chaque fichier est d'abord ramené à un même niveau (mesures ci-dessous, ebur128), puis placé selon le volume
 # demandé par build.py : un volume de 0,2 donne SFX_REF LUFS, 16 LU sous la voix (retour du 7 novembre 2026 : bruitages et

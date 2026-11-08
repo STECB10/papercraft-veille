@@ -183,7 +183,7 @@ TIME_KEYS = {"at", "cam_at", "start", "end", "lit_at", "count_at", "count_end", 
              "fold_at", "wordmark_at", "button_at", "click_at", "source_at", "note_at", "caption_at", "card_at",
              "door_at", "walk_at", "label_at", "check_at", "mark_at",
              "scan_at", "core_at", "out_at", "total_at", "patients_at",
-             "sick_at", "lock_at", "curve_at", "tag_at", "gap_at", "pooled_at", "title_at"}
+             "sick_at", "lock_at", "curve_at", "tag_at", "gap_at", "pooled_at", "title_at", "detail_at", "ci_at", "null_at"}
 
 
 def resolve(obj, clock):
@@ -659,7 +659,9 @@ def night_station(st, film=None):
             if inside:
                 h.append(f'<svg class="buzzl" style="left:40px;top:{sy+20}px;width:220px;height:150px" viewBox="0 0 220 150" fill="none" stroke="#5D68FF" stroke-width="5" stroke-linecap="round" data-a="fade" data-t="{na:.2f}"><path d="M30 35c-14 24-14 56 0 80"/><path d="M190 35c14 24 14 56 0 80"/></svg>')
             h.append(f'<div class="mono" style="left:270px;top:{sy+8}px;width:470px;color:var(--ink-dim);white-space:normal" data-a="rise" data-t="{at+0.1:.2f}">{esc(s["label"])}</div>')
-            ny = sy + 52 if len(s["label"]) <= 30 else sy + 92
+            # nombre de lignes mesuré (capitales espacées) : jamais la note posée sur la 2e ligne de l'étiquette
+            nl = len(mesure.lignes(s["label"], "mono500", 26, 470, 0.07))
+            ny = sy + 13 + 39 * nl
             if s.get("note"):
                 h.append(f'<div class="note" style="left:266px;top:{ny}px;width:478px" data-fit="1" data-fmin="30" data-a="rise" data-t="{na:.2f}">{esc(s["note"])}</div>')
             cy = ny + 76
@@ -1397,6 +1399,48 @@ def paper_station(st, film, fig=None):
 
 
 
+# --------------------------------------------------------------------------------------------- chaque geste à l'écran
+def _gestes(obj, out, chemin=""):
+    """(objet, clé) de chaque temps d'élément d'une planche (pas la caméra)."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k in TIME_KEYS and k != "cam_at" and isinstance(v, (int, float)):
+                out.append((obj, k))
+            elif isinstance(v, (dict, list)):
+                _gestes(v, out)
+    elif isinstance(obj, list):
+        for v in obj:
+            _gestes(v, out)
+    return out
+
+
+def cadrer(film):
+    """Filet de sécurité : un élément ne s'anime jamais hors de l'écran. Ce qui tombe avant l'arrivée de sa planche arrive avec
+    elle ; ce qui tombe après le départ de la caméra arrive juste avant. Dans l'IA, ce qui entre précède l'IA, qui précède ce qui
+    sort (sinon la boîte d'entrée reste vide pendant que l'IA travaille). verifier.py refuse déjà ces cas avec la voix simulée ;
+    la vraie voix peut aller un peu plus vite ou plus lentement."""
+    fixes = []
+    for zone, fin in (("night", film["night"]["end"]), ("paper", film["end"]["fold_at"])):
+        sts = film[zone]["stations"]
+        for j, st in enumerate(sts):
+            cam = float(st["cam_at"])
+            end = float(sts[j + 1]["cam_at"]) if j + 1 < len(sts) else float(fin)
+            lo, hi = cam + 0.15, max(cam + 0.3, end - 0.45)
+            if st.get("type") == "ai_scan":
+                cles = [k for k in ("at", "core_at", "out_at") if isinstance(st.get(k), (int, float))]
+                vals = sorted(st[k] for k in cles)
+                for k, v in zip(cles, vals):
+                    if st[k] != v:
+                        fixes.append(f"{zone} {j} {k}")
+                    st[k] = v
+            for o, k in _gestes(st, []):
+                v = o[k]
+                if v < cam - 0.25 or v > end - 0.15:
+                    o[k] = round(min(max(v, lo), hi), 3)
+                    fixes.append(f"{zone} {j} {k} {v:.2f}->{o[k]:.2f}")
+    return fixes
+
+
 # --------------------------------------------------------------------------------------------- assemblage
 def build(project):
     proj = pathlib.Path(project).resolve()
@@ -1406,6 +1450,8 @@ def build(project):
     words = [{"w": w["w"], "s": float(w.get("s", w.get("start"))), "e": float(w.get("e", w.get("end")))} for w in words]
     clock = Clock(film, words)
     resolve(film, clock)
+    for f_ in cadrer(film):
+        print(f"recadré (hors écran) : {f_}", file=sys.stderr)
     film["night"]["start"] = 0.0      # la feuille est sur la table dès la première image ; son contenu arrive après l'entrée
     D = float(film["duration"])
 

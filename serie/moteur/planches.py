@@ -6,7 +6,11 @@
               l'anneau du groupe comparé se trace à l'intérieur
   timeline    la chronologie de l'étude : une ligne qui descend, une date par étape (inclusions, suivi, analyse…)
   findings    ce que l'étude a trouvé, concrètement (retour du 8 novembre 2026) : 2 à 4 constats de terrain, chacun avec
-              son dessin, son titre court, une ligne d'explication et, s'il y a lieu, une flèche (plus / moins / pareil)
+              son dessin, son titre court, une ligne d'explication et, s'il y a lieu, une flèche (plus / moins / pareil) ;
+              detail_at : la ligne d'explication arrive à part, sur le mot qui la dit
+  ratio       un rapport (de cotes, de risques, de hasards) : le chiffre en grand, puis son intervalle sur une échelle
+              logarithmique, puis la ligne « 1 = aucune différence » ; trois gestes sur trois moments de la voix
+              (retour du 8 novembre 2026 : un rapport de cotes de 0,59 dessiné en jauge se lisait « 59 % »)
 
 Coordonnées d'écran (planche plein cadre 1080 × 1350, zone utile y 150 à 1060), décalées de y0.
 """
@@ -15,7 +19,7 @@ import math
 import mesure
 
 B = None            # le module build (injecté par build.py)
-TYPES = ["flow_chart", "big_stat", "timeline", "findings"]
+TYPES = ["flow_chart", "big_stat", "timeline", "findings", "ratio"]
 ML, CW, W = 72, 936, 1080
 
 
@@ -167,14 +171,81 @@ def station(st, film, fig, y0, t0):
             ty = yy + (ch - th) / 2
             h.append(f'<div class="fdlab" style="left:{tx:.0f}px;top:{ty:.0f}px;width:{tw_:.0f}px;font-size:{lpx}px" data-fit="1" data-fmin="26" '
                      f'data-a="rise" data-t="{at:.2f}">{_esc(it["label"])}</div>')
+            dat = it.get("detail_at", at + 0.25)
             if it.get("detail"):
                 h.append(f'<div class="fddet" style="left:{tx:.0f}px;top:{ty + lpx * 1.15 + 8:.0f}px;width:{tw_:.0f}px;font-size:{dpx}px" data-fit="1" '
-                         f'data-fh="{len(dls) * dpx * 1.25 + 6:.0f}" data-fmin="22" data-a="rise" data-t="{at + 0.25:.2f}">{_esc(it["detail"])}</div>')
+                         f'data-fh="{len(dls) * dpx * 1.25 + 6:.0f}" data-fmin="22" data-a="rise" data-t="{dat:.2f}">{_esc(it["detail"])}</div>')
             tnd = it.get("tendance")
             if tnd:
                 ax, ay = ML + CW - 34 - 80, yy + ch / 2 - 40
                 d = {"plus": "M40 70V12M16 34L40 10L64 34", "moins": "M40 10V68M16 46L40 70L64 46", "pareil": "M10 30H70M10 50H70"}.get(tnd, "M10 40H70")
-                h.append(B.svg_layer(ax, ay, 80, 80, f'<path d="{d}" stroke="var(--carbon)" stroke-width="8" fill="none"/>', "draw", at + 0.4, 'data-d="0.5"'))
+                h.append(B.svg_layer(ax, ay, 80, 80, f'<path d="{d}" stroke="var(--carbon)" stroke-width="8" fill="none"/>', "draw", max(at, dat) + 0.15, 'data-d="0.5"'))
+    elif t == "ratio":
+        h += ratio(st, y0, t0, fig)
+    return h
+
+
+def ratio(st, y0, t0, fig=None):
+    """Un rapport et son intervalle. Champs : title, value (texte « 0,59 »), num, low, high, label (ce qu'on compare),
+    left / right (ce que veut dire chaque côté de 1), at (le chiffre), ci_at (l'intervalle), null_at (la ligne à 1),
+    caption + caption_at (la phrase qui conclut)."""
+    h = []
+    at = st["at"]
+    ci_at = st.get("ci_at", at + 1.0)
+    null_at = st.get("null_at", ci_at + 0.9)
+    lo, hi, v, nul = float(st["low"]), float(st["high"]), float(st["num"]), float(st.get("null", 1))
+    h += B.kicker(y0, st.get("title", "Le résultat"), t0 + 0.2, fig)
+    # 1. le chiffre, en grand, et ce qu'il compare
+    num_w = mesure.largeur(str(st["value"]), "bodoni400", 230, -0.03)
+    px = max(120, min(230, 230 * (CW - 40) / max(1, num_w)))
+    h.append(f'<div class="bstat" style="left:{ML}px;top:{y0 + 215:.0f}px;width:{CW}px;font-size:{px:.0f}px" data-fit="1" data-fmin="100" '
+             f'data-a="big" data-t="{at - 0.05:.2f}" data-d="0.6">{counter(st["value"], at, 1.0)}</div>')
+    ly = y0 + 215 + px * 1.02 + 18
+    if st.get("label"):
+        lpx, lls = mesure.ajuster(st["label"], "schib600", CW - 80, 40, 28, max_lignes=2, interligne=1.2)
+        h.append(f'<div class="blab" style="left:{ML + 40}px;top:{ly:.0f}px;width:{CW - 80}px;font-size:{lpx}px" data-fit="1" data-fh="{2 * lpx * 1.2 + 6:.0f}" '
+                 f'data-fmin="24" data-a="rise" data-t="{at + 0.3:.2f}">{_esc(st["label"])}</div>')
+    # 2. l'intervalle, sur une échelle logarithmique (un rapport de 0,5 est aussi loin de 1 qu'un rapport de 2)
+    x0, x1 = ML + 70, ML + CW - 70
+    pos = all(x > 0 for x in (lo, hi, v, nul))
+    f = math.log if pos else (lambda x: x)
+    a, b = min(f(lo), f(nul)), max(f(hi), f(nul))
+    pad = (b - a) * 0.18 or 0.3
+    d0, d1 = a - pad, b + pad
+    X = lambda x: x0 + (f(x) - d0) / (d1 - d0) * (x1 - x0)
+    ay = y0 + 860
+    h.append(f'<div class="tint" style="left:{x0 - 60:.0f}px;top:{ay - 240:.0f}px;width:{x1 - x0 + 120:.0f}px;height:390px" data-a="fade" data-t="{ci_at - 0.3:.2f}"></div>')
+    h.append(f'<div class="kick" style="left:{x0:.0f}px;top:{ay - 216:.0f}px;width:{x1 - x0:.0f}px" data-a="rise" data-t="{ci_at - 0.2:.2f}">'
+             f'{_esc(st.get("ci_label", "Intervalle de confiance à 95 %"))}</div>')
+    h.append(B.svg_layer(x0 - 10, ay - 10, x1 - x0 + 20, 20, f'<path d="M10 10H{x1 - x0 + 10:.0f}" stroke="var(--ink)" stroke-opacity=".45" stroke-width="3"/>',
+                         "draw", ci_at - 0.15, 'data-d="0.5"'))
+    wl, wr, wy = X(lo), X(hi), ay - 60
+    h.append(B.svg_layer(wl - 5, wy - 24, wr - wl + 10, 48, f'<path d="M5 24H{wr - wl + 5:.0f}M5 4V44M{wr - wl + 5:.0f} 4V44" stroke="var(--carbon-deep)" stroke-width="8"/>',
+                         "growc", ci_at))
+    pxp = X(v)
+    h.append(f'<div class="cipt" style="left:{pxp - 18:.0f}px;top:{wy - 18:.0f}px;width:36px;height:36px" data-a="pop" data-t="{ci_at + 0.25:.2f}"></div>')
+    dec = max(_dec(st["value"]), 2)
+    for val, k in ((lo, 0), (hi, 1)):
+        h.append(f'<div class="cival" style="left:{X(val) - 90:.0f}px;width:180px;top:{ay + 22:.0f}px;font-size:44px" data-a="rise" '
+                 f'data-t="{ci_at + 0.35 + k * 0.1:.2f}">{B.fr(val, dec)}</div>')
+    # 3. la ligne « aucune différence », et ce que veut dire chaque côté
+    zx = X(nul)
+    h.append(f'<div class="zero" style="left:{zx - 1.5:.0f}px;top:{ay - 150:.0f}px;height:172px" data-a="grow" data-t="{null_at:.2f}"></div>')
+    txt = f"1 = {st.get('null_label', 'aucune différence')}"
+    if zx > (x0 + x1) / 2:      # le texte du côté où il a la place, au-dessus de la moustache
+        h.append(f'<div class="kick acc" style="right:{W - zx + 16:.0f}px;top:{ay - 156:.0f}px;text-align:right;white-space:nowrap" data-a="rise" data-t="{null_at + 0.15:.2f}">{_esc(txt)}</div>')
+    else:
+        h.append(f'<div class="kick acc" style="left:{zx + 16:.0f}px;top:{ay - 156:.0f}px;white-space:nowrap" data-a="rise" data-t="{null_at + 0.15:.2f}">{_esc(txt)}</div>')
+    if st.get("left"):
+        h.append(f'<div class="kick sm" style="left:{x0 - 30:.0f}px;width:{(x1 - x0) / 2:.0f}px;top:{ay + 96:.0f}px" data-fit="1" data-fmin="18" '
+                 f'data-a="rise" data-t="{null_at + 0.35:.2f}">← {_esc(st["left"])}</div>')
+    if st.get("right"):
+        h.append(f'<div class="kick sm" style="left:{(x0 + x1) / 2 + 30:.0f}px;width:{(x1 - x0) / 2:.0f}px;top:{ay + 96:.0f}px;text-align:right" data-fit="1" data-fmin="18" '
+                 f'data-a="rise" data-t="{null_at + 0.45:.2f}">{_esc(st["right"])} →</div>')
+    if st.get("caption"):
+        cpx, _ = mesure.ajuster(st["caption"], "schib600", CW - 80, 38, 26, max_lignes=1)
+        h.append(f'<div class="blab" style="left:{ML + 40}px;top:{y0 + 1040:.0f}px;width:{CW - 80}px;font-size:{cpx}px;color:var(--carbon-deep)" data-fit="1" data-fmin="22" '
+                 f'data-a="rise" data-t="{st.get("caption_at", null_at + 0.8):.2f}">{_esc(st["caption"])}</div>')
     return h
 
 

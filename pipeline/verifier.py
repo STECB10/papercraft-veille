@@ -39,7 +39,7 @@ REQUIS = {
     "diagnostic_grid": ["total", "sick", "found", "at", "cam_at"], "survival_curves": ["times", "groups", "cam_at"],
     "chat": ["messages", "cam_at"], "image_scan": ["image", "at", "cam_at"],
     "flow_chart": ["stages", "cam_at"], "big_stat": ["value", "label", "at", "cam_at"], "timeline": ["events", "cam_at"],
-    "findings": ["items", "cam_at"],
+    "findings": ["items", "cam_at"], "ratio": ["value", "num", "low", "high", "at", "cam_at"],
 }
 SANS_CHIFFRE = {"y", "people", "lit", "chairs", "occupied", "dot_value", "icon", "type", "words_file", "audio", "voice", "sfx", "duration", "lead",
                 "max", "lines", "null", "log", "from", "image", "modality", "tear", "visual", "edition", "italic", "roll", "after", "partie", "source", "tendance"}
@@ -134,8 +134,159 @@ def controle_recit(film, src, script_md):
         err.append("la phrase à retenir ne redit pas un chiffre : elle dit ce que l'étude change ou pourrait changer en pratique")
     # la relecture de l'auditeur, écrite dans SCRIPT.md
     rel = script_md.split("## Relecture", 1)[1] if "## Relecture" in script_md else ""
-    if sum(1 for l in rel.splitlines() if l.strip().startswith(("-", "*"))) < 5:
-        err.append("SCRIPT.md : section « ## Relecture » avec les 5 questions de la skill (étape 6) et tes réponses, une puce chacune")
+    if sum(1 for l in rel.splitlines() if l.strip().startswith(("-", "*"))) < 6:
+        err.append("SCRIPT.md : section « ## Relecture » avec les 6 questions de la skill (étape 6) et tes réponses, une puce chacune")
+    return err
+
+
+# --------------------------------------------------------------------------------------------- les planches suivent la voix
+# Retour du 8 novembre 2026 (« des animations qui ne suivent pas le récit ») : sur l'essai du jour, la question de
+# l'accroche restait 12 s à l'écran pendant que la voix parlait d'autre chose, des étapes s'allumaient sur des phrases
+# qui n'en parlaient pas, une ligne de la fiche apparaissait après le départ de la caméra, « ce qui entre » dans l'IA
+# arrivait après « l'IA », un rapport de cotes était dessiné comme une jauge remplie à 59 %.
+MOTS_VIDES = {"avec", "dans", "pour", "sans", "sous", "leur", "leurs", "plus", "moins", "mais", "cette", "entre", "chez", "comme",
+              "tout", "tous", "toute", "être", "avoir", "fait", "sont", "était", "elle", "elles", "nous", "vous", "ceux", "celle",
+              "aussi", "très", "même", "encore", "alors", "donc", "ainsi", "puis", "après", "avant", "leurs", "selon", "quand"}
+
+
+def _racines(txt):
+    t = unicodedata.normalize("NFKD", txt.lower().replace("’", "'"))
+    t = "".join(c for c in t if not unicodedata.combining(c))
+    mots = re.findall(r"[a-z]{4,}", t.replace("l'", " ").replace("d'", " ").replace("qu'", " "))
+    sigles = {m.lower() for m in re.findall(r"\b[A-Z]{2,4}\b", txt)}
+    return {m[:5] for m in mots if m not in MOTS_VIDES} | sigles
+
+
+def temps_simules(film):
+    """La voix simulée au débit de la vraie (serie/moteur/essai.py) : les ancres en secondes, comme à l'écran."""
+    import audio
+    import essai
+    lead = audio.lead_for(film)
+    mots, _ = essai.faux_mots(film)
+    f2 = copy.deepcopy(film)
+    f2["lead"] = lead
+    build.resolve(f2, build.Clock(f2, mots))
+    return f2, mots
+
+
+def controle_planches(film):
+    err = []
+    try:
+        f2, mots = temps_simules(film)
+    except (Exception, SystemExit):      # les ancres illisibles sont déjà signalées ailleurs
+        return []
+    sents = film["sentences"]
+    bornes, i = [], 0
+    for s_ in sents:
+        n = len(s_["text"].split())
+        bornes.append((mots[i]["s"], mots[i + n - 1]["e"]))
+        i += n
+
+    def phrase_a(t):
+        for k, (a, b) in enumerate(bornes):
+            if t <= b + 0.35:
+                return k
+        return len(bornes) - 1
+
+    def dit(k):
+        return sents[k]["text"][:70]
+
+    def temps(o_res, o_org, chemin=""):
+        out = []
+        if isinstance(o_res, dict):
+            for k, v in o_res.items():
+                if k in build.TIME_KEYS and k != "cam_at" and isinstance(v, (int, float)):
+                    out.append((v, f"{chemin}{k}", o_org.get(k) if isinstance(o_org, dict) else v))
+                elif isinstance(v, (dict, list)):
+                    out += temps(v, o_org.get(k) if isinstance(o_org, dict) else None, f"{chemin}{k}.")
+        elif isinstance(o_res, list):
+            for j, v in enumerate(o_res):
+                out += temps(v, o_org[j] if isinstance(o_org, list) and j < len(o_org) else None, f"{chemin}{j}.")
+        return out
+
+    for zone, fin in (("night", f2["night"]["end"]), ("paper", f2["end"]["fold_at"])):
+        sts_r, sts_o = f2[zone]["stations"], film[zone]["stations"]
+        for j, (sr, so) in enumerate(zip(sts_r, sts_o)):
+            t = sr["type"]
+            cam = float(sr["cam_at"])
+            end = float(sts_r[j + 1]["cam_at"]) if j + 1 < len(sts_r) else float(fin)
+            nom = f"{zone} {j} ({t})"
+            # l'accroche est déjà sur la couverture, un moment muet est un clin d'œil : plus courts permis
+            mini = 2.0 if t.startswith("gag_") else 2.5 if t == "typo" or t.startswith("hook_") else 3.5
+            if end - cam < mini:
+                err.append(f"{nom} ne reste que {end - cam:.1f} s à l'écran : trop court pour la lire ({mini} s au moins ; laisser la planche "
+                           "sur deux phrases ou la regrouper avec la suivante)")
+            ev = temps(sr, so)
+            # A. chaque élément apparaît pendant que la planche est à l'écran
+            for tt, cle, org in ev:
+                if tt < cam - 0.25 or tt > end - 0.15:
+                    quand = "avant que la planche arrive" if tt < cam else "après que la caméra est partie"
+                    err.append(f"{nom} : « {cle} » = « {org} » tombe {quand} (la planche est à l'écran de la phrase {phrase_a(cam)} à la "
+                               f"phrase {phrase_a(max(cam, end - 0.3))}) : l'ancrer sur un mot dit pendant qu'elle est visible")
+            # B. l'ordre des gestes suit l'ordre du schéma
+            if t == "ai_scan":
+                a_, c_, o_ = sr.get("at"), sr.get("core_at"), sr.get("out_at")
+                seq = [x for x in (a_, c_, o_) if isinstance(x, (int, float))]
+                if seq != sorted(seq):
+                    err.append(f"{nom} : « ce qui entre » (at), « l'IA » (core_at) et « ce qui sort » (out_at) doivent apparaître dans cet ordre ; "
+                               f"ici at={so.get('at')}, core_at={so.get('core_at')}, out_at={so.get('out_at')}")
+            if t == "ratio":
+                seq = [x for x in (sr.get("at"), sr.get("ci_at"), sr.get("null_at")) if isinstance(x, (int, float))]
+                if seq != sorted(seq):
+                    err.append(f"{nom} : le chiffre (at), puis son intervalle (ci_at), puis la ligne à 1 (null_at), dans cet ordre")
+            for liste, champ in (("steps", "at"), ("points", "at"), ("items", "at"), ("rows", "at"), ("stages", "at"), ("events", "at")):
+                ts = [x.get(champ) for x in sr.get(liste, []) if isinstance(x.get(champ), (int, float))]
+                if ts != sorted(ts):
+                    err.append(f"{nom} : les éléments de « {liste} » doivent apparaître dans l'ordre où ils sont dessinés")
+            # C. jamais de planche vide ni figée pendant que la voix avance
+            evt = sorted(x[0] for x in ev if cam - 0.25 <= x[0] <= end)
+            if t == "hook_question":
+                k = sr.get("_sentence", 0) if "_sentence" in sr else next((q for q, s_ in enumerate(sents) if s_["text"] == so.get("text")), 0)
+                deb = sum(len(sents[q]["text"].split()) for q in range(k))
+                evt += [w["s"] for w in mots[deb:deb + len(sents[k]["text"].split())]]
+            if t == "typo":
+                k = next((q for q, s_ in enumerate(sents) if s_["text"] == so.get("text")), None)
+                if k is not None:
+                    evt += [bornes[k][0], bornes[k][1]]
+            if t.startswith("gag_"):
+                evt += [cam + 0.5, cam + 1.5, cam + 2.8]      # l'horloge tourne, les jours se barrent, les dossiers tombent
+            if t in ("hook_number", "hook_image", "hook_versus", "hook_headline"):
+                evt += [cam + 0.3, cam + 1.0]                  # l'en-tête et le chiffre (ou le dessin) arrivent tout de suite
+            evt = sorted(set(round(x, 2) for x in evt))
+            if not evt:
+                evt = [cam + 0.5]
+            if evt[0] - cam > 3.5 and t != "typo":
+                err.append(f"{nom} : la planche reste vide {evt[0] - cam:.1f} s à son arrivée (la voix dit « {dit(phrase_a(cam + 0.1))}… ») : "
+                           "faire apparaître un premier élément sur un mot de cette phrase, ou faire arriver la planche plus tard")
+            pts = [cam] + evt + [end]
+            for a_, b_ in zip(pts, pts[1:]):
+                if b_ - a_ > 8.0:
+                    k = phrase_a(a_ + 0.5)
+                    err.append(f"{nom} : rien de nouveau pendant {b_ - a_:.1f} s alors que la voix avance (« {dit(k)}… ») : chaque phrase "
+                               "importante a son geste ; ajouter un élément ancré sur cette phrase, un moment muet ou une planche")
+                    break
+            # D. ce qui s'affiche est ce que la voix dit à ce moment-là
+            items = []
+            for st_ in sr.get("steps", []) if t in ("steps",) else []:
+                items.append((re.sub(r"^\d+\s*·\s*", "", st_.get("label", "")) + " " + st_.get("note", ""), st_.get("at")))
+            for pt in sr.get("points", []) if t == "key_points" else []:
+                items.append((pt.get("text", ""), pt.get("at")))
+            for it in sr.get("items", []) if t == "findings" else []:
+                items.append((it.get("label", "") + " " + it.get("detail", ""), it.get("at")))
+            for txt, at in items:
+                if not isinstance(at, (int, float)):
+                    continue
+                k = phrase_a(at)
+                ctx = " ".join(sents[q].get("display", sents[q]["text"]) + " " + sents[q]["text"] for q in range(max(0, k - 1), min(len(sents), k + 2)))
+                if _racines(txt) and not (_racines(txt) & _racines(ctx)) and not (set(re.findall(r"\d+", txt)) & set(re.findall(r"\d+", ctx))):
+                    err.append(f"{nom} : « {txt.strip()[:50]} » s'affiche pendant « {dit(k)}… », qui n'en parle pas : un élément apparaît "
+                               "au moment où la voix le nomme")
+            # E. un rapport (de cotes, de risques…) n'est pas une jauge
+            if t == "metric":
+                blob = " ".join(str(x) for x in [sr.get("title", ""), sr.get("caption", "")] + [m.get("label", "") + " " + str(m.get("note", "")) for m in sr.get("metrics", [])]).lower()
+                if re.search(r"rapport de|odds|\bor\b|\bhr\b|\brr\b|risque relatif|hazard|repère : 1", blob):
+                    err.append(f"{nom} : un rapport (de cotes, de risques…) n'est pas une jauge remplie : utiliser la planche « ratio » "
+                               "(la valeur, son intervalle et la ligne « aucune différence » à 1)")
     return err
 
 
@@ -327,6 +478,7 @@ def main():
             err.append(f"phrase {i} : le mot-clé « {s['box']} » n'est pas un mot affiché de la phrase")
     script_md = (jour / "SCRIPT.md").read_text(encoding="utf-8") if (jour / "SCRIPT.md").exists() else ""
     err += controle_recit(film, src, script_md)
+    err += controle_planches(film)
     if len(sents) < 3 or sents[-1]["text"] != "Papercraft." or sents[-2]["text"] != PROMESSE:
         err.append(f"les deux dernières phrases doivent être « {PROMESSE} » puis « Papercraft. » (mode none)")
     pv = film.get("pivot", {})
@@ -451,6 +603,23 @@ def main():
                         err.append("findings : tendance = plus, moins ou pareil")
                     if it.get("icon") and it["icon"] not in build.ICONS:
                         err.append(f"findings : icône « {it['icon']} » inconnue")
+            if t == "ratio":
+                try:
+                    lo_, v_, hi_ = float(st.get("low")), float(st.get("num")), float(st.get("high"))
+                    if not lo_ <= v_ <= hi_:
+                        err.append("ratio : low ≤ num ≤ high (la valeur est dans son intervalle)")
+                    if min(lo_, v_, hi_) <= 0:
+                        err.append("ratio : un rapport est toujours positif (échelle logarithmique)")
+                    if not any(abs(nombre(x) - v_) < 1e-9 for x in NOMBRE.findall(str(st.get("value", "")))):
+                        err.append("ratio : « value » (texte affiché) et « num » donnent le même nombre")
+                except (TypeError, ValueError):
+                    err.append("ratio : low, num et high sont des nombres")
+                if len(str(st.get("value", ""))) > 7:
+                    err.append("ratio : value de 7 caractères au plus (« 0,59 », « 1,8 »)")
+                if len(st.get("label", "")) > 70 or len(st.get("caption", "")) > 46:
+                    err.append("ratio : « label » 70 caractères au plus, « caption » 46 au plus")
+                if len(st.get("left", "")) > 26 or len(st.get("right", "")) > 26:
+                    err.append("ratio : « left » et « right » 26 caractères au plus (« moins de confiance »)")
             if t == "chat":
                 ms = st.get("messages", [])
                 if not 1 <= len(ms) <= 4:

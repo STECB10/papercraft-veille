@@ -75,7 +75,12 @@ Chaque phrase porte sa `partie` (l'ordre du récit) ; les phrases du problème e
 `source` (l'extrait de source.txt qui les prouve). Avant d'écrire, lis les sections Résultats et Discussion du texte
 intégral et note dans faits.json ce que l'étude montre concrètement (quels indices, quelles différences entre groupes,
 quels exemples), pas seulement les performances du modèle. Pour la partie concrète, la planche `findings` est faite
-pour ça.
+pour ça. Un rapport de cotes ou de risques (OR, RR, HR) se montre avec la planche `ratio`, jamais en jauge `metric`.
+
+**L'image suit la voix** (FILM-SCHEMA.md, « Les planches suivent la voix ») : pour chaque phrase, demande-toi ce qui
+apparaît à l'écran pendant qu'elle est dite. Chaque élément est ancré sur le mot qui le nomme, dans la fenêtre de sa
+planche (entre son `cam_at` et celui de la planche suivante), dans l'ordre où il est dessiné ; aucune phrase du contexte
+ou du problème ne passe sur une accroche qui parle d'autre chose ; aucune planche figée plus de 8 s.
 
 ## 4. Post : `post.txt`
 
@@ -99,6 +104,7 @@ section `## Relecture` avec une puce par question et ta réponse :
   résultat ?
 - Les connecteurs disent-ils vrai (« Le problème », « Résultat », « Autrement dit »…) ?
 - Un auditeur non spécialiste comprend-il chaque chiffre (« x sur y », pour cent, aire sous la courbe située) ?
+- L'image suit-elle la voix ? Phrase par phrase, qu'est-ce qui apparaît à l'écran, et est-ce bien ce qui est dit ?
 
 ## 7. Valider
 

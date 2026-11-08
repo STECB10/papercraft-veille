@@ -152,7 +152,8 @@ rejoue toutes (données fictives) avec une voix simulée.
 | Résultat en barres [`result_bars`] | Fig. : axe gradué, une barre par groupe, l'écart annoté, puis l'intervalle | `tracer`, `barre`, `annoter`, `intervalle` |
 | Résultat en bandes [`result_strips`] | variante papier : bandes qui se déplient d'une fente, étiquette de l'écart suspendue | `déplier`, `suspendre` |
 | Résultat en points [`result_dots`] | une proportion par groupe en points-patients exacts, puis l'intervalle | `flux`, `répartir`, `jauge`, `intervalle` |
-| Mesures [`metric`] | 1 à 3 mesures (score sur 5, sensibilité…) en jauges | `jauge` |
+| Mesures [`metric`] | 1 à 3 mesures (score sur 5, sensibilité…) en jauges ; jamais un rapport | `jauge` |
+| Un rapport [`ratio`] | rapport de cotes, de risques ou de hasards : le chiffre en grand, puis son intervalle sur une échelle logarithmique, puis la ligne « 1 = aucune différence » et ce que veut dire chaque côté | roulement, `intervalle`, ligne qui descend |
 | Grille diagnostique [`diagnostic_grid`] | 100 patients (ou l'effectif exact s'il est sous 100) : malades cerclés, repérés en carbone, manqués vides, fausses alertes à l'encre | `flux`, `balayer`, `jauge` |
 | Courbe ROC [`roc_curve`] | la courbe face à la diagonale du hasard, l'aire qui se remplit, l'AUC exacte | `tracer`, roulement |
 | Courbes de suivi [`survival_curves`] | deux courbes en escalier dans le temps, l'écart annoté | `tracer`, `annoter` |
@@ -226,11 +227,11 @@ résultats, et le geste qui montre ce que l'IA lit.
 | Essai tiré au sort | Tirage au sort ou Parcours des participants, Deux groupes | Résultat en barres (valeur continue) ou en points (proportion), Intervalle, Le résultat en grand, Mesures pour un résultat secondaire |
 | Précision diagnostique | Ce que fait l'IA (avec la référence comparée) | Grille diagnostique, Mesures (sensibilité, spécificité) |
 | Modèle prédictif | Ce que fait l'IA (les données qui entrent) | Courbe ROC si une AUC est donnée, Mesures, Constats (facteurs qui comptent) |
-| Cohorte, survie | Parcours, L'étude en bref (durée de suivi), Chronologie, Parcours des participants | Courbes de suivi si la source donne des valeurs dans le temps, sinon Intervalle sur le rapport de risque |
+| Cohorte, survie | Parcours, L'étude en bref (durée de suivi), Chronologie, Parcours des participants | Courbes de suivi si la source donne des valeurs dans le temps, sinon Un rapport (`ratio`) |
 | Méta-analyse | Études regroupées | Forest plot si la source donne l'effet de chaque étude, sinon Intervalle sur l'effet regroupé ; Constats |
 | Revue de littérature | Études regroupées | Constats |
 | IA conversationnelle | Conversation | Mesures (notes des évaluateurs), Résultat en barres si deux groupes |
-| Qualitative, enquête | L'étude en bref | Constats, Mesures |
+| Qualitative, enquête | L'étude en bref | Constats, Mesures, Un rapport (`ratio`) si la source donne un rapport de cotes |
 
 ### Selon ce que la voix dit ou montre
 
@@ -241,6 +242,7 @@ résultats, et le geste qui montre ce que l'IA lit.
 | une valeur pour chaque groupe | une barre (ou une bande) par groupe, la valeur qui roule |
 | un écart | `annoter` l'écart sur la figure |
 | un intervalle de confiance | `intervalle`, avec la ligne « aucun effet » |
+| un rapport de cotes, de risques (OR, RR, HR) | la planche `ratio` : le chiffre, puis l'intervalle, puis la ligne à 1, chacun au moment où la voix le dit |
 | une sensibilité, une spécificité | la grille diagnostique ou une jauge |
 | une AUC | la courbe ROC |
 | une durée, une attente | l'horloge ou le calendrier sur la table |
@@ -259,6 +261,11 @@ résultats, et le geste qui montre ce que l'IA lit.
 | un dossier, des données | lignes de tableau qui défilent, les variables utiles surlignées | tableau au trait |
 
 ## Règles de fond (elles ne changent pas)
+
+- **L'image suit la voix.** Un élément apparaît au mot qui le nomme, pendant que sa planche est à l'écran ; jamais
+  avant l'arrivée de la caméra ni après son départ. Ce qui s'affiche est ce que la voix dit à ce moment-là. Aucune
+  planche ne reste vide plus de 3,5 s ni figée plus de 8 s pendant que la voix avance. Un schéma se remplit dans son
+  ordre (ce qui entre, l'IA, ce qui sort ; les lignes de haut en bas).
 
 - Aucun chiffre, nom, date ou citation qui ne soit pas dans la fiche des faits. Les effectifs de points et de
   silhouettes sont exacts.

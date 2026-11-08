@@ -124,15 +124,40 @@
   "end": "s5.e+0.25",
   "stations": [
    {
-    "type": "hook_number",
+    "type": "hook_question",
     "cam_at": 0,
     "header": "Étude observationnelle · Japon · 2017–2024",
-    "number": "76,8",
-    "unit": "%",
-    "caption": "des patients bipolaires sont d'abord pris pour des dépressifs",
-    "caption_at": "s2:patients",
-    "lit_at": "s2:soixante-seize",
-    "footnote": "Au premier rendez-vous"
+    "text": "Et si votre voix pouvait aider à repérer un trouble bipolaire ?",
+    "italic": "voix",
+    "footnote": "Trouble bipolaire et IA"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s1:touche",
+    "title": "Un trouble mal repéré",
+    "steps": [
+     {
+      "icon": "brain",
+      "label": "01 · Dépression et excitation",
+      "note": "en alternance",
+      "at": "s1:alterne",
+      "note_at": "s1:excitation"
+     },
+     {
+      "icon": "users",
+      "label": "02 · 1 à 3 % des adultes",
+      "at": "s1:un"
+     },
+     {
+      "icon": "stethoscope",
+      "label": "03 · Au premier rendez-vous",
+      "note": "pris pour une dépression",
+      "alert": "76,8 %",
+      "at": "s2:premier",
+      "note_at": "s2:pris"
+     }
+    ]
    },
    {
     "type": "gag_clock",
@@ -146,22 +171,25 @@
     "title": "Le diagnostic aujourd'hui",
     "steps": [
      {
-      "icon": "user",
-      "label": "01 · Entretien",
-      "note": "avec le psychiatre",
-      "at": "s4:l'entretien"
+      "icon": "chart",
+      "label": "01 · Aucune mesure objective",
+      "note": "pas de test",
+      "at": "s4:aucune",
+      "note_at": "s4:objective"
      },
      {
-      "icon": "brain",
-      "label": "02 · Jugement clinique",
-      "note": "sans mesure objective",
-      "at": "s4:objective",
-      "alert": "Aucun test"
+      "icon": "user",
+      "label": "02 · Tout repose sur l'entretien",
+      "note": "avec le psychiatre",
+      "at": "s4:l'entretien",
+      "note_at": "s4:psychiatre"
      },
      {
       "icon": "mic",
       "label": "03 · Et si la voix aidait ?",
-      "at": "s5:voix"
+      "note": "un algorithme écoute",
+      "at": "s5:algorithme",
+      "note_at": "s5:voix"
      }
     ]
    }
@@ -182,7 +210,7 @@
      {
       "label": "Type",
       "value": "Observationnelle, prospective",
-      "at": "s7:enregistré"
+      "at": "s7:savoir"
      },
      {
       "label": "Lieu",
@@ -217,7 +245,7 @@
     "modality": "voix",
     "at": "s9:mesure",
     "core_at": "s9:garde",
-    "out_at": "s10:l'aire"
+    "out_at": "s9:utiles"
    },
    {
     "type": "roc_curve",
@@ -249,7 +277,8 @@
       "detail": "96 à 98 % des indices utiles",
       "tendance": "plus",
       "at": "s12:voix",
-      "accent": true
+      "accent": true,
+      "detail_at": "s12:quatre-vingt-seize"
      },
      {
       "icon": "message",
@@ -263,7 +292,14 @@
       "label": "Entre deux crises",
       "detail": "L'IA distingue encore les patients : 0,874",
       "tendance": "pareil",
-      "at": "s13:crises"
+      "at": "s13:crises",
+      "detail_at": "s13:distingue"
+     },
+     {
+      "icon": "brain",
+      "label": "Une trace durable",
+      "detail": "Pas seulement pendant les épisodes",
+      "at": "s14:trace"
      }
     ]
    },
