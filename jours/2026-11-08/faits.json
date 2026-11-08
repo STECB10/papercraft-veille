@@ -1,0 +1,122 @@
+[
+ {
+  "id": "f1",
+  "valeur": 1,
+  "citation": "affects 1% to 3% of adults worldwide"
+ },
+ {
+  "id": "f2",
+  "valeur": 3,
+  "citation": "affects 1% to 3% of adults worldwide"
+ },
+ {
+  "id": "f3",
+  "valeur": 6,
+  "citation": "diagnostic delays averaging 6 years"
+ },
+ {
+  "id": "f4",
+  "valeur": 61,
+  "citation": "61 patients with BP and 99 healthy control (HC) individuals"
+ },
+ {
+  "id": "f5",
+  "valeur": 99,
+  "citation": "61 patients with BP and 99 healthy control (HC) individuals"
+ },
+ {
+  "id": "f6",
+  "valeur": 30,
+  "citation": "Each interview lasted 30 to 60 minutes"
+ },
+ {
+  "id": "f7",
+  "valeur": 60,
+  "citation": "Each interview lasted 30 to 60 minutes"
+ },
+ {
+  "id": "f8",
+  "valeur": 6373,
+  "citation": "We extracted 6373 acoustic features"
+ },
+ {
+  "id": "f9",
+  "valeur": 211,
+  "citation": "211 linguistic features"
+ },
+ {
+  "id": "f10",
+  "valeur": 0.916,
+  "citation": "AUC=0.916, 95% CI 0.854‐0.958"
+ },
+ {
+  "id": "f11",
+  "valeur": 0.854,
+  "citation": "AUC=0.916, 95% CI 0.854‐0.958"
+ },
+ {
+  "id": "f12",
+  "valeur": 0.958,
+  "citation": "AUC=0.916, 95% CI 0.854‐0.958"
+ },
+ {
+  "id": "f13",
+  "valeur": 0.933,
+  "citation": "sensitivity 0.933, specificity 0.859; n=60 vs 99"
+ },
+ {
+  "id": "f14",
+  "valeur": 0.859,
+  "citation": "sensitivity 0.933, specificity 0.859; n=60 vs 99"
+ },
+ {
+  "id": "f15",
+  "valeur": 56,
+  "citation": "0.933 (56/60)"
+ },
+ {
+  "id": "f16",
+  "valeur": 85,
+  "citation": "0.859 (85/99)"
+ },
+ {
+  "id": "f17",
+  "valeur": 0.91,
+  "citation": "The acoustic-only classification (AUC 0.910)"
+ },
+ {
+  "id": "f18",
+  "valeur": 0.651,
+  "citation": "linguistic-only classification (AUC 0.651)"
+ },
+ {
+  "id": "f19",
+  "valeur": 2017,
+  "citation": "This 7-year (2017‐2024) prospective observational study"
+ },
+ {
+  "id": "f20",
+  "valeur": 2024,
+  "citation": "This 7-year (2017‐2024) prospective observational study"
+ },
+ {
+  "id": "f23",
+  "valeur": 60,
+  "citation": "sensitivity 0.933, specificity 0.859; n=60 vs 99"
+ },
+ {
+  "id": "f22",
+  "valeur": 14,
+  "calcul": "f5 - f16"
+ },
+ {
+  "id": "f21",
+  "valeur": 159,
+  "calcul": "f23 + f5"
+ },
+ {
+  "id": "f24",
+  "valeur": 95,
+  "citation": "AUC=0.916, 95% CI 0.854‐0.958"
+ }
+]

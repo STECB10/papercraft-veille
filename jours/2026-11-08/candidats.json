@@ -1,0 +1,130 @@
+[
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique",
+   "n = 9700"
+  ],
+  "id": "MED:42960901",
+  "pmid": "42960901",
+  "pmcid": null,
+  "doi": "10.4317/medoral.28284",
+  "titre": "Artificial Intelligence for Assessing the Relationship Between Mandibular Third Molars and the Inferior Alveolar Nerve on Panoramic Radiographs: A Systematic Review.",
+  "revue": "Medicina oral, patologia oral y cirugia bucal",
+  "date": "2026-11-01",
+  "auteurs": "Elwy FK, Parra-Moreno J, González-Navarro B, Egido-Moreno S, López-López J.",
+  "types": "systematic review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Extracting mandibular third molars is a common procedure that carries a risk of injury to the inferior alveolar nerve (IAN). Panoramic radiographs (PR) are commonly used for preoperative assessment of the mandibular third molars, but they are not very reliable for evaluating the relationship of the IAN. This systematic review aims to evaluate the accuracy of artificial intelligence (AI) models in assessing the relationship between mandibular third molars and the IAN. Materials and methods We conducted systematic searches in MEDLINE (via PubMed), the Cochrane Library, Embase, and Scopus for studies published between January 2020 and April 2026. Eligible studies evaluated artificial intelligence systems that analyze panoramic radiographs to assess the relationship between mandibular third molars and the IAN, using cone-beam computed tomography (CBCT) or expert assessments as references. The studies had to report key diagnostic performance metrics. Two independent reviewers carried out study selection, data extraction, and risk-of-bias assessments using the QUADAS-2 tool. Results We included eleven studies with more than 9,700 patients. The AI models reviewed, including architectures such as ResNet, VGG, and YOLO, demonstrated promising diagnostic performance. Their accuracy ranged from 0.630 to 0.896, with sensitivity and specificity reaching up to 0.92 and 0.95, respectively. No single architecture was consistently superior, but AI models outperformed less experienced human observers in the studies that included this comparison. Validation against CBCT usually yielded more reliable performance metrics than validation based solely on expert opinion. Conclusions AI models show promise as decision-support tools in the radiographic assessment of the relationship between mandibular third molars and the inferior alveolar nerve on panoramic radiographs. However, variations in datasets, reference standards, and validation methods across studies mean that no single architecture can yet be considered superior. Larger, multicenter, prospective studies with external validation are necessary to confirm these systems' performance before they can be widely used in clinical practice."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42970578",
+  "pmid": "42970578",
+  "pmcid": "PMC13741335",
+  "doi": "10.2196/100388",
+  "titre": "Investigating Patient Trust and Intention to Act in AI-Supported Clinical Decisions: Cross-Sectional Survey.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-02",
+  "auteurs": "Rossi S, Shamnath A, Reading Turchioe M, Lovett Novak L, Salwei ME, Buitron I, Xu X, Benda N.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "type_etude": "essai tiré au sort",
+  "resume": "Background In health systems, AI is increasingly being implemented as a form of clinical decision support (CDS). Research on patient perspectives, however, lags behind clinician-focused studies. Before the introduction of AI-based tools, clinicians often used and continue to use rule-based guidelines and risk calculators (RCs) to inform decision-making. Prior research has shown that RCs for CDS have mixed effects on patient adherence to treatment recommendations, whereas for AI-based tools, the effect is still not clear. Objective This study aims to assess differences in patients' behavioral intentions, trust, and preferences for clinical recommendations provided by doctors alone, doctors supported by RCs, and doctors supported by AI-based risk predictions. We also evaluate how sociodemographic characteristics affect these perceptions. Methods We surveyed 1185 US-based adults. Participants rated their likelihood of taking recommended clinical actions (behavioral intentions) across 6 clinical scenarios, where they were randomized to a different recommendation source (doctor, doctor + RC, and doctor + AI). Participants also rated their trust in the recommendation, indicated their preferred source for recommendations, and provided qualitative feedback. Results Behavioral intentions differed by recommendation source such that the doctor + RC condition had greater odds of behavioral intention than the doctor + AI condition. Behavioral intentions were also affected by the clinical condition. Participants had greater odds of trusting doctors alone over doctor + RC, and both doctors alone and doctor + RC had greater trust than doctor + AI. However, a plurality of participants ultimately preferred a doctor using an RC for making recommendations. Several sociodemographic differences were detected, namely, participants with higher subjective numeracy and literacy had higher odds of taking clinical action and higher trust across decision-support sources. We detected qualitative themes in the following categories: decision quality and reliability; trust and perceptions; patient-centeredness and autonomy; fairness, transparency, and ethics. Across categories, participants reported skepticism toward all decision sources and potential misunderstanding of AI's ability to personalize risk predictions. Some participants also stated that they had no additional concerns or were uncertain regarding their feelings. Conclusions These findings reveal novel, nuanced patient preferences shaped by task and context, offering guidance for aligning AI-supported care with patient values. Patients were not aligned on the recommendation source across intentions, trust, and preferences. Taken together, our results indicate that patients prefer doctors working with easy-to-understand, explainable support but are still learning to trust these tools. Our findings also highlight the continued importance of the clinical context and its interaction with computer-assisted decision support. Future work should evaluate how we can transparently convey to patients the use of AI in clinical decision-making, embedded within the given clinical context. This may present an opportunity to bolster, rather than erode, patient trust."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42960110",
+  "pmid": "42960110",
+  "pmcid": "PMC13718289",
+  "doi": "10.1016/j.isci.2026.117725",
+  "titre": "Artificial intelligence across the gastric cancer care continuum: Clinical evidence, multimodal integration, and translation.",
+  "revue": "iScience",
+  "date": "2026-10-22",
+  "auteurs": "Yang J, Tang J, He J.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue de littérature",
+  "resume": "Artificial intelligence (AI) is increasingly being applied across the gastric cancer care continuum, but its clinical maturity differs substantially among endoscopy, cross-sectional imaging, digital pathology, prognostic modeling, treatment selection, and surgical support. Existing reviews have often focused on individual modalities or summarized algorithmic performance without systematically distinguishing technical feasibility from translational readiness. We conducted a structured narrative review of studies indexed in PubMed/MEDLINE and the Web of Science Core Collection from January 2022 through July 2026, supplemented by backward and forward citation tracking. Earlier landmark studies were retained when necessary to explain the development of major applications. Priority was given to prospective, multicenter, externally validated, and clinically actionable studies. Evidence maturity was assessed according to study design, validation breadth, workflow relevance, calibration and clinical-utility assessment, and implementation evidence. The main constraint on gastric cancer AI is no longer pattern-recognition capability but the absence of reproducible clinical benefit under real-world conditions. Priorities include multiregional prospective validation, standardized calibration and decision curve assessment, comparison of clinicians with and without AI, integration into existing workflows, evaluation of economic and patient-level outcomes, and post-deployment monitoring."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "n = 80033"
+  ],
+  "id": "MED:42922241",
+  "pmid": "42922241",
+  "pmcid": null,
+  "doi": "10.7417/ct.2026.2172",
+  "titre": "Artificial Intelligence in Breast Cancer Diagnosis, Treatment, and Perioperative Management: A Systematic Review of Current Applications and Future Perspectives.",
+  "revue": "La Clinica terapeutica",
+  "date": "2026-11-01",
+  "auteurs": "Mostafa AF, Mady R, Abu Halimah JH, Hassan N, Elshebiny AA, Abdelazeem MAA, Salem LN, Abdrabo AA, Ibrahem M, Elzeiny A, Abdelaziz SMME, Hakami AH, Sayegh AA, Hegazy HA, Ahmed IS.",
+  "types": "systematic review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Breast cancer is the most frequently diagnosed malignancy in women globally, accounting for approximately 2.30 million new cases and 666,103 deaths in 2022. Artificial intelligence technologies including machine learning, deep learning, radiomics, and natural language processing have been widely applied across the breast cancer care continuum. However, no systematic review restricted to primary studies with patient-level or image-level data has synthesized evidence spanning all clinical domains simultaneously. Objectives To evaluate the performance, methodological quality, and clinical relevance of artificial intelligence primary studies across screening and diagnostic imaging, digital pathology, radiomics, perioperative management, prognostic prediction, and natural language processing in breast cancer. Methods PubMed/MEDLINE, Scopus, Web of Science, Embase, and the Cochrane Library were searched from January 2015 to May 2026. Eligibility was restricted to original primary research reporting patient-level or image-level data; secondary syntheses were explicitly excluded. Risk of bias was assessed using QUADAS-2 and PROBAST. Reporting followed PRISMA 2020 guidelines. Results Of 5,275 identified records, 17 primary studies met eligibility criteria. In screening mammography (seven studies; n = 7,540 to 144,231 examinations), deep learning achieved area under the receiver operating characteristic curve (AUC) values of 0.876 to 0.939; a randomised trial in 80,033 women demonstrated non-inferiority to double reading with a 44.3% reduction in radiologist workload. In digital pathology (five studies; 270 to 44,732 whole-slide images), deep learning achieved AUC 0.985 to 0.994, exceeding unassisted pathologist performance in lymph node metastasis detection. Magnetic resonance imaging radiomics predicted pathological complete response in HER2-positive breast cancer with AUC 0.80. No breast cancer-specific perioperative primary study met the eligibility criteria. Deep survival networks achieved concordance index 0.626 versus 0.612 for Cox regression in breast cancer cohorts. Natural language processing identified metastatic recurrence in breast cancer clinical records with sensitivity 83% and specificity 73%. Risk of bias was low to moderate for imaging and pathology studies and high for small sample radiomics studies. Density-stratified performance was reported by only two imaging studies, and receptor status prediction from haematoxylin and eosin staining had not been validated as a safe alternative to immunohistochemistry. Conclusions Artificial intelligence demonstrated clinically meaningful performance across the five domains with eligible primary studies. Breast cancer-specific perioperative and intensive care primary studies were absent, representing the largest evidence gap. External validation, demographic diversity, and prospective clinical integration evidence remained the most consistently identified limitations. Prediction of molecular receptor status without immunohistochemistry requires rigorous prospective safety validation before it can complement standard testing."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42947584",
+  "pmid": "42947584",
+  "pmcid": "PMC13720497",
+  "doi": "10.9758/cpn.26.1519",
+  "titre": "Artificial Intelligence-driven Biomarker Discovery for Precision Psychiatry.",
+  "revue": "Clinical psychopharmacology and neuroscience : the official scientific journal of the Korean College of Neuropsychopharmacology",
+  "date": "2026-10-30",
+  "auteurs": "Serretti A.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "type_etude": "revue de littérature",
+  "resume": "Poor phenotype quality and small cohorts remain major constraints in psychiatric biomarker research, and recent methodological advances increasingly address them. Language models turn clinical text into analysable variables at a scale manual chart review cannot reach. Self-supervised models learn from the unlabelled signals psychiatry already collects. Variant-effect prediction makes molecular interpretation computable, and research agents have generated and experimentally confirmed candidates outside psychiatry. These capabilities act early, on what is measured, what can be learned from it and which candidates are proposed. None of the artificial intelligence capabilities reviewed here yet reaches the stages at which a candidate becomes a clinical test. Producing candidates is becoming cheap while qualifying them is not. This review is organised around that asymmetry rather than by disorder or marker catalogue. It separates the measured characteristic, the prediction model and the intended clinical use, and treats method family as distinct from evidential stage. Across the selected evidence, discrimination is supported more strongly in development data than in independent evaluation, and prospective evidence that model-guided use improves care is scarce. Many reported metrics also address a simpler task than the intended decision: diagnosis instead of differential diagnosis, general prognosis instead of differential treatment benefit. The review proposes a six-stage framework linking intended use, measurement validity, model evaluation, comparative utility and monitored deployment, and places each capability on it, clarifying where methodological progress can accelerate discovery and where conventional clinical validation remains indispensable."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42967232",
+  "pmid": "42967232",
+  "pmcid": "PMC13723951",
+  "doi": "10.2196/98094",
+  "titre": "Machine Learning Classification of Bipolar Disorder Across Mood States Using Natural Language Processing and Speech Analysis: Observational Study.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-01",
+  "auteurs": "Yamaguchi Y, Kano Y, Sugihara G, Takemura R, Nakamura H, Shimizu M, Iizuka M, Kitazawa M, Sento A, Takahashi H, Kishimoto T.",
+  "types": "research-article journal article observational study",
+  "acces_libre": true,
+  "type_etude": "performance diagnostique",
+  "resume": "Background Bipolar disorder (BP) affects 1% to 3% of adults worldwide, with diagnostic delays averaging 6 years and high initial misdiagnosis rates. The absence of objective diagnostic measures contributes to clinical uncertainty and suboptimal outcomes. Objective This study aimed to (1) develop a machine learning model for BP diagnosis and mood state classification using linguistic and acoustic features, (2) identify features associated with different mood states by comparing each with healthy controls (HC), and (3) explore whether features distinguish between mood states within BP. Methods We analyzed data prospectively collected over 7 years from 61 patients with BP and 99 HC across Japan. Speech samples were collected via semistructured interviews over 1 to 5 visits and analyzed cross-sectionally, using aggregated or single-visit observations per participant rather than within-person longitudinal modeling. We extracted 6373 acoustic features (openSMILE 3.0, ComParE 2016) and 211 linguistic features. Least absolute shrinkage and selection operator (LASSO)-regularized logistic regression with nested cross-validation and age- and sex-matched undersampling was used. Mood states were classified as depressive state (DS; Hamilton Depression Rating Scale-17 [HAMD-17] ≥8, Young Mania Rating Scale [YMRS] ≤7), state with manic/mixed symptoms (MS/MX; YMRS ≥8), or euthymic state (ES; HAMD-17 ≤7, YMRS ≤7). Seven classification tasks included BP vs HC, each mood state vs HC, and interstate comparisons. Feature importance was validated via permutation testing ( P Results The model achieved high discrimination for BP vs HC (area under the receiver operating characteristic curve [AUC]=0.916, 95% CI 0.854-0.958; sensitivity 0.933; specificity 0.859) and strong performance for mood states vs HC (AUC=0.805-0.874). Acoustic features comprised 96% to 98% of the features achieving statistical significance ( P P =.03), whereas MS/MX vs ES (AUC=0.601, P =.20) and DS vs MS/MX (AUC=0.569, P =.30) did not, suggesting that markers primarily reflect persistent disease characteristics with partial state-associated components in depressive states. Conclusions The combined acoustic-linguistic model, driven primarily by acoustic features, shows potential as an objective aid for BP diagnosis (AUC>0.9), largely free of medication confounding; some features remained detectable during euthymia, although ES discrimination could not be fully separated from concurrent antipsychotic treatment. Although DS showed partial distinguishability from ES, overall limitations remain for monitoring mood state changes. Findings require validation in diverse populations and against other psychiatric conditions."
+ }
+]

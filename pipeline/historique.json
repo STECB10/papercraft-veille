@@ -85,5 +85,11 @@
   "doi": "10.1080/22221751.2026.2746253",
   "titre": "An interpretable machine learning model integrating mucosal and cellular immunity to predict SARS-CoV-2 reinfection: a multicenter cohort study.",
   "statut": "publiée"
+ },
+ {
+  "date": "2026-11-08",
+  "doi": "10.2196/98094",
+  "titre": "Machine Learning Classification of Bipolar Disorder Across Mood States Using Natural Language Processing and Speech Analysis: Observational Study.",
+  "statut": "en attente"
  }
 ]

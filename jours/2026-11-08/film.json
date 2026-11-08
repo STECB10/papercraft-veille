@@ -1,0 +1,296 @@
+{
+ "id": "2026-11-08",
+ "sentences": [
+  {
+   "text": "Votre voix pourrait-elle trahir un trouble bipolaire ?"
+  },
+  {
+   "text": "Le trouble bipolaire touche entre un et trois pour cent des adultes.",
+   "display": "Le trouble bipolaire touche entre 1 et 3 % des adultes.",
+   "box": "adultes."
+  },
+  {
+   "text": "Et pourtant, il faut en moyenne six ans pour poser le bon diagnostic.",
+   "display": "Et pourtant, il faut en moyenne 6 ans pour poser le bon diagnostic.",
+   "box": "diagnostic.",
+   "pause_apres": 2.5,
+   "peak": "six ans"
+  },
+  {
+   "text": "Le problème, c'est que le diagnostic repose sur un entretien avec le psychiatre.",
+   "box": "entretien"
+  },
+  {
+   "text": "Alors des chercheurs japonais ont confié la parole des patients à un algorithme d'apprentissage automatique.",
+   "box": "algorithme"
+  },
+  {
+   "text": "Il écoute comment on parle, mais aussi ce qu'on dit.",
+   "box": "écoute",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Cette analyse de la parole peut-elle repérer un trouble bipolaire ?",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, ils ont mené une étude prospective, dans plusieurs centres du Japon.",
+   "box": "centres"
+  },
+  {
+   "text": "Concrètement, ils ont recruté soixante et un patients bipolaires et quatre-vingt-dix-neuf témoins en bonne santé.",
+   "display": "Concrètement, ils ont recruté 61 patients bipolaires et 99 témoins en bonne santé.",
+   "box": "témoins"
+  },
+  {
+   "text": "Chacun a passé un entretien de trente à soixante minutes.",
+   "display": "Chacun a passé un entretien de 30 à 60 minutes.",
+   "box": "entretien",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Au départ, l'algorithme reçoit six mille trois cent soixante-treize mesures du son, et deux cent onze du langage.",
+   "display": "Au départ, l'algorithme reçoit 6 373 mesures du son, et 211 du langage.",
+   "box": "mesures"
+  },
+  {
+   "text": "Ensuite, il trie ces mesures et ne garde que les plus utiles.",
+   "box": "trie"
+  },
+  {
+   "text": "À partir de là, il en tire une probabilité : patient bipolaire ou non.",
+   "box": "probabilité"
+  },
+  {
+   "text": "Résultat : l'aire sous la courbe atteint zéro virgule neuf cent seize.",
+   "display": "Résultat : l'aire sous la courbe atteint 0,916.",
+   "box": "courbe"
+  },
+  {
+   "text": "En prime, l'intervalle de confiance va de zéro virgule huit cent cinquante-quatre à zéro virgule neuf cent cinquante-huit.",
+   "display": "En prime, l'intervalle de confiance va de 0,854 à 0,958.",
+   "box": "confiance"
+  },
+  {
+   "text": "Autrement dit, il repère cinquante-six patients sur soixante, soit une sensibilité de zéro virgule neuf cent trente-trois.",
+   "display": "Autrement dit, il repère 56 patients sur 60, soit une sensibilité de 0,933.",
+   "box": "sensibilité"
+  },
+  {
+   "text": "Et il reconnaît quatre-vingt-cinq témoins sur quatre-vingt-dix-neuf : la spécificité est de zéro virgule huit cent cinquante-neuf.",
+   "display": "Et il reconnaît 85 témoins sur 99 : la spécificité est de 0,859.",
+   "box": "spécificité",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Mais qui porte le résultat, la voix ou les mots ?",
+   "box": "voix"
+  },
+  {
+   "text": "Le son seul atteint zéro virgule neuf cent dix, contre zéro virgule six cent cinquante et un pour les mots.",
+   "display": "Le son seul atteint 0,910, contre 0,651 pour les mots.",
+   "box": "son",
+   "peak": "son seul"
+  },
+  {
+   "text": "Attention : pas de comparaison avec d'autres maladies psychiatriques, et les groupes restent petits.",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : c'est surtout la façon de parler, plus que les mots, qui signale la maladie.",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_image",
+    "cam_at": 0,
+    "header": "Étude observationnelle · Japon · 2017–2024",
+    "image": "mic",
+    "title": "Ce que la voix laisse deviner",
+    "title_at": "s0:voix",
+    "scan_at": "s0:trahir",
+    "lock_at": "s0:bipolaire",
+    "footnote": "61 patients · 99 témoins"
+   },
+   {
+    "type": "gag_calendar",
+    "cam_at": "s2:six-0.2",
+    "label": "six ans de retard"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s3:diagnostic",
+    "title": "De l'entretien à l'algorithme",
+    "steps": [
+     {
+      "icon": "stethoscope",
+      "label": "01 · Entretien clinique",
+      "at": "s3:entretien"
+     },
+     {
+      "icon": "mic",
+      "label": "02 · Comment on parle",
+      "at": "s5:comment"
+     },
+     {
+      "icon": "message",
+      "label": "03 · Ce qu'on dit",
+      "at": "s5:dit"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Cette analyse de la parole peut-elle repérer un trouble bipolaire ?",
+  "italic": "repérer",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Prospective",
+      "at": "s7:prospective"
+     },
+     {
+      "label": "Lieu",
+      "value": "Plusieurs centres, Japon",
+      "at": "s7:Japon"
+     },
+     {
+      "label": "Participants",
+      "value": "61 patients, 99 témoins",
+      "at": "s8:soixante"
+     },
+     {
+      "label": "Entretien",
+      "value": "30 à 60 minutes",
+      "at": "s9:trente"
+     },
+     {
+      "label": "Critère",
+      "value": "Bipolaire ou non",
+      "at": "s12:probabilité",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s10-0.3",
+    "input_icon": "mic",
+    "input_label": "Voix et mots de l'entretien",
+    "ai_label": "Trie les mesures utiles",
+    "output_label": "Probabilité de maladie",
+    "modality": "voix",
+    "at": "s10:mesures",
+    "core_at": "s11:trie",
+    "out_at": "s12:probabilité"
+   },
+   {
+    "type": "roc_curve",
+    "cam_at": "s13-0.3",
+    "auc": {
+     "value": "0,916",
+     "num": 0.916,
+     "at": "s13:atteint",
+     "note": "IC 95 % : 0,854 à 0,958"
+    },
+    "curve_at": "s13:courbe"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s15-0.3",
+    "title": "Sur 159 participants",
+    "metrics": [
+     {
+      "label": "Sensibilité",
+      "value": "0,933",
+      "num": 0.933,
+      "max": 1,
+      "note": "56 patients sur 60",
+      "at": "s15:sensibilité",
+      "accent": true
+     },
+     {
+      "label": "Spécificité",
+      "value": "0,859",
+      "num": 0.859,
+      "max": 1,
+      "note": "85 témoins sur 99",
+      "at": "s16:spécificité"
+     }
+    ]
+   },
+   {
+    "type": "result_bars",
+    "cam_at": "s17-0.3",
+    "title": "Aire sous la courbe, selon la source",
+    "groups": [
+     {
+      "label": "Mots seuls",
+      "value": "0,651",
+      "num": 0.651,
+      "at": "s18:mots"
+     },
+     {
+      "label": "Son seul",
+      "value": "0,910",
+      "num": 0.91,
+      "at": "s18:son",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s19-0.25",
+    "text": "Attention : pas de comparaison avec d'autres maladies psychiatriques, et les groupes restent petits.",
+    "italic": "comparé"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s20-0.25",
+    "text": "À retenir : c'est surtout la façon de parler, plus que les mots, qui signale la maladie.",
+    "italic": "façon"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s20.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s22",
+  "button": "Suivre",
+  "button_at": "s22+0.6",
+  "click_at": "s22+1.6",
+  "source": "Yamaguchi et al. · JMIR · novembre 2026",
+  "doi": "doi:10.2196/98094",
+  "source_at": "s21:vérifiée-0.2"
+ },
+ "duration": 110.8,
+ "lead": 2.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

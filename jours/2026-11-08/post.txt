@@ -1,0 +1,11 @@
+Un algorithme qui écoute la voix repère le trouble bipolaire avec une aire sous la courbe de 0,916.
+
+Des chercheurs japonais ont enregistré 61 patients bipolaires et 99 témoins en bonne santé, lors d'entretiens de 30 à 60 minutes. Un modèle d'apprentissage automatique a analysé le son et les mots. Il repère 56 patients sur 60 (sensibilité 0,933) et reconnaît 85 témoins sur 99 (spécificité 0,859). Le son porte l'essentiel du signal (0,910, contre 0,651 pour les mots seuls).
+
+Attention : c'est une étude observationnelle, sans comparaison avec d'autres maladies psychiatriques, sur de petits groupes.
+
+Et dans votre pratique, la voix d'un patient vous aide-t-elle déjà à évoquer le diagnostic ?
+
+Source : Yamaguchi et al., Journal of Medical Internet Research, novembre 2026. https://doi.org/10.2196/98094
+
+#IA #SantéMentale #TroubleBipolaire #Psychiatrie
