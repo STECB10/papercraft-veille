@@ -52,6 +52,36 @@ Avant / après (même étude, mêmes faits) :
 
 Le script complet de cet exemple est dans `serie/exemple/SCRIPT-NATUREL.md`.
 
+## Un récit qui se tient (retour de Steven du 8 novembre 2026)
+
+Sur la vidéo du trouble bipolaire : « le problème, c'est que le diagnostic repose sur un entretien avec le psychiatre »
+(ah bon ? pourquoi est-ce un problème ?), des performances de modèle mais presque aucun résultat concret (« c'est la
+façon de parler qui trahit la maladie » : mais quoi exactement ?), et une fin décousue (la voix, puis les limites, puis
+de nouveau la voix). Quatre règles, toutes contrôlées par `pipeline/verifier.py` :
+
+1. **Un problème annoncé est un problème expliqué.** Dire pourquoi c'en est un pour les patients : sa cause (« aucune
+   mesure objective n'existe ») et sa conséquence (« trois patients sur quatre sont d'abord pris pour des dépressifs,
+   d'où six ans de retard alors que le traitement dépend de la phase »). Deux phrases au moins dans la partie
+   « probleme », ou une phrase qui dit la cause ou la conséquence. Chaque phrase du problème cite sa preuve (`source`).
+   Si l'auditeur peut demander « et alors ? » ou « pourquoi ? », la réponse est dans la phrase suivante.
+2. **Des résultats concrets, de terrain**, après les performances (partie « concret », 2 à 5 phrases) : ce que l'IA
+   repère exactement (quels indices, avec des exemples), ce qui diffère entre les groupes, ce que ça change pour un
+   patient ou un soignant. Cherche-les dans les Résultats et la Discussion du texte intégral, pas seulement dans le
+   résumé. Chaque phrase concrète cite l'extrait de `source.txt` qui la prouve (`source`, mot pour mot). Si la source
+   ne donne vraiment rien de concret, dis-le et choisis une autre étude.
+3. **Un seul fil, dans l'ordre**, chaque partie dite une fois (champ `partie` de chaque phrase) : accroche → contexte →
+   problème → ce que fait l'IA → question → l'étude → méthode → résultats et concret (ils peuvent alterner) → limite →
+   à retenir → fin. Jamais de retour en arrière. La phrase à retenir ne redit pas un résultat : elle dit ce que
+   l'étude change, ou pourrait changer, en pratique, en tenant compte de la limite.
+4. **Des connecteurs qui disent vrai et des chiffres qu'on comprend.** Le connecteur décrit la vraie relation (« Le
+   problème » annonce un problème, « Résultat : » une conséquence ou un résultat, « Autrement dit » reformule la phrase
+   d'avant, jamais « En prime » devant un intervalle de confiance). Sensibilité et spécificité se disent en « x sur y »
+   ou en pour cent, jamais en « zéro virgule » ; l'aire sous la courbe est située une fois (« tout près du maximum de
+   un ») ; un effectif se traduit en personnes (« sur soixante patients, cinquante-six repérés »).
+
+Avant de valider, relis le script comme un auditeur qui ne connaît pas le sujet et écris tes réponses dans SCRIPT.md
+(section « ## Relecture », une puce par question, voir la skill).
+
 ## Ce que chaque script doit dire, dans cet ordre
 
 0. **L'accroche** (la première phrase, 8 à 14 mots) : une question ou un constat qui parle directement au

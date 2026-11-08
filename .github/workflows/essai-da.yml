@@ -24,7 +24,7 @@ jobs:
       matrix:
         # DA v3 (7 novembre 2026) : Claude réécrit deux études passées avec les nouvelles règles (accroche variée, texte oral,
         # voix Brick, édition du jour) ; les vidéos arrivent sur Telegram, rien n'est publié
-        cas: ["bot:2026-11-07"]
+        cas: ["bot:2026-11-08"]
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

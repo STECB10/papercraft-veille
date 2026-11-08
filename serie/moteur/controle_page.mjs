@@ -48,7 +48,7 @@ try {
   // texte qui déborde : après l'ajustement de moteur.js, aucun texte ne dépasse sa boîte ni le bord de sa feuille
   // (géométrie au repos, avant les transformations de l'animation : offsetLeft/offsetTop dans la feuille ou la planche)
   const debords = await page.evaluate(() => {
-    const TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit,.tilev,.cvnum,.cvcap,.cvq,.cvlab,.cvunit,.fnum,.flab,.fexcl,.bstat,.blab,.bcmp,.tlwhen,.tllab';
+    const TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit,.tilev,.cvnum,.cvcap,.cvq,.cvlab,.cvunit,.fnum,.flab,.fexcl,.bstat,.blab,.bcmp,.tlwhen,.tllab,.fdlab,.fddet';
     const out = [];
     const pos = (el, stop) => { let x = 0, y = 0; for (let e = el; e && e !== stop; e = e.offsetParent) { x += e.offsetLeft; y += e.offsetTop; } return [x, y]; };
     for (const [sel, largeur] of [['#nsheet', 780], ['.plate', 1080], ['#coverin', 1080]]) {

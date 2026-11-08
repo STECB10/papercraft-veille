@@ -35,6 +35,9 @@ l'autre : ne la fixe pas sans raison. Les planches de l'étude ne reprennent jam
 "display": "phrase affichée, chiffres en chiffres (facultatif)",
 "box": "mot affiché encadré (un par phrase)", "peak": "1 ou 2 mots soulignés (3 à 4 fois par film)",
 "mode": "sub" (défaut) | "type" (pivot ou nuance : grande typo, pas de sous-titre) | "none" (fin),
+"partie": "accroche | contexte | probleme | ia | question | etude | methode | resultat | concret | limite | retenir | fin"
+(obligatoire : la place de la phrase dans le récit, voir REGLES-CONTENU.md, « Un récit qui se tient »),
+"source": "extrait de source.txt, mot pour mot, qui prouve la phrase" (obligatoire pour les parties probleme et concret),
 "pause_apres": secondes de silence ajoutées après la phrase}`
 
 - `pause_apres` : **peu**, sinon la voix devient hachée. 0,3 à 0,5 aux seuls changements de partie (après le contexte,
@@ -156,6 +159,10 @@ HR), "at": "<ancre>"}`. Le moteur dessine l'écart annoté et la figure de l'int
 - `timeline` **la chronologie de l'étude** : `title?`, `events`: 2 à 5 × `{when (« Mars 2023 », « 10 mois », 16
   caractères au plus), label (60 au plus), at, accent?}`, `cam_at`. Pour une cohorte, un suivi, des inclusions sur
   plusieurs années (chaque date doit être un fait).
+- `findings` **ce qu'on a trouvé, concrètement** (retour du 8 novembre 2026) : `title?` (« Ce qu'on a trouvé », « Ce que
+  l'IA entend »…), `items`: 2 à 4 × `{icon, label (34 caractères au plus, ex. « Le son de la voix »), detail (80 au plus,
+  ex. « 96 à 98 % des indices utiles »), tendance? (plus | moins | pareil : une flèche), accent?, at}`, `cam_at`. Pour la
+  partie « concret » : ce que l'IA repère, ce qui diffère entre les groupes, ce qui change sur le terrain.
 - `key_points` constats numérotés (revue, cohorte, limites) : `title?`, `points`: 2 à 4 × `{text (70 caractères au
   plus), at}`, `cam_at`.
 - `typo` phrase en grande typo : `text` (= une phrase de `sentences`, mot pour mot), `italic`, `cam_at`. Deux au plus :

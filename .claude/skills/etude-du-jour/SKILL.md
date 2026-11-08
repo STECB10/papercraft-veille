@@ -9,8 +9,8 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 Tu travailles seul, sans humain à qui poser une question. La date est dans la variable d'environnement `DATE_DU_JOUR`
 (dossier `jours/$DATE_DU_JOUR/`). Lis d'abord : `serie/REGLES-CONTENU.md`, `serie/FILM-SCHEMA.md`,
 `serie/frame.md` (la charte visuelle : sections « Les accroches », « Choisir la mise en scène » et « Règles de fond »),
-`serie/exemple/SCRIPT-NATUREL.md` et `serie/exemple/film-naturel.json` (**la référence pour le ton** : un humain qui
-explique, des phrases reliées par des connecteurs). `serie/exemple/film.json` (le pilote) ne sert plus que pour la
+`serie/exemple/SCRIPT-NATUREL.md` et `serie/exemple/film-naturel.json` (**la référence** : un humain qui explique, des
+phrases reliées par des connecteurs, un problème expliqué, des résultats concrets, un seul fil). `serie/exemple/film.json` (le pilote) ne sert plus que pour la
 forme du fichier : son texte haché est justement ce qu'il ne faut plus écrire.
 Regarde aussi le `film.json` de la veille (le dernier dossier de `jours/` avant aujourd'hui) : **l'accroche et le
 moment muet d'aujourd'hui doivent être différents des siens** (le vérificateur refuse sinon).
@@ -71,6 +71,12 @@ de la veille), puis `steps` ; la feuille montre l'étude, une planche par écran
 planches. N'écris jamais un chiffre dans une planche s'il n'est pas dans la fiche des faits (une courbe de suivi ou un
 forest plot seulement si la source donne chaque valeur).
 
+Chaque phrase porte sa `partie` (l'ordre du récit) ; les phrases du problème et des résultats concrets portent leur
+`source` (l'extrait de source.txt qui les prouve). Avant d'écrire, lis les sections Résultats et Discussion du texte
+intégral et note dans faits.json ce que l'étude montre concrètement (quels indices, quelles différences entre groupes,
+quels exemples), pas seulement les performances du modèle. Pour la partie concrète, la planche `findings` est faite
+pour ça.
+
 ## 4. Post : `post.txt`
 
 Ligne 1 : une phrase d'accroche (le résultat clé en langage simple, 160 caractères au plus). Puis 2 à 3 phrases : la
@@ -83,7 +89,18 @@ exact de `etude.json` (`https://doi.org/…`). Puis 3 à 4 hashtags. 1 500 carac
 
 Le titre de l'étude, la raison du choix, le rôle de l'IA en une phrase, le texte dit complet, et la fiche des faits sous forme de tableau.
 
-## 6. Valider
+## 6. Relire comme un auditeur
+
+Relis le texte dit d'un bout à l'autre comme quelqu'un qui ne connaît pas le sujet, corrige, puis écris dans SCRIPT.md une
+section `## Relecture` avec une puce par question et ta réponse :
+- Chaque « problème » dit-il pourquoi c'en est un (cause, conséquence pour les patients) ?
+- Quels résultats concrets, de terrain, au-delà des performances (ce que l'IA repère, exemples, ce qui change) ?
+- Le fil : chaque partie une seule fois, dans l'ordre, et la phrase à retenir dit-elle ce que ça change sans redire un
+  résultat ?
+- Les connecteurs disent-ils vrai (« Le problème », « Résultat », « Autrement dit »…) ?
+- Un auditeur non spécialiste comprend-il chaque chiffre (« x sur y », pour cent, aire sous la courbe située) ?
+
+## 7. Valider
 
 `python3 pipeline/nombres.py` (écrit les nombres du texte dit en toutes lettres), puis `python3 pipeline/verifier.py`. S'il répond REFUSÉ, corrige chaque point et relance, jusqu'à VALIDÉ. Tu as fini
 quand il répond VALIDÉ. Ne lance ni la voix, ni le rendu, ni la publication : la suite de la chaîne s'en charge.

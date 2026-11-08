@@ -1,112 +1,121 @@
 {
  "sentences": [
   {
-   "text": "Votre immunité contre le Covid peut-elle annoncer une réinfection ?"
+   "text": "Et si votre voix pouvait aider à repérer un trouble bipolaire ?",
+   "partie": "accroche"
   },
   {
-   "text": "Le Covid circule désormais toute l'année, et les réinfections touchent surtout les personnes fragiles.",
-   "box": "fragiles."
+   "text": "Ce trouble, qui alterne dépression et excitation, touche un à trois pour cent des adultes.",
+   "partie": "contexte",
+   "display": "Ce trouble, qui alterne dépression et excitation, touche 1 à 3 % des adultes."
   },
   {
-   "text": "Dans cette étude, onze virgule un pour cent des adultes suivis ont été réinfectés.",
-   "display": "Dans cette étude, 11,1 % des adultes suivis ont été réinfectés.",
-   "box": "réinfectés.",
-   "pause_apres": 0.4
+   "text": "Le problème, c'est qu'au premier rendez-vous, soixante-seize virgule huit pour cent des patients sont pris pour des dépressifs.",
+   "partie": "probleme",
+   "display": "Le problème, c'est qu'au premier rendez-vous, 76,8 % des patients sont pris pour des dépressifs.",
+   "box": "dépressifs.",
+   "source": "at first presentation, 76.8% of patients are misdiagnosed with unipolar depression"
   },
   {
-   "text": "Alors, pour cibler la prévention, il faudrait savoir qui est le plus à risque.",
-   "box": "risque."
-  },
-  {
-   "text": "Or la protection repose sur plusieurs défenses : les anticorps du sang, ceux du nez et les lymphocytes T.",
-   "box": "défenses",
-   "peak": "plusieurs défenses"
-  },
-  {
-   "text": "Une équipe chinoise a donc confié ces mesures à un algorithme d'apprentissage automatique.",
-   "box": "algorithme",
+   "text": "Résultat : il faut en moyenne six ans pour bien le diagnostiquer, alors que le traitement dépend de la phase.",
+   "partie": "probleme",
+   "display": "Résultat : il faut en moyenne 6 ans pour bien le diagnostiquer, alors que le traitement dépend de la phase.",
+   "box": "6",
+   "peak": "6 ans",
+   "source": "pharmacological strategies differ markedly between depressive and manic or hypomanic phases",
    "pause_apres": 0.3
   },
   {
-   "text": "Cet algorithme peut-il prédire qui sera réinfecté ?",
+   "text": "Et pour cause : aucune mesure objective n'existe, tout repose sur l'entretien avec le psychiatre.",
+   "partie": "probleme",
+   "box": "objective",
+   "source": "The absence of objective diagnostic measures contributes to clinical uncertainty and suboptimal outcomes."
+  },
+  {
+   "text": "Une équipe japonaise a donc confié leur parole à un algorithme, qui analyse la voix et les mots.",
+   "partie": "ia",
+   "box": "algorithme,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "La voix peut-elle trahir un trouble bipolaire ?",
+   "partie": "question",
    "mode": "type",
    "pause_apres": 1.4
   },
   {
-   "text": "Pour le savoir, les chercheurs ont mené une cohorte prospective à Wuxi et à Nantong, en Chine.",
-   "box": "cohorte"
+   "text": "Pour le savoir, les chercheurs ont enregistré soixante et un patients bipolaires et quatre-vingt-dix-neuf personnes en bonne santé.",
+   "partie": "etude",
+   "display": "Pour le savoir, les chercheurs ont enregistré 61 patients bipolaires et 99 personnes en bonne santé.",
+   "box": "enregistré"
   },
   {
-   "text": "Concrètement, ils ont suivi mille cent cinquante-six adultes pendant dix mois, en médiane, en notant les réinfections avec symptômes.",
-   "display": "Concrètement, ils ont suivi 1 156 adultes pendant 10 mois, en médiane, en notant les réinfections avec symptômes.",
-   "box": "adultes",
+   "text": "Concrètement, chacun passe un entretien de trente à soixante minutes : conversation, images à décrire, histoire à raconter.",
+   "partie": "methode",
+   "display": "Concrètement, chacun passe un entretien de 30 à 60 minutes : conversation, images à décrire, histoire à raconter.",
+   "box": "entretien"
+  },
+  {
+   "text": "L'algorithme y mesure des milliers de détails du son et deux cent onze traits du langage, puis garde les plus utiles.",
+   "partie": "methode",
+   "display": "L'algorithme y mesure des milliers de détails du son et 211 traits du langage, puis garde les plus utiles.",
+   "box": "son",
    "pause_apres": 0.4
   },
   {
-   "text": "Au départ, dix-huit données entrent dans l'algorithme, cliniques ou immunitaires.",
-   "display": "Au départ, 18 données entrent dans l'algorithme, cliniques ou immunitaires.",
-   "box": "données"
+   "text": "Résultat : l'aire sous la courbe atteint zéro virgule neuf cent seize, tout près du maximum de un.",
+   "partie": "resultat",
+   "display": "Résultat : l'aire sous la courbe atteint 0,916, tout près du maximum de 1.",
+   "box": "0,916,"
   },
   {
-   "text": "Mais il n'en garde que deux : les anticorps du nez et un type de lymphocyte T.",
-   "box": "deux"
+   "text": "Autrement dit, l'IA repère cinquante-six patients sur soixante, mais se trompe pour quatorze témoins sur quatre-vingt-dix-neuf.",
+   "partie": "resultat",
+   "display": "Autrement dit, l'IA repère 56 patients sur 60, mais se trompe pour 14 témoins sur 99.",
+   "box": "56",
+   "pause_apres": 0.3
   },
   {
-   "text": "Et il en tire un risque de réinfection pour chaque personne.",
-   "box": "risque"
+   "text": "Et ce qui la guide, c'est surtout la voix : quatre-vingt-seize à quatre-vingt-dix-huit pour cent des indices utiles viennent du son, pas des mots.",
+   "partie": "concret",
+   "display": "Et ce qui la guide, c'est surtout la voix : 96 à 98 % des indices utiles viennent du son, pas des mots.",
+   "box": "voix",
+   "peak": "pas des mots.",
+   "source": "Acoustic features comprised 96% to 98% of the features achieving statistical significance"
   },
   {
-   "text": "Ils l'ont d'abord entraîné sur quatre cents personnes de Wuxi, puis vérifié sur cent soixante-dix autres.",
-   "display": "Ils l'ont d'abord entraîné sur 400 personnes de Wuxi, puis vérifié sur 170 autres.",
-   "box": "entraîné"
+   "text": "Plus étonnant : même entre deux crises, quand les patients vont bien, l'IA les distingue encore, avec zéro virgule huit cent soixante-quatorze.",
+   "partie": "concret",
+   "display": "Plus étonnant : même entre deux crises, quand les patients vont bien, l'IA les distingue encore, avec 0,874.",
+   "box": "crises,",
+   "source": "ES vs HC (n=26 vs 97; AUC=0.874, 95% CI 0.833‐0.949)"
   },
   {
-   "text": "Enfin, ils l'ont testé sur cinq cent quatre-vingt-six personnes de Nantong, une autre ville.",
-   "display": "Enfin, ils l'ont testé sur 586 personnes de Nantong, une autre ville.",
-   "box": "testé",
+   "text": "Autrement dit, la voix garderait une trace durable de la maladie, pas seulement des épisodes.",
+   "partie": "concret",
+   "box": "durable",
+   "source": "suggesting that markers primarily reflect persistent disease characteristics",
    "pause_apres": 0.4
   },
   {
-   "text": "Résultat : en vérification interne, l'aire sous la courbe atteint zéro virgule huit cent trente-cinq.",
-   "display": "Résultat : en vérification interne, l'aire sous la courbe atteint 0,835.",
-   "box": "vérification"
-  },
-  {
-   "text": "Autrement dit, le modèle repère plutôt bien les réinfectés.",
-   "box": "repère",
-   "peak": "plutôt bien"
-  },
-  {
-   "text": "À Nantong, c'est encore mieux : l'aire sous la courbe monte à zéro virgule neuf cent quatre-vingt-seize.",
-   "display": "À Nantong, c'est encore mieux : l'aire sous la courbe monte à 0,996.",
-   "box": "Nantong,"
-  },
-  {
-   "text": "La sensibilité atteint cent pour cent, et la spécificité quatre-vingt-dix-sept virgule un pour cent.",
-   "display": "La sensibilité atteint 100 %, et la spécificité 97,1 %.",
-   "box": "sensibilité",
-   "pause_apres": 0.4
-  },
-  {
-   "text": "Attention : l'étude montre une bonne prédiction, pas moins de réinfections.",
-   "box": "prédiction,",
-   "peak": "bonne prédiction"
-  },
-  {
-   "text": "Et les deux cohortes viennent de la même province : il faudra confirmer ailleurs.",
+   "text": "Attention : l'IA n'a pas été comparée à d'autres maladies psychiatriques, et les groupes restent petits.",
+   "partie": "limite",
    "mode": "type"
   },
   {
-   "text": "À retenir : plus l'immunité du nez est forte, plus le risque prédit est faible.",
+   "text": "À retenir : la voix pourrait devenir un repère objectif pour aider le psychiatre, sans le remplacer.",
+   "partie": "retenir",
    "mode": "type",
    "pause_apres": 0.3
   },
   {
    "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
    "mode": "none"
   },
   {
    "text": "Papercraft.",
+   "partie": "fin",
    "mode": "none"
   }
  ],
@@ -115,47 +124,52 @@
   "end": "s5.e+0.25",
   "stations": [
    {
-    "type": "hook_question",
+    "type": "hook_number",
     "cam_at": 0,
-    "header": "Cohorte prospective · Chine · 2024–2025",
-    "text": "Votre immunité contre le Covid peut-elle annoncer une réinfection ?",
-    "italic": "réinfection",
-    "icon": "users",
-    "footnote": "1 156 adultes suivis · 10 mois"
+    "header": "Étude observationnelle · Japon · 2017–2024",
+    "number": "76,8",
+    "unit": "%",
+    "caption": "des patients bipolaires sont d'abord pris pour des dépressifs",
+    "caption_at": "s2:patients",
+    "lit_at": "s2:soixante-seize",
+    "footnote": "Au premier rendez-vous"
    },
    {
-    "type": "gag_calendar",
-    "cam_at": "s1:circule-0.2",
-    "label": "toute l'année"
+    "type": "gag_clock",
+    "cam_at": "s3:faut-0.2",
+    "label": "six ans en moyenne"
    },
    {
     "type": "steps",
-    "cam_at": "s3-0.1",
-    "mark_at": "s3:risque",
-    "title": "Trois défenses à mesurer",
+    "cam_at": "s4-0.1",
+    "mark_at": "s4:objective",
+    "title": "Le diagnostic aujourd'hui",
     "steps": [
      {
-      "icon": "doc",
-      "label": "01 · Anticorps du sang",
-      "at": "s4:anticorps"
-     },
-     {
       "icon": "user",
-      "label": "02 · Anticorps du nez",
-      "at": "s4:nez"
+      "label": "01 · Entretien",
+      "note": "avec le psychiatre",
+      "at": "s4:l'entretien"
      },
      {
-      "icon": "heart",
-      "label": "03 · Lymphocytes T",
-      "at": "s4:lymphocytes"
+      "icon": "brain",
+      "label": "02 · Jugement clinique",
+      "note": "sans mesure objective",
+      "at": "s4:objective",
+      "alert": "Aucun test"
+     },
+     {
+      "icon": "mic",
+      "label": "03 · Et si la voix aidait ?",
+      "at": "s5:voix"
      }
     ]
    }
   ]
  },
  "pivot": {
-  "text": "Cet algorithme peut-il prédire qui sera réinfecté ?",
-  "italic": "prédire",
+  "text": "La voix peut-elle trahir un trouble bipolaire ?",
+  "italic": "trahir",
   "fold_at": "s6.e+0.12"
  },
  "paper": {
@@ -167,28 +181,28 @@
     "rows": [
      {
       "label": "Type",
-      "value": "Cohorte prospective",
-      "at": "s7:cohorte"
+      "value": "Observationnelle, prospective",
+      "at": "s7:enregistré"
      },
      {
       "label": "Lieu",
-      "value": "Wuxi et Nantong, Chine",
-      "at": "s7:Wuxi"
+      "value": "Japon, 2017–2024",
+      "at": "s7:chercheurs"
      },
      {
-      "label": "Participants",
-      "value": "1 156 adultes",
-      "at": "s8:adultes"
+      "label": "Patients",
+      "value": "61 bipolaires",
+      "at": "s7:soixante"
      },
      {
-      "label": "Suivi",
-      "value": "10 mois (médiane)",
-      "at": "s8:dix"
+      "label": "Témoins",
+      "value": "99 en bonne santé",
+      "at": "s7:quatre-vingt-dix-neuf"
      },
      {
-      "label": "Critère",
-      "value": "Réinfection avec symptômes",
-      "at": "s8:réinfections",
+      "label": "Mesure",
+      "value": "Entretien de 30 à 60 min",
+      "at": "s8:entretien",
       "accent": true
      }
     ]
@@ -196,98 +210,87 @@
    {
     "type": "ai_scan",
     "cam_at": "s9-0.3",
-    "input_icon": "doc",
-    "input_label": "Données cliniques et immunitaires",
-    "ai_label": "Combine et calcule un risque",
-    "output_label": "Risque de réinfection",
-    "modality": "donnees",
-    "at": "s9:données",
-    "core_at": "s10:garde",
-    "out_at": "s11:risque"
-   },
-   {
-    "type": "key_points",
-    "cam_at": "s12-0.3",
-    "title": "Trois groupes de participants",
-    "points": [
-     {
-      "text": "Entraînement : 400 personnes à Wuxi",
-      "at": "s12:entraîné"
-     },
-     {
-      "text": "Vérification : 170 personnes à Wuxi",
-      "at": "s12:vérifié"
-     },
-     {
-      "text": "Test : 586 personnes à Nantong",
-      "at": "s13:testé"
-     }
-    ]
+    "input_icon": "mic",
+    "input_label": "La voix et les mots de l'entretien",
+    "ai_label": "Garde les mesures utiles",
+    "output_label": "Probabilité de maladie",
+    "modality": "voix",
+    "at": "s9:mesure",
+    "core_at": "s9:garde",
+    "out_at": "s10:l'aire"
    },
    {
     "type": "roc_curve",
-    "cam_at": "s14-0.3",
+    "cam_at": "s10-0.3",
     "auc": {
-     "value": "0,835",
-     "num": 0.835,
-     "at": "s14:atteint",
-     "note": "Vérification interne, Wuxi"
+     "value": "0,916",
+     "num": 0.916,
+     "at": "s10:atteint",
+     "note": "IC 95 % : 0,854 à 0,958"
     },
-    "curve_at": "s14:courbe"
+    "curve_at": "s10:courbe"
    },
    {
-    "type": "metric",
-    "cam_at": "s16-0.3",
-    "title": "Personnes de Nantong",
-    "metrics": [
+    "type": "big_stat",
+    "cam_at": "s11-0.3",
+    "title": "Ce que l'IA conclut",
+    "value": "56 sur 60",
+    "label": "patients bipolaires repérés par l'IA",
+    "at": "s11:repère"
+   },
+   {
+    "type": "findings",
+    "cam_at": "s12-0.3",
+    "title": "Ce qu'on a trouvé",
+    "items": [
      {
-      "label": "AUC",
-      "value": "0,996",
-      "num": 0.996,
-      "max": 1,
-      "at": "s16:monte",
+      "icon": "mic",
+      "label": "Le son de la voix",
+      "detail": "96 à 98 % des indices utiles",
+      "tendance": "plus",
+      "at": "s12:voix",
       "accent": true
      },
      {
-      "label": "Sensibilité",
-      "value": "100",
-      "num": 100,
-      "unit": "%",
-      "at": "s17:sensibilité"
+      "icon": "message",
+      "label": "Les mots",
+      "detail": "Beaucoup moins parlants que le son",
+      "tendance": "moins",
+      "at": "s12:mots"
      },
      {
-      "label": "Spécificité",
-      "value": "97,1",
-      "num": 97.1,
-      "unit": "%",
-      "at": "s17:spécificité"
+      "icon": "calendar",
+      "label": "Entre deux crises",
+      "detail": "L'IA distingue encore les patients : 0,874",
+      "tendance": "pareil",
+      "at": "s13:crises"
      }
     ]
    },
    {
     "type": "typo",
-    "cam_at": "s19-0.25",
-    "text": "Et les deux cohortes viennent de la même province : il faudra confirmer ailleurs.",
-    "italic": "confirmer"
+    "cam_at": "s15-0.25",
+    "text": "Attention : l'IA n'a pas été comparée à d'autres maladies psychiatriques, et les groupes restent petits.",
+    "italic": "comparée"
    },
    {
     "type": "typo",
-    "cam_at": "s20-0.25",
-    "text": "À retenir : plus l'immunité du nez est forte, plus le risque prédit est faible.",
-    "italic": "nez"
+    "cam_at": "s16-0.25",
+    "text": "À retenir : la voix pourrait devenir un repère objectif pour aider le psychiatre, sans le remplacer.",
+    "italic": "objectif"
    }
   ]
  },
  "end": {
-  "fold_at": "s20.e+0.2",
+  "fold_at": "s16.e+0.2",
   "promise": "Une étude par jour, vérifiée à la source.",
   "promise_italic": "vérifiée",
-  "wordmark_at": "s22",
+  "wordmark_at": "s18",
   "button": "Suivre",
-  "button_at": "s22+0.6",
-  "click_at": "s22+1.6",
-  "source": "Ran et al. · Emerging Microbes & Infections · octobre 2026",
-  "doi": "doi:10.1080/22221751.2026.2746253",
-  "source_at": "s21:vérifiée-0.2"
+  "button_at": "s18+0.6",
+  "click_at": "s18+1.6",
+  "source": "Yamaguchi et al. · Journal of Medical Internet Research · novembre 2026",
+  "doi": "doi:10.2196/98094",
+  "source_at": "s17:vérifiée-0.2"
  }
 }

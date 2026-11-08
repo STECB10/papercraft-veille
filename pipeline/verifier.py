@@ -39,9 +39,10 @@ REQUIS = {
     "diagnostic_grid": ["total", "sick", "found", "at", "cam_at"], "survival_curves": ["times", "groups", "cam_at"],
     "chat": ["messages", "cam_at"], "image_scan": ["image", "at", "cam_at"],
     "flow_chart": ["stages", "cam_at"], "big_stat": ["value", "label", "at", "cam_at"], "timeline": ["events", "cam_at"],
+    "findings": ["items", "cam_at"],
 }
 SANS_CHIFFRE = {"y", "people", "lit", "chairs", "occupied", "dot_value", "icon", "type", "words_file", "audio", "voice", "sfx", "duration", "lead",
-                "max", "lines", "null", "log", "from", "image", "modality", "tear", "visual", "edition", "italic", "roll", "after"}
+                "max", "lines", "null", "log", "from", "image", "modality", "tear", "visual", "edition", "italic", "roll", "after", "partie", "source", "tendance"}
 # connecteurs et tournures de l'oral qui relient une phrase à la précédente (début de phrase, minuscules)
 LIAISONS = ("et ", "et,", "mais", "or ", "or,", "donc", "alors", "pourtant", "cependant", "toutefois", "en effet", "en revanche", "autrement dit",
             "concrètement", "résultat", "pour le savoir", "pour ", "ainsi", "puis", "ensuite", "enfin", "d'abord", "d'ailleurs", "par exemple",
@@ -66,6 +67,76 @@ def plat(t):
 
 def nombre(s):
     return float(re.sub(r"[   ]", "", s).replace(",", "."))
+
+
+# le fil du récit (retour du 8 novembre 2026 : « décousu », « on revient sur le premier truc ») : chaque phrase dit à
+# quelle partie elle appartient ; les parties se suivent dans cet ordre, sans jamais revenir en arrière
+PARTIES = ["accroche", "contexte", "probleme", "ia", "question", "etude", "methode", "resultat", "concret", "limite", "retenir", "fin"]
+RANG = {p: i for i, p in enumerate(PARTIES)}
+RANG["concret"] = RANG["resultat"]          # un résultat et ce qu'il veut dire concrètement peuvent alterner
+CAUSE = (" donc", " car ", " parce qu", "résultat", " ce qui ", " si bien que", " faute d", "conséquence", " alors que", " sans ", " pour ",
+         " ainsi", " du coup", " au point de", " d'où", " c'est pourquoi", " retard", " erreur", " risque")
+
+
+def controle_recit(film, src, script_md):
+    """Le récit se tient : parties dans l'ordre, problème expliqué, résultats concrets prouvés, connecteurs vrais,
+    chiffres compréhensibles, relecture faite."""
+    err = []
+    sents = film.get("sentences", [])
+    parts = [s.get("partie") for s in sents]
+    manquants = [i for i, p in enumerate(parts) if p not in RANG]
+    if manquants:
+        return [f"chaque phrase a un champ « partie » ({', '.join(PARTIES)}) ; manquant ou inconnu aux phrases {manquants[:8]}"]
+    for i in range(1, len(parts)):
+        if RANG[parts[i]] < RANG[parts[i - 1]]:
+            err.append(f"le récit revient en arrière à la phrase {i} (« {parts[i - 1]} » puis « {parts[i]} ») : chaque partie est dite une seule "
+                       f"fois, dans l'ordre {' → '.join(PARTIES)}. Déplacer ou fusionner la phrase : « {sents[i]['text'][:70]} »")
+            break
+    for p_, (mn, mx) in {"accroche": (1, 1), "probleme": (1, 4), "question": (1, 1), "resultat": (1, 6), "concret": (2, 5), "limite": (1, 2), "retenir": (1, 1)}.items():
+        n = parts.count(p_)
+        if not mn <= n <= mx:
+            err.append(f"partie « {p_} » : {n} phrase(s), attendu {mn} à {mx}"
+                       + (" — ajouter ce que l'étude montre concrètement (ce que l'IA repère, des exemples, ce que ça change sur le terrain), "
+                          "tiré du texte intégral, pas seulement des performances" if p_ == "concret" and n < mn else ""))
+    pv = film.get("pivot", {}).get("text")
+    for i, s in enumerate(sents):
+        if s.get("text") == pv and parts[i] != "question":
+            err.append("la phrase du pivot a la partie « question »")
+    # un problème annoncé est un problème expliqué : pourquoi c'en est un, avec sa conséquence
+    pb = [s["text"] for s in sents if s.get("partie") == "probleme"]
+    if pb and len(pb) < 2 and not any(c in " " + t.lower() for t in pb for c in CAUSE):
+        err.append(f"le problème n'est pas expliqué : « {pb[0][:80]} ». Dire POURQUOI c'en est un (sa cause ou sa conséquence pour les "
+                   "patients : erreur, retard, risque…), dans la même phrase ou la suivante")
+    # problème et résultats concrets : chaque phrase cite sa preuve, mot pour mot dans source.txt
+    for i, s in enumerate(sents):
+        if s.get("partie") in ("probleme", "concret"):
+            q = s.get("source", "")
+            if len(q) < 25:
+                err.append(f"phrase {i} ({s['partie']}) : champ « source » = l'extrait de source.txt (25 caractères au moins) qui prouve ce qu'elle dit")
+            elif plat(q) not in src:
+                err.append(f"phrase {i} : « source » introuvable mot pour mot dans source.txt : « {q[:90]} »")
+    # des connecteurs qui disent vrai
+    for i, s in enumerate(sents):
+        t = s["text"].lower().replace("’", "'")
+        if t.startswith(("en prime", "cerise sur le gâteau", "bonus")) and any(k in t for k in ("intervalle", "confiance")):
+            err.append(f"phrase {i} : « En prime » devant un intervalle de confiance ne veut rien dire ; l'intervalle précise le chiffre "
+                       "(« avec une marge d'incertitude de… à… »)")
+        if t.startswith(("le problème", "le hic", "le souci")) and s.get("partie") != "probleme":
+            err.append(f"phrase {i} : « {s['text'][:30]}… » annonce un problème mais n'est pas dans la partie « probleme »")
+        if t.startswith(("autrement dit", "en clair")) and i and parts[i] != parts[i - 1]:
+            err.append(f"phrase {i} : « Autrement dit » reformule la phrase d'avant ; elle doit rester dans la même partie qu'elle")
+        if any(k in t for k in ("sensibilité", "spécificité")) and "zéro virgule" in t:
+            err.append(f"phrase {i} : sensibilité et spécificité se disent en pour cent ou en « x sur y » (« elle repère quatre-vingt-treize "
+                       "pour cent des malades »), jamais en « zéro virgule »")
+    # la phrase à retenir dit ce que ça change, sans redire un chiffre
+    ret = [s for s in sents if s.get("partie") == "retenir"]
+    if ret and NOMBRE.search(ret[0].get("display", "")) :
+        err.append("la phrase à retenir ne redit pas un chiffre : elle dit ce que l'étude change ou pourrait changer en pratique")
+    # la relecture de l'auditeur, écrite dans SCRIPT.md
+    rel = script_md.split("## Relecture", 1)[1] if "## Relecture" in script_md else ""
+    if sum(1 for l in rel.splitlines() if l.strip().startswith(("-", "*"))) < 5:
+        err.append("SCRIPT.md : section « ## Relecture » avec les 5 questions de la skill (étape 6) et tes réponses, une puce chacune")
+    return err
 
 
 def film_precedent(jour):
@@ -254,6 +325,8 @@ def main():
                 err.append(f"phrase {i} : « {x} » affiché sans fait correspondant dans faits.json")
         if s.get("box") and s["box"] not in s.get("display", s["text"]).split():
             err.append(f"phrase {i} : le mot-clé « {s['box']} » n'est pas un mot affiché de la phrase")
+    script_md = (jour / "SCRIPT.md").read_text(encoding="utf-8") if (jour / "SCRIPT.md").exists() else ""
+    err += controle_recit(film, src, script_md)
     if len(sents) < 3 or sents[-1]["text"] != "Papercraft." or sents[-2]["text"] != PROMESSE:
         err.append(f"les deux dernières phrases doivent être « {PROMESSE} » puis « Papercraft. » (mode none)")
     pv = film.get("pivot", {})
@@ -367,6 +440,17 @@ def main():
                 for e in ev:
                     if len(str(e.get("when", ""))) > 16 or len(e.get("label", "")) > 60:
                         err.append(f"timeline : « when » 16 caractères au plus, « label » 60 au plus ({e.get('when')})")
+            if t == "findings":
+                its = st.get("items", [])
+                if not 2 <= len(its) <= 4:
+                    err.append("findings : 2 à 4 constats")
+                for it in its:
+                    if len(it.get("label", "")) > 34 or len(it.get("detail", "")) > 80:
+                        err.append(f"findings : « label » 34 caractères au plus, « detail » 80 au plus ({it.get('label')})")
+                    if it.get("tendance") and it["tendance"] not in ("plus", "moins", "pareil"):
+                        err.append("findings : tendance = plus, moins ou pareil")
+                    if it.get("icon") and it["icon"] not in build.ICONS:
+                        err.append(f"findings : icône « {it['icon']} » inconnue")
             if t == "chat":
                 ms = st.get("messages", [])
                 if not 1 <= len(ms) <= 4:

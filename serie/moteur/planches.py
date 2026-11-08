@@ -5,6 +5,8 @@
   big_stat    LE résultat, en grand : le chiffre roule ; pour un pourcentage, un anneau se trace jusqu'à sa valeur, et
               l'anneau du groupe comparé se trace à l'intérieur
   timeline    la chronologie de l'étude : une ligne qui descend, une date par étape (inclusions, suivi, analyse…)
+  findings    ce que l'étude a trouvé, concrètement (retour du 8 novembre 2026) : 2 à 4 constats de terrain, chacun avec
+              son dessin, son titre court, une ligne d'explication et, s'il y a lieu, une flèche (plus / moins / pareil)
 
 Coordonnées d'écran (planche plein cadre 1080 × 1350, zone utile y 150 à 1060), décalées de y0.
 """
@@ -13,7 +15,7 @@ import math
 import mesure
 
 B = None            # le module build (injecté par build.py)
-TYPES = ["flow_chart", "big_stat", "timeline"]
+TYPES = ["flow_chart", "big_stat", "timeline", "findings"]
 ML, CW, W = 72, 936, 1080
 
 
@@ -141,6 +143,38 @@ def station(st, film, fig, y0, t0):
             lpx, lls = mesure.ajuster(e["label"], "schib500", CW - 140, 38, 28, max_lignes=2, interligne=1.2)
             h.append(f'<div class="tllab" style="left:{lx + 62}px;top:{y + wpx * 0.5:.0f}px;width:{CW - 140}px;font-size:{lpx}px" data-fit="1" data-fh="{2 * lpx * 1.2 + 6:.0f}" '
                      f'data-fmin="24" data-a="rise" data-t="{e["at"] + 0.15:.2f}">{_esc(e["label"])}</div>')
+    elif t == "findings":
+        items = st["items"]
+        k = len(items)
+        h += B.kicker(y0, st.get("title", "Ce qu'on a trouvé"), t0 + 0.2)
+        top, bot = y0 + 165, y0 + 1045
+        gap = 26
+        ch = min(250, (bot - top - (k - 1) * gap) / k)
+        y = top + (bot - top - (k * ch + (k - 1) * gap)) / 2
+        for i, it in enumerate(items):
+            at = it["at"]
+            yy = y + i * (ch + gap)
+            acc = " acc" if it.get("accent") else ""
+            h.append(f'<div class="fdcard{acc}" style="left:{ML}px;top:{yy:.0f}px;width:{CW}px;height:{ch:.0f}px" data-a="slideL" data-t="{at - 0.15:.2f}"></div>')
+            isz = min(110, ch - 60)
+            h.append(B.iconbox(it.get("icon", "check"), ML + 34, yy + (ch - isz) / 2, isz, isz, "var(--ink)", at - 0.05, "draw", 'data-d="0.6"'))
+            tx = ML + 34 + isz + 36
+            arrow_w = 110 if it.get("tendance") else 0
+            tw_ = CW - (tx - ML) - 34 - arrow_w
+            lpx, lls = mesure.ajuster(it["label"], "schib600", tw_, 44, 32, max_lignes=1)
+            dpx, dls = mesure.ajuster(it.get("detail", ""), "schib400", tw_, 33, 26, max_lignes=2, interligne=1.25)
+            th = lpx * 1.15 + (len(dls) * dpx * 1.25 + 8 if it.get("detail") else 0)
+            ty = yy + (ch - th) / 2
+            h.append(f'<div class="fdlab" style="left:{tx:.0f}px;top:{ty:.0f}px;width:{tw_:.0f}px;font-size:{lpx}px" data-fit="1" data-fmin="26" '
+                     f'data-a="rise" data-t="{at:.2f}">{_esc(it["label"])}</div>')
+            if it.get("detail"):
+                h.append(f'<div class="fddet" style="left:{tx:.0f}px;top:{ty + lpx * 1.15 + 8:.0f}px;width:{tw_:.0f}px;font-size:{dpx}px" data-fit="1" '
+                         f'data-fh="{len(dls) * dpx * 1.25 + 6:.0f}" data-fmin="22" data-a="rise" data-t="{at + 0.25:.2f}">{_esc(it["detail"])}</div>')
+            tnd = it.get("tendance")
+            if tnd:
+                ax, ay = ML + CW - 34 - 80, yy + ch / 2 - 40
+                d = {"plus": "M40 70V12M16 34L40 10L64 34", "moins": "M40 10V68M16 46L40 70L64 46", "pareil": "M10 30H70M10 50H70"}.get(tnd, "M10 40H70")
+                h.append(B.svg_layer(ax, ay, 80, 80, f'<path d="{d}" stroke="var(--carbon)" stroke-width="8" fill="none"/>', "draw", at + 0.4, 'data-d="0.5"'))
     return h
 
 

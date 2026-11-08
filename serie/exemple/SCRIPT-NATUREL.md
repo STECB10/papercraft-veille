@@ -1,36 +1,42 @@
-# Exemple de script « comme un humain qui parle »
+# Exemple de référence : un récit qui se tient
 
-Étude : Ran et al., *Emerging Microbes & Infections*, octobre 2026 (prédire la réinfection au Covid à partir de l'immunité).
-Mêmes faits que la vidéo du 7 novembre 2026, réécrits selon `serie/REGLES-CONTENU.md` (« Parler comme un humain »).
-Accroche `hook_question`, moment muet `gag_calendar`. 300 mots ; le vérificateur répond VALIDÉ.
+Étude : Yamaguchi et al., *Journal of Medical Internet Research*, novembre 2026 (trouble bipolaire, voix et langage).
+C'est la vidéo du 8 novembre 2026 réécrite après le retour de Steven : le problème est expliqué (pourquoi c'en est un),
+les résultats concrets suivent les performances (ce que l'IA repère, même entre deux crises), et le fil ne revient
+jamais en arrière. Le vérificateur répond VALIDÉ (300 mots).
 
-Repère les débuts de phrase : presque chacune s'accroche à la précédente, et les silences ajoutés (`pause_apres`) ne
-tombent qu'aux changements de partie.
+| # | partie | Texte dit | preuve (`source`) |
+|---|---|---|---|
+| 0 | accroche | Et si votre voix pouvait aider à repérer un trouble bipolaire ? |  |
+| 1 | contexte | Ce trouble, qui alterne dépression et excitation, touche un à trois pour cent des adultes. |  |
+| 2 | probleme | Le problème, c'est qu'au premier rendez-vous, soixante-seize virgule huit pour cent des patients sont pris pour des dépressifs. | at first presentation, 76.8% of patients are misdiagnosed with unipolar depression |
+| 3 | probleme | Résultat : il faut en moyenne six ans pour bien le diagnostiquer, alors que le traitement dépend de la phase. | pharmacological strategies differ markedly between depressive and manic or hypomanic phases |
+| 4 | probleme | Et pour cause : aucune mesure objective n'existe, tout repose sur l'entretien avec le psychiatre. | The absence of objective diagnostic measures contributes to clinical uncertainty and suboptimal outcomes. |
+| 5 | ia | Une équipe japonaise a donc confié leur parole à un algorithme, qui analyse la voix et les mots. |  |
+| 6 | question | La voix peut-elle trahir un trouble bipolaire ? |  |
+| 7 | etude | Pour le savoir, les chercheurs ont enregistré soixante et un patients bipolaires et quatre-vingt-dix-neuf personnes en bonne santé. |  |
+| 8 | methode | Concrètement, chacun passe un entretien de trente à soixante minutes : conversation, images à décrire, histoire à raconter. |  |
+| 9 | methode | L'algorithme y mesure des milliers de détails du son et deux cent onze traits du langage, puis garde les plus utiles. |  |
+| 10 | resultat | Résultat : l'aire sous la courbe atteint zéro virgule neuf cent seize, tout près du maximum de un. |  |
+| 11 | resultat | Autrement dit, l'IA repère cinquante-six patients sur soixante, mais se trompe pour quatorze témoins sur quatre-vingt-dix-neuf. |  |
+| 12 | concret | Et ce qui la guide, c'est surtout la voix : quatre-vingt-seize à quatre-vingt-dix-huit pour cent des indices utiles viennent du son, pas des mots. | Acoustic features comprised 96% to 98% of the features achieving statistical significance |
+| 13 | concret | Plus étonnant : même entre deux crises, quand les patients vont bien, l'IA les distingue encore, avec zéro virgule huit cent soixante-quatorze. | ES vs HC (n=26 vs 97; AUC=0.874, 95% CI 0.833‐0.949) |
+| 14 | concret | Autrement dit, la voix garderait une trace durable de la maladie, pas seulement des épisodes. | suggesting that markers primarily reflect persistent disease characteristics |
+| 15 | limite | Attention : l'IA n'a pas été comparée à d'autres maladies psychiatriques, et les groupes restent petits. |  |
+| 16 | retenir | À retenir : la voix pourrait devenir un repère objectif pour aider le psychiatre, sans le remplacer. |  |
+| 17 | fin | Une étude par jour, vérifiée à la source. |  |
+| 18 | fin | Papercraft. |  |
 
-| # | Texte dit | pause_apres |
-|---|---|---|
-| 0 | Votre immunité contre le Covid peut-elle annoncer une réinfection ? |  |
-| 1 | Le Covid circule désormais toute l'année, et les réinfections touchent surtout les personnes fragiles. |  |
-| 2 | Dans cette étude, onze virgule un pour cent des adultes suivis ont été réinfectés. | 0.4 |
-| 3 | Alors, pour cibler la prévention, il faudrait savoir qui est le plus à risque. |  |
-| 4 | Or la protection repose sur plusieurs défenses : les anticorps du sang, ceux du nez et les lymphocytes T. |  |
-| 5 | Une équipe chinoise a donc confié ces mesures à un algorithme d'apprentissage automatique. | 0.3 |
-| 6 | Cet algorithme peut-il prédire qui sera réinfecté ? | 1.4 |
-| 7 | Pour le savoir, les chercheurs ont mené une cohorte prospective à Wuxi et à Nantong, en Chine. |  |
-| 8 | Concrètement, ils ont suivi mille cent cinquante-six adultes pendant dix mois, en médiane, en notant les réinfections avec symptômes. | 0.4 |
-| 9 | Au départ, dix-huit données entrent dans l'algorithme, cliniques ou immunitaires. |  |
-| 10 | Mais il n'en garde que deux : les anticorps du nez et un type de lymphocyte T. |  |
-| 11 | Et il en tire un risque de réinfection pour chaque personne. |  |
-| 12 | Ils l'ont d'abord entraîné sur quatre cents personnes de Wuxi, puis vérifié sur cent soixante-dix autres. |  |
-| 13 | Enfin, ils l'ont testé sur cinq cent quatre-vingt-six personnes de Nantong, une autre ville. | 0.4 |
-| 14 | Résultat : en vérification interne, l'aire sous la courbe atteint zéro virgule huit cent trente-cinq. |  |
-| 15 | Autrement dit, le modèle repère plutôt bien les réinfectés. |  |
-| 16 | À Nantong, c'est encore mieux : l'aire sous la courbe monte à zéro virgule neuf cent quatre-vingt-seize. |  |
-| 17 | La sensibilité atteint cent pour cent, et la spécificité quatre-vingt-dix-sept virgule un pour cent. | 0.4 |
-| 18 | Attention : l'étude montre une bonne prédiction, pas moins de réinfections. |  |
-| 19 | Et les deux cohortes viennent de la même province : il faudra confirmer ailleurs. |  |
-| 20 | À retenir : plus l'immunité du nez est forte, plus le risque prédit est faible. | 0.3 |
-| 21 | Une étude par jour, vérifiée à la source. |  |
-| 22 | Papercraft. |  |
+Avant (vidéo du 8 novembre) : « Le problème, c'est que le diagnostic repose sur un entretien avec le psychiatre. » (pas
+de pourquoi) ; « En prime, l'intervalle de confiance va de… » (connecteur faux) ; sensibilité « zéro virgule neuf cent
+trente-trois » ; voix contre mots → limites → de nouveau la voix (retour en arrière).
 
-Le `film.json` complet (planches et ancres) : `serie/exemple/film-naturel.json`.
+Yamaguchi et al., Journal of Medical Internet Research, novembre 2026. Étude observationnelle prospective (Japon, 2017–2024).
+
+## Relecture
+
+- Chaque « problème » dit-il pourquoi c'en est un ? Oui : 76,8 % des patients sont d'abord pris pour des dépressifs, donc 6 ans de retard alors que le traitement dépend de la phase ; la cause : aucune mesure objective.
+- Quels résultats concrets, de terrain, au-delà des performances ? Le son porte 96 à 98 % des indices, pas les mots ; l'IA distingue encore les patients entre deux crises (0,874) : la voix garderait une trace durable.
+- Le fil : chaque partie une seule fois, dans l'ordre ? Oui : contexte, problème, IA, question, étude, méthode, résultats, concret, limite, à retenir ; la phrase à retenir ne revient pas sur un résultat, elle dit ce que ça change.
+- Les connecteurs disent-ils vrai ? « Résultat » introduit une conséquence, « Et pour cause » une cause, « Autrement dit » reformule la phrase précédente.
+- Un auditeur non spécialiste comprend-il chaque chiffre ? L'aire sous la courbe est située (« tout près du maximum, qui vaut 1 ») ; sensibilité et spécificité sont dites en « 56 sur 60 » et « 14 sur 99 ».
