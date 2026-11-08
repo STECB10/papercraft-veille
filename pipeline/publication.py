@@ -93,7 +93,6 @@ def envoyer():
     ranger(date, jour)
     noter_historique(date, "en attente")
     etude = lire_json(jour / "etude.json", {})
-    post = (jour / "post.txt").read_text(encoding="utf-8").strip()
     if (os.environ.get("PUBLICATION_AUTO") or "").lower() == "oui":
         publier(date)
         noter_historique(date, "publiée")
@@ -142,6 +141,44 @@ def remplacer(dossier):
     noter_historique(date, "en attente")
     proposer(date, jour, f"Vidéo du {date} · version corrigée (elle remplace la précédente : les deux boutons Publier publient celle-ci)")
     print(f"remplacée dans la release jour-{date} : {', '.join(noms)} (étude {doi_essai})")
+
+
+def ecouter():
+    moi = str(env("TELEGRAM_CHAT_ID"))
+    maj = tg("getUpdates", {"timeout": 0, "allowed_updates": ["callback_query"]})
+    dernier = None
+    for u in maj:
+        dernier = u["update_id"]
+        q = u.get("callback_query")
+        if not q or str(q["from"]["id"]) != moi:
+            continue
+        action, _, date = (q.get("data") or "").partition(":")
+        msg = q.get("message", {})
+        try:
+            tg("answerCallbackQuery", {"callback_query_id": q["id"], "text": "Reçu, je m'en occupe."})
+        except Exception:
+            pass  # clic trop ancien : on traite quand même
+        statut = next((e.get("statut") for e in lire_json(HISTORIQUE, []) if e.get("date") == date), None)
+        if statut in ("publiée", "rejetée"):
+            continue
+        try:
+            tg("editMessageReplyMarkup", {"chat_id": msg["chat"]["id"], "message_id": msg["message_id"], "reply_markup": {"inline_keyboard": []}})
+        except Exception:
+            pass
+        if action == "pub":
+            try:
+                publier(date)
+                noter_historique(date, "publiée")
+                gh("release", "edit", f"jour-{date}", "--prerelease=false", "--notes", "Publiée sur LinkedIn (page Papercraft.AI).")
+                tg_message(f"✅ Publiée sur la page Papercraft.AI ({date}).")
+            except Exception as e:
+                tg_message(f"⚠️ Publication du {date} impossible : {str(e)[:500]}\nRéessaie en recliquant plus tard ou préviens Claude.",
+                           reply_markup={"inline_keyboard": [[{"text": "🔁 Réessayer", "callback_data": f"pub:{date}"}]]})
+        elif action == "rej":
+            noter_historique(date, "rejetée")
+            tg_message(f"❌ Vidéo du {date} rejetée, rien n'est publié.")
+    if dernier is not None:
+        tg("getUpdates", {"offset": dernier + 1, "timeout": 0})
 
 
 if __name__ == "__main__":
