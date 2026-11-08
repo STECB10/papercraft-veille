@@ -1,0 +1,46 @@
+name: Remplacer la vidéo du jour par un essai
+# Quand une vidéo d'Essai DA est meilleure que celle du jour (pas encore publiée) : elle prend sa place dans la release
+# « jour-<date> » et repart sur Telegram avec Publier / Rejeter. Rien n'est publié tant que le bouton Publier n'est pas
+# cliqué (la publication passe ensuite par « Écoute Telegram », comme chaque jour).
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Numéro du run Essai DA (le nombre à la fin de son adresse : …/actions/runs/<numéro>)"
+        required: true
+      date:
+        description: "Jour dont la vidéo est remplacée (AAAA-MM-JJ)"
+        required: true
+      artefact:
+        description: "Artefact de l'essai (essai-0 pour le premier cas de la matrice)"
+        default: "essai-0"
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: ecoute-telegram
+  cancel-in-progress: false
+jobs:
+  remplacer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      GH_TOKEN: ${{ github.token }}
+      DATE_DU_JOUR: ${{ inputs.date }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artefact }}
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ github.token }}
+          path: essai
+      - run: ls -la essai && python3 pipeline/publication.py remplacer essai
+      - name: Garder la trace
+        run: |
+          git config user.name "papercraft-bot" && git config user.email "papercraft-bot@users.noreply.github.com"
+          git add pipeline/historique.json && git commit -qm "Vidéo du ${{ inputs.date }} remplacée par l'essai ${{ inputs.run_id }}" && git push -q || true

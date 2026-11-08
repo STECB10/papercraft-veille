@@ -83,9 +83,14 @@ jobs:
         if: always()
         with:
           name: essai-${{ strategy.job-index }}
+          # tout ce qu'il faut pour que l'essai puisse devenir la vidéo du jour (workflow « Remplacer la vidéo du jour »)
           path: |
             jours/${{ env.DATE_DU_JOUR }}/final.mp4
             jours/${{ env.DATE_DU_JOUR }}/film.json
+            jours/${{ env.DATE_DU_JOUR }}/post.txt
+            jours/${{ env.DATE_DU_JOUR }}/etude.json
+            jours/${{ env.DATE_DU_JOUR }}/faits.json
+            jours/${{ env.DATE_DU_JOUR }}/SCRIPT.md
           if-no-files-found: ignore
       - name: Envoi Telegram (validation, rien n'est publié)
         run: |
@@ -106,7 +111,8 @@ jobs:
           titre = json.load(open(jour / "etude.json")).get("titre", "") if (jour / "etude.json").exists() else ""
           accroche = f["night"]["stations"][0]["type"]
           cap = (f"Essai DA v3 · {d} · {quoi}\n{titre[:200]}\nAccroche : {accroche} · planches : {planches}\n"
-                 f"Musique : {morceau_du_jour(jour)['titre']}\n(test : rien n'est publié)")
+                 f"Musique : {morceau_du_jour(jour)['titre']}\n(test : rien n'est publié ; pour en faire la vidéo du jour : "
+                 f"workflow « Remplacer la vidéo du jour », run {os.environ.get('GITHUB_RUN_ID', '?')})")
           tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": cap[:1000], "supports_streaming": "true"},
              [("video", jour / "final.mp4")], timeout=600)
           PY

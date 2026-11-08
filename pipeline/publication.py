@@ -5,9 +5,14 @@
                                               puis l'envoie sur Telegram avec Publier / Rejeter
                                               (ou publie directement si la variable PUBLICATION_AUTO vaut « oui »)
   python3 pipeline/publication.py ecouter     lit les clics Telegram et publie / rejette (lancé toutes les 30 min)
+  python3 pipeline/publication.py remplacer <dossier>
+                                              remplace la vidéo d'un jour pas encore publié par celle d'un essai
+                                              (téléchargée dans <dossier> par le workflow « Remplacer la vidéo du jour »),
+                                              puis la renvoie sur Telegram avec Publier / Rejeter
 Secrets : TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, UPLOAD_POST_API_KEY ; GH_TOKEN fourni par GitHub Actions.
 """
 import os
+import pathlib
 import subprocess
 import sys
 import time
@@ -23,8 +28,8 @@ def gh(*args):
     return subprocess.run(["gh", *args], check=True, capture_output=True, text=True).stdout
 
 
-def ranger(date, jour):
-    fichiers = [str(jour / n) for n in ("final.mp4", "post.txt", "etude.json", "film.json", "faits.json") if (jour / n).exists()]
+def ranger(date, jour, noms=("final.mp4", "post.txt", "etude.json", "film.json", "faits.json")):
+    fichiers = [str(jour / n) for n in noms if (jour / n).exists()]
     etude = lire_json(jour / "etude.json", {})
     try:
         gh("release", "view", f"jour-{date}")
@@ -95,50 +100,49 @@ def envoyer():
         tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": f"Publiée sur Papercraft.AI · {date}\n{etude.get('lien', '')}"[:1000],
                          "supports_streaming": "true"}, [("video", jour / "final.mp4")], timeout=600)
         return
-    tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": f"Vidéo du {date}\n{etude.get('titre', '')}"[:1000],
+    proposer(date, jour, f"Vidéo du {date}")
+
+
+def proposer(date, jour, entete):
+    etude = lire_json(jour / "etude.json", {})
+    post = (jour / "post.txt").read_text(encoding="utf-8").strip()
+    tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": f"{entete}\n{etude.get('titre', '')}"[:1000],
                      "supports_streaming": "true"}, [("video", jour / "final.mp4")], timeout=600)
     clavier = {"inline_keyboard": [[{"text": "✅ Publier", "callback_data": f"pub:{date}"}, {"text": "❌ Rejeter", "callback_data": f"rej:{date}"}]]}
     tg_message(f"{post}\n\n— Texte du post. Publier sur la page Papercraft.AI ?", reply_markup=clavier)
     print("envoyé sur Telegram")
 
 
-def ecouter():
-    moi = str(env("TELEGRAM_CHAT_ID"))
-    maj = tg("getUpdates", {"timeout": 0, "allowed_updates": ["callback_query"]})
-    dernier = None
-    for u in maj:
-        dernier = u["update_id"]
-        q = u.get("callback_query")
-        if not q or str(q["from"]["id"]) != moi:
-            continue
-        action, _, date = (q.get("data") or "").partition(":")
-        msg = q.get("message", {})
-        try:
-            tg("answerCallbackQuery", {"callback_query_id": q["id"], "text": "Reçu, je m'en occupe."})
-        except Exception:
-            pass  # clic trop ancien : on traite quand même
-        statut = next((e.get("statut") for e in lire_json(HISTORIQUE, []) if e.get("date") == date), None)
-        if statut in ("publiée", "rejetée"):
-            continue
-        try:
-            tg("editMessageReplyMarkup", {"chat_id": msg["chat"]["id"], "message_id": msg["message_id"], "reply_markup": {"inline_keyboard": []}})
-        except Exception:
-            pass
-        if action == "pub":
-            try:
-                publier(date)
-                noter_historique(date, "publiée")
-                gh("release", "edit", f"jour-{date}", "--prerelease=false", "--notes", "Publiée sur LinkedIn (page Papercraft.AI).")
-                tg_message(f"✅ Publiée sur la page Papercraft.AI ({date}).")
-            except Exception as e:
-                tg_message(f"⚠️ Publication du {date} impossible : {str(e)[:500]}\nRéessaie en recliquant plus tard ou préviens Claude.",
-                           reply_markup={"inline_keyboard": [[{"text": "🔁 Réessayer", "callback_data": f"pub:{date}"}]]})
-        elif action == "rej":
-            noter_historique(date, "rejetée")
-            tg_message(f"❌ Vidéo du {date} rejetée, rien n'est publié.")
-    if dernier is not None:
-        tg("getUpdates", {"offset": dernier + 1, "timeout": 0})
+def remplacer(dossier):
+    """La vidéo d'un essai (Essai DA, téléchargée dans <dossier>) devient la vidéo du jour : elle remplace celle de la
+    release « jour-<date> », et le bouton Publier publiera donc celle-ci. Refuse un jour déjà publié, et un essai qui
+    porte sur une autre étude sans apporter son propre post."""
+    import json
+    import shutil
+    src = pathlib.Path(dossier)
+    jour = dossier_du_jour()
+    date = jour.name
+    statut = next((e.get("statut") for e in lire_json(HISTORIQUE, []) if e.get("date") == date), None)
+    if statut == "publiée":
+        sys.exit(f"le {date} est déjà publié : rien n'est remplacé")
+    if not (src / "final.mp4").exists() or not (src / "film.json").exists():
+        sys.exit(f"l'essai doit contenir final.mp4 et film.json (trouvé : {sorted(x.name for x in src.iterdir())})")
+    doi_jour = (lire_json(jour / "etude.json", {}).get("doi") or "").lower()
+    film = json.loads((src / "film.json").read_text(encoding="utf-8"))
+    doi_essai = (lire_json(src / "etude.json", {}).get("doi") or str(film.get("end", {}).get("doi", "")).replace("doi:", "")).strip().lower()
+    if doi_essai != doi_jour and not ((src / "post.txt").exists() and (src / "etude.json").exists()):
+        sys.exit(f"l'essai porte sur une autre étude ({doi_essai or '?'}) que celle du {date} ({doi_jour or '?'}) et n'apporte pas "
+                 "son post.txt ni son etude.json : rien n'est remplacé")
+    noms = []
+    for n in ("final.mp4", "film.json", "post.txt", "etude.json", "faits.json"):
+        if (src / n).exists():
+            shutil.copy2(src / n, jour / n)
+            noms.append(n)
+    ranger(date, jour, noms)
+    noter_historique(date, "en attente")
+    proposer(date, jour, f"Vidéo du {date} · version corrigée (elle remplace la précédente : les deux boutons Publier publient celle-ci)")
+    print(f"remplacée dans la release jour-{date} : {', '.join(noms)} (étude {doi_essai})")
 
 
 if __name__ == "__main__":
-    {"envoyer": envoyer, "ecouter": ecouter}[sys.argv[1]]()
+    {"envoyer": envoyer, "ecouter": ecouter, "remplacer": remplacer}[sys.argv[1]](*sys.argv[2:])
