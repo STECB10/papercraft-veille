@@ -17,6 +17,7 @@ import subprocess
 import sys
 import time
 
+import linkedin
 from commun import HISTORIQUE, JOURS, dossier_du_jour, ecrire_json, env, http, lire_json, multipart, tg, tg_message
 
 UP = "https://api.upload-post.com/api"
@@ -48,9 +49,30 @@ def recuperer(date):
 
 
 def publier(date):
+    """LinkedIn en direct (API officielle, gratuite) si l'accès est configuré ; Upload-Post en secours.
+    Renvoie le canal utilisé (« LinkedIn » ou « Upload-Post »)."""
     jour = recuperer(date)
     post = (jour / "post.txt").read_text(encoding="utf-8").strip()
     titre = post.splitlines()[0][:150]
+    erreur_li = None
+    if linkedin.configure():
+        try:
+            pid = linkedin.publier(jour / "final.mp4", post, titre)
+            print(f"publié sur LinkedIn en direct : {pid}")
+            return "LinkedIn"
+        except Exception as e:      # jeton expiré, accès refusé… : on tente le secours
+            erreur_li = e
+            print(f"LinkedIn direct impossible : {e}")
+    if not os.environ.get("UPLOAD_POST_API_KEY", "").strip():
+        raise RuntimeError(f"LinkedIn : {erreur_li}" if erreur_li else "ni accès LinkedIn ni clé Upload-Post")
+    try:
+        publier_upload_post(jour, post, titre)
+    except Exception as e:
+        raise RuntimeError(f"LinkedIn : {erreur_li} · Upload-Post : {e}" if erreur_li else str(e))
+    return "Upload-Post"
+
+
+def publier_upload_post(jour, post, titre):
     corps, ct = multipart([("user", PROFIL), ("platform[]", "linkedin"), ("title", titre), ("description", post),
                            ("target_linkedin_page_id", PAGE), ("async_upload", "true")], [("video", jour / "final.mp4")])
     cle = {"Authorization": f"Apikey {env('UPLOAD_POST_API_KEY')}"}
@@ -87,16 +109,31 @@ def noter_historique(date, statut):
     ecrire_json(HISTORIQUE, h)
 
 
+def rappel_linkedin():
+    """Le jeton LinkedIn vit 60 jours : le bot prévient sur Telegram dix jours avant, puis chaque jour."""
+    try:
+        j = linkedin.jours_restants()
+    except Exception:
+        return
+    if j is not None and j <= 10:
+        tg_message(f"🔑 L'accès LinkedIn du bot expire dans {j} jour(s). Sur le Mac : cd ~/ma-video/papercraft-push && "
+                   "git pull && python3 pipeline/linkedin_connexion.py (deux minutes). Sans ça, la publication passera par "
+                   "Upload-Post (10 par mois)." if j else
+                   "🔑 L'accès LinkedIn du bot a expiré. Sur le Mac : cd ~/ma-video/papercraft-push && git pull && "
+                   "python3 pipeline/linkedin_connexion.py")
+
+
 def envoyer():
+    rappel_linkedin()
     jour = dossier_du_jour()
     date = jour.name
     ranger(date, jour)
     noter_historique(date, "en attente")
     etude = lire_json(jour / "etude.json", {})
     if (os.environ.get("PUBLICATION_AUTO") or "").lower() == "oui":
-        publier(date)
+        canal = publier(date)
         noter_historique(date, "publiée")
-        tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": f"Publiée sur Papercraft.AI · {date}\n{etude.get('lien', '')}"[:1000],
+        tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": f"Publiée sur Papercraft.AI ({canal}) · {date}\n{etude.get('lien', '')}"[:1000],
                          "supports_streaming": "true"}, [("video", jour / "final.mp4")], timeout=600)
         return
     proposer(date, jour, f"Vidéo du {date}")
@@ -167,10 +204,10 @@ def ecouter():
             pass
         if action == "pub":
             try:
-                publier(date)
+                canal = publier(date)
                 noter_historique(date, "publiée")
-                gh("release", "edit", f"jour-{date}", "--prerelease=false", "--notes", "Publiée sur LinkedIn (page Papercraft.AI).")
-                tg_message(f"✅ Publiée sur la page Papercraft.AI ({date}).")
+                gh("release", "edit", f"jour-{date}", "--prerelease=false", "--notes", f"Publiée sur LinkedIn (page Papercraft.AI, via {canal}).")
+                tg_message(f"✅ Publiée sur la page Papercraft.AI ({date}, via {canal}).")
             except Exception as e:
                 tg_message(f"⚠️ Publication du {date} impossible : {str(e)[:500]}\nRéessaie en recliquant plus tard ou préviens Claude.",
                            reply_markup={"inline_keyboard": [[{"text": "🔁 Réessayer", "callback_data": f"pub:{date}"}]]})
