@@ -1,0 +1,11 @@
+Les patients se méfient davantage d'un médecin assisté par une IA que d'un médecin avec un simple calculateur de risque.
+
+Des chercheurs américains ont interrogé en ligne 1185 adultes sur des situations cliniques imaginaires. La recommandation venait, tirée au hasard, d'un médecin seul, avec calculateur ou avec IA. Côté confiance, le médecin avec IA obtient un rapport de cotes de 0,59, intervalle de confiance de 0,50 à 0,69 face au calculateur, et 18 à 21 % préfèrent cette option, contre 46 à 54 % pour le calculateur.
+
+Attention : ce sont des intentions déclarées, pas des comportements réels.
+
+Et dans votre service, comment expliquez-vous aux patients qu'une IA a participé à une décision ?
+
+Source : Rossi et al., Journal of Medical Internet Research, novembre 2026. https://doi.org/10.2196/100388
+
+#IA #ConfiancePatient #SantéNumérique #DécisionPartagée

@@ -1,0 +1,429 @@
+{
+ "id": "2026-11-09",
+ "sentences": [
+  {
+   "text": "Feriez-vous confiance à un médecin qui s'appuie sur une IA ?",
+   "partie": "accroche"
+  },
+  {
+   "text": "À l'hôpital, l'IA sert déjà à estimer un risque ou à lire une image.",
+   "partie": "contexte",
+   "box": "estimer"
+  },
+  {
+   "text": "Le problème, c'est que les patients voient de plus en plus ces scores, via l'accès à leur dossier.",
+   "partie": "probleme",
+   "box": "scores,",
+   "source": "It is more likely than ever that patients may encounter AI risk scores due to initiatives such as the US 21st Century Cures Act and OpenNotes"
+  },
+  {
+   "text": "Pourtant, on connaît mal leur réaction, car la recherche s'est surtout intéressée aux soignants.",
+   "partie": "probleme",
+   "box": "réaction,",
+   "source": "Research on patient perspectives, however, lags behind clinician-focused studies"
+  },
+  {
+   "text": "Et c'est important : les informer aide à justifier un traitement et à le faire suivre.",
+   "partie": "probleme",
+   "box": "informer",
+   "source": "keeping patients informed about AI-derived risks to justify treatment decisions and promote adherence"
+  },
+  {
+   "text": "Mais l'IA, contrairement à un calculateur de risque classique, ne sait pas toujours expliquer ses règles.",
+   "partie": "ia",
+   "box": "expliquer",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Les patients font-ils autant confiance à un médecin assisté par une IA ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, les chercheurs ont interrogé mille cent quatre-vingt-cinq adultes américains, en deux mille vingt-quatre.",
+   "partie": "etude",
+   "display": "Pour le savoir, les chercheurs ont interrogé 1185 adultes américains, en 2024.",
+   "box": "interrogé"
+  },
+  {
+   "text": "Concrètement, chacun imagine six situations, comme une biopsie, puis dit s'il suivrait le conseil et lui ferait confiance.",
+   "partie": "methode",
+   "display": "Concrètement, chacun imagine 6 situations, comme une biopsie, puis dit s'il suivrait le conseil et lui ferait confiance.",
+   "box": "situations,"
+  },
+  {
+   "text": "Puis, pour chaque situation, le conseil venait, tiré au hasard, d'un médecin seul, avec calculateur ou avec IA.",
+   "partie": "methode",
+   "box": "hasard,"
+  },
+  {
+   "text": "Dans ce dernier cas, l'IA lit les données du patient et prédit son risque.",
+   "partie": "methode",
+   "box": "risque.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : avec l'IA, la confiance baisse, avec un rapport de cotes de zéro virgule cinquante-neuf.",
+   "partie": "resultat",
+   "display": "Résultat : avec l'IA, la confiance baisse, avec un rapport de cotes de 0,59.",
+   "box": "0,59."
+  },
+  {
+   "text": "Autrement dit, l'intervalle de confiance, de zéro virgule cinquante à zéro virgule soixante-neuf, reste sous un.",
+   "partie": "resultat",
+   "display": "Autrement dit, l'intervalle de confiance, de 0,50 à 0,69, reste sous 1.",
+   "box": "l'intervalle",
+   "peak": "sous 1."
+  },
+  {
+   "text": "Ensuite, à choisir, ils préfèrent le calculateur : quarante-six à cinquante-quatre pour cent, contre dix-huit à vingt et un pour cent pour l'IA.",
+   "partie": "resultat",
+   "display": "Ensuite, à choisir, ils préfèrent le calculateur : 46 à 54 %, contre 18 à 21 % pour l'IA.",
+   "box": "calculateur",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Et les commentaires disent pourquoi : les doutes visent l'IA dans vingt-deux pour cent des réponses, contre six pour cent pour le médecin.",
+   "partie": "concret",
+   "display": "Et les commentaires disent pourquoi : les doutes visent l'IA dans 22 % des réponses, contre 6 % pour le médecin.",
+   "box": "doutes",
+   "source": "Trust and perception concerns were most prominent for AI (n=263, 22%), followed by RCs (n=134, 11%), and least cited for doctors (n=75, 6%)"
+  },
+  {
+   "text": "Par exemple, l'un d'eux écrit que l'IA fait trop d'erreurs et d'hallucinations.",
+   "partie": "concret",
+   "box": "d'erreurs",
+   "source": "AI makes too many random errors and hallucinations.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention quand même : ce sont des intentions déclarées, pour des situations imaginaires.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : pour garder la confiance, il faudrait dire aux patients quand une IA aide le médecin, et comment.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 29.05,
+  "stations": [
+   {
+    "type": "hook_question",
+    "cam_at": 3.0,
+    "header": "Enquête en ligne · États-Unis · 2024",
+    "text": "Feriez-vous confiance à un médecin qui s'appuie sur une IA ?",
+    "italic": "confiance",
+    "footnote": "Patients et IA en santé",
+    "_sentence": 0,
+    "y": 0
+   },
+   {
+    "type": "steps",
+    "cam_at": 6.24,
+    "mark_at": 8.3,
+    "title": "L'IA à l'hôpital",
+    "steps": [
+     {
+      "icon": "hospital",
+      "label": "01 · À l'hôpital",
+      "at": 6.34,
+      "_y": 1570
+     },
+     {
+      "icon": "chart",
+      "label": "02 · Estimer un risque",
+      "at": 8.3,
+      "_y": 1900
+     },
+     {
+      "icon": "xray",
+      "label": "03 · Lire une image",
+      "at": 9.46,
+      "_y": 2230
+     }
+    ],
+    "y": 1400
+   },
+   {
+    "type": "steps",
+    "cam_at": 10.49,
+    "mark_at": 13.16,
+    "title": "Des scores sous les yeux",
+    "steps": [
+     {
+      "icon": "users",
+      "label": "01 · Les patients",
+      "at": 11.68,
+      "_y": 3250
+     },
+     {
+      "icon": "chip",
+      "label": "02 · Des scores d'IA",
+      "note": "via leur dossier",
+      "at": 13.16,
+      "note_at": 14.38,
+      "_y": 3580
+     },
+     {
+      "icon": "user",
+      "label": "03 · Leur réaction",
+      "note": "mal connue",
+      "at": 16.52,
+      "_y": 3910
+     },
+     {
+      "icon": "stethoscope",
+      "label": "04 · Les soignants",
+      "note": "très étudiés",
+      "at": 18.88,
+      "_y": 4240
+     }
+    ],
+    "y": 3080
+   },
+   {
+    "type": "steps",
+    "cam_at": 19.57,
+    "mark_at": 20.82,
+    "title": "Pourquoi ça compte",
+    "steps": [
+     {
+      "icon": "message",
+      "label": "01 · Informer sur le risque",
+      "at": 20.82,
+      "_y": 5260
+     },
+     {
+      "icon": "pill",
+      "label": "02 · Justifier un traitement",
+      "at": 21.7,
+      "_y": 5590
+     },
+     {
+      "icon": "check",
+      "label": "03 · Le faire suivre",
+      "at": 23.26,
+      "_y": 5920
+     }
+    ],
+    "y": 5090
+   },
+   {
+    "type": "steps",
+    "cam_at": 23.9,
+    "mark_at": 27.88,
+    "title": "Calculateur ou IA",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "01 · Une IA",
+      "at": 24.18,
+      "_y": 6940
+     },
+     {
+      "icon": "chart",
+      "label": "02 · Un calculateur classique",
+      "note": "règles simples",
+      "at": 25.4,
+      "note_at": 26.06,
+      "_y": 7270
+     },
+     {
+      "icon": "doc",
+      "label": "03 · Règles pas toujours dites",
+      "at": 27.88,
+      "_y": 7600
+     }
+    ],
+    "y": 6770
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Les patients font-ils autant confiance à un médecin assisté par une IA ?",
+  "italic": "confiance",
+  "fold_at": 32.98,
+  "start": 29.05,
+  "end": 34.029999999999994
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": 34.57,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Enquête en ligne",
+      "at": 36.4
+     },
+     {
+      "label": "Participants",
+      "value": "1 185 adultes",
+      "at": 37.1
+     },
+     {
+      "label": "Lieu",
+      "value": "États-Unis, 2024",
+      "at": 38.52
+     },
+     {
+      "label": "Situations",
+      "value": "6 cas cliniques",
+      "at": 42.26
+     },
+     {
+      "label": "Mesure",
+      "value": "Suivre le conseil, confiance",
+      "at": 44.8,
+      "accent": true
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "key_points",
+    "cam_at": 46.82,
+    "title": "Qui donne le conseil ?",
+    "points": [
+     {
+      "text": "Chaque situation, un conseil tiré au hasard",
+      "at": 47.94
+     },
+     {
+      "text": "Médecin seul ou avec calculateur",
+      "at": 51.28
+     },
+     {
+      "text": "Ou médecin avec IA",
+      "at": 53.38
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 53.7,
+    "input_icon": "doc",
+    "input_label": "Les données du patient",
+    "ai_label": "Prédit son risque",
+    "output_label": "Score pour le médecin",
+    "modality": "donnees",
+    "at": 55.52,
+    "core_at": 56.8,
+    "out_at": 57.3,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "ratio",
+    "cam_at": 58.06,
+    "title": "La confiance face à l'IA",
+    "value": "0,59",
+    "num": 0.59,
+    "low": 0.5,
+    "high": 0.69,
+    "label": "Médecin avec IA face au médecin avec calculateur",
+    "left": "moins de confiance",
+    "right": "plus de confiance",
+    "at": 61.7,
+    "ci_at": 65.16,
+    "null_at": 69.72,
+    "caption": "Loin de 1 : une vraie différence",
+    "caption_at": 69.84,
+    "y": 0
+   },
+   {
+    "type": "big_stat",
+    "cam_at": 70.18,
+    "title": "Leur source préférée",
+    "value": "46 à 54 %",
+    "label": "préfèrent le médecin avec calculateur",
+    "label_at": 72.44,
+    "compare": {
+     "value": "18 à 21 %",
+     "label": "préfèrent le médecin avec IA",
+     "at": 75.29
+    },
+    "at": 73.38,
+    "y": 0
+   },
+   {
+    "type": "findings",
+    "cam_at": 77.93,
+    "title": "Ce que disent les patients",
+    "items": [
+     {
+      "icon": "heart",
+      "label": "Doutes sur la confiance",
+      "detail": "22 % des réponses sur l'IA, contre 6 % pour le médecin",
+      "tendance": "plus",
+      "at": 80.06,
+      "accent": true,
+      "detail_at": 81.28
+     },
+     {
+      "icon": "chip",
+      "label": "Peur des erreurs",
+      "detail": "Trop d'erreurs et d'hallucinations",
+      "at": 86.72
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 88.56,
+    "text": "Attention quand même : ce sont des intentions déclarées, pour des situations imaginaires.",
+    "italic": "déclarées",
+    "sentence": 16,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 93.05,
+    "text": "À retenir : pour garder la confiance, il faudrait dire aux patients quand une IA aide le médecin, et comment.",
+    "italic": "confiance",
+    "sentence": 17,
+    "y": 0
+   }
+  ],
+  "start": 32.93,
+  "end": 99.89
+ },
+ "end": {
+  "fold_at": 98.84,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 102.07,
+  "button": "Suivre",
+  "button_at": 102.67,
+  "click_at": 103.67,
+  "source": "Rossi et al. · Journal of Medical Internet Research · novembre 2026",
+  "doi": "doi:10.2196/100388",
+  "source_at": 100.48,
+  "start": 98.79,
+  "end": 106.4
+ },
+ "duration": 106.4,
+ "lead": 3.0,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}
