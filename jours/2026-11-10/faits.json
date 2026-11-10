@@ -1,0 +1,102 @@
+[
+ {
+  "id": "f1",
+  "valeur": 1,
+  "citation": "approximately 1 in 8 women"
+ },
+ {
+  "id": "f2",
+  "valeur": 8,
+  "citation": "approximately 1 in 8 women"
+ },
+ {
+  "id": "f3",
+  "valeur": 400,
+  "citation": "Of 400 randomized participants"
+ },
+ {
+  "id": "f4",
+  "valeur": 200,
+  "citation": "200 Randomized to and received intervention"
+ },
+ {
+  "id": "f5",
+  "valeur": 12,
+  "citation": "We conducted a 12-month randomized clinical trial"
+ },
+ {
+  "id": "f6",
+  "valeur": 49,
+  "citation": "across 49 US states and the District of Columbia"
+ },
+ {
+  "id": "f7",
+  "valeur": 6,
+  "citation": "parenting an infant younger than 6 months"
+ },
+ {
+  "id": "f8",
+  "valeur": 380,
+  "citation": "380 completed the 12-month survey"
+ },
+ {
+  "id": "f9",
+  "valeur": 0.1,
+  "citation": "was 0.10 among 361 participants"
+ },
+ {
+  "id": "f10",
+  "valeur": 0.77,
+  "citation": "(95% CI, −0.77 to 0.96)"
+ },
+ {
+  "id": "f11",
+  "valeur": 0.96,
+  "citation": "(95% CI, −0.77 to 0.96)"
+ },
+ {
+  "id": "f12",
+  "valeur": 0.23,
+  "citation": "the mean difference in PHQ-9 score was −0.23 among 362 participants"
+ },
+ {
+  "id": "f13",
+  "valeur": 1.4,
+  "citation": "the adjusted rate ratio was 1.40 (95% CI, 1.02 to 1.92)"
+ },
+ {
+  "id": "f14",
+  "valeur": 1.02,
+  "citation": "the adjusted rate ratio was 1.40 (95% CI, 1.02 to 1.92)"
+ },
+ {
+  "id": "f15",
+  "valeur": 1.92,
+  "citation": "the adjusted rate ratio was 1.40 (95% CI, 1.02 to 1.92)"
+ },
+ {
+  "id": "f16",
+  "valeur": 2023,
+  "citation": "enrolled 400 participants from October 2023"
+ },
+ {
+  "id": "f17",
+  "valeur": 2025,
+  "citation": "12-month follow-up completed in December 2025"
+ },
+ {
+  "id": "f18",
+  "valeur": 2397,
+  "citation": "2397 Assessed for eligibility"
+ },
+ {
+  "id": "f19",
+  "valeur": 1997,
+  "citation": "1997 Excluded"
+ },
+ {
+  "id": "f20",
+  "valeur": 95,
+  "citation": "(95% CI, −0.77 to 0.96)"
+ }
+]

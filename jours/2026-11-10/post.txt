@@ -1,0 +1,9 @@
+Un chatbot d'IA pour les mères, après un an : pas moins d'anxiété ni de dépression.
+
+Des chercheurs américains ont tiré au sort 400 personnes de minorités, enceintes ou avec un bébé de moins de 6 mois : la moitié a eu accès à Rosie, un chatbot d'IA générative, l'autre un livre pour enfant par mois. À 12 mois, l'écart d'anxiété est de 0,10 point (intervalle de confiance à 95 % : −0,77 à 0,96), sans différence nette. Seule piste inattendue, à prendre avec prudence : plus de complications déclarées chez les femmes enceintes au départ.
+
+Et dans votre service, vous proposeriez ce type de chatbot en complément du suivi, ou pas du tout ?
+
+Source : Norell et al., JAMA Network Open, novembre 2026. https://doi.org/10.1001/jamanetworkopen.2026.41062
+
+#IA #SantéMaternelle #Chatbot #Veille

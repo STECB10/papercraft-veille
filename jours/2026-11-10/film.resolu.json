@@ -1,0 +1,422 @@
+{
+ "id": "2026-11-10",
+ "sentences": [
+  {
+   "text": "Un chatbot d'IA peut-il aider les mères pendant la grossesse et après l'accouchement ?",
+   "partie": "accroche",
+   "box": "mères"
+  },
+  {
+   "text": "Autour de la naissance, une femme sur huit présente des symptômes dépressifs, et les chatbots d'IA se multiplient.",
+   "partie": "contexte",
+   "box": "huit",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Le problème, c'est qu'après l'accouchement, le contact avec les soignants s'espace, alors que les besoins restent.",
+   "partie": "probleme",
+   "box": "s'espace,",
+   "source": "formal engagement with the health care system declines after delivery despite ongoing medical, psychological, and informational needs"
+  },
+  {
+   "text": "Résultat : anxiété, dépression et complications évitables peuvent passer inaperçues.",
+   "partie": "probleme",
+   "box": "inaperçues.",
+   "peak": "évitables",
+   "source": "These gaps may contribute to postpartum anxiety, depression, and preventable complications."
+  },
+  {
+   "text": "Alors des chercheurs américains ont testé Rosie, un chatbot d'IA générative qui répond aux questions sur la grossesse.",
+   "partie": "ia",
+   "box": "Rosie,"
+  },
+  {
+   "text": "Ce chatbot améliore-t-il la santé des mères après un an ?",
+   "partie": "question",
+   "mode": "type",
+   "box": "améliore-t-il",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, ils ont tiré au sort quatre cents personnes de minorités, enceintes ou avec un bébé de moins de six mois.",
+   "partie": "etude",
+   "box": "tiré",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "D'abord, la moitié a eu accès au chatbot ; l'autre a reçu un livre pour enfant chaque mois.",
+   "partie": "methode",
+   "box": "moitié"
+  },
+  {
+   "text": "Ensuite, le chatbot reçoit les questions, y répond et alerte une travailleuse sociale si besoin.",
+   "partie": "methode",
+   "box": "alerte"
+  },
+  {
+   "text": "Un an après, toutes ont rempli des questionnaires d'anxiété et de dépression, critères principaux.",
+   "partie": "methode",
+   "box": "critères",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : sur trois cent quatre-vingts personnes suivies, le chatbot ne change ni l'anxiété ni la dépression.",
+   "partie": "resultat",
+   "box": "change",
+   "peak": "ni l'anxiété"
+  },
+  {
+   "text": "Concrètement, l'écart d'anxiété est de zéro virgule dix point, avec un intervalle de moins zéro virgule soixante-dix-sept à zéro virgule quatre-vingt-seize.",
+   "partie": "resultat",
+   "box": "l'écart",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Mais un résultat surprend : chez les femmes enceintes au départ, le chatbot est associé à plus de complications déclarées.",
+   "partie": "concret",
+   "box": "surprend",
+   "source": "the chatbot was associated with more self-reported pregnancy-related complications"
+  },
+  {
+   "text": "Et le rapport de taux atteint un virgule quarante, mais l'intervalle frôle un : de un virgule zéro deux à un virgule quatre-vingt-douze.",
+   "partie": "concret",
+   "box": "frôle",
+   "source": "the adjusted rate ratio was 1.40 (95% CI, 1.02 to 1.92)"
+  },
+  {
+   "text": "Mais les auteurs restent prudents : l'attention aux symptômes ou le hasard peuvent l'expliquer.",
+   "partie": "concret",
+   "box": "hasard",
+   "source": "increased symptom awareness, differential reporting, residual imbalance, or chance may explain this finding",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : tout était déclaré par les participantes, et le groupe témoin recevait déjà des livres et l'équipe.",
+   "partie": "limite",
+   "mode": "type",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "À retenir : un chatbot seul ne suffit pas ; mieux vaut le penser comme un complément aux soignants.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 30.53,
+  "stations": [
+   {
+    "type": "hook_headline",
+    "cam_at": 3.3,
+    "header": "Essai tiré au sort · États-Unis · 2023-2025",
+    "headline": "Un chatbot d'IA générative aide-t-il les mères pendant la grossesse et après l'accouchement ?",
+    "journal": "JAMA Network Open · novembre 2026",
+    "mark": "les mères",
+    "mark_at": 5.14,
+    "footnote": "Chatbot d'IA et santé maternelle",
+    "y": 0
+   },
+   {
+    "type": "steps",
+    "cam_at": 7.56,
+    "mark_at": 9.44,
+    "title": "Autour de la naissance",
+    "steps": [
+     {
+      "icon": "heart",
+      "label": "01 · La naissance",
+      "at": 8.1,
+      "_y": 1570
+     },
+     {
+      "icon": "users",
+      "label": "02 · Une femme sur huit",
+      "note": "symptômes dépressifs",
+      "at": 9.44,
+      "note_at": 10.3,
+      "_y": 1900
+     },
+     {
+      "icon": "message",
+      "label": "03 · Des chatbots d'IA",
+      "note": "de plus en plus nombreux",
+      "at": 11.82,
+      "_y": 2230
+     }
+    ],
+    "y": 1400
+   },
+   {
+    "type": "steps",
+    "cam_at": 14.01,
+    "mark_at": 17.18,
+    "title": "Après l'accouchement",
+    "steps": [
+     {
+      "icon": "stethoscope",
+      "label": "01 · Le contact avec les soignants",
+      "note": "s'espace",
+      "at": 16.1,
+      "note_at": 17.18,
+      "_y": 3250
+     },
+     {
+      "icon": "user",
+      "label": "02 · Les besoins restent",
+      "at": 18.4,
+      "_y": 3580
+     },
+     {
+      "icon": "brain",
+      "label": "03 · Anxiété, dépression",
+      "note": "passent inaperçues",
+      "at": 20.42,
+      "note_at": 23.84,
+      "_y": 3910
+     }
+    ],
+    "y": 3080
+   },
+   {
+    "type": "steps",
+    "cam_at": 24.69,
+    "mark_at": 26.6,
+    "title": "Le chatbot testé",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "01 · Rosie",
+      "note": "IA générative",
+      "at": 26.6,
+      "note_at": 28.04,
+      "_y": 4930
+     },
+     {
+      "icon": "message",
+      "label": "02 · Répond aux questions",
+      "note": "grossesse et bébé",
+      "at": 28.9,
+      "note_at": 29.82,
+      "_y": 5260
+     }
+    ],
+    "y": 4760
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Ce chatbot améliore-t-il la santé des mères après un an ?",
+  "italic": "améliore-t-il",
+  "fold_at": 35.38,
+  "start": 30.53,
+  "end": 36.43
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": 34.98,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Essai tiré au sort",
+      "at": 35.52
+     },
+     {
+      "label": "Lieu",
+      "value": "États-Unis, 49 États",
+      "at": 36.1
+     },
+     {
+      "label": "Personnes",
+      "value": "400, minorités",
+      "at": 37.12
+     },
+     {
+      "label": "Durée",
+      "value": "12 mois de suivi",
+      "at": 38.74
+     },
+     {
+      "label": "Critères",
+      "value": "Anxiété et dépression",
+      "at": 40.42,
+      "accent": true
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "population_split",
+    "cam_at": 41.17,
+    "total": 400,
+    "total_label": "personnes",
+    "dot_value": 10,
+    "count_at": 41.47,
+    "count_end": 42.26,
+    "split_at": 42.26,
+    "groups": [
+     {
+      "label": "Livre par mois",
+      "n": 200
+     },
+     {
+      "label": "Chatbot Rosie",
+      "n": 200,
+      "accent_at": 43.24
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 46.16,
+    "input_icon": "message",
+    "input_label": "Les questions des participantes",
+    "ai_label": "Répond et repère la détresse",
+    "output_label": "Alerte la travailleuse sociale",
+    "modality": "texte",
+    "at": 48.04,
+    "core_at": 48.78,
+    "out_at": 49.5,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "key_points",
+    "cam_at": 51.22,
+    "title": "Les critères principaux",
+    "points": [
+     {
+      "text": "Anxiété, à douze mois",
+      "at": 53.74
+     },
+     {
+      "text": "Dépression, à douze mois",
+      "at": 54.54
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "flow_chart",
+    "cam_at": 56.45,
+    "title": "Qui a répondu à la fin",
+    "stages": [
+     {
+      "label": "Personnes tirées au sort",
+      "n": "400",
+      "at": 56.75
+     },
+     {
+      "label": "Ont répondu à l'enquête de fin",
+      "n": "380",
+      "at": 57.84
+     }
+    ],
+    "y": 0,
+    "_fig": 2
+   },
+   {
+    "type": "big_stat",
+    "cam_at": 62.41,
+    "title": "Écart d'anxiété",
+    "value": "0,10",
+    "unit": "point",
+    "label": "Intervalle : de −0,77 à 0,96, donc aucun écart net",
+    "at": 64.72,
+    "label_at": 66.38,
+    "y": 0
+   },
+   {
+    "type": "findings",
+    "cam_at": 70.52,
+    "title": "Un résultat inattendu",
+    "items": [
+     {
+      "icon": "user",
+      "label": "Enceintes au départ",
+      "detail": "Les femmes concernées",
+      "at": 72.98
+     },
+     {
+      "icon": "heart",
+      "label": "Plus de complications",
+      "detail": "Déclarées par les participantes",
+      "tendance": "plus",
+      "accent": true,
+      "at": 75.66
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ratio",
+    "cam_at": 76.57,
+    "title": "Complications déclarées",
+    "value": "1,40",
+    "num": 1.4,
+    "low": 1.02,
+    "high": 1.92,
+    "label": "Rapport de taux, chatbot contre livres",
+    "left": "moins de complications",
+    "right": "plus de complications",
+    "at": 77.84,
+    "ci_at": 79.56,
+    "null_at": 80.14,
+    "caption": "Peut-être le hasard, disent-ils",
+    "caption_at": 86.94,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 88.5,
+    "text": "Attention : tout était déclaré par les participantes, et le groupe témoin recevait déjà des livres et l'équipe.",
+    "italic": "déclaré",
+    "sentence": 15,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 94.51,
+    "text": "À retenir : un chatbot seul ne suffit pas ; mieux vaut le penser comme un complément aux soignants.",
+    "italic": "complément",
+    "sentence": 16,
+    "y": 0
+   }
+  ],
+  "start": 35.330000000000005,
+  "end": 100.77
+ },
+ "end": {
+  "fold_at": 99.72,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 103.18,
+  "button": "Suivre",
+  "button_at": 103.78,
+  "click_at": 104.78,
+  "source": "Norell et al. · JAMA Network Open · novembre 2026",
+  "doi": "doi:10.1001/jamanetworkopen.2026.41062",
+  "source_at": 101.53,
+  "start": 99.67,
+  "end": 107.5
+ },
+ "duration": 107.5,
+ "lead": 3.3,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

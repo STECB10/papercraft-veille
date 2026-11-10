@@ -1,0 +1,248 @@
+TITRE : Generative Artificial Intelligence and Maternal Health Outcomes in Pregnant and Postpartum Individuals: A Randomized Clinical Trial.
+REVUE : JAMA network open · 2026-11-02
+DOI : 10.1001/jamanetworkopen.2026.41062
+
+RÉSUMÉ :
+Importance Generative artificial intelligence (AI) chatbots are increasingly used to support maternal health, but randomized evidence is limited. Objective To evaluate whether access to a generative AI maternal health chatbot improved 12-month maternal health outcomes. Design, setting, and participants This 2-group randomized clinical trial enrolled 400 participants from October 2023 to December 2024, with 12-month follow-up completed in December 2025. Participants were recruited online across 49 US states and the District of Columbia. Eligible participants were English-speaking, aged 14 years or older, pregnant or parenting an infant younger than 6 months, and self-identified as members of racial and/or ethnic minoritized groups. Interventions Participants were randomized 1:1 to receive access to the chatbot or an active control consisting of monthly children's books. Main outcomes and measures Primary outcomes were anxiety and depression symptoms at 12 months measured using the Generalized Anxiety Disorder-7 and Patient Health Questionnaire-9. Secondary outcomes included emergency department visits, pregnancy-related complications, postpartum care checkups, effective contraception use, and sleep duration. Results Among 400 randomized participants, the mean (SD) age was 32.6 (5.1) years; 200 (50%) were parenting an infant at enrollment; and 10 (2%) identified as American Indian or Alaska Native, 80 (20%) Asian, 188 (47%) Black or African American, 57 (14%) multiracial, and 65 (16%) Hispanic or Latino. The AI chatbot was not associated with differences in anxiety scores (adjusted mean difference, 0.10; 95% CI, -0.77 to 0.96) or depression scores (adjusted mean difference, -0.23; 95% CI, -1.05 to 0.59), nor with emergency department visits, postpartum care, contraception use, or sleep duration. Among participants pregnant at enrollment, the chatbot was associated with more self-reported pregnancy-related complications in the secondary 12-month end point analysis, but not in longitudinal analyses. Higher chatbot engagement was associated with longer sleep duration and higher anxiety scores in exploratory within-group analyses. Conclusions and relevance In this randomized clinical trial of pregnant and postpartum individuals from racial and ethnic minoritized groups, access to a generative artificial intelligence maternal health chatbot did not improve maternal anxiety or depression at 12 months compared with an active control. Secondary and exploratory findings should be interpreted cautiously. Trial registration ClinicalTrials.gov Identifier: NCT06053515.
+
+TEXTE INTÉGRAL :
+> Introduction
+ The transition from pregnancy to the postpartum period is a vulnerable and often undersupported time. Although pregnancy typically involves frequent clinical contact, formal engagement with the health care system declines after delivery despite ongoing medical, psychological, and informational needs. During this period, individuals must manage infant care, recovery from childbirth, and changes in mental health, often with limited support. These gaps may contribute to postpartum anxiety, depression, and preventable complications. 1 , 2 In the US, these risks are amplified among racially and ethnically minoritized populations because of structural disparities in access to care, quality of care, and broader social determinants of health. 3 , 4 , 5 
+ Postpartum care gaps are especially concerning because more than half of pregnancy-related deaths occur during or after delivery, and many are considered preventable with timely recognition and management. 6 Mental health conditions are also common, with approximately 1 in 8 women experiencing clinically significant depressive symptoms during the perinatal period. 7 Yet screening, referral, and continuity of care remain inconsistent, particularly for individuals facing barriers related to insurance coverage, transportation, childcare, language, and mistrust of the health care system. 8 , 9 
+ Digital health interventions have been proposed as scalable tools to expand access to health information, support self-management, and improve care navigation. 10 , 11 Generative artificial intelligence (AI) chatbots may be particularly appealing in maternal health because they can provide real-time, conversational, and personalized responses to highly individualized concerns. Unlike static websites or rule-based systems, generative AI tools can adapt to user questions and simulate responsive interaction. However, rigorous evidence of their effectiveness remains limited. Existing studies have largely focused on feasibility, acceptability, or knowledge gains rather than clinical or health care utilization outcomes, and few randomized trials have examined longer-term outcomes or focused on populations disproportionately affected by maternal health disparities. 11 , 12 , 13 , 14 , 15 , 16 
+ Digital interventions also may not work uniformly across users. Benefits may depend on sustained or meaningful engagement, while associations between engagement and outcomes may be confounded by underlying need. 15 , 16 Individuals with greater symptom burden may use these tools more frequently, complicating the interpretation of engagement-outcome relationships. Understanding whether effects vary by engagement and by participant context is therefore important for implementation and design.
+ We conducted a 12-month randomized clinical trial to evaluate Rosie, a generative AI-powered maternal health chatbot (hereafter referred to as the chatbot) developed using community-engaged methods, among pregnant and postpartum participants from racially and ethnically minoritized groups across the US. The trial focused on participants from racially and ethnically minoritized groups because these populations experience disproportionate maternal morbidity, mortality, and barriers to postpartum and mental health care in the US. We assessed maternal anxiety, depression, health care utilization, pregnancy-related complications, contraception use, and sleep, and we explored whether associations varied by chatbot engagement, marital status, pregnancy or parenting status, and infant caregiving status.
+ Methods
+ Study Design and Participants
+ We conducted a 2-group, parallel-group randomized clinical trial to evaluate a generative AI–powered maternal health chatbot. The trial followed Consolidated Standards of Reporting Trials ( CONSORT ) reporting guidelines. 17 The target sample size of 400 participants was selected to provide 80% power for a 2-sided test at an α level of .05 to detect moderate intervention-control differences in maternal mental health and health care utilization outcomes, allowing for up to 30% attrition; details are provided in . Enrollment occurred from October 2023 to December 2024, with 12-month follow-up completed in December 2025. Participants were recruited online through social media, community partnerships, and community events across 49 US states and the District of Columbia.
+ Eligible participants were aged 14 years or older, English-speaking, pregnant or parenting an infant younger than 6 months, and self-identified as belonging to a racially and/or ethnically minoritized group. The trial was designed to evaluate an intervention intended to address disparities in maternal health among populations disproportionately affected by poor maternal outcomes. Participants were randomized 1:1 to the chatbot or an active control condition using a pregenerated allocation sequence embedded in Qualtrics. 18 Randomization was stratified by parental status at enrollment and hierarchically defined as parenting an infant younger than 6 months vs pregnant and not parenting such an infant; participants meeting both criteria were classified as parenting for stratification. Enrollment personnel could not access or alter the allocation sequence. Blinding was not feasible. The study was approved by the University of Maryland institutional review board (IRB). Participants provided electronic written informed consent and completed the baseline survey before randomization; the IRB waived parental permission for participants younger than 18 years based on minimal risk and Maryland law.
+ Intervention Groups
+ Participants assigned to the chatbot received access to a conversational AI chatbot designed to provide evidence-based maternal and infant health information, personalized guidance, reminders, and educational support during pregnancy and post partum (eFigure 1 and eTable 1 in ). The chatbot was developed using community-engaged methods, including feedback from diverse pregnant and postpartum individuals to ensure that content, usability, and informational priorities reflected the needs of the intended user population. However, the chatbot’s responses were generated from a shared evidence-based knowledge base and were not algorithmically tailored according to participants’ race or ethnicity. The chatbot included automated safety alerts for messages containing mental or physical distress, including expressions of sadness or possible self-harm, severe postpartum symptoms, or other urgent maternal health concerns. Alerts were reviewed by a clinical social worker who contacted participants, encouraged urgent medical care when appropriate, and provided crisis or clinical resources. To promote sustained engagement, chatbot users earned $0.50 per question asked, up to a maximum of $45, and the top 20% of active users received an additional incentive, a set of children’s board books. Control participants were enrolled in a monthly children’s book club and received 1 board book per month for 12 months. Both groups also completed study surveys and could communicate with study staff as needed.
+ Data Collection and Outcomes
+ Participants completed self-administered online surveys at baseline, 6 months, and 12 months and received $15 per survey. All health outcomes were self-reported. Chatbot engagement, including number of questions asked, was captured automatically by the application and merged with survey data.
+ Primary outcomes were 12-month anxiety and depression symptoms, measured with the Generalized Anxiety Disorder-7 (GAD-7) and Patient Health Questionnaire-9 (PHQ-9) and analyzed continuously, using scores of 10 or greater to indicate moderate to severe symptoms. 19 , 20 The original protocol included the Edinburgh Postnatal Depression Scale and PHQ-9; subsequent IRB-approved amendments removed the Edinburgh Postnatal Depression Scale and added the GAD-7 (). The final analytic plan designated 12-month PHQ-9 and GAD-7 scores as primary outcomes because both were consistently administered at the end point. Secondary outcomes included emergency department visits, postpartum care checkups, pregnancy-related complications, effective contraception use, and sleep duration.
+ Emergency department visits were self-reported as counts over the prior 12 months. Postpartum care checkups were categorized as completed or scheduled vs not completed. Pregnancy-related complications were self-reported and referred to participants’ most recent (index) pregnancy. Reported complications included conditions such as gestational diabetes, hypertensive disorders, preterm labor, and pregnancy loss, and were summed as a count variable. Effective contraception included intrauterine devices, oral contraceptive pills, implants, patch or vaginal ring, injectable contraception, tubal ligation, partner vasectomy, or condoms. Sleep duration was self-reported average nightly hours of sleep.
+ Statistical Analysis
+ We first compared end point outcomes descriptively between groups using t tests or Wilcoxon rank sum tests for continuous variables and χ 2 or Fisher exact tests for categorical variables. We then estimated intervention effects using linear regression for continuous outcomes, Poisson regression for count outcomes, and modified Poisson regression for binary outcomes. Mean differences were calculated as chatbot group minus control group. Rate ratios and prevalence ratios were calculated with the chatbot group as the numerator and the control group as the reference. For outcomes assessed at baseline, 6 months, and 12 months, we conducted longitudinal analyses using mixed-effects models with fixed effects for intervention group, time, and the time-by-intervention interaction.
+ Adjusted models controlled for maternal age (years), self-reported race (American Indian or Alaska Native, Asian, Black or African American, multiracial, Native Hawaiian or Pacific Islander, or White), self-reported ethnicity (Hispanic or Latino or not Hispanic or Latino), education level (less than high school, high school or GED, associate’s degree, bachelor’s degree, master’s degree, or doctoral or professional degree), household income, which was collected using prespecified survey categories (0-$30 000, $30 001-$50 000, $50 001-$75 000, $75 001-$100 000, $100 001-$200 000, $200 001 or greater, or prefer not to say), postpregnancy health insurance type (private, Medicaid, other government plan or program, Indian Health Service or Tribal Health Care, other, or no insurance). Adjusted models included baseline values of the corresponding outcome when available, including baseline PHQ-9 and GAD-7 scores.
+ Pregnancy-related complication analyses were restricted to participants pregnant at enrollment because complications reported by postpartum participants could have occurred before randomization. Race and ethnicity were self-reported using investigator-defined categories adapted from federal reporting standards. These variables were assessed because the intervention targeted groups disproportionately affected by maternal health disparities. Participants identifying as Hispanic or Latino were categorized as such; all others were categorized by self-reported race.
+ Exploratory analyses tested heterogeneity by parental status, infant caregiving status, and marital status using stratified models and interaction terms. Within-chatbot analyses examined nonrandomized associations between engagement, measured by chatbot question counts, and outcomes. Because counts were right-skewed, engagement was categorized by distribution as no use (3 participants [1.6%]), low use (44 participants [23.1%]), medium use (95 participants [50%]), high use (41 participants [21.6%]), and super use (7 participants [3.7%]); analyses compared medium, high, and super-user with no or low engagement users. These analyses used the primary covariate adjustment strategy and were interpreted cautiously. Prespecified primary outcomes were considered the main trial findings; no formal multiplicity adjustment was applied, and secondary and additional analyses were hypothesis-generating. Data were analyzed using Python version 3.11 (Python Software Foundation). A 2-sided α level of .05 was considered significant.
+ Results
+ The presents the flow of participants through the trial. Of 400 randomized participants, 380 completed the 12-month survey or contributed at least one 12-month outcome measure. Loss to follow-up occurred for 20 participants, including 13 in the chatbot group and 7 in the control group. Analytic sample sizes varied by outcome because of survey noncompletion and item-level missingness, ranging from 3.5% to 23.5% across outcomes.
+ Figure. 
+ Participant Flow Diagram
+ Flow of participants through enrollment, randomization, follow-up, and analysis. The primary end point was 12 months after randomization. Participants who did not complete the 12-month survey were not included in 12-month end point analyses for outcomes missing at that time point. Outcome-specific analytic sample sizes varied because of survey noncompletion, item-level missingness, and outcome applicability.
+ a Multiple attempts to reach a participant via email, phone, and text, but the participant did not respond.
+ Flowchart of trial enrollment, randomization, follow-up, and analysis counts. Light gray participant flow diagram with black text and thin gray connector lines and arrows. Top center rectangle: 2397 Assessed for eligibility. A vertical connector leads downward, with a rightward arrow to an upper right rectangle listing exclusions: 1997 Excluded; 1686 Not meeting inclusion criteria; 311 Canceled no show. The main vertical line continues to a center oval: 400 Randomized. Two diagonal connectors branch to left and right. Left branch to a mid left rectangle: 200 Randomized to and received intervention. From this box, a right-pointing arrow leads to a smaller mid left rectangle: 13 Lost to follow-up; 12 Did not complete final evaluation survey a; 1 Requested to withdraw from study. A vertical arrow continues downward to a lower left rectangle: 187 Analyzed for outcomes; 185 Mother’s emergency room visit; 185 Postpartum care checkup; 153 Birth control effective methods; 185 Pregnancy health complications; 183 Anxiety score; 185 Depression score. Right branch to a mid right rectangle: 200 Randomized to and received allocated control. From this box, a left-pointing arrow leads to a smaller mid right rectangle: 7 Lost to follow-up; 6 Did not complete final evaluation survey a; 1 Requested to withdraw from study. A vertical arrow continues downward to a lower right rectangle: 193 Analyzed for outcomes; 192 Mother’s emergency room visit; 193 Postpartum care checkup; 160 Birth control effective methods; 193 Pregnancy health complications; 193 Anxiety score; 193 Depression score. 
+ Baseline characteristics were generally similar between groups at enrollment (). Participants had a mean (SD) age of 32.6 (5.1) years, and 50% were already parenting an infant. The sample was racially and ethnically diverse, including 10 (2%) American Indian or Alaska Native, 80 (20%) Asian, 188 (47%) Black or African American, 57 (14%) multiracial, and 65 (16%) Hispanic or Latino participants.
+ Table 1. 
+ Baseline Participant Characteristics and Unadjusted 12-Month Maternal Health Outcomes by Randomized Group
+ Characteristics | Participants, No. (%) | 
+ All groups (N = 400) | Book club (n = 200) | Chatbot (n = 200) | 
+ Parenting status | 
+ Yes | 200 (50.0) | 100 (50.0) | 100 (50.0) | 
+ No | 200 (50.0) | 100 (50.0) | 100 (50.0) | 
+ Race and ethnicity | 
+ American Indian or Alaska Native | 10 (2.5) | 6 (3.0) | 4 (2.0) | 
+ Asian | 80 (20.0) | 39 (19.5) | 41 (20.5) | 
+ Black or African American | 188 (47.0) | 99 (49.5) | 89 (44.5) | 
+ Multiracial | 57 (14.3) | 29 (14.5) | 28 (14.0) | 
+ Hispanic or Latino | 65 (16.3) | 27 (13.5) | 38 (19.0) | 
+ Sexual orientation | 
+ Straight or heterosexual | 349 (87.3) | 164 (82.0) | 185 (92.5) | 
+ Bisexual | 37 (9.3) | 27 (13.5) | 10 (5.0) | 
+ Other | 14 (3.5) | 9 (4.5) | 5 (2.5) | 
+ Gender identity | 
+ Woman | 396 (99.0) | 199 (99.5) | 197 (98.5) | 
+ Nonbinary or genderqueer | 4 (1.0) | 1 (&lt;1) | 3 (1.5) | 
+ Highest education | 
+ Less than high school | 7 (1.8) | 4 (2.0) | 3 (1.5) | 
+ High school graduate or GED | 90 (22.5) | 51 (25.5) | 39 (19.5) | 
+ Associate’s degree | 40 (10.0) | 26 (13.0) | 14 (7.0) | 
+ Bachelor’s degree | 111 (27.8) | 52 (26.0) | 59 (29.5) | 
+ Master’s degree | 107 (26.8) | 46 (23.0) | 61 (30.5) | 
+ Doctoral or professional degree | 45 (11.3) | 21 (10.5) | 24 (12.0) | 
+ Marital status | 
+ Married | 241 (60.3) | 110 (55.0) | 131 (65.5) | 
+ Not married, but living with a partner | 79 (19.8) | 38 (19.0) | 41 (20.5) | 
+ Never married | 68 (17.0) | 46 (23.0) | 22 (11.0) | 
+ Divorced or separated | 12 (3.0) | 6 (3.0) | 6 (3.0) | 
+ Household income, $US | 
+ 0-30 000 | 74 (18.5) | 40 (20.0) | 34 (17.0) | 
+ 30 000-50 000 | 54 (13.5) | 26 (13.0) | 28 (14.0) | 
+ 50 000-75 000 | 75 (18.8) | 42 (21.0) | 33 (16.5) | 
+ 75 000-100 000 | 62 (15.5) | 28 (14.0) | 34 (17.0) | 
+ 100 000-200 000 | 87 (21.8) | 43 (21.5) | 44 (22.0) | 
+ &gt;200 000 | 45 (11.3) | 20 (10.0) | 25 (12.5) | 
+ Prefer not to say | 3 (&lt;1) | 1 (&lt;1) | 2 (1.0) | 
+ Postpregnancy health insurance | 
+ Private health insurance | 207 (51.8) | 95 (47.5) | 112 (56.0) | 
+ Medicaid | 125 (31.3) | 64 (32.0) | 61 (30.5) | 
+ Multi-insurance | 33 (8.3) | 19 (9.5) | 14 (7.0) | 
+ TRICARE or other military health care | 9 (2.3) | 4 (2.0) | 5 (2.5) | 
+ Indian Health Service or Tribal health care | 1 (&lt;1) | 1 (&lt;1) | 0 | 
+ Other government plans, such as SCHIP or CHIP | 6 (1.5) | 5 (2.5) | 1 (&lt;1) | 
+ Other insurance (self-reported) | 8 (2.0) | 4 (2.0) | 4 (2.0) | 
+ Uninsured | 10 (2.5) | 7 (3.5) | 3 (1.5) | 
+ Missing | 1 (&lt;1) | 1 (&lt;1) | 0 | 
+ Age, mean (SD), y | 32.6 (5.1) | 32.6 (4.7) | 32.5 (5.5) | 
+ Baseline GAD-7 score, median (IQR) | 2.0 (0.0-6.0) | 2.0 (0.0-6.0) | 2.0 (0.0-6.0) | 
+ Moderate to severe anxiety at baseline | 
+ ≥10 | 43 (11.1) | 20 (10.1) | 23 (12.1) | 
+ &lt;10 | 345 (88.9) | 178 (89.9) | 167 (87.9) | 
+ Baseline PHQ-9 score, median (IQR) | 3.0 (1.0-6.0) | 3.0 (2.0-6.0) | 3.0 (1.0-6.0) | 
+ Moderate to severe depression at baseline | 
+ ≥10 | 37 (9.5) | 16 (8.1) | 21 (11.1) | 
+ &lt;10 | 351 (90.5) | 182 (91.1) | 169 (88.9) | 
+ Primary outcomes, 12-mo follow-up | 
+ GAD-7 score, median (IQR) | 2.0 (0.0-6.0) | 2.0 (0.0-6.0) | 1.0 (0.0-6.0) | 
+ PHQ-9 score, median (IQR) | 2.0 (0.0-6.0) | 3.0 (0.0-6.0) | 2.0 (0.0-6.0) | 
+ Secondary outcomes, 12-mo follow-up | 
+ Mother’s emergency department visit, median (IQR) | 0.0 (0.0-0.0) | 0.0 (0.0-0.0) | 0.0 (0.0-1.0) | 
+ Any emergency department visit | 90 (22.5) | 43 (21.5) | 47 (23.5) | 
+ Postpartum care checkup | 
+ Completed or scheduled | 359 (95.0) | 186 (96.4) | 173 (93.5) | 
+ No postpartum checkup | 19 (5.0) | 7 (3.6) | 12 (6.5) | 
+ Birth control | 
+ Yes | 204 (65.2) | 98 (61.3) | 106 (69.3) | 
+ No | 109 (34.8) | 62 (38.7) | 47 (30.7) | 
+ Mother’s sleeping hours, mean (SD) | 6.5 (1.4) | 6.4 (1.4) | 6.5 (1.4) | 
+ Pregnancy health complications, median (IQR) | 0.5 (0.0-1.0) | 0.0 (0.0-1.0) | 1.0 (0.0-1.0) | 
+ Abbreviations: CHIP, Children's Health Insurance Program; GAD-7, Generalized Anxiety Disorder-7; PHQ-9, Patient Health Questionnaire-9; SCHIP, State Children's Health Insurance Program.
+ a 
+ Mean and standard deviation (SD) are computed for maternal health outcomes that are approximately normally distributed.
+ b 
+ Medians and IQRs are computed for maternal health outcomes that are not normally distributed.
+ Overall Outcomes
+ The 12-month outcome distributions were broadly similar between groups (). A total of 90 participants (23%) reported at least 1 emergency department visit over the prior year, 359 (95%) reported completing or scheduling a postpartum care checkup, and 204 (65%) reported use of an effective contraceptive method. Mean (SD) sleep duration was approximately 6.5 (1.4) hours per night (). Mean anxiety and depression scores were low overall, and unadjusted end point comparisons did not differ significantly between groups.
+ Primary Outcomes
+ The chatbot was not associated with improvements in anxiety or depression at 12 months (). In adjusted models, the mean difference in GAD-7 score comparing the chatbot group with the control group was 0.10 among 361 participants (95% CI, −0.77 to 0.96), and the mean difference in PHQ-9 score was −0.23 among 362 participants (95% CI, −1.05 to 0.59). Similarly, the chatbot was not associated with lower prevalence of moderate to severe anxiety (adjusted prevalence ratio [aPR], 1.06; 95% CI, 0.61 to 1.83) or moderate to severe depression (aPR, 1.28; 95% CI, 0.70 to 2.36).
+ Table 2. 
+ Estimated Effects of Chatbot vs Book Club Control on Primary Mental Health Outcomes at 12 Months
+ Outcome | Sample size, No. | Estimate (95% CI) | 
+ Crude | Adjusted | 
+ Continuous outcomes, mean difference | 
+ Anxiety (GAD-7) | 361 | 0.06 (−0.96 to 1.08) | 0.10 (−0.77 to 0.96) | 
+ Depression (PHQ-9) | 362 | −0.36 (−1.34 to 0.62) | −0.23 (−1.05 to 0.59) | 
+ Dichotomous outcomes, prevalance ratio | 
+ Moderate or severe anxiety | 361 | 1.15 (0.67 to 1.97) | 1.06 (0.61 to 1.83) | 
+ Moderate or severe depression | 362 | 1.10 (0.62 to 1.95) | 1.28 (0.70 to 2.36) | 
+ Abbreviations: GAD-7, Generalized Anxiety Disorder-7; PHQ-9, Patient Health Questionnaire-9.
+ a 
+ Mean differences were calculated as chatbot group minus control group. Prevalence ratios were calculated with the chatbot group as the numerator and the control group as the reference.
+ b 
+ Adjusted models controlled for maternal age, race and ethnicity, education, income, postpregnancy health insurance status, and baseline values of the corresponding outcome where available.
+ c 
+ Continuous outcomes were analyzed using linear regression models.
+ d 
+ Dichotomous outcomes were analyzed using modified Poisson regression models. Moderate to severe anxiety was defined as a GAD-7 score of 10 or greater; moderate to severe depression was defined as a PHQ-9 score of 10 or greater.
+ Secondary Outcomes
+ Associations between the chatbot and secondary maternal health outcomes are shown in . The adjusted rate ratio was 1.20 (95% CI, 0.83 to 1.74) for emergency department visits. Among participants who were pregnant at enrollment, the crude rate ratio for pregnancy-related complications was 1.20 (95% CI, 0.84 to 1.72), and the adjusted rate ratio was 1.40 (95% CI, 1.02 to 1.92). The adjusted prevalence ratios were 0.96 (95% CI, 0.92 to 1.01) for postpartum care checkups and 1.13 (95% CI, 0.96 to 1.32) for effective contraception use. The adjusted mean difference in sleep duration was 0.04 hours (95% CI, −0.23 to 0.31) ().
+ Table 3. 
+ Estimated Effects of Chatbot vs Book Club Control on Secondary Maternal Health Outcomes at 12 Months
+ Outcome | Sample size, No. | Estimate (95% CI) | 
+ Crude | Adjusted | 
+ Poisson regression models, rate ratio | 
+ Mother’s emergency department visits (counts) | 373 | 1.20 (0.84 to 1.70) | 1.20 (0.83 to 1.74) | 
+ Pregnancy health complications (counts) | 188 | 1.20 (0.84 to 1.72) | 1.40 (1.02 to 1.92) | 
+ Modified Poisson regression models, prevalence ratio | 
+ Postpartum care checkups (yes/no) | 374 | 0.97 (0.92 to 1.01) | 0.96 (0.92 to 1.01) | 
+ Birth control effective methods (yes/no) | 309 | 1.14 (0.97 to 1.35) | 1.13 (0.96 to 1.32) | 
+ Linear regression models, mean difference | 
+ Mother’s sleeping hours | 373 | 0.08 (−0.20 to 0.37) | 0.04 (−0.23 to 0.31) | 
+ a 
+ Mean differences were calculated as chatbot group minus control group. Rate ratios and prevalence ratios were calculated with the chatbot group as the numerator and the control group as the reference.
+ b 
+ Adjusted models controlled for maternal age, race and ethnicity, education, income, postpregnancy health insurance status, and baseline values of the corresponding outcome where available.
+ c 
+ Pregnancy-related complication analyses were limited to participants who were pregnant at enrollment.
+ d 
+ P  &lt; .05.
+ e 
+ Postpartum care checkups were adjusted for maternal age, race and ethnicity, education, income, and postpregnancy health insurance; baseline values were not included because many participants had not reached the postpartum period at baseline.
+ Longitudinal findings were consistent with the primary analyses based on the 12-month outcomes. For primary outcomes of anxiety and depression, the longitudinal models showed no significant differences between the chatbot group and the control group. No significant between-group differences were observed for secondary outcomes (eTable 2 and eTable 3 in ).
+ Exploratory Subgroup and Within-Group Analyses
+ Among participants assigned to the chatbot, 187 (98.4%) asked at least 1 question during the trial. The median (IQR) number of questions asked was 119 (47.2-222.2), and the mean (SD) number was 163.4 (181.1). Among chatbot users, greater engagement was associated with longer sleep duration (adjusted difference, 0.50; 95% CI, 0.01-0.99 hours) but also with higher anxiety scores (adjusted difference, 1.63; 95% CI, 0.18-3.09 points on the GAD-7) (). Greater engagement was not significantly associated with depression, postpartum care, pregnancy complications, or effective contraception after adjustment.
+ Table 4. 
+ Association of Chatbot Engagement With Maternal Health Outcomes at 12 Months Among Participants Assigned to Chatbot
+ Outcome | Estimate (95% CI) | 
+ Crude | Adjusted | 
+ Poisson regression models, rate ratio | 
+ Mother’s emergency department visits | 0.53 (0.31 to 0.92) | 0.69 (0.37 to 1.31) | 
+ Pregnancy health complications | 0.73 (0.40 to 1.32) | 0.81 (0.40 to 1.66) | 
+ Modified Poisson regression models, prevalence ratio | 
+ Postpartum care checkups (yes vs no) | 1.00 (0.92 to 1.10) | 0.97 (0.65 to 1.44) | 
+ Birth control effective methods (yes vs no) | 0.85 (0.68 to 1.06) | 0.80 (0.48 to 1.34) | 
+ Linear regression models, mean difference | 
+ Mother’s sleeping hours | 0.52 (0.01 to 1.03) | 0.50 (0.01 to 0.99) | 
+ Anxiety score (GAD-7) | 1.70 (0.01 to 3.38) | 1.63 (0.18 to 3.09) | 
+ Depression score (PHQ-9) | 0.38 (−1.23 to 1.99) | 0.98 (−0.46 to 2.41) | 
+ Abbreviations: GAD-7, Generalized Anxiety Disorder-7; PHQ-9, Patient Health Questionnaire-9.
+ a 
+ Adjusted models controlled for maternal age, race and ethnicity, education, income, postpregnancy health insurance, and baseline values of the corresponding outcome when available.
+ b 
+ P  &lt; .05.
+ c 
+ Pregnancy-related complication analyses were limited to participants who were pregnant at enrollment.
+ d 
+ Postpartum care checkups were adjusted for maternal age, race and ethnicity, education, income, and postpregnancy health insurance; baseline values were not included because many participants had not reached the postpartum period at baseline.
+ Exploratory subgroup analyses suggested heterogeneity by marital status and infant caregiving status. Pregnancy vs parenting status at enrollment did not meaningfully modify intervention associations across outcomes. However, among never married or separated participants, the chatbot was associated with higher rates of emergency department visits than the book club control (adjusted rate ratio [aRR], 3.22; 95% CI, 1.36-7.61), whereas no significant association was observed among married or cohabiting participants. The chatbot was also associated with higher rates of pregnancy complications among never married or separated participants who were pregnant at enrollment (adjusted rate ratio [aRR], 2.95; 95% CI, 1.35-6.46) (eTable 4 in ). In contrast, among married or cohabiting participants, the chatbot was associated with greater effective contraception use (aPR, 1.26; 95% CI, 1.06-1.51), with no significant association among never married or separated participants (eTable 4 in ). Infant caregiving status modified anxiety findings. Among participants parenting infants younger than 7 months, the chatbot was associated with a higher prevalence of moderate to severe anxiety than the control condition (aPR, 4.14; 95% CI, 1.43-11.94) (eTable 5 in ). No such association was observed among those parenting infants aged 7 months or older.
+ No intervention-related adverse events were reported in either group. From October 2023 to December 2026, automated safety alerts were triggered 262 times among 97 chatbot participants. Safety alerts were applicable only to chatbot participants because the control group did not have chatbot access. Alerts were reviewed by study staff; when questions or statements indicated mental or physical distress, staff contacted participants, provided referrals or tailored resources, and followed up 1 month later to assess safety and provide additional support as needed.
+ Discussion
+ In this randomized clinical trial among pregnant and postpartum participants from racially and ethnically minoritized groups, access to the chatbot did not improve anxiety, depression, health care utilization, sleep, or postpartum care over 12 months. The higher rate of self-reported pregnancy-related complications among participants pregnant at baseline was unexpected and should be considered hypothesis-generating; increased symptom awareness, differential reporting, residual imbalance, or chance may explain this finding.
+ The null mental health findings suggest that conversational, information-oriented AI support alone may be insufficient to improve perinatal mental health, which is shaped by structural stressors, caregiving burden, financial strain, social support, and access to clinical care. 3 , 4 , 5 , 8 , 9 The active control condition, which included monthly children’s books and optional study-staff contact, may also have attenuated between-group differences while providing a meaningful comparator.
+ Exploratory analyses suggested that engagement and context may matter. Greater chatbot engagement was associated with longer sleep but higher anxiety, possibly reflecting reverse causation, whereby more anxious participants used the chatbot more often, or anxiety amplification through repeated symptom-focused information seeking. 12 , 21 , 22 , 23 Subgroup findings also varied by marital and caregiving status, suggesting that maternal AI tools may function differently depending on social support and parenting stage.
+ These findings align with literature showing heterogeneous and often modest effects of digital health and conversational agents on perinatal mental health outcomes. 11 , 12 , 13 , 14 , 15 , 16 Prior maternal chatbot studies have largely emphasized feasibility, acceptability, knowledge, or engagement rather than randomized clinical or utilization outcomes. 10 , 11 
+ Strengths and Limitations
+ Strengths of this study include its randomized design, national recruitment, focus on racially and ethnically minoritized participants, assessment of mental health and utilization outcomes, and availability of app engagement data. Limitations should be noted. Outcomes were self-reported and may be subject to recall or social desirability bias. We did not systematically measure concomitant mental health treatment, social services, or other outside supports during follow-up. Differential use of outside care could have influenced mental health and utilization outcomes. Engagement was not randomized, so engagement analyses cannot support causal inference. The study was powered to detect moderate effects, and smaller but potentially meaningful effects may have been missed. Effective contraception analyses included fewer participants than other outcomes because this item was not applicable or not answered by all participants. Consequently, the smaller analytic sample may have reduced statistical precision and may limit interpretation of contraception findings. The active control condition may have attenuated between-group differences because participants in the control group received monthly children’s books and could communicate with study staff. Thus, the trial compared the chatbot with an active control intervention rather than no intervention. In addition, the chatbot incorporated automated safety alerts and, in some cases, human follow-up from research staff for clinically concerning content, which may limit generalizability to fully automated maternal health chatbots.
+ Conclusions
+ In this randomized clinical trial of pregnant and postpartum participants from racially and ethnically minoritized groups, access to a generative AI maternal health chatbot did not improve the primary outcomes of anxiety or depression at 12 months compared with active control. The intervention was also not associated with improvements in most secondary maternal health outcomes. Secondary and exploratory findings, including the higher adjusted rate of self-reported pregnancy-related complications in one end point analysis and associations with chatbot engagement and participant context, should be interpreted cautiously and considered hypothesis-generating. These findings suggest that generative AI maternal health chatbots may be better positioned as adjunctive tools rather than stand-alone interventions for improving maternal health during pregnancy and post partum.
+ Supplement 1.
+ Trial Protocol
+ Supplement 2.
+ eFigure. Rosie Mobile Application Interface
+ eTable 1. Additional Functional Features of the Mobile Application
+ eTable 2. Longitudinal Analysis: Effects of Chatbot Intervention on Maternal Anxiety and Depression Outcomes at Midpoints and End Points
+ eTable 3. Longitudinal Analysis: Effects of Chatbot Intervention on Maternal Health Care Utilization, Pregnancy Complications, and Sleep Outcomes at Midpoints and End Points
+ eTable 4. Chatbot Intervention and Maternal Health Outcomes, Stratified by Parental and Marital Status
+ eTable 5. Chatbot Intervention and Maternal Health Outcomes, Stratified by Infant Caregiving Status
+ Supplement 3.
+ Data Sharing Statement
+ References
+ 1.
+ O’Hara MW, Wisner KL. Perinatal mental illness: definition, description and aetiology. Best Pract Res Clin Obstet Gynaecol. 2014;28(1):3-12. doi: 10.1016/j.bpobgyn.2013.09.002 2.
+ Declercq E, Cunningham DK, Johnson C, Sakala C. Mothers’ reports of postpartum pain associated with vaginal and cesarean deliveries: results of a national survey. Birth. 2008;35(1):16-24. doi: 10.1111/j.1523-536X.2007.00207.x 3.
+ Petersen EE, Davis NL, Goodman D, et al. Racial/ethnic disparities in pregnancy-related deaths—United States, 2007–2016. MMWR Morb Mortal Wkly Rep. 2019;68(35):762-765. doi: 10.15585/mmwr.mm6835a3 4.
+ Howell EA. Reducing disparities in severe maternal morbidity and mortality. Clin Obstet Gynecol. 2018;61(2):387-399. doi: 10.1097/GRF.0000000000000349 5.
+ Crear-Perry J, Correa-de-Araujo R, Lewis Johnson T, McLemore MR, Neilson E, Wallace M. Social and structural determinants of health inequities in maternal health. J Womens Health (Larchmt). 2021;30(2):230-235. doi: 10.1089/jwh.2020.8882 6.
+ Trost S, Beauregard J, Chandra G, et al. Pregnancy-related deaths: data from maternal mortality review committees in 36 US states, 2017–2019. Centers for Disease Control and Prevention. Accessed October 16, 2026. https://share.google/qmovLWigEvQuRMkW9 7.
+ Centers for Disease Control and Prevention. Identifying maternal depression-missed opportunities to support moms. 2020. Accessed September 30, 2026. https://archive.cdc.gov/www_cdc_gov/reproductivehealth/vital-signs/identifying-maternal-depression/index.html 8.
+ Saldanha IJ, Adam GP, Kanaan G, et al. Health insurance coverage and postpartum outcomes in the US: a systematic review. JAMA Netw Open. 2023;6(6):e2316536. doi: 10.1001/jamanetworkopen.2023.16536 9.
+ Moore JE, McLemore MR, Glenn N, Zivin K. Policy opportunities to improve prevention, diagnosis, and treatment of perinatal mental health conditions: study examines policy opportunities to improve prevention, diagnosis, and treatment of perinatal mental health. Health Aff. 2021;40(10):1534-1542. doi: 10.1377/hlthaff.2021.00779 10.
+ Murray E, Burns J, Tai SS, Lai R, Nazareth I. Interactive health communication applications for people with chronic disease. Cochrane Database Syst Rev. 2005;(4)CD004274. doi: 10.1002/14651858.CD004274.pub4 11.
+ Laranjo L, Dunn AG, Tong HL, et al. Conversational agents in healthcare: a systematic review. J Am Med Inform Assoc. 2018;25(9):1248-1258. doi: 10.1093/jamia/ocy072 12.
+ Blease C. Placebo, nocebo, and machine learning: how generative AI could shape patient perception in mental health care. JMIR Ment Health. 2025;12:e78663. doi: 10.2196/78663 13.
+ Heinz MV, Mackin DM, Trudeau BM, et al. Randomized trial of a generative AI chatbot for mental health treatment. NEJM AI. 2025;2(4):AIoa2400802. doi: 10.1056/AIoa2400802 14.
+ Clark M, Bailey S. Chatbots in health care: connecting patients to information. CADTH Horizon Scans. 2024;4(1). doi: 10.51731/cjht.2024.818 15.
+ Mclaughlin M, Delaney T, Hall A, et al. Associations between digital health intervention engagement, physical activity, and sedentary behavior: systematic review and meta-analysis. J Med Internet Res. 2021;23(2):e23180. doi: 10.2196/23180 16.
+ Yardley L, Spring BJ, Riper H, et al. Understanding and promoting effective engagement with digital behavior change interventions. Am J Prev Med. 2016;51(5):833-842. doi: 10.1016/j.amepre.2016.06.015 17.
+ Hopewell S, Chan AW, Collins GS, et al. CONSORT 2025 statement: updated guideline for reporting randomised trials. Lancet. 2025;405(10489):1633-1640. doi: 10.1016/S0140-6736(25)00672-5 18.
+ Qualtrics. Qualtrics Survey Platform. Accessed April 24, 2026. https://www.qualtrics.com/ 19.
+ Spitzer RL, Kroenke K, Williams JB, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006;166(10):1092-1097. doi: 10.1001/archinte.166.10.1092 20.
+ Kroenke K, Spitzer RL. The PHQ-9: a new depression diagnostic and severity measure. Psychiatr Annals; 2002;32(9):509-515. doi: 10.3928/0048-5713-20020901-06 21.
+ Torous J, Roberts LW. The ethical use of mobile health technology in clinical psychiatry. J Nerv Ment Dis. 2017;205(1):4-8. doi: 10.1097/NMD.0000000000000596 22.
+ van den Heuvel JF, Groenhof TK, Veerbeek JH, et al. eHealth as the next-generation perinatal care: an overview of the literature. J Med Internet Res. 2018;20(6):e202. doi: 10.2196/jmir.9262 23.
+ Beesdo-Baum K, Jenjahn E, Höfler M, Lueken U, Becker ES, Hoyer J. Avoidance, safety behavior, and reassurance seeking in generalized anxiety disorder. Depress Anxiety. 2012;29(11):948-957. doi: 10.1002/da.21955 
+ Associated Data
+ Supplementary Materials
+ Supplement 1.
+ Trial Protocol
+ Supplement 2.
+ eFigure. Rosie Mobile Application Interface
+ eTable 1. Additional Functional Features of the Mobile Application
+ eTable 2. Longitudinal Analysis: Effects of Chatbot Intervention on Maternal Anxiety and Depression Outcomes at Midpoints and End Points
+ eTable 3. Longitudinal Analysis: Effects of Chatbot Intervention on Maternal Health Care Utilization, Pregnancy Complications, and Sleep Outcomes at Midpoints and End Points
+ eTable 4. Chatbot Intervention and Maternal Health Outcomes, Stratified by Parental and Marital Status
+ eTable 5. Chatbot Intervention and Maternal Health Outcomes, Stratified by Infant Caregiving Status
+ Supplement 3.
+ Data Sharing Statement

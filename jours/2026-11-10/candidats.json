@@ -1,0 +1,131 @@
+[
+ {
+  "score": 17,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "n = 400",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "id": "MED:42981095",
+  "pmid": "42981095",
+  "pmcid": "PMC13735853",
+  "doi": "10.1001/jamanetworkopen.2026.41062",
+  "titre": "Generative Artificial Intelligence and Maternal Health Outcomes in Pregnant and Postpartum Individuals: A Randomized Clinical Trial.",
+  "revue": "JAMA network open",
+  "date": "2026-11-02",
+  "auteurs": "Norell EM, Yue X, Mane H, Marin Gutierrez FX, Srikanth NP, Smolyak D, Dipankar P, Peters CJ, Boyd-Graber J, Nguyen TT, He X, Nguyen QC.",
+  "types": "research-article randomized controlled trial journal article",
+  "acces_libre": true,
+  "type_etude": "essai tiré au sort",
+  "resume": "Importance Generative artificial intelligence (AI) chatbots are increasingly used to support maternal health, but randomized evidence is limited. Objective To evaluate whether access to a generative AI maternal health chatbot improved 12-month maternal health outcomes. Design, setting, and participants This 2-group randomized clinical trial enrolled 400 participants from October 2023 to December 2024, with 12-month follow-up completed in December 2025. Participants were recruited online across 49 US states and the District of Columbia. Eligible participants were English-speaking, aged 14 years or older, pregnant or parenting an infant younger than 6 months, and self-identified as members of racial and/or ethnic minoritized groups. Interventions Participants were randomized 1:1 to receive access to the chatbot or an active control consisting of monthly children's books. Main outcomes and measures Primary outcomes were anxiety and depression symptoms at 12 months measured using the Generalized Anxiety Disorder-7 and Patient Health Questionnaire-9. Secondary outcomes included emergency department visits, pregnancy-related complications, postpartum care checkups, effective contraception use, and sleep duration. Results Among 400 randomized participants, the mean (SD) age was 32.6 (5.1) years; 200 (50%) were parenting an infant at enrollment; and 10 (2%) identified as American Indian or Alaska Native, 80 (20%) Asian, 188 (47%) Black or African American, 57 (14%) multiracial, and 65 (16%) Hispanic or Latino. The AI chatbot was not associated with differences in anxiety scores (adjusted mean difference, 0.10; 95% CI, -0.77 to 0.96) or depression scores (adjusted mean difference, -0.23; 95% CI, -1.05 to 0.59), nor with emergency department visits, postpartum care, contraception use, or sleep duration. Among participants pregnant at enrollment, the chatbot was associated with more self-reported pregnancy-related complications in the secondary 12-month end point analysis, but not in longitudinal analyses. Higher chatbot engagement was associated with longer sleep duration and higher anxiety scores in exploratory within-group analyses. Conclusions and relevance In this randomized clinical trial of pregnant and postpartum individuals from racial and ethnic minoritized groups, access to a generative artificial intelligence maternal health chatbot did not improve maternal anxiety or depression at 12 months compared with an active control. Secondary and exploratory findings should be interpreted cautiously. Trial registration ClinicalTrials.gov Identifier: NCT06053515."
+ },
+ {
+  "score": 17,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "prospectif",
+   "multicentrique",
+   "revue majeure"
+  ],
+  "id": "MED:42982101",
+  "pmid": "42982101",
+  "pmcid": null,
+  "doi": "10.1016/j.neurad.2026.101626",
+  "titre": "Artificial Intelligence in Brain Arteriovenous Malformation Neuroimaging: A Scoping Review of Clinical Applications, Performance, and Translation Readiness.",
+  "revue": "Journal of neuroradiology = Journal de neuroradiologie",
+  "date": "2026-11-04",
+  "auteurs": "de Oliveira JG, Veiga RE, Guirado VMP, Veiga JCE.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "type_etude": "revue systématique",
+  "resume": "Background Artificial intelligence (AI) is used in brain arteriovenous malformation (AVM) neuroimaging, but translation readiness remains incompletely mapped. Purpose To characterize AI-related applications, reported performance, and barriers to clinical deployment. Methods We conducted a PRISMA-ScR-guided review of PubMed, Embase, and Google Scholar from inception through 20 December 2025, with PubMed additionally searched on 23 August 2026. Eligible sources addressed AI, machine learning, radiomics, or automated computational analysis of brain AVM imaging. Results were charted descriptively; heterogeneous metrics were not pooled. Results Thirty-two sources were included: 28 primary reports and four contextual evidence syntheses. Thirteen primary reports had a documented AI/ML component. Of these, seven used imaging-derived inputs only, three combined imaging with clinical or treatment predictors, one compared separate imaging and clinical models, and two had unresolved final predictor sets. Three nidus-segmentation reports gave Dice estimates of 0.754, 0.80 and 0.82; partition details were unavailable for the first, and the last applied to detected lesions. Validation designs and clinical targets varied, precluding a pooled performance estimate. Conclusion AI/ML shows technical feasibility in selected brain AVM imaging and prediction tasks. Clinical benefit and routine deployment have not been demonstrated. Multicenter institutional validation, calibration, transparent reporting and prospective clinical-impact evaluation remain priorities."
+ },
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "multicentrique",
+   "n = 542"
+  ],
+  "id": "MED:42989887",
+  "pmid": "42989887",
+  "pmcid": null,
+  "doi": "10.4103/aja202644",
+  "titre": "Artificial intelligence-assisted microdissection testicular sperm extraction improves sperm retrieval efficiency and clinical outcomes in men with non-obstructive azoospermia: a retrospective cohort study.",
+  "revue": "Asian journal of andrology",
+  "date": "2026-11-06",
+  "auteurs": "Peng LF, Yu H.",
+  "types": "journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "This study compared the efficacy, safety, and intracytoplasmic sperm injection (ICSI) outcomes of artificial intelligence (AI)-assisted versus conventional microdissection testicular sperm extraction (micro-TESE) in men with non-obstructive azoospermia (NOA). To this end, we retrospectively analyzed 1286 consecutive NOA patients undergoing micro-TESE at the two reproductive medicine center of Sichuan Provincial People's Hospital (Chengdu, China) and Sichuan Jinxin Xinan Women's and Children's Hospital (Chengdu, China) from January 2020 to December 2024, including 542 patients receiving AI-assisted procedures and 744 undergoing conventional surgery. The primary outcome was sperm retrieval rate (SRR), while secondary outcomes covered intraoperative parameters, postoperative complications, and ICSI outcomes, and univariable and multivariable logistic regression were performed to identify independent predictors of SRR and live birth. The results showed that the overall SRR reached 56.2% in the entire cohort, and the AI group had a significantly higher SRR (68.1% vs 47.6%, P < 0.001), with the most prominent improvement observed in patients with Sertoli cell-only syndrome (47.2% vs 22.7%, P < 0.001). The AI group also exhibited shorter operative time, less intraoperative blood loss, fewer biopsy sites, shorter postoperative hospital stay, and lower complication rates (all P < 0.001), as well as superior ICSI outcomes including higher fertilization, high-quality embryo, blastocyst, clinical pregnancy, ongoing pregnancy, and live birth rates (all P < 0.01). Further multivariable analysis confirmed that AI-assisted surgery serves as an independent predictor of both successful SRR (odds ratio [OR] = 3.182, 95% confidence interval [CI]: 2.374-4.265, P < 0.001) and live birth rate (OR = 1.876, 95% CI: 1.325-2.656, P < 0.001). Taken together, AI-assisted micro-TESE improves sperm retrieval efficiency, reduces perioperative morbidity, and enhances ICSI and live birth outcomes in NOA patients as an independent predictor for both SRR and live birth rate, and prospective multicenter randomized trials are warranted for further validation."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "prospectif",
+   "revue majeure"
+  ],
+  "id": "MED:42986401",
+  "pmid": "42986401",
+  "pmcid": null,
+  "doi": "10.1007/s00247-026-06823-8",
+  "titre": "Evaluating the diagnostic performance of artificial intelligence for pediatric appendicular fractures: a systematic review and meta-analysis.",
+  "revue": "Pediatric radiology",
+  "date": "2026-11-05",
+  "auteurs": "Pahlevan-Fallahy MT, Salmanian E, Asgari AM, Kian N, Malek M, Shaker F.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "type_etude": "méta-analyse",
+  "resume": "Background Pediatric fracture detection on plain radiographs can be challenging, and missed fractures can have important clinical consequences. Artificial intelligence has been increasingly investigated as a tool to support fracture detection in children. Objectives This systematic review and meta-analysis aimed to evaluate the diagnostic performance of artificial intelligence models for detecting appendicular fractures on pediatric radiographs. Materials and methods A comprehensive literature search was conducted from inception through February 1, 2026. Studies evaluating AI models for detecting appendicular fractures in pediatric populations using plain radiographs were included. Pooled sensitivities and specificities were calculated using bivariate random-effects meta-analysis, and subgroup analyses were performed based on anatomical site, unit of analysis, and comparator type. Results Sixteen studies were included. Pooled sensitivity and specificity for standalone AI models were 92.0% (95% CI, 90.4-93.4%) and 87.9% (95% CI, 84.5-90.6%), respectively, with an hierarchical summary receiver operating characteristic (HSROC) area under the curve of 0.96. Considerable heterogeneity was observed (I 2 , 49-78%). No significant differences were found between per-image and per-patient analyses (P=0.78). Differences in diagnostic performance among physicians using AI models, standalone AI models, and physicians without AI models were not significant (P=0.20). Fagan nomogram analysis demonstrated that at 50% pre-test probability, a positive AI result increased post-test probability to 90%, while a negative result reduced it to 7%. Conclusion AI models demonstrate considerable diagnostic accuracy for detecting pediatric appendicular fractures on radiography. Considerable heterogeneity and concerns regarding real-life implementation highlight the need for prospective studies with standardized methodologies."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "n = 14665",
+   "revue majeure"
+  ],
+  "id": "MED:42998297",
+  "pmid": "42998297",
+  "pmcid": null,
+  "doi": "10.1161/circulationaha.126.083540",
+  "titre": "Leveraging AI-ECG Technology for Early Notification and Tracking of AF Development (LATENT): A Randomized Controlled Trial.",
+  "revue": "Circulation",
+  "date": "2026-11-07",
+  "auteurs": "Lee CC, Lin WY, Liu WT, Chang CH, Liu YL, Chang DW, Liu PY, Liu WC, Lin Y, Tsai DJ, Chen KC, Lin TC, Chang SC, Chen HH, Fang WH, Lin WS, Cheng CC, Lin KH, Chen TW, Lin CY, Tsai YT, Chen YH, Tsai CS, L",
+  "types": "journal article",
+  "acces_libre": false,
+  "type_etude": "essai tiré au sort",
+  "resume": "Background Electrocardiographic analysis aided by artificial intelligence (AI) may identify atrial electrical vulnerability during sinus rhythm. The objective of this study was to determine whether AI-enabled ECG (AI-ECG) is effective for detecting atrial fibrillation (AF), atrial flutter (AFl), or prespecified pre-AF atrial findings in a randomized trial. Methods In this single-center, open-label trial, 14 665 adults 40 to 85 years of age without previous AF/AFl were randomized to an AI-ECG-guided strategy or usual care. Participants randomized to AI-ECG who were then identified by AI as having a high-risk sinus-rhythm ECG in the preceding year were offered Holter monitoring for ≤7 days. Each monitored high-risk intervention participant was paired with an age- and sex-matched control selected before control ECGs underwent AI analysis. Matched controls received identical monitoring to reduce ascertainment bias. Reporting cardiologists were blinded to AI results and randomized assignment. The primary outcome was a composite of newly detected AF, AFl, or pre-AF atrial findings within 90 days. Pre-AF atrial findings comprised frequent premature atrial complexes, short runs of premature atrial complexes, or nonsustained AF/AFl. Results Among 7337 intervention and 7328 control participants, 84 (1.1%) and 78 (1.1%), respectively, were classified as high risk. Of the 84 high-risk intervention participants, 48 (57.1%) underwent monitoring, as did 48 matched controls. The primary outcome occurred in 54 intervention participants (0.74%) versus 35 control participants (0.48%; odds ratio, 1.54 [95% CI, 1.01-2.37]; P =0.046). Hypothetical reclassification of 1 intervention event to a nonevent changed the primary analysis P value to 0.057. The intervention effect on detection of the primary composite outcome differed by baseline AI-ECG risk ( P interaction Conclusions AI-ECG-guided monitoring resulted in a modest increase in the detection of new AF, AFl, or pre-AF atrial findings. However, these findings were fragile statistically and sensitive to reclassification of 1 event. LATENT (Leveraging AI-ECG Technology for Early Notification and Tracking of AF Development) demonstrates the clinical application of AI-ECG risk stratification to guide targeted rhythm surveillance, providing a foundation for larger trials evaluating its impact on patient outcomes. Registration URL: https://www.clinicaltrials.gov; Unique identifier: NCT06847932."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "prospectif",
+   "multicentrique"
+  ],
+  "id": "MED:42981703",
+  "pmid": "42981703",
+  "pmcid": null,
+  "doi": "10.2460/javma.26.08.0633",
+  "titre": "Beyond diagnostics: a scoping review of generative artificial intelligence for clinical documentation and client communication in veterinary practice.",
+  "revue": "Journal of the American Veterinary Medical Association",
+  "date": "2026-11-04",
+  "auteurs": "Bava R, Ruga S, Palma E, Liguori G.",
+  "types": "journal article",
+  "acces_libre": false,
+  "type_etude": "méta-analyse",
+  "resume": "Objective To systematically map the current landscape of generative AI (GenAI) and large language model applications for clinical documentation and client communication in veterinary medicine, critically appraise validation depth, and identify barriers to real-world adoption. Methods Following Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for scoping reviews guidelines, PubMed, Scopus, CAB Abstracts, and IEEE Xplore were searched for original research published between January 2020 and June 2026. Two reviewers independently screened records and extracted data using a 4-dimensional validation matrix (technical accuracy, clinical quality and safety, operational impact, and human-centric impact). Synthesis was conceptually grounded in the job demands-resources model. Results 10 studies met the inclusion criteria: 6 addressed clinical documentation (automated clinical coding, information extraction, and generation of subjective, objective, assessment, and plan [ie, SOAP] notes), and 4 addressed client communication (veterinary triage and automated query responses). While technical accuracy was frequently assessed, operational impact was evaluated in only 1 study, and no study employed validated psychometric instruments to measure burnout. Key barriers included clinical hallucinations, data privacy concerns, poor interoperability with practice information management systems, and absence of veterinary-specific fine-tuning. Conclusions GenAI demonstrates substantial technical promise for automating veterinary documentation and client communication tasks, yet the evidence base is characterized by a pronounced validation gap: operational and human-centric outcomes remain virtually unquantified. Clinical relevance Until rigorous evidence emerges, veterinarians should approach commercially available AI tools with cautious optimism. Future research must prioritize pragmatic, multicenter prospective trials employing multidimensional validation frameworks to generate evidence supporting safe clinical deployment."
+ }
+]
