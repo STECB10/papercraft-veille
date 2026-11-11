@@ -91,6 +91,12 @@ def main():
     run(py, MOTEUR / "audio.py", "montage", jour)
     run(py, MOTEUR / "build.py", jour)
     run("node", MOTEUR / "controle_page.mjs", jour, cwd=RACINE)
+    # contrôle d'images : ce qu'un spectateur voit vraiment (écrans vides, cadres sous-remplis). Il mesure et prévient
+    # (jours/<date>/images.json, repris dans le message Telegram) ; il ne bloque pas la vidéo.
+    try:
+        run("node", MOTEUR / "controle_images.mjs", jour, cwd=RACINE)
+    except (subprocess.CalledProcessError, OSError) as e:
+        print(f"contrôle d'images indisponible ({e}) : la fabrication continue", flush=True)
     run(py, MOTEUR / "musique.py", jour)
     run(py, MOTEUR / "audio.py", "mix", jour)
     run(py, MOTEUR / "normaliser.py", jour)

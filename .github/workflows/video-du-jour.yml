@@ -82,6 +82,27 @@ jobs:
           allowed_bots: "*"
           prompt: "/etude-du-jour"
           claude_args: '--max-turns 90 --allowedTools "Bash,Read,Write,Edit,Glob,Grep"'
+      # Le binôme : un second agent, qui n'a pas écrit le film, le relit contre la source (sens des résultats, causalité,
+      # population, limite, clarté) et corrige le strict nécessaire. Il ne peut pas casser la vidéo : le film d'origine est
+      # sauvegardé avant, et remis si la version relue ne passe plus le vérificateur. Variable RELECTURE = non pour la couper.
+      - name: Sauvegarde avant relecture
+        if: steps.garde.outputs.deja != 'true' && steps.reprise.outputs.ok != 'true' && vars.RELECTURE != 'non'
+        run: python3 pipeline/relecture.py sauver
+      - name: Relecture indépendante (Claude, vérificateur du binôme)
+        id: relecture
+        if: steps.garde.outputs.deja != 'true' && steps.reprise.outputs.ok != 'true' && vars.RELECTURE != 'non'
+        continue-on-error: true
+        timeout-minutes: 20
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          allowed_bots: "*"
+          prompt: "/relecture"
+          claude_args: '--max-turns 45 --allowedTools "Bash,Read,Write,Edit,Glob,Grep"'
+      - name: Filet de sécurité de la relecture
+        if: steps.garde.outputs.deja != 'true' && steps.reprise.outputs.ok != 'true' && vars.RELECTURE != 'non'
+        run: python3 pipeline/relecture.py filet
       - name: Vérification indépendante des chiffres
         id: verif
         if: steps.garde.outputs.deja != 'true'

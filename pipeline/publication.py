@@ -142,7 +142,14 @@ def envoyer():
 def proposer(date, jour, entete):
     etude = lire_json(jour / "etude.json", {})
     post = (jour / "post.txt").read_text(encoding="utf-8").strip()
-    tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": f"{entete}\n{etude.get('titre', '')}"[:1000],
+    # ce que les contrôles automatiques ont vu, pour celui qui valide : la relecture indépendante et le contrôle d'images
+    lignes = [entete, etude.get("titre", "")]
+    rel, img = lire_json(jour / "relecture.json", {}) or {}, lire_json(jour / "images.json", {}) or {}
+    if rel.get("verdict"):
+        lignes.append(f"Relecture : {rel['verdict']}" + (f" ({rel['resume']})" if rel.get("resume") else ""))
+    if img.get("bilan"):
+        lignes.append(f"Images : {img['bilan']}")
+    tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": "\n".join(lignes)[:1000],
                      "supports_streaming": "true"}, [("video", jour / "final.mp4")], timeout=600)
     clavier = {"inline_keyboard": [[{"text": "✅ Publier", "callback_data": f"pub:{date}"}, {"text": "❌ Rejeter", "callback_data": f"rej:{date}"}]]}
     tg_message(f"{post}\n\n— Texte du post. Publier sur la page Papercraft.AI ?", reply_markup=clavier)

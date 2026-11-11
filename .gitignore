@@ -7,3 +7,8 @@ jours/*/index.html
 jours/*/*.mp4
 *.wav
 .DS_Store
+jours/*/images-detail.json
+jours/*/pellicule-*.jpg
+__pycache__/
+*.pyc
+jours/*/.avant-relecture/
