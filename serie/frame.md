@@ -52,7 +52,7 @@ layout:
   no-collision: "aucun élément n'en recouvre un autre au repos : icône à côté de son étiquette, jamais dessus ; 24 px d'air au moins entre deux blocs de texte"
 
 typography:
-  subtitle:  { fontFamily: "Schibsted Grotesk", px: 54, weight: 600, lineHeight: 66, tracking: "-0.015em", note: "la phrase de la voix, centrée dans la bande du bas, mot à mot, 32 caractères au plus par morceau ; encre sur papier" }
+  subtitle:  { fontFamily: "Schibsted Grotesk", px: 60, weight: 700, lineHeight: 72, tracking: "-0.02em", note: "la phrase de la voix, centrée dans la bande du bas, mot à mot, 27 caractères au plus par morceau ; encre sur papier ; un morceau s'efface avant que le suivant n'apparaisse (DA v4)" }
   title:     { fontFamily: "Bodoni Moda", px: 57, weight: 400, tracking: "-0.02em", note: "titre de planche (« Six études, un effet regroupé »)" }
   type:      { fontFamily: "Bodoni Moda", px: 72, weight: 400, lineHeight: 1.12, tracking: "-0.025em", note: "la nuance et la phrase à retenir, centrées ; italique carbone pour le mot qui porte ; PAS de sous-titre pendant ce temps (le texte n'est jamais affiché deux fois)" }
   numeral:   { fontFamily: "Bodoni Moda", px: "140 à 260", weight: 400, tracking: "-0.03em", note: "chiffre clé seul ; virgule décimale française ; % à 0,5 em ; chiffres tabulaires pendant le roulement" }
@@ -68,6 +68,8 @@ camera:
   feuilles: "dans l'étude, chaque planche est une nouvelle feuille posée par-dessus la précédente (0,85 s power3.out, du bas puis de la droite en alternance) ; la précédente s'enfonce (échelle 0,93) et s'assombrit"
   table: "dans le monde du constat, la table est vue en légère plongée (rotationX 8 à 14°, perspective 900) : la feuille posée dessus a une ombre portée réelle"
   never: "pas d'aller-retour, pas de zoom décoratif, pas de secousse"
+  coupe: "DA v4 : la caméra coupe sur l'action. Une planche arrive au plus 0,7 s avant son premier élément (1,6 s si elle arrive habillée) et ne part pas avant qu'on ait vu le dernier (0,9 s)."
+  plein-cadre: "DA v4 : le contenu d'une planche est centré dans la scène (y 150 à 1076) ; la table est vue à l'échelle 1,07 à 1,13 (la feuille occupe le cadre)."
 ---
 
 # Papercraft.AI · Une étude par jour : charte de la série
@@ -83,6 +85,25 @@ glyphe Papercraft, la promesse, le bouton « Suivre ».
 
 Tout est papier sur fond blanc : aucune planche n'a de fond nuit, la feuille garde sa couleur papier, le verso de la nuance est carbone. L'encre ne couvre que de petites surfaces (la carte « noyau IA »,
 la bulle de l'IA, une pastille), jamais un fond de scène.
+
+## Plein cadre (DA v4, 11 novembre 2026)
+
+Mesure faite sur les 18 premiers films (`serie/moteur/controle_images.mjs`) : l'écran était vide 4 % du temps et
+sous-rempli 15 % du temps (une planche arrivait nue et attendait le mot qui déclenchait son contenu ; un parcours de
+deux étapes tenait dans le tiers haut du cadre). Quatre règles y répondent, toutes dans le moteur :
+
+1. **La caméra coupe sur l'action.** Une planche se pose juste avant d'être dite, et reste jusqu'à ce qu'on ait vu son
+   dernier élément. Jamais de page blanche sur « Ensuite, ».
+2. **Une planche arrive habillée.** Ce qui dit sa structure est là dès qu'elle se pose : les cases de la fiche et
+   leurs intitulés, les trois temps du schéma de l'IA et les numéros des constats **tracés au crayon** (pointillés,
+   encre à 13 %), le nom des mesures et leurs jauges vides. Chaque valeur s'**encre** au mot qui la dit.
+3. **Le contenu occupe la scène.** Il est centré entre l'étiquette et les sous-titres, et il grandit quand il a peu
+   d'éléments : deux constats prennent la place de quatre.
+4. **La table se lit sur un téléphone.** La feuille occupe le cadre ; dans le parcours, l'intitulé est en Schibsted
+   42 px (plus de capitales mono à 26 px), le dessin est posé sur une tuile de papier clair, la note est en italique
+   d'accent, et l'étape précédente s'estompe quand la suivante arrive.
+
+Le fil de progression, en haut, est découpé en chapitres (le constat, l'étude, les résultats, à retenir).
 
 ## Les trois familles de gestes
 
@@ -108,6 +129,8 @@ fois. Aucun élément n'arrive en simple fondu : il se trace, se lève, se dépl
 | `déplier` | charnière 3D : `rotationX` −90° → 0 (perspective 520), depuis le bas pour une bande, depuis le haut pour une languette ou une étiquette, 0,5 à 0,8 s power3.out | languettes de groupes, bandes-résultats, étiquette suspendue |
 | `suspendre` | une punaise se pose, la ficelle descend, l'étiquette se déplie et se penche (−6° → −2°) | l'écart et son intervalle, sur une planche « bandes » |
 | `poser` | une nouvelle feuille glisse par-dessus la précédente et se pose, avec son ombre ; la précédente s'enfonce et s'assombrit | chaque nouvelle planche de l'étude |
+| `crayonner` | l'emplacement d'un bloc à venir, en pointillés d'encre légère (ou un numéro à 13 %) ; il s'efface quand le bloc s'encre | à l'arrivée d'une planche : schéma de l'IA, numéros des constats, emplacements des études |
+| `estomper` | l'élément dit passe à 38 % d'opacité (0,5 s) | l'étape précédente du parcours, quand la suivante arrive |
 | `plier` | le pli de la feuille (mécanisme signature) : reflet qui glisse le long de la diagonale 0,25 s, puis la moitié se rabat 0,45 s expo.inOut | le pivot (une fois) et la fin (une fois) |
 | `déchirer` | tension 0,25 s, puis les deux moitiés partent (haut vers le haut, bas vers le bas, 0,8 s power3.in) avec un bord fibreux blanc de 3 px ; révèle le verso carbone, texte blanc | la nuance ou la limite (une fois par film au plus) |
 
@@ -198,7 +221,7 @@ quadrillé, toujours très léger), le style du mot-clé des sous-titres (boîte
 nouvelle planche arrive (du bas, de côté, lâchée d'en haut, tournée comme une page, basculée depuis le haut). Elle
 règle aussi la question du pivot (mots qui montent, lettres tapées à la machine avec un curseur, ou grand point
 d'interrogation tracé derrière), le geste à la main sur le mot clé des grandes typos (souligné ou entouré) et la forme
-de « L'étude en bref » (fiche bristol ou tuiles à pictogrammes). Un fil de progression fin court en haut du cadre. Elles tournent d'un jour à l'autre, dans l'ordre de
+de « L'étude en bref » (fiche bristol ou tuiles à pictogrammes). Un fil de progression court en haut du cadre, découpé en chapitres. Elles tournent d'un jour à l'autre, dans l'ordre de
 `serie/moteur/editions.json` : carbone (#5D68FF), ocre (#B86E08), sarcelle (#0F8A86), framboise (#C8366C), pétrole
 (#1D6FA5). Dans un film, la règle ne change pas : un seul accent, pour le groupe IA, la boîte du mot-clé, l'écart et le
 verso de la nuance ; le groupe témoin reste à l'encre. Aucune édition rouge ou verte (pas de « danger », pas de

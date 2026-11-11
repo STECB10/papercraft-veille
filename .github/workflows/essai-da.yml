@@ -22,9 +22,9 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        # DA v3 (7 novembre 2026) : Claude réécrit deux études passées avec les nouvelles règles (accroche variée, texte oral,
-        # voix Brick, édition du jour) ; les vidéos arrivent sur Telegram, rien n'est publié
-        cas: ["bot:2026-11-08"]
+        # DA v4 (11 novembre 2026) : le film du 10 novembre rejoué tel quel avec le nouveau moteur (vraie voix, vraie musique) ;
+        # la vidéo arrive sur Telegram, rien n'est publié. « bot:<date> » : Claude réécrit d'abord le film de cette date.
+        cas: ["2026-11-10"]
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -110,7 +110,7 @@ jobs:
           planches = ", ".join(s["type"] for s in f["paper"]["stations"])
           titre = json.load(open(jour / "etude.json")).get("titre", "") if (jour / "etude.json").exists() else ""
           accroche = f["night"]["stations"][0]["type"]
-          cap = (f"Essai DA v3 · {d} · {quoi}\n{titre[:200]}\nAccroche : {accroche} · planches : {planches}\n"
+          cap = (f"Essai DA v4 · {d} · {quoi}\n{titre[:200]}\nAccroche : {accroche} · planches : {planches}\n"
                  f"Musique : {morceau_du_jour(jour)['titre']}\n(test : rien n'est publié ; pour en faire la vidéo du jour : "
                  f"workflow « Remplacer la vidéo du jour », run {os.environ.get('GITHUB_RUN_ID', '?')})")
           tg("sendVideo", {"chat_id": env("TELEGRAM_CHAT_ID"), "caption": cap[:1000], "supports_streaming": "true"},

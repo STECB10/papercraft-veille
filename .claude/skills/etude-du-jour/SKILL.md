@@ -24,7 +24,10 @@ passant (une phrase de perspective, un mot-clé). Parmi celles qui restent, choi
 français : un vrai résultat chiffré et utile en pratique, quel que soit le type d'étude (essai tiré au sort,
 méta-analyse, revue, cohorte, performance d'un modèle…). À intérêt égal, préfère les preuves les plus solides (essai
 tiré au sort, méta-analyse, étude prospective). Évite les études purement techniques sans lien avec le soin, sauf si
-le résultat est frappant et concret. Puis : `python3 pipeline/texte_integral.py <rang>` (rang à partir de 1). Il écrit
+le résultat est frappant et concret. **La série ne tourne pas en rond** : chaque candidat porte ses `themes`, et la
+veille a déjà retiré des points à un thème traité les trois derniers jours (voir ses `raisons`) ; à intérêt égal, change
+de thème et de type d'étude par rapport aux deux dernières vidéos, sans écarter pour autant un essai solide au profit
+d'une étude faible. Puis : `python3 pipeline/texte_integral.py <rang>` (rang à partir de 1). Il écrit
 `source.txt` (le seul texte dont tu tires des chiffres) et `etude.json`.
 
 ## 2. Fiche des faits : `faits.json`
@@ -77,6 +80,14 @@ intégral et note dans faits.json ce que l'étude montre concrètement (quels in
 quels exemples), pas seulement les performances du modèle. Pour la partie concrète, la planche `findings` est faite
 pour ça. Un rapport de cotes ou de risques (OR, RR, HR) se montre avec la planche `ratio`, jamais en jauge `metric`.
 
+**Plein cadre (DA v4, 11 novembre 2026).** Le moteur fait arriver une planche juste avant son premier élément et la
+garde jusqu'à ce qu'on ait vu le dernier : inutile de régler `cam_at` au mot près, mais ancre le premier élément d'une
+planche sur un des premiers mots de sa phrase, et le dernier au moins une seconde avant la planche suivante. La feuille
+commence par `id_card`, qui arrive habillée (le pli ne s'ouvre jamais sur une page blanche). Dans `steps`, écris
+l'intitulé sans numéro (« Le contact avec les soignants », 34 caractères au plus : le moteur numérote) et garde la
+`note` pour ce que la voix ajoute (« s'espace »). Préfère deux ou trois éléments par planche, dits chacun par la voix,
+à quatre éléments serrés : le moteur agrandit ce qui est peu nombreux.
+
 **L'image suit la voix** (FILM-SCHEMA.md, « Les planches suivent la voix ») : pour chaque phrase, demande-toi ce qui
 apparaît à l'écran pendant qu'elle est dite. Chaque élément est ancré sur le mot qui le nomme, dans la fenêtre de sa
 planche (entre son `cam_at` et celui de la planche suivante), dans l'ordre où il est dessiné ; aucune phrase du contexte
@@ -110,3 +121,5 @@ section `## Relecture` avec une puce par question et ta réponse :
 
 `python3 pipeline/nombres.py` (écrit les nombres du texte dit en toutes lettres), puis `python3 pipeline/verifier.py`. S'il répond REFUSÉ, corrige chaque point et relance, jusqu'à VALIDÉ. Tu as fini
 quand il répond VALIDÉ. Ne lance ni la voix, ni le rendu, ni la publication : la suite de la chaîne s'en charge.
+Un second agent, qui n'a rien écrit, relira ensuite chaque phrase contre `source.txt` (skill `relecture`) : n'écris
+rien que tu ne saurais pas montrer du doigt dans la source.

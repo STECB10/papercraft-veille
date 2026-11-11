@@ -37,6 +37,18 @@ Le vérificateur rejoue le film au débit de la vraie voix (environ 3,5 mots par
 Le moteur rattrape en dernier recours un élément qui tomberait hors de l'écran avec la vraie voix (il le ramène dans
 la fenêtre de sa planche), mais le film doit être juste dès le départ.
 
+### La caméra coupe sur l'action (DA v4, 11 novembre 2026)
+Le moteur ne laisse plus une planche arriver nue : si son premier élément tombe plus de 0,7 s après son `cam_at`
+(1,6 s pour une planche qui arrive déjà habillée : `id_card`, `result_bars`, `result_dots`, `metric`, `roc_curve`,
+`forest_plot`, `survival_curves`, `diagnostic_grid`, `chat`), la caméra est retardée et la planche d'avant reste à
+l'écran. De même, elle ne part pas avant qu'on ait vu : le dernier élément d'une planche reste 0,9 s avant la suivante
+(1,2 s de retard au plus). `verifier.py` rejoue ces retards : une planche doit rester 3,5 s entre deux `cam_at` écrits,
+et 2,6 s une fois posée. La **première planche de la feuille** est révélée par le pli, le moteur ne peut pas la
+retarder : si ce n'est pas une planche habillée, son premier élément est dit dans les 2 premières secondes (le plus
+simple : commencer par `id_card`).
+Le contenu de chaque planche est centré dans la scène et agrandi quand il a peu d'éléments (2 constats, 2 étapes d'un
+parcours, 2 cartes) : écris peu d'éléments, chacun dit par la voix.
+
 ## Champs racine
 
 ```json
@@ -66,7 +78,7 @@ l'autre : ne la fixe pas sans raison. Les planches de l'étude ne reprennent jam
   deux phrases ordinaires, rien : la voix respire seule.
 - Les deux dernières phrases sont toujours `"Une étude par jour, vérifiée à la source."` (mode none) puis
   `"Papercraft."` (mode none).
-- Un sous-titre affiche 30 caractères au plus par morceau : phrases courtes.
+- Un sous-titre affiche 27 caractères au plus par morceau (60 px gras depuis la DA v4) : phrases courtes.
 
 ## Planches de la table (`night.stations`, dans l'ordre)
 
@@ -112,8 +124,10 @@ chiffre et la légende, la question, le titre ou le face-à-face, ils s'afficher
 - `gag_waiting` (salle d'attente) : `door` (texte de la porte), `chairs` (6), `occupied` (2), `cam_at`.
 
 **3. `steps`** (parcours en 2 à 4 étapes) : `title`, `cam_at`, `mark_at`, `steps`: [`{icon, label, at, note?,
-note_at?, alert?, chips?}`]. `note` complète `label` sans le répéter (jamais « cher » puis « chère »), 28 caractères au
-plus. `alert` s'affiche dans l'écran pour l'icône `phone`, sinon en étiquette sous la note.
+note_at?, alert?, chips?}`]. `label` : l'intitulé seul, sans numéro (34 caractères au plus, deux lignes ; le moteur
+numérote 01, 02… et retire un « 01 · » écrit par habitude). `note` complète `label` sans le répéter (jamais « cher »
+puis « chère »), 28 caractères au plus, en italique d'accent. `alert` s'affiche dans l'écran pour l'icône `phone`,
+sinon en étiquette sous la note. Quand une étape arrive, la précédente s'estompe : une étape = une idée dite.
 
 ## Planches de la feuille (`paper.stations`, dans l'ordre, une par écran)
 
