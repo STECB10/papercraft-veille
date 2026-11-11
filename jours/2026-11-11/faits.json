@@ -1,0 +1,122 @@
+[
+ {
+  "id": "f1",
+  "valeur": 14665,
+  "citation": "14 665 adults"
+ },
+ {
+  "id": "f2",
+  "valeur": 40,
+  "citation": "40 to 85 years of age"
+ },
+ {
+  "id": "f3",
+  "valeur": 85,
+  "citation": "40 to 85 years of age"
+ },
+ {
+  "id": "f4",
+  "valeur": 7337,
+  "citation": "7337 intervention"
+ },
+ {
+  "id": "f5",
+  "valeur": 7328,
+  "citation": "7328 control"
+ },
+ {
+  "id": "f6",
+  "valeur": 84,
+  "citation": "84 (1.1%)"
+ },
+ {
+  "id": "f7",
+  "valeur": 1.1,
+  "citation": "84 (1.1%)"
+ },
+ {
+  "id": "f8",
+  "valeur": 48,
+  "citation": "48 (57.1%) underwent monitoring"
+ },
+ {
+  "id": "f9",
+  "valeur": 7,
+  "citation": "Holter monitoring for ≤7 days"
+ },
+ {
+  "id": "f10",
+  "valeur": 90,
+  "citation": "within 90 days"
+ },
+ {
+  "id": "f11",
+  "valeur": 54,
+  "citation": "54 intervention participants (0.74%)"
+ },
+ {
+  "id": "f12",
+  "valeur": 0.74,
+  "citation": "54 intervention participants (0.74%)"
+ },
+ {
+  "id": "f13",
+  "valeur": 35,
+  "citation": "35 control participants (0.48%"
+ },
+ {
+  "id": "f14",
+  "valeur": 0.48,
+  "citation": "35 control participants (0.48%"
+ },
+ {
+  "id": "f15",
+  "valeur": 1.54,
+  "citation": "odds ratio, 1.54 [95% CI, 1.01-2.37]"
+ },
+ {
+  "id": "f16",
+  "valeur": 1.01,
+  "citation": "odds ratio, 1.54 [95% CI, 1.01-2.37]"
+ },
+ {
+  "id": "f17",
+  "valeur": 2.37,
+  "citation": "odds ratio, 1.54 [95% CI, 1.01-2.37]"
+ },
+ {
+  "id": "f18",
+  "valeur": 0.046,
+  "citation": "P =0.046"
+ },
+ {
+  "id": "f19",
+  "valeur": 0.057,
+  "citation": "changed the primary analysis P value to 0.057"
+ },
+ {
+  "id": "f20",
+  "valeur": 1,
+  "citation": "reclassification of 1 intervention event"
+ },
+ {
+  "id": "f21",
+  "valeur": 2026,
+  "citation": "Circulation · 2026-11-07"
+ },
+ {
+  "id": "f22",
+  "valeur": 36,
+  "calcul": "f6 - f8"
+ },
+ {
+  "id": "f23",
+  "valeur": 0.26,
+  "calcul": "f12 - f14"
+ },
+ {
+  "id": "f24",
+  "valeur": 95,
+  "citation": "[95% CI, 1.01-2.37]"
+ }
+]

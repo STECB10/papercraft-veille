@@ -1,0 +1,9 @@
+Un essai sur l'IA et l'électrocardiogramme : un peu plus de troubles du rythme repérés, mais un résultat fragile.
+
+Des chercheurs ont tiré au sort 14 665 adultes de 40 à 85 ans, sans fibrillation connue : dans un groupe, une IA lit l'électrocardiogramme et propose un Holter aux profils à risque ; l'autre reçoit les soins habituels. En 90 jours, on détecte un trouble du rythme ou un signe précurseur chez 54 participants du groupe IA contre 35 (rapport de cotes 1,54 ; intervalle de confiance à 95 % : 1,01 à 2,37). Reclasser un seul cas suffit à faire passer P de 0,046 à 0,057.
+
+Et dans votre service, proposeriez-vous un Holter sur la seule base d'une alerte d'IA, sans autre signe ?
+
+Source : Lee et al., Circulation, novembre 2026. https://doi.org/10.1161/circulationaha.126.083540
+
+#IA #FibrillationAtriale #Cardiologie #Veille

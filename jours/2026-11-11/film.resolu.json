@@ -1,0 +1,430 @@
+{
+ "id": "2026-11-11",
+ "sentences": [
+  {
+   "text": "Une IA peut-elle repérer une fibrillation avant qu'elle n'apparaisse ?",
+   "partie": "accroche",
+   "box": "IA"
+  },
+  {
+   "text": "La fibrillation atriale est un trouble du rythme : les oreillettes battent de façon irrégulière.",
+   "partie": "contexte",
+   "box": "irrégulière."
+  },
+  {
+   "text": "Pour la repérer, on enregistre le rythme avec un Holter, porté jusqu'à sept jours.",
+   "partie": "contexte",
+   "display": "Pour la repérer, on enregistre le rythme avec un Holter, porté jusqu'à 7 jours.",
+   "box": "Holter,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Le problème, c'est qu'un électrocardiogramme normal ne montre pas toujours la fragilité de l'oreillette.",
+   "partie": "probleme",
+   "box": "fragilité",
+   "source": "may identify atrial electrical vulnerability during sinus rhythm"
+  },
+  {
+   "text": "Et pour cause : ces adultes n'ont jamais eu de fibrillation, donc qui surveiller ?",
+   "partie": "probleme",
+   "box": "jamais",
+   "peak": "qui surveiller ?",
+   "source": "adults 40 to 85 years of age without previous AF/AFl"
+  },
+  {
+   "text": "Des chercheurs ont confié ces électrocardiogrammes à une IA, qui cherche un risque.",
+   "partie": "ia",
+   "box": "IA,",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Surveiller les patients repérés par l'IA permet-il de trouver plus de fibrillations ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, ils ont tiré au sort quatorze mille six cent soixante-cinq adultes de quarante à quatre-vingt-cinq ans, sans fibrillation connue.",
+   "partie": "etude",
+   "display": "Pour le savoir, ils ont tiré au sort 14 665 adultes de 40 à 85 ans, sans fibrillation connue.",
+   "box": "tiré"
+  },
+  {
+   "text": "Deux groupes : sept mille trois cent trente-sept avec l'IA, sept mille trois cent vingt-huit en soins habituels.",
+   "partie": "methode",
+   "display": "Deux groupes : 7 337 avec l'IA, 7 328 en soins habituels.",
+   "box": "Deux"
+  },
+  {
+   "text": "Dans le premier, l'électrocardiogramme va à l'IA ; si le profil est à risque, un Holter est proposé.",
+   "partie": "methode",
+   "box": "Holter"
+  },
+  {
+   "text": "À armes égales, chaque patient surveillé a un témoin de même âge et même sexe.",
+   "partie": "methode",
+   "box": "témoin",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Au final, l'IA classe quatre-vingt-quatre participants à risque, et quarante-huit portent un Holter.",
+   "partie": "resultat",
+   "display": "Au final, l'IA classe 84 participants à risque, et 48 portent un Holter.",
+   "box": "84"
+  },
+  {
+   "text": "Résultat : en quatre-vingt-dix jours, un trouble du rythme ou un signe précurseur chez trente-cinq personnes en soins habituels, contre cinquante-quatre avec l'IA.",
+   "partie": "resultat",
+   "display": "Résultat : en 90 jours, un trouble du rythme ou un signe précurseur chez 35 personnes en soins habituels, contre 54 avec l'IA.",
+   "box": "54",
+   "peak": "contre"
+  },
+  {
+   "text": "Autrement dit, le rapport de cotes vaut un virgule cinquante-quatre, et son intervalle, de un virgule zéro un à deux virgule trente-sept, frôle un.",
+   "partie": "resultat",
+   "display": "Autrement dit, le rapport de cotes vaut 1,54, et son intervalle, de 1,01 à 2,37, frôle 1.",
+   "box": "1,54,",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Mais il est fragile : reclassez un seul cas, et P passe de zéro virgule zéro quarante-six à zéro virgule zéro cinquante-sept.",
+   "partie": "concret",
+   "display": "Mais il est fragile : reclassez un seul cas, et P passe de 0,046 à 0,057.",
+   "box": "fragile",
+   "peak": "un seul cas",
+   "source": "Hypothetical reclassification of 1 intervention event to a nonevent changed the primary analysis P value to 0.057"
+  },
+  {
+   "text": "En revanche, les cardiologues ignoraient le résultat de l'IA.",
+   "partie": "concret",
+   "box": "ignoraient",
+   "source": "Reporting cardiologists were blinded to AI results and randomized assignment.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : un seul centre, un essai ouvert, aucune preuve que les patients vont mieux.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : l'IA pourrait aider à choisir qui surveiller, mais il faut des essais plus grands.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 31.17,
+  "stations": [
+   {
+    "type": "hook_image",
+    "cam_at": 2.8,
+    "header": "Essai tiré au sort · centre unique · 2026",
+    "image": "ecg",
+    "title": "Un électrocardiogramme normal, lu par une IA",
+    "title_at": 3.16,
+    "scan_at": 3.9,
+    "lock_at": 4.46,
+    "footnote": "Fibrillation atriale et IA",
+    "y": 0
+   },
+   {
+    "type": "steps",
+    "cam_at": 6.73,
+    "mark_at": 14.44,
+    "title": "Repérer la fibrillation",
+    "steps": [
+     {
+      "icon": "heart",
+      "label": "01 · Un rythme irrégulier",
+      "note": "dans les oreillettes",
+      "at": 8.34,
+      "note_at": 11.0,
+      "_y": 1570
+     },
+     {
+      "icon": "ecg",
+      "label": "02 · Un Holter",
+      "note": "porté jusqu'à 7 jours",
+      "at": 14.44,
+      "note_at": 15.82,
+      "_y": 1900
+     }
+    ],
+    "y": 1400
+   },
+   {
+    "type": "steps",
+    "cam_at": 16.92,
+    "mark_at": 20.58,
+    "title": "Le problème aujourd'hui",
+    "steps": [
+     {
+      "icon": "ecg",
+      "label": "01 · Un ECG en rythme normal",
+      "note": "fragilité peu visible",
+      "at": 18.12,
+      "note_at": 20.58,
+      "_y": 2920
+     },
+     {
+      "icon": "users",
+      "label": "02 · Aucune fibrillation connue",
+      "note": "qui surveiller ?",
+      "at": 23.92,
+      "note_at": 25.77,
+      "_y": 3250
+     },
+     {
+      "icon": "chip",
+      "label": "03 · Une IA lit l'ECG",
+      "note": "elle cherche un risque",
+      "at": 29.6,
+      "note_at": 30.62,
+      "_y": 3580
+     }
+    ],
+    "y": 2750
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Surveiller les patients repérés par l'IA permet-il de trouver plus de fibrillations ?",
+  "italic": "plus",
+  "fold_at": 37.51,
+  "start": 31.17,
+  "end": 38.559999999999995
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": 37.1,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Essai tiré au sort, ouvert",
+      "at": 38.58
+     },
+     {
+      "label": "Adultes",
+      "value": "14 665",
+      "at": 39.32
+     },
+     {
+      "label": "Âge",
+      "value": "40 à 85 ans",
+      "at": 41.48
+     },
+     {
+      "label": "Départ",
+      "value": "Aucune fibrillation connue",
+      "at": 43.09,
+      "accent": true
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "population_split",
+    "cam_at": 44.3,
+    "total": 14665,
+    "total_label": "adultes",
+    "dot_value": 10,
+    "count_at": 44.84,
+    "count_end": 45.1,
+    "split_at": 47.06,
+    "groups": [
+     {
+      "label": "Soins habituels",
+      "n": 7328
+     },
+     {
+      "label": "Avec l'IA",
+      "n": 7337,
+      "accent_at": 47.06
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 50.09,
+    "input_icon": "ecg",
+    "input_label": "Électrocardiogramme en rythme normal",
+    "ai_label": "Repère un profil à risque",
+    "output_label": "Holter proposé",
+    "modality": "signal",
+    "at": 51.23,
+    "core_at": 52.68,
+    "out_at": 54.74,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "key_points",
+    "cam_at": 55.78,
+    "title": "Des témoins comparables",
+    "points": [
+     {
+      "text": "Un témoin pour chaque patient surveillé",
+      "at": 57.22
+     },
+     {
+      "text": "Même âge, même sexe",
+      "at": 59.3
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "flow_chart",
+    "cam_at": 60.76,
+    "title": "Du groupe IA au Holter",
+    "stages": [
+     {
+      "label": "Groupe IA",
+      "n": "7 337",
+      "at": 61.18
+     },
+     {
+      "label": "Classés à risque par l'IA",
+      "n": "84",
+      "at": 62.58
+     },
+     {
+      "label": "Avec un Holter",
+      "n": "48",
+      "at": 64.68
+     }
+    ],
+    "excluded": [
+     {
+      "after": 1,
+      "label": "Sans Holter",
+      "n": "36",
+      "at": 65.7
+     }
+    ],
+    "y": 0,
+    "_fig": 2
+   },
+   {
+    "type": "result_dots",
+    "cam_at": 66.22,
+    "title": "Trouble du rythme ou signe précurseur",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Soins habituels",
+      "n": 7328,
+      "k": 35,
+      "value": "0,48",
+      "num": 0.48,
+      "at": 68.16
+     },
+     {
+      "label": "Avec l'IA",
+      "n": 7337,
+      "k": 54,
+      "value": "0,74",
+      "num": 0.74,
+      "at": 73.44,
+      "accent": true
+     }
+    ],
+    "diff": "+0,26 point",
+    "diff_at": 73.02,
+    "y": 0,
+    "_fig": 3
+   },
+   {
+    "type": "ratio",
+    "cam_at": 74.87,
+    "title": "Détection à 90 jours",
+    "value": "1,54",
+    "num": 1.54,
+    "low": 1.01,
+    "high": 2.37,
+    "label": "Rapport de cotes, groupe IA face aux soins habituels",
+    "left": "Moins de détections",
+    "right": "Plus de détections",
+    "at": 76.5,
+    "ci_at": 78.68,
+    "null_at": 82.01,
+    "y": 0
+   },
+   {
+    "type": "findings",
+    "cam_at": 83.21,
+    "title": "Ce qu'il faut savoir",
+    "items": [
+     {
+      "icon": "chart",
+      "label": "Un résultat fragile",
+      "detail": "Un seul cas reclassé : P de 0,046 à 0,057",
+      "at": 83.96,
+      "detail_at": 85.01,
+      "accent": true
+     },
+     {
+      "icon": "stethoscope",
+      "label": "Lecture en aveugle",
+      "detail": "Les cardiologues ignoraient le résultat de l'IA",
+      "at": 91.58,
+      "detail_at": 92.22
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 94.17,
+    "text": "Attention : un seul centre, un essai ouvert, aucune preuve que les patients vont mieux.",
+    "italic": "ouvert",
+    "sentence": 16,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 99.05,
+    "text": "À retenir : l'IA pourrait aider à choisir qui surveiller, mais il faut des essais plus grands.",
+    "italic": "surveiller",
+    "sentence": 17,
+    "y": 0
+   }
+  ],
+  "start": 37.46,
+  "end": 105.25
+ },
+ "end": {
+  "fold_at": 104.2,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 107.08,
+  "button": "Suivre",
+  "button_at": 107.68,
+  "click_at": 108.68,
+  "source": "Lee et al. · Circulation · novembre 2026",
+  "doi": "doi:10.1161/circulationaha.126.083540",
+  "source_at": 105.57,
+  "start": 104.15,
+  "end": 111.4
+ },
+ "duration": 111.4,
+ "lead": 2.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}
