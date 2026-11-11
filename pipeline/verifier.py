@@ -166,6 +166,15 @@ def temps_simules(film):
     f2 = copy.deepcopy(film)
     f2["lead"] = lead
     build.resolve(f2, build.Clock(f2, mots))
+    # comme à l'écran : le moteur retarde la caméra d'une planche dont le premier élément tarde (DA v4, « la caméra coupe
+    # sur l'action »), et la première planche de la feuille est révélée par le pli
+    for zone in ("night", "paper"):
+        for st in f2.get(zone, {}).get("stations", []):
+            st["_cam_ecrit"] = st.get("cam_at")
+    build.couper_sur_action(f2)
+    pst = f2.get("paper", {}).get("stations") or []
+    if pst and isinstance(f2.get("pivot", {}).get("fold_at"), (int, float)):
+        pst[0]["cam_at"] = round(min(float(pst[0]["cam_at"]), f2["pivot"]["fold_at"] + 0.45), 3)
     return f2, mots
 
 
@@ -213,9 +222,15 @@ def controle_planches(film):
             nom = f"{zone} {j} ({t})"
             # l'accroche est déjà sur la couverture, un moment muet est un clin d'œil : plus courts permis
             mini = 2.0 if t.startswith("gag_") else 2.5 if t == "typo" or t.startswith("hook_") else 3.5
-            if end - cam < mini:
-                err.append(f"{nom} ne reste que {end - cam:.1f} s à l'écran : trop court pour la lire ({mini} s au moins ; laisser la planche "
+            # la durée écrite (d'un cam_at au suivant), puis la durée réelle une fois la caméra retardée par le moteur
+            ecrit = float(sr.get("_cam_ecrit", cam))
+            fin_ecrite = float(sts_r[j + 1].get("_cam_ecrit", end)) if j + 1 < len(sts_r) else float(fin)
+            if fin_ecrite - ecrit < mini:
+                err.append(f"{nom} ne reste que {fin_ecrite - ecrit:.1f} s à l'écran : trop court pour la lire ({mini} s au moins ; laisser la planche "
                            "sur deux phrases ou la regrouper avec la suivante)")
+            elif end - cam < mini - 0.9:
+                err.append(f"{nom} ne reste que {end - cam:.1f} s à l'écran une fois posée (le moteur fait arriver une planche juste avant son premier "
+                           f"élément) : ancrer son premier élément plus tôt, ou la laisser sur deux phrases ({mini - 0.9:.1f} s au moins)")
             ev = temps(sr, so)
             # A. chaque élément apparaît pendant que la planche est à l'écran
             for tt, cle, org in ev:
@@ -255,9 +270,13 @@ def controle_planches(film):
             evt = sorted(set(round(x, 2) for x in evt))
             if not evt:
                 evt = [cam + 0.5]
-            if evt[0] - cam > 3.5 and t != "typo":
+            # la première planche de la feuille est révélée par le pli : le moteur ne peut pas la retarder. Si elle n'arrive pas
+            # habillée (fiche, titre, axes), son premier élément est dit dans les 2 premières secondes.
+            vide_max = 2.0 if zone == "paper" and j == 0 and t not in build.HABILLEES else 3.5
+            if evt[0] - cam > vide_max and t != "typo":
                 err.append(f"{nom} : la planche reste vide {evt[0] - cam:.1f} s à son arrivée (la voix dit « {dit(phrase_a(cam + 0.1))}… ») : "
-                           "faire apparaître un premier élément sur un mot de cette phrase, ou faire arriver la planche plus tard")
+                           "faire apparaître un premier élément sur un mot de cette phrase"
+                           + (", ou commencer la feuille par « L'étude en bref » (id_card), qui arrive habillée" if vide_max < 3 else ", ou faire arriver la planche plus tard"))
             pts = [cam] + evt + [end]
             for a_, b_ in zip(pts, pts[1:]):
                 if b_ - a_ > 8.0:

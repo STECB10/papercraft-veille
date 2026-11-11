@@ -39,7 +39,7 @@ W, H = 1080, 1350
 FOLD_DUR = 1.0      # durée d'un pli (pivot et fin)
 PLATE = 1500        # écart entre deux planches du papier (plus qu'un écran : jamais deux planches dans le cadre)
 NIGHT_GAP = 520     # air entre deux planches de la feuille posée sur la table
-STEP_DY = 360
+STEP_DY = 440       # l'étape dite se lit dans la moitié basse de la scène, la précédente (estompée) reste au-dessus
 ML = 72             # marges latérales
 CW = W - 2 * ML     # largeur utile
 
@@ -50,7 +50,11 @@ FAINT = "rgba(22,23,28,.16)"
 
 
 def esc(s):
-    return html.escape(str(s), quote=True)
+    """Échappe pour le HTML et pose les espaces insécables du français : jamais un « : », « ; », « ? », « ! », « % » ou « » »
+    renvoyé seul au début d'une ligne (« Échographies demandées / : RR 1,02 », vu le 5 novembre 2026)."""
+    t = html.escape(str(s), quote=True)
+    t = re.sub(r" ([:;?!%»])", "\u00a0\\1", t)
+    return re.sub(r"« ", "«\u00a0", t)
 
 
 def fmt_int(n):
@@ -353,10 +357,11 @@ def svg_layer(x, y, w, h, inner, a=None, t=0.0, extra="", vb=None):
 
 def kicker(y0, text, t, fig=None, right=None):
     lab = (f'<span class="fig">Fig. {fig}</span> · ' if fig else "") + esc(text)
-    out = [f'<div class="kick" style="left:{ML}px;top:{y0+58}px;width:{CW - (len(right) * 21 + 60 if right else 0)}px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" data-a="rise" data-t="{t:.2f}">{lab}</div>',
-           f'<div class="krule" style="left:{ML}px;top:{y0+106}px;width:{CW}px" data-a="wipe" data-t="{t+0.1:.2f}"></div>']
+    # data-tete : l'étiquette et son filet restent en haut du cadre quand moteur.js recentre le contenu de la planche
+    out = [f'<div class="kick" data-tete="1" style="left:{ML}px;top:{y0+58}px;width:{CW - (len(right) * 21 + 60 if right else 0)}px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" data-a="rise" data-t="{t:.2f}">{lab}</div>',
+           f'<div class="krule" data-tete="1" style="left:{ML}px;top:{y0+106}px;width:{CW}px" data-a="wipe" data-t="{t+0.1:.2f}"></div>']
     if right:
-        out.append(f'<div class="kick" style="right:{ML+48}px;top:{y0+58}px;text-align:right" data-a="rise" data-t="{t+0.15:.2f}">{esc(right)}</div>')
+        out.append(f'<div class="kick" data-tete="1" style="right:{ML+48}px;top:{y0+58}px;text-align:right" data-a="rise" data-t="{t+0.15:.2f}">{esc(right)}</div>')
     return out
 
 
@@ -455,6 +460,9 @@ def ncdf(x):
 
 
 # --------------------------------------------------------------------------------------------- sous-titres
+SUB_MAX = 27        # caractères par morceau : à 60 px en gras, un morceau tient sur une ligne dans les marges (DA v4)
+
+
 def display_times(spoken, disp, ws):
     """Heure d'apparition de chaque mot affiché : alignement sur le texte dit (mot pour mot), les chiffres
     affichés (« 36 % ») prennent le temps des mots qu'ils remplacent (« trente-six pour cent »)."""
@@ -495,7 +503,7 @@ def build_subs(film, skip=()):
         chunks, cur = [], []
         for k, tok in enumerate(disp):
             trial = " ".join(t for t, _ in cur + [(tok, 0)])
-            if cur and len(trial) > 30:
+            if cur and len(trial) > SUB_MAX and norm(tok):      # une ponctuation isolée (« ? », « : ») reste avec son mot
                 chunks.append(cur)
                 cur = []
             cur.append((tok, k))
@@ -526,8 +534,11 @@ def build_subs(film, skip=()):
                     spans.append(f'<span class="w pk{" pk0" if first else ""}" data-t="{t:.2f}">{esc(tok)}{stroke}</span>')
                 else:
                     spans.append(f'<span class="w" data-t="{t:.2f}">{esc(tok)}</span>')
-            out.append(f'<div class="chunk light" data-in="{t_in:.2f}" data-out="{t_out:.2f}">{" ".join(spans)}</div>')
-    return "\n".join(out)
+            out.append([t_in, t_out, " ".join(spans)])
+    # un morceau ne déborde jamais sur le suivant, même d'une phrase à l'autre (la voix enchaîne sans pause)
+    for a, b in zip(out, out[1:]):
+        a[1] = min(a[1], b[0] - 0.02)
+    return "\n".join(f'<div class="chunk light" data-in="{t_in:.2f}" data-out="{t_out:.2f}">{sp}</div>' for t_in, t_out, sp in out)
 
 
 def typo_words(text, ws, italic, trait=None, mode="monte", px=80):
@@ -575,7 +586,7 @@ def typo_words(text, ws, italic, trait=None, mode="monte", px=80):
 
 # --------------------------------------------------------------------------------------------- la table : feuille inclinée (le constat)
 NIGHT_H = {**{k: accroches.HOOK_H for k in HOOKS}, "gag_waiting": 440, "gag_clock": 470, "gag_calendar": 470, "gag_pile": 470}
-NIGHT_DY = {"gag_waiting": 230, "gag_clock": 200, "gag_calendar": 200, "gag_pile": 200, "steps": 40}
+NIGHT_DY = {"gag_waiting": 230, "gag_clock": 200, "gag_calendar": 200, "gag_pile": 200, "steps": 190}
 EDITIONS = json.loads((HERE / "editions.json").read_text(encoding="utf-8"))["rotation"]
 ENTREES = ("up", "right", "left", "drop", "turn", "flip")   # entrées de planche (moteur.js, bloc « feuilles »)
 EDITION = EDITIONS[0]
@@ -642,10 +653,15 @@ def night_station(st, film=None):
         h.append(f'<div class="clock big" style="left:{(780-300)/2:.0f}px;top:{y0+40}px" data-a="pop" data-t="{ta+0.2:.2f}"><div class="hand" data-fx="spin" data-t="{ta+0.4:.2f}" data-d="2.4"></div><div class="hand2" data-fx="spin2" data-t="{ta+0.4:.2f}" data-d="2.4"></div><div class="pin"></div></div>')
         h.append(f'<div class="note" style="left:0;width:780px;text-align:center;top:{y0+380}px" data-a="rise" data-t="{ta+0.9:.2f}">{esc(st["label"])}</div>')
     elif t == "steps":
+        # DA v4 : chaque étape se lit sur un téléphone. Le dessin est posé sur une tuile de papier clair, l'intitulé est en
+        # Schibsted (plus de capitales mono à 26 px), la note en italique d'accent ; quand l'étape suivante arrive, la
+        # précédente s'estompe (data-dim) : l'œil reste sur ce que dit la voix.
         ta = st["cam_at"]
-        h.append(f'<div class="title" style="left:70px;top:{y0+10}px" data-a="rise" data-t="{ta+0.15:.2f}">{esc(st["title"])}</div>')
+        h.append(f'<div class="title" style="left:70px;top:{y0+10}px;width:640px" data-fit="1" data-fmin="40" data-a="rise" data-t="{ta+0.15:.2f}">{esc(st["title"])}</div>')
         h.append(f'<div class="rule" style="left:72px;top:{y0+92}px;width:620px" data-a="wipe" data-t="{st.get("mark_at", ta+0.9):.2f}"></div>')
-        for i, s in enumerate(st["steps"]):
+        steps = st["steps"]
+        tx, tw = 252, 458
+        for i, s in enumerate(steps):
             sy = y0 + 170 + i * 330
             s["_y"] = sy
             at = s["at"]
@@ -653,27 +669,40 @@ def night_station(st, film=None):
             na = s.get("note_at", at + 0.5)
             # l'alerte s'affiche DANS l'écran seulement pour un téléphone ; sinon, à côté de la note (jamais sur l'icône)
             inside = tall and s.get("alert")
-            buzz = f'data-fx="buzz" data-fxt="{na:.2f}"' if inside else ""
-            alert = f'<div class="alert">{esc(s["alert"])}</div>' if inside else ""
-            h.append(f'<div class="ico" style="left:{100 if tall else 84}px;top:{sy}px;width:{100 if tall else 130}px;height:{186 if tall else 110}px;color:var(--ink)" data-a="draw" data-t="{at:.2f}" {buzz}>{icon(s["icon"])}{alert}</div>')
-            if inside:
-                h.append(f'<svg class="buzzl" style="left:40px;top:{sy+20}px;width:220px;height:150px" viewBox="0 0 220 150" fill="none" stroke="#5D68FF" stroke-width="5" stroke-linecap="round" data-a="fade" data-t="{na:.2f}"><path d="M30 35c-14 24-14 56 0 80"/><path d="M190 35c14 24 14 56 0 80"/></svg>')
-            h.append(f'<div class="mono" style="left:270px;top:{sy+8}px;width:470px;color:var(--ink-dim);white-space:normal" data-a="rise" data-t="{at+0.1:.2f}">{esc(s["label"])}</div>')
-            # nombre de lignes mesuré (capitales espacées) : jamais la note posée sur la 2e ligne de l'étiquette
-            nl = len(mesure.lignes(s["label"], "mono500", 26, 470, 0.07))
-            ny = sy + 13 + 39 * nl
+            m = re.match(r"^\s*(\d{1,2})\s*·\s*(.+)$", str(s["label"]))      # « 01 · Intitulé » écrit par habitude
+            idx, lab = (f"{int(m.group(1)):02d}", m.group(2).strip()) if m else (f"{i + 1:02d}", str(s["label"]))
+            g = []
+            if tall:
+                buzz = f'data-fx="buzz" data-fxt="{na:.2f}"' if inside else ""
+                alert = f'<div class="alert">{esc(s["alert"])}</div>' if inside else ""
+                g.append(f'<div class="ico" style="left:100px;top:0;width:100px;height:186px;color:var(--ink)" data-a="draw" data-t="{at:.2f}" {buzz}>{icon(s["icon"])}{alert}</div>')
+                if inside:
+                    g.append(f'<svg class="buzzl" style="left:40px;top:20px;width:220px;height:150px" viewBox="0 0 220 150" fill="none" stroke="#5D68FF" stroke-width="5" stroke-linecap="round" data-a="fade" data-t="{na:.2f}"><path d="M30 35c-14 24-14 56 0 80"/><path d="M190 35c14 24 14 56 0 80"/></svg>')
+            else:
+                g.append(f'<div class="stile" style="left:66px;top:0;width:150px;height:150px" data-a="pop" data-t="{at-0.08:.2f}"></div>')
+                g.append(f'<div class="ico" style="left:94px;top:28px;width:94px;height:94px;color:var(--ink)" data-a="draw" data-t="{at:.2f}" data-d="0.7">{icon(s["icon"], sw=3.4)}</div>')
+            g.append(f'<div class="sidx" style="left:{tx}px;top:0" data-a="rise" data-t="{at+0.04:.2f}">{idx}</div>')
+            lpx, lls = mesure.ajuster(lab, "schib600", tw, 42, 30, max_lignes=2, interligne=1.16)
+            lh = len(lls) * lpx * 1.16
+            g.append(f'<div class="slab" style="left:{tx}px;top:38px;width:{tw}px;font-size:{lpx}px" data-fit="1" data-fh="{lh + 4:.0f}" data-fmin="26" '
+                     f'data-a="rise" data-t="{at+0.1:.2f}">{esc(lab)}</div>')
+            cy = 38 + lh + 12
             if s.get("note"):
-                h.append(f'<div class="note" style="left:266px;top:{ny}px;width:478px" data-fit="1" data-fmin="30" data-a="rise" data-t="{na:.2f}">{esc(s["note"])}</div>')
-            cy = ny + 76
+                npx, _ = mesure.ajuster(s["note"], "bodoni400i", tw, 50, 32, max_lignes=1)
+                g.append(f'<div class="snote" style="left:{tx}px;top:{cy:.0f}px;width:{tw}px;font-size:{npx}px" data-fit="1" data-fmin="28" '
+                         f'data-a="rise" data-t="{na:.2f}">{esc(s["note"])}</div>')
+                cy += npx * 1.12 + 14
             if s.get("alert") and not inside:
-                h.append(f'<div class="chip acc" style="left:270px;top:{cy}px" data-a="pop" data-t="{na+0.25:.2f}">{esc(s["alert"])}</div>')
+                g.append(f'<div class="chip acc" style="left:{tx}px;top:{cy:.0f}px" data-a="pop" data-t="{na+0.25:.2f}">{esc(s["alert"])}</div>')
                 cy += 66
             for c_i, c in enumerate(s.get("chips", [])):
                 acc = " acc" if c_i == len(s["chips"]) - 1 else ""
-                h.append(f'<div class="chip{acc}" style="left:{270 + c_i*96}px;top:{cy}px" data-a="pop" data-t="{na+0.3+c_i*0.2:.2f}">{esc(c)}</div>')
-            if i < len(st["steps"]) - 1:
-                top = sy + (200 if tall else 128)
-                h.append(f'<div class="dash" style="left:147px;top:{top}px;height:{sy+330-top-12}px" data-a="grow" data-t="{st["steps"][i+1]["at"]-0.4:.2f}"></div>')
+                g.append(f'<div class="chip{acc}" style="left:{tx + c_i*96}px;top:{cy:.0f}px" data-a="pop" data-t="{na+0.3+c_i*0.2:.2f}">{esc(c)}</div>')
+            dim = f' data-dim="{steps[i+1]["at"] - 0.3:.2f}"' if i < len(steps) - 1 else ""
+            h.append(f'<div class="stepg" style="left:0;top:{sy}px;width:780px;height:0"{dim}>' + "".join(g) + '</div>')
+            if i < len(steps) - 1:
+                top = sy + (200 if tall else 164)
+                h.append(f'<div class="dash" style="left:{149 if tall else 140}px;top:{top}px;height:{sy+330-top-14}px" data-a="grow" data-t="{steps[i+1]["at"]-0.4:.2f}"></div>')
     return "\n".join(h)
 
 
@@ -769,11 +798,14 @@ def paper_station(st, film, fig=None):
                   "chip" if any(k in lab for k in ("ia", "outil", "modèle", "algorithme")) else
                   "magnifier" if any(k in lab for k in ("étude", "source", "données")) else "doc")
             col_ic = "var(--paper-hi)" if acc else "var(--ink)"
-            h.append(f'<div class="tile{acc}" style="left:{x:.0f}px;top:{y:.0f}px;width:{w_:.0f}px;height:{th:.0f}px" data-a="hingeT" data-t="{r["at"] - 0.15:.2f}"></div>')
+            # DA v4 : la fiche arrive habillée. Les tuiles, leur pictogramme et leur intitulé sont posés dès l'arrivée de la
+            # planche (une fiche à remplir) ; seule la valeur attend le mot qui la dit. Plus de page blanche après le pli.
+            pose = min(r["at"] - 0.15, t0 + 0.25 + i * 0.09)
+            h.append(f'<div class="tile{acc}" style="left:{x:.0f}px;top:{y:.0f}px;width:{w_:.0f}px;height:{th:.0f}px" data-a="hingeT" data-t="{pose:.2f}"></div>')
             isz = min(70, th * 0.3)
-            h.append(iconbox(ic, x + 28, y + 26, isz, isz, col_ic, r["at"] - 0.05, "draw", 'data-d="0.6"'))
+            h.append(iconbox(ic, x + 28, y + 26, isz, isz, col_ic, pose + 0.12, "draw", 'data-d="0.6"'))
             h.append(f'<div class="kick tilek{acc}" style="left:{x + 40 + isz:.0f}px;top:{y + 26 + isz / 2 - 18:.0f}px;width:{w_ - isz - 70:.0f}px;white-space:nowrap" '
-                     f'data-fit="1" data-fmin="20" data-a="rise" data-t="{r["at"]:.2f}">{esc(r["label"])}</div>')
+                     f'data-fit="1" data-fmin="20" data-a="rise" data-t="{pose + 0.18:.2f}">{esc(r["label"])}</div>')
             vpx, vls = mesure.ajuster(str(r["value"]), "bodoni400", w_ - 56, 54, 34, max_lignes=2, interligne=1.08, boite_h=th - isz - 56)
             h.append(f'<div class="tilev{acc}" style="left:{x + 28:.0f}px;top:{y + isz + 46:.0f}px;width:{w_ - 56:.0f}px;font-size:{vpx}px" data-fit="1" '
                      f'data-fh="{th - isz - 56:.0f}" data-fmin="28" data-a="print" data-t="{r["at"] + 0.1:.2f}">{esc(r["value"])}</div>')
@@ -794,7 +826,8 @@ def paper_station(st, film, fig=None):
             ry = y0 + cy + 110 + i * rh
             acc = " acc" if r.get("accent") else ""
             h.append(f'<div class="hair blue" style="left:{ML+30}px;top:{ry+rh-10:.0f}px;width:{CW-60}px" data-a="wipe" data-t="{t0+0.6+i*0.06:.2f}"></div>')
-            h.append(f'<div class="kick" style="left:{ML+48}px;top:{ry+rh/2-30:.0f}px;width:225px" data-a="rise" data-t="{r["at"]-0.05:.2f}">{esc(r["label"])}</div>')
+            # les intitulés sont imprimés sur la fiche dès qu'elle est posée ; la valeur s'écrit au mot qui la dit
+            h.append(f'<div class="kick" style="left:{ML+48}px;top:{ry+rh/2-30:.0f}px;width:225px" data-a="rise" data-t="{min(r["at"]-0.05, t0+0.7+i*0.08):.2f}">{esc(r["label"])}</div>')
             h.append(f'<div class="idv{acc}" style="left:{ML+320}px;top:{ry+rh/2-fs*0.62:.0f}px;width:{CW-350}px;font-size:{fs}px" data-a="print" data-t="{r["at"]:.2f}">{esc(r["value"])}</div>')
 
     elif t == "ai_scan":
@@ -805,9 +838,17 @@ def paper_station(st, film, fig=None):
         mod = st.get("modality") or MODALITY.get(st.get("input_icon", "doc"), "donnees")
         h += kicker(y0, st.get("title", "Ce que fait l'IA"), t0 + 0.2, fig)
         # 1. ce qui entre
-        h.append(f'<div class="tint" style="left:{ML-24}px;top:{y0+146}px;width:{CW+48}px;height:280px" data-a="fade" data-t="{at-0.25:.2f}"></div>')
+        # DA v4 : le schéma arrive tracé au crayon (ce qui entre → l'IA → ce qui sort : on voit tout de suite les trois temps),
+        # puis chaque bloc s'encre au mot qui le nomme. Plus de planche nue en attendant « questions ».
+        pose = t0 + 0.3
+        h.append(f'<div class="tint" style="left:{ML-24}px;top:{y0+146}px;width:{CW+48}px;height:280px" data-a="fade" data-t="{min(at-0.25, pose):.2f}"></div>')
         h.append(iconbox(st.get("input_icon", "doc"), ML + 8, y0 + 168, 160, 160, "var(--ink)", at))
-        h.append(f'<div class="kick" style="left:290px;top:{y0+168}px" data-a="rise" data-t="{at+0.1:.2f}">Ce qui entre</div>')
+        h.append(f'<div class="kick" style="left:290px;top:{y0+168}px" data-a="rise" data-t="{min(at+0.1, pose+0.1):.2f}">Ce qui entre</div>')
+        if ca - pose > 0.9:
+            h.append(f'<div class="crayon" style="left:{ML}px;top:{y0+534}px;width:{CW}px;height:250px;border-radius:24px" data-a="fade" data-t="{pose+0.2:.2f}" data-o="{ca-0.15:.2f}"></div>')
+            h.append(f'<div class="kick" style="left:{ML+270}px;top:{y0+640}px" data-a="fade" data-t="{pose+0.3:.2f}" data-o="{ca-0.15:.2f}">{esc(st.get("ai_name", "L\'IA"))}</div>')
+        if oa - pose > 0.9:
+            h.append(f'<div class="crayon" style="left:{ML+18}px;top:{y0+900}px;width:104px;height:104px;border-radius:50%" data-a="fade" data-t="{pose+0.35:.2f}" data-o="{oa:.2f}"></div>')
         h.append(f'<div class="ailab" style="left:290px;top:{y0+206}px;width:{W-ML-290}px" data-a="print" data-t="{at+0.2:.2f}">{esc(st["input_label"])}</div>')
         gy = y0 + 330
         if mod == "image":
@@ -829,7 +870,7 @@ def paper_station(st, film, fig=None):
                     h.append(f'<i class="skl cell" style="left:{290 + c*172}px;top:{ry}px;width:{[120, 90, 140, 70][(c+k) % 4]}px" data-a="growx" data-t="{at+0.2+k*0.1+c*0.03:.2f}"></i>')
             h.append(f'<div class="rowhi" style="left:280px;top:{gy+24}px;width:{W-ML-280}px" data-a="wipe" data-t="{sa:.2f}"></div>')
         # 2. l'IA
-        h.append(svg_layer(ML + 70, y0 + 424, 36, 100, f'<path d="M18 4V92M8 80L18 92L28 80" stroke="{INK}" stroke-width="3"/>', "draw", ca - 0.45, 'data-d="0.4"'))
+        h.append(svg_layer(ML + 70, y0 + 424, 36, 100, f'<path d="M18 4V92M8 80L18 92L28 80" stroke="{INK}" stroke-width="3"/>', "draw", min(ca - 0.45, pose + 0.25), 'data-d="0.4"'))
         h.append(f'<div class="aicore" style="left:{ML}px;top:{y0+534}px;width:{CW}px;height:250px" data-a="pop" data-t="{ca-0.1:.2f}">'
                  f'<div class="band v" data-fx="band" data-t="{ca+0.6:.2f}" data-d="1.0" data-x0="-80" data-x1="{CW}"></div></div>')
         h += network(ML + 40, y0 + 569, 180, ca, ca + 0.7)
@@ -837,9 +878,9 @@ def paper_station(st, film, fig=None):
         h.append(f'<div class="kick lt" style="left:{ML+270}px;top:{y0+584}px" data-a="rise" data-t="{ca+0.1:.2f}">{esc(ai_name)}</div>')
         h.append(f'<div class="ailab lt" style="left:{ML+270}px;top:{y0+624}px;width:{CW-310}px" data-a="print" data-t="{ca+0.25:.2f}">{esc(st["ai_label"])}</div>')
         # 3. ce qui sort
-        h.append(svg_layer(ML + 70, y0 + 792, 36, 96, f'<path d="M18 4V88M8 76L18 88L28 76" stroke="{INK}" stroke-width="3"/>', "draw", oa - 0.4, 'data-d="0.35"'))
+        h.append(svg_layer(ML + 70, y0 + 792, 36, 96, f'<path d="M18 4V88M8 76L18 88L28 76" stroke="{INK}" stroke-width="3"/>', "draw", min(oa - 0.4, pose + 0.4), 'data-d="0.35"'))
         h.append(iconbox("check", ML + 18, y0 + 900, 104, 104, "var(--carbon-deep)", oa + 0.1))
-        h.append(f'<div class="kick acc" style="left:240px;top:{y0+898}px" data-a="rise" data-t="{oa:.2f}">Ce qui sort</div>')
+        h.append(f'<div class="kick acc" style="left:240px;top:{y0+898}px" data-a="rise" data-t="{min(oa, pose+0.5):.2f}">Ce qui sort</div>')
         out = st["output_label"]
         h.append(f'<div class="oout" style="left:240px;top:{y0+934}px;width:{W-ML-240}px" data-a="print" data-t="{oa+0.1:.2f}">{esc(out)}</div>')
         uw = min(W - ML - 240, 26 * len(out) + 20)
@@ -903,32 +944,46 @@ def paper_station(st, film, fig=None):
         for k, (g, nn) in enumerate(((g0, n0), (g1, n - n0))):
             x = 72 if k == 0 else 578
             acc = " acc" if k == 1 else ""
+            # le nom prend la place que lui laisse l'effectif (mesuré), sur deux lignes au plus : jamais « Chatbot Rosie200 »
+            nw = mesure.largeur(fmt_int(g["n"]), "bodoni400", 64) + 8
+            lpx, _ = mesure.ajuster(g["label"], "schib600", 430 - 60 - nw - 22, 38, 24, max_lignes=2, interligne=1.1)
             h.append(f'<div class="gtab{acc}" style="left:{x}px;top:{y0+380}px;width:430px;height:118px" data-a="hingeT" data-t="{sp+0.45+k*0.12:.2f}">'
-                     f'<span class="gl">{esc(g["label"])}</span><span class="gn">{fmt_int(g["n"])}</span></div>')
+                     f'<span class="gl" style="font-size:{lpx}px">{esc(g["label"])}</span><span class="gn">{fmt_int(g["n"])}</span></div>')
         if dv > 1:
-            h.append(f'<div class="kick center" style="left:0;width:{W}px;top:{y0+1020}px" data-a="rise" data-t="{ct+0.9:.2f}">1 point = {dv} patients</div>')
+            quoi = "silhouette" if sil else "point"
+            nom = str(st.get("total_label") or "patients").split()[0].lower()
+            h.append(f'<div class="kick center" style="left:0;width:{W}px;top:{y0+1020}px" data-a="rise" data-t="{ct+0.9:.2f}">1 {quoi} = {dv} {esc(nom)}</div>')
 
     elif t == "two_groups":
+        # DA v4 : textes et dessins agrandis (34 px ne se lisait pas sur téléphone), les cartes prennent la hauteur de leur
+        # contenu (elles faisaient 900 px pour trois lignes en haut) et moteur.js les centre dans le cadre
         cols = st["groups"]
         cwid = (CW - 36) / 2
+        nmax = max(len(g["steps"]) for g in cols)
+        top = 340 if any(g.get("sub") for g in cols) else 300
+        gap = min(300, 700 / max(1, nmax))
+        isz = 92 if nmax <= 3 else 80
+        tw_ = cwid - 60
+        chh = top - 150 + nmax * gap + 10
         for gi, g in enumerate(cols):
             x0 = ML + gi * (cwid + 36)
             acc = " acc" if g.get("accent") else ""
-            h.append(f'<div class="gcard" style="left:{x0:.0f}px;top:{y0+150}px;width:{cwid:.0f}px;height:900px" data-a="pop" data-t="{g["at"]:.2f}"></div>')
-            h.append(f'<div class="gtab{acc}" style="left:{x0:.0f}px;top:{y0+150}px;width:{cwid:.0f}px;height:96px" data-a="hingeT" data-t="{g["at"]+0.1:.2f}"><span class="gl">{esc(g["label"])}</span></div>')
-            top = 300
+            pose = min(g["at"], t0 + 0.3 + gi * 0.12)     # les deux cartes sont posées dès l'arrivée, chacune se remplit à son mot
+            h.append(f'<div class="gcard" style="left:{x0:.0f}px;top:{y0+150}px;width:{cwid:.0f}px;height:{chh:.0f}px" data-a="pop" data-t="{pose:.2f}"></div>')
+            lpx, _ = mesure.ajuster(g["label"], "schib600", cwid - 60, 38, 26, max_lignes=2, interligne=1.1)
+            h.append(f'<div class="gtab{acc}" style="left:{x0:.0f}px;top:{y0+150}px;width:{cwid:.0f}px;height:96px" data-a="hingeT" data-t="{pose+0.1:.2f}"><span class="gl" style="font-size:{lpx}px">{esc(g["label"])}</span></div>')
             if g.get("sub"):
-                h.append(f'<div class="kick" style="left:{x0+30:.0f}px;top:{y0+270}px;width:{cwid-60:.0f}px" data-a="rise" data-t="{g["at"]+0.25:.2f}">{esc(g["sub"])}</div>')
-                top = 340
+                h.append(f'<div class="kick" style="left:{x0+30:.0f}px;top:{y0+270}px;width:{cwid-60:.0f}px" data-a="rise" data-t="{pose+0.25:.2f}">{esc(g["sub"])}</div>')
             ns = len(g["steps"])
-            gap = min(240, (1010 - top) / ns)
             colr = "var(--carbon-deep)" if g.get("accent") else "var(--ink)"
             for k, stp in enumerate(g["steps"]):
                 sy = y0 + top + k * gap
-                h.append(iconbox(stp.get("icon", "doc"), x0 + 30, sy, 80, 80, colr, stp["at"]))
-                h.append(f'<div class="gstep" style="left:{x0+134:.0f}px;top:{sy+4:.0f}px;width:{cwid-160:.0f}px" data-a="print" data-t="{stp["at"]+0.05:.2f}">{esc(stp["text"])}</div>')
+                h.append(iconbox(stp.get("icon", "doc"), x0 + 30, sy, isz, isz, colr, stp["at"]))
+                tpx, tls = mesure.ajuster(stp["text"], "schib500", tw_, 40, 30, max_lignes=3, interligne=1.2, boite_h=gap - isz - 44)
+                h.append(f'<div class="gstep" style="left:{x0+30:.0f}px;top:{sy+isz+14:.0f}px;width:{tw_:.0f}px;font-size:{tpx}px" data-fit="1" data-fh="{len(tls)*tpx*1.2+6:.0f}" data-fmin="26" '
+                         f'data-a="print" data-t="{stp["at"]+0.05:.2f}">{esc(stp["text"])}</div>')
                 if k < ns - 1:
-                    h.append(f'<div class="dash" style="left:{x0+68:.0f}px;top:{sy+96:.0f}px;height:{gap-112:.0f}px" data-a="grow" data-t="{g["steps"][k+1]["at"]-0.35:.2f}"></div>')
+                    h.append(f'<div class="hair" style="left:{x0+30:.0f}px;top:{sy+gap-18:.0f}px;width:{tw_:.0f}px" data-a="wipe" data-t="{g["steps"][k+1]["at"]-0.35:.2f}"></div>')
 
     elif t in ("result_bars", "result_strips"):
         gs = st["groups"]
@@ -1064,13 +1119,16 @@ def paper_station(st, film, fig=None):
             frac = max(0.0, min(1.0, float(g["num"]) / mx))
             acc = g.get("accent", i == 0)
             a = " acc" if acc else ""
-            h.append(f'<div class="mlab{a}" style="left:{ML}px;top:{ry:.0f}px;width:{CW if big else 400}px" data-a="rise" data-t="{g["at"]-0.1:.2f}">{esc(g["label"])}</div>')
+            # DA v4 : chaque mesure est nommée et sa jauge tracée dès l'arrivée de la planche (on voit ce qui va être mesuré) ;
+            # la valeur roule et la jauge se remplit au mot qui la dit
+            pose = min(g["at"] - 0.1, t0 + 0.55 + i * 0.14)
+            h.append(f'<div class="mlab{a}" style="left:{ML}px;top:{ry:.0f}px;width:{CW if big else 400}px" data-a="rise" data-t="{pose:.2f}">{esc(g["label"])}</div>')
             val = str(g["value"])
             h.append(f'<div class="mval{a}" style="left:{ML if big else 490}px;width:{CW if big else W-ML-490}px;top:{ry+(150 if big else -30):.0f}px;{"text-align:left;font-size:220px" if big else ""}" data-a="big" data-t="{g["at"]-0.05:.2f}" data-d="0.5">'
                      f'<span data-fx="count" data-t="{g["at"]:.2f}" data-d="1.0" data-to="{g["num"]}" data-dec="{decs(val)}" data-pre="{"+" if val.startswith("+") else ""}">0</span><span class="unit">{esc(g.get("unit", ""))}</span></div>')
             if big:
                 ry += 290
-            h.append(f'<div class="track" style="left:{ML}px;top:{ry+128:.0f}px;width:{CW}px" data-a="wipe" data-t="{g["at"]-0.2:.2f}"></div>')
+            h.append(f'<div class="track" style="left:{ML}px;top:{ry+128:.0f}px;width:{CW}px" data-a="wipe" data-t="{min(g["at"]-0.2, pose+0.1):.2f}"></div>')
             cip = parse_ci(g.get("note"))
             if cip:
                 lo, hi = max(0, cip["low"] / mx), min(1, cip["high"] / mx)
@@ -1086,13 +1144,23 @@ def paper_station(st, film, fig=None):
         pts = st["points"]
         n = len(pts)
         h += kicker(y0, st.get("title", "Ce qu'il faut retenir"), t0 + 0.25)
-        rh = min(290, 880 / n)
+        # DA v4 : la taille suit le nombre de constats (deux constats remplissent le cadre comme quatre) ; chaque numéro
+        # est une pastille de papier, le texte est ajusté à sa boîte (3 lignes au plus)
+        rh = min(400, 890 / n)
+        npx = 190 if n <= 2 else (150 if n == 3 else 116)
+        tpx_max = 64 if n <= 2 else (54 if n == 3 else 46)
+        tx = ML + npx * 0.62 + 56
         for i, pt in enumerate(pts):
             ry = y0 + 160 + i * rh
-            h.append(f'<div class="kpn" style="left:{ML}px;top:{ry+6:.0f}px" data-a="big" data-t="{pt["at"]-0.05:.2f}" data-d="0.5">{i + 1}</div>')
-            h.append(f'<div class="kpt" style="left:210px;top:{ry+28:.0f}px;width:{W-ML-210}px" data-a="print" data-t="{pt["at"]+0.08:.2f}">{esc(pt["text"])}</div>')
+            tpx, tls = mesure.ajuster(pt["text"], "schib600", W - ML - tx, tpx_max, 34, max_lignes=3, interligne=1.2, boite_h=rh - 70)
+            th = len(tls) * tpx * 1.2
+            if pt["at"] - t0 > 1.2:   # le numéro attend au crayon (on voit combien de constats arrivent), puis s'encre à son mot
+                h.append(f'<div class="kpn attente" style="left:{ML}px;top:{ry + (rh - 30 - npx) / 2:.0f}px;font-size:{npx}px;width:{npx * 0.62 + 20:.0f}px" data-a="fade" data-t="{t0 + 0.5 + i * 0.12:.2f}">{i + 1}</div>')
+            h.append(f'<div class="kpn" style="left:{ML}px;top:{ry + (rh - 30 - npx) / 2:.0f}px;font-size:{npx}px;width:{npx * 0.62 + 20:.0f}px" data-a="big" data-t="{pt["at"]-0.05:.2f}" data-d="0.5">{i + 1}</div>')
+            h.append(f'<div class="kpt" style="left:{tx:.0f}px;top:{ry + (rh - 30 - th) / 2:.0f}px;width:{W-ML-tx:.0f}px;font-size:{tpx}px" data-fit="1" data-fh="{th + 6:.0f}" data-fmin="30" '
+                     f'data-a="print" data-t="{pt["at"]+0.08:.2f}">{esc(pt["text"])}</div>')
             if i < n - 1:
-                h.append(f'<div class="hair" style="left:{ML}px;top:{ry+rh-14:.0f}px;width:{CW}px" data-a="wipe" data-t="{pts[i+1]["at"]-0.3:.2f}"></div>')
+                h.append(f'<div class="hair" style="left:{ML}px;top:{ry+rh-16:.0f}px;width:{CW}px" data-a="wipe" data-t="{min(pts[i+1]["at"]-0.3, t0+0.6+i*0.12):.2f}"></div>')
 
     elif t == "typo":
         ws = film["sentences"][st["sentence"]]["_ws"]
@@ -1117,11 +1185,18 @@ def paper_station(st, film, fig=None):
         h.append(f'<div class="glab" style="left:0;width:{W}px;top:{y0+336}px" data-a="rise" data-t="{at+0.3:.2f}">{esc(st.get("label", "études"))}</div>')
         gy = y0 + 430
         rnd = random.Random(31)
+        # DA v4 : si la voix met du temps à dire le nombre d'études, la planche n'attend plus vide : les emplacements se
+        # tracent au crayon un à un (les publications passées en revue), puis les feuilles retenues tombent dessus
+        attente = at - t0
         for i in range(k):
             x = gx + (i % cols) * cw_ + rnd.uniform(-8, 8)
             y = gy + (i // cols) * (sh + 16) + rnd.uniform(-5, 5)
             rot = rnd.uniform(-6, 6)
             acc = " acc" if i % 7 == 3 else ""
+            if attente > 1.4:
+                tomb = at + 0.15 + (i / max(1, k - 1)) * 1.2
+                h.append(f'<div class="msheet crayon" style="left:{x:.0f}px;top:{y:.0f}px;width:{sw_:.0f}px;height:{sh:.0f}px;transform:rotate({rot:.1f}deg)" '
+                         f'data-a="fade" data-t="{t0 + 0.4 + (i / max(1, k - 1)) * (attente - 1.1):.2f}" data-o="{tomb + 0.2:.2f}"></div>')
             lines = "".join(f'<i style="top:{18 + j*13*(sh/120):.0f}px;width:{[70, 56, 64, 44][j % 4]}%"></i>' for j in range(5))
             h.append(f'<div class="msheet{acc}" style="left:{x:.0f}px;top:{y:.0f}px;width:{sw_:.0f}px;height:{sh:.0f}px" data-a="deal" data-rot="{rot:.1f}" data-t="{at + 0.15 + (i / max(1, k - 1)) * 1.2:.2f}">{lines}</div>')
         by = gy + rows * (sh + 16) + 6
@@ -1441,6 +1516,69 @@ def cadrer(film):
     return fixes
 
 
+CHAPITRES = (("constat", ("accroche", "contexte", "probleme", "ia", "question")), ("etude", ("etude", "methode")),
+             ("resultats", ("resultat", "concret")), ("retenir", ("limite", "retenir", "fin")))
+
+
+def chapitres(film, D):
+    """Le fil de progression est découpé en chapitres (le constat, l'étude, les résultats, à retenir) : le spectateur voit où
+    il en est et ce qu'il reste. Les bornes viennent du champ « partie » des phrases ; sans lui (anciens films), de la
+    structure : la table, la feuille, la première grande typo."""
+    debut = {}
+    for s in film["sentences"]:
+        ws = s.get("_ws")
+        for nom, parties in CHAPITRES:
+            if s.get("partie") in parties and ws:
+                debut.setdefault(nom, ws[0]["s"] - 0.25)
+    if len(debut) < 3:
+        typos = [st["cam_at"] for st in film["paper"]["stations"][1:] if st["type"] == "typo"]
+        debut = {"constat": 0.0, "etude": film["pivot"]["fold_at"], "retenir": typos[0] if typos else film["end"]["fold_at"]}
+    bornes = sorted(set([0.0] + [round(max(0.0, t), 2) for n, t in debut.items() if n != "constat"]))
+    bornes = [b for i, b in enumerate(bornes) if i == 0 or b - bornes[i - 1] > 3]
+    return [[a, b] for a, b in zip(bornes, bornes[1:] + [round(D, 2)])]
+
+
+# planches qui arrivent déjà habillées (titre, axes, fiche, cartes) : la caméra peut les précéder un peu plus
+HABILLEES = {"id_card", "result_bars", "result_strips", "result_dots", "metric", "roc_curve", "forest_plot", "survival_curves",
+             "diagnostic_grid", "chat"}
+AVANCE, AVANCE_HABILLEE = 0.7, 1.6
+
+
+def couper_sur_action(film):
+    """La caméra coupe sur l'action (DA v4, 10 novembre 2026) : une planche n'arrive plus nue pour attendre le mot qui
+    déclenche son premier élément. Si ce premier élément tombe plus de 0,7 s après l'arrivée de la caméra (1,6 s pour une
+    planche qui arrive déjà habillée : titre, axes, fiche), la caméra est retardée d'autant : la planche d'avant, complète,
+    reste à l'écran, et la nouvelle se pose juste avant d'être dite. Plus aucune page blanche sur « Ensuite, »."""
+    retards = []
+    for zone in ("night", "paper"):
+        sts = film[zone]["stations"]
+        for j, st in enumerate(sts):
+            if j == 0 or st.get("type") == "typo" or st.get("type") in HOOKS or st.get("type") in GAGS:
+                continue
+            temps = [o[k] for o, k in _gestes(st, [])]
+            if not temps:
+                continue
+            avance = AVANCE_HABILLEE if st["type"] in HABILLEES else AVANCE
+            cam, premier = float(st["cam_at"]), min(temps)
+            if premier - cam > avance + 0.05:
+                st["cam_at"] = round(premier - avance, 3)
+                retards.append(f"{zone} {j} {st['type']} {cam:.2f}->{st['cam_at']:.2f}")
+        # et elle ne coupe pas avant qu'on ait vu : le dernier élément d'une planche reste au moins 0,9 s à l'écran avant
+        # que la suivante n'arrive (1,2 s de retard au plus ; une barre ne se lève plus pendant que sa feuille se déchire)
+        typos = [k for k, s_ in enumerate(sts) if s_.get("type") == "typo" and k > 0]
+        for j in range(len(sts) - 1):
+            temps = [o[k] for o, k in _gestes(sts[j], [])]
+            if not temps or sts[j].get("type") in HOOKS or sts[j + 1].get("type") in GAGS:
+                continue      # un moment muet tient dans un silence compté : on ne le décale pas
+            nxt = sts[j + 1]
+            marge = 0.9 + (0.45 if zone == "paper" and typos and typos[0] == j + 1 else 0)     # la déchirure part 0,45 s avant
+            cam = float(nxt["cam_at"])
+            if max(temps) + marge > cam + 0.05:
+                nxt["cam_at"] = round(min(max(temps) + marge, cam + 1.2), 3)
+                retards.append(f"{zone} {j + 1} {nxt['type']} {cam:.2f}->{nxt['cam_at']:.2f} (le temps de voir)")
+    return retards
+
+
 # --------------------------------------------------------------------------------------------- assemblage
 def build(project):
     proj = pathlib.Path(project).resolve()
@@ -1450,6 +1588,8 @@ def build(project):
     words = [{"w": w["w"], "s": float(w.get("s", w.get("start"))), "e": float(w.get("e", w.get("end")))} for w in words]
     clock = Clock(film, words)
     resolve(film, clock)
+    for f_ in couper_sur_action(film):
+        print(f"caméra retardée (coupe sur l'action) : {f_}", file=sys.stderr)
     for f_ in cadrer(film):
         print(f"recadré (hors écran) : {f_}", file=sys.stderr)
     film["night"]["start"] = 0.0      # la feuille est sur la table dès la première image ; son contenu arrive après l'entrée
@@ -1495,6 +1635,8 @@ def build(project):
 
     # ---- le papier : une planche par écran ; la première nuance arrive par une déchirure (verso)
     pst = paper["stations"]
+    if pst:   # la première planche est révélée par le pli : son habillage (étiquette, fiche, axes) part avec lui, pas après
+        pst[0]["cam_at"] = round(min(float(pst[0]["cam_at"]), pv["fold_at"] + 0.45), 3)
     skip_subs = set(hook_skip)
     for st in pst:
         if st["type"] == "typo":
@@ -1513,7 +1655,7 @@ def build(project):
         verso = i == tear_i
         inner = paper_station(st, film, st.get("_fig"))
         plates.append(f'<div class="plate{" verso" if verso else ""}" id="plate{i}"><div class="pground"></div><div class="plight"></div>'
-                      f'<div class="pcrease"></div>{inner}<div class="pdim"></div></div>')
+                      f'<div class="pcrease"></div><div class="pbody" data-type="{st["type"]}">{inner}</div><div class="pdim"></div></div>')
         ent = EDITION.get("entrees") or ["up", "right"]
         mode = "first" if i == 0 else ("tear" if verso else ent[(i - 1) % len(ent)])
         pin.append([round(st["cam_at"] - (0.45 if verso else 0.05), 3), mode])
@@ -1529,8 +1671,9 @@ def build(project):
         bot_clip = "polygon(" + ",".join(f"{x}px {yy:.0f}px" for x, yy in pts) + f",{W}px {H}px,0 {H}px)"
         edge = " ".join(f"{x},{yy:.0f}" for x, yy in pts)
         fib = f'<svg class="lay" style="left:0;top:0;width:{W}px;height:{H}px" viewBox="0 0 {W} {H}"><polyline points="{edge}" fill="none" stroke="#FFFDF8" stroke-width="7" stroke-linejoin="round"/></svg>'
-        tear_html = (f'<div class="tearh" id="tearT" style="clip-path:{top_clip}"><div class="pground"></div><div class="pcrease"></div>{copy}{fib}</div>'
-                     f'<div class="tearh" id="tearB" style="clip-path:{bot_clip}"><div class="pground"></div><div class="pcrease"></div>{copy}{fib}</div>')
+        body = f'<div class="pbody" data-type="{prev["type"]}">{copy}</div>'
+        tear_html = (f'<div class="tearh" id="tearT" style="clip-path:{top_clip}"><div class="pground"></div><div class="pcrease"></div>{body}{fib}</div>'
+                     f'<div class="tearh" id="tearB" style="clip-path:{bot_clip}"><div class="pground"></div><div class="pcrease"></div>{body}{fib}</div>')
 
     pv_k = find_sentence(pv["text"])
     pv_ws = film["sentences"][pv_k]["_ws"]
@@ -1540,6 +1683,7 @@ def build(project):
     subs = build_subs(film, skip_subs)
 
     runtime = {"duration": D, "fold": FOLD_DUR, "ncam": ncam, "plates": pin, "tear": tear, "tilt": EDITION.get("tilt", -3.2),
+               "chapitres": chapitres(film, D),
                "edition": EDITION["id"],
                "night": [night["start"], night["end"]], "paper": [paper["start"], paper["end"]],
                "pivot": {"start": pv["start"], "fold_at": pv["fold_at"]},
@@ -1629,7 +1773,7 @@ def build(project):
 {subs}
   </div>
   <div id="grain" class="clip" data-start="0" data-duration="{D}" data-track-index="9"><div class="grainin"></div></div>
-  <div id="prog" class="clip" data-start="0" data-duration="{D}" data-track-index="10"><div class="progb"></div></div>
+  <div id="prog" class="clip" data-start="0" data-duration="{D}" data-track-index="10"></div>
   <audio id="mix" data-start="0" data-duration="{D}" data-track-index="11" src="{film['audio']}" data-volume="1"></audio>
 </div>
 <script>

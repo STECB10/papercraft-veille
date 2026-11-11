@@ -72,7 +72,7 @@
       }
     });
     // garde-fou : tout texte d'une feuille ou d'une planche qui dépasserait le bord est réduit jusqu'à tenir (60 % au plus)
-    var TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit,.tilev,.fnum,.flab,.fexcl,.bstat,.blab,.bcmp,.tlwhen,.tllab,.fdlab,.fddet';
+    var TXT = '.kick,.ptitle,.idv,.annot,.bval,.cival,.glab,.mlab,.mval,.kpt,.ailab,.oout,.gstep,.typo,.num,.cap,.note,.title,.mono,.hq,.hline,.htitle,.hunit,.tilev,.fnum,.flab,.fexcl,.bstat,.blab,.bcmp,.tlwhen,.tllab,.fdlab,.fddet,.slab,.snote';
     function pos(el, stop) { var x = 0; for (var e = el; e && e !== stop; e = e.offsetParent) x += e.offsetLeft; return x; }
     [['#nsheet', 780], ['.plate', 1080], ['#coverin', 1080]].forEach(function (B) {
       q(B[0]).forEach(function (box) {
@@ -86,6 +86,45 @@
           }
         });
       });
+    });
+  }
+
+  // ------------------------------------------------------------------ plein cadre : une planche ne laisse pas le bas de l'écran vide
+  // Le contenu d'une planche (tout sauf son étiquette, data-tete) est centré dans la scène, entre l'étiquette et la bande
+  // des sous-titres, quand il n'en occupe qu'une partie. Fait avant la timeline, sur la mise en page au repos : déterministe.
+  function cadrerPlanches() {
+    var TOP = 150, BOT = 1076, MID = (TOP + BOT) / 2;
+    q('.pbody').forEach(function (body) {
+      var plate = body.parentElement;
+      // un clip masqué par display:none ne se mesure pas : on le montre le temps de la mesure
+      var caches = [];
+      for (var e = plate; e && e !== document.body; e = e.parentElement) {
+        if (getComputedStyle(e).display === 'none') { caches.push([e, e.style.display]); e.style.display = 'block'; }
+      }
+      var pr = plate.getBoundingClientRect();
+      if (body.getAttribute('data-type') === 'typo') {
+        // grande typo : le bloc de texte est centré (un peu au-dessus du milieu), son filet juste dessous
+        var ty = body.querySelector('.typo'), ru = body.querySelector('.rule');
+        if (ty) {
+          var h = ty.getBoundingClientRect().height, top = Math.max(TOP + 30, Math.min(MID - 30 - h / 2, BOT - h - 90));
+          ty.style.top = top.toFixed(0) + 'px';
+          if (ru) ru.style.top = Math.min(BOT - 20, top + h + 64).toFixed(0) + 'px';
+        }
+      } else {
+        var lo = Infinity, hi = -Infinity, kids = [];
+        Array.prototype.forEach.call(body.children, function (el) {
+          if (el.hasAttribute('data-tete')) return;
+          var r = el.getBoundingClientRect();
+          if (r.height < 1 && r.width < 1) return;
+          lo = Math.min(lo, r.top - pr.top); hi = Math.max(hi, r.bottom - pr.top);
+          kids.push(el);
+        });
+        if (kids.length && hi - lo < BOT - TOP) {
+          var dy = Math.max(TOP - lo, Math.min(BOT - hi, MID - (lo + hi) / 2));
+          if (Math.abs(dy) >= 14) kids.forEach(function (el) { el.style.marginTop = dy.toFixed(0) + 'px'; });
+        }
+      }
+      caches.forEach(function (c) { c[0].style.display = c[1]; });
     });
   }
 
@@ -288,8 +327,13 @@
     bloc('caméras (nuit)', function () {
       var nEnd = F.night[1];
       var tz = typeof F.tilt === 'number' ? F.tilt : -3.2;   // sens et angle de la feuille : selon l'édition du jour
-      gsap.set('#nplane', { rotationX: 10, rotationZ: tz, scale: 0.93 });
-      tl.to('#nplane', { rotationX: 6, rotationZ: tz * 0.47, scale: 0.99, duration: nEnd, ease: 'none', immediateRender: false }, 0);
+      // DA v4 : la feuille occupe le cadre (elle n'en couvrait que les deux tiers : textes trop petits sur un téléphone)
+      gsap.set('#nplane', { rotationX: 9, rotationZ: tz, scale: 1.07 });
+      tl.to('#nplane', { rotationX: 5, rotationZ: tz * 0.47, scale: 1.13, duration: nEnd, ease: 'none', immediateRender: false }, 0);
+      // l'étape d'avant s'estompe quand la suivante arrive
+      q('[data-dim]').forEach(function (el) {
+        tl.to(el, { opacity: 0.38, duration: 0.5, ease: 'power1.out', immediateRender: false }, num(el, 'data-dim', 0));
+      });
       gsap.set('#ncam', { y: F.ncam[0][1] });
       for (var i = 1; i < F.ncam.length; i++) {
         tl.to('#ncam', { y: F.ncam[i][1], duration: 1.05, ease: 'power3.inOut', immediateRender: false }, F.ncam[i][0]);
@@ -422,8 +466,10 @@
       q('.chunk').forEach(function (ch) {
         var tin = num(ch, 'data-in', 0), tout = num(ch, 'data-out', tin + 2);
         gsap.set(ch, { opacity: 0 });
-        tl.fromTo(ch, { opacity: 0 }, { opacity: 1, duration: 0.06, ease: 'none', immediateRender: false }, tin - 0.08);
-        tl.to(ch, { opacity: 0, duration: 0.12, ease: 'power1.in', immediateRender: false }, tout);
+        // un morceau s'efface avant que le suivant n'apparaisse : plus jamais deux textes l'un sur l'autre (3 images de
+        // recouvrement jusqu'au 10 novembre 2026)
+        tl.fromTo(ch, { opacity: 0 }, { opacity: 1, duration: 0.04, ease: 'none', immediateRender: false }, tin - 0.04);
+        tl.to(ch, { opacity: 0, duration: 0.07, ease: 'none', immediateRender: false }, tout - 0.1);
         q('.w', ch).forEach(function (w) {
           var t = num(w, 'data-t', 0);
           gsap.set(w, { opacity: 0, y: 10, filter: 'blur(5px)' });
@@ -456,12 +502,23 @@
       tl.to(c, { y: -1550, rotation: -6, duration: 0.7, ease: 'power3.in', immediateRender: false }, t);
     });
 
-    // ---------------------------------------------------------------- fil de progression en haut du cadre (on sait où l'on en est)
+    // ---------------------------------------------------------------- fil de progression en haut du cadre, par chapitres
+    // (le constat, l'étude, les résultats, à retenir) : on voit où l'on en est et ce qu'il reste
     bloc('progression', function () {
-      var p = document.querySelector('#prog .progb');
-      if (!p) return;
-      gsap.set(p, { scaleX: 0, transformOrigin: '0% 50%' });
-      tl.fromTo(p, { scaleX: 0 }, { scaleX: 1, duration: Math.max(1, F.duration - 0.2), ease: 'none', immediateRender: false }, 0);
+      var box = document.getElementById('prog');
+      if (!box) return;
+      var C = F.chapitres && F.chapitres.length ? F.chapitres : [[0, F.duration]];
+      var GAP = 10, M = 0, total = W - 2 * M - GAP * (C.length - 1), x = M;
+      C.forEach(function (c) {
+        var w = total * (c[1] - c[0]) / F.duration;
+        var seg = document.createElement('div'), fill = document.createElement('div');
+        seg.className = 'progseg'; fill.className = 'progb';
+        seg.style.left = x.toFixed(1) + 'px'; seg.style.width = w.toFixed(1) + 'px';
+        seg.appendChild(fill); box.appendChild(seg);
+        gsap.set(fill, { scaleX: 0, transformOrigin: '0% 50%' });
+        tl.fromTo(fill, { scaleX: 0 }, { scaleX: 1, duration: Math.max(0.5, c[1] - c[0]), ease: 'none', immediateRender: false }, c[0]);
+        x += w + GAP;
+      });
     });
 
     // ---------------------------------------------------------------- grain vivant (12 positions par seconde)
@@ -478,6 +535,7 @@
 
   function lancer() {
     try { ajuster(); } catch (e) { console.error('[moteur] ajustement : ' + e.stack); }
+    try { cadrerPlanches(); } catch (e) { window.__moteurErreurs.push('cadrage : ' + e.message); console.error('[moteur] cadrage : ' + e.stack); }
     try { build(); } catch (e) {
       window.__moteurErreurs.push('build : ' + e.message);
       console.error('[moteur] build en erreur : ' + e.stack);

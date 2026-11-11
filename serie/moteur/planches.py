@@ -58,7 +58,7 @@ def station(st, film, fig, y0, t0):
         h += B.kicker(y0, st.get("title", "Le parcours des participants"), t0 + 0.2, fig)
         top, bot = y0 + 170, y0 + 1040
         slot = (bot - top) / k
-        ch = min(150, slot - 58)
+        ch = min(250, slot - 66)           # DA v4 : deux ou trois étapes prennent de grandes cartes (elles tenaient en haut du cadre)
         nums = [_num(s.get("num", s["n"])) or 0 for s in stages]
         n0 = max(nums) or 1
         excl = {int(e["after"]): e for e in st.get("excluded", [])}
@@ -69,10 +69,10 @@ def station(st, film, fig, y0, t0):
             y = top + i * slot
             acc = " acc" if sg.get("accent") or (i == k - 1 and not any(s.get("accent") for s in stages)) else ""
             h.append(f'<div class="fcard{acc}" style="left:{x:.0f}px;top:{y:.0f}px;width:{cw:.0f}px;height:{ch:.0f}px" data-a="hingeT" data-t="{sg["at"] - 0.1:.2f}"></div>')
-            npx = min(76, ch * 0.5)
+            npx = min(128, ch * 0.5)
             h.append(f'<div class="fnum{acc}" style="left:{x:.0f}px;top:{y + ch * 0.12:.0f}px;width:{cw:.0f}px;font-size:{npx:.0f}px" data-fit="1" data-fmin="40" '
                      f'data-a="print" data-t="{sg["at"]:.2f}">{counter(sg["n"], sg["at"], 0.8)}</div>')
-            lpx, _ = mesure.ajuster(sg["label"], "schib600", cw - 60, 34, 26, max_lignes=1)
+            lpx, _ = mesure.ajuster(sg["label"], "schib600", cw - 60, 42 if ch >= 200 else 34, 26, max_lignes=1)
             h.append(f'<div class="flab{acc}" style="left:{x + 30:.0f}px;top:{y + ch * 0.12 + npx * 1.08:.0f}px;width:{cw - 60:.0f}px;font-size:{lpx}px" data-fit="1" '
                      f'data-fmin="22" data-a="rise" data-t="{sg["at"] + 0.15:.2f}">{_esc(sg["label"])}</div>')
             if i < k - 1:
@@ -153,20 +153,21 @@ def station(st, film, fig, y0, t0):
         h += B.kicker(y0, st.get("title", "Ce qu'on a trouvé"), t0 + 0.2)
         top, bot = y0 + 165, y0 + 1045
         gap = 26
-        ch = min(250, (bot - top - (k - 1) * gap) / k)
+        ch = min(340 if k <= 2 else 276, (bot - top - (k - 1) * gap) / k)
+        gd = 1.2 if k <= 2 else (1.08 if k == 3 else 1.0)     # DA v4 : peu de constats = de grandes cartes, de grands textes
         y = top + (bot - top - (k * ch + (k - 1) * gap)) / 2
         for i, it in enumerate(items):
             at = it["at"]
             yy = y + i * (ch + gap)
             acc = " acc" if it.get("accent") else ""
             h.append(f'<div class="fdcard{acc}" style="left:{ML}px;top:{yy:.0f}px;width:{CW}px;height:{ch:.0f}px" data-a="slideL" data-t="{at - 0.15:.2f}"></div>')
-            isz = min(110, ch - 60)
+            isz = min(110 * gd, ch - 60)
             h.append(B.iconbox(it.get("icon", "check"), ML + 34, yy + (ch - isz) / 2, isz, isz, "var(--ink)", at - 0.05, "draw", 'data-d="0.6"'))
             tx = ML + 34 + isz + 36
             arrow_w = 110 if it.get("tendance") else 0
             tw_ = CW - (tx - ML) - 34 - arrow_w
-            lpx, lls = mesure.ajuster(it["label"], "schib600", tw_, 44, 32, max_lignes=1)
-            dpx, dls = mesure.ajuster(it.get("detail", ""), "schib400", tw_, 33, 26, max_lignes=2, interligne=1.25)
+            lpx, lls = mesure.ajuster(it["label"], "schib600", tw_, round(44 * gd), 32, max_lignes=1)
+            dpx, dls = mesure.ajuster(it.get("detail", ""), "schib400", tw_, round(33 * gd), 26, max_lignes=2 if k > 2 else 3, interligne=1.25)
             th = lpx * 1.15 + (len(dls) * dpx * 1.25 + 8 if it.get("detail") else 0)
             ty = yy + (ch - th) / 2
             h.append(f'<div class="fdlab" style="left:{tx:.0f}px;top:{ty:.0f}px;width:{tw_:.0f}px;font-size:{lpx}px" data-fit="1" data-fmin="26" '

@@ -105,8 +105,8 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 .tfill{height:11px;border-radius:6px;background:var(--ink)}
 .tfill.acc{background:var(--carbon)}
 .ciband{height:39px;border-radius:4px;background:rgba(93,104,255,.18);border:2px solid rgba(58,68,214,.35)}
-.kpn{font:400 110px/1 'Bodoni Moda';color:var(--carbon-deep);width:110px}
-.kpt{font:600 46px/1.22 'Schibsted Grotesk';letter-spacing:-.015em;color:var(--ink)}
+.kpn{font:400 110px/1 'Bodoni Moda';color:var(--carbon-deep);width:110px;font-variant-numeric:lining-nums}
+.kpt{font:600 46px/1.2 'Schibsted Grotesk';letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
 .sq{background:var(--ink)}
 .bristol{background:var(--paper-hi);border-radius:6px;box-shadow:0 34px 60px -34px rgba(22,23,28,.55),0 1px 0 rgba(22,23,28,.06);transform:rotate(-.7deg)}
 .tape{width:220px;height:52px;background:rgba(236,228,206,.78);border:1px solid rgba(22,23,28,.08);transform:rotate(-3deg);box-shadow:0 4px 8px rgba(22,23,28,.08)}
@@ -114,6 +114,11 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 .hair.blue{background:rgba(93,104,255,.18)}
 .msheet{background:var(--paper-hi);border-radius:3px;box-shadow:0 14px 22px -12px rgba(22,23,28,.5),0 1px 0 rgba(22,23,28,.08);overflow:hidden}
 .msheet::after{content:"";position:absolute;right:0;top:0;border-style:solid;border-width:0 18px 18px 0;border-color:transparent var(--paper) var(--paper-3) transparent}
+/* tracé au crayon (DA v4) : l'emplacement d'un bloc qui s'encrera au mot qui le nomme */
+.crayon{border:2.5px dashed rgba(22,23,28,.24);background:rgba(22,23,28,.015)}
+.kpn.attente{color:rgba(22,23,28,.13)}
+.msheet.crayon{background:rgba(22,23,28,.02);box-shadow:none;border:2px dashed rgba(22,23,28,.26)}
+.msheet.crayon::after{display:none}
 .msheet i{position:absolute;left:12%;height:5px;border-radius:3px;background:rgba(22,23,28,.22)}
 .msheet i:first-child{height:8px;background:rgba(22,23,28,.55)}
 .msheet.acc i:first-child{background:var(--carbon)}
@@ -149,11 +154,11 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 .pdot{position:absolute;border-radius:50%;background:#57544E}
 .gtab{background:#E4E7F6;border-radius:14px 14px 4px 4px;box-shadow:0 14px 26px -16px rgba(22,23,28,.55);display:flex;align-items:center;justify-content:space-between;padding:0 30px}
 .gtab.acc{background:var(--carbon)}
-.gtab .gl{font:600 38px/1.1 'Schibsted Grotesk';color:var(--ink)}
-.gtab .gn{font:400 64px/1 'Bodoni Moda';color:var(--ink)}
+.gtab .gl{font:600 38px/1.1 'Schibsted Grotesk';color:var(--ink);flex:1 1 0;min-width:0}
+.gtab .gn{font:400 64px/1 'Bodoni Moda';color:var(--ink);flex:none;margin-left:22px;font-variant-numeric:lining-nums}
 .gtab.acc .gl,.gtab.acc .gn{color:var(--paper-hi)}
 .gcard{background:var(--paper-lift);border-radius:18px;box-shadow:0 30px 50px -34px rgba(22,23,28,.6),0 1px 0 rgba(22,23,28,.06)}
-.gstep{font:500 34px/1.24 'Schibsted Grotesk';color:var(--ink)}
+.gstep{font:500 40px/1.2 'Schibsted Grotesk';letter-spacing:-.01em;color:var(--ink)}
 .lsheet{background:var(--paper-lift);border-radius:6px;box-shadow:0 40px 70px -40px rgba(22,23,28,.6),0 2px 0 rgba(22,23,28,.05);transform:rotate(-.6deg)}
 .slot{height:7px;border-radius:4px;background:var(--ink);opacity:.8}
 .strip{background:repeating-linear-gradient(135deg,var(--paper-2) 0 8px,#C9C0AE 8px 13px);box-shadow:14px 0 0 rgba(22,23,28,.08)}
@@ -184,7 +189,13 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 .sheet .crease{left:0;top:0;width:780px;height:960px;pointer-events:none;
   background:linear-gradient(129.1deg,transparent 49.75%,rgba(22,23,28,.07) 49.9%,rgba(255,255,255,.6) 50.05%,transparent 50.35%)}
 .nscrim{position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(246,246,248,0) 0%,rgba(246,246,248,0) 70%,rgba(246,246,248,.92) 84%,rgba(240,241,245,.98) 100%)}
+  background:linear-gradient(180deg,rgba(246,246,248,0) 0%,rgba(246,246,248,0) 75%,rgba(246,246,248,.94) 83%,rgba(240,241,245,.98) 100%)}
+/* le parcours (steps), DA v4 : tuile de papier clair, intitulé lisible sur téléphone, note en italique d'accent */
+.stepg>*{position:absolute}
+.stile{background:var(--paper-hi);border-radius:30px;box-shadow:0 24px 36px -22px rgba(22,23,28,.5),0 1px 0 rgba(22,23,28,.06)}
+.sidx{font:500 26px/1.2 'IBM Plex Mono';letter-spacing:.14em;color:var(--carbon-deep)}
+.slab{font:600 42px/1.16 'Schibsted Grotesk';letter-spacing:-.015em;color:var(--ink)}
+.snote{font:italic 400 50px/1.12 'Bodoni Moda';color:var(--carbon-deep);white-space:nowrap}
 
 /* ------------------------------------------------------------------ dans la feuille : plein cadre */
 .foldsheet{position:absolute;inset:0}
@@ -198,6 +209,8 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 #pcam{position:absolute;inset:0;z-index:1}
 .plate{position:absolute;inset:0;overflow:hidden;box-shadow:0 30px 90px rgba(22,23,28,.38);visibility:hidden}
 .plate>*,.tearh>*{position:absolute}
+.pbody{inset:0}
+.pbody>*{position:absolute}
 .plate.verso>.pground{background:var(--carbon)}
 .plate.verso .typo{color:#FFFFFF}
 .plate.verso .typo .tw.it{color:var(--ink)}
@@ -237,8 +250,8 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 .srcblock .doi{letter-spacing:.06em;text-transform:none}
 
 /* ------------------------------------------------------------------ sous-titres : bande y 1108–1196, encre sur papier */
-.chunk{position:absolute;left:64px;right:64px;top:1112px;height:84px;display:flex;justify-content:center;align-items:center;
-  font:600 54px/66px 'Schibsted Grotesk';letter-spacing:-.015em;white-space:nowrap;opacity:0}
+.chunk{position:absolute;left:40px;right:40px;top:1108px;height:88px;display:flex;justify-content:center;align-items:center;
+  font:700 60px/72px 'Schibsted Grotesk';letter-spacing:-.02em;white-space:nowrap;opacity:0}
 .chunk.light{color:var(--ink);text-shadow:0 2px 16px rgba(255,255,255,.95)}
 .chunk .w{display:inline-block;margin:0 .13em;position:relative}
 .chunk .kw{z-index:0;isolation:isolate}
@@ -328,7 +341,8 @@ body{font-family:'Schibsted Grotesk',sans-serif;-webkit-font-smoothing:antialias
 .tilev.acc{color:var(--paper-hi)}
 /* fil de progression */
 #prog{z-index:10;pointer-events:none}
-.progb{position:absolute;left:0;top:0;width:100%;height:5px;background:var(--carbon);opacity:.85}
+.progseg{position:absolute;top:0;height:7px;background:rgba(22,23,28,.10);overflow:hidden}
+.progb{position:absolute;left:0;top:0;width:100%;height:100%;background:var(--carbon);opacity:.9}
 
 /* ------------------------------------------------------------------ couverture (première image du film) */
 #cover{z-index:7}
