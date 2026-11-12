@@ -1,128 +1,107 @@
 [
  {
-  "score": 14,
-  "raisons": [
-   "IA dans le titre",
-   "revue systématique",
-   "revue majeure",
-   "texte intégral libre"
-  ],
-  "type_etude": "revue systématique",
-  "themes": [
-   "imagerie"
-  ],
-  "id": "MED:42976356",
-  "pmid": "42976356",
-  "pmcid": "PMC13730511",
-  "doi": "10.2196/101944",
-  "titre": "AI Adoption, Adaptation, and Workforce Sustainability in Medical Imaging: Systematic Review and Conceptual Framework.",
-  "revue": "JMIR AI",
-  "date": "2026-11-03",
-  "auteurs": "Brough P, Zobair KM, Pool J, Haskell N, Houghton L, Scuffham P, Loy J, Troth A, Memon S, Smithson R, Khan M, Murphy B, Living L, Du L, Richards J, Dolkens J, Aitken M, Zhang J, Grieve J, Bhuta S.",
-  "types": "review-article review journal article",
-  "acces_libre": true,
-  "resume": "Background Despite growing recognition that AI-driven systems offer transformative benefits for diagnostic imaging, insufficient evidence exists regarding how medical imaging workforces adapt to AI technology to support workforce sustainability. Objective The aim of this study is to systematically review the existing literature on perceptions and attitudes toward AI adoption in medical imaging, postadoption adaptation behaviors within the workforce, and the implications of these processes for workforce sustainability. Methods Following the PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) guidelines, a systematic search was carried out across 7 databases. Thematic analysis was used to systematically identify, analyze, and interpret patterns across the literature, providing a comprehensive understanding of workforce perceptions and adaptation behaviors. Results A total of 69 peer-reviewed articles were included for thematic synthesis. The findings produced 6 critical factors that were identified as themes associated with AI adoption: perceived benefits, trust, readiness to change, autonomy and control, perceived threat to professional identity, and attitudes and intentions toward AI adoption and use. Four key facets of effective cognitive and behavioral adaptation were identified: training and skills development, task performance during AI-assisted practice, reduction of mental health burden and work strain, and policy compliance. The influence of work engagement and job satisfaction on workforce sustainability was also conceptualized. The findings were integrated into a framework describing the radiology workforce perspectives on AI adoption, adaptation behaviors, and workforce sustainability. Conclusions The findings have potential implications for policy, particularly in strengthening AI-equipped medical imaging systems, fostering trust in AI-driven technologies, and supporting workforce training and upskilling, while considering professional autonomy and role identity. The review highlights a research gap, emphasizing the need for further investigation into postadoption adaptation processes and informing policy development that links AI integration with long-term workforce sustainability in medical imaging."
- },
- {
-  "score": 14,
-  "raisons": [
-   "IA dans le titre",
-   "revue systématique",
-   "revue majeure",
-   "texte intégral libre"
-  ],
-  "type_etude": "revue systématique",
-  "themes": [],
-  "id": "MED:42976332",
-  "pmid": "42976332",
-  "pmcid": "PMC13730513",
-  "doi": "10.2196/100939",
-  "titre": "Advances in Machine Learning Paradigms for Reliable Swimming Pool Drowning Detection: Systematic Review of Methods and Implementations.",
-  "revue": "JMIR rehabilitation and assistive technologies",
-  "date": "2026-11-03",
-  "auteurs": "Chepkorir M, Orowe I, Abade E, Kamanu T.",
-  "types": "review-article review journal article",
-  "acces_libre": true,
-  "resume": "Background Drowning is a leading cause of unintentional injury-related mortality worldwide, particularly in swimming pool environments, where rapid detection is critical to prevent fatalities. Traditional monitoring approaches rely on lifeguards and rule-based systems, which are often limited by human error, delayed response, and environmental challenges such as occlusion, glare, and multiple swimmers. Machine learning (ML) and computer vision methods have emerged as promising alternatives for automated drowning detection; however, their methodological rigor, real-world applicability, and reliability remain unclear. Objective This study aimed to systematically review advancements in ML-based drowning detection systems over the past 15 years. The review focused on detection methods, sensing modalities, evaluation metrics, and validation practices. It also examined how studies addressed real-world challenges such as occlusion, lighting variability, and multiswimmer environments, and identified key gaps related to generalizability, reliability, and privacy. Methods A systematic literature review was conducted using major electronic databases, including IEEE Xplore, Scopus, PubMed, Web of Science, ACM Digital Library, and Google Scholar. A total of 4927 records were initially identified and screened by 2 independent reviewers using predefined inclusion and exclusion criteria. A final set of 30 studies was included for data extraction and synthesis. The methodological quality and risk of bias were assessed using the Prediction Model Risk of Bias Assessment Tool (PROBAST), while reporting transparency was evaluated using the TRIPOD (Transparent Reporting of a Multivariable Prediction Model for Individual Prognosis or Diagnosis) guidelines. Data analysis was conducted in R. Results The findings indicate that drowning detection research is dominated by supervised, vision-based approaches (23/30, 76.7%), with convolutional neural networks (5/30, 16.7%) and You Only Look Once-based architectures (7/30, 23.3%) being the most commonly used methods. While reported performance is generally high, with mean accuracy exceeding 90.9%, evaluation practices are heavily centered on accuracy, with limited reporting of precision, recall, false alarm rate, and latency. One of 30 (3.3%) studies reported validation under real-world operational conditions, with an additional 5 (16.7%) studies using real-world data without formal real-world validation, and no studies conducted cross-dataset evaluation. In addition, critical real-world challenges such as occlusion, glare, and crowding were rarely addressed ( Conclusions ML-based drowning detection systems have demonstrated substantial progress in algorithm development, particularly in vision-based models. However, this progress is not matched by equivalent advances in validation, robustness, and real-world applicability. The field is characterized by a significant gap between experimental performance and deployment readiness. Future research should prioritize standardized evaluation frameworks, external validation, comprehensive performance reporting, and the integration of multimodal and privacy-preserving approaches to enable reliable real-world implementation."
- },
- {
-  "score": 14,
-  "raisons": [
-   "IA dans le titre",
-   "revue systématique",
-   "revue majeure",
-   "texte intégral libre"
-  ],
-  "type_etude": "revue systématique",
-  "themes": [],
-  "id": "MED:42981704",
-  "pmid": "42981704",
-  "pmcid": "PMC13734705",
-  "doi": "10.2196/101509",
-  "titre": "AI-Enabled Digital Health Tool Implementation in Clinical Practice Settings: Umbrella Review.",
-  "revue": "JMIR AI",
-  "date": "2026-11-04",
-  "auteurs": "Gilbert A, Gacad A, Parrish L, Nguyen O, Turner K, Tarver WL, Jonnalagadda P, Tsagli D, Wu B, Lu C, Sachs RE, Evbuomwan O, Kepper MK.",
-  "types": "review-article review journal article",
-  "acces_libre": true,
-  "resume": "Background AI has the potential to improve clinical decision-making, efficiency, and patient outcomes, yet adoption in routine clinical practice has been slower than anticipated. While prior studies have identified factors that influence AI implementation, a comprehensive synthesis grounded in implementation science frameworks is lacking. Objective This study aimed to qualitatively and comprehensively describe barriers and facilitators to AI implementation in clinical care settings using an implementation science determinants framework, the Consolidated Framework for Implementation Research (CFIR), and to identify AI-specific determinants not fully captured by CFIR. Methods We conducted an umbrella review of reviews examining determinants of AI implementation in clinical practice. In accordance with the PRIOR (Preferred Reporting Items for Overviews of Reviews) reporting guidance, we systematically searched PubMed, Scopus, and CINAHL for English-language reviews published between January 2013 and July 2025. Reviews were included if they addressed barriers to and facilitators of implementing AI-enabled digital health tools in clinical care settings. Determinants were deductively mapped to the updated CFIR and inductively analyzed to identify emergent AI-specific constructs. Review quality was assessed using the Joanna Briggs Institute critical appraisal checklist, and overlap among primary studies was evaluated using the GROOVE (Graphical Representation of Overlap for Overviews) tool. Results Twenty-two reviews published between 2021 and 2025 were included, encompassing studies conducted from 1990 to 2025. Reviews varied in design, including systematic, scoping, rapid, narrative, and literature reviews. Overall review quality was mixed, with 9 (41%) reviews rated at 100% quality and 4 (18%) at 50% or lower. Primary study overlap was slight, with a corrected covered area of 0.4%. Determinants of AI implementation were identified across all CFIR domains. Prominent barriers at the innovation level included limited evidence of clinical impact, poor interpretability, complexity, lack of adaptability, and insufficiently representative data. Facilitators included perceived relative advantage, co-design with clinicians, and evidence of local clinical benefit. At the implementer level, low AI literacy, limited confidence, time constraints, and concerns about professional displacement were common barriers, while training and technical support facilitated adoption. Inner setting barriers included inadequate infrastructure, limited resources, poor workflow compatibility, and weak governance structures. Outer setting barriers included unclear policies, laws, and liability frameworks, whereas partnerships and cross-sector collaboration were frequent facilitators. Inductively identified AI-specific determinants included transparency, trust, accountability, model bias, data governance, model maintenance, robustness, generalizability, existential threat, and concern about loss of the human element in care. Conclusions AI implementation in clinical settings is shaped by complex, multilevel, and AI-specific determinants that extend beyond traditional digital health considerations. Implementation science frameworks can be adapted to incorporate these constructs. Tailored, theory-informed strategies addressing technical, organizational, psychological, and regulatory factors are essential to support safe, equitable, and sustainable integration of AI into clinical care."
- },
- {
-  "score": 14,
+  "score": 20,
   "raisons": [
    "IA dans le titre",
    "essai tiré au sort",
    "prospectif",
    "multicentrique",
-   "n = 542",
+   "n = 763",
+   "revue majeure",
    "intervalle de confiance",
-   "thème déjà traité avant-hier (grossesse et enfants) : −2",
    "même type d'étude qu'hier : −1"
   ],
   "type_etude": "essai tiré au sort",
   "themes": [
-   "grossesse et enfants",
-   "chirurgie"
+   "diabète et poids"
   ],
-  "id": "MED:42989887",
-  "pmid": "42989887",
+  "id": "MED:43001198",
+  "pmid": "43001198",
   "pmcid": null,
-  "doi": "10.4103/aja202644",
-  "titre": "Artificial intelligence-assisted microdissection testicular sperm extraction improves sperm retrieval efficiency and clinical outcomes in men with non-obstructive azoospermia: a retrospective cohort study.",
-  "revue": "Asian journal of andrology",
-  "date": "2026-11-06",
-  "auteurs": "Peng LF, Yu H.",
+  "doi": "10.1016/j.eclinm.2026.104284",
+  "titre": "An explainable artificial intelligence system for prognostic assessment and decision support in diabetic foot ulcer care: a multicentre derivation and validation study with prospective randomised evaluation.",
+  "revue": "EClinicalMedicine",
+  "date": "2026-10-31",
+  "auteurs": "Zhang JY, Zhuang Y, Cao Q, Song C, Feng Y, Zhuang G, Ji Z, Li X, Li Q, Jin P, Zhang A, Zhang C.",
   "types": "journal article",
   "acces_libre": false,
-  "resume": "This study compared the efficacy, safety, and intracytoplasmic sperm injection (ICSI) outcomes of artificial intelligence (AI)-assisted versus conventional microdissection testicular sperm extraction (micro-TESE) in men with non-obstructive azoospermia (NOA). To this end, we retrospectively analyzed 1286 consecutive NOA patients undergoing micro-TESE at the two reproductive medicine center of Sichuan Provincial People's Hospital (Chengdu, China) and Sichuan Jinxin Xinan Women's and Children's Hospital (Chengdu, China) from January 2020 to December 2024, including 542 patients receiving AI-assisted procedures and 744 undergoing conventional surgery. The primary outcome was sperm retrieval rate (SRR), while secondary outcomes covered intraoperative parameters, postoperative complications, and ICSI outcomes, and univariable and multivariable logistic regression were performed to identify independent predictors of SRR and live birth. The results showed that the overall SRR reached 56.2% in the entire cohort, and the AI group had a significantly higher SRR (68.1% vs 47.6%, P < 0.001), with the most prominent improvement observed in patients with Sertoli cell-only syndrome (47.2% vs 22.7%, P < 0.001). The AI group also exhibited shorter operative time, less intraoperative blood loss, fewer biopsy sites, shorter postoperative hospital stay, and lower complication rates (all P < 0.001), as well as superior ICSI outcomes including higher fertilization, high-quality embryo, blastocyst, clinical pregnancy, ongoing pregnancy, and live birth rates (all P < 0.01). Further multivariable analysis confirmed that AI-assisted surgery serves as an independent predictor of both successful SRR (odds ratio [OR] = 3.182, 95% confidence interval [CI]: 2.374-4.265, P < 0.001) and live birth rate (OR = 1.876, 95% CI: 1.325-2.656, P < 0.001). Taken together, AI-assisted micro-TESE improves sperm retrieval efficiency, reduces perioperative morbidity, and enhances ICSI and live birth outcomes in NOA patients as an independent predictor for both SRR and live birth rate, and prospective multicenter randomized trials are warranted for further validation."
+  "resume": "Background Diabetic foot ulcers (DFUs) carry risks of recurrence, amputation, and all-cause mortality, but most prediction models address single outcomes and have limited interpretability. We developed an interpretable multi-outcome machine-learning framework for individualised DFU risk assessment and prospective clinical evaluation. Methods We conducted a development and validation study across three hospitals in China from January 1, 2018, to April 30, 2025. We used electronic medical records and follow-up data from 763 patients at Centres A and B to develop and internally validate an ensemble of single-task extreme gradient boosting (ST-XGBoost) and single-task multilayer perceptron (ST-MLP) models to predict cure, recurrence, amputation, and all-cause mortality. The locked ensemble was externally validated in 100 patients at Centre C. Model performance was assessed using discrimination, calibration, and decision curve analysis, with interpretability evaluated using Shapley additive explanations (SHAP). From January 5 to March 5, 2026, we performed a prospective comparative evaluation. We randomised 202 participants (1:1) to usual care or artificial intelligence (AI)-assisted care, of whom 200 were analysed. We compared AI-assisted physician decision-making via an evolvable web-based online prediction platform versus usual care. The outcome was overall quality score of the final clinical recommendation. The platform supports follow-up data collection for future offline model updating. Findings In the training dataset, cure, recurrence, amputation, and all-cause mortality occurred in 638, 208, 226, and 167 patients, respectively; the corresponding numbers in the external validation dataset were 80, 34, 24, and 25. In independent external validation, the ST-XGBoost + ST-MLP ensemble outperformed six comparators, with a macro-averaged AUC of 0.901, accuracy of 0.875, and F1 score of 0.830. Outcome-specific discrimination was highest for amputation (AUC 0.953) and all-cause mortality (AUC 0.951), followed by cure (AUC 0.880) and recurrence (AUC 0.820). In the prospective evaluation, AI-assisted recommendations received higher scores than corresponding clinician recommendations (7.77 vs 6.47; mean difference 1.30, 95% confidence interval (CI) 1.08-1.52; p 0.0001), with the largest gain in completeness. The AI-assisted group showed better short-term follow-up engagement and glucose-management adherence. Interpretation We demonstrate that integrating gradient-boosted trees and neural networks enables explainable prediction of complex DFU trajectories and may support prioritised, individualised clinical decision-making. Nevertheless, recurrence estimates should be interpreted cautiously. Funding Xuzhou Municipal Health Commission Science and Technology Project (XWYHT20240128)."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "n = 1891",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "cancer",
+   "imagerie"
+  ],
+  "id": "MED:43013774",
+  "pmid": "43013774",
+  "pmcid": null,
+  "doi": "10.2196/98520",
+  "titre": "Imaging-Based AI for Predicting Pathological Complete Response in Esophageal Cancer After Neoadjuvant Therapy: Systematic Review and Meta-Analysis.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-11",
+  "auteurs": "Li Z, Gao X, Zhou J, Wang L, Ren F.",
+  "types": "meta-analysis im systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Imaging-based AI may help predict pathological complete response (pCR) after neoadjuvant therapy for esophageal cancer. However, an encouraging average diagnostic performance does not establish reliable performance across clinical settings or justify treatment decisions without further validation. We aimed to assess the predictive performance of imaging-based AI across neoadjuvant strategies, distinguish internal from external validation, and examine limitations affecting interpretation. PubMed, Embase, Web of Science, and the Cochrane Library were searched through August 7, 2026. Eligible English-language studies evaluated imaging-based AI against pathological assessment of pCR. PROBAST+AI (Prediction Model Risk of Bias Assessment Tool plus Artificial Intelligence) assessed study quality and risk of bias; GRADE (Grading of Recommendations Assessment, Development, and Evaluation) assessed certainty for sensitivity, specificity, and diagnostic odds ratio (DOR). Bivariate random-effects models synthesized validation groups separately. CIs described uncertainty in average performance, whereas 95% prediction intervals (PIs) described true performance in a similar new study. Thirty-three studies contributed 27 internal-validation datasets with 1891 patients and 16 external-validation datasets with 777 patients. Ten publications contributed to both groups. The sum was 2668 validation observations; the unique patient count across datasets and publications could not be verified. Internal sensitivity was 0.77 (95% CI 0.72-0.81; PI 0.57-0.89), specificity 0.82 (95% CI 0.78-0.86; PI 0.60-0.93); DOR, 15.49 (95% CI 11.16-21.50); and area under the curve (AUC), 0.86 (95% CI 0.83-0.89). External sensitivity was 0.73 (95% CI 0.61-0.81; PI 0.34-0.93), specificity 0.83 (95% CI 0.73-0.90; PI 0.36-0.98), DOR 12.93 (95% CI 7.25-23.07), and AUC 0.84 (95% CI 0.79-0.89). DOR PIs were 5.40-44.44 and 2.40-69.62, respectively. Thirty-two studies were conducted in China, and 12 had high validation risk of bias. All GRADE-assessed outcomes had very low certainty. Selecting the first eligible imaging model reported in each article instead of the highest-AUC model showed modest decreases in average performance across 16 internal and 10 external datasets; incomplete alternative-model reporting limited interpretation. Single study algorithm estimates were reported descriptively, without ranking algorithms or interpreting their CIs as evidence of between study consistency or generalizability. By combining multiple neoadjuvant strategies and separating validation stages, this review extends earlier neoadjuvant chemoradiotherapy (NCRT)-focused syntheses and identifies priorities for further model evaluation. Imaging-based AI may support response assessment, but wide PIs, risk of bias, and very low evidence certainty preclude routine clinical adoption without prospective, geographically diverse validation. Future studies should evaluate prespecified models in independent populations, report clinically relevant decision thresholds, and assess calibration and patient outcomes. Until such evidence is available, these models should be considered investigational adjuncts to response assessment and should not independently guide organ preservation or omission of surgery after neoadjuvant treatment."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "n = 91363",
+   "revue majeure",
+   "texte intégral libre",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "urgences et réanimation"
+  ],
+  "id": "MED:43008270",
+  "pmid": "43008270",
+  "pmcid": "PMC13750794",
+  "doi": "10.2196/98273",
+  "titre": "Explainable Machine Learning for Predicting Hospital Admission at Emergency Department Triage: Retrospective Cohort Study.",
+  "revue": "JMIR medical informatics",
+  "date": "2026-11-10",
+  "auteurs": "Dave K, Robert A, Russell WA, Buckeridge DL.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "resume": "Background Emergency departments (EDs) are vital access points for urgent care, yet persistent overcrowding in health care systems worldwide compromises service quality and efficiency. Urban tertiary care centers are increasingly strained by surging patient numbers and scarce inpatient beds. Prior admission prediction studies mostly rely on limited triage features and discrimination metrics, neglecting operational factors, calibration, and explainability. Identifying likely admissions early could enable proactive resource allocation and shorter wait times. Objective This study aimed to develop and evaluate machine learning models for predicting hospital admission at the end of triage using routinely collected structured data while addressing prior limitations regarding feature selection, model calibration, and explainability. Methods We conducted a retrospective cohort study of adult ED visits between January 2015 and December 2022 at 2 academic hospitals in the McGill University Health Centre. We excluded visits with dispositions other than admission or discharge to ensure a binary outcome. Data were split into training (70%), validation (10%), and testing (20%) sets using stratified random sampling. We trained classifiers, including logistic regression (LR), decision trees, random forests, artificial neural networks, and gradient boosting algorithms (extreme gradient boosting [XGBoost], light gradient boosting machine, and categorical boosting), using demographics, vital signs, chief complaints, comorbidities, and historical hospitalization frequency available at triage. Sensitivity analyses tested exclusion criteria and temporal data shifts, while subgroup analyses examined differences by age, sex, and site. Performance was evaluated using area under the receiver operating characteristic curve (AUC-ROC), sensitivity, specificity, and calibration. We also performed a decision threshold analysis to assess operational flexibility and used Shapley additive explanations (SHAP) values to interpret feature contributions. Results The final cohort included 526,145 visits (mean age 50.9, SD 21.1 years; 272,767/526,145, 51.8% female), with 91,363 patients (17.4%) admitted. The XGBoost model achieved the highest performance, with an AUC-ROC of 0.86 (95% CI 0.858-0.864), a sensitivity of 0.67, and a specificity of 0.86, outperforming the LR baseline (AUC 0.84). Key predictors identified by SHAP values included age, Canadian Triage and Acuity Scale scores, arrival mode, and historical hospitalization frequency. Subgroup analyses confirmed strong performance across age, sex, and sites. Sensitivity analyses evaluating alternative outcome dispositions and chronological data splits confirmed overall model stability. Threshold analysis showed that adjusting the decision threshold to the 0.70 to 0.75 range improved the positive predictive value and did not disproportionately reclassify older or higher-acuity patients. Conclusions In urban tertiary care settings, structured triage data available at triage can effectively anticipate hospital admissions. By incorporating broad feature sets and operational variables, models such as XGBoost offer a feasible, explainable tool for early decision-making. Such tools could improve coordination between emergency and inpatient services and ease overcrowding. Future work should prioritize prospective validation and real-time clinical workflow integration."
  },
  {
   "score": 13,
   "raisons": [
    "IA dans le titre",
-   "essai tiré au sort",
+   "méta-analyse",
    "revue majeure",
-   "texte intégral libre",
-   "intervalle de confiance",
-   "thème déjà traité avant-hier (IA conversationnelle) : −1",
-   "même type d'étude qu'hier : −1"
+   "intervalle de confiance"
   ],
-  "type_etude": "essai tiré au sort",
+  "type_etude": "méta-analyse",
   "themes": [
-   "IA conversationnelle",
-   "chirurgie"
+   "diabète et poids"
   ],
-  "id": "MED:42987267",
-  "pmid": "42987267",
-  "pmcid": "PMC13739266",
-  "doi": "10.2196/90724",
-  "titre": "American Society of Anesthesiologists Physical Status Classification: Hybrid Machine Learning-Large Language Model Ensemble Retrospective Validation Study.",
+  "id": "MED:43006686",
+  "pmid": "43006686",
+  "pmcid": null,
+  "doi": "10.2196/100653",
+  "titre": "Machine Learning Models for Glycemic Prediction in Type 1 and Type 2 Diabetes: Systematic Review and Meta-Analysis.",
   "revue": "Journal of medical Internet research",
-  "date": "2026-11-05",
-  "auteurs": "Pabalan C, Stewart A, Fisher G, Fisher A.",
-  "types": "research-article validation study journal article",
-  "acces_libre": true,
-  "resume": "Background The American Society of Anesthesiologists Physical Status (ASA-PS) classification system fundamentally shapes perioperative care delivery but suffers from poor interrater reliability (0.4-0.6). Machine learning (ML) models and large language models (LLMs) offer complementary remedies: ML processes structured data consistently but cannot interpret the nuance of clinical narratives, while LLMs parse narrative text and generate explanations but adhere inconsistently to diagnostic criteria. Objective This study aimed to develop and evaluate a parallel ML-LLM ensemble that combines the complementary strengths of both approaches for automated ASA-PS classification. Methods We retrospectively analyzed 3000 adult surgical encounters from the University of Arkansas for Medical Sciences (UAMS) between August 2024 and May 2025. Cases were randomly allocated to training (n=2000), validation (N=500), and held-out test sets (N=500). The validation set was used exclusively for architecture comparison and hyperparameter tuning, and the held-out test set was reserved for final model performance validation. We developed multiple architectures, including traditional ML models (Extreme Gradient Boosting [XGBoost], Light Gradient Boosting Machine [LightGBM], ExtraTrees), an LLM-only baseline (Generative Pretrained Transformer-4o [GPT-4o]), and hybrid approaches. The parallel ensemble processed structured data through XGBoost and unstructured clinical notes through GPT-4o independently, with outputs combined via weighted averaging. Model performance was evaluated using macro- F 1 -score, exact match accuracy, and ±1-class accuracy. Results A theoretical performance ceiling of macro- F 1 -score=0.59 was determined through evaluation by an expert panel of 2 board-certified anesthesiologists (AF and GF) who independently rated 50 patient charts for ASA-PS scores. On the true held-out test set (N=500), the parallel ensemble ( α =0.30) achieved a macro- F 1 -score of 0.530 (95% CI 0.350-0.600), exact match accuracy of 0.630 (95% CI 0.580-0.670), and ±1-class accuracy of 0.980 (95% CI 0.968-0.992), exceeding the frozen LLM-only baseline evaluated on the same set (macro- F 1 -score 0.493, exact match accuracy 0.621,±1-class accuracy 0.981). On the validation set used for architecture selection, the ensemble outperformed structured-only ML (XGBoost macro- F 1 -score=0.333, P F 1 -score of 0.642 (95% CI 0.525-0.691), nominally exceeding the expert panel ceiling. Per-class analysis attributed this to a perfect score on the 2 validation ASA-PS 5 cases. Excluding that class, the adjusted macro- F 1 -score was approximately 0.55, within the range of the parallel ensemble. The LLM component also generated explanations detailing comorbidities, severity descriptors, and functional status indicators. Conclusions The parallel ML-LLM ensemble achieved performance approaching the theoretical ceiling established by the expert panel benchmark while providing interpretable clinical explanations. The ±1-class accuracy of 0.980 (95% CI 0.968-0.992) may enhance operational safety by minimizing extreme misclassifications. This approach demonstrates how complementary AI architectures can enhance perioperative risk assessment, which is particularly valuable given current health care workforce shortages."
+  "date": "2026-11-09",
+  "auteurs": "Yang H, Abudukeremu D, Shi Y, Fang L, Li L, Gu W, Jia Y, He R.",
+  "types": "meta-analysis systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Background Machine learning models are increasingly used for glycemic event prediction and continuous glucose forecasting, but targets, populations, horizons, validation, and uncertainty reporting remain heterogeneous. Objective This study aimed to evaluate machine learning models for glycemic prediction in type 1, type 2, and mixed diabetes populations while distinguishing the full evidence map from the quantitatively analyzable subset. Methods We searched 9 English- and Chinese-language databases from inception to April 12, 2026, for studies predicting future glycemic events or glucose values in people with diabetes. Continuous forecasting and binary event prediction were analyzed separately. Root-mean-square error (RMSE) was the principal continuous end point; mean absolute error was supportive. Area under the receiver operating characteristic curve was synthesized using a Bayesian random-effects model because analyzable 2×2 data were sparse. Two reviewers (HY and DA) independently applied PROBAST (Prediction Model Risk of Bias Assessment Tool) to 19 quantitative-source reports (28 assessment units). Results We identified 787 records, assessed 310 full texts, and included 299 reports representing 270 studies; 19 reports contributed to quantitative synthesis. The review included 128 type 1, 26 type 2, 78 mixed, and 38 unclear-diabetes-type studies. Pooled RMSE was 1.18 mmol/L (95% CI 1.01-1.34; 37 effects), supportive mean absolute error was 0.90 mmol/L (95% CI 0.78-1.02; 20 effects), and Bayesian pooled area under the receiver operating characteristic curve was 0.926 (95% credible interval 0.877-0.957). Supportive sensitivity and specificity were 0.77 and 0.80. Of 28 PROBAST units, 24 were high risk, 2 unclear, and 2 low. Post hoc exploratory within-report analysis estimated an RMSE increase of 0.481 mmol/L per additional 30 minutes (95% CI 0.213-0.749), but overlap sensitivity reduced certainty. In the 270-study clinical readiness audit, external validation occurred in 4.0% (10/251), prospective evaluation in 0.7% (2/270), calibration in 4.8% (13/270), decision-curve or net-benefit analysis in 2.6% (7/270), and implementation or human-factors evaluation in 2.6% (7/270). Conclusions Glycemic prediction studies show forecasting and discrimination signals, but heterogeneity, high risk of bias, incomplete uncertainty reporting, and limited external and prospective validation preclude deployable benchmarks. Pooled estimates should be viewed as summaries of analyzable literature. Future studies need transparent horizon, threshold, calibration, validation, uncertainty, and implementation reporting."
  },
  {
   "score": 12,
@@ -148,5 +127,29 @@
   "types": "journal article",
   "acces_libre": false,
   "resume": "Background Assessment accuracy for umbilical artery (UA) and middle cerebral artery (MCA) Doppler ultrasound assessment depends on operator expertise. Artificial intelligence (AI) based feedback may improve performance, but its effect on assessment accuracy and the role of clinical experience remain uncertain. Objective To determine whether AI feedback improves assessment accuracy for standardized image-based umbilical artery and middle cerebral artery Doppler vignettes among novice and experienced clinicians. Study design This multicenter randomized clinical trial was conducted at five Danish hospitals. Ninety-six clinicians from obstetrics and gynecology departments, including residents, gynecologists, and obstetricians, were randomized 1:1 to AI-generated visual and textual feedback or no AI feedback. Each clinician evaluated 40 standardized image-based Doppler vignettes containing pre-existing static UA and MCA Doppler images. In total, 1,920 unique Doppler vignettes were evaluated across 48 clinician pairs matched by obstetric ultrasound experience. For color Doppler vignettes, clinicians indicated intended gate placement; for spectral Doppler vignettes, they judged waveform technical adequacy. Both are essential components of a technically valid Doppler measurement. No real-time scanning was performed. Intervention clinicians viewed the unannotated image alongside artificial intelligence feedback on gate placement, anatomical suitability, insonation angle, and spectral waveform quality, then entered their own response on the unannotated image. Accuracy was determined by expert consensus using predefined International Society of Ultrasound in Obstetrics and Gynecology-based criteria. AI feedback was classified as correct or incorrect according to whether it agreed with expert consensus. Expert consensus was based on two fetal medicine sonographers with >10 years of obstetric ultrasound experience, with disagreements resolved by a fetal medicine consultant. Clinicians were classified as novices ( Results Overall assessment accuracy was higher with AI feedback than without (75.0% vs 62.3%; mean difference, 12.7%; 95% CI, 8.2-17.1; p Conclusion AI feedback improved assessment accuracy for standardized umbilical artery and middle cerebral artery Doppler vignettes among novice and experienced clinicians. Clinical experience remained important when AI feedback was incorrect, supporting further evaluation of human-artificial intelligence collaboration during real-time Doppler acquisition."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "santé mentale"
+  ],
+  "id": "MED:43013291",
+  "pmid": "43013291",
+  "pmcid": null,
+  "doi": "10.1001/jamapsychiatry.2026.3764",
+  "titre": "Rethinking University Mental Health for the AI Era: From Crisis Response to Core Mission.",
+  "revue": "JAMA psychiatry",
+  "date": "2026-11-11",
+  "auteurs": "Kessler RC, Ono SJ.",
+  "types": "im journal article",
+  "acces_libre": false,
+  "resume": "Universities have become frontline mental health care settings for adolescents and young adults, a group with rapidly rising rates of common psychiatric disorders. Conventional campus counseling services cannot meet this demand. Students are increasingly turning to unregulated generative artificial intelligence (AI) tools. There is an urgent need for an evidence-informed architecture that integrates digital tools and AI into university mental health systems safely, equitably, and at scale. To synthesize epidemiologic and clinical trial data on student mental health and digital interventions and integrate these findings with experience in institutional governance to propose an integrated, data-driven, stepped-care model for student mental health, implemented and governed at the university level, that begins with universal prevention, tracks need, and uses precision treatment selection to monitor and match students in need with the least-intensive effective level of care. We draw on findings from the World Mental Health International College Student (WMH-ICS) initiative, national surveys of student mental health and service use, randomized clinical trials of student internet-delivered digital interventions, implementation studies of digital navigators and task sharing, and emerging evaluations of AI-supported mental health systems. WMH-ICS studies find that 37% to 58% of first-year students worldwide meet 12-month criteria for a DSM-5 disorder, with low treatment rates and substantial impairment in academic performance. This unmet need exceeds the capacity of traditional short-term, face-to-face counseling services, even with expanded staffing and telehealth contracts. Hybrid stepped-care models combining universal prevention with light-touch human support (eg, digital navigators) and low-intensity digital interventions offer a more scalable approach that can expand reach, optimize use of clinicians' limited time, and improve outcomes. Building on these strands, we outline a 2-step system anchored in prematriculation life skills training and a guided first-year cohort model, embedded within a broader digital ecosystem that includes measurement, precision treatment algorithms, and explicit AI governance. Reframing student mental health as core to the mission of universities justifies investment in digitally enabled care. With appropriate guardrails, AI can be integrated as a regulated component of this ecosystem, extending the reach of effective interventions while maintaining safety, equity, and institutional accountability."
  }
 ]
