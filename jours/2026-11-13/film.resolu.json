@@ -1,0 +1,388 @@
+{
+ "id": "2026-11-13",
+ "sentences": [
+  {
+   "text": "Une IA peut-elle aider à soigner une plaie du pied diabétique ?",
+   "partie": "accroche",
+   "box": "soigner"
+  },
+  {
+   "text": "Chez un diabétique, l'ulcère du pied est une plaie à surveiller de près.",
+   "partie": "contexte",
+   "box": "surveiller"
+  },
+  {
+   "text": "Le danger : elle peut revenir, mener à l'amputation, voire au décès.",
+   "partie": "probleme",
+   "box": "l'amputation,",
+   "source": "carry risks of recurrence, amputation, and all-cause mortality"
+  },
+  {
+   "text": "Or, la plupart des modèles de prédiction ne regardent qu'une seule issue à la fois, et se lisent mal.",
+   "partie": "probleme",
+   "box": "seule",
+   "source": "most prediction models address single outcomes and have limited interpretability",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une équipe chinoise a donc créé une IA qui prédit la guérison, la récidive, l'amputation et le décès, en expliquant ce qui pèse.",
+   "partie": "ia",
+   "box": "prédit",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Cette IA améliore-t-elle les recommandations des médecins ?",
+   "partie": "question",
+   "pause_apres": 1.4,
+   "mode": "type"
+  },
+  {
+   "text": "Pour le savoir, ils l'ont d'abord bâtie sur sept cent soixante-trois patients, puis testée sur cent patients d'un autre hôpital.",
+   "partie": "etude",
+   "display": "Pour le savoir, ils l'ont d'abord bâtie sur 763 patients, puis testée sur 100 patients d'un autre hôpital.",
+   "box": "bâtie"
+  },
+  {
+   "text": "Concrètement, elle lit le dossier médical et le suivi du patient, puis estime le risque de chaque issue.",
+   "partie": "methode",
+   "box": "dossier"
+  },
+  {
+   "text": "Ensuite, ils ont tiré au sort deux cent deux participants, soins habituels ou décision aidée par l'IA, et jugé la qualité de la recommandation pour deux cents d'entre eux.",
+   "partie": "methode",
+   "display": "Ensuite, ils ont tiré au sort 202 participants, soins habituels ou décision aidée par l'IA, et jugé la qualité de la recommandation pour 200 d'entre eux.",
+   "box": "tiré",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : à l'externe, l'aire sous la courbe moyenne atteint zéro virgule neuf cent un sur un maximum de un, et zéro virgule neuf cent cinquante-trois pour l'amputation.",
+   "partie": "resultat",
+   "display": "Résultat : à l'externe, l'aire sous la courbe moyenne atteint 0,901 sur un maximum de 1, et 0,953 pour l'amputation.",
+   "box": "0,901",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Et côté médecins ? Sans l'IA, leurs recommandations obtiennent six virgule quarante-sept ; avec elle, sept virgule soixante-dix-sept.",
+   "partie": "resultat",
+   "display": "Et côté médecins ? Sans l'IA, leurs recommandations obtiennent 6,47 ; avec elle, 7,77.",
+   "box": "médecins",
+   "peak": "7,77"
+  },
+  {
+   "text": "Autrement dit, un gain de un virgule trente, avec un intervalle de confiance de un virgule zéro huit à un virgule cinquante-deux.",
+   "partie": "resultat",
+   "display": "Autrement dit, un gain de 1,30, avec un intervalle de confiance de 1,08 à 1,52.",
+   "box": "gain",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Le plus gros progrès porte sur l'exhaustivité : les recommandations sont plus complètes.",
+   "partie": "concret",
+   "box": "complètes.",
+   "source": "with the largest gain in completeness"
+  },
+  {
+   "text": "Et les patients s'impliquent mieux dans le suivi à court terme.",
+   "partie": "concret",
+   "box": "suivi",
+   "source": "The AI-assisted group showed better short-term follow-up engagement",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : le score juge la qualité des recommandations, pas la guérison des plaies, et la récidive reste à interpréter avec prudence.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : une IA qui explique ses prédictions pourrait aider le médecin, mais son bénéfice pour les patients reste à prouver.",
+   "partie": "retenir",
+   "pause_apres": 0.3,
+   "mode": "type"
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 27.57,
+  "stations": [
+   {
+    "type": "hook_versus",
+    "cam_at": 3.1,
+    "header": "Essai tiré au sort · Chine · 2026",
+    "left": {
+     "label": "Soins habituels",
+     "number": "6,47",
+     "at": 3.36
+    },
+    "right": {
+     "label": "Avec l'IA",
+     "number": "7,77",
+     "at": 4.38
+    },
+    "caption": "Score de qualité de la recommandation du médecin",
+    "caption_at": 5.52,
+    "footnote": "Pied diabétique et IA",
+    "y": 0
+   },
+   {
+    "type": "steps",
+    "cam_at": 7.16,
+    "mark_at": 12.74,
+    "title": "Le pied diabétique",
+    "steps": [
+     {
+      "icon": "skin",
+      "label": "Un ulcère du pied",
+      "note": "une plaie",
+      "at": 7.86,
+      "note_at": 8.96,
+      "_y": 1570
+     },
+     {
+      "icon": "stethoscope",
+      "label": "À surveiller de près",
+      "at": 9.24,
+      "_y": 1900
+     },
+     {
+      "icon": "hospital",
+      "label": "Récidive, amputation, décès",
+      "note": "les risques",
+      "at": 11.72,
+      "note_at": 12.74,
+      "_y": 2230
+     }
+    ],
+    "y": 1400
+   },
+   {
+    "type": "steps",
+    "cam_at": 16.88,
+    "mark_at": 18.9,
+    "title": "Les outils actuels",
+    "steps": [
+     {
+      "icon": "chart",
+      "label": "Une seule issue à la fois",
+      "at": 17.58,
+      "_y": 3250
+     },
+     {
+      "icon": "magnifier",
+      "label": "Difficiles à lire",
+      "note": "ce qui pèse reste flou",
+      "at": 18.9,
+      "note_at": 19.1,
+      "_y": 3580
+     },
+     {
+      "icon": "chip",
+      "label": "Une IA pour tout prédire",
+      "note": "et qui s'explique",
+      "at": 21.82,
+      "note_at": 26.26,
+      "_y": 3910
+     }
+    ],
+    "y": 3080
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Cette IA améliore-t-elle les recommandations des médecins ?",
+  "italic": "recommandations",
+  "fold_at": 32.6,
+  "start": 27.57,
+  "end": 33.65
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": 32.18,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Modèle validé, puis essai tiré au sort",
+      "at": 32.74
+     },
+     {
+      "label": "Construction",
+      "value": "763 patients",
+      "at": 33.9
+     },
+     {
+      "label": "Test externe",
+      "value": "100 patients",
+      "at": 36.24
+     },
+     {
+      "label": "Lieu",
+      "value": "Chine, 2018–2026",
+      "at": 37.8,
+      "accent": true
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 39.38,
+    "input_icon": "doc",
+    "input_label": "Dossier médical et suivi du patient",
+    "ai_label": "Calcule le risque de chaque issue",
+    "output_label": "Risque de chaque issue",
+    "modality": "donnees",
+    "at": 40.08,
+    "core_at": 42.54,
+    "out_at": 43.76,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "flow_chart",
+    "cam_at": 45.58,
+    "title": "Le tirage au sort",
+    "stages": [
+     {
+      "label": "Tirés au sort : IA ou soins habituels",
+      "n": "202",
+      "at": 46.28
+     },
+     {
+      "label": "Recommandation jugée",
+      "n": "200",
+      "at": 52.4,
+      "accent": true
+     }
+    ],
+    "y": 0,
+    "_fig": 2
+   },
+   {
+    "type": "metric",
+    "cam_at": 55.32,
+    "title": "Capacité à prédire (aire sous la courbe)",
+    "metrics": [
+     {
+      "label": "Moyenne",
+      "value": "0,901",
+      "num": 0.901,
+      "max": 1,
+      "at": 56.92,
+      "accent": true
+     },
+     {
+      "label": "Amputation",
+      "value": "0,953",
+      "num": 0.953,
+      "max": 1,
+      "at": 62.1
+     }
+    ],
+    "y": 0,
+    "_fig": 3
+   },
+   {
+    "type": "result_bars",
+    "cam_at": 65.3,
+    "title": "Score de qualité de la recommandation",
+    "groups": [
+     {
+      "label": "Soins habituels",
+      "value": "6,47",
+      "num": 6.47,
+      "at": 66.9
+     },
+     {
+      "label": "Avec l'IA",
+      "value": "7,77",
+      "num": 7.77,
+      "at": 69.18,
+      "accent": true
+     }
+    ],
+    "ci": {
+     "value": "+1,30",
+     "num": 1.3,
+     "low": 1.08,
+     "high": 1.52,
+     "null": 0,
+     "at": 71.82
+    },
+    "y": 0,
+    "_fig": 4
+   },
+   {
+    "type": "findings",
+    "cam_at": 77.5,
+    "title": "Ce qu'on a trouvé en plus",
+    "items": [
+     {
+      "icon": "doc",
+      "label": "Recommandations plus complètes",
+      "detail": "Le plus gros gain du score",
+      "detail_at": 79.16,
+      "tendance": "plus",
+      "accent": true,
+      "at": 78.2
+     },
+     {
+      "icon": "calendar",
+      "label": "Suivi à court terme",
+      "detail": "Les patients s'impliquent mieux",
+      "tendance": "plus",
+      "at": 82.88
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 85.27,
+    "text": "Attention : le score juge la qualité des recommandations, pas la guérison des plaies, et la récidive reste à interpréter avec prudence.",
+    "italic": "prudence",
+    "sentence": 14,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 92.61,
+    "text": "À retenir : une IA qui explique ses prédictions pourrait aider le médecin, mais son bénéfice pour les patients reste à prouver.",
+    "italic": "prouver",
+    "sentence": 15,
+    "y": 0
+   }
+  ],
+  "start": 32.550000000000004,
+  "end": 100.00999999999999
+ },
+ "end": {
+  "fold_at": 98.96,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 102.64,
+  "button": "Suivre",
+  "button_at": 103.24,
+  "click_at": 104.24,
+  "source": "Zhang et al. · EClinicalMedicine · octobre 2026",
+  "doi": "doi:10.1016/j.eclinm.2026.104284",
+  "source_at": 101.06,
+  "start": 98.91,
+  "end": 106.9
+ },
+ "duration": 106.9,
+ "lead": 3.1,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

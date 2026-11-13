@@ -1,0 +1,155 @@
+[
+ {
+  "score": 20,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "multicentrique",
+   "n = 763",
+   "revue majeure",
+   "intervalle de confiance",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "diabète et poids"
+  ],
+  "id": "MED:43001198",
+  "pmid": "43001198",
+  "pmcid": null,
+  "doi": "10.1016/j.eclinm.2026.104284",
+  "titre": "An explainable artificial intelligence system for prognostic assessment and decision support in diabetic foot ulcer care: a multicentre derivation and validation study with prospective randomised evaluation.",
+  "revue": "EClinicalMedicine",
+  "date": "2026-10-31",
+  "auteurs": "Zhang JY, Zhuang Y, Cao Q, Song C, Feng Y, Zhuang G, Ji Z, Li X, Li Q, Jin P, Zhang A, Zhang C.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Background Diabetic foot ulcers (DFUs) carry risks of recurrence, amputation, and all-cause mortality, but most prediction models address single outcomes and have limited interpretability. We developed an interpretable multi-outcome machine-learning framework for individualised DFU risk assessment and prospective clinical evaluation. Methods We conducted a development and validation study across three hospitals in China from January 1, 2018, to April 30, 2025. We used electronic medical records and follow-up data from 763 patients at Centres A and B to develop and internally validate an ensemble of single-task extreme gradient boosting (ST-XGBoost) and single-task multilayer perceptron (ST-MLP) models to predict cure, recurrence, amputation, and all-cause mortality. The locked ensemble was externally validated in 100 patients at Centre C. Model performance was assessed using discrimination, calibration, and decision curve analysis, with interpretability evaluated using Shapley additive explanations (SHAP). From January 5 to March 5, 2026, we performed a prospective comparative evaluation. We randomised 202 participants (1:1) to usual care or artificial intelligence (AI)-assisted care, of whom 200 were analysed. We compared AI-assisted physician decision-making via an evolvable web-based online prediction platform versus usual care. The outcome was overall quality score of the final clinical recommendation. The platform supports follow-up data collection for future offline model updating. Findings In the training dataset, cure, recurrence, amputation, and all-cause mortality occurred in 638, 208, 226, and 167 patients, respectively; the corresponding numbers in the external validation dataset were 80, 34, 24, and 25. In independent external validation, the ST-XGBoost + ST-MLP ensemble outperformed six comparators, with a macro-averaged AUC of 0.901, accuracy of 0.875, and F1 score of 0.830. Outcome-specific discrimination was highest for amputation (AUC 0.953) and all-cause mortality (AUC 0.951), followed by cure (AUC 0.880) and recurrence (AUC 0.820). In the prospective evaluation, AI-assisted recommendations received higher scores than corresponding clinician recommendations (7.77 vs 6.47; mean difference 1.30, 95% confidence interval (CI) 1.08-1.52; p 0.0001), with the largest gain in completeness. The AI-assisted group showed better short-term follow-up engagement and glucose-management adherence. Interpretation We demonstrate that integrating gradient-boosted trees and neural networks enables explainable prediction of complex DFU trajectories and may support prioritised, individualised clinical decision-making. Nevertheless, recurrence estimates should be interpreted cautiously. Funding Xuzhou Municipal Health Commission Science and Technology Project (XWYHT20240128)."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "n = 1891",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "cancer",
+   "imagerie"
+  ],
+  "id": "MED:43013774",
+  "pmid": "43013774",
+  "pmcid": null,
+  "doi": "10.2196/98520",
+  "titre": "Imaging-Based AI for Predicting Pathological Complete Response in Esophageal Cancer After Neoadjuvant Therapy: Systematic Review and Meta-Analysis.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-11",
+  "auteurs": "Li Z, Gao X, Zhou J, Wang L, Ren F.",
+  "types": "meta-analysis systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Background Imaging-based AI may help predict pathological complete response (pCR) after neoadjuvant therapy for esophageal cancer. However, an encouraging average diagnostic performance does not establish reliable performance across clinical settings or justify treatment decisions without further validation. Objective We aimed to assess the predictive performance of imaging-based AI across neoadjuvant strategies, distinguish internal from external validation, and examine limitations affecting interpretation. Methods PubMed, Embase, Web of Science, and the Cochrane Library were searched through August 7, 2026. Eligible English-language studies evaluated imaging-based AI against pathological assessment of pCR. PROBAST+AI (Prediction Model Risk of Bias Assessment Tool plus Artificial Intelligence) assessed study quality and risk of bias; GRADE (Grading of Recommendations Assessment, Development, and Evaluation) assessed certainty for sensitivity, specificity, and diagnostic odds ratio (DOR). Bivariate random-effects models synthesized validation groups separately. CIs described uncertainty in average performance, whereas 95% prediction intervals (PIs) described true performance in a similar new study. Results Thirty-three studies contributed 27 internal-validation datasets with 1891 patients and 16 external-validation datasets with 777 patients. Ten publications contributed to both groups. The sum was 2668 validation observations; the unique patient count across datasets and publications could not be verified. Internal sensitivity was 0.77 (95% CI 0.72-0.81; PI 0.57-0.89), specificity 0.82 (95% CI 0.78-0.86; PI 0.60-0.93); DOR, 15.49 (95% CI 11.16-21.50); and area under the curve (AUC), 0.86 (95% CI 0.83-0.89). External sensitivity was 0.73 (95% CI 0.61-0.81; PI 0.34-0.93), specificity 0.83 (95% CI 0.73-0.90; PI 0.36-0.98), DOR 12.93 (95% CI 7.25-23.07), and AUC 0.84 (95% CI 0.79-0.89). DOR PIs were 5.40-44.44 and 2.40-69.62, respectively. Thirty-two studies were conducted in China, and 12 had high validation risk of bias. All GRADE-assessed outcomes had very low certainty. Selecting the first eligible imaging model reported in each article instead of the highest-AUC model showed modest decreases in average performance across 16 internal and 10 external datasets; incomplete alternative-model reporting limited interpretation. Single study algorithm estimates were reported descriptively, without ranking algorithms or interpreting their CIs as evidence of between study consistency or generalizability. Conclusions By combining multiple neoadjuvant strategies and separating validation stages, this review extends earlier neoadjuvant chemoradiotherapy (NCRT)-focused syntheses and identifies priorities for further model evaluation. Imaging-based AI may support response assessment, but wide PIs, risk of bias, and very low evidence certainty preclude routine clinical adoption without prospective, geographically diverse validation. Future studies should evaluate prespecified models in independent populations, report clinically relevant decision thresholds, and assess calibration and patient outcomes. Until such evidence is available, these models should be considered investigational adjuncts to response assessment and should not independently guide organ preservation or omission of surgery after neoadjuvant treatment."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "n = 91363",
+   "revue majeure",
+   "texte intégral libre",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "urgences et réanimation"
+  ],
+  "id": "MED:43008270",
+  "pmid": "43008270",
+  "pmcid": "PMC13750794",
+  "doi": "10.2196/98273",
+  "titre": "Explainable Machine Learning for Predicting Hospital Admission at Emergency Department Triage: Retrospective Cohort Study.",
+  "revue": "JMIR medical informatics",
+  "date": "2026-11-10",
+  "auteurs": "Dave K, Robert A, Russell WA, Buckeridge DL.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "resume": "Background Emergency departments (EDs) are vital access points for urgent care, yet persistent overcrowding in health care systems worldwide compromises service quality and efficiency. Urban tertiary care centers are increasingly strained by surging patient numbers and scarce inpatient beds. Prior admission prediction studies mostly rely on limited triage features and discrimination metrics, neglecting operational factors, calibration, and explainability. Identifying likely admissions early could enable proactive resource allocation and shorter wait times. Objective This study aimed to develop and evaluate machine learning models for predicting hospital admission at the end of triage using routinely collected structured data while addressing prior limitations regarding feature selection, model calibration, and explainability. Methods We conducted a retrospective cohort study of adult ED visits between January 2015 and December 2022 at 2 academic hospitals in the McGill University Health Centre. We excluded visits with dispositions other than admission or discharge to ensure a binary outcome. Data were split into training (70%), validation (10%), and testing (20%) sets using stratified random sampling. We trained classifiers, including logistic regression (LR), decision trees, random forests, artificial neural networks, and gradient boosting algorithms (extreme gradient boosting [XGBoost], light gradient boosting machine, and categorical boosting), using demographics, vital signs, chief complaints, comorbidities, and historical hospitalization frequency available at triage. Sensitivity analyses tested exclusion criteria and temporal data shifts, while subgroup analyses examined differences by age, sex, and site. Performance was evaluated using area under the receiver operating characteristic curve (AUC-ROC), sensitivity, specificity, and calibration. We also performed a decision threshold analysis to assess operational flexibility and used Shapley additive explanations (SHAP) values to interpret feature contributions. Results The final cohort included 526,145 visits (mean age 50.9, SD 21.1 years; 272,767/526,145, 51.8% female), with 91,363 patients (17.4%) admitted. The XGBoost model achieved the highest performance, with an AUC-ROC of 0.86 (95% CI 0.858-0.864), a sensitivity of 0.67, and a specificity of 0.86, outperforming the LR baseline (AUC 0.84). Key predictors identified by SHAP values included age, Canadian Triage and Acuity Scale scores, arrival mode, and historical hospitalization frequency. Subgroup analyses confirmed strong performance across age, sex, and sites. Sensitivity analyses evaluating alternative outcome dispositions and chronological data splits confirmed overall model stability. Threshold analysis showed that adjusting the decision threshold to the 0.70 to 0.75 range improved the positive predictive value and did not disproportionately reclassify older or higher-acuity patients. Conclusions In urban tertiary care settings, structured triage data available at triage can effectively anticipate hospital admissions. By incorporating broad feature sets and operational variables, models such as XGBoost offer a feasible, explainable tool for early decision-making. Such tools could improve coordination between emergency and inpatient services and ease overcrowding. Future work should prioritize prospective validation and real-time clinical workflow integration."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "diabète et poids"
+  ],
+  "id": "MED:43006686",
+  "pmid": "43006686",
+  "pmcid": null,
+  "doi": "10.2196/100653",
+  "titre": "Machine Learning Models for Glycemic Prediction in Type 1 and Type 2 Diabetes: Systematic Review and Meta-Analysis.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-09",
+  "auteurs": "Yang H, Abudukeremu D, Shi Y, Fang L, Li L, Gu W, Jia Y, He R.",
+  "types": "meta-analysis systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Background Machine learning models are increasingly used for glycemic event prediction and continuous glucose forecasting, but targets, populations, horizons, validation, and uncertainty reporting remain heterogeneous. Objective This study aimed to evaluate machine learning models for glycemic prediction in type 1, type 2, and mixed diabetes populations while distinguishing the full evidence map from the quantitatively analyzable subset. Methods We searched 9 English- and Chinese-language databases from inception to April 12, 2026, for studies predicting future glycemic events or glucose values in people with diabetes. Continuous forecasting and binary event prediction were analyzed separately. Root-mean-square error (RMSE) was the principal continuous end point; mean absolute error was supportive. Area under the receiver operating characteristic curve was synthesized using a Bayesian random-effects model because analyzable 2×2 data were sparse. Two reviewers (HY and DA) independently applied PROBAST (Prediction Model Risk of Bias Assessment Tool) to 19 quantitative-source reports (28 assessment units). Results We identified 787 records, assessed 310 full texts, and included 299 reports representing 270 studies; 19 reports contributed to quantitative synthesis. The review included 128 type 1, 26 type 2, 78 mixed, and 38 unclear-diabetes-type studies. Pooled RMSE was 1.18 mmol/L (95% CI 1.01-1.34; 37 effects), supportive mean absolute error was 0.90 mmol/L (95% CI 0.78-1.02; 20 effects), and Bayesian pooled area under the receiver operating characteristic curve was 0.926 (95% credible interval 0.877-0.957). Supportive sensitivity and specificity were 0.77 and 0.80. Of 28 PROBAST units, 24 were high risk, 2 unclear, and 2 low. Post hoc exploratory within-report analysis estimated an RMSE increase of 0.481 mmol/L per additional 30 minutes (95% CI 0.213-0.749), but overlap sensitivity reduced certainty. In the 270-study clinical readiness audit, external validation occurred in 4.0% (10/251), prospective evaluation in 0.7% (2/270), calibration in 4.8% (13/270), decision-curve or net-benefit analysis in 2.6% (7/270), and implementation or human-factors evaluation in 2.6% (7/270). Conclusions Glycemic prediction studies show forecasting and discrimination signals, but heterogeneity, high risk of bias, incomplete uncertainty reporting, and limited external and prospective validation preclude deployable benchmarks. Pooled estimates should be viewed as summaries of analyzable literature. Future studies need transparent horizon, threshold, calibration, validation, uncertainty, and implementation reporting."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "santé mentale"
+  ],
+  "id": "MED:43013291",
+  "pmid": "43013291",
+  "pmcid": null,
+  "doi": "10.1001/jamapsychiatry.2026.3764",
+  "titre": "Rethinking University Mental Health for the AI Era: From Crisis Response to Core Mission.",
+  "revue": "JAMA psychiatry",
+  "date": "2026-11-11",
+  "auteurs": "Kessler RC, Ono SJ.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Importance Universities have become frontline mental health care settings for adolescents and young adults, a group with rapidly rising rates of common psychiatric disorders. Conventional campus counseling services cannot meet this demand. Students are increasingly turning to unregulated generative artificial intelligence (AI) tools. There is an urgent need for an evidence-informed architecture that integrates digital tools and AI into university mental health systems safely, equitably, and at scale. Objective To synthesize epidemiologic and clinical trial data on student mental health and digital interventions and integrate these findings with experience in institutional governance to propose an integrated, data-driven, stepped-care model for student mental health, implemented and governed at the university level, that begins with universal prevention, tracks need, and uses precision treatment selection to monitor and match students in need with the least-intensive effective level of care. Evidence review We draw on findings from the World Mental Health International College Student (WMH-ICS) initiative, national surveys of student mental health and service use, randomized clinical trials of student internet-delivered digital interventions, implementation studies of digital navigators and task sharing, and emerging evaluations of AI-supported mental health systems. Findings WMH-ICS studies find that 37% to 58% of first-year students worldwide meet 12-month criteria for a DSM-5 disorder, with low treatment rates and substantial impairment in academic performance. This unmet need exceeds the capacity of traditional short-term, face-to-face counseling services, even with expanded staffing and telehealth contracts. Hybrid stepped-care models combining universal prevention with light-touch human support (eg, digital navigators) and low-intensity digital interventions offer a more scalable approach that can expand reach, optimize use of clinicians' limited time, and improve outcomes. Building on these strands, we outline a 2-step system anchored in prematriculation life skills training and a guided first-year cohort model, embedded within a broader digital ecosystem that includes measurement, precision treatment algorithms, and explicit AI governance. Conclusions and relevance Reframing student mental health as core to the mission of universities justifies investment in digitally enabled care. With appropriate guardrails, AI can be integrated as a regulated component of this ecosystem, extending the reach of effective interventions while maintaining safety, equity, and institutional accountability."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "n = 4353",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "cerveau"
+  ],
+  "id": "MED:43018068",
+  "pmid": "43018068",
+  "pmcid": null,
+  "doi": "10.1161/jaha.125.047479",
+  "titre": "Prediction of Stroke Outcome After Endovascular Thrombectomy From Clinical Characteristics: A Machine Learning Approach.",
+  "revue": "Journal of the American Heart Association",
+  "date": "2026-11-12",
+  "auteurs": "Yoshie T, Yoshimura S, Sakuraba M, Wada S, Miwa K, Koge J, Miyazaki J, Watanabe T, Kitazawa K, Sakai N, Yanagisawa T, Johkura K, Iihara K, Miyamoto Y, Minematsu K, Toyoda K, Koga M.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Background Predicting outcomes after endovascular thrombectomy (EVT) for acute ischemic stroke is challenging. This study aimed to develop a machine learning model to predict outcomes after EVT using only clinical characteristics available shortly after hospital arrival, excluding imaging, laboratory, and angiographic data. Methods We analyzed data from the JSDB (Japan Stroke Data Bank), a multicenter, prospective registry of patients with acute stroke. A total of 4353 patients who underwent EVT between 2016 and 2020 were included, with those from 2016 to 2019 assigned to the derivation cohort and those from 2020 to the validation cohort. The model was developed using 132 routinely collected clinical variables that can be rapidly obtained on patient arrival. Feature selection was performed using the Boruta algorithm, and the model was built using CatBoost. The primary outcome was a modified Rankin Scale (mRS) score of 0 to 2 at discharge. Results Among 4353 patients treated with EVT, the derivation cohort included 2764 patients and the validation cohort, 1589 patients. In these cohorts, 973 (35.2%) and 547 (34.4%) achieved mRS 0 to 2, respectively. Boruta selected 47 predictors. CatBoost achieved an area under the receiver operating characteristic curve of 0.744 (95% CI, 0.710-0.776) in the derivation test set and 0.781 (95% CI, 0.755-0.803) in the validation cohort. Validation areas under the receiver operating characteristic curves were 0.792 (95% CI, 0.765-0.815) for mRS 0 to 1, 0.766 (95% CI, 0.744-0.787) for mRS 0 to 3, and 0.680 (95% CI, 0.631-0.729) for mRS 6. Conclusions Our machine learning model predicted outcomes following EVT using only admission clinical data. This imaging-independent machine learning approach may support early prognostication and facilitate discussions of expected clinical courses."
+ }
+]

@@ -1,0 +1,77 @@
+[
+ {
+  "id": "f1",
+  "valeur": 763,
+  "citation": "763 patients"
+ },
+ {
+  "id": "f2",
+  "valeur": 100,
+  "citation": "100 patients at Centre C"
+ },
+ {
+  "id": "f3",
+  "valeur": 202,
+  "citation": "randomised 202 participants"
+ },
+ {
+  "id": "f4",
+  "valeur": 200,
+  "citation": "of whom 200 were analysed"
+ },
+ {
+  "id": "f5",
+  "valeur": 0.901,
+  "citation": "macro-averaged AUC of 0.901"
+ },
+ {
+  "id": "f6",
+  "valeur": 0.953,
+  "citation": "amputation (AUC 0.953)"
+ },
+ {
+  "id": "f7",
+  "valeur": 0.82,
+  "citation": "recurrence (AUC 0.820)"
+ },
+ {
+  "id": "f8",
+  "valeur": 7.77,
+  "citation": "(7.77 vs 6.47"
+ },
+ {
+  "id": "f9",
+  "valeur": 6.47,
+  "citation": "(7.77 vs 6.47"
+ },
+ {
+  "id": "f10",
+  "valeur": 1.3,
+  "citation": "mean difference 1.30"
+ },
+ {
+  "id": "f11",
+  "valeur": 1.08,
+  "citation": "1.08-1.52"
+ },
+ {
+  "id": "f12",
+  "valeur": 1.52,
+  "citation": "1.08-1.52"
+ },
+ {
+  "id": "f13",
+  "valeur": 2018,
+  "citation": "January 1, 2018"
+ },
+ {
+  "id": "f14",
+  "valeur": 2026,
+  "citation": "March 5, 2026"
+ },
+ {
+  "id": "f15",
+  "valeur": 2,
+  "calcul": "f3 - f4"
+ }
+]

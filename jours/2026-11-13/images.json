@@ -1,0 +1,23 @@
+{
+ "duree": 106.9,
+ "pas": 0.5,
+ "edition": "framboise",
+ "occupation_moyenne": 37.8,
+ "etendue_moyenne": 57.8,
+ "temps_vide_pct": 1,
+ "temps_sous_rempli_pct": 6.3,
+ "ecrans_vides": [
+  [
+   28,
+   29
+  ]
+ ],
+ "cadres_sous_remplis": [
+  [
+   46.5,
+   52.5
+  ]
+ ],
+ "pire_vide": 1,
+ "bilan": "cadre peu rempli à 0:46"
+}

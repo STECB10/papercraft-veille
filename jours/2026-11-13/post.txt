@@ -1,0 +1,9 @@
+Une IA qui explique ses prédictions a amélioré les recommandations des médecins pour le pied diabétique.
+
+Des chercheurs chinois ont bâti une IA qui prédit la guérison, la récidive, l'amputation et le décès, puis l'ont testée dans un essai : 202 participants tirés au sort, soins habituels ou décision aidée par l'IA. Le score de qualité de la recommandation passe de 6,47 à 7,77 (écart de 1,30 ; intervalle de confiance : 1,08 à 1,52).
+
+Et dans votre service, laisseriez-vous une IA compléter vos recommandations pour une plaie du pied diabétique ?
+
+Source : Zhang et al., EClinicalMedicine, octobre 2026. https://doi.org/10.1016/j.eclinm.2026.104284
+
+#IA #PiedDiabétique #Diabète #Veille

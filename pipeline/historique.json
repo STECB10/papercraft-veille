@@ -109,5 +109,11 @@
   "doi": "10.1161/circulationaha.126.083540",
   "titre": "Leveraging AI-ECG Technology for Early Notification and Tracking of AF Development (LATENT): A Randomized Controlled Trial.",
   "statut": "rejetée"
+ },
+ {
+  "date": "2026-11-13",
+  "doi": "10.1016/j.eclinm.2026.104284",
+  "titre": "An explainable artificial intelligence system for prognostic assessment and decision support in diabetic foot ulcer care: a multicentre derivation and validation study with prospective randomised evaluation.",
+  "statut": "en attente"
  }
 ]
