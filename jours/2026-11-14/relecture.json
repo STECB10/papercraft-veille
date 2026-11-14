@@ -1,0 +1,31 @@
+{
+ "verdict": "corrigé",
+ "resume": "Post: l'effet ne vaut pas pour les seuls kystes ; lecture plus rapide = étude de lecture ; 3 150 = cohortes totales.",
+ "points": [
+  {
+   "gravite": "bloquant",
+   "ou": "post",
+   "probleme": "L'accroche attribue la baisse aux kystes du rein alors que le sous-groupe kystes n'est pas significatif.",
+   "preuve": "The treated AI-evaluable CRM subgroup difference was non-significant (5/29 [17.2%] versus 19/56 [33.9%]; p = 0.105).",
+   "avant": "Une IA qui lit le scanner a réduit la part de lésions bénignes parmi les kystes du rein traités.",
+   "apres": "Dans un essai chinois, une IA lisant le scanner a réduit la part de lésions bénignes traitées ; pas démontré pour les seuls kystes."
+  },
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 14 et planche findings",
+   "probleme": "Le temps de lecture vient de l'étude de lecture sur 117 cas, pas du terrain.",
+   "preuve": "six radiologists interpreted 117 external-cohort cases with and without AI; outcomes were ... reading time",
+   "avant": "Sur le terrain, la lecture est plus rapide",
+   "apres": "Chez les radiologues, la lecture est plus rapide (titre de planche : Autres résultats)"
+  },
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 7",
+   "probleme": "3 150 patients sont l'ensemble des cohortes rétrospectives (développement inclus), pas la seule validation dans cinq hôpitaux.",
+   "preuve": "Retrospective cohorts comprised 3150 patients",
+   "avant": "Pour le savoir, ils l'ont validée sur 3 150 patients, dans cinq hôpitaux chinois.",
+   "apres": "Ils l'ont développée et validée sur 3 150 patients, notamment dans cinq hôpitaux chinois."
+  }
+ ],
+ "phrases_modifiees": 2
+}

@@ -1,0 +1,9 @@
+Dans un essai chinois, une IA lisant le scanner a réduit la part de lésions bénignes traitées ; pas démontré pour les seuls kystes.
+
+Des chercheurs chinois ont validé une IA qui estime le risque de malignité d'un kyste du rein sur scanner, puis l'ont testée dans un essai : 5 869 adultes tirés au sort, compte rendu avec ou sans l'IA. Parmi les lésions traitées, 16,4 % étaient bénignes avec l'IA, contre 40,3 % sans (écart de −23,9 points ; intervalle de confiance : −31,7 à −15,4).
+
+Et dans votre pratique, une aide de ce type changerait-elle votre décision de traiter ou de surveiller un kyste du rein ?
+
+Source : Chen et al., EClinicalMedicine, novembre 2026. https://doi.org/10.1016/j.eclinm.2026.104279
+
+#IA #Radiologie #Urologie #Veille

@@ -1,0 +1,157 @@
+[
+ {
+  "score": 19,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "multicentrique",
+   "n = 3150",
+   "revue majeure",
+   "intervalle de confiance",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "imagerie",
+   "reins et sang"
+  ],
+  "id": "MED:43022301",
+  "pmid": "43022301",
+  "pmcid": null,
+  "doi": "10.1016/j.eclinm.2026.104279",
+  "titre": "CT-based AI risk support for cystic renal masses: multicenter validation, reader study, and a randomized implementation study.",
+  "revue": "EClinicalMedicine",
+  "date": "2026-11-03",
+  "auteurs": "Chen C, Kang Q, Yang Y, Li X, Li N, Zhang Q, Yang X, Yang X, Zhang Y, Lu J, Zhang S, Wang L, Shao C, Bian Y.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Background Cystic renal masses are frequently overtreated. We developed and evaluated the Kidney Imaging-based Triage Engine for Cystic Renal Masses (KITE-CRM), a computed tomography (CT)-based deep-learning pathway using artificial intelligence (AI) to support malignancy risk assessment in cystic renal masses (CRMs). Methods We conducted a multicentre development and validation study in China. In phase 1 (January 2020-December 2021), we developed the system in a retrospective training cohort from a tertiary referral center. CRMs were defined as renal lesions with predominantly cystic features. Corticomedullary-phase contrast-enhanced CT was the sole model input. In phase 2 (January 2022-October 2025), we externally validated the model across five independent hospitals. The core task was lesion-level malignancy discrimination; secondary tasks classified malignant lesions as clear-cell renal cell carcinoma (ccRCC) versus other malignant subtypes and stratified ccRCC as high-grade versus low-grade disease. Retrospective cohorts comprised 3150 patients. The core task used 570 training cases (142 malignant), 235 internal-validation cases (137 malignant), and 528 external cases (160 malignant). Three-dimensional processing used one index lesion per patient and a fixed threshold of 0.586442888. In a randomized crossover multi-reader, multi-case study, six radiologists interpreted 117 external-cohort cases with and without AI; outcomes were area under the receiver operating characteristic curve (AUROC), sensitivity, specificity, reading time, and user acceptance. In phase 3 (November 2025-February 2026), 5869 eligible consecutive adults undergoing contrast-enhanced abdominal CT at Changhai Hospital were randomized 1:1 to AI-assisted (n = 2934) or standard reporting (n = 2935). The primary clinical endpoint was the proportion of pathologically benign lesions among treated lesions. The trial was registered with the Chinese Clinical Trial Registry (ChiCTR2500112290); model code is publicly available. Findings Internal-validation AUROC was 0.996 (95% confidence interval [CI], 0.990-0.999) and Brier score 0.046 (0.036-0.058). External AUROCs were 0.913-0.999, excluding Test 4 (AUROC 1.000; three malignant cases). External sensitivity ranged from 19/24 (79.2%) to 3/3 (100.0%) and specificity from 100/116 (86.2%) to 33/33 and 115/115 (100.0%). AI assistance increased reader-averaged AUROC from 0.825 to 0.973 (difference, 0.149; 95% CI, 0.091-0.206) and reduced mean interpretation time from 9.7 to 5.5 min. Benign pathology occurred in 28/171 (16.4%) treated lesions with AI versus 104/258 (40.3%) with standard care (difference, -23.9 percentage points; 95% CI, -31.7 to -15.4). The treated AI-evaluable CRM subgroup difference was non-significant (5/29 [17.2%] versus 19/56 [33.9%]; p = 0.105). In post hoc intention-to-treat analysis, benign intervention occurred in 28/2934 (0.95%) versus 104/2935 (3.54%) randomized participants (risk difference, -2.59 percentage points; 95% CI, -3.38 to -1.85; p Interpretation KITE-CRM improved assisted interpretation and reporting efficiency. Management findings do not establish long-term oncologic safety or CRM-specific clinical superiority. The model complements, rather than replaces, Bosniak assessment, indicated multiphase CT or magnetic resonance imaging (MRI), and clinical judgment. Broader prospective evaluation is needed. Funding National Natural Science Foundation of China and Shanghai municipal research programmes."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "n = 1891",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "cancer",
+   "imagerie"
+  ],
+  "id": "MED:43013774",
+  "pmid": "43013774",
+  "pmcid": null,
+  "doi": "10.2196/98520",
+  "titre": "Imaging-Based AI for Predicting Pathological Complete Response in Esophageal Cancer After Neoadjuvant Therapy: Systematic Review and Meta-Analysis.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-11",
+  "auteurs": "Li Z, Gao X, Zhou J, Wang L, Ren F.",
+  "types": "meta-analysis systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Background Imaging-based AI may help predict pathological complete response (pCR) after neoadjuvant therapy for esophageal cancer. However, an encouraging average diagnostic performance does not establish reliable performance across clinical settings or justify treatment decisions without further validation. Objective We aimed to assess the predictive performance of imaging-based AI across neoadjuvant strategies, distinguish internal from external validation, and examine limitations affecting interpretation. Methods PubMed, Embase, Web of Science, and the Cochrane Library were searched through August 7, 2026. Eligible English-language studies evaluated imaging-based AI against pathological assessment of pCR. PROBAST+AI (Prediction Model Risk of Bias Assessment Tool plus Artificial Intelligence) assessed study quality and risk of bias; GRADE (Grading of Recommendations Assessment, Development, and Evaluation) assessed certainty for sensitivity, specificity, and diagnostic odds ratio (DOR). Bivariate random-effects models synthesized validation groups separately. CIs described uncertainty in average performance, whereas 95% prediction intervals (PIs) described true performance in a similar new study. Results Thirty-three studies contributed 27 internal-validation datasets with 1891 patients and 16 external-validation datasets with 777 patients. Ten publications contributed to both groups. The sum was 2668 validation observations; the unique patient count across datasets and publications could not be verified. Internal sensitivity was 0.77 (95% CI 0.72-0.81; PI 0.57-0.89), specificity 0.82 (95% CI 0.78-0.86; PI 0.60-0.93); DOR, 15.49 (95% CI 11.16-21.50); and area under the curve (AUC), 0.86 (95% CI 0.83-0.89). External sensitivity was 0.73 (95% CI 0.61-0.81; PI 0.34-0.93), specificity 0.83 (95% CI 0.73-0.90; PI 0.36-0.98), DOR 12.93 (95% CI 7.25-23.07), and AUC 0.84 (95% CI 0.79-0.89). DOR PIs were 5.40-44.44 and 2.40-69.62, respectively. Thirty-two studies were conducted in China, and 12 had high validation risk of bias. All GRADE-assessed outcomes had very low certainty. Selecting the first eligible imaging model reported in each article instead of the highest-AUC model showed modest decreases in average performance across 16 internal and 10 external datasets; incomplete alternative-model reporting limited interpretation. Single study algorithm estimates were reported descriptively, without ranking algorithms or interpreting their CIs as evidence of between study consistency or generalizability. Conclusions By combining multiple neoadjuvant strategies and separating validation stages, this review extends earlier neoadjuvant chemoradiotherapy (NCRT)-focused syntheses and identifies priorities for further model evaluation. Imaging-based AI may support response assessment, but wide PIs, risk of bias, and very low evidence certainty preclude routine clinical adoption without prospective, geographically diverse validation. Future studies should evaluate prespecified models in independent populations, report clinically relevant decision thresholds, and assess calibration and patient outcomes. Until such evidence is available, these models should be considered investigational adjuncts to response assessment and should not independently guide organ preservation or omission of surgery after neoadjuvant treatment."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "n = 269254",
+   "revue majeure",
+   "intervalle de confiance",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "infections"
+  ],
+  "id": "MED:43020100",
+  "pmid": "43020100",
+  "pmcid": null,
+  "doi": "10.1016/j.langlo.2026.104090",
+  "titre": "Geographical targeting of active case-finding for tuberculosis in Pakistan using artificial intelligence software (SPOT-TB): a pragmatic, stepped wedge, cluster-randomised control trial.",
+  "revue": "The Lancet. Global health",
+  "date": "2026-11-12",
+  "auteurs": "Mahfooz A, Latif A, Zaidi SMA, Ahmed W, Nawaz N, Reza TE, Tahir A, Ur Rehman F, Naveed S, Shahid A, Ali F, Emmanuel F.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Background Community-wide active case-finding is being increasingly implemented as a tuberculosis elimination intervention. However, conventional site selection strategies can result in low screening yields. We aimed to evaluate whether geographical targeting using artificial intelligence (AI) software can improve detection of tuberculosis during screening in comparison to conventional approaches for site selection, within the programmatic setting in Pakistan. Methods We conducted a pragmatic, stepped wedge, cluster-randomised trial across all four provinces of Pakistan, and was embedded within The Global Fund to Fight AIDS, Tuberculosis and Malaria-supported active case-finding activities implemented by Pakistan's National TB Control Program and private sector partners. 30 mobile x-ray van teams operating in 68 districts were randomised to transition from conventional site selection approaches (based on field team knowledge, experience, and historical data) to an AI-guided targeting strategy using the Mapping and Analysis for Tailored disease Control and Health system strengthening-Artificial Intelligence (MATCH-AI) software. All individuals attending community active case-finding camps were eligible for participation except those excluded as per the national guidelines. The primary outcome, camp positivity yield, was defined as the number of individuals diagnosed with bacteriologically confirmed tuberculosis per camp. The primary analysis was by intention to treat and camps conducted within a 5-km radius of AI recommended locations were included in a validated per-protocol analysis. This trial is registered at ClinicalTrials.gov, NCT06017843, and has been completed. Findings Between Aug 1, 2023, and Sept 28, 2024, 3936 screening camps were conducted (2046 [52·0%] control, 1890 [48·0%] intervention), screening 269 254 individuals. In the intention-to-treat analysis, camp positivity yield was 7% higher in the intervention group, but not statistically significant (adjusted risk ratio 1·07, 95% CI 0·94-1·22; p=0·27). In the validated per-protocol analysis, the camp positivity yield was 32% higher in the intervention group (1·32, 1·12-1·54; p Interpretation AI-guided targeting was associated with substantially higher detection of bacteriologically confirmed tuberculosis during active case-finding in the validated per-protocol analysis and could improve efficiency of community-based tuberculosis case-finding interventions in high burden countries. Routine programmatic data did not capture all implementation or process-quality indicators, limiting assessment of implementation fidelity and variation across sites. Funding Gates Foundation, the Global Fund through Mercy Corps, Pakistan."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "n = 91363",
+   "revue majeure",
+   "texte intégral libre",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "urgences et réanimation"
+  ],
+  "id": "MED:43008270",
+  "pmid": "43008270",
+  "pmcid": "PMC13750794",
+  "doi": "10.2196/98273",
+  "titre": "Explainable Machine Learning for Predicting Hospital Admission at Emergency Department Triage: Retrospective Cohort Study.",
+  "revue": "JMIR medical informatics",
+  "date": "2026-11-10",
+  "auteurs": "Dave K, Robert A, Russell WA, Buckeridge DL.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "resume": "Background Emergency departments (EDs) are vital access points for urgent care, yet persistent overcrowding in health care systems worldwide compromises service quality and efficiency. Urban tertiary care centers are increasingly strained by surging patient numbers and scarce inpatient beds. Prior admission prediction studies mostly rely on limited triage features and discrimination metrics, neglecting operational factors, calibration, and explainability. Identifying likely admissions early could enable proactive resource allocation and shorter wait times. Objective This study aimed to develop and evaluate machine learning models for predicting hospital admission at the end of triage using routinely collected structured data while addressing prior limitations regarding feature selection, model calibration, and explainability. Methods We conducted a retrospective cohort study of adult ED visits between January 2015 and December 2022 at 2 academic hospitals in the McGill University Health Centre. We excluded visits with dispositions other than admission or discharge to ensure a binary outcome. Data were split into training (70%), validation (10%), and testing (20%) sets using stratified random sampling. We trained classifiers, including logistic regression (LR), decision trees, random forests, artificial neural networks, and gradient boosting algorithms (extreme gradient boosting [XGBoost], light gradient boosting machine, and categorical boosting), using demographics, vital signs, chief complaints, comorbidities, and historical hospitalization frequency available at triage. Sensitivity analyses tested exclusion criteria and temporal data shifts, while subgroup analyses examined differences by age, sex, and site. Performance was evaluated using area under the receiver operating characteristic curve (AUC-ROC), sensitivity, specificity, and calibration. We also performed a decision threshold analysis to assess operational flexibility and used Shapley additive explanations (SHAP) values to interpret feature contributions. Results The final cohort included 526,145 visits (mean age 50.9, SD 21.1 years; 272,767/526,145, 51.8% female), with 91,363 patients (17.4%) admitted. The XGBoost model achieved the highest performance, with an AUC-ROC of 0.86 (95% CI 0.858-0.864), a sensitivity of 0.67, and a specificity of 0.86, outperforming the LR baseline (AUC 0.84). Key predictors identified by SHAP values included age, Canadian Triage and Acuity Scale scores, arrival mode, and historical hospitalization frequency. Subgroup analyses confirmed strong performance across age, sex, and sites. Sensitivity analyses evaluating alternative outcome dispositions and chronological data splits confirmed overall model stability. Threshold analysis showed that adjusting the decision threshold to the 0.70 to 0.75 range improved the positive predictive value and did not disproportionately reclassify older or higher-acuity patients. Conclusions In urban tertiary care settings, structured triage data available at triage can effectively anticipate hospital admissions. By incorporating broad feature sets and operational variables, models such as XGBoost offer a feasible, explainable tool for early decision-making. Such tools could improve coordination between emergency and inpatient services and ease overcrowding. Future work should prioritize prospective validation and real-time clinical workflow integration."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "santé mentale"
+  ],
+  "id": "MED:43013291",
+  "pmid": "43013291",
+  "pmcid": null,
+  "doi": "10.1001/jamapsychiatry.2026.3764",
+  "titre": "Rethinking University Mental Health for the AI Era: From Crisis Response to Core Mission.",
+  "revue": "JAMA psychiatry",
+  "date": "2026-11-11",
+  "auteurs": "Kessler RC, Ono SJ.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Importance Universities have become frontline mental health care settings for adolescents and young adults, a group with rapidly rising rates of common psychiatric disorders. Conventional campus counseling services cannot meet this demand. Students are increasingly turning to unregulated generative artificial intelligence (AI) tools. There is an urgent need for an evidence-informed architecture that integrates digital tools and AI into university mental health systems safely, equitably, and at scale. Objective To synthesize epidemiologic and clinical trial data on student mental health and digital interventions and integrate these findings with experience in institutional governance to propose an integrated, data-driven, stepped-care model for student mental health, implemented and governed at the university level, that begins with universal prevention, tracks need, and uses precision treatment selection to monitor and match students in need with the least-intensive effective level of care. Evidence review We draw on findings from the World Mental Health International College Student (WMH-ICS) initiative, national surveys of student mental health and service use, randomized clinical trials of student internet-delivered digital interventions, implementation studies of digital navigators and task sharing, and emerging evaluations of AI-supported mental health systems. Findings WMH-ICS studies find that 37% to 58% of first-year students worldwide meet 12-month criteria for a DSM-5 disorder, with low treatment rates and substantial impairment in academic performance. This unmet need exceeds the capacity of traditional short-term, face-to-face counseling services, even with expanded staffing and telehealth contracts. Hybrid stepped-care models combining universal prevention with light-touch human support (eg, digital navigators) and low-intensity digital interventions offer a more scalable approach that can expand reach, optimize use of clinicians' limited time, and improve outcomes. Building on these strands, we outline a 2-step system anchored in prematriculation life skills training and a guided first-year cohort model, embedded within a broader digital ecosystem that includes measurement, precision treatment algorithms, and explicit AI governance. Conclusions and relevance Reframing student mental health as core to the mission of universities justifies investment in digitally enabled care. With appropriate guardrails, AI can be integrated as a regulated component of this ecosystem, extending the reach of effective interventions while maintaining safety, equity, and institutional accountability."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "multicentrique",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "cancer"
+  ],
+  "id": "MED:43018704",
+  "pmid": "43018704",
+  "pmcid": null,
+  "doi": "10.1007/s00261-026-05843-0",
+  "titre": "Artificial intelligence methods for HER2 status assessment: a systematic review and diagnostic meta-analysis.",
+  "revue": "Abdominal radiology (New York)",
+  "date": "2026-11-12",
+  "auteurs": "V S, Das CJ.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "resume": "Human epidermal growth factor receptor 2 (HER2) is an important predictive and prognostic biomarker that guides targeted therapy, particularly in breast and gastric cancers. Conventional HER2 assessment using immunohistochemistry (IHC) and fluorescence in situ hybridization (FISH) is limited by inter-observer variability, heterogeneous expression, and diagnostic complexity. This systematic review and diagnostic meta-analysis followed the PRISMA 2020 guidelines to evaluate Artificial Intelligence-based HER2 assessment. Fifty-one studies were included in the qualitative synthesis and 14 in the diagnostic meta-analysis. Bibliometric analysis, methodological taxonomy, comparative evaluation, and pooled diagnostic performance were assessed, with study quality evaluated using QUADAS-2. AI methodologies have rapidly evolved from conventional machine learning and radiomics to deep learning, Vision Transformers, explainable AI, and multimodal frameworks, with histopathology and Magnetic Resonance Imaging. being the most frequently used modalities. Research activity increased markedly between 2023 and 2025. Pooled sensitivity was 87.8%, specificity was 83.5%, and Summary Receiver Operating Characteristic Area Under the Curve (SROC AUC) was 0.852 (95% CI: 0.801-0.881), indicating promising overall diagnostic performance. Deeks' funnel plot asymmetry test showed no significant evidence of publication bias (p = 0.14). However, heterogeneity warrants cautious interpretation of the pooled estimates. Heterogeneous datasets, limited external validation, and inconsistent evaluation methods remain important barriers to clinical implementation. Future research should emphasize multicenter prospective validation, explainable and multimodal AI, foundation models, federated learning, and evaluation in underexplored malignancies, including gallbladder cancer."
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "id": "f1",
+  "valeur": 3150,
+  "citation": "Retrospective cohorts comprised 3150 patients"
+ },
+ {
+  "id": "f4",
+  "valeur": 117,
+  "citation": "117 external-cohort cases"
+ },
+ {
+  "id": "f5",
+  "valeur": 0.825,
+  "citation": "from 0.825 to 0.973"
+ },
+ {
+  "id": "f6",
+  "valeur": 0.973,
+  "citation": "from 0.825 to 0.973"
+ },
+ {
+  "id": "f7",
+  "valeur": 9.7,
+  "citation": "from 9.7 to 5.5 min"
+ },
+ {
+  "id": "f8",
+  "valeur": 5.5,
+  "citation": "from 9.7 to 5.5 min"
+ },
+ {
+  "id": "f9",
+  "valeur": 5869,
+  "citation": "5869 eligible consecutive adults"
+ },
+ {
+  "id": "f10",
+  "valeur": 2934,
+  "citation": "AI-assisted (n = 2934)"
+ },
+ {
+  "id": "f11",
+  "valeur": 2935,
+  "citation": "standard reporting (n = 2935)"
+ },
+ {
+  "id": "f12",
+  "valeur": 28,
+  "citation": "28/171 (16.4%) treated lesions with AI"
+ },
+ {
+  "id": "f13",
+  "valeur": 171,
+  "citation": "28/171 (16.4%) treated lesions with AI"
+ },
+ {
+  "id": "f14",
+  "valeur": 16.4,
+  "citation": "28/171 (16.4%) treated lesions with AI"
+ },
+ {
+  "id": "f15",
+  "valeur": 104,
+  "citation": "104/258 (40.3%) with standard care"
+ },
+ {
+  "id": "f16",
+  "valeur": 258,
+  "citation": "104/258 (40.3%) with standard care"
+ },
+ {
+  "id": "f17",
+  "valeur": 40.3,
+  "citation": "104/258 (40.3%) with standard care"
+ },
+ {
+  "id": "f18",
+  "valeur": 23.9,
+  "citation": "difference, -23.9 percentage points"
+ },
+ {
+  "id": "f20",
+  "valeur": 31.7,
+  "citation": "95% CI, -31.7 to -15.4"
+ },
+ {
+  "id": "f21",
+  "valeur": 15.4,
+  "citation": "95% CI, -31.7 to -15.4"
+ },
+ {
+  "id": "f22",
+  "valeur": 0.95,
+  "citation": "28/2934 (0.95%) versus 104/2935 (3.54%)"
+ },
+ {
+  "id": "f23",
+  "valeur": 3.54,
+  "citation": "28/2934 (0.95%) versus 104/2935 (3.54%)"
+ },
+ {
+  "id": "f24",
+  "valeur": 2020,
+  "citation": "January 2020"
+ },
+ {
+  "id": "f25",
+  "valeur": 2026,
+  "citation": "February 2026"
+ },
+ {
+  "id": "f26",
+  "valeur": 2025,
+  "citation": "November 2025"
+ },
+ {
+  "id": "f27",
+  "valeur": -23.9,
+  "calcul": "0 - f18"
+ },
+ {
+  "id": "f28",
+  "valeur": -31.7,
+  "calcul": "0 - f20"
+ },
+ {
+  "id": "f29",
+  "valeur": -15.4,
+  "calcul": "0 - f21"
+ }
+]

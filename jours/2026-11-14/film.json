@@ -1,0 +1,404 @@
+{
+ "id": "2026-11-14",
+ "sentences": [
+  {
+   "text": "Une IA peut-elle éviter des traitements inutiles d'un kyste du rein ?",
+   "partie": "accroche",
+   "box": "traitements"
+  },
+  {
+   "text": "Une masse kystique du rein est une lésion surtout remplie de liquide, vue au scanner.",
+   "partie": "contexte",
+   "box": "scanner."
+  },
+  {
+   "text": "Le radiologue doit dire si elle est maligne.",
+   "partie": "contexte",
+   "box": "maligne."
+  },
+  {
+   "text": "Le problème, c'est que ces lésions sont souvent surtraitées.",
+   "partie": "probleme",
+   "box": "surtraitées.",
+   "source": "Cystic renal masses are frequently overtreated."
+  },
+  {
+   "text": "Résultat : des patients sont traités, alors que la lésion se révèle bénigne.",
+   "partie": "probleme",
+   "box": "bénigne.",
+   "source": "proportion of pathologically benign lesions among treated lesions",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une équipe chinoise a donc créé une IA qui estime le risque de malignité sur le scanner.",
+   "partie": "ia",
+   "box": "risque",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Cette IA réduit-elle les traitements de lésions bénignes ?",
+   "partie": "question",
+   "pause_apres": 1.4,
+   "mode": "type"
+  },
+  {
+   "text": "Ils l'ont développée et validée sur trois mille cent cinquante patients, notamment dans cinq hôpitaux chinois.",
+   "partie": "etude",
+   "display": "Ils l'ont développée et validée sur 3 150 patients, notamment dans cinq hôpitaux chinois.",
+   "box": "validée"
+  },
+  {
+   "text": "Concrètement, elle lit le scanner et calcule le risque que la lésion soit maligne.",
+   "partie": "methode",
+   "box": "calcule"
+  },
+  {
+   "text": "Ensuite, six radiologues ont lu cent dix-sept scanners, sans puis avec l'IA.",
+   "partie": "methode",
+   "display": "Ensuite, six radiologues ont lu 117 scanners, sans puis avec l'IA.",
+   "box": "radiologues"
+  },
+  {
+   "text": "Enfin, cinq mille huit cent soixante-neuf adultes passant un scanner ont été tirés au sort : avec ou sans l'IA.",
+   "partie": "methode",
+   "display": "Enfin, 5 869 adultes passant un scanner ont été tirés au sort : avec ou sans l'IA.",
+   "box": "tirés",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat chez les radiologues : l'aire sous la courbe passe de zéro virgule huit cent vingt-cinq à zéro virgule neuf cent soixante-treize, sur un maximum de un.",
+   "partie": "resultat",
+   "display": "Résultat chez les radiologues : l'aire sous la courbe passe de 0,825 à 0,973, sur un maximum de 1.",
+   "box": "0,973,"
+  },
+  {
+   "text": "Dans l'essai, sans l'IA, cent quatre des deux cent cinquante-huit lésions traitées étaient bénignes ; avec elle, vingt-huit sur cent soixante et onze.",
+   "partie": "resultat",
+   "display": "Dans l'essai, sans l'IA, 104 des 258 lésions traitées étaient bénignes ; avec elle, 28 sur 171.",
+   "box": "bénignes"
+  },
+  {
+   "text": "Autrement dit, quarante virgule trois pour cent contre seize virgule quatre : vingt-trois virgule neuf points de moins.",
+   "partie": "resultat",
+   "display": "Autrement dit, 40,3 % contre 16,4 : 23,9 points de moins.",
+   "box": "moins."
+  },
+  {
+   "text": "Chez les radiologues, la lecture est plus rapide : neuf virgule sept minutes sans l'IA, cinq virgule cinq avec.",
+   "partie": "concret",
+   "display": "Chez les radiologues, la lecture est plus rapide : 9,7 minutes sans l'IA, 5,5 avec.",
+   "box": "rapide",
+   "source": "reduced mean interpretation time from 9.7 to 5.5 min"
+  },
+  {
+   "text": "Après coup, sur tous les tirés au sort : zéro virgule quatre-vingt-quinze pour cent d'interventions sur lésion bénigne avec l'IA, contre trois virgule cinquante-quatre.",
+   "partie": "concret",
+   "display": "Après coup, sur tous les tirés au sort : 0,95 % d'interventions sur lésion bénigne avec l'IA, contre 3,54.",
+   "box": "d'interventions",
+   "source": "benign intervention occurred in 28/2934 (0.95%) versus 104/2935 (3.54%) randomized participants",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : sécurité à long terme non prouvée, et chez les seuls kystes traités, l'écart n'est pas significatif.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : l'IA pourrait épargner des traitements inutiles, en complément du radiologue, pas à sa place.",
+   "partie": "retenir",
+   "pause_apres": 0.3,
+   "mode": "type"
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_image",
+    "cam_at": 0,
+    "header": "Essai tiré au sort · Chine · 2025–2026",
+    "image": "ct",
+    "title": "Un scanner du rein lu par une IA",
+    "title_at": "s0:IA",
+    "scan_at": "s0:éviter",
+    "lock_at": "s0:kyste",
+    "footnote": "Kyste du rein et scanner"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s2:maligne",
+    "title": "Le kyste du rein",
+    "steps": [
+     {
+      "icon": "hospital",
+      "label": "Une lésion kystique du rein",
+      "note": "surtout du liquide",
+      "at": "s1:masse",
+      "note_at": "s1:liquide"
+     },
+     {
+      "icon": "xray",
+      "label": "Un scanner avec contraste",
+      "at": "s1:scanner"
+     },
+     {
+      "icon": "stethoscope",
+      "label": "Maligne ou bénigne ?",
+      "at": "s2:maligne"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s4:bénigne",
+    "title": "Le traitement",
+    "steps": [
+     {
+      "icon": "pill",
+      "label": "Des lésions souvent surtraitées",
+      "at": "s3:surtraitées"
+     },
+     {
+      "icon": "magnifier",
+      "label": "Traitée, puis jugée bénigne",
+      "note": "après analyse",
+      "at": "s4:traités",
+      "note_at": "s4:révèle"
+     },
+     {
+      "icon": "chip",
+      "label": "Une IA lit le scanner",
+      "note": "et estime le risque",
+      "at": "s5:IA",
+      "note_at": "s5:estime"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Cette IA réduit-elle les traitements de lésions bénignes ?",
+  "italic": "traitements",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Validation, lecture, essai",
+      "at": "s7:développée"
+     },
+     {
+      "label": "Patients",
+      "value": "3 150 patients",
+      "at": "s7:trois"
+     },
+     {
+      "label": "Hôpitaux",
+      "value": "Cinq hôpitaux",
+      "at": "s7:cinq"
+     },
+     {
+      "label": "Lieu",
+      "value": "Chine, 2020–2026",
+      "at": "s7:chinois",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s8-0.3",
+    "input_icon": "xray",
+    "input_label": "Scanner du rein avec contraste",
+    "ai_label": "Calcule le risque de malignité",
+    "output_label": "Risque de malignité",
+    "modality": "image",
+    "at": "s8:scanner",
+    "core_at": "s8:calcule",
+    "out_at": "s8:risque"
+   },
+   {
+    "type": "two_groups",
+    "cam_at": "s9-0.3",
+    "groups": [
+     {
+      "label": "Sans l'IA",
+      "at": "s9:six",
+      "steps": [
+       {
+        "icon": "user",
+        "text": "Six radiologues",
+        "at": "s9:six"
+       },
+       {
+        "icon": "xray",
+        "text": "117 scanners à lire",
+        "at": "s9:cent"
+       }
+      ]
+     },
+     {
+      "label": "Avec l'IA",
+      "accent": true,
+      "at": "s9:avec",
+      "steps": [
+       {
+        "icon": "chip",
+        "text": "Aidés par l'IA",
+        "at": "s9:avec"
+       },
+       {
+        "icon": "check",
+        "text": "Mêmes scanners relus",
+        "at": "s9:avec+0.5"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "population_split",
+    "cam_at": "s10-0.3",
+    "total": 5869,
+    "total_label": "adultes avec scanner",
+    "dot_value": 10,
+    "count_at": "s10.w1",
+    "count_end": "s10.w5",
+    "split_at": "s10:tirés",
+    "groups": [
+     {
+      "label": "Sans l'IA",
+      "n": 2935
+     },
+     {
+      "label": "Avec l'IA",
+      "n": 2934,
+      "accent_at": "s10:avec"
+     }
+    ]
+   },
+   {
+    "type": "metric",
+    "cam_at": "s11-0.3",
+    "title": "Aire sous la courbe des radiologues",
+    "metrics": [
+     {
+      "label": "Sans l'IA",
+      "value": "0,825",
+      "num": 0.825,
+      "max": 1,
+      "at": "s11:huit"
+     },
+     {
+      "label": "Avec l'IA",
+      "value": "0,973",
+      "num": 0.973,
+      "max": 1,
+      "at": "s11:neuf",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "result_dots",
+    "cam_at": "s12-0.3",
+    "title": "Lésions traitées jugées bénignes",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Sans l'IA",
+      "n": 258,
+      "k": 104,
+      "value": "40,3",
+      "num": 40.3,
+      "at": "s12:cent"
+     },
+     {
+      "label": "Avec l'IA",
+      "n": 171,
+      "k": 28,
+      "value": "16,4",
+      "num": 16.4,
+      "at": "s12:avec",
+      "accent": true
+     }
+    ],
+    "ci": {
+     "value": "−23,9",
+     "num": -23.9,
+     "low": -31.7,
+     "high": -15.4,
+     "null": 0,
+     "at": "s13:points"
+    }
+   },
+   {
+    "type": "findings",
+    "cam_at": "s14-0.3",
+    "title": "Autres résultats",
+    "items": [
+     {
+      "icon": "clock",
+      "label": "Lecture plus rapide",
+      "detail": "9,7 min sans l'IA, 5,5 min avec",
+      "detail_at": "s14:neuf",
+      "tendance": "moins",
+      "at": "s14:rapide"
+     },
+     {
+      "icon": "hospital",
+      "label": "Moins de lésions bénignes traitées",
+      "detail": "0,95 % avec l'IA, 3,54 % sans",
+      "detail_at": "s15:zéro",
+      "tendance": "moins",
+      "accent": true,
+      "at": "s15:lésion"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s16-0.2",
+    "text": "Attention : sécurité à long terme non prouvée, et chez les seuls kystes traités, l'écart n'est pas significatif.",
+    "italic": "significatif"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s17-0.2",
+    "text": "À retenir : l'IA pourrait épargner des traitements inutiles, en complément du radiologue, pas à sa place.",
+    "italic": "place"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s17.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s19",
+  "button": "Suivre",
+  "button_at": "s19+0.6",
+  "click_at": "s19+1.6",
+  "source": "Chen et al. · EClinicalMedicine · novembre 2026",
+  "doi": "doi:10.1016/j.eclinm.2026.104279",
+  "source_at": "s18:vérifiée-0.2"
+ }
+}
