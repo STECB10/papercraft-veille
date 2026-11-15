@@ -1,0 +1,15 @@
+{
+ "verdict": "corrigé",
+ "resume": "Une phrase corrigée (les 20 % de test ne sont pas « les restants » : 10 % servent à la validation) ; le reste est fidèle.",
+ "points": [
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 11",
+   "probleme": "« les 20 % restants » est faux : 10 % des visites servent à la validation, le test n'est pas le reste.",
+   "preuve": "Data were split into training (70%), validation (10%), and testing (20%) sets using stratified random sampling.",
+   "avant": "Il apprend sur soixante-dix pour cent des visites, puis il est testé sur les vingt pour cent restants.",
+   "apres": "Il apprend sur soixante-dix pour cent des visites, puis il est testé sur vingt pour cent gardés à part."
+  }
+ ],
+ "phrases_modifiees": 1
+}

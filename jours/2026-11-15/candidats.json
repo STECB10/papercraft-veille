@@ -1,0 +1,156 @@
+[
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "n = 1891",
+   "revue majeure",
+   "texte intégral libre",
+   "intervalle de confiance",
+   "thème déjà traité hier (imagerie) : −1"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "cancer",
+   "imagerie"
+  ],
+  "id": "MED:43013774",
+  "pmid": "43013774",
+  "pmcid": "PMC13754179",
+  "doi": "10.2196/98520",
+  "titre": "Imaging-Based AI for Predicting Pathological Complete Response in Esophageal Cancer After Neoadjuvant Therapy: Systematic Review and Meta-Analysis.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-11",
+  "auteurs": "Li Z, Gao X, Zhou J, Wang L, Ren F.",
+  "types": "meta-analysis systematic review review-article review journal article",
+  "acces_libre": true,
+  "resume": "Background Imaging-based AI may help predict pathological complete response (pCR) after neoadjuvant therapy for esophageal cancer. However, an encouraging average diagnostic performance does not establish reliable performance across clinical settings or justify treatment decisions without further validation. Objective We aimed to assess the predictive performance of imaging-based AI across neoadjuvant strategies, distinguish internal from external validation, and examine limitations affecting interpretation. Methods PubMed, Embase, Web of Science, and the Cochrane Library were searched through August 7, 2026. Eligible English-language studies evaluated imaging-based AI against pathological assessment of pCR. PROBAST+AI (Prediction Model Risk of Bias Assessment Tool plus Artificial Intelligence) assessed study quality and risk of bias; GRADE (Grading of Recommendations Assessment, Development, and Evaluation) assessed certainty for sensitivity, specificity, and diagnostic odds ratio (DOR). Bivariate random-effects models synthesized validation groups separately. CIs described uncertainty in average performance, whereas 95% prediction intervals (PIs) described true performance in a similar new study. Results Thirty-three studies contributed 27 internal-validation datasets with 1891 patients and 16 external-validation datasets with 777 patients. Ten publications contributed to both groups. The sum was 2668 validation observations; the unique patient count across datasets and publications could not be verified. Internal sensitivity was 0.77 (95% CI 0.72-0.81; PI 0.57-0.89), specificity 0.82 (95% CI 0.78-0.86; PI 0.60-0.93); DOR, 15.49 (95% CI 11.16-21.50); and area under the curve (AUC), 0.86 (95% CI 0.83-0.89). External sensitivity was 0.73 (95% CI 0.61-0.81; PI 0.34-0.93), specificity 0.83 (95% CI 0.73-0.90; PI 0.36-0.98), DOR 12.93 (95% CI 7.25-23.07), and AUC 0.84 (95% CI 0.79-0.89). DOR PIs were 5.40-44.44 and 2.40-69.62, respectively. Thirty-two studies were conducted in China, and 12 had high validation risk of bias. All GRADE-assessed outcomes had very low certainty. Selecting the first eligible imaging model reported in each article instead of the highest-AUC model showed modest decreases in average performance across 16 internal and 10 external datasets; incomplete alternative-model reporting limited interpretation. Single study algorithm estimates were reported descriptively, without ranking algorithms or interpreting their CIs as evidence of between study consistency or generalizability. Conclusions By combining multiple neoadjuvant strategies and separating validation stages, this review extends earlier neoadjuvant chemoradiotherapy (NCRT)-focused syntheses and identifies priorities for further model evaluation. Imaging-based AI may support response assessment, but wide PIs, risk of bias, and very low evidence certainty preclude routine clinical adoption without prospective, geographically diverse validation. Future studies should evaluate prespecified models in independent populations, report clinically relevant decision thresholds, and assess calibration and patient outcomes. Until such evidence is available, these models should be considered investigational adjuncts to response assessment and should not independently guide organ preservation or omission of surgery after neoadjuvant treatment."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "n = 269254",
+   "revue majeure",
+   "intervalle de confiance",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "infections"
+  ],
+  "id": "MED:43020100",
+  "pmid": "43020100",
+  "pmcid": null,
+  "doi": "10.1016/j.langlo.2026.104090",
+  "titre": "Geographical targeting of active case-finding for tuberculosis in Pakistan using artificial intelligence software (SPOT-TB): a pragmatic, stepped wedge, cluster-randomised control trial.",
+  "revue": "The Lancet. Global health",
+  "date": "2026-11-12",
+  "auteurs": "Mahfooz A, Latif A, Zaidi SMA, Ahmed W, Nawaz N, Reza TE, Tahir A, Ur Rehman F, Naveed S, Shahid A, Ali F, Emmanuel F.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Background Community-wide active case-finding is being increasingly implemented as a tuberculosis elimination intervention. However, conventional site selection strategies can result in low screening yields. We aimed to evaluate whether geographical targeting using artificial intelligence (AI) software can improve detection of tuberculosis during screening in comparison to conventional approaches for site selection, within the programmatic setting in Pakistan. Methods We conducted a pragmatic, stepped wedge, cluster-randomised trial across all four provinces of Pakistan, and was embedded within The Global Fund to Fight AIDS, Tuberculosis and Malaria-supported active case-finding activities implemented by Pakistan's National TB Control Program and private sector partners. 30 mobile x-ray van teams operating in 68 districts were randomised to transition from conventional site selection approaches (based on field team knowledge, experience, and historical data) to an AI-guided targeting strategy using the Mapping and Analysis for Tailored disease Control and Health system strengthening-Artificial Intelligence (MATCH-AI) software. All individuals attending community active case-finding camps were eligible for participation except those excluded as per the national guidelines. The primary outcome, camp positivity yield, was defined as the number of individuals diagnosed with bacteriologically confirmed tuberculosis per camp. The primary analysis was by intention to treat and camps conducted within a 5-km radius of AI recommended locations were included in a validated per-protocol analysis. This trial is registered at ClinicalTrials.gov, NCT06017843, and has been completed. Findings Between Aug 1, 2023, and Sept 28, 2024, 3936 screening camps were conducted (2046 [52·0%] control, 1890 [48·0%] intervention), screening 269 254 individuals. In the intention-to-treat analysis, camp positivity yield was 7% higher in the intervention group, but not statistically significant (adjusted risk ratio 1·07, 95% CI 0·94-1·22; p=0·27). In the validated per-protocol analysis, the camp positivity yield was 32% higher in the intervention group (1·32, 1·12-1·54; p Interpretation AI-guided targeting was associated with substantially higher detection of bacteriologically confirmed tuberculosis during active case-finding in the validated per-protocol analysis and could improve efficiency of community-based tuberculosis case-finding interventions in high burden countries. Routine programmatic data did not capture all implementation or process-quality indicators, limiting assessment of implementation fidelity and variation across sites. Funding Gates Foundation, the Global Fund through Mercy Corps, Pakistan."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "n = 91363",
+   "revue majeure",
+   "texte intégral libre",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "urgences et réanimation"
+  ],
+  "id": "MED:43008270",
+  "pmid": "43008270",
+  "pmcid": "PMC13750794",
+  "doi": "10.2196/98273",
+  "titre": "Explainable Machine Learning for Predicting Hospital Admission at Emergency Department Triage: Retrospective Cohort Study.",
+  "revue": "JMIR medical informatics",
+  "date": "2026-11-10",
+  "auteurs": "Dave K, Robert A, Russell WA, Buckeridge DL.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "resume": "Background Emergency departments (EDs) are vital access points for urgent care, yet persistent overcrowding in health care systems worldwide compromises service quality and efficiency. Urban tertiary care centers are increasingly strained by surging patient numbers and scarce inpatient beds. Prior admission prediction studies mostly rely on limited triage features and discrimination metrics, neglecting operational factors, calibration, and explainability. Identifying likely admissions early could enable proactive resource allocation and shorter wait times. Objective This study aimed to develop and evaluate machine learning models for predicting hospital admission at the end of triage using routinely collected structured data while addressing prior limitations regarding feature selection, model calibration, and explainability. Methods We conducted a retrospective cohort study of adult ED visits between January 2015 and December 2022 at 2 academic hospitals in the McGill University Health Centre. We excluded visits with dispositions other than admission or discharge to ensure a binary outcome. Data were split into training (70%), validation (10%), and testing (20%) sets using stratified random sampling. We trained classifiers, including logistic regression (LR), decision trees, random forests, artificial neural networks, and gradient boosting algorithms (extreme gradient boosting [XGBoost], light gradient boosting machine, and categorical boosting), using demographics, vital signs, chief complaints, comorbidities, and historical hospitalization frequency available at triage. Sensitivity analyses tested exclusion criteria and temporal data shifts, while subgroup analyses examined differences by age, sex, and site. Performance was evaluated using area under the receiver operating characteristic curve (AUC-ROC), sensitivity, specificity, and calibration. We also performed a decision threshold analysis to assess operational flexibility and used Shapley additive explanations (SHAP) values to interpret feature contributions. Results The final cohort included 526,145 visits (mean age 50.9, SD 21.1 years; 272,767/526,145, 51.8% female), with 91,363 patients (17.4%) admitted. The XGBoost model achieved the highest performance, with an AUC-ROC of 0.86 (95% CI 0.858-0.864), a sensitivity of 0.67, and a specificity of 0.86, outperforming the LR baseline (AUC 0.84). Key predictors identified by SHAP values included age, Canadian Triage and Acuity Scale scores, arrival mode, and historical hospitalization frequency. Subgroup analyses confirmed strong performance across age, sex, and sites. Sensitivity analyses evaluating alternative outcome dispositions and chronological data splits confirmed overall model stability. Threshold analysis showed that adjusting the decision threshold to the 0.70 to 0.75 range improved the positive predictive value and did not disproportionately reclassify older or higher-acuity patients. Conclusions In urban tertiary care settings, structured triage data available at triage can effectively anticipate hospital admissions. By incorporating broad feature sets and operational variables, models such as XGBoost offer a feasible, explainable tool for early decision-making. Such tools could improve coordination between emergency and inpatient services and ease overcrowding. Future work should prioritize prospective validation and real-time clinical workflow integration."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "multicentrique",
+   "n = 1847",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "soins de ville"
+  ],
+  "id": "MED:43025498",
+  "pmid": "43025498",
+  "pmcid": null,
+  "doi": "10.1016/j.remnie.2026.500374",
+  "titre": "AI-driven radiopharmaceutical dosimetry optimization for theranostics: a systematic review and meta-analysis.",
+  "revue": "Revista espanola de medicina nuclear e imagen molecular",
+  "date": "2026-11-13",
+  "auteurs": "Saeed A, Padrigo M.",
+  "types": "im journal article",
+  "acces_libre": false,
+  "resume": "Personalised radioligand therapy (RLT) depends on accurate absorbed-dose estimation. Standard dosimetry requires multiple post-therapy single-photon emission computed tomography/computed tomography (SPECT/CT) acquisitions, imposing logistical burdens. Machine learning (ML) and deep learning (DL) have been proposed to streamline organ segmentation, generate synthetic imaging timepoints, and predict patient-specific doses. We evaluated the performance, methodological quality, and translational readiness of artificial intelligence (AI)-driven dosimetry in the clinical theranostics literature. In this systematic review and meta-analysis, we searched PubMed, Web of Science, Scopus, and regional databases (Jan 1, 2014, to March 1, 2025). Studies applying AI to dosimetry in human RLT recipients were eligible. Two reviewers screened and extracted data. Risk of bias was assessed with the Prediction model Risk Of Bias ASsessment Tool (PROBAST) and the Quality Assessment of Diagnostic Accuracy Studies-2 (QUADAS-2). Meta-analyses of organ segmentation (Dice similarity coefficient [DSC]) and dose prediction (concordance correlation coefficient [CCC]) used restricted maximum-likelihood (REML) random-effects models restricted to studies with independent validation sets. CRD420261349805 (https://www.crd.york.ac.uk/prospero/display_record.php?RecordID=1349805). 58 studies met inclusion criteria covering 1847 patients (1523 [82%] male, 324 [18%] female). 23 studies with independent validation were eligible for meta-analysis. Pooled DSC was 0·87 (95% CI 0·83-0·90; 16 studies). Pooled voxel dosimetry relative absolute error (RAE) was 6·1% (4·6-8·1%; 12 studies). Pretherapy kidney dose prediction yielded pooled CCC 0·79 (0·72-0·85; 8 studies). PROBAST identified high risk of bias in 71% of prediction studies. Reducing timepoints from ≥3 to 1-2 scans increased RAE by 8·2 percentage points (5·1-11·4). AI reduced median processing time from 180 to 25 minutes. On independent validation data, AI-driven dosimetry shows promising accuracy for organ-level dose estimation and substantially reduces processing time. However, the evidence base remains immature: 71% of prediction studies carry high risk of bias, only four studies report external validation, and most pooled outcomes were graded as low or very low certainty. External multicentre validation and prospective randomised trials comparing AI-guided against fixed-activity RLT are needed before clinical adoption. Current evidence primarily demonstrates technical feasibility rather than proven clinical utility."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "n = 2694",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "IA conversationnelle"
+  ],
+  "id": "MED:42970911",
+  "pmid": "42970911",
+  "pmcid": null,
+  "doi": "10.1016/j.ijmedinf.2026.106788",
+  "titre": "Artificial intelligence-enabled interventions for smoking cessation: a systematic review and meta-analysis of randomised controlled trials.",
+  "revue": "International journal of medical informatics",
+  "date": "2026-10-29",
+  "auteurs": "Adebisi YA, Alhur AA, Ogunkola IO, Olaoye DQ, Ong CJN, Iyagbaye E, Lucero-Prisno Iii DE.",
+  "types": "meta-analysis systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Background Artificial intelligence (AI) is increasingly embedded in digital smoking-cessation tools, but whether AI-enabled personalisation improves abstinence, and whether any benefit reflects the AI component rather than digital support more broadly, remain uncertain. Objective To systematically review and meta-analyse randomised controlled trials (RCTs) of AI-enabled smoking-cessation interventions using an explicit operational framework that distinguished learning, inference and substantive language-understanding components from conventional fixed-rule automation. Methods PubMed/MEDLINE, Scopus and the Web of Science Core Collection were searched from inception to 7 August 2026 without language, date, publication-status or study-design filters; Cochrane CENTRAL, ClinicalTrials.gov and the WHO International Clinical Trials Registry Platform were searched, and backward and forward citation searching was undertaken, on 21 October 2026. Eligible studies were RCTs in adults who smoked combustible cigarettes in which an AI-enabled component materially generated, selected, personalised, adapted, predicted, recommended or timed cessation support. Two reviewers independently screened records, extracted data and assessed risk of bias using RoB 2; disagreements were resolved by a third reviewer. Risk ratios (RRs) were pooled using random-effects restricted maximum likelihood models with Knapp-Hartung adjustment, separately for abstinence at the longest follow-up of at least six months (primary) and at approximately three months (secondary). Exploratory sensitivity analyses were restricted to biochemically verified abstinence, and further analyses examined missing-data assumptions, completeness of AI reporting and results available only in trial registries. Certainty of evidence was assessed using GRADE. Results Fourteen RCTs involving 101,331 randomised participants were included, eight of which contributed to meta-analysis. AI functions comprised message recommender systems (five trials), conversational agents (three trials), wearable-sensor smoking-detection models (three trials), lapse-risk prediction models applied to ecological momentary assessments (two trials) and one app described as AI-enabled without technical detail. Pooled abstinence at six months or longer was RR 1.33 (95 % CI 0.82-2.15; I-squared = 67.6 %; four trials, 2,694 participants), and at approximately three months RR 1.36 (95 % CI 0.63-2.93; I-squared = 58.4 %; four trials, 715 participants). Exploratory analyses restricted to biochemically verified abstinence yielded RR 1.53 (95 % CI 1.07-2.19; three trials, 1,207 participants) at six months or longer and RR 2.03 (95 % CI 1.03-4.03; three trials, 366 participants) at approximately three months; these analyses changed the composition of the evidence set by excluding the largest null trials and should not be interpreted as confirmatory. Adding two completed trials whose results were available only in a trial registry moved the six-month estimate towards the null (RR 1.20, 95 % CI 0.91-1.59). In an exploratory comparison by comparator architecture, point estimates more consistently favoured AI-enabled packages versus usual or minimal care than versus active non-AI digital comparators, where results were inconsistent; however, comparator type was confounded with other trial characteristics. Certainty of evidence ranged from low to very low. No included trial randomised a generative large language model intervention. Conclusions Randomised evidence for AI-enabled smoking cessation remains sparse, heterogeneous and imprecise. AI-containing packages may improve abstinence when added to usual or minimal care, but current trials do not establish a consistent incremental benefit of AI over well-designed non-AI digital support. Larger trials with biochemically verified long-term endpoints, matched comparators that isolate the algorithmic contribution, and transparent AI-specific reporting are needed before superiority of AI-enabled cessation support can be inferred."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "type_etude": "cohorte / prédiction",
+  "themes": [
+   "cerveau",
+   "santé mentale"
+  ],
+  "id": "MED:43013873",
+  "pmid": "43013873",
+  "pmcid": "PMC13754260",
+  "doi": "10.2196/101973",
+  "titre": "Forecasting Next-Day Alcohol Craving in Individuals With Problematic Alcohol Use With Multimodal Data and a Tiny Recurrent Neural Network: Prospective Longitudinal Study.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-11",
+  "auteurs": "Lee D, Lee JY, Lee H, Kwon M, Song S, Yoon J, Jung YC, Ahn WY, Choi JS.",
+  "types": "research-article journal article",
+  "acces_libre": true,
+  "resume": "Background Alcohol craving is associated with drinking behaviors despite negative consequences and relapse following periods of abstinence or treatment. Accurately forecasting alcohol craving is crucial for preventing alcohol consumption and relapse, thereby mitigating alcohol-related problems. Previous studies have assessed alcohol craving using diverse modalities such as psychological assessments, neurophysiological measures including electroencephalography (EEG) or heart rate variability (HRV) at a single time point, and digital phenotypes collected longitudinally via smartphone apps. However, alcohol craving is inherently heterogeneous and multidimensional across individuals and over time, making it difficult to capture using any single modality alone. In contrast, multimodal AI enables the prediction of alcohol craving by integrating complementary behavioral and neurophysiological features. Objective This study aimed to develop and evaluate AI models to forecast next-day alcohol craving in individuals with problematic alcohol use with multimodal datasets. Methods We analyzed multimodal datasets comprising smartphone-based digital phenotypes collected over 28 days, along with baseline EEG, HRV, and psychological measures in a prospective longitudinal study of 60 participants with problematic alcohol use. A tiny multimodal recurrent neural network (RNN) was implemented, in which representations of static baseline features were encoded into a latent representation and used to initialize the hidden state of the RNN. Model performance was evaluated using accuracy, weighted F 1 -score, macro F 1 -score, and mean absolute error (MAE). Results The multimodal model consistently outperformed the unimodal model based on digital phenotypes alone, achieving higher accuracy (0.56 vs 0.45), weighted F 1 -score (0.51 vs 0.38), and macro F 1 -score (0.37 vs 0.24), along with lower MAE (0.68 vs 0.90). At the individual level, 72% (43/60) of participants showed improved prediction accuracy with the multimodal model. These improvements were statistically significant (Wilcoxon signed-rank test, P t test, P Conclusions Integrating digital phenotypes with neurophysiological and psychological features enhances the prediction of short-term alcohol craving dynamics. This approach may enable more precise and timely personalized interventions for individuals at risk of relapse."
+ }
+]

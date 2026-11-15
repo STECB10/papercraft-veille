@@ -1,0 +1,87 @@
+[
+ {
+  "id": "f1",
+  "valeur": 526145,
+  "citation": "The final cohort included 526 145 visits"
+ },
+ {
+  "id": "f2",
+  "valeur": 91363,
+  "citation": "with 91 363 patients (17.4%) admitted"
+ },
+ {
+  "id": "f3",
+  "valeur": 17.4,
+  "citation": "with 91 363 patients (17.4%) admitted"
+ },
+ {
+  "id": "f4",
+  "valeur": 0.86,
+  "citation": "AUC-ROC of 0.86 (95% CI 0.858-0.864)"
+ },
+ {
+  "id": "f5",
+  "valeur": 0.858,
+  "citation": "AUC-ROC of 0.86 (95% CI 0.858-0.864)"
+ },
+ {
+  "id": "f6",
+  "valeur": 0.864,
+  "citation": "AUC-ROC of 0.86 (95% CI 0.858-0.864)"
+ },
+ {
+  "id": "f7",
+  "valeur": 0.67,
+  "citation": "a sensitivity of 0.67, and a specificity of 0.86"
+ },
+ {
+  "id": "f8",
+  "valeur": 0.86,
+  "citation": "a sensitivity of 0.67, and a specificity of 0.86"
+ },
+ {
+  "id": "f9",
+  "valeur": 67,
+  "calcul": "f7*100"
+ },
+ {
+  "id": "f10",
+  "valeur": 86,
+  "calcul": "f8*100"
+ },
+ {
+  "id": "f11",
+  "valeur": 0.84,
+  "citation": "outperforming the LR baseline (AUC 0.84)"
+ },
+ {
+  "id": "f12",
+  "valeur": 2015,
+  "citation": "between January 2015 and December 2022"
+ },
+ {
+  "id": "f13",
+  "valeur": 2022,
+  "citation": "between January 2015 and December 2022"
+ },
+ {
+  "id": "f14",
+  "valeur": 2,
+  "citation": "at 2 academic hospitals"
+ },
+ {
+  "id": "f15",
+  "valeur": 70,
+  "citation": "training (70%), validation (10%), and testing (20%)"
+ },
+ {
+  "id": "f16",
+  "valeur": 20,
+  "citation": "training (70%), validation (10%), and testing (20%)"
+ },
+ {
+  "id": "f17",
+  "valeur": 95,
+  "citation": "AUC-ROC of 0.86 (95% CI 0.858-0.864)"
+ }
+]

@@ -1,0 +1,9 @@
+Une IA prédit dès le triage qui sera hospitalisé aux urgences, avec une aire sous la courbe de 0,86.
+
+Des chercheurs canadiens ont entraîné un algorithme sur 526 145 visites d'adultes dans deux hôpitaux de Montréal (2015–2022), avec les seules données du triage. Il repère 67 % des admissions et écarte à raison 86 % des sorties. Étude rétrospective : pas encore testée en conditions réelles.
+
+Et dans votre service, prévoir les admissions dès le triage changerait-il votre façon de gérer les lits ?
+
+Source : Dave et al., JMIR Medical Informatics, novembre 2026. https://doi.org/10.2196/98273
+
+#IA #Urgences #Triage #Veille

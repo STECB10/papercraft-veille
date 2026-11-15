@@ -1,0 +1,367 @@
+{
+ "id": "2026-11-15",
+ "sentences": [
+  {
+   "text": "Et si l'IA savait, dès le triage, qui va être hospitalisé ?",
+   "partie": "accroche",
+   "box": "hospitalisé"
+  },
+  {
+   "text": "Aux urgences, une infirmière évalue d'abord la gravité de chaque patient : c'est le triage.",
+   "partie": "contexte",
+   "box": "triage."
+  },
+  {
+   "text": "Ensuite seulement, on sait qui sera hospitalisé.",
+   "partie": "contexte",
+   "box": "hospitalisé.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Le problème, c'est que les patients admis restent longtemps aux urgences, à attendre un lit.",
+   "partie": "probleme",
+   "box": "lit.",
+   "source": "those requiring hospital admission often remain in ED treatment spaces for prolonged periods awaiting inpatient bed assignment",
+   "pause_apres": 2.5
+  },
+  {
+   "text": "Résultat : ces retards s'accompagnent d'une baisse de la qualité des soins pour les patients.",
+   "partie": "probleme",
+   "box": "baisse",
+   "peak": "qualité des soins",
+   "source": "For patients, these systemic delays correlate with measurable declines in care quality and clinical outcomes"
+  },
+  {
+   "text": "Or, repérer tôt les admissions permettrait de préparer les lits.",
+   "partie": "probleme",
+   "box": "tôt",
+   "source": "Identifying likely admissions early could enable proactive resource allocation and shorter wait times."
+  },
+  {
+   "text": "Des chercheurs canadiens ont donc entraîné un algorithme à prédire l'admission, avec les données du triage.",
+   "partie": "ia",
+   "box": "algorithme",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Peut-on prédire une hospitalisation dès la fin du triage ?",
+   "partie": "question",
+   "pause_apres": 1.4,
+   "mode": "type"
+  },
+  {
+   "text": "Pour le savoir, ils ont analysé cinq cent vingt-six mille cent quarante-cinq visites d'adultes, dans deux hôpitaux de Montréal.",
+   "partie": "etude",
+   "display": "Pour le savoir, ils ont analysé 526 145 visites d'adultes, dans 2 hôpitaux de Montréal.",
+   "box": "analysé"
+  },
+  {
+   "text": "Ces visites vont de deux mille quinze à deux mille vingt-deux ; dix-sept virgule quatre pour cent ont mené à une admission.",
+   "partie": "etude",
+   "display": "Ces visites vont de 2015 à 2022 ; 17,4 % ont mené à une admission.",
+   "box": "admission.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Concrètement, il reçoit l'âge, les constantes vitales, le motif de consultation et la gravité du triage.",
+   "partie": "methode",
+   "box": "reçoit"
+  },
+  {
+   "text": "Il apprend sur soixante-dix pour cent des visites, puis il est testé sur vingt pour cent gardés à part.",
+   "partie": "methode",
+   "display": "Il apprend sur 70 % des visites, puis il est testé sur 20 % gardés à part.",
+   "box": "testé",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : l'aire sous la courbe atteint zéro virgule quatre-vingt-six, contre zéro virgule quatre-vingt-quatre pour un modèle classique.",
+   "partie": "resultat",
+   "display": "Résultat : l'aire sous la courbe atteint 0,86, contre 0,84 pour un modèle classique.",
+   "box": "0,86,",
+   "peak": "modèle classique."
+  },
+  {
+   "text": "Autrement dit, il repère soixante-sept pour cent des admissions, et écarte à raison quatre-vingt-six pour cent des sorties.",
+   "partie": "resultat",
+   "display": "Autrement dit, il repère 67 % des admissions, et écarte à raison 86 % des sorties.",
+   "box": "67",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Et ce qui pèse le plus : l'âge, la gravité au triage, le mode d'arrivée et les hospitalisations passées.",
+   "partie": "concret",
+   "box": "l'âge,",
+   "peak": "pèse le plus",
+   "source": "Key predictors identified by SHAP values included age, Canadian Triage and Acuity Scale scores, arrival mode, and historical hospitalization frequency"
+  },
+  {
+   "text": "Par exemple, un patient arrivé à pied est moins souvent admis qu'un patient arrivé en ambulance.",
+   "partie": "concret",
+   "box": "ambulance.",
+   "source": "ambulant patients (those arriving by themselves) having lower admission probabilities than those arriving by ambulance"
+  },
+  {
+   "text": "Enfin, plus le seuil d'alerte monte, plus les alertes sont fiables, mais plus on rate d'admissions.",
+   "partie": "concret",
+   "box": "seuil",
+   "source": "While sensitivity naturally declines as the threshold increases, precision (PPV) improves.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : étude rétrospective, dans deux hôpitaux universitaires, pas encore testée en direct.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : cet outil pourrait aider à anticiper les lits, une fois validé ailleurs.",
+   "partie": "retenir",
+   "pause_apres": 0.3,
+   "mode": "type"
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s6.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0,
+    "header": "Cohorte rétrospective · Montréal · 2015–2022",
+    "number": "526 145",
+    "unit": "visites",
+    "caption": "visites aux urgences analysées pour prédire une hospitalisation",
+    "caption_at": "s0:triage",
+    "visual": "icon",
+    "icon": "hospital",
+    "footnote": "Urgences et IA"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s2:seulement",
+    "title": "Du triage à l'admission",
+    "steps": [
+     {
+      "icon": "stethoscope",
+      "label": "Le triage à l'arrivée",
+      "note": "gravité évaluée",
+      "at": "s1:infirmière",
+      "note_at": "s1:gravité"
+     },
+     {
+      "icon": "hospital",
+      "label": "Hospitalisé ou non ?",
+      "note": "décidé après",
+      "at": "s2:sera",
+      "note_at": "s2:ensuite"
+     }
+    ]
+   },
+   {
+    "type": "gag_waiting",
+    "cam_at": "s3:restent-0.2",
+    "door": "Urgences",
+    "chairs": 6,
+    "occupied": 5
+   },
+   {
+    "type": "steps",
+    "cam_at": "s4-0.1",
+    "mark_at": "s5:tôt",
+    "title": "Anticiper les lits",
+    "steps": [
+     {
+      "icon": "clock",
+      "label": "Des retards qui s'accumulent",
+      "note": "qualité en baisse",
+      "at": "s4:retards",
+      "note_at": "s4:baisse"
+     },
+     {
+      "icon": "chart",
+      "label": "Repérer tôt les admissions",
+      "note": "pour préparer les lits",
+      "at": "s5:repérer",
+      "note_at": "s5:lits"
+     },
+     {
+      "icon": "chip",
+      "label": "Un algorithme prédit",
+      "note": "avec les données du triage",
+      "at": "s6:algorithme",
+      "note_at": "s6:données"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Peut-on prédire une hospitalisation dès la fin du triage ?",
+  "italic": "prédire",
+  "fold_at": "s7.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s8-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Cohorte rétrospective",
+      "at": "s8:savoir"
+     },
+     {
+      "label": "Visites",
+      "value": "526 145 adultes",
+      "at": "s8:cinq"
+     },
+     {
+      "label": "Lieu",
+      "value": "2 hôpitaux, Montréal",
+      "at": "s8:hôpitaux"
+     },
+     {
+      "label": "Période",
+      "value": "2015–2022",
+      "at": "s9:quinze"
+     },
+     {
+      "label": "Admises",
+      "value": "17,4 % des visites",
+      "at": "s9:dix-sept",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s10-0.3",
+    "input_icon": "doc",
+    "input_label": "Âge, constantes, motif, gravité",
+    "ai_label": "Apprend à prédire l'admission",
+    "output_label": "Probabilité d'admission",
+    "modality": "donnees",
+    "at": "s10:reçoit",
+    "core_at": "s11:apprend",
+    "out_at": "s11:testé"
+   },
+   {
+    "type": "roc_curve",
+    "cam_at": "s12-0.3",
+    "auc": {
+     "value": "0,86",
+     "num": 0.86,
+     "at": "s12:atteint",
+     "note": "IC 95 % : 0,858 à 0,864"
+    },
+    "curve_at": "s12:courbe"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s13-0.3",
+    "title": "Ce que l'IA repère",
+    "metrics": [
+     {
+      "label": "Admissions repérées",
+      "value": "67",
+      "num": 67,
+      "unit": "%",
+      "at": "s13:repère",
+      "accent": true
+     },
+     {
+      "label": "Sorties écartées",
+      "value": "86",
+      "num": 86,
+      "unit": "%",
+      "at": "s13:écarte"
+     }
+    ]
+   },
+   {
+    "type": "findings",
+    "cam_at": "s14-0.3",
+    "title": "Ce qui pèse le plus",
+    "items": [
+     {
+      "icon": "user",
+      "label": "L'âge",
+      "detail": "Plus il est élevé, plus l'admission est probable",
+      "at": "s14:l'âge",
+      "accent": true
+     },
+     {
+      "icon": "stethoscope",
+      "label": "La gravité au triage",
+      "detail": "Un score de gravité élevée annonce l'admission",
+      "at": "s14:gravité"
+     },
+     {
+      "icon": "hospital",
+      "label": "Le mode d'arrivée",
+      "detail": "Ambulance : plus d'admissions qu'à pied",
+      "at": "s14:mode",
+      "detail_at": "s15:ambulance"
+     },
+     {
+      "icon": "doc",
+      "label": "Les hospitalisations passées",
+      "at": "s14:hospitalisations"
+     }
+    ]
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s16-0.3",
+    "title": "Régler le seuil d'alerte",
+    "points": [
+     {
+      "text": "Seuil plus haut : alertes plus fiables",
+      "at": "s16:monte"
+     },
+     {
+      "text": "Mais davantage d'admissions manquées",
+      "at": "s16:rate"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s17-0.3",
+    "text": "Attention : étude rétrospective, dans deux hôpitaux universitaires, pas encore testée en direct.",
+    "italic": "rétrospective"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s18-0.3",
+    "text": "À retenir : cet outil pourrait aider à anticiper les lits, une fois validé ailleurs.",
+    "italic": "anticiper"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s18.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s20",
+  "button": "Suivre",
+  "button_at": "s20+0.6",
+  "click_at": "s20+1.6",
+  "source": "Dave et al. · JMIR Medical Informatics · novembre 2026",
+  "doi": "doi:10.2196/98273",
+  "source_at": "s19:vérifiée-0.2"
+ }
+}
