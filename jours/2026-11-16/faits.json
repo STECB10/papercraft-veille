@@ -1,0 +1,132 @@
+[
+ {
+  "id": "f1",
+  "valeur": 500,
+  "citation": "causing over 500,000 deaths annually"
+ },
+ {
+  "id": "f2",
+  "valeur": 500000,
+  "calcul": "f1*1000"
+ },
+ {
+  "id": "f3",
+  "valeur": 33,
+  "citation": "A total of 33 eligible studies"
+ },
+ {
+  "id": "f4",
+  "valeur": 27,
+  "citation": "Thirty-three studies contributed 27 internal-validation datasets with 1891 patients and 16 external-validation datasets with 777 patients"
+ },
+ {
+  "id": "f5",
+  "valeur": 1891,
+  "citation": "Thirty-three studies contributed 27 internal-validation datasets with 1891 patients and 16 external-validation datasets with 777 patients"
+ },
+ {
+  "id": "f6",
+  "valeur": 16,
+  "citation": "Thirty-three studies contributed 27 internal-validation datasets with 1891 patients and 16 external-validation datasets with 777 patients"
+ },
+ {
+  "id": "f7",
+  "valeur": 777,
+  "citation": "Thirty-three studies contributed 27 internal-validation datasets with 1891 patients and 16 external-validation datasets with 777 patients"
+ },
+ {
+  "id": "f8",
+  "valeur": 2019,
+  "citation": "studies were published between 2019 and 2026"
+ },
+ {
+  "id": "f9",
+  "valeur": 2026,
+  "citation": "studies were published between 2019 and 2026"
+ },
+ {
+  "id": "f10",
+  "valeur": 0.86,
+  "citation": "area under the curve (AUC), 0.86 (95% CI 0.83-0.89)"
+ },
+ {
+  "id": "f11",
+  "valeur": 0.83,
+  "citation": "area under the curve (AUC), 0.86 (95% CI 0.83-0.89)"
+ },
+ {
+  "id": "f12",
+  "valeur": 0.89,
+  "citation": "area under the curve (AUC), 0.86 (95% CI 0.83-0.89)"
+ },
+ {
+  "id": "f13",
+  "valeur": 95,
+  "citation": "area under the curve (AUC), 0.86 (95% CI 0.83-0.89)"
+ },
+ {
+  "id": "f14",
+  "valeur": 0.77,
+  "citation": "Internal sensitivity was 0.77"
+ },
+ {
+  "id": "f15",
+  "valeur": 0.82,
+  "citation": "specificity 0.82"
+ },
+ {
+  "id": "f16",
+  "valeur": 77,
+  "calcul": "f14*100"
+ },
+ {
+  "id": "f17",
+  "valeur": 82,
+  "calcul": "f15*100"
+ },
+ {
+  "id": "f18",
+  "valeur": 0.84,
+  "citation": "AUC 0.84 (95% CI 0.79-0.89)"
+ },
+ {
+  "id": "f19",
+  "valeur": 0.73,
+  "citation": "External sensitivity was 0.73"
+ },
+ {
+  "id": "f20",
+  "valeur": 73,
+  "calcul": "f19*100"
+ },
+ {
+  "id": "f21",
+  "valeur": 0.34,
+  "citation": "PI 0.34-0.93"
+ },
+ {
+  "id": "f22",
+  "valeur": 0.93,
+  "citation": "PI 0.34-0.93"
+ },
+ {
+  "id": "f23",
+  "valeur": 34,
+  "calcul": "f21*100"
+ },
+ {
+  "id": "f24",
+  "valeur": 93,
+  "calcul": "f22*100"
+ },
+ {
+  "id": "f25",
+  "valeur": 32,
+  "citation": "Nearly all studies were conducted in China (32/33)"
+ },
+ {
+  "id": "f26",
+  "valeur": 12,
+  "citation": "12 had high validation risk of bias"
+ }
+]

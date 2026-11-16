@@ -1,0 +1,363 @@
+{
+ "sentences": [
+  {
+   "text": "Une IA peut-elle voir, sur un scanner, qu'un cancer de l'œsophage a disparu ?",
+   "partie": "accroche",
+   "box": "disparu"
+  },
+  {
+   "text": "Ce cancer tue plus de cinq cent mille personnes par an.",
+   "partie": "contexte",
+   "display": "Ce cancer tue plus de 500 000 personnes par an.",
+   "box": "tue"
+  },
+  {
+   "text": "Après le traitement, il ne reste parfois aucune cellule tumorale vivante : c'est la réponse complète.",
+   "partie": "contexte",
+   "box": "aucune",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Le problème, c'est que le scanner montre souvent des résidus, de la cicatrice et non une tumeur vivante.",
+   "partie": "probleme",
+   "box": "résidus,",
+   "source": "residual soft-tissue densities are often still observed on computed tomography (CT) images, predominantly representing fibrosis or inflammatory changes rather than viable tumor"
+  },
+  {
+   "text": "Résultat : on ne sait pas à coup sûr qui répond complètement, ce qui pourrait ouvrir la voie à une surveillance.",
+   "partie": "probleme",
+   "box": "surveillance.",
+   "source": "active surveillance or organ-preserving strategies may be considered",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Des chercheurs ont donc évalué les IA qui prédisent cette réponse.",
+   "partie": "ia",
+   "box": "IA",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Ces IA prédisent-elles bien la réponse complète, y compris dans d'autres hôpitaux ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, ils ont regroupé trente-trois études, publiées entre deux mille dix-neuf et deux mille vingt-six.",
+   "partie": "etude",
+   "display": "Pour le savoir, ils ont regroupé 33 études, publiées entre 2019 et 2026.",
+   "box": "regroupé"
+  },
+  {
+   "text": "Dans chacune, l'IA lit un scanner ou une IRM, et sa prédiction est comparée à l'analyse du tissu.",
+   "partie": "methode",
+   "box": "lit"
+  },
+  {
+   "text": "D'abord, dans son centre d'origine : vingt-sept jeux de données, mille huit cent quatre-vingt-onze patients.",
+   "partie": "methode",
+   "display": "D'abord, dans son centre d'origine : 27 jeux de données, 1 891 patients.",
+   "box": "d'origine"
+  },
+  {
+   "text": "Ensuite, ailleurs : seize jeux, sept cent soixante-dix-sept patients.",
+   "partie": "methode",
+   "display": "Ensuite, ailleurs : 16 jeux, 777 patients.",
+   "box": "ailleurs",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : dans le centre d'origine, l'aire sous la courbe atteint zéro virgule quatre-vingt-six, sur un maximum de un.",
+   "partie": "resultat",
+   "display": "Résultat : dans le centre d'origine, l'aire sous la courbe atteint 0,86, sur un maximum de 1.",
+   "box": "0,86,"
+  },
+  {
+   "text": "Autrement dit, elle repère soixante-dix-sept pour cent des réponses complètes et écarte à raison quatre-vingt-deux pour cent des autres.",
+   "partie": "resultat",
+   "display": "Autrement dit, elle repère 77 % des réponses complètes et écarte à raison 82 % des autres.",
+   "box": "repère"
+  },
+  {
+   "text": "Et ailleurs ? Presque pareil : zéro virgule quatre-vingt-quatre, avec soixante-treize pour cent des réponses repérées.",
+   "partie": "resultat",
+   "display": "Et ailleurs ? Presque pareil : 0,84, avec 73 % des réponses repérées.",
+   "box": "pareil",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Mais dans un nouvel hôpital, les réponses repérées iraient de trente-quatre à quatre-vingt-treize pour cent.",
+   "partie": "concret",
+   "display": "Mais dans un nouvel hôpital, les réponses repérées iraient de 34 à 93 %.",
+   "box": "nouvel",
+   "source": "The 95% PIs were 0.34-0.93 for sensitivity"
+  },
+  {
+   "text": "Et presque toutes ces études viennent de Chine : trente-deux sur trente-trois.",
+   "partie": "concret",
+   "display": "Et presque toutes ces études viennent de Chine : 32 sur 33.",
+   "box": "Chine",
+   "source": "Nearly all studies were conducted in China (32/33)"
+  },
+  {
+   "text": "Surtout, douze études sur trente-trois présentent un risque élevé de biais.",
+   "partie": "concret",
+   "display": "Surtout, 12 études sur 33 présentent un risque élevé de biais.",
+   "box": "biais.",
+   "source": "high validation risk of bias in 12 of 33 studies",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : preuves de très faible certitude, l'IA ne doit pas décider seule d'éviter la chirurgie.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : l'IA peut compléter le scanner, mais il faudra des tests en direct, dans d'autres pays.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_headline",
+    "cam_at": 0,
+    "header": "Méta-analyse · 33 études · 2019–2026",
+    "headline": "L'IA sur imagerie prédit-elle la disparition du cancer de l'œsophage après traitement ?",
+    "journal": "JMIR · novembre 2026",
+    "mark": "disparition du cancer",
+    "mark_at": "s0:disparu",
+    "footnote": "Cancer de l'œsophage et IA"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s2:aucune",
+    "title": "Avant l'opération",
+    "steps": [
+     {
+      "icon": "hospital",
+      "label": "Un cancer très meurtrier",
+      "note": "500 000 morts par an",
+      "at": "s1:tue",
+      "note_at": "s1:cinq"
+     },
+     {
+      "icon": "pill",
+      "label": "Un traitement avant l'opération",
+      "at": "s2:traitement"
+     },
+     {
+      "icon": "check",
+      "label": "Parfois, plus de tumeur vivante",
+      "note": "la réponse complète",
+      "at": "s2:aucune",
+      "note_at": "s2:réponse"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s4:surveillance",
+    "title": "Le scanner aujourd'hui",
+    "steps": [
+     {
+      "icon": "xray",
+      "label": "Le scanner montre des résidus",
+      "note": "cicatrice, pas tumeur",
+      "at": "s3:scanner",
+      "note_at": "s3:cicatrice"
+     },
+     {
+      "icon": "stethoscope",
+      "label": "Une réponse jamais sûre",
+      "note": "surveiller ou opérer ?",
+      "at": "s4:sait",
+      "note_at": "s4:surveillance"
+     },
+     {
+      "icon": "chip",
+      "label": "Une IA lit l'imagerie",
+      "note": "que vaut-elle ?",
+      "at": "s5:IA",
+      "note_at": "s5:réponse"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Ces IA prédisent-elles bien la réponse complète, y compris dans d'autres hôpitaux ?",
+  "italic": "bien",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Méta-analyse",
+      "at": "s7:regroupé"
+     },
+     {
+      "label": "Études",
+      "value": "33 études",
+      "at": "s7:trente-trois",
+      "accent": true
+     },
+     {
+      "label": "Période",
+      "value": "Publiées de 2019 à 2026",
+      "at": "s7:dix-neuf"
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s8-0.3",
+    "input_icon": "xray",
+    "input_label": "Scanner ou IRM après traitement",
+    "ai_label": "Cherche des signes de réponse",
+    "output_label": "Réponse complète ou non",
+    "modality": "image",
+    "at": "s8:dans",
+    "core_at": "s8:l'IA",
+    "out_at": "s8:prédiction"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s9-0.3",
+    "title": "Où l'IA a été testée",
+    "points": [
+     {
+      "text": "Centre d'origine : 27 jeux, 1 891 patients",
+      "at": "s9:d'origine"
+     },
+     {
+      "text": "Autres centres : 16 jeux, 777 patients",
+      "at": "s10:ailleurs"
+     }
+    ]
+   },
+   {
+    "type": "roc_curve",
+    "cam_at": "s11-0.3",
+    "auc": {
+     "value": "0,86",
+     "num": 0.86,
+     "at": "s11:atteint",
+     "note": "IC 95 % : 0,83 à 0,89"
+    },
+    "curve_at": "s11:courbe"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s12-0.3",
+    "title": "Dans le centre d'origine",
+    "metrics": [
+     {
+      "label": "Réponses repérées",
+      "value": "77",
+      "num": 77,
+      "unit": "%",
+      "at": "s12:repère",
+      "accent": true
+     },
+     {
+      "label": "Autres cas écartés",
+      "value": "82",
+      "num": 82,
+      "unit": "%",
+      "at": "s12:écarte"
+     }
+    ]
+   },
+   {
+    "type": "big_stat",
+    "cam_at": "s13-0.3",
+    "title": "Dans un autre centre",
+    "value": "0,84",
+    "label": "aire sous la courbe, avec 73 % des réponses repérées",
+    "label_at": "s13:soixante-treize",
+    "compare": {
+     "value": "0,86",
+     "label": "centre d'origine",
+     "at": "s13:pareil"
+    },
+    "at": "s13:zéro"
+   },
+   {
+    "type": "findings",
+    "cam_at": "s14-0.3",
+    "title": "Ce qui limite ces résultats",
+    "items": [
+     {
+      "icon": "hospital",
+      "label": "Un nouvel hôpital",
+      "detail": "Réponses repérées : de 34 à 93 %",
+      "tendance": "pareil",
+      "at": "s14:nouvel",
+      "detail_at": "s14:trente-quatre"
+     },
+     {
+      "icon": "users",
+      "label": "Presque tout en Chine",
+      "detail": "32 études sur 33",
+      "at": "s15:Chine"
+     },
+     {
+      "icon": "doc",
+      "label": "Un risque de biais élevé",
+      "detail": "12 études sur 33",
+      "tendance": "moins",
+      "accent": true,
+      "at": "s16:biais"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s17-0.25",
+    "text": "Attention : preuves de très faible certitude, l'IA ne doit pas décider seule d'éviter la chirurgie.",
+    "italic": "seule"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s18-0.25",
+    "text": "À retenir : l'IA peut compléter le scanner, mais il faudra des tests en direct, dans d'autres pays.",
+    "italic": "direct"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s18.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s20",
+  "button": "Suivre",
+  "button_at": "s20+0.6",
+  "click_at": "s20+1.6",
+  "source": "Li et al. · JMIR · novembre 2026",
+  "doi": "doi:10.2196/98520",
+  "source_at": "s19:vérifiée-0.2"
+ }
+}

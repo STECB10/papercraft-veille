@@ -1,0 +1,15 @@
+{
+ "verdict": "corrigé",
+ "resume": "Une phrase corrigée : interne et externe ne diffèrent pas significativement, « un peu moins bien » devient « presque pareil ».",
+ "points": [
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 13",
+   "probleme": "Présente le résultat externe comme moins bon alors que la source ne trouve aucune différence significative.",
+   "preuve": "Statistical comparison revealed no significant differences between internal and external validation sets in sensitivity ( P =.47), specificity ( P =.83), DOR ( P =.60), or AUC ( P =.50; A).",
+   "avant": "Et ailleurs ? Un peu moins bien : 0,84, avec 73 % des réponses repérées.",
+   "apres": "Et ailleurs ? Presque pareil : 0,84, avec 73 % des réponses repérées."
+  }
+ ],
+ "phrases_modifiees": 1
+}

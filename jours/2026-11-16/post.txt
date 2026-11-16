@@ -1,0 +1,10 @@
+Une IA lit le scanner pour prédire si un cancer de l'œsophage a disparu après traitement : c'est prometteur, mais les preuves restent fragiles.
+
+Cette méta-analyse a regroupé 33 études où une IA analyse un scanner ou une IRM pour prédire la réponse complète avant l'opération. Testée dans son centre d'origine, elle atteint une aire sous la courbe de 0,86 (77 % des réponses complètes repérées, 82 % des autres écartées) ; dans un autre centre, 0,84.
+Mais presque toutes les études viennent de Chine (32 sur 33), 12 présentent un risque élevé de biais, et les preuves sont jugées de très faible certitude : l'IA ne doit pas décider seule d'éviter une chirurgie.
+
+Et dans votre pratique, une IA qui estime la réponse complète changerait-elle votre discussion en RCP ?
+
+Source : Li et al., Journal of Medical Internet Research, novembre 2026. https://doi.org/10.2196/98520
+
+#IA #Oncologie #CancerDeLŒsophage #Imagerie
