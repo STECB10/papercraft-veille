@@ -1,0 +1,117 @@
+[
+ {
+  "id": "f1",
+  "valeur": 30,
+  "citation": "30 mobile x-ray van teams"
+ },
+ {
+  "id": "f2",
+  "valeur": 68,
+  "citation": "68 districts"
+ },
+ {
+  "id": "f3",
+  "valeur": 2023,
+  "citation": "Between Aug 1, 2023"
+ },
+ {
+  "id": "f4",
+  "valeur": 2024,
+  "citation": "Sept 28, 2024"
+ },
+ {
+  "id": "f5",
+  "valeur": 3936,
+  "citation": "3936 screening camps"
+ },
+ {
+  "id": "f6",
+  "valeur": 2046,
+  "citation": "2046 [52·0%] control"
+ },
+ {
+  "id": "f7",
+  "valeur": 1890,
+  "citation": "1890 [48·0%] intervention"
+ },
+ {
+  "id": "f8",
+  "valeur": 269254,
+  "citation": "269 254 individuals"
+ },
+ {
+  "id": "f12",
+  "valeur": 7,
+  "citation": "camp positivity yield was 7% higher"
+ },
+ {
+  "id": "f13",
+  "valeur": 32,
+  "citation": "the camp positivity yield was 32% higher"
+ },
+ {
+  "id": "f17",
+  "valeur": 5,
+  "citation": "within a 5-km radius"
+ },
+ {
+  "id": "f20",
+  "valeur": 94,
+  "citation": "95% CI 0·94-1·22"
+ },
+ {
+  "id": "f21",
+  "valeur": 22,
+  "citation": "95% CI 0·94-1·22"
+ },
+ {
+  "id": "f22",
+  "valeur": 12,
+  "citation": "(1·32, 1·12-1·54"
+ },
+ {
+  "id": "f23",
+  "valeur": 54,
+  "citation": "(1·32, 1·12-1·54"
+ },
+ {
+  "id": "f24",
+  "valeur": 95,
+  "citation": "95% CI 0·94-1·22"
+ },
+ {
+  "id": "f9",
+  "valeur": 1.07,
+  "calcul": "(100 + f12) / 100"
+ },
+ {
+  "id": "f14",
+  "valeur": 1.32,
+  "calcul": "(100 + f13) / 100"
+ },
+ {
+  "id": "f10",
+  "valeur": 0.94,
+  "calcul": "f20 / 100"
+ },
+ {
+  "id": "f11",
+  "valeur": 1.22,
+  "calcul": "(100 + f21) / 100"
+ },
+ {
+  "id": "f15",
+  "valeur": 1.12,
+  "calcul": "(100 + f22) / 100"
+ },
+ {
+  "id": "f16",
+  "valeur": 1.54,
+  "calcul": "(100 + f23) / 100"
+ },
+ {
+  "id": "f19",
+  "valeur": 2046,
+  "calcul": "f5 - f7"
+ }
+]

@@ -1,0 +1,294 @@
+{
+ "id": "2026-11-17",
+ "sentences": [
+  {
+   "text": "Où garer un camion de dépistage de la tuberculose, pour trouver plus de malades ?",
+   "partie": "accroche"
+  },
+  {
+   "text": "Au Pakistan, des camions équipés d'une radio installent des camps de dépistage.",
+   "partie": "contexte",
+   "box": "radio"
+  },
+  {
+   "text": "Le problème, c'est que les équipes choisissent le lieu du camp à l'expérience, d'après les données passées.",
+   "partie": "probleme",
+   "box": "l'expérience,",
+   "source": "based on field team knowledge, experience, and historical data"
+  },
+  {
+   "text": "Résultat : le rendement peut rester faible, donc peu de malades trouvés par camp.",
+   "partie": "probleme",
+   "box": "faible,",
+   "peak": "rendement",
+   "source": "conventional site selection strategies can result in low screening yields",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Alors une équipe a confié ce choix à un logiciel d'IA, censé désigner les meilleurs lieux.",
+   "partie": "ia",
+   "box": "logiciel",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Un camp placé par l'IA trouve-t-il plus de tuberculoses ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, ils ont mené un essai tiré au sort dans tout le pays.",
+   "partie": "etude",
+   "box": "essai"
+  },
+  {
+   "text": "Concrètement, trente équipes de soixante-huit districts passent du choix habituel au choix guidé par l'IA, dans un ordre tiré au sort.",
+   "partie": "methode",
+   "display": "Concrètement, 30 équipes de 68 districts passent du choix habituel au choix guidé par l'IA, dans un ordre tiré au sort.",
+   "box": "30"
+  },
+  {
+   "text": "Entre août deux mille vingt-trois et septembre deux mille vingt-quatre, elles ont tenu trois mille neuf cent trente-six camps.",
+   "partie": "methode",
+   "display": "Entre août 2023 et septembre 2024, elles ont tenu 3 936 camps.",
+   "box": "camps."
+  },
+  {
+   "text": "Et elles ont dépisté deux cent soixante-neuf mille deux cent cinquante-quatre personnes, en comptant les cas confirmés par camp.",
+   "partie": "methode",
+   "display": "Et elles ont dépisté 269 254 personnes, en comptant les cas confirmés par camp.",
+   "box": "comptant",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Et le logiciel cartographie les zones, puis recommande les lieux où installer les camps.",
+   "partie": "methode",
+   "box": "recommande"
+  },
+  {
+   "text": "Résultat : sur tous les camps, sept pour cent de cas en plus, soit un rapport de un virgule zéro sept.",
+   "partie": "resultat",
+   "display": "Résultat : sur tous les camps, 7 % de cas en plus, soit un rapport de 1,07.",
+   "box": "7"
+  },
+  {
+   "text": "Mais l'intervalle de confiance va de zéro virgule quatre-vingt-quatorze à un virgule vingt-deux : il contient un, donc rien n'est établi.",
+   "partie": "resultat",
+   "display": "Mais l'intervalle de confiance va de 0,94 à 1,22 : il contient 1, donc rien n'est établi.",
+   "box": "contient",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "En revanche, à moins de cinq kilomètres des lieux conseillés, le rendement est supérieur de trente-deux pour cent.",
+   "partie": "concret",
+   "display": "En revanche, à moins de 5 kilomètres des lieux conseillés, le rendement est supérieur de 32 %.",
+   "box": "rendement",
+   "source": "camps conducted within a 5-km radius of AI recommended locations were included in a validated per-protocol analysis"
+  },
+  {
+   "text": "Là, le rapport vaut un virgule trente-deux, avec un intervalle de confiance de un virgule douze à un virgule cinquante-quatre.",
+   "partie": "concret",
+   "display": "Là, le rapport vaut 1,32, avec un intervalle de confiance de 1,12 à 1,54.",
+   "box": "rapport",
+   "source": "the camp positivity yield was 32% higher in the intervention group (1·32, 1·12-1·54",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : l'analyse principale n'est pas significative, et l'application de la méthode par les équipes n'a pas été pleinement mesurée.",
+   "partie": "limite",
+   "mode": "type",
+   "source": "Routine programmatic data did not capture all implementation or process-quality indicators"
+  },
+  {
+   "text": "À retenir : l'IA pourrait aider à mieux placer les camps, mais sans preuve sur tous les camps.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s4.e+0.25",
+  "stations": [
+   {
+    "type": "hook_question",
+    "cam_at": 0,
+    "header": "Essai tiré au sort · Pakistan · 2023–2024",
+    "text": "Où garer un camion de dépistage de la tuberculose, pour trouver plus de malades ?",
+    "italic": "camion",
+    "footnote": "Tuberculose et IA",
+    "icon": "xray"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s2:l'expérience",
+    "title": "Où dépister aujourd'hui",
+    "steps": [
+     {
+      "icon": "xray",
+      "label": "Des camions équipés d'une radio",
+      "at": "s1:camions"
+     },
+     {
+      "icon": "hospital",
+      "label": "Des camps dans les communautés",
+      "at": "s1:camps",
+      "note": "pour dépister",
+      "note_at": "s1:dépistage"
+     },
+     {
+      "icon": "user",
+      "label": "Un lieu choisi à l'expérience",
+      "note": "et aux données passées",
+      "at": "s2:l'expérience",
+      "note_at": "s2:données"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s3:faible",
+    "title": "Quand ça coince",
+    "steps": [
+     {
+      "icon": "chart",
+      "label": "Un rendement qui reste faible",
+      "note": "peu de malades par camp",
+      "at": "s3:rendement",
+      "note_at": "s3:peu"
+     },
+     {
+      "icon": "chip",
+      "label": "Le choix confié à un logiciel d'IA",
+      "note": "les meilleurs lieux",
+      "at": "s4:logiciel",
+      "note_at": "s4:meilleurs"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Un camp placé par l'IA trouve-t-il plus de tuberculoses ?",
+  "italic": "IA",
+  "fold_at": "s5.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s6-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Essai tiré au sort en grappes",
+      "at": "s6:essai"
+     },
+     {
+      "label": "Lieu",
+      "value": "Pakistan, tout le pays",
+      "at": "s6:pays"
+     },
+     {
+      "label": "Équipes",
+      "value": "30, dans 68 districts",
+      "at": "s7:trente"
+     },
+     {
+      "label": "Période",
+      "value": "Août 2023 à sept. 2024",
+      "at": "s8:août"
+     },
+     {
+      "label": "Camps",
+      "value": "3 936",
+      "at": "s8:camps"
+     },
+     {
+      "label": "Personnes",
+      "value": "269 254 dépistées",
+      "at": "s9:deux",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s10-0.3",
+    "input_icon": "doc",
+    "input_label": "Les zones du pays",
+    "ai_label": "Cartographie et cible les zones",
+    "output_label": "Les lieux conseillés",
+    "modality": "donnees",
+    "at": "s10:logiciel",
+    "core_at": "s10:cartographie",
+    "out_at": "s10:recommande"
+   },
+   {
+    "type": "ratio",
+    "cam_at": "s11-0.3",
+    "title": "Tous les camps",
+    "value": "1,07",
+    "num": 1.07,
+    "low": 0.94,
+    "high": 1.22,
+    "label": "Rapport de cas par camp, avec l'IA",
+    "left": "moins de cas",
+    "right": "plus de cas",
+    "at": "s11:rapport",
+    "ci_at": "s12:l'intervalle",
+    "null_at": "s12:contient",
+    "caption": "L'intervalle contient 1 : pas établi",
+    "caption_at": "s12:donc"
+   },
+   {
+    "type": "big_stat",
+    "cam_at": "s13-0.3",
+    "title": "Camps proches des lieux conseillés",
+    "value": "+32",
+    "num": 32,
+    "unit": "%",
+    "label": "de cas par camp, à moins de 5 km",
+    "label_at": "s14:vaut",
+    "at": "s13:rendement"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s15-0.25",
+    "text": "Attention : l'analyse principale n'est pas significative, et l'application de la méthode par les équipes n'a pas été pleinement mesurée.",
+    "italic": "significative"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s16-0.25",
+    "text": "À retenir : l'IA pourrait aider à mieux placer les camps, mais sans preuve sur tous les camps.",
+    "italic": "preuve"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s16.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s18",
+  "button": "Suivre",
+  "button_at": "s18+0.6",
+  "click_at": "s18+1.6",
+  "source": "Mahfooz et al. · The Lancet Global Health · novembre 2026",
+  "doi": "doi:10.1016/j.langlo.2026.104090",
+  "source_at": "s17:vérifiée-0.2"
+ }
+}

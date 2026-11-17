@@ -1,0 +1,39 @@
+{
+ "verdict": "corrigé",
+ "resume": "Verbes causaux et condition non démontrée retirés ; limite et post recalés sur la source.",
+ "points": [
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 13",
+   "probleme": "« le rendement monte » est causal alors que le +32 % vient d'une analyse per-protocole, non conforme à la randomisation.",
+   "preuve": "In the validated per-protocol analysis, the camp positivity yield was 32% higher in the intervention group",
+   "avant": "En revanche, à moins de 5 kilomètres des lieux conseillés, le rendement monte de 32 %.",
+   "apres": "En revanche, à moins de 5 kilomètres des lieux conseillés, le rendement est supérieur de 32 %."
+  },
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 15",
+   "probleme": "« rien ne dit » dépasse la limite des auteurs : les données n'ont pas saisi tous les indicateurs.",
+   "preuve": "Routine programmatic data did not capture all implementation or process-quality indicators, limiting assessment of implementation fidelity",
+   "avant": "et rien ne dit si les équipes ont bien appliqué la méthode.",
+   "apres": "et l'application de la méthode par les équipes n'a pas été pleinement mesurée."
+  },
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 16 et planche typo",
+   "probleme": "« à condition que les équipes suivent ses conseils » affirme une condition non testée ; l'analyse principale est non significative.",
+   "preuve": "camp positivity yield was 7% higher in the intervention group, but not statistically significant (adjusted risk ratio 1·07, 95% CI 0·94-1·22; p=0·27)",
+   "avant": "l'IA pourrait aider à mieux placer les camps, à condition que les équipes suivent ses conseils.",
+   "apres": "l'IA pourrait aider à mieux placer les camps, mais sans preuve sur tous les camps."
+  },
+  {
+   "gravite": "bloquant",
+   "ou": "post",
+   "probleme": "L'accroche promettait un bénéfice net quand les équipes suivent les recommandations ; « gain » dit pour un résultat non établi.",
+   "preuve": "camp positivity yield was 7% higher in the intervention group, but not statistically significant",
+   "avant": "un bénéfice net seulement quand les équipes suivent ses recommandations.",
+   "apres": "gain non établi sur tous les camps ; +32 % seulement près des lieux conseillés."
+  }
+ ],
+ "phrases_modifiees": 3
+}

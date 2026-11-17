@@ -1,0 +1,9 @@
+Choisir avec une IA où installer les camps de dépistage de la tuberculose : gain non établi sur tous les camps ; +32 % seulement près des lieux conseillés.
+
+Cet essai tiré au sort a comparé, dans 68 districts du Pakistan, le choix habituel des lieux et un logiciel d'IA, sur 3 936 camps et 269 254 personnes. Sur tous les camps, l'écart est de 7 % de cas en plus (rapport 1,07 ; IC 95 % : 0,94 à 1,22), donc non établi. Dans les camps tenus à moins de 5 km des lieux conseillés, l'écart atteint 32 % (1,32 ; 1,12 à 1,54).
+
+Et dans votre pays ou votre structure, laisseriez-vous un algorithme choisir où dépister ?
+
+Source : Mahfooz et al., The Lancet Global Health, novembre 2026. https://doi.org/10.1016/j.langlo.2026.104090
+
+#IA #Tuberculose #SantéPublique #Dépistage
