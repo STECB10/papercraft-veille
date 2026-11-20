@@ -1,0 +1,152 @@
+[
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "multicentrique",
+   "n = 1847",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "soins de ville"
+  ],
+  "id": "MED:43025498",
+  "pmid": "43025498",
+  "pmcid": null,
+  "doi": "10.1016/j.remnie.2026.500374",
+  "titre": "AI-driven radiopharmaceutical dosimetry optimization for theranostics: a systematic review and meta-analysis.",
+  "revue": "Revista espanola de medicina nuclear e imagen molecular",
+  "date": "2026-11-13",
+  "auteurs": "Saeed A, Padrigo M.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Introduction Personalised radioligand therapy (RLT) depends on accurate absorbed-dose estimation. Standard dosimetry requires multiple post-therapy single-photon emission computed tomography/computed tomography (SPECT/CT) acquisitions, imposing logistical burdens. Machine learning (ML) and deep learning (DL) have been proposed to streamline organ segmentation, generate synthetic imaging timepoints, and predict patient-specific doses. We evaluated the performance, methodological quality, and translational readiness of artificial intelligence (AI)-driven dosimetry in the clinical theranostics literature. Methods In this systematic review and meta-analysis, we searched PubMed, Web of Science, Scopus, and regional databases (Jan 1, 2014, to March 1, 2025). Studies applying AI to dosimetry in human RLT recipients were eligible. Two reviewers screened and extracted data. Risk of bias was assessed with the Prediction model Risk Of Bias ASsessment Tool (PROBAST) and the Quality Assessment of Diagnostic Accuracy Studies-2 (QUADAS-2). Meta-analyses of organ segmentation (Dice similarity coefficient [DSC]) and dose prediction (concordance correlation coefficient [CCC]) used restricted maximum-likelihood (REML) random-effects models restricted to studies with independent validation sets. Prospero CRD420261349805 (https://www.crd.york.ac.uk/prospero/display_record.php?RecordID=1349805). Results 58 studies met inclusion criteria covering 1847 patients (1523 [82%] male, 324 [18%] female). 23 studies with independent validation were eligible for meta-analysis. Pooled DSC was 0·87 (95% CI 0·83-0·90; 16 studies). Pooled voxel dosimetry relative absolute error (RAE) was 6·1% (4·6-8·1%; 12 studies). Pretherapy kidney dose prediction yielded pooled CCC 0·79 (0·72-0·85; 8 studies). PROBAST identified high risk of bias in 71% of prediction studies. Reducing timepoints from ≥3 to 1-2 scans increased RAE by 8·2 percentage points (5·1-11·4). AI reduced median processing time from 180 to 25 minutes. Conclusions On independent validation data, AI-driven dosimetry shows promising accuracy for organ-level dose estimation and substantially reduces processing time. However, the evidence base remains immature: 71% of prediction studies carry high risk of bias, only four studies report external validation, and most pooled outcomes were graded as low or very low certainty. External multicentre validation and prospective randomised trials comparing AI-guided against fixed-activity RLT are needed before clinical adoption. Current evidence primarily demonstrates technical feasibility rather than proven clinical utility."
+ },
+ {
+  "score": 14,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "n = 434550",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "rééducation et mouvement"
+  ],
+  "id": "MED:43038553",
+  "pmid": "43038553",
+  "pmcid": null,
+  "doi": "10.2196/94936",
+  "titre": "AI Predictive Models for Discharge Disposition in Patients Following Primary Total Knee Arthroplasty: Systematic Review and Meta-Analysis.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-16",
+  "auteurs": "Xie D, Chen R, Yue C, Liu X, Cao G, Jiao R.",
+  "types": "meta-analysis systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Background Although a growing number of AI-based predictive models for discharge disposition in patients following primary total knee arthroplasty (TKA) have been constructed, their performance, quality, and applicability remain unclear. Objective This study aimed to evaluate the performance, quality, and applicability of published AI-based predictive models for discharge disposition in patients following primary TKA. Methods PubMed, Web of Science, Embase, the Cochrane Library, Scopus, China National Knowledge Infrastructure, Wanfang Database, China Science and Technology Journal Database, and SinoMed Database were searched from inception to May 26, 2025. We included original studies that developed AI-based predictive models for discharge disposition in adult patients (age ≥18 years) undergoing primary TKA. Studies involving simultaneous bilateral or revision TKA or those that did not develop a predictive model were excluded. Risk of bias and reporting quality were assessed using the PROBAST+AI (Prediction Model Risk of Bias Assessment Tool+AI) and TRIPOD+AI (Transparent Reporting of a Multivariable Prediction Model for Individual Prognosis or Diagnosis+AI), respectively. Pooled area under the curve values and 95% CIs were estimated using a DerSimonian-Laird random-effects model with the Hartung-Knapp-Sidik-Jonkman adjustment. Heterogeneity was assessed using the Cochran Q test and I ² statistic. Subgroup analyses were conducted according to algorithm type, categorized as machine learning (ML)-based and deep learning (DL)-based models. Results A total of 5 retrospective studies from the United States involving 4 ML-based models and 1 DL-based model were included, with sample sizes ranging from 175,042 to 434,550 patients. Age and sex were the most frequently used predictors. All included studies were rated as having a high risk of bias according to the PROBAST+AI checklist. The pooled area under the curve was 0.75 (95% CI 0.67-0.82; I ²=99.9%; P I ²=99.8%; P P >.05). Conclusions AI-based predictive models for discharge disposition following primary TKA demonstrate a certain level of discriminative performance. However, the current evidence is limited, as all included studies were at high risk of bias and showed a high degree of heterogeneity. In addition, all included studies were conducted in the United States, which may limit the generalizability of these findings to other health care settings. Future studies should follow PROBAST+AI and TRIPOD+AI checklists while developing and validating models across different countries and health care systems."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "n = 12630",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "cœur"
+  ],
+  "id": "MED:43036347",
+  "pmid": "43036347",
+  "pmcid": null,
+  "doi": "10.1016/j.lanepe.2026.101912",
+  "titre": "External validation of an artificial intelligence-based ECG algorithm for the early diagnosis of acute myocardial infarction: a prospective diagnostic cohort study.",
+  "revue": "The Lancet regional health. Europe",
+  "date": "2026-11-07",
+  "auteurs": "Champetier A, Lee MS, Lopez-Ayala P, Jo YY, Boeddinghaus J, Koechlin L, Bima P, Crisanti L, Zimmermann T, Kim K, Kim KS, Yoon S, Kaplan E, Gualandro DM, Recuenco LH, Huré G, Tsao TY, Nani M, Lee HS, K",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Background A novel artificial intelligence-based electrocardiogram (AI-ECG) model (AiTiA MI v2.00.00) for the early diagnosis of acute myocardial infarction (AMI) was developed using data from Korean patients. Its performance in a European population remains unknown. Methods Patients presenting to the emergency department (ED) with suspected AMI were enrolled in two prospective European cohorts (APACE & APACE-Light; ClinicalTrials.gov number, NCT00470587). The primary outcome was AMI, centrally adjudicated according to the fourth Universal Definition of MI. The AI-ECG model was applied to 12-lead ECGs recorded at ED presentation. Its diagnostic performance for AMI was directly compared to that of the BASEL score, high-sensitivity cardiac troponin T (hs-cTnT), the recalibrated HEART score (all at ED presentation), and integrated physician judgment at 90 min, with the last two only available in APACE. Predefined AI-ECG triage thresholds for early rule-out and rule-in of AMI were also evaluated. Findings Among 12,630 patients with an available digital 12-lead ECG (5047 in APACE and 7583 in APACE-Light), adjudicated AMI was diagnosed in 19% (968/5047) and 18% (1386/7583) of patients, respectively. In patients with hs-cTnT at presentation (n = 5031 and n = 7565), the AI-ECG model showed good diagnostic performance for AMI with an area under the receiver operating characteristic curve (AUC) of 0.78 (95% CI: 0.77-0.80) and 0.84 (0.83-0.85) and an area under the precision-recall curve (AUPRC) of 0.56 (0.53-0.59) and 0.65 (0.62-0.67). Its discrimination was inferior to hs-cTnT (AUC 0.94 [0.93-0.95] and 0.93 [0.92-0.94]). The AI-ECG model provided some incremental diagnostic value when combined with hs-cTnT (AUC 0.95 [0.94-0.96] and 0.95 [0.94-0.95], p Interpretation AI-ECG showed high, but not very high, diagnostic accuracy for AMI. As a diagnosis of AMI is unlikely to be ruled out on ECG alone, combining AI-ECG with hs-cTnT may improve decision making in the ED, warranting prospective studies. Funding The Swiss National Science Foundation, the Swiss Heart Foundation, Innosuisse, the University Hospital Basel, the University of Basel, Abbott, Beckman Coulter, Idorsia, LSI Medience Corporation, Roche, Ortho Clinical Diagnostics, Quidel, Siemens, SpinChip, Upstream, and Singulex, the Korea Health Industry Development Institute (KHIDI), funded by the Ministry of Health & Welfare, Republic of Korea (grant number: RS-2026-25543703)."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "intervalle de confiance",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "IA conversationnelle"
+  ],
+  "id": "MED:43038524",
+  "pmid": "43038524",
+  "pmcid": null,
+  "doi": "10.2196/111030",
+  "titre": "Medical Interview Performance Using an AI-Based Standardized Patient vs a Human Standardized Patient: Randomized Crossover Trial.",
+  "revue": "JMIR medical education",
+  "date": "2026-11-16",
+  "auteurs": "Yanagita Y, Yokokawa D, Fukuzawa F, Ihara S, Yoshida R, Sato R, Uehara T.",
+  "types": "randomized controlled trial journal article",
+  "acces_libre": false,
+  "resume": "Background In Japan, standardized patients (SPs) have traditionally been recruited to teach medical interview competencies. Recent advances in large language models have enabled increasingly natural conversational interactions, raising the possibility of using AI-based SPs (AI-SPs) for medical interview training. However, medical interview performance during interactions with AI-SPs compared with human SPs remains insufficiently understood. Objective This randomized single-center crossover trial aimed to compare medical interview performance and learner-reported experiences between encounters with a large language model-based AI-SP and a human SP. Methods Participants were fifth-year medical students undertaking clinical clerkships at Chiba University Hospital. The AI-SP was a text-based simulated patient implemented using GPT-4o. Participants were randomized to AI-SP followed by human SP, or the reverse. A washout period of at least 3 days was set between conditions. Each participant completed 2 cases, depression and appendicitis, in both conditions. For the AI-SP interviews, chat logs were retained, and a physician provided feedback after completion of the 2 cases. Human SP interviews were video recorded, and the physician portraying the SP provided feedback immediately after each interview. Medical interview performance was assessed using selected items from the Mini-Clinical Evaluation Exercise (Mini-CEX), with ratings performed independently by 2 general medicine specialists. Participants completed a self-rated questionnaire (7-point Likert-type scale) regarding learning satisfaction, perceived rapport formation, and active engagement in history taking. Results Forty-eight participants were analyzed. The Mini-CEX-based mean total score was significantly higher for the human SP than for the AI-SP (23.9, SD 1.7 vs 22.7, SD 1.7, respectively; mean difference 1.24; t 47 =3.7; P=.001). Scores for history taking and overall clinical competence were higher in the human SP condition. Interrater reliability (intraclass correlation coefficient of 2,1) was 0.76 (95% CI 0.66-0.83). No significant differences were found between conditions for learning satisfaction (human SP: mean 5.9, SD 1.1; AI-SP: mean 6.0, SD 0.8) or perceived rapport formation (human SP: mean 5.4, SD 1.3; AI-SP: mean 5.3, SD 1.3). Active engagement in history taking was significantly higher in the AI-SP condition (human SP: mean 5.8, SD 1.1; AI-SP: mean 6.2, SD 0.7; t 47 =2.7; P=.009). Conclusions Medical interview performance differed between the 2 SP conditions, with higher history taking and overall clinical competence scores in the human SP condition. The text-based nature of the AI-SP and the absence of nonverbal cues may have contributed to these differences. Although no significant differences between conditions were observed in most other assessment outcomes, learning satisfaction, or perceived rapport, self-rated active engagement in history taking was higher with the AI-SP condition. AI-SPs may offer a complementary modality for medical interview practice; however, this study assessed performance during simulated encounters rather than subsequent learning gains or performance with real patients. Trial registration UMIN Clinical Trials Registry UMIN000056228; https://center6.umin.ac.jp/cgi-open-bin/ctr_e/ctr_view.cgi?recptno=R000064153."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "intervalle de confiance",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "digestif",
+   "bouche et dents"
+  ],
+  "id": "MED:43043646",
+  "pmid": "43043646",
+  "pmcid": null,
+  "doi": "10.2196/91943",
+  "titre": "Behavior Change Techniques Associated With Abstinence in a Chat-Based Smoking Cessation Intervention: Secondary Analysis of a Randomized Clinical Trial Using Machine Learning.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-17",
+  "auteurs": "Li Y, Su X, Cheung YTD, Zhao S, Lam TH, Wang MP, Luk TT.",
+  "types": "randomized controlled trial pragmatic clinical trial journal article",
+  "acces_libre": false,
+  "resume": "Background Isolating the candidate intervention components that drive the success of digital behavioral interventions is crucial for understanding intervention mechanisms and optimizing future interventions. Objective This study aimed to identify behavior change techniques (BCTs) delivered in a chat-based smoking cessation intervention and determine their independent associations with biochemically validated abstinence. Methods This study is a secondary analysis of a pragmatic, cluster-randomized clinical trial conducted in Hong Kong. From June 18 to September 30, 2017, 624 adult daily smokers were recruited from 34 community sites and randomized to the intervention group. Participants received 3 months of personalized, real-time chat-based cessation support delivered by a live counselor via a mobile instant messaging app. The analytic sample included 230 participants (n=170, 73.9% male; mean age 43.0, SD 13.6 years) who engaged with the chat support. All chat dialogues during the real-time support were retrieved and systematically coded using an established BCT taxonomy for smoking cessation (BCTTsm). Four machine learning methods, least absolute shrinkage and selection operator regression, Extreme Gradient Boosting, the Boruta algorithm, and recursive feature elimination, were used to identify the BCTs that are most predictive of biochemically validated tobacco abstinence outcomes at 3 and 6 months. A prespecified supermajority rule retained only BCTs selected by at least 3 of the 4 models for subsequent analysis. The stability of the selected BCTs was assessed using 500 bootstrap resamples for each model. Poisson regression with robust variance was subsequently used to examine the independent associations between the selected BCTs and abstinence outcomes. Covariates included sex, age, educational level, nicotine dependence, intention to quit in 30 days, and quit attempts at baseline. Results Systematic coding identified 35 distinct BCTs from the BCTTsm as having been delivered. Three BCTs were consistently selected by machine learning as the most predictive of both 3- and 6-month abstinence, with moderate to high stability (ranging from 61% to 100%): \"provide rewards contingent on successfully stopping smoking\" (BM4), \"provide information on withdrawal symptoms\" (RC6), and \"provide information on consequences of smoking and smoking cessation\" (BM1). In multivariable analyses, 6-month abstinence was significantly associated with BM4 (risk ratio [RR] 7.9, 95% CI 4.2-14.6), RC6 (RR 3.3, 95% CI 1.6-6.5), and BM1 (RR 2.7, 95% CI 1.4-5.5), with consistent results for 3-month abstinence. Conclusions Three BCTs, contingent rewards (BM4), information on withdrawal symptoms (RC6), and information on consequences (BM1), were identified as candidate intervention components associated with success in a chat-based smoking cessation intervention. This study is the first to apply machine learning for BCT identification, moving beyond simple frequency counts to data-driven feature selection. These findings provide empirical evidence for the candidate components of effective digital behavioral intervention that may warrant further testing and offer guidance for future intervention optimization."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "revue majeure",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "IA conversationnelle"
+  ],
+  "id": "MED:43024796",
+  "pmid": "43024796",
+  "pmcid": null,
+  "doi": "10.2196/108001",
+  "titre": "A Fine-Tuned Large Language Model Workflow to Support Risk of Bias Assessment: Development, External Validation, and Reviewer Verification Study.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-13",
+  "auteurs": "Li Y, Chen J, Liang L, Geng X, Wang G, Geng J.",
+  "types": "validation study journal article",
+  "acces_libre": false,
+  "resume": "Background Given that randomized controlled trials (RCTs) are the gold standard for effectiveness research, assessing their risk of bias (RoB) becomes an indispensable step in systematic reviews. Yet this task remains time-consuming and prone to reviewer subjectivity. While large language models may accelerate the process, they lack transparent, traceable judgments linked to trial reports. Objective To bridge methodological gaps and improve both efficiency and consistency, this study developed and externally validated TRoB-1, a fine-tuned open-weight large language model workflow for RoB assessment of RCTs. Methods TRoB-1 was developed specifically for the Cochrane risk of bias tool version 1 (RoB 1), which is the most widely adopted instrument for critical appraisal of RCTs. The workflow generates preliminary judgments and supporting quotations from reviewer-selected passages for the target RoB domains. The workflow was built on 2-stage supervised fine-tuning of Gemma 2-9B-Instruct using 4-bit quantized low-rank adaptation. The training set comprised 4321 RoB records extracted from systematic reviews of chronic obstructive pulmonary disease, diabetes, and hypertension. The validation set consisted of 161 records from recently published RCTs covering a broader disease area. The reference standard was established by 2 independent reviewers. Two clinicians blinded to the reference standard verified TRoB-1-assisted assessments through a locally hosted web interface. Using the same reference standard, the performance of TRoB-1 raw outputs was compared with that of the Gemma 2 base workflow, and clinician-verified outputs were compared with raw TRoB-1 outputs. Results TRoB-1 successfully generated structured outputs for all 161 validation records. In independent clinician-assisted assessments using the same workflow, raw TRoB-1 accuracy ranged from 73.3% (n=118) to 73.9% (n=119), compared with 52.2% (n=84) to 60.2% (n=97) for the Gemma 2 base model. After verification, accuracy ranged from 82.0% (n=132) to 84.5% (n=136) and macro- F 1 from 0.709 to 0.776. Accuracy remained higher for raw TRoB-1 after excluding invalid base-model outputs, and verification did not change any correct judgment to an incorrect one. Clinician 1 corrected 13 initially incorrect judgments and clinician 2 corrected 18. The F 1 -score for judgments of high-RoB increased from 0.600 to 0.784 for clinician 1 and from 0.571 to 0.821 for clinician 2. Conclusions TRoB-1 combined task-specific fine-tuning, evidence-linked outputs, and clinician verification in a transparent workflow for reviewer-supported RoB assessment. The TRoB-1 web interface provides a practical platform for integrating RoB into evidence synthesis, particularly for living systematic reviews where timely updates are critical."
+ }
+]
