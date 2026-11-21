@@ -115,5 +115,11 @@
   "doi": "10.1016/j.eclinm.2026.104284",
   "titre": "An explainable artificial intelligence system for prognostic assessment and decision support in diabetic foot ulcer care: a multicentre derivation and validation study with prospective randomised evaluation.",
   "statut": "en attente"
+ },
+ {
+  "date": "2026-11-21",
+  "doi": "10.1016/j.lanepe.2026.101912",
+  "titre": "External validation of an artificial intelligence-based ECG algorithm for the early diagnosis of acute myocardial infarction: a prospective diagnostic cohort study.",
+  "statut": "en attente"
  }
 ]

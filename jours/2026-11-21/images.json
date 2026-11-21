@@ -1,0 +1,13 @@
+{
+ "duree": 108,
+ "pas": 0.5,
+ "edition": "ocre",
+ "occupation_moyenne": 36.2,
+ "etendue_moyenne": 56.3,
+ "temps_vide_pct": 0.5,
+ "temps_sous_rempli_pct": 0.5,
+ "ecrans_vides": [],
+ "cadres_sous_remplis": [],
+ "pire_vide": 0,
+ "bilan": "aucun écran vide, cadres remplis"
+}

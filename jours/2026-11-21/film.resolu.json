@@ -1,0 +1,400 @@
+{
+ "id": "2026-11-21",
+ "sentences": [
+  {
+   "text": "Aux urgences, une IA lit un ECG : repère-t-elle un infarctus ?",
+   "partie": "accroche",
+   "box": "infarctus"
+  },
+  {
+   "text": "Devant une douleur thoracique, il faut vite savoir s'il s'agit d'un infarctus : plus on traite tôt, mieux le patient s'en sort.",
+   "partie": "contexte",
+   "box": "infarctus"
+  },
+  {
+   "text": "Alors on fait d'abord un ECG, puis on dose la troponine.",
+   "partie": "contexte",
+   "box": "troponine.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Mais la lecture de l'ECG dépend de l'expérience de chacun.",
+   "partie": "probleme",
+   "box": "l'expérience",
+   "source": "ECG interpretation depends on individual expertise"
+  },
+  {
+   "text": "Et la troponine met souvent plus d'une heure à revenir du laboratoire central.",
+   "partie": "probleme",
+   "box": "heure",
+   "source": "turnaround time of cardiac troponin often exceeds 1 h when using a central laboratory assay"
+  },
+  {
+   "text": "Résultat : la confirmation de l'infarctus arrive en retard.",
+   "partie": "probleme",
+   "peak": "retard",
+   "source": "delaying immediate rule-in"
+  },
+  {
+   "text": "C'est là qu'entre AiTiA, un algorithme coréen qui lit le tracé brut de l'ECG et donne une probabilité d'infarctus.",
+   "partie": "ia",
+   "box": "AiTiA,"
+  },
+  {
+   "text": "L'IA fonctionne-t-elle aussi en Europe, face à la troponine ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, ils ont repris deux cohortes prospectives européennes.",
+   "partie": "etude",
+   "display": "Pour le savoir, ils ont repris 2 cohortes prospectives européennes.",
+   "box": "prospectives"
+  },
+  {
+   "text": "Douze mille six cent trente patients venus aux urgences avec une douleur thoracique.",
+   "partie": "etude",
+   "display": "12 630 patients venus aux urgences avec une douleur thoracique.",
+   "box": "patients",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Concrètement, le premier ECG de chaque patient passe dans l'IA, et les médecins ne voient pas son score.",
+   "partie": "methode",
+   "box": "l'IA,"
+  },
+  {
+   "text": "Puis ils comparent son score à la troponine et au jugement des urgentistes.",
+   "partie": "methode",
+   "box": "urgentistes.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : l'aire sous la courbe de l'IA atteint zéro virgule soixante-dix-huit, pour un maximum de un.",
+   "partie": "resultat",
+   "display": "Résultat : l'aire sous la courbe de l'IA atteint 0,78, pour un maximum de 1.",
+   "peak": "zéro virgule soixante-dix-huit"
+  },
+  {
+   "text": "Mais, à quatre-vingt-dix minutes, les urgentistes font mieux, avec zéro virgule quatre-vingt-six, et la troponine encore mieux : zéro virgule quatre-vingt-quatorze.",
+   "partie": "resultat",
+   "display": "Mais, à 90 minutes, les urgentistes font mieux, avec 0,86, et la troponine encore mieux : 0,94.",
+   "box": "troponine",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Et pour écarter un infarctus, elle en repère quatre-vingt-dix-sept virgule six pour cent, mais ne rassure que quatorze pour cent des patients.",
+   "partie": "resultat",
+   "display": "Et pour écarter un infarctus, elle en repère 97,6 %, mais ne rassure que 14 % des patients.",
+   "peak": "ne rassure que"
+  },
+  {
+   "text": "Quant aux vingt-trois infarctus ratés dans la première cohorte, treize sont de type deux.",
+   "partie": "concret",
+   "display": "Quant aux 23 infarctus ratés dans la première cohorte, 13 sont de type 2.",
+   "box": "ratés",
+   "source": "In the APACE cohort, all 23 false negatives were NSTEMIs, and 57% (13/23) were identified as type 2 MI."
+  },
+  {
+   "text": "Enfin, combinée à la troponine, elle trie d'emblée cinquante-sept pour cent des patients, en repérant quatre-vingt-dix-sept virgule cinq pour cent des infarctus.",
+   "partie": "concret",
+   "display": "Enfin, combinée à la troponine, elle trie d'emblée 57 % des patients, en repérant 97,5 % des infarctus.",
+   "box": "combinée",
+   "source": "The combined AI-ECG and hs-cTnT approach triaged 2877 patients (57%) to either rule-out (n = 1641/5,031, 33%) or rule-in (n = 1236/5,031, 25%), with a sensitivity of 97.5% (95% CI: 96.4–98.4%)"
+  },
+  {
+   "text": "Attention : ses résultats baissent chez les patients âgés, et rien ne justifie un usage hors de l'hôpital.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : l'IA pourrait aider les urgentistes en complément de la troponine, pas la remplacer.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 34.49,
+  "stations": [
+   {
+    "type": "hook_image",
+    "cam_at": 2.8,
+    "header": "Étude diagnostique · Europe · 2006–2021",
+    "image": "ecg",
+    "title": "Un électrocardiogramme lu par une IA",
+    "title_at": 4.64,
+    "lock_at": 6.24,
+    "footnote": "Infarctus et IA",
+    "y": 0
+   },
+   {
+    "type": "steps",
+    "cam_at": 7.18,
+    "mark_at": 16.14,
+    "title": "Aux urgences",
+    "steps": [
+     {
+      "icon": "heart",
+      "label": "Une douleur dans la poitrine",
+      "at": 7.66,
+      "_y": 1570
+     },
+     {
+      "icon": "ecg",
+      "label": "D'abord un ECG",
+      "at": 14.62,
+      "_y": 1900
+     },
+     {
+      "icon": "chart",
+      "label": "Puis la troponine",
+      "at": 16.14,
+      "_y": 2230
+     }
+    ],
+    "y": 1400
+   },
+   {
+    "type": "steps",
+    "cam_at": 18.54,
+    "mark_at": 26.88,
+    "title": "Ce qui coince",
+    "steps": [
+     {
+      "icon": "user",
+      "label": "Un ECG lu selon l'expérience",
+      "at": 19.24,
+      "_y": 3250
+     },
+     {
+      "icon": "clock",
+      "label": "Une troponine qui se fait attendre",
+      "note": "souvent plus d'une heure",
+      "at": 20.82,
+      "note_at": 22.26,
+      "_y": 3580
+     }
+    ],
+    "y": 3080
+   },
+   {
+    "type": "steps",
+    "cam_at": 27.74,
+    "mark_at": 33.02,
+    "title": "L'IA testée",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "AiTiA, un algorithme coréen",
+      "at": 28.44,
+      "_y": 4600
+     },
+     {
+      "icon": "ecg",
+      "label": "Il lit le tracé brut de l'ECG",
+      "at": 30.98,
+      "_y": 4930
+     },
+     {
+      "icon": "chart",
+      "label": "Il donne une probabilité",
+      "at": 33.02,
+      "_y": 5260
+     }
+    ],
+    "y": 4430
+   }
+  ]
+ },
+ "pivot": {
+  "text": "L'IA fonctionne-t-elle aussi en Europe, face à la troponine ?",
+  "italic": "Europe",
+  "fold_at": 39.14,
+  "start": 34.49,
+  "end": 40.19
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": 38.72,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Deux cohortes prospectives",
+      "at": 40.74
+     },
+     {
+      "label": "Lieu",
+      "value": "Europe",
+      "at": 41.8
+     },
+     {
+      "label": "Patients",
+      "value": "12 630",
+      "at": 42.63,
+      "accent": true
+     },
+     {
+      "label": "Motif",
+      "value": "Douleur thoracique",
+      "at": 45.52
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 47.68,
+    "input_icon": "ecg",
+    "input_label": "Le premier ECG de chaque patient",
+    "ai_label": "Estime la probabilité d'infarctus",
+    "output_label": "Un score de 0 à 1",
+    "modality": "signal",
+    "at": 48.38,
+    "core_at": 50.0,
+    "out_at": 51.64,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "key_points",
+    "cam_at": 53.0,
+    "title": "Les points de comparaison",
+    "points": [
+     {
+      "text": "La troponine, dosée à l'arrivée",
+      "at": 53.7
+     },
+     {
+      "text": "Le jugement des urgentistes",
+      "at": 55.08
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "result_bars",
+    "cam_at": 58.2,
+    "title": "Aire sous la courbe",
+    "groups": [
+     {
+      "label": "IA",
+      "value": "0,78",
+      "num": 0.78,
+      "at": 59.8,
+      "accent": true
+     },
+     {
+      "label": "Urgentistes",
+      "value": "0,86",
+      "num": 0.86,
+      "at": 66.08
+     },
+     {
+      "label": "Troponine",
+      "value": "0,94",
+      "num": 0.94,
+      "at": 69.44
+     }
+    ],
+    "y": 0,
+    "_fig": 2
+   },
+   {
+    "type": "metric",
+    "cam_at": 71.62,
+    "title": "Pour écarter un infarctus",
+    "metrics": [
+     {
+      "label": "Infarctus repérés",
+      "value": "97,6",
+      "num": 97.6,
+      "unit": "%",
+      "at": 73.22
+     },
+     {
+      "label": "Patients écartés",
+      "value": "14",
+      "num": 14,
+      "unit": "%",
+      "at": 76.04,
+      "accent": true
+     }
+    ],
+    "y": 0,
+    "_fig": 3
+   },
+   {
+    "type": "findings",
+    "cam_at": 77.31,
+    "title": "Ce qu'on a trouvé",
+    "items": [
+     {
+      "icon": "heart",
+      "label": "Les infarctus ratés",
+      "detail": "13 sur 23 sont de type 2",
+      "at": 77.92
+     },
+     {
+      "icon": "chart",
+      "label": "Avec la troponine",
+      "detail": "57 % des patients triés d'emblée",
+      "at": 83.16
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 89.43,
+    "text": "Attention : ses résultats baissent chez les patients âgés, et rien ne justifie un usage hors de l'hôpital.",
+    "italic": "baissent",
+    "sentence": 17,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 94.96,
+    "text": "À retenir : l'IA pourrait aider les urgentistes en complément de la troponine, pas la remplacer.",
+    "italic": "complément",
+    "sentence": 18,
+    "y": 0
+   }
+  ],
+  "start": 39.09,
+  "end": 101.61
+ },
+ "end": {
+  "fold_at": 100.56,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 103.76,
+  "button": "Suivre",
+  "button_at": 104.36,
+  "click_at": 105.36,
+  "source": "Champetier et al. · The Lancet Regional Health Europe · novembre 2026",
+  "doi": "doi:10.1016/j.lanepe.2026.101912",
+  "source_at": 102.18,
+  "start": 100.51,
+  "end": 108.0
+ },
+ "duration": 108.0,
+ "lead": 2.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

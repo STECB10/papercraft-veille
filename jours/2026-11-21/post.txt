@@ -1,0 +1,9 @@
+Une IA qui lit l'ECG aux urgences repère bien l'infarctus, mais reste moins fiable que la troponine.
+
+Des chercheurs ont testé AiTiA, un algorithme coréen, sur 12 630 patients venus aux urgences avec une douleur thoracique, dans deux cohortes prospectives européennes. Seule, l'IA atteint une aire sous la courbe de 0,78, contre 0,94 pour la troponine. Combinée à la troponine, elle trie d'emblée 57 % des patients, tout en repérant 97,5 % des infarctus.
+
+Et dans votre service, un score d'IA sur l'ECG vous ferait-il gagner du temps ou compliquerait-il la décision ?
+
+Source : Champetier et al., The Lancet Regional Health Europe, novembre 2026. https://doi.org/10.1016/j.lanepe.2026.101912
+
+#IA #Cardiologie #Urgences #ECG

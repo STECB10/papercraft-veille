@@ -1,0 +1,87 @@
+[
+ {
+  "id": "f16",
+  "valeur": 5047,
+  "citation": "(5047 in APACE and 7583 in APACE-Light)"
+ },
+ {
+  "id": "f17",
+  "valeur": 7583,
+  "citation": "(5047 in APACE and 7583 in APACE-Light)"
+ },
+ {
+  "id": "f2",
+  "valeur": 2006,
+  "citation": "from 04/2006 to 09/2020"
+ },
+ {
+  "id": "f3",
+  "valeur": 2021,
+  "citation": "from 01/2019 to 01/2021"
+ },
+ {
+  "id": "f4",
+  "valeur": 2,
+  "citation": "57% (13/23) were identified as type 2 MI"
+ },
+ {
+  "id": "f5",
+  "valeur": 0.78,
+  "citation": "the AI-ECG achieved an AUC of 0.78 (95% CI: 0.77–0.80)"
+ },
+ {
+  "id": "f6",
+  "valeur": 90,
+  "citation": "integrated physician judgment at 90 min"
+ },
+ {
+  "id": "f7",
+  "valeur": 0.86,
+  "citation": "had higher diagnostic performance than the AI-ECG, with an AUC of 0.86"
+ },
+ {
+  "id": "f8",
+  "valeur": 0.94,
+  "citation": "The diagnostic performance of the AI-ECG model was inferior to hs-cTnT: AUC of 0.94"
+ },
+ {
+  "id": "f9",
+  "valeur": 97.6,
+  "citation": "achieving a sensitivity of 97.6%"
+ },
+ {
+  "id": "f10",
+  "valeur": 14,
+  "citation": "the AI-ECG model ruled out 14% (706/5031)"
+ },
+ {
+  "id": "f11",
+  "valeur": 23,
+  "citation": "all 23 false negatives were NSTEMIs, and 57% (13/23) were identified as type 2 MI"
+ },
+ {
+  "id": "f12",
+  "valeur": 13,
+  "citation": "57% (13/23) were identified as type 2 MI"
+ },
+ {
+  "id": "f13",
+  "valeur": 57,
+  "citation": "triaged 2877 patients (57%)"
+ },
+ {
+  "id": "f14",
+  "valeur": 97.5,
+  "citation": "with a sensitivity of 97.5% (95% CI: 96.4–98.4%)"
+ },
+ {
+  "id": "f15",
+  "valeur": 1,
+  "citation": "often exceeds 1 h"
+ },
+ {
+  "id": "f1",
+  "valeur": 12630,
+  "calcul": "f16 + f17"
+ }
+]
