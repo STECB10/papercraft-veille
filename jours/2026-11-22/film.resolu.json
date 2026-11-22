@@ -1,0 +1,400 @@
+{
+ "id": "2026-11-22",
+ "sentences": [
+  {
+   "text": "Quand on arrête de fumer par messagerie, quels mots du conseiller comptent ?",
+   "partie": "accroche",
+   "box": "mots"
+  },
+  {
+   "text": "À Hong Kong, des fumeurs ont reçu trois mois d'accompagnement par WhatsApp, avec un conseiller qui répond en direct.",
+   "partie": "contexte",
+   "box": "conseiller"
+  },
+  {
+   "text": "Et l'essai de départ montrait plus d'abstinence qu'une intervention brève.",
+   "partie": "contexte",
+   "box": "d'abstinence",
+   "source": "showed the effectiveness of the chat-based intervention vs brief intervention alone in increasing biochemically validated abstinence rates"
+  },
+  {
+   "text": "Mais on ignore ce qui fait la différence.",
+   "partie": "probleme",
+   "box": "différence.",
+   "source": "the intervention content contributing to treatment success remains poorly understood",
+   "pause_apres": 0.0
+  },
+  {
+   "text": "Le problème, c'est que le conseiller mélange plusieurs techniques, et qu'on ne sait pas laquelle compte.",
+   "partie": "probleme",
+   "box": "mélange",
+   "source": "behavioral interventions typically deliver multiple interacting BCTs that work synergistically [,], making individual contributions hard to isolate"
+  },
+  {
+   "text": "Résultat : on peine à reproduire ce qui marche.",
+   "partie": "probleme",
+   "peak": "reproduire",
+   "source": "hinders the replication of interventions and evidence synthesis"
+  },
+  {
+   "text": "C'est là qu'entre l'apprentissage automatique : quatre algorithmes cherchent, dans les conversations, les techniques qui prédisent l'arrêt.",
+   "partie": "ia",
+   "box": "algorithmes"
+  },
+  {
+   "text": "Quelles techniques du conseiller sont liées à l'arrêt du tabac ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, ils ont repris un essai tiré au sort, mené à Hong Kong en deux mille dix-sept.",
+   "partie": "etude",
+   "display": "Pour le savoir, ils ont repris un essai tiré au sort, mené à Hong Kong en 2017.",
+   "box": "essai"
+  },
+  {
+   "text": "Ils ont gardé les deux cent trente participants qui ont écrit au conseiller, sur six cent vingt-quatre.",
+   "partie": "etude",
+   "display": "Ils ont gardé les 230 participants qui ont écrit au conseiller, sur 624.",
+   "box": "participants",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "D'abord, deux codeurs ont noté les techniques de chaque conversation : trente-cinq différentes au total.",
+   "partie": "methode",
+   "display": "D'abord, 2 codeurs ont noté les techniques de chaque conversation : 35 différentes au total.",
+   "box": "codeurs"
+  },
+  {
+   "text": "Ensuite, quatre algorithmes ont cherché lesquelles prédisent l'arrêt : il n'en reste que trois.",
+   "partie": "methode",
+   "display": "Ensuite, 4 algorithmes ont cherché lesquelles prédisent l'arrêt : il n'en reste que 3.",
+   "box": "3."
+  },
+  {
+   "text": "Enfin, un test du souffle et de la salive vérifie l'arrêt, à trois et six mois.",
+   "partie": "methode",
+   "display": "Enfin, un test du souffle et de la salive vérifie l'arrêt, à 3 et 6 mois.",
+   "box": "vérifie",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : quand le conseiller récompensait l'arrêt, l'abstinence à six mois était six fois plus fréquente.",
+   "partie": "resultat",
+   "display": "Résultat : quand le conseiller récompensait l'arrêt, l'abstinence à 6 mois était 6 fois plus fréquente.",
+   "peak": "fréquente"
+  },
+  {
+   "text": "L'intervalle de confiance va de trois à onze virgule neuf : loin d'une absence de différence.",
+   "partie": "resultat",
+   "display": "L'intervalle de confiance va de 3 à 11,9 : loin d'une absence de différence.",
+   "box": "L'intervalle",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Concrètement, cette récompense mêlait félicitations et incitations financières.",
+   "partie": "concret",
+   "box": "félicitations",
+   "source": "incorporated both praise and financial incentives in our intervention"
+  },
+  {
+   "text": "Deux autres techniques ressortent : informer sur le sevrage s'accompagne de deux virgule sept fois plus d'abstinence.",
+   "partie": "concret",
+   "display": "Deux autres techniques ressortent : informer sur le sevrage s'accompagne de 2,7 fois plus d'abstinence.",
+   "box": "sevrage",
+   "source": "RC6 (adjusted RR 2.7, 95% CI 1.3"
+  },
+  {
+   "text": "Expliquer les conséquences du tabac s'accompagne de deux virgule neuf fois plus.",
+   "partie": "concret",
+   "display": "Expliquer les conséquences du tabac s'accompagne de 2,9 fois plus.",
+   "box": "conséquences",
+   "source": "BM1 (adjusted RR 2.9, 95% CI 1.4",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : seuls les participants qui ont écrit comptent, et la récompense peut suivre un arrêt déjà en cours.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : récompenser l'arrêt et informer sur le sevrage sont des pistes à tester dans un vrai essai.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0.0,
+  "end": 33.25,
+  "stations": [
+   {
+    "type": "hook_question",
+    "cam_at": 3.2,
+    "header": "Essai tiré au sort · Hong Kong · 2017",
+    "text": "Quand on arrête de fumer par messagerie, quels mots du conseiller comptent ?",
+    "italic": "mots",
+    "icon": "message",
+    "footnote": "Arrêter de fumer par messagerie",
+    "_sentence": 0,
+    "y": 0
+   },
+   {
+    "type": "steps",
+    "cam_at": 8.14,
+    "mark_at": 14.52,
+    "title": "Le chat de sevrage",
+    "steps": [
+     {
+      "icon": "calendar",
+      "label": "Trois mois d'accompagnement",
+      "at": 8.84,
+      "_y": 1570
+     },
+     {
+      "icon": "phone",
+      "label": "Par WhatsApp",
+      "at": 10.08,
+      "_y": 1900
+     },
+     {
+      "icon": "user",
+      "label": "Un conseiller en direct",
+      "at": 11.08,
+      "_y": 2230
+     },
+     {
+      "icon": "check",
+      "label": "Plus d'abstinence qu'une intervention brève",
+      "at": 14.52,
+      "_y": 2560
+     }
+    ],
+    "y": 1400
+   },
+   {
+    "type": "steps",
+    "cam_at": 17.38,
+    "mark_at": 25.04,
+    "title": "Ce qui coince",
+    "steps": [
+     {
+      "icon": "magnifier",
+      "label": "On ignore ce qui fait la différence",
+      "at": 18.08,
+      "_y": 3580
+     },
+     {
+      "icon": "message",
+      "label": "Plusieurs techniques mélangées",
+      "at": 20.54,
+      "_y": 3910
+     },
+     {
+      "icon": "doc",
+      "label": "Difficile à reproduire",
+      "at": 25.04,
+      "_y": 4240
+     }
+    ],
+    "y": 3410
+   },
+   {
+    "type": "steps",
+    "cam_at": 28.22,
+    "mark_at": 32.3,
+    "title": "L'IA testée",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "Quatre algorithmes",
+      "at": 28.92,
+      "_y": 5260
+     },
+     {
+      "icon": "message",
+      "label": "Ils lisent les conversations",
+      "at": 30.54,
+      "_y": 5590
+     },
+     {
+      "icon": "chart",
+      "label": "Ils cherchent ce qui prédit l'arrêt",
+      "at": 32.3,
+      "_y": 5920
+     }
+    ],
+    "y": 5090
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Quelles techniques du conseiller sont liées à l'arrêt du tabac ?",
+  "italic": "techniques",
+  "fold_at": 38.09,
+  "start": 33.25,
+  "end": 39.14
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": 37.68,
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Essai tiré au sort",
+      "at": 39.58
+     },
+     {
+      "label": "Lieu",
+      "value": "Hong Kong",
+      "at": 41.06
+     },
+     {
+      "label": "Année",
+      "value": "2017",
+      "at": 42.06
+     },
+     {
+      "label": "Participants",
+      "value": "230 sur 624",
+      "at": 43.6,
+      "accent": true
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": 49.6,
+    "input_icon": "message",
+    "input_label": "Les conversations du chat",
+    "ai_label": "Cherche ce qui prédit l'arrêt",
+    "output_label": "Trois techniques",
+    "modality": "texte",
+    "at": 50.3,
+    "core_at": 53.92,
+    "out_at": 56.9,
+    "y": 0,
+    "_fig": 1
+   },
+   {
+    "type": "key_points",
+    "cam_at": 58.14,
+    "title": "Comment l'arrêt est vérifié",
+    "points": [
+     {
+      "text": "Un test du souffle",
+      "at": 58.84
+     },
+     {
+      "text": "Un test de la salive",
+      "at": 59.42
+     },
+     {
+      "text": "À trois puis à six mois",
+      "at": 60.94
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "ratio",
+    "cam_at": 66.94,
+    "title": "Récompenser l'arrêt réussi",
+    "value": "6,0",
+    "num": 6.0,
+    "low": 3.0,
+    "high": 11.9,
+    "label": "Abstinence à 6 mois, avec récompense (risque relatif ajusté)",
+    "left": "Moins d'abstinence",
+    "right": "Plus d'abstinence",
+    "at": 67.64,
+    "ci_at": 68.48,
+    "null_at": 71.98,
+    "caption": "Loin de 1 : mais étude exploratoire",
+    "caption_at": 72.38,
+    "y": 0
+   },
+   {
+    "type": "findings",
+    "cam_at": 74.82,
+    "title": "Ce qui est associé à l'arrêt",
+    "items": [
+     {
+      "icon": "heart",
+      "label": "Récompenser l'arrêt réussi",
+      "detail": "Félicitations et aides financières",
+      "at": 75.52
+     },
+     {
+      "icon": "doc",
+      "label": "Informer sur le sevrage",
+      "detail": "2,7 fois plus d'abstinence",
+      "detail_at": 81.9,
+      "tendance": "plus",
+      "at": 80.34
+     },
+     {
+      "icon": "message",
+      "label": "Expliquer les conséquences",
+      "detail": "2,9 fois plus d'abstinence",
+      "detail_at": 86.54,
+      "tendance": "plus",
+      "at": 84.54
+     }
+    ],
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 88.1,
+    "text": "Attention : seuls les participants qui ont écrit comptent, et la récompense peut suivre un arrêt déjà en cours.",
+    "italic": "déjà",
+    "sentence": 18,
+    "y": 0
+   },
+   {
+    "type": "typo",
+    "cam_at": 93.86,
+    "text": "À retenir : récompenser l'arrêt et informer sur le sevrage sont des pistes à tester dans un vrai essai.",
+    "italic": "pistes",
+    "sentence": 19,
+    "y": 0
+   }
+  ],
+  "start": 38.040000000000006,
+  "end": 100.59
+ },
+ "end": {
+  "fold_at": 99.54,
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": 102.72,
+  "button": "Suivre",
+  "button_at": 103.32,
+  "click_at": 104.32,
+  "source": "Li et al. · Journal of Medical Internet Research · novembre 2026",
+  "doi": "doi:10.2196/91943",
+  "source_at": 101.11,
+  "start": 99.49000000000001,
+  "end": 107.0
+ },
+ "duration": 107.0,
+ "lead": 3.2,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}

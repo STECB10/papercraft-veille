@@ -1,0 +1,9 @@
+Dans un chat pour arrêter de fumer, récompenser l'arrêt réussi est la technique la plus liée à l'abstinence.
+
+Des chercheurs de Hong Kong ont repris un essai tiré au sort où des fumeurs recevaient 3 mois de soutien par WhatsApp. Sur les 230 participants qui ont écrit au conseiller, quatre algorithmes ont retenu 3 techniques sur 35. Quand le conseiller récompensait l'arrêt, l'abstinence à 6 mois était 6,0 fois plus fréquente, avec un intervalle de confiance de 3,0 à 11,9. Attention : analyse exploratoire, la récompense peut suivre un arrêt déjà en cours.
+
+Et dans votre pratique de tabacologie, quelle technique d'accompagnement voyez-vous le plus aider vos patients à tenir ?
+
+Source : Li et al., Journal of Medical Internet Research, novembre 2026. https://doi.org/10.2196/91943
+
+#IA #Tabagisme #Tabacologie #SantéNumérique

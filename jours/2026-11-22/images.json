@@ -1,0 +1,18 @@
+{
+ "duree": 107,
+ "pas": 0.5,
+ "edition": "sarcelle",
+ "occupation_moyenne": 43,
+ "etendue_moyenne": 65.2,
+ "temps_vide_pct": 0.5,
+ "temps_sous_rempli_pct": 5.3,
+ "ecrans_vides": [],
+ "cadres_sous_remplis": [
+  [
+   76,
+   80.5
+  ]
+ ],
+ "pire_vide": 0,
+ "bilan": "cadre peu rempli à 1:16"
+}

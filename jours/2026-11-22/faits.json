@@ -1,0 +1,82 @@
+[
+ {
+  "id": "f1",
+  "valeur": 624,
+  "citation": "with 624 participants assigned to the intervention arm"
+ },
+ {
+  "id": "f2",
+  "valeur": 230,
+  "citation": "n=230, 36.9% of the intervention arm"
+ },
+ {
+  "id": "f3",
+  "valeur": 35,
+  "citation": "A total of 35 unique BCTs were used across the dialogues"
+ },
+ {
+  "id": "f4",
+  "valeur": 4,
+  "citation": "We used 4 complementary feature selection methods"
+ },
+ {
+  "id": "f5",
+  "valeur": 3,
+  "citation": "only BCTs selected by at least 3 of the 4 models were retained for subsequent analysis"
+ },
+ {
+  "id": "f6",
+  "valeur": 3,
+  "citation": "we consistently identified 3 BCTs that were most predictive"
+ },
+ {
+  "id": "f7",
+  "valeur": 2017,
+  "citation": "June 18 to September 30, 2017"
+ },
+ {
+  "id": "f8",
+  "valeur": 3,
+  "citation": "received the chat-based intervention for 3 months"
+ },
+ {
+  "id": "f9",
+  "valeur": 6,
+  "citation": "biochemically validated tobacco abstinence at 6 months after randomization"
+ },
+ {
+  "id": "f10",
+  "valeur": 6.0,
+  "citation": "BM4 (adjusted RR 6.0, 95% CI 3.0"
+ },
+ {
+  "id": "f11",
+  "valeur": 3.0,
+  "citation": "BM4 (adjusted RR 6.0, 95% CI 3.0"
+ },
+ {
+  "id": "f12",
+  "valeur": 11.9,
+  "citation": "11.9; P &lt;.001"
+ },
+ {
+  "id": "f13",
+  "valeur": 2.7,
+  "citation": "RC6 (adjusted RR 2.7, 95% CI 1.3"
+ },
+ {
+  "id": "f14",
+  "valeur": 2.9,
+  "citation": "BM1 (adjusted RR 2.9, 95% CI 1.4"
+ },
+ {
+  "id": "f17",
+  "valeur": 3,
+  "citation": "key secondary outcome was 3-month (end of treatment) validated abstinence"
+ },
+ {
+  "id": "f16",
+  "valeur": 2,
+  "calcul": "f6 - 1"
+ }
+]

@@ -121,5 +121,11 @@
   "doi": "10.1016/j.lanepe.2026.101912",
   "titre": "External validation of an artificial intelligence-based ECG algorithm for the early diagnosis of acute myocardial infarction: a prospective diagnostic cohort study.",
   "statut": "en attente"
+ },
+ {
+  "date": "2026-11-22",
+  "doi": "10.2196/91943",
+  "titre": "Behavior Change Techniques Associated With Abstinence in a Chat-Based Smoking Cessation Intervention: Secondary Analysis of a Randomized Clinical Trial Using Machine Learning.",
+  "statut": "en attente"
  }
 ]

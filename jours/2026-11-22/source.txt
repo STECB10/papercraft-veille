@@ -1,0 +1,553 @@
+TITRE : Behavior Change Techniques Associated With Abstinence in a Chat-Based Smoking Cessation Intervention: Secondary Analysis of a Randomized Clinical Trial Using Machine Learning.
+REVUE : Journal of medical Internet research · 2026-11-17
+DOI : 10.2196/91943
+
+RÉSUMÉ :
+Background Isolating the candidate intervention components that drive the success of digital behavioral interventions is crucial for understanding intervention mechanisms and optimizing future interventions. Objective This study aimed to identify behavior change techniques (BCTs) delivered in a chat-based smoking cessation intervention and determine their independent associations with biochemically validated abstinence. Methods This study is a secondary analysis of a pragmatic, cluster-randomized clinical trial conducted in Hong Kong. From June 18 to September 30, 2017, 624 adult daily smokers were recruited from 34 community sites and randomized to the intervention group. Participants received 3 months of personalized, real-time chat-based cessation support delivered by a live counselor via a mobile instant messaging app. The analytic sample included 230 participants (n=170, 73.9% male; mean age 43.0, SD 13.6 years) who engaged with the chat support. All chat dialogues during the real-time support were retrieved and systematically coded using an established BCT taxonomy for smoking cessation (BCTTsm). Four machine learning methods, least absolute shrinkage and selection operator regression, Extreme Gradient Boosting, the Boruta algorithm, and recursive feature elimination, were used to identify the BCTs that are most predictive of biochemically validated tobacco abstinence outcomes at 3 and 6 months. A prespecified supermajority rule retained only BCTs selected by at least 3 of the 4 models for subsequent analysis. The stability of the selected BCTs was assessed using 500 bootstrap resamples for each model. Poisson regression with robust variance was subsequently used to examine the independent associations between the selected BCTs and abstinence outcomes. Covariates included sex, age, educational level, nicotine dependence, intention to quit in 30 days, and quit attempts at baseline. Results Systematic coding identified 35 distinct BCTs from the BCTTsm as having been delivered. Three BCTs were consistently selected by machine learning as the most predictive of both 3- and 6-month abstinence, with moderate to high stability (ranging from 61% to 100%): "provide rewards contingent on successfully stopping smoking" (BM4), "provide information on withdrawal symptoms" (RC6), and "provide information on consequences of smoking and smoking cessation" (BM1). In multivariable analyses, 6-month abstinence was significantly associated with BM4 (risk ratio [RR] 7.9, 95% CI 4.2-14.6), RC6 (RR 3.3, 95% CI 1.6-6.5), and BM1 (RR 2.7, 95% CI 1.4-5.5), with consistent results for 3-month abstinence. Conclusions Three BCTs, contingent rewards (BM4), information on withdrawal symptoms (RC6), and information on consequences (BM1), were identified as candidate intervention components associated with success in a chat-based smoking cessation intervention. This study is the first to apply machine learning for BCT identification, moving beyond simple frequency counts to data-driven feature selection. These findings provide empirical evidence for the candidate components of effective digital behavioral intervention that may warrant further testing and offer guidance for future intervention optimization.
+
+TEXTE INTÉGRAL :
+> Introduction
+ Behavior change interventions typically contain multiple components []. The United Kingdom Medical Research Council’s guideline on complex interventions highlights the importance of specifying the “active ingredients” for determining how the intervention achieves its effects []. Precise reporting with sufficient detail of the intervention content is encouraged by the CONSORT (Consolidated Standards of Reporting Trials) and its extension for digital interventions (CONSORT-eHEALTH; Consolidated Standards of Reporting Trials of Electronic and Mobile Health Applications and Online Telehealth) statements [,], and the Template for Intervention Description and Replication []. However, digital behavioral interventions are often inadequately or vaguely reported due to the lack of standardized definitions and consistent labels [], which poses challenges in understanding the active components that contribute to intervention effects and hinders the replication of interventions and evidence synthesis [-].
+ Behavior change techniques (BCTs), defined as the smallest active and replicable components of an intervention designed to change behavior, are used to specify the intervention content of complex behavioral interventions []. Meta-analyses have shown that specific BCTs identified in interventions for physical activity [], diabetes [], alcohol use [], obesity [], and smoking cessation [], were associated with intervention success. To enhance clarity and standardize the reporting of intervention contents across diverse behavioral domains, the Behavior Change Technique Taxonomy version 1 (BCTTv1) was developed, comprising 93 BCTs grouped into 16 functions []. The BCTTv1 has been widely used for mapping BCTs across various behaviors [-]. Subsequently, a more specific taxonomy for smoking cessation (BCTTsm) was developed, incorporating BCTs such as carbon monoxide (CO) monitoring, advice for coping with urges to smoke, and relapse prevention strategies []. Nevertheless, the active content remains underreported in trials of smoking cessation behavioral interventions [].
+ Recent studies have applied these taxonomies to evaluate the BCTs in smoking cessation interventions across different contexts. A meta-analysis that extracted BCTs used in group-based interventions using the BCTTv1 identified 4 BCT domains significantly associated with increased abstinence rates at 6 months, including “problem solving,” “information of health consequences,” “information about social and environmental consequences,” and “reward (outcome)” []. In primary care smoking cessation consultations, only the use of reflective listening (RC7 in BCTTsm) was found to be significantly associated with self-reported 8-week abstinence [].
+ Digital-based interventions have demonstrated effectiveness for smoking cessation, including text messaging [] and instant messaging interventions []. Mobile text messaging interventions, such as SmokefreeTXT and Txt2Stop, have been shown to be effective for smoking cessation [], yet the specific messages underlying the intervention effect have remained unclear. Retrospective analyses of the messages found that SmokefreeTXT used 41 out of the 93 BCTs in the BCTTv1 [], while 34 out of 43 BCTs in BCTTsm were found in Txt2Stop []. However, these analyses did not examine the associations of individual BCTs with smoking abstinence, and no studies have systematically identified BCTs in instant messaging interventions for smoking cessation.
+ Current evaluations of BCTs in behavioral interventions typically compare outcomes based on the experimental manipulation or observed presence versus absence of specific techniques []. However, behavioral interventions typically deliver multiple interacting BCTs that work synergistically [,], making individual contributions hard to isolate. Machine learning may offer a novel solution for identifying predictive features with reliability and robustness in high-dimensional data []. It has been applied to identify individual-level predictors of smoking cessation, such as participant characteristics [] and app feature use patterns []. However, its potential for systematically prioritizing intervention-level factors, specifically the BCTs most strongly associated with smoking cessation, remains largely unexplored.
+ We developed a novel chat-based intervention that provided personalized, real-time smoking cessation support through interaction with a live counselor via mobile instant messaging apps (ie, WhatsApp) []. Our subsequent community-based cluster-randomized controlled trial showed the effectiveness of the chat-based intervention vs brief intervention alone in increasing biochemically validated abstinence rates at 3 months and 6 months []. While greater intervention engagement was generally associated with better outcomes [], engagement and thus the BCTs involved varied widely among participants. This study aimed to (1) systematically code and describe the number and types of BCTs used during the chat-based support, (2) apply machine learning feature selection to identify the BCTs most predictive of biochemically validated abstinence, and (3) quantify the independent associations of these key BCTs with validated abstinence using adjusted regression analyses.
+ Methods
+ Study Design
+ This study was a secondary analysis of a 2-arm, parallel, pragmatic, cluster-randomized clinical trial nested in the “Quit to Win” Smoke-free Community Contest organized by the Hong Kong Council on Smoking and Health. Details of the trial design [] and main results [] have been reported elsewhere. The present study included a prespecified content analysis to identify the BCTs delivered in the chat-based intervention, followed by machine learning to identify BCTs that are most predictive of smoking abstinence. The study was prospectively registered with ClinicalTrials.gov ( NCT03182790 ) and followed the CONSORT reporting guidelines []. No patients or members of the public were involved in the design, conduct, or reporting of this secondary analysis. Harms or unintended effects were not specifically assessed.
+ Participants and Analytic Sample
+ Participants were proactively recruited from 68 community sites across all 18 districts in Hong Kong from June 18 to September 30, 2017, including the vicinities of shopping malls, residential estates, and transport hubs. Eligible participants were adults aged 18 years or older who had smoked cigarettes daily in the past 3 months (verified by an exhaled CO test of ≥4 parts per million), intended to quit or reduce smoking, and owned a smartphone with an instant messaging app (WhatsApp) installed. Those with physical or cognitive communication barriers or enrolled in other smoking cessation programs were excluded. The sex, age, and daily cigarette consumption were comparable between the trial participants and the general smoking population [].
+ In the parent trial, participants were cluster-randomized (1:1) at the community-site level using random permuted block sizes of 2, 4, and 6, with 624 participants assigned to the intervention arm (Figure S1 in ). For this secondary analysis, we focused on the subset of participants who actively engaged with the chat-based support, defined as having sent at least 1 message to the counselor (n=230, 36.9% of the intervention arm). The analytic sample achieved a much higher 6-month biochemically validated abstinence rate than did nonengaged intervention participants (17.4% vs 3.3%). We adopted this approach because the investigation of BCTs as candidate components necessitated their actual delivery and reception within a participant-counselor interaction. Analyzing only engaged participants allowed us to isolate the association between specific therapeutic content delivered and subsequent abstinence outcomes, providing a more direct test of the mechanisms of action within the intervention process.
+ Chat-Based Intervention for Smoking Cessation
+ All participants in the intervention group received the chat-based intervention for 3 months. Details of the intervention have been reported elsewhere [,]. Briefly, the intervention allowed a live counselor to interact with the participant in real time to provide cessation support via WhatsApp. At least 1 generic instant message related to smoking cessation was sent to the participants each week, and the participants could initiate chat sessions with a live counselor by responding to the messages. The real-time chat support was designed to be dynamic and adaptive based on participants’ specific needs and responses. A counselor used BCTs during the chat sessions to enhance interaction, boost motivation to quit, and encourage the use of adjuvant activities to support smoking cessation. Chat-based support from the live counselors was available during office hours on working days, with prior notice provided to the participants at the beginning.
+ Coding Procedures
+ We retrieved all chat dialogues between the counselor and intervention group participants from the instant messaging app. Each chat dialogue included the entire chat history of each participant across the entire 3-month intervention period and served as the coding and analytic unit. Two coders (YL and XS), who completed an online BCT taxonomy training [], independently coded the BCTs delivered in the chat dialogues using the BCTTsm []. The coding concordance was discussed prior to independent coding of all chat dialogues. The BCT was coded as either present or absent in each dialogue instead of being counted, since the frequency could be greatly influenced by the intensity of interaction. The method was also used in prior coder training []. Any discrepancies were resolved between the 2 coders via discussion, with an additional investigator (TTL) as the arbitrator. The final agreed-upon BCTs were used for further analysis.
+ Measures
+ Similar to the parent trial [], the primary outcome was biochemically validated tobacco abstinence at 6 months after randomization, while the key secondary outcome was 3-month (end of treatment) validated abstinence. Abstinence was defined by an exhaled CO level of less than 4 parts per million [], measured by the Bedfont piCO Smokerlyzer (Bedfont Scientific Ltd), and a salivary cotinine level of less than 10 ng/mL, measured by NicAlert (Nymox Pharmaceutical Corp) []. All participants who self-reported at least 7 days of tobacco abstinence at 3 and 6 months and completed biochemical validation received HK $500 (HK $1=US $0.12 as of September 17, 2026) as a "Quit to Win" Contest award.
+ At baseline, we used face-to-face questionnaires to collect data on demographics and smoking-related characteristics. These included nicotine dependence, assessed by the Heaviness of Smoking Index; previous quit attempts; intention to quit in 30 days; and perceptions toward quitting (importance, difficulty, and confidence), assessed on a scale from 0 (not at all) to 10 (very much).
+ Statistical Analysis
+ R (version 4.3.1; R Project for Statistical Computing), RStudio (version 2023.09.1; Posit PBC), and Stata (version 16; StataCorp LLC) were used for statistical analysis. Little test showed that data were missing completely at random ( χ 2 1237 =1204.0; P =.74). Descriptive statistics were used to present the participant characteristics and the frequency of each BCT appearing in the dialogues. Agreement between the 2 coders was assessed by Cohen κ coefficients. The variance inflation factor (VIF) was used to assess the collinearity among the BCTs prior to fitting machine learning models. Higher VIF values indicate a higher likelihood of multicollinearity. Any BCTs that were perfectly linearly correlated (ie, aliased) or had a VIF greater than 10 (ie, severe multicollinearity) were removed from the modeling process. All noncollinear BCTs were modeled using supervised machine learning methods to identify those most predictive of 3- and 6-month validated abstinence.
+ We used 4 complementary feature selection methods, including wrapper methods (Boruta algorithm and recursive feature elimination [RFE]) and embedded methods (least absolute shrinkage and selection operator [LASSO] regression and Extreme Gradient Boosting [XGBoost]). Wrapper methods evaluate the impact of feature subsets on model performance [], while embedded methods integrate feature selection into the model construction process [,]. These complementary approaches offer strengths in handling high-dimensional data, managing model complexity, and addressing potential overfitting issues. To balance robustness against overfitting with the retention of complementary signals from diverse algorithmic families, we prespecified a supermajority rule prior to model training whereby only BCTs selected by at least 3 of the 4 models were retained for subsequent analysis. Details of the machine learning methods are described in .
+ Poisson regression with robust variance was used to estimate the risk ratio (RR) of smoking abstinence by the selected predictive BCTs. Covariates included sex, age, educational level, nicotine dependence, intention to quit in 30 days, and quit attempts at baseline, informed by a systematic review on the predictors of cessation outcomes []. Participants who did not complete follow-ups were assumed to be nonabstinent. To determine whether the associations between the selected predictors and abstinence were due to their unique effects or were affected by the variety of BCTs delivered, we additionally adjusted for the remaining number of BCTs in each dialogue as a sensitivity analysis. A 2-sided P &lt;.05 was considered statistically significant.
+ Ethical Considerations
+ Ethics approval was obtained from the Institutional Review Board of the University of Hong Kong and the Hospital Authority Hong Kong West Cluster (UW 17‐246). Written informed consent from all participants was obtained prior to data collection. All participants’ data were deidentified to protect privacy and confidentiality. No identifiable information or images of individual participants were included in this manuscript or supplementary materials. Participants were not compensated.
+ Results
+ Among all 624 participants who received the chat-based smoking cessation intervention, 230 (n=170, 73.9% male; mean age 43.0, SD 13.6 years) interacted with our counselor. shows that participants who interacted with the counselor were more likely to be aged 40 to 59 years ( P =.001), to have an intention to quit within 30 days ( P =.001), to have had previous quit attempts ( P =.001), and to have more favorable perceptions toward quitting ( P =.001-.003).
+ Table S1 in shows examples of the BCTs derived from the dialogues. The Cohen κ coefficients for intercoder reliability ranged from 0.6 to 1.0. shows the profile of the BCTs after resolving discrepancies. A total of 35 unique BCTs were used across the dialogues, excluding strengthen ex-smoker identity (BCT code: BM8), explain the importance of abrupt cessation (BM10), measure CO (BM11), prompt review of goals (BS5), prompt self-recording (BS6), advise on environmental restructuring (BS8), explain the purpose of CO monitoring (RC3), and offer or direct toward appropriate written materials (RC5). The median (IQR) number of BCTs per dialogue was 5 (3-9).
+ Build general rapport (RC1) and use reflective listening (RC7) were present in all dialogues. As they were aliased variables (perfectly collinear with other BCTs) and would cause multicollinearity, they were removed from the machine learning models. Advise on avoiding social cues for smoking (BS11; VIF=42,081.97) and advise on or facilitate use of social support (A2; VIF=42,080.90) were excluded from building the 3-month abstinence models due to severe multicollinearity. The VIFs of the remaining noncollinear BCTs are shown in Table S2 in .
+ Table 1.
+ Baseline characteristics of the participants who did and did not interact with a counselor in a chat-based intervention.
+ Total (n=624) | Interacted with a counselor | P value | 
+ Yes (n=230) | No (n=394) | 
+ Sex, n (%) | .20 | 
+  Male | 479 (76.8) | 170 (73.9) | 309 (78.4) | 
+  Female | 145 (23.2) | 60 (26.1) | 85 (21.6) | 
+ Age (y), mean (SD) | 42.1 (16.2) | 43.0 (13.6) | 41.5 (17.7) | .30 | 
+ Age group (y), n/N (%) | .001 | 
+  18‐39 | 265/554 (47.8) | 91/218 (41.7) | 174/336 (51.8) | 
+  40‐59 | 219/554 (39.5) | 107/218 (49.1) | 112/336 (33.3) | 
+  ≥60 | 70/554 (12.6) | 20/218 (9.2) | 50/336 (14.9) | 
+ Educational level, n/N (%) | .88 | 
+  Primary or below | 26/394 (6.6) | 11/185 (6) | 15/209 (7.2) | 
+  Secondary | 284/394 (72.1) | 134/185 (72.4) | 150/209 (71.8) | 
+  Tertiary or above | 84/394 (21.3) | 40/185 (21.6) | 44/209 (21.1) | 
+ Daily cigarette consumption, mean (SD) | 13.8 (8.3) | 13.8 (7.3) | 13.7 (8.8) | .88 | 
+ Nicotine dependence (HSI), n/N (%) | .37 | 
+  Low | 295/581 (50.8) | 105/217 (48.4) | 190/364 (52.2) | 
+  Moderate or high | 286/581 (49.2) | 112/217 (51.6) | 174/364 (47.8) | 
+ Intention to quit in 30 days, n/N (%) | .001 | 
+  No | 377/600 (62.8) | 101/222 (45.5) | 276/378 (73) | 
+  Yes | 223/600 (37.2) | 121/222 (54.5) | 102/378 (27) | 
+ Previous quit attempt, n/N (%) | .001 | 
+  Never | 273/580 (47.1) | 82/214 (38.3) | 191/366 (52.2) | 
+  More than 12 months ago | 237/580 (40.9) | 92/214 (43) | 145/366 (39.7) | 
+  Within past 12 months | 70/580 (12.1) | 40/214 (18.7) | 30/366 (8.2) | 
+ Perceptions toward quitting, mean (SD) | 
+  Importance | 7.2 (2.1) | 8.0 (2.1) | 6.8 (2.1) | .001 | 
+  Difficulty | 7.1 (2.2) | 6.9 (2.1) | 7.4 (2.3) | .01 | 
+  Confidence | 6.0 (2.2) | 6.3 (2.2) | 5.8 (2.1) | .003 | 
+ a
+ P values were calculated by chi-square test or an independent sample t test (2-tailed), as appropriate.
+ b
+ HSI: Heaviness of Smoking Index.
+ c
+ Scores range 0‐6; higher scores indicated higher nicotine dependence.
+ d
+ Scores range 0‐10; higher scores indicated greater perceived importance of, difficulty with, and confidence in quitting.
+ Table 2.
+ Frequency of behavior change techniques (BCTs) used in each dialogue of the chat-based intervention (n=230).
+ BCT | Dialogues, n (%) | 
+ Specific focus on behavior (B) and addressing motivation (M) | 
+  BM1. Provide information on consequences of smoking and smoking cessation | 28 (12.2) | 
+  BM2. Boost motivation and self-efficacy | 133 (57.8) | 
+  BM3. Provide feedback on current behavior | 18 (7.8) | 
+  BM4. Provide rewards contingent on successfully stopping smoking | 31 (13.5) | 
+  BM5. Provide normative information about others’ behavior and experiences | 20 (8.7) | 
+  BM6. Prompt commitment from the client there and then | 46 (20) | 
+  BM7. Provide rewards contingent on effort or progress | 92 (40) | 
+  BM8. Strengthen ex-smoker identity | 0 (0) | 
+  BM9. Identify reasons for wanting and not wanting to stop smoking | 76 (33) | 
+  BM10. Explain the importance of abrupt cessation | 0 (0) | 
+  BM11. Measure CO | 0 (0) | 
+ Specific focus on behavior (B) and maximizing self-regulatory capacity/skills (S) | 
+  BS1. Facilitate barrier identification and problem solving | 29 (12.6) | 
+  BS2. Facilitate relapse prevention and coping | 1 (0.4) | 
+  BS3. Facilitate action planning/develop treatment plan | 10 (4.4) | 
+  BS4. Facilitate goal setting | 14 (6.1) | 
+  BS5. Prompt review of goals | 0 (0) | 
+  BS6. Prompt self-recording | 0 (0) | 
+  BS7. Advise on changing routine | 1 (0.4) | 
+  BS8. Advise on environmental restructuring | 0 (0) | 
+  BS9. Set graded tasks | 35 (15.2) | 
+  BS10. Advise on conserving mental resources | 56 (24.4) | 
+  BS11. Advise on avoiding social cues for smoking | 5 (2.2) | 
+ Promote adjuvant activities (A) | 
+  A1. Advise on stop-smoking medication | 17 (7.4) | 
+  A2. Advise on/facilitate use of social support | 2 (0.9) | 
+  A3. Adopt appropriate local procedures to enable clients to obtain free medication | 34 (14.8) | 
+  A4. Ask about experiences of stop smoking medication that the smoker is using | 20 (8.7) | 
+  A5. Give options for additional and later support | 44 (19.1) | 
+ General aspects of the interaction (R) focusing on delivery of the intervention (D) | 
+  RD1. Tailor interactions appropriately | 66 (28.7) | 
+  RD2. Emphasize choice | 3 (1.3) | 
+ General aspects of the interaction (R) focusing on information gathering (I) | 
+  RI1. Assess current and past smoking behavior | 73 (31.7) | 
+  RI2. Assess current readiness and ability to quit | 3 (1.3) | 
+  RI3. Assess past history of quit attempts | 10 (4.4) | 
+  RI4. Assess withdrawal symptoms | 18 (7.8) | 
+ General aspects of the interaction (R) focusing on general communication (C) | 
+  RC1. Build general rapport | 230 (100) | 
+  RC2. Elicit and answer questions | 62 (27) | 
+  RC3. Explain the purpose of CO monitoring | 0 (0) | 
+  RC4. Explain expectations regarding treatment program | 38 (16.5) | 
+  RC5. Offer/direct toward appropriate written materials | 0 (0) | 
+  RC6. Provide information on withdrawal symptoms | 24 (10.4) | 
+  RC7. Use reflective listening | 230 (100) | 
+  RC8. Elicit client views | 14 (6.1) | 
+  RC9. Summarize information/confirm client decisions | 10 (4.4) | 
+  RC10. Provide reassurance | 23 (10) | 
+ a
+ CO: carbon monoxide.
+ Results of the machine learning models are shown in . lists the BCTs predictive of abstinence outcomes identified by each machine learning model, ranked in descending order of importance in the respective models. Provide rewards contingent on successfully stopping smoking (BM4), provide information on withdrawal symptoms (RC6), and provide information on consequences of smoking and smoking cessation (BM1) were consistently selected as the most predictive BCTs of validated abstinence by multiple models.
+ shows that, compared with dialogues without the selected BCTs, the primary outcome of 6-month validated abstinence rates was significantly higher in those using BM4 (adjusted RR 6.0, 95% CI 3.0‐11.9; P &lt;.001), RC6 (adjusted RR 2.7, 95% CI 1.3‐5.6; P &lt;.01), and BM1 (adjusted RR 2.9, 95% CI 1.4‐5.9; P &lt;.05). The corresponding adjusted RRs (95% CI) of 3-month abstinence rates were 6.7 (3.3‐13.4), 3.1 (1.5‐6.2), and 2.6 (1.2‐5.4), respectively. Table S3 in shows that the results were similar after additionally adjusting for the remaining number of BCTs present in each dialogue, although the association between RC6 and 6-month abstinence became nonsignificant.
+ Table 3.
+ Behavior change techniques (BCTs) identified by 4 machine learning models as predictive of 3- and 6-month biochemically validated abstinence (ranked by descending order of importance in the respective models).
+ Models | Predictive of 3-month abstinence | Predictive of 6-month abstinence | 
+ LASSO | 
+ BM4. Provide rewards contingent on successfully stopping smoking
+ RC6. Provide information on withdrawal symptoms
+ BM1. Provide information on consequences of smoking and smoking cessation
+ RD2. Emphasize choice
+ BS9. Set graded tasks
+ BS2. Facilitate relapse prevention and coping
+ A1. Advise on stop-smoking medication
+ | 
+ BM4. Provide rewards contingent on successfully stopping smoking
+ RD2. Emphasize choice
+ RC6. Provide information on withdrawal symptoms
+ BM1. Provide information on consequences of smoking and smoking cessation
+ A2. Advise on/facilitate use of social support
+ BS4. Facilitate goal setting
+ BS9. Set graded tasks
+ | 
+ XGBoost | 
+ BM4. Provide rewards contingent on successfully stopping smoking
+ RD1. Tailor interactions appropriately
+ RC6. Provide information on withdrawal symptoms
+ BM9. Identify reasons for wanting and not wanting to stop smoking
+ BM1. Provide information on consequences of smoking and smoking cessation
+ A5. Give options for additional and later support
+ A1. Advise on stop-smoking medication
+ RC4. Explain expectations regarding treatment program
+ BS10. Advise on conserving mental resources
+ BM6. Prompt commitment from the client there and then
+ | 
+ BM4. Provide rewards contingent on successfully stopping smoking
+ A5. Give options for additional and later support
+ RC6. Provide information on withdrawal symptoms
+ BS9. Set graded tasks
+ BM9. Identify reasons for wanting and not wanting to stop smoking
+ BS10. Advise on conserving mental resources
+ BM1. Provide information on consequences of smoking and smoking cessation
+ RC2. Elicit and answer questions
+ RD1. Tailor interactions appropriately
+ BM5. Provide normative information about others’ behavior and experiences
+ | 
+ Boruta | 
+ BM4. Provide rewards contingent on successfully stopping smoking
+ RC9. Summarize information/confirm client decisions
+ RC6. Provide information on withdrawal symptoms
+ | 
+ BM4. Provide rewards contingent on successfully stopping smoking
+ BM1. Provide information on consequences of smoking and smoking cessation
+ BM5. Provide normative information about others’ behavior and experiences
+ BS4. Facilitate goal setting
+ A5. Give options for additional and later support
+ RI3. Assess past history of quit attempts
+ RC9. Summarize information/confirm client decisions
+ | 
+ RFE | 
+ BM4. Provide rewards contingent on successfully stopping smoking
+ | 
+ BM4. Provide rewards contingent on successfully stopping smoking
+ | 
+ a
+ Up to 10 predictive BCTs are listed; models selecting fewer than 10 BCTs include all selected BCTs.
+ b
+ LASSO: least absolute shrinkage and selection operator.
+ c
+ BM: specific focus on behavior and addressing motivation.
+ d
+ RC: general aspects of the interaction focusing on general communication.
+ e
+ RD: general aspects of the interaction focusing on delivery of the intervention.
+ f
+ BS: specific focus on behavior and maximizing self-regulatory capacity or skills.
+ g
+ A: promote adjuvant activities.
+ h
+ XGBoost: Extreme Gradient Boosting.
+ i
+ RI: general aspects of the interaction focusing on information gathering.
+ j
+ RFE: recursive feature elimination.
+ Table 4.
+ Associations between the most predictive behavior change techniques (BCTs) identified with 3- and 6-month biochemically validated abstinence (missing values imputed as smoking; n=230).
+ BCT | 3 months | 6 months | 
+ RR (95% CI); P value | Adjusted RR (95% CI); P value | RR (95% CI); P value | Adjusted RR (95% CI); P value | 
+ BM4. Provide rewards contingent on successfully stopping smoking | 9.2 (4.9‐17.5); &lt;.001 | 6.7 (3.3‐13.4); &lt;.001 | 7.9 (4.2‐14.6); &lt;.001 | 6.0 (3.0‐11.9); &lt;.001 | 
+ RC6. Provide information on withdrawal symptoms | 3.8 (1.9‐7.5); &lt;.001 | 3.1 (1.5‐6.2); .002 | 3.3 (1.6‐6.5); .001 | 2.7 (1.3‐5.6); .007 | 
+ BM1. Provide information on consequences of smoking and smoking cessation | 2.5 (1.2‐5.1); .01 | 2.6 (1.2‐5.4); .01 | 2.7 (1.4‐5.5); .004 | 2.9 (1.4‐5.9); .004 | 
+ a
+ Some machine learning models selected fewer than 10 predictive BCTs.
+ b
+ RR: risk ratio.
+ c
+ Adjusted for sex, age, educational level, nicotine dependence, intention to quit in 30 days, and previous quit attempts at baseline.
+ d
+ BM: specific focus on behavior and addressing motivation.
+ e
+ RC: general aspects of the interaction focusing on general communication.
+ Discussion
+ Principal Findings
+ We coded the BCTs used in a real-time chat-based smoking cessation intervention and adopted 4 machine learning feature selection approaches, LASSO, XGBoost, Boruta, and RFE, to identify the BCTs most predictive of abstinence outcomes. A total of 35 unique BCTs were adopted during the intervention. Using multiple machine learning approaches, we consistently identified 3 BCTs that were most predictive of biochemically validated abstinence: “provide rewards contingent on successfully stopping smoking” (BM4), “provide information on withdrawal symptoms” (RC6), and “provide information on consequences of smoking and smoking cessation” (BM1), with moderate to high selection stability across models. The 3 identified BCTs were significantly associated with abstinence outcomes ( P &lt;.001 to P =.004), and the associations remained significant after adjusting for covariates ( P &lt;.001 to P =.01). These findings elucidate the potential components contributing to the effectiveness of chat-based smoking cessation interventions among those who actively engaged with the counseling process.
+ To our knowledge, our study is the first in the field to apply machine learning to identify candidate BCTs associated with validated smoking abstinence outcomes in instant messaging interventions. Direct comparison with prior studies is limited by differing contexts, taxonomies, and outcomes. Many studies have only cataloged BCTs in digital interventions without linking them to abstinence [,,,]. One study investigating the BCTs in the treatment manuals of English Stop Smoking Services using the BCTTsm found that BM4 and RC6 were associated with self-reported abstinence []. Using 6-month biochemically validated abstinence, which is regarded as the gold standard outcome in smoking cessation studies, we corroborated the significant associations of BM4 and RC6 with abstinence and additionally found a significant association with BM1.
+ The Stop Smoking Services study also identified additional BCTs associated with 4-week abstinence that did not show a significant association with long-term abstinence in our study. This discrepancy may reflect the role of these BCTs in facilitating early behavior change. For example, “measure CO” (BM11) can boost an individual’s immediate motivation to quit but may not translate into sustained long-term behavior change []. Techniques such as “summarize information or confirm client decisions” (RC9) and “use reflective listening” (RC7) may be more effective in face-to-face interventions, where direct interaction and emotional support are possible but are limited in mobile health (mHealth) approaches.
+ “Providing rewards contingent on successfully stopping smoking” (BM4) incorporated both praise and financial incentives in our intervention. It leveraged extrinsic motivation to encourage behavior change. By validating progress and efforts in quitting, praise and encouragement can boost these individuals’ self-efficacy, a known facilitator of abstinence []. Financial incentives offer a direct extrinsic motivator [] and may improve intervention engagement [], leading to higher abstinence rates []. Beyond financial rewards, gamified interventions, such as token or point-based systems, could be considered as more cost-effective and scalable alternatives for integration into mHealth platforms to facilitate smoking cessation []. Though the consistent prioritization of BM4 across machine learning approaches provides convergent evidence for its potential effect, BM4 is inherently reactive, which may reflect an already favorable trajectory among participants. Future investigations, such as microrandomization trials, could help disentangle its therapeutic role, while digital payment platforms (eg, Alipay and WeChat Pay) offer a scalable means of delivering contingent rewards in mHealth interventions.
+ Both “provide information on withdrawal symptoms” (RC6) and “provide information on consequences” (BM1) likely support cessation by strengthening an individual’s capability to quit, a core component of the Behavior Change Wheel []. RC6 equips individuals with knowledge and coping strategies for managing withdrawal symptoms that threaten self-efficacy and increase relapse risk [,]. BM1 functions by shaping key theoretical determinants of behavior, including perceived susceptibility to smoking and the benefits of quitting (Health Belief Model), and by altering behavioral beliefs (Theory of Planned Behavior) []. The differential selection consistency of RC6 and BM1 across models, with their attenuation in sensitivity analyses, suggests that the associations of these BCTs may be partially confounded by participants’ preexisting motivation and self-belief. Moreover, the knowledge-behavior gap indicates that health information alone is rarely sufficient to facilitate behavior change []. Combining informational content with actionable strategies (eg, problem solving and action planning) may therefore produce synergistic effects. Future research could explore BCT combinations to optimize intervention effects.
+ The application of machine learning feature selection offers several methodological insights. The use of multiple complementary algorithms with bootstrap resampling enhanced the accuracy and reliability of our results, while the supermajority rule improved reproducibility. We demonstrated the value of machine learning for generating data-driven hypotheses about candidate intervention components in complex, real-world instant messaging interventions, though experimental designs are needed to confirm these findings.
+ Limitations
+ The study has several limitations. First, our analysis focused on participants who engaged with the real-time chat support. This restriction was methodologically necessary since nonengaged participants received no BCTs; including them would conflate the effect of engagement with those of specific BCTs. However, this introduces selection bias, as engaged and nonengaged participants differed significantly in characteristics that predict abstinence. Although we adjusted for these characteristics, residual confounding cannot be ruled out. Therefore, our findings are conditional on engagement and speak primarily to the mechanisms of action within an active therapeutic process. Second, our coding only recorded the presence (not frequency) of BCTs, as evidence suggests that frequency may not indicate effective engagement and treatment success in digital health []. In chat-based interventions, frequency may be influenced by nonprognostic factors, such as participant verbosity and interaction style. Nevertheless, future studies could examine whether a dose-response relationship exists for specific BCTs. Third, our study focused only on counselor-delivered BCTs and did not code participants’ responses. Future studies examining both sides of the conversation would better capture the dynamic, interactive nature of chat-based counseling. Fourth, several BCTs in the BCTTsm did not appear in the chat dialogues and could not be evaluated. These include BCTs that require in-person contact (eg, measure CO [BM11] and offer or direct toward appropriate written materials [RC5]) and are thus less relevant to chat-based support. Others (eg, BM8 and BM10) did not arise naturally during the chat-based support, as our intervention was designed to be adaptive and responsive rather than prescriptive. Fifth, although BCTs were coded from the intervention period preceding the outcome assessments, we cannot rule out that some BCTs (eg, BM4) were delivered in response to participant progress and may partly reflect a positive trajectory. However, even reactive reinforcement may still have therapeutic value by supporting continued abstinence. Finally, our analysis did not adjust for multiplicity given its exploratory nature. The findings should be interpreted as hypothesis-generating, and confirmatory studies are needed.
+ Conclusions
+ While mobile messaging has been proven effective for smoking cessation, the intervention content contributing to treatment success remains poorly understood. By characterizing the BCTs in an effective chat-based smoking cessation intervention, we found that providing rewards contingent on successfully stopping smoking (BM4), information on withdrawal symptoms (RC6), and information on consequences of smoking and smoking cessation (BM1) were significantly associated with biochemically validated tobacco abstinence. Unlike prior BCT studies that relied on frequency counts, this study demonstrates the value of machine learning for identifying BCTs associated with treatment success. These findings offer a more precise understanding of candidate intervention components rather than treating the intervention as a black box. While further research is warranted to validate the findings, these 3 BCTs represent promising targets for optimizing similar future treatment models, including chatbots.
+ Supplementary material
+ 10.2196/91943 Multimedia Appendix 1
+ Further details on the machine learning methods.
+ 10.2196/91943 Checklist 1
+ CONSORT checklist.
+ 10.2196/91943 Checklist 2
+ CONSORT-eHEALTH V1.6.1.
+ Acknowledgments
+ The authors thank the participants for their participation in the trial and the Smoking Cessation Research Team, School of Nursing, the University of Hong Kong, for implementing the trial.
+ Funding: The research was funded by the Hong Kong Council on Smoking and Health, Hong Kong Special Administrative Region. The funding source had no role in the design and conduct of the study; collection, management, analysis, and interpretation of the data; preparation, review, or approval of the manuscript; or the decision to submit the manuscript for publication.
+ Data Availability: The data described in this study will be available from the investigators upon reasonable request. Requests should be directed to the corresponding author by email.
+ Authors’ Contributions: Conceptualization: THL, MPW, TTL
+ Data curation: YL, XS, TTL
+ Formal analysis: YL
+ Funding acquisition: MPW, TTL
+ Methodology: YL, TTL
+ Project administration: TTL
+ Supervision: MPW, TTL
+ Visualization: YL
+ Writing—original draft: YL
+ Writing—review and editing: all authors
+ Generative AI Use: The authors declare the use of generative AI (GenAI) in the research and writing process. According to the Generative AI Delegation Taxonomy (2025), the following tasks were delegated to GenAI tools under full human supervision: proofreading, editing, and translation. The GenAI tool used was GPT-4o (OpenAI). Responsibility for the final manuscript lies entirely with the authors. GenAI tools are not listed as authors and do not bear responsibility for the final outcomes. All intellectual content, study design, data collection, analysis, and final interpretations are the sole responsibility of the authors.
+ Conflicts of Interest: None declared.
+ Abbreviations
+ BCT behavior change technique
+ BCTTsm behavior change technique taxonomy for smoking cessation
+ BCTTv1 Behavior Change Technique Taxonomy version 1
+ CO carbon monoxide
+ CONSORT Consolidated Standards of Reporting Trials
+ CONSORT-eHEALTH Consolidated Standards of Reporting Trials of Electronic and Mobile Health Applications and Online Telehealth
+ LASSO least absolute shrinkage and selection operator
+ mHealth mobile health
+ RFE recursive feature elimination
+ RR risk ratio
+ VIF variance inflation factor
+ XGBoost Extreme Gradient Boosting
+ References
+ 1.
+ Michie S 
+ Johnston M 
+ Behavior change techniques 
+ Gellman MD 
+ Turner JR 
+ Encyclopedia of Behavioral Medicine Springer 2013 182 187 doi 10.1007/978-1-4419-1005-9_1661 2.
+ Craig P 
+ Dieppe P 
+ Macintyre S 
+ et al 
+ Developing and evaluating complex interventions: the new Medical Research Council guidance BMJ Sep 29 2008 337 a1655 doi 10.1136/bmj.a1655 Medline 18824488 PMC2769032 3.
+ Hopewell S 
+ Chan AW 
+ Collins GS 
+ et al 
+ CONSORT 2025 explanation and elaboration: updated guideline for reporting randomised trials BMJ Apr 14 2025 389 e081124 doi 10.1136/bmj-2024-081124 Medline 40228832 PMC11995452 4.
+ Eysenbach G 
+ CONSORT-EHEALTH Group 
+ CONSORT-EHEALTH: improving and standardizing evaluation reports of web-based and mobile health interventions J Med Internet Res Dec 31 2011 13 4 e126 doi 10.2196/jmir.1923 Medline 22209829 PMC3278112 5.
+ Hoffmann TC 
+ Glasziou PP 
+ Boutron I 
+ et al 
+ Better reporting of interventions: Template for Intervention Description and Replication (TIDieR) checklist and guide BMJ Mar 7 2014 348 g1687 doi 10.1136/bmj.g1687 Medline 24609605 6.
+ Michie S 
+ Johnston M 
+ Francis J 
+ Hardeman W 
+ Eccles M 
+ From theory to intervention: mapping theoretically derived behavioural determinants to behaviour change techniques Appl Psychol Oct 2008 57 4 660 680 doi 10.1111/j.1464-0597.2008.00341.x 7.
+ Lorencatto F 
+ West R 
+ Seymour N 
+ Michie S 
+ Developing a method for specifying the components of behavior change interventions in practice: the example of smoking cessation J Consult Clin Psychol Jun 2013 81 3 528 544 doi 10.1037/a0032106 Medline 23506465 8.
+ Black N 
+ Williams AJ 
+ Javornik N 
+ et al 
+ Enhancing behavior change technique coding methods: identifying behavioral targets and delivery styles in smoking cessation trials Ann Behav Med 05 3 2019 53 6 583 591 doi 10.1093/abm/kay068 Medline 30239563 PMC6499411 9.
+ Michie S 
+ West R 
+ Sheals K 
+ Godinho CA 
+ Evaluating the effectiveness of behavior change techniques in health-related behavior: a scoping review of methods used Transl Behav Med Mar 1 2018 8 2 212 224 doi 10.1093/tbm/ibx019 Medline 29381786 PMC6062857 10.
+ Howlett N 
+ Trivedi D 
+ Troop NA 
+ Chater AM 
+ Are physical activity interventions for healthy inactive adults effective in promoting behavior change and maintenance, and which behavior change techniques are effective? A systematic review and meta-analysis Transl Behav Med 01 1 2019 9 1 147 157 doi 10.1093/tbm/iby010 Medline 29506209 PMC6305562 11.
+ El-Gayar O 
+ Ofori M 
+ Nawar N 
+ On the efficacy of behavior change techniques in mHealth for self-management of diabetes: a meta-analysis J Biomed Inform 07 2021 119 103839 doi 10.1016/j.jbi.2021.103839 Medline 34139330 12.
+ Garnett CV 
+ Crane D 
+ Brown J 
+ et al 
+ Behavior change techniques used in digital behavior change interventions to reduce excessive alcohol consumption: a meta-regression Ann Behav Med 05 18 2018 52 6 530 543 doi 10.1093/abm/kax029 Medline 29788261 PMC6361280 13.
+ Dombrowski SU 
+ Sniehotta FF 
+ Avenell A 
+ Johnston M 
+ MacLennan G 
+ Araújo-Soares V 
+ Identifying active ingredients in complex behavioural interventions for obese adults with obesity-related co-morbidities or additional risk factors for co-morbidities: a systematic review Health Psychol Rev 2012 6 1 7 32 doi 10.1080/17437199.2010.513298 14.
+ Black N 
+ Johnston M 
+ Michie S 
+ et al 
+ Behaviour change techniques associated with smoking cessation in intervention and comparator groups of randomized controlled trials: a systematic review and meta-regression Addiction Nov 2020 115 11 2008 2020 doi 10.1111/add.15056 Medline 32196796 15.
+ Michie S 
+ Richardson M 
+ Johnston M 
+ et al 
+ The behavior change technique taxonomy (v1) of 93 hierarchically clustered techniques: building an international consensus for the reporting of behavior change interventions Ann Behav Med Aug 2013 46 1 81 95 doi 10.1007/s12160-013-9486-6 Medline 23512568 16.
+ Michie S 
+ Hyder N 
+ Walia A 
+ West R 
+ Development of a taxonomy of behaviour change techniques used in individual behavioural support for smoking cessation Addict Behav Apr 2011 36 4 315 319 doi 10.1016/j.addbeh.2010.11.016 Medline 21215528 17.
+ de Bruin M 
+ Black N 
+ Javornik N 
+ et al 
+ Underreporting of the active content of behavioural interventions: a systematic review and meta-analysis of randomised trials of smoking cessation interventions Health Psychol Rev Jun 2021 15 2 195 213 doi 10.1080/17437199.2019.1709098 Medline 31906781 18.
+ Mersha AG 
+ Bryant J 
+ Rahman T 
+ McGuffog R 
+ Maddox R 
+ Kennedy M 
+ What are the effective components of group-based treatment programs for smoking cessation? A systematic review and meta-analysis Nicotine Tob Res Aug 19 2023 25 9 1525 1537 doi 10.1093/ntr/ntad068 Medline 37104053 PMC10439487 19.
+ Brown EM 
+ Lorencatto F 
+ Coleman T 
+ Prevost AT 
+ Sutton S 
+ Naughton F 
+ Behavior change technique delivery during routine smoking cessation advice in primary care and associations with abstinence Transl Behav Med 01 7 2026 16 1 ibag035 doi 10.1093/tbm/ibag035 Medline 42398050 PMC13331279 20.
+ Puljević C 
+ Meciar I 
+ Holland A 
+ et al 
+ Systematic review and meta-analysis of text messaging interventions to support tobacco cessation Tob Control Apr 1 2025 34 2 228 238 doi 10.1136/tc-2023-058323 Medline 38448226 21.
+ Hou T 
+ Ho MH 
+ Li H 
+ Lin CC 
+ The effectiveness of instant messaging-based interventions on health behavior change: a systematic review and meta-analysis Worldviews Evid Based Nurs Aug 2025 22 4 e70066 doi 10.1111/wvn.70066 Medline 40717021 PMC12301180 22.
+ Whittaker R 
+ McRobbie H 
+ Bullen C 
+ Rodgers A 
+ Gu Y 
+ Dobson R 
+ Mobile phone text messaging and app-based interventions for smoking cessation Cochrane Database Syst Rev Oct 22 2019 10 10 CD006611 doi 10.1002/14651858.CD006611.pub5 Medline 31638271 PMC6804292 23.
+ Stoyneva I 
+ Coa K 
+ Pugatch J 
+ Sanders A 
+ Schwarz M 
+ Cole-Lewis H 
+ SmokefreeTXT behaviour change technique analysis J Smok Cessat 2017 12 4 231 243 doi 10.1017/jsc.2016.24 24.
+ Michie S 
+ Free C 
+ West R 
+ Characterising the ‘Txt2Stop’ smoking cessation text messaging intervention in terms of behaviour change techniques J Smok Cessat 2012 7 1 55 60 doi 10.1017/jsc.2012.12 25.
+ Cai J 
+ Luo J 
+ Wang S 
+ Yang S 
+ Feature selection in machine learning: a new perspective Neurocomputing 07 2018 300 70 79 doi 10.1016/j.neucom.2017.11.077 26.
+ Le TT 
+ Yang J 
+ Zhao Z 
+ Zhang K 
+ Li W 
+ Hu Y 
+ Identifying key predictors of smoking cessation success: text-based feature selection using a large language model Nicotine Tob Res 05 22 2026 28 6 982 989 doi 10.1093/ntr/ntaf257 Medline 41416738 PMC12747148 27.
+ Siegel LN 
+ Wiseman KP 
+ Budenz A 
+ Prutzman Y 
+ Identifying patterns of smoking cessation app feature use that predict successful quitting: secondary analysis of experimental data leveraging machine learning JMIR AI 05 22 2024 3 e51756 doi 10.2196/51756 Medline 38875564 PMC11153975 28.
+ Luk TT 
+ Wong SW 
+ Lee JJ 
+ Chan SS 
+ Lam TH 
+ Wang MP 
+ Exploring community smokers’ perspectives for developing a chat-based smoking cessation intervention delivered through mobile instant messaging: qualitative study JMIR Mhealth Uhealth 01 31 2019 7 1 e11954 doi 10.2196/11954 Medline 30702431 PMC6374728 29.
+ Wang MP 
+ Luk TT 
+ Wu Y 
+ et al 
+ Chat-based instant messaging support integrated with brief interventions for smoking cessation: a community-based, pragmatic, cluster-randomised controlled trial Lancet Digit Health Aug 2019 1 4 e183 e192 doi 10.1016/S2589-7500(19)30082-2 Medline 33323188 30.
+ Li Y 
+ Luk TT 
+ Cheung YT 
+ et al 
+ Engagement with a mobile chat-based intervention for smoking cessation: a secondary analysis of a randomized clinical trial JAMA Netw Open Jun 3 2024 7 6 e2417796 doi 10.1001/jamanetworkopen.2024.17796 Medline 38922618 PMC11208971 31.
+ Luk TT 
+ Li WH 
+ Cheung DY 
+ et al 
+ Chat-based instant messaging support combined with brief smoking cessation interventions for Chinese community smokers in Hong Kong: rationale and study protocol for a pragmatic, cluster-randomized controlled trial Contemp Clin Trials Feb 2019 77 70 75 doi 10.1016/j.cct.2018.12.013 Medline 30593882 32.
+ BCT Taxonomy URL https://www.bct-taxonomy.com/ Accessed 21-09-2026 33.
+ Wood CE 
+ Richardson M 
+ Johnston M 
+ et al 
+ Applying the behaviour change technique (BCT) taxonomy v1: a study of coder training Transl Behav Med Jun 2015 5 2 134 148 doi 10.1007/s13142-014-0290-z Medline 26029276 PMC4444702 34.
+ Cropsey KL 
+ Trent LR 
+ Clark CB 
+ Stevens EN 
+ Lahti AC 
+ Hendricks PS 
+ How low should you go? Determining the optimal cutoff for exhaled carbon monoxide to confirm smoking abstinence when using cotinine as reference Nicotine Tob Res Oct 2014 16 10 1348 1355 doi 10.1093/ntr/ntu085 Medline 24891552 PMC4207872 35.
+ Cooke F 
+ Bullen C 
+ Whittaker R 
+ McRobbie H 
+ Chen MH 
+ Walker N 
+ Diagnostic accuracy of NicAlert cotinine test strips in saliva for verifying smoking status Nicotine Tob Res Apr 2008 10 4 607 612 doi 10.1080/14622200801978680 Medline 18418783 36.
+ Kohavi R 
+ John GH 
+ Wrappers for feature subset selection Artif Intell Dec 1997 97 1-2 273 324 doi 10.1016/S0004-3702(97)00043-X 37.
+ Lal TN 
+ Chapelle O 
+ Weston J 
+ Elisseeff A 
+ Embedded methods 
+ Guyon I 
+ Nikravesh M 
+ Gunn S 
+ Zadeh LA 
+ Feature Extraction Springer 2006 137 165 doi 10.1007/978-3-540-35488-8_6 38.
+ Wang S 
+ Tang J 
+ Liu H 
+ Embedded unsupervised feature selection Proc AAAI Conf Artif Intell 2015 29 1 doi 10.1609/aaai.v29i1.9211 39.
+ Vangeli E 
+ Stapleton J 
+ Smit ES 
+ Borland R 
+ West R 
+ Predictors of attempts to stop smoking and their success in adult general population samples: a systematic review Addiction Dec 2011 106 12 2110 2121 doi 10.1111/j.1360-0443.2011.03565.x Medline 21752135 40.
+ Bustamante LA 
+ Gill Ménard C 
+ Julien S 
+ Romo L 
+ Behavior change techniques in popular mobile apps for smoking cessation in France: content analysis JMIR Mhealth Uhealth 05 13 2021 9 5 e26082 doi 10.2196/26082 Medline 33983130 PMC8160788 41.
+ Struik L 
+ Rodberg D 
+ Sharma RH 
+ The behavior change techniques used in Canadian online smoking cessation programs: content analysis JMIR Ment Health Mar 1 2022 9 3 e35234 doi 10.2196/35234 Medline 35230253 PMC8924781 42.
+ West R 
+ Walia A 
+ Hyder N 
+ Shahab L 
+ Michie S 
+ Behavior change techniques used by the English Stop Smoking Services and their associations with short-term quit outcomes Nicotine Tob Res 07 2010 12 7 742 747 doi 10.1093/ntr/ntq074 Medline 20478957 43.
+ Shahab L 
+ West R 
+ McNeill A 
+ A randomized, controlled trial of adding expired carbon monoxide feedback to brief stop smoking advice: evaluation of cognitive and behavioral effects Health Psychol 01 2011 30 1 49 57 doi 10.1037/a0021821 Medline 21299294 44.
+ Gwaltney CJ 
+ Metrik J 
+ Kahler CW 
+ Shiffman S 
+ Self-efficacy and smoking cessation: a meta-analysis Psychol Addict Behav Mar 2009 23 1 56 66 doi 10.1037/a0013529 Medline 19290690 PMC3829471 45.
+ Ladapo JA 
+ Prochaska JJ 
+ Paying smokers to quit: does it work? Should we do it? J Am Coll Cardiol Aug 23 2016 68 8 786 788 doi 10.1016/j.jacc.2016.04.067 Medline 27539169 PMC5108450 46.
+ Fraser DL 
+ Fiore MC 
+ Kobinsky K 
+ et al 
+ A randomized trial of incentives for smoking treatment in Medicaid members Am J Prev Med Dec 2017 53 6 754 763 doi 10.1016/j.amepre.2017.08.027 Medline 29079405 PMC5978743 47.
+ Imran Ho DS 
+ Jabir F 
+ Sallahuddin SN 
+ et al 
+ The impact of gamification on smoking cessation: a systematic review and meta-analysis Tob Induc Dis 2025 23 doi 10.18332/tid/203937 Medline 40575736 PMC12199787 48.
+ Michie S 
+ van Stralen MM 
+ West R 
+ The behaviour change wheel: a new method for characterising and designing behaviour change interventions Implement Sci Apr 23 2011 6 42 doi 10.1186/1748-5908-6-42 Medline 21513547 PMC3096582 49.
+ Smoking cessation: a report of the surgeon general U.S. Department of Health and Human Services, Centers for Disease Control and Prevention, National Center for Chronic Disease Prevention and Health Promotion, Office on Smoking and Health 2020 URL https://www.hhs.gov/sites/default/files/2020-cessation-sgr-full-report.pdf Accessed 20-09-2026 50.
+ Zhou X 
+ Nonnemaker J 
+ Sherrill B 
+ Gilsenan AW 
+ Coste F 
+ West R 
+ Attempts to quit smoking and relapse: factors associated with success or failure from the ATTEMPT cohort study Addict Behav Apr 2009 34 4 365 373 doi 10.1016/j.addbeh.2008.11.013 Medline 19097706 51.
+ Champion VL 
+ Skinner CS 
+ The health belief model 
+ Glanz K 
+ Rimer BK 
+ Viswanath K 
+ Health Behavior and Health Education: Theory, Research, and Practice John Wiley &amp; Sons 2008 45 65 ISBN 9780470432488 52.
+ Sligo FX 
+ Jameson AM 
+ The knowledge—behavior gap in use of health information J Am Soc Inf Sci 2000 51 9 858 869 doi 10.1002/(SICI)1097-4571(2000)51:9&lt;858::AID-ASI80&gt;3.0.CO;2-Q 53.
+ Boucher EM 
+ Raiker JS 
+ Engagement and retention in digital mental health interventions: a narrative review BMC Digit Health 2024 2 52 doi 10.1186/s44247-024-00105-9

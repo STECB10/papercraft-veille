@@ -1,0 +1,39 @@
+{
+ "verdict": "corrigé",
+ "resume": "Verbes de cause (« multiplie ») ramenés à une association ; « chatbot » retiré, l'étude porte sur un conseiller humain.",
+ "points": [
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 13 et post",
+   "probleme": "« multipliée par six » est un verbe de cause pour une analyse secondaire observationnelle exploratoire.",
+   "preuve": "compared with dialogues without the selected BCTs, the primary outcome of 6-month validated abstinence rates was significantly higher in those using BM4 (adjusted RR 6.0, 95% CI 3.0‐11.9; P <.001)",
+   "avant": "l'abstinence à six mois était multipliée par six.",
+   "apres": "l'abstinence à six mois était six fois plus fréquente."
+  },
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 16 et planche findings",
+   "probleme": "« multiplie l'abstinence » prête un effet causal à une simple association.",
+   "preuve": "Finally, our analysis did not adjust for multiplicity given its exploratory nature. The findings should be interpreted as hypothesis-generating",
+   "avant": "informer sur le sevrage multiplie l'abstinence par deux virgule sept.",
+   "apres": "informer sur le sevrage s'accompagne de deux virgule sept fois plus d'abstinence."
+  },
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 17 et planche findings",
+   "probleme": "« la multiplie » : même verbe de cause pour une association.",
+   "preuve": "BM1 (adjusted RR 2.9, 95% CI 1.4‐5.9; P <.05)",
+   "avant": "Et expliquer les conséquences du tabac la multiplie par deux virgule neuf.",
+   "apres": "Expliquer les conséquences du tabac s'accompagne de deux virgule neuf fois plus."
+  },
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 19",
+   "probleme": "« même pour un chatbot » : le soutien était donné par un conseiller humain, aucun chatbot n'est étudié.",
+   "preuve": "personalized, real-time chat-based cessation support delivered by a live counselor via a mobile instant messaging app",
+   "avant": "sont des pistes à tester, même pour un chatbot.",
+   "apres": "sont des pistes à tester dans un vrai essai."
+  }
+ ],
+ "phrases_modifiees": 4
+}
