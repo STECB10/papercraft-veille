@@ -1,0 +1,9 @@
+Distinguer un glioblastome d'une métastase cérébrale sur une IRM : l'IA y arrive plutôt bien, mais moins sur des patients indépendants.
+
+Une méta-analyse a regroupé 39 études, soit 11 558 patients, sur des modèles d'apprentissage automatique fondés sur la radiomique. En test interne, la sensibilité atteint 88,9 % et la spécificité 83,0 %. Sur des patients indépendants, elles descendent à 83,8 % et 80,7 %. Attention : méthodes inégales et preuves rares, l'utilité clinique reste incertaine.
+
+Et dans votre service, un modèle qui classe ces tumeurs sur l'IRM vous aiderait-il, ou vous inquiéterait-il ?
+
+Source : Hong et al., Journal of Medical Internet Research, novembre 2026. https://doi.org/10.2196/104060
+
+#IA #Radiologie #Neuro-oncologie #Radiomique

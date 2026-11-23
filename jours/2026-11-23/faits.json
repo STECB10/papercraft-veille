@@ -1,0 +1,107 @@
+[
+ {
+  "id": "f1",
+  "valeur": 39,
+  "citation": "A total of 39 studies (31 binary and 8 multiclass), involving 11558 patients, were included"
+ },
+ {
+  "id": "f2",
+  "valeur": 31,
+  "citation": "A total of 39 studies (31 binary and 8 multiclass), involving 11558 patients, were included"
+ },
+ {
+  "id": "f3",
+  "valeur": 8,
+  "citation": "A total of 39 studies (31 binary and 8 multiclass), involving 11558 patients, were included"
+ },
+ {
+  "id": "f4",
+  "valeur": 11558,
+  "citation": "involving 11558 patients"
+ },
+ {
+  "id": "f5",
+  "valeur": 2026,
+  "citation": "from inception to January 22, 2026"
+ },
+ {
+  "id": "f6",
+  "valeur": 88.9,
+  "citation": "88.9% (95% CI 84.1%-92.4%)"
+ },
+ {
+  "id": "f7",
+  "valeur": 84.1,
+  "citation": "88.9% (95% CI 84.1%-92.4%)"
+ },
+ {
+  "id": "f8",
+  "valeur": 92.4,
+  "citation": "88.9% (95% CI 84.1%-92.4%)"
+ },
+ {
+  "id": "f9",
+  "valeur": 83.0,
+  "citation": "83.0% (95% CI 76.8%-87.9%) in internal validation"
+ },
+ {
+  "id": "f10",
+  "valeur": 76.8,
+  "citation": "83.0% (95% CI 76.8%-87.9%) in internal validation"
+ },
+ {
+  "id": "f11",
+  "valeur": 87.9,
+  "citation": "83.0% (95% CI 76.8%-87.9%) in internal validation"
+ },
+ {
+  "id": "f12",
+  "valeur": 83.8,
+  "citation": "83.8% (95% CI 77.4%-88.7%)"
+ },
+ {
+  "id": "f13",
+  "valeur": 77.4,
+  "citation": "83.8% (95% CI 77.4%-88.7%)"
+ },
+ {
+  "id": "f14",
+  "valeur": 88.7,
+  "citation": "83.8% (95% CI 77.4%-88.7%)"
+ },
+ {
+  "id": "f15",
+  "valeur": 80.7,
+  "citation": "80.7% (95% CI 71.1%-87.7%) in external validation"
+ },
+ {
+  "id": "f16",
+  "valeur": 71.1,
+  "citation": "80.7% (95% CI 71.1%-87.7%) in external validation"
+ },
+ {
+  "id": "f17",
+  "valeur": 87.7,
+  "citation": "80.7% (95% CI 71.1%-87.7%) in external validation"
+ },
+ {
+  "id": "f18",
+  "valeur": 84.4,
+  "citation": "84.4% (95% CI 72.4%-91.8%) for GBM"
+ },
+ {
+  "id": "f19",
+  "valeur": 70.6,
+  "citation": "70.6% (95% CI 54.4%-82.8%) for BM"
+ },
+ {
+  "id": "f20",
+  "valeur": 94.4,
+  "citation": "94.4% (95% CI 88.4%-97.4%)"
+ },
+ {
+  "id": "f21",
+  "valeur": 95,
+  "citation": "88.9% (95% CI 84.1%-92.4%)"
+ }
+]

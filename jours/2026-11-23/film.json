@@ -1,0 +1,391 @@
+{
+ "id": "2026-11-23",
+ "sentences": [
+  {
+   "text": "Sur une IRM du cerveau, comment distinguer un glioblastome d'une métastase ?",
+   "partie": "accroche",
+   "box": "distinguer"
+  },
+  {
+   "text": "Et le glioblastome comme la métastase sont les tumeurs malignes les plus fréquentes du crâne chez l'adulte.",
+   "partie": "contexte",
+   "box": "fréquentes",
+   "source": "most common malignant intracranial tumors in adults"
+  },
+  {
+   "text": "Le problème, c'est qu'à l'imagerie, elles se ressemblent souvent.",
+   "partie": "probleme",
+   "box": "ressemblent",
+   "source": "as they frequently share similar imaging features"
+  },
+  {
+   "text": "Résultat : les distinguer sans geste invasif reste difficile.",
+   "partie": "probleme",
+   "peak": "difficile",
+   "source": "Noninvasive differentiation between them remains challenging"
+  },
+  {
+   "text": "Or, les modèles d'apprentissage automatique semblent prometteurs, mais les preuves restent limitées.",
+   "partie": "probleme",
+   "box": "limitées.",
+   "source": "systematic evidence of their performance remains limited",
+   "pause_apres": 0.0
+  },
+  {
+   "text": "C'est là qu'entre l'IA : des modèles d'apprentissage automatique, fondés sur la radiomique, lisent l'imagerie pour classer ces tumeurs.",
+   "partie": "ia",
+   "box": "radiomique,"
+  },
+  {
+   "text": "Ces modèles distinguent-ils vraiment un glioblastome d'une métastase ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, une méta-analyse : les chercheurs ont réuni trente-neuf études, soit onze mille cinq cent cinquante-huit patients.",
+   "partie": "etude",
+   "display": "Pour le savoir, une méta-analyse : les chercheurs ont réuni 39 études, soit 11 558 patients.",
+   "box": "méta-analyse"
+  },
+  {
+   "text": "Concrètement, ils ont fouillé la littérature jusqu'en janvier deux mille vingt-six.",
+   "partie": "etude",
+   "display": "Concrètement, ils ont fouillé la littérature jusqu'en janvier 2026.",
+   "box": "littérature"
+  },
+  {
+   "text": "Dans chaque étude, l'IRM est lue par un modèle, qui classe la tumeur : glioblastome ou métastase.",
+   "partie": "methode",
+   "box": "classe"
+  },
+  {
+   "text": "Parmi elles, trente et une comparent seulement ces deux tumeurs, huit ajoutent le lymphome cérébral.",
+   "partie": "methode",
+   "display": "Parmi elles, 31 comparent seulement ces deux tumeurs, 8 ajoutent le lymphome cérébral.",
+   "box": "lymphome"
+  },
+  {
+   "text": "Ensuite, ils ont regroupé les résultats, en séparant tests internes et patients indépendants.",
+   "partie": "methode",
+   "box": "indépendants.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : en test interne, la sensibilité atteint quatre-vingt-huit virgule neuf pour cent, la spécificité quatre-vingt-trois.",
+   "partie": "resultat",
+   "display": "Résultat : en test interne, la sensibilité atteint 88,9 %, la spécificité 83 %.",
+   "peak": "sensibilité"
+  },
+  {
+   "text": "Autrement dit, le modèle repère près de neuf cas sur dix.",
+   "partie": "resultat",
+   "box": "repère",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Mais chez des patients indépendants, c'est moins bon : quatre-vingt-trois virgule huit pour cent de sensibilité, quatre-vingts virgule sept de spécificité.",
+   "partie": "resultat",
+   "display": "Mais chez des patients indépendants, c'est moins bon : 83,8 % de sensibilité, 80,7 % de spécificité.",
+   "box": "moins",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Concrètement, les glioblastomes sont reconnus à quatre-vingt-quatre virgule quatre pour cent, même avec le lymphome.",
+   "partie": "concret",
+   "display": "Concrètement, les glioblastomes sont reconnus à 84,4 %, même avec le lymphome.",
+   "box": "glioblastomes",
+   "source": "pooled sensitivity was 84.4% (95% CI 72.4%-91.8%) for GBM"
+  },
+  {
+   "text": "En revanche, les métastases passent plus souvent à travers : seulement soixante-dix virgule six pour cent sont reconnues.",
+   "partie": "concret",
+   "display": "En revanche, les métastases passent plus souvent à travers : seulement 70,6 % sont reconnues.",
+   "box": "métastases",
+   "source": "70.6% (95% CI 54.4%-82.8%) for BM"
+  },
+  {
+   "text": "Et le lymphome est bien écarté : la spécificité monte à quatre-vingt-quatorze virgule quatre pour cent.",
+   "partie": "concret",
+   "display": "Et le lymphome est bien écarté : la spécificité monte à 94,4 %.",
+   "box": "lymphome",
+   "source": "94.4% (95% CI 88.4%-97.4%)",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : méthodes inégales et preuves rares, donc l'utilité en pratique reste incertaine.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : avant tout usage au lit du patient, il faut des études prospectives, dans plusieurs centres.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0,
+    "header": "Méta-analyse · 39 études · jusqu'en 2026",
+    "number": "11 558",
+    "unit": "patients",
+    "caption": "dans 39 études sur l'IA qui lit l'IRM du cerveau",
+    "caption_at": "s0:IRM",
+    "visual": "icon",
+    "icon": "brain",
+    "footnote": "Glioblastome ou métastase cérébrale"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s2:ressemblent",
+    "title": "Deux tumeurs du crâne",
+    "steps": [
+     {
+      "icon": "brain",
+      "label": "Le glioblastome",
+      "at": "s1:glioblastome"
+     },
+     {
+      "icon": "brain",
+      "label": "La métastase cérébrale",
+      "at": "s1:métastase"
+     },
+     {
+      "icon": "magnifier",
+      "label": "Une même allure à l'imagerie",
+      "at": "s2:ressemblent"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s4:limitées",
+    "title": "Ce qui coince",
+    "steps": [
+     {
+      "icon": "doc",
+      "label": "Difficile sans geste invasif",
+      "at": "s3:invasif"
+     },
+     {
+      "icon": "chart",
+      "label": "Des preuves encore limitées",
+      "at": "s4:limitées"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s5-0.1",
+    "mark_at": "s5:radiomique",
+    "title": "L'IA testée",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "Des modèles d'apprentissage",
+      "at": "s5:modèles"
+     },
+     {
+      "icon": "xray",
+      "label": "Fondés sur la radiomique",
+      "at": "s5:radiomique"
+     },
+     {
+      "icon": "magnifier",
+      "label": "Ils lisent l'imagerie",
+      "at": "s5:lisent"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Ces modèles distinguent-ils vraiment un glioblastome d'une métastase ?",
+  "italic": "vraiment",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Méta-analyse",
+      "at": "s7:méta-analyse"
+     },
+     {
+      "label": "Études",
+      "value": "39",
+      "at": "s7:trente-neuf"
+     },
+     {
+      "label": "Patients",
+      "value": "11 558",
+      "at": "s7:onze",
+      "accent": true
+     },
+     {
+      "label": "Recherche",
+      "value": "Jusqu'en janvier 2026",
+      "at": "s8:janvier"
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s9-0.3",
+    "input_icon": "brain",
+    "input_label": "L'IRM du cerveau",
+    "ai_label": "Classe la tumeur d'après l'image",
+    "output_label": "Glioblastome ou métastase",
+    "modality": "image",
+    "at": "s9:l'IRM",
+    "core_at": "s9:modèle",
+    "out_at": "s9:glioblastome"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s10-0.3",
+    "title": "Les études regroupées",
+    "points": [
+     {
+      "text": "31 études : glioblastome contre métastase",
+      "at": "s10:trente"
+     },
+     {
+      "text": "8 études avec le lymphome en plus",
+      "at": "s10:huit"
+     },
+     {
+      "text": "Test interne, puis patients indépendants",
+      "at": "s11:internes"
+     }
+    ]
+   },
+   {
+    "type": "metric",
+    "cam_at": "s12-0.3",
+    "title": "En test interne",
+    "metrics": [
+     {
+      "label": "Sensibilité",
+      "value": "88,9",
+      "num": 88.9,
+      "unit": "%",
+      "note": "IC 95 % : 84,1–92,4",
+      "at": "s12:sensibilité",
+      "accent": true
+     },
+     {
+      "label": "Spécificité",
+      "value": "83",
+      "num": 83.0,
+      "unit": "%",
+      "note": "IC 95 % : 76,8–87,9",
+      "at": "s12:spécificité"
+     }
+    ],
+    "caption": "Il repère la plupart des cas",
+    "caption_at": "s13:repère"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s14-0.3",
+    "title": "Sur des patients indépendants",
+    "metrics": [
+     {
+      "label": "Sensibilité",
+      "value": "83,8",
+      "num": 83.8,
+      "unit": "%",
+      "note": "IC 95 % : 77,4–88,7",
+      "at": "s14:sensibilité",
+      "accent": true
+     },
+     {
+      "label": "Spécificité",
+      "value": "80,7",
+      "num": 80.7,
+      "unit": "%",
+      "note": "IC 95 % : 71,1–87,7",
+      "at": "s14:spécificité"
+     }
+    ]
+   },
+   {
+    "type": "findings",
+    "cam_at": "s15-0.3",
+    "title": "Avec le lymphome en plus",
+    "items": [
+     {
+      "icon": "brain",
+      "label": "Glioblastome",
+      "detail": "84,4 % reconnus",
+      "at": "s15:glioblastomes"
+     },
+     {
+      "icon": "brain",
+      "label": "Métastase",
+      "detail": "70,6 % reconnues",
+      "tendance": "moins",
+      "at": "s16:métastases"
+     },
+     {
+      "icon": "check",
+      "label": "Lymphome cérébral",
+      "detail": "94,4 % de spécificité",
+      "at": "s17:lymphome"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s18-0.3",
+    "text": "Attention : méthodes inégales et preuves rares, donc l'utilité en pratique reste incertaine.",
+    "italic": "inégales"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s19-0.3",
+    "text": "À retenir : avant tout usage au lit du patient, il faut des études prospectives, dans plusieurs centres.",
+    "italic": "prospectives"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s19.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s21",
+  "button": "Suivre",
+  "button_at": "s21+0.6",
+  "click_at": "s21+1.6",
+  "source": "Hong et al. · Journal of Medical Internet Research · novembre 2026",
+  "doi": "doi:10.2196/104060",
+  "source_at": "s20:vérifiée-0.2"
+ },
+ "duration": 120.3,
+ "lead": 3.2,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}
