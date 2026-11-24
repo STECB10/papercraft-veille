@@ -1,0 +1,370 @@
+{
+ "id": "2026-11-24",
+ "sentences": [
+  {
+   "text": "Une IA peut-elle repérer, sur la rétine d'un prématuré, un risque de cécité ?",
+   "partie": "accroche",
+   "box": "rétine"
+  },
+  {
+   "text": "La rétinopathie du prématuré est l'une des principales causes de cécité évitable chez les bébés nés trop tôt.",
+   "partie": "contexte",
+   "box": "cécité"
+  },
+  {
+   "text": "Il faut la dépister tôt, puis classer sa gravité.",
+   "partie": "contexte",
+   "box": "dépister",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Le problème, c'est qu'un dépistage tardif ou imprécis laisse l'atteinte de la vue devenir irréversible.",
+   "partie": "probleme",
+   "box": "dépistage",
+   "peak": "irréversible",
+   "source": "Early screening, accurate diagnosis, and severity classification are crucial for reducing irreversible visual impairment"
+  },
+  {
+   "text": "Et côté IA, les études varient tant que leur intérêt réel reste mal mesuré.",
+   "partie": "probleme",
+   "box": "varient",
+   "source": "However, the model architecture, data source, validation method, and diagnostic task vary across studies. Consequently, the overall diagnostic efficiency and clinical utility of deep learning (DL) remain to be systematically assessed",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Depuis peu, des IA qui lisent des images de la rétine sont largement utilisées pour ce dépistage.",
+   "partie": "ia",
+   "box": "images"
+  },
+  {
+   "text": "Que valent vraiment ces IA pour repérer la rétinopathie du prématuré ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, les auteurs ont fait une méta-analyse, dans cinq bases de données.",
+   "partie": "etude",
+   "box": "auteurs"
+  },
+  {
+   "text": "Au final, soixante-deux études ont fourni cent quatre-vingt-cinq tableaux de résultats, qu'ils ont regroupés.",
+   "partie": "etude",
+   "display": "Au final, 62 études ont fourni 185 tableaux de résultats, qu'ils ont regroupés.",
+   "box": "tableaux"
+  },
+  {
+   "text": "Concrètement, une image de la rétine entre, l'IA la lit, puis dit si l'œil est malade.",
+   "partie": "methode",
+   "box": "image"
+  },
+  {
+   "text": "Ensuite, ils ont noté le risque de biais, puis regroupé sensibilité et spécificité par tâche et validation.",
+   "partie": "methode",
+   "box": "risque",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : l'IA repère quatre-vingt-quatorze pour cent des cas de rétinopathie, et écarte à raison quatre-vingt-seize pour cent des cas normaux.",
+   "partie": "resultat",
+   "display": "Résultat : l'IA repère 94 % des cas de rétinopathie, et écarte à raison 96 % des cas normaux.",
+   "box": "repère",
+   "peak": "quatre-vingt-quatorze pour cent"
+  },
+  {
+   "text": "Autrement dit, sur cent cas de rétinopathie, elle en rate environ six.",
+   "partie": "resultat",
+   "display": "Autrement dit, sur 100 cas de rétinopathie, elle en rate environ 6.",
+   "box": "rate",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Mais pour les rétinopathies à traiter, la spécificité tombe à soixante-quatorze pour cent, malgré quatre-vingt-dix-sept pour cent de sensibilité.",
+   "partie": "concret",
+   "display": "Mais pour les rétinopathies à traiter, la spécificité tombe à 74 %, malgré 97 % de sensibilité.",
+   "box": "spécificité",
+   "peak": "tombe",
+   "source": "For normal vs treatment-requiring ROP (TR-ROP), sensitivity was 0.97 (95% CI 0.91-0.99) and specificity was 0.74 (95% CI 0.66-0.80)"
+  },
+  {
+   "text": "Autrement dit, vingt-six pour cent des cas sains sont signalés à tort, soit plus d'un sur quatre.",
+   "partie": "concret",
+   "display": "Autrement dit, 26 % des cas sains sont signalés à tort, soit plus d'un sur quatre.",
+   "box": "signalés",
+   "source": "For normal vs treatment-requiring ROP (TR-ROP), sensitivity was 0.97 (95% CI 0.91-0.99) and specificity was 0.74 (95% CI 0.66-0.80)"
+  },
+  {
+   "text": "Et la spécificité passe de quatre-vingt-dix-sept pour cent en interne à quatre-vingt-trois en validation externe, sur d'autres données.",
+   "partie": "concret",
+   "display": "Et la spécificité passe de 97 % en interne à 83 en validation externe, sur d'autres données.",
+   "box": "spécificité",
+   "peak": "externe",
+   "source": "In external validation, pooled sensitivity and specificity were 0.95 (95% CI 0.89-0.97) and 0.83 (95% CI 0.72-0.90), respectively, while the corresponding estimates were 0.95 (95% CI 0.93-0.96) and 0.97 (95% CI 0.96-0.98) in internal validation"
+  },
+  {
+   "text": "Attention : les études sont surtout rétrospectives et hétérogènes, avec peu de validation externe.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : l'IA peut aider au dépistage, mais le diagnostic et le traitement restent aux médecins.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_image",
+    "cam_at": 0,
+    "header": "Méta-analyse · 62 études · imagerie",
+    "image": "fundus",
+    "title": "L'IA lit la rétine des bébés nés trop tôt",
+    "title_at": "s0:IA",
+    "scan_at": "s0:repérer",
+    "lock_at": "s0:cécité",
+    "footnote": "Rétinopathie du prématuré · dépistage"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s1:cécité",
+    "title": "Une maladie de la rétine",
+    "steps": [
+     {
+      "icon": "eye",
+      "label": "Rétinopathie du prématuré",
+      "at": "s1:rétinopathie"
+     },
+     {
+      "icon": "eye",
+      "label": "Cécité évitable",
+      "at": "s1:cécité"
+     },
+     {
+      "icon": "magnifier",
+      "label": "Dépister, diagnostiquer, classer",
+      "at": "s2:dépister"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s3:irréversible",
+    "title": "Ce qui coince",
+    "steps": [
+     {
+      "icon": "eye",
+      "label": "Atteinte de la vue irréversible",
+      "at": "s3:irréversible"
+     },
+     {
+      "icon": "chip",
+      "label": "Des IA très différentes",
+      "at": "s4:IA"
+     },
+     {
+      "icon": "chart",
+      "label": "Un intérêt mal mesuré",
+      "at": "s4:mal"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s5-0.1",
+    "mark_at": "s5:images",
+    "title": "L'IA testée",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "Des modèles d'IA",
+      "at": "s5:IA"
+     },
+     {
+      "icon": "fundus",
+      "label": "Qui lisent des images de rétine",
+      "at": "s5:images"
+     },
+     {
+      "icon": "magnifier",
+      "label": "Largement utilisées au dépistage",
+      "at": "s5:largement"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Que valent vraiment ces IA pour repérer la rétinopathie du prématuré ?",
+  "italic": "vraiment",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Revue systématique et méta-analyse",
+      "at": "s7:méta-analyse"
+     },
+     {
+      "label": "Bases",
+      "value": "5 bases de données",
+      "at": "s7:cinq"
+     },
+     {
+      "label": "Études",
+      "value": "62",
+      "at": "s8:soixante-deux",
+      "accent": true
+     },
+     {
+      "label": "Tableaux",
+      "value": "185 tableaux de résultats",
+      "at": "s8:cent"
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s9-0.3",
+    "input_icon": "fundus",
+    "input_label": "Une image de la rétine",
+    "ai_label": "Repère la rétinopathie et sa gravité",
+    "output_label": "Œil sain ou malade",
+    "modality": "image",
+    "at": "s9:image",
+    "core_at": "s9:l'IA",
+    "out_at": "s9:malade"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s10-0.3",
+    "title": "Comment ils ont regroupé",
+    "points": [
+     {
+      "text": "Risque de biais noté pour chaque étude",
+      "at": "s10:risque"
+     },
+     {
+      "text": "Sensibilité et spécificité regroupées",
+      "at": "s10:regroupé"
+     },
+     {
+      "text": "Par tâche et par type de validation",
+      "at": "s10:tâche"
+     }
+    ]
+   },
+   {
+    "type": "metric",
+    "cam_at": "s11-0.3",
+    "title": "Cas normal contre rétinopathie",
+    "metrics": [
+     {
+      "label": "Sensibilité",
+      "value": "94",
+      "num": 94,
+      "unit": "%",
+      "note": "IC 95 % : 92–96",
+      "at": "s11:quatre-vingt-quatorze",
+      "accent": true
+     },
+     {
+      "label": "Spécificité",
+      "value": "96",
+      "num": 96,
+      "unit": "%",
+      "note": "IC 95 % : 94–97",
+      "at": "s11:quatre-vingt-seize"
+     }
+    ],
+    "caption": "Sur 100 cas de rétinopathie, environ 6 ratés",
+    "caption_at": "s12:cent"
+   },
+   {
+    "type": "big_stat",
+    "cam_at": "s13-0.3",
+    "title": "Les rétinopathies à traiter",
+    "value": "74",
+    "num": 74,
+    "unit": "%",
+    "label": "de spécificité, malgré 97 % de sensibilité",
+    "label_at": "s13:malgré",
+    "compare": {
+     "value": "26",
+     "unit": "%",
+     "label": "des cas sains signalés à tort",
+     "at": "s14:signalés"
+    },
+    "at": "s13:soixante-quatorze"
+   },
+   {
+    "type": "result_bars",
+    "cam_at": "s15-0.3",
+    "title": "Spécificité selon la validation",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Validation interne",
+      "value": "97",
+      "num": 97,
+      "at": "s15:quatre-vingt-dix-sept"
+     },
+     {
+      "label": "Validation externe",
+      "value": "83",
+      "num": 83,
+      "accent": true,
+      "at": "s15:quatre-vingt-trois"
+     }
+    ],
+    "diff": "−14 points",
+    "diff_at": "s15.e"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s16-0.3",
+    "text": "Attention : les études sont surtout rétrospectives et hétérogènes, avec peu de validation externe.",
+    "italic": "rétrospectives"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s17-0.3",
+    "text": "À retenir : l'IA peut aider au dépistage, mais le diagnostic et le traitement restent aux médecins.",
+    "italic": "aider"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s17.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s19",
+  "button": "Suivre",
+  "button_at": "s19+0.6",
+  "click_at": "s19+1.6",
+  "source": "Bai et al. · JMIR Medical Informatics · novembre 2026",
+  "doi": "doi:10.2196/109141",
+  "source_at": "s18:vérifiée-0.2"
+ }
+}

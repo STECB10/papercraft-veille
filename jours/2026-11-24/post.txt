@@ -1,0 +1,5 @@
+Une IA repère 94 % des cas de rétinopathie du prématuré sur image, mais elle se trompe plus souvent quand il faut cibler les cas à traiter.
+Cette méta-analyse a regroupé 62 études sur l'IA qui lit des images de la rétine. Pour distinguer un cas normal d'une rétinopathie, la sensibilité est de 94 % et la spécificité de 96 %. Pour les rétinopathies à traiter, la spécificité tombe à 74 % ; en validation externe, elle passe de 97 % à 83 %.
+Et dans votre service, un dépistage aidé par l'IA vous ferait-il gagner du temps ou multiplier les contrôles ?
+Source : Bai et al., JMIR Medical Informatics, novembre 2026. https://doi.org/10.2196/109141
+#IA #Ophtalmologie #Néonatologie #Santé

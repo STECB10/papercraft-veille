@@ -1,0 +1,137 @@
+[
+ {
+  "id": "f1",
+  "valeur": 62,
+  "calcul": "62"
+ },
+ {
+  "id": "f2",
+  "valeur": 185,
+  "citation": "Sixty-two studies contributed 185 contingency tables"
+ },
+ {
+  "id": "f3",
+  "valeur": 0.94,
+  "citation": "pooled sensitivity was 0.94 (95% CI 0.92-0.96)"
+ },
+ {
+  "id": "f4",
+  "valeur": 0.92,
+  "citation": "pooled sensitivity was 0.94 (95% CI 0.92-0.96)"
+ },
+ {
+  "id": "f5",
+  "valeur": 0.96,
+  "citation": "pooled sensitivity was 0.94 (95% CI 0.92-0.96)"
+ },
+ {
+  "id": "f6",
+  "valeur": 0.96,
+  "citation": "specificity was 0.96 (95% CI 0.94-0.97)"
+ },
+ {
+  "id": "f7",
+  "valeur": 0.94,
+  "citation": "specificity was 0.96 (95% CI 0.94-0.97)"
+ },
+ {
+  "id": "f8",
+  "valeur": 0.97,
+  "citation": "specificity was 0.96 (95% CI 0.94-0.97)"
+ },
+ {
+  "id": "f9",
+  "valeur": 0.97,
+  "citation": "sensitivity was 0.97 (95% CI 0.91-0.99) and specificity was 0.74 (95% CI 0.66-0.80)"
+ },
+ {
+  "id": "f10",
+  "valeur": 0.74,
+  "citation": "sensitivity was 0.97 (95% CI 0.91-0.99) and specificity was 0.74 (95% CI 0.66-0.80)"
+ },
+ {
+  "id": "f11",
+  "valeur": 0.95,
+  "citation": "pooled sensitivity and specificity were 0.95 (95% CI 0.89-0.97) and 0.83 (95% CI 0.72-0.90)"
+ },
+ {
+  "id": "f12",
+  "valeur": 0.83,
+  "citation": "pooled sensitivity and specificity were 0.95 (95% CI 0.89-0.97) and 0.83 (95% CI 0.72-0.90)"
+ },
+ {
+  "id": "f13",
+  "valeur": 0.97,
+  "citation": "0.97 (95% CI 0.96-0.98) in internal validation"
+ },
+ {
+  "id": "f14",
+  "valeur": 94,
+  "calcul": "f3*100"
+ },
+ {
+  "id": "f15",
+  "valeur": 92,
+  "calcul": "f4*100"
+ },
+ {
+  "id": "f16",
+  "valeur": 96,
+  "calcul": "f6*100"
+ },
+ {
+  "id": "f17",
+  "valeur": 94,
+  "calcul": "f7*100"
+ },
+ {
+  "id": "f18",
+  "valeur": 97,
+  "calcul": "f8*100"
+ },
+ {
+  "id": "f19",
+  "valeur": 97,
+  "calcul": "f9*100"
+ },
+ {
+  "id": "f20",
+  "valeur": 74,
+  "calcul": "f10*100"
+ },
+ {
+  "id": "f21",
+  "valeur": 95,
+  "calcul": "f11*100"
+ },
+ {
+  "id": "f22",
+  "valeur": 83,
+  "calcul": "f12*100"
+ },
+ {
+  "id": "f23",
+  "valeur": 97,
+  "calcul": "f13*100"
+ },
+ {
+  "id": "f24",
+  "valeur": 100,
+  "calcul": "100"
+ },
+ {
+  "id": "f25",
+  "valeur": 26,
+  "calcul": "100 - f20"
+ },
+ {
+  "id": "f26",
+  "valeur": 14,
+  "calcul": "f23 - f22"
+ },
+ {
+  "id": "f27",
+  "valeur": 6,
+  "calcul": "100 - f14"
+ }
+]
