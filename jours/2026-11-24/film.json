@@ -366,5 +366,9 @@
   "source": "Bai et al. · JMIR Medical Informatics · novembre 2026",
   "doi": "doi:10.2196/109141",
   "source_at": "s18:vérifiée-0.2"
- }
+ },
+ "duration": 109.4,
+ "lead": 2.8,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
 }

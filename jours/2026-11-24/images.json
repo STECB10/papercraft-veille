@@ -1,0 +1,13 @@
+{
+ "duree": 109.4,
+ "pas": 0.5,
+ "edition": "petrole",
+ "occupation_moyenne": 37.7,
+ "etendue_moyenne": 62.8,
+ "temps_vide_pct": 0.5,
+ "temps_sous_rempli_pct": 0.5,
+ "ecrans_vides": [],
+ "cadres_sous_remplis": [],
+ "pire_vide": 0,
+ "bilan": "aucun écran vide, cadres remplis"
+}
