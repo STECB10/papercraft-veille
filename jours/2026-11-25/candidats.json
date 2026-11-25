@@ -1,0 +1,149 @@
+[
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "texte intégral libre",
+   "soin de terrain"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "rééducation et mouvement",
+   "grossesse et enfants"
+  ],
+  "id": "MED:43053013",
+  "pmid": "43053013",
+  "pmcid": "PMC13784060",
+  "doi": "10.1186/s12911-026-03890-7",
+  "titre": "Usability of an artificial intelligence enabled Participation and Environment Measure prototype for family-centered goal setting support in pediatric rehabilitation.",
+  "revue": "BMC medical informatics and decision making",
+  "date": "2026-11-18",
+  "auteurs": "Lee G, Villegas V, Patton L, Han Y, Khetani M, Parde N.",
+  "types": "research-article randomized controlled trial journal article",
+  "acces_libre": true,
+  "resume": "Background Family-centered care coordination (FC-CC) in pediatric rehabilitation benefits from tools that support caregivers in contributing to personalized service planning for their children. Participation and Environment Measure (PEM) is a digital application that is being further developed to support FC-CC in early intervention (EI). PEM is being further developed to include the Young Children's Participation and Environment Measure (YC-PEM) electronic patient-reported outcome and a companion PEM-Plus (PEM+) goal setting intervention. This study examined usability of the first artificial intelligence (AI)-enabled PEM prototype. Methods Caregivers from an urban EI program met these eligibility criteria: (1) were at least 18 years old; (2) identified as the parent or legal guardian of a child enrolled in EI services; (3) read, wrote, and spoke English; (4) had internet and telephone access; and (5) had a child 0-3 years old who received EI services for 3 or more months. Participants completed the AI-enabled PEM application with access to a debiased prototypic conversational agent. PEM usability was assessed using the System Usability Scale (SUS), and chatbot usability was assessed along four BOT Usability Scale (BUS-11) domains: 1) accessibility of chatbot functions; 2) functional interactive conversation; 3) privacy and security; and 4) timely response. Univariate logistic regression models were used to examine associations between each of the four BUS-11 domains and PEM+ engagement. Results Eleven female caregivers of children (mean age: 24.5 months) enrolled, 66.7% of whom interacted with the prototypic chatbot during one or more iterations of the PEM+ intervention. Overall PEM usability remained acceptable. While overall chatbot usability was very poor (Mdn = 53.4%, IQR = 50.0, 55.4), caregiver perceptions of chatbot usability were average for accessibility of chatbot functions (Mdn = 3.8, IQR = 3.0, 4.0) and good for privacy and security (M = 3.1, Range = 2.0-5.0). Higher caregiver perceptions of chatbot usability did not significantly increase odds of PEM+ intervention use. Conclusions Findings indicate that an AI-enabled PEM retains adequate usability. A chatbot integrated within the PEM+ intervention is accessible and secure, though its functional interactive conversation and timely responses could benefit from further development to increase odds of its use in an EI service context. Trial registration NCT06458959 (Registration date: 2024-06-14)."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "cœur"
+  ],
+  "id": "MED:43063593",
+  "pmid": "43063593",
+  "pmcid": null,
+  "doi": "10.1016/j.jacadv.2026.103475",
+  "titre": "Aortic Valve Stenosis Screening Using Deep Learning on Noninvasive Arterial Pressure Waveforms.",
+  "revue": "JACC. Advances",
+  "date": "2026-11-20",
+  "auteurs": "Kassab J, Harb SC, Arafati A, Gonzalez Reyes MA, Vlaar APJ, Veelo DP, Kho E, Schenk J, Ramchand J, Collier P, Miyasaka R, Grimm R, Griffin BP, Kapadia SR.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Background Aortic stenosis (AS) presents a significant health burden. Early identification of significant AS, defined as at least moderate AS, may facilitate timely confirmatory testing, referral, and management. Objectives This study sought to develop and externally validate a deep learning model applied to arterial pressure waveforms obtained from a noninvasive finger-cuff system to screen for significant AS, using transthoracic echocardiography as the reference standard. Methods This prospective international multicenter cohort study was conducted from December 2020 through July 2025. Participants underwent concurrent transthoracic echocardiography and noninvasive arterial pressure waveform acquisition. A 1-dimensional convolutional neural network was developed using the Cleveland Clinic development cohort and evaluated in a temporally distinct, multicenter validation cohort including sites in the United States, Spain, and the Netherlands. Results Significant AS was present in 307 of 3,634 (8.4%) patients in the development cohort and 241 of 1,336 (18.0%) in the validation cohort. In the validation cohort, the model demonstrated an area under the curve of 0.893 (95% CI: 0.876-0.910), with a sensitivity of 92.5% (223/241; 95% CI: 88.5%-95.2%), negative predictive value of 97.5% (706/724; 95% CI: 96.1%-98.4%), specificity of 64.5% (706/1,095; 95% CI: 61.6%-67.3%), and positive predictive value of 36.4% (223/612; 95% CI: 32.7%-40.3%). For severe AS, the area under the curve was 0.906 (95% CI: 0.890-0.922), with a sensitivity of 94.3% (183/194; 95% CI: 90.1%-96.8%), negative predictive value of 98.5% (706/717; 95% CI: 97.3%-99.1%), specificity of 64.5% (706/1,095; 95% CI: 61.6%-67.3%), and positive predictive value of 32% (183/572; 95% CI: 28.3%-35.9%). Conclusions Deep learning applied to arterial pressure waveforms obtained from a finger-cuff system serves as a promising screening test for significant AS."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "multicentrique"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "chirurgie"
+  ],
+  "id": "MED:43025198",
+  "pmid": "43025198",
+  "pmcid": null,
+  "doi": "10.1016/j.jocn.2026.112382",
+  "titre": "Predicting outcomes in microdiscectomy surgery with applied machine learning.",
+  "revue": "Journal of clinical neuroscience : official journal of the Neurosurgical Society of Australasia",
+  "date": "2026-11-13",
+  "auteurs": "Roadley JL, Buchlak QD, Shah J, Goldschlager T.",
+  "types": "multicenter study randomized controlled trial journal article",
+  "acces_libre": false,
+  "resume": "Background Microdiscectomy surgery is a common procedure used to treat lumbar disc herniation (LDH), a condition causing significant lower back pain and sciatica. Despite its widespread use, outcomes vary, with some patients experiencing re herniation. Accurate prediction of postoperative outcomes could improve patient counselling and treatment planning. This study explores the application of machine learning models to predict re-herniation at 12 months using preoperative clinical and demographic data. Methods This multi-centered study used data from a randomised controlled trial involving 211 patients who underwent microdiscectomy. After addressing missing data, 152 cases were analysed. Logistic regression was first applied to determine significant covariates, followed by the development of supervised learning classifiers, including Random Forest, AdaBoost, and Neural Networks. Model performance was evaluated using metrics such as the Matthews correlation coefficient (MCC) and area under the receiver operating characteristics curve (ROC-AUC). Results Significant predictors of re-herniation included smoking status and emergency department presentations. Smokers were 11 times more likely to experience re herniation, and those with frequent ED visits were 19 times more likely to do so. The Random Forest model achieved the highest predictive performance, with an MCC of 0.47 and an AUC of 0.69. Application of SMOTE improved sensitivity but decreased specificity in most models. Conclusions Machine learning models, particularly Random Forest, demonstrated moderate predictive ability for re-herniation following microdiscectomy. Significant preoperative factors like smoking and ED visits were strongly associated with poor outcomes. These findings suggest that machine learning can enhance clinical decision-making by identifying high-risk patients, allowing for more personalised treatment strategies."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "multicentrique",
+   "n = 1135",
+   "intervalle de confiance",
+   "même type d'étude qu'hier : −1"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "imagerie"
+  ],
+  "id": "MED:43064567",
+  "pmid": "43064567",
+  "pmcid": null,
+  "doi": "10.1016/j.placenta.2026.11.008",
+  "titre": "MRI-based radiomics and deep learning for the prenatal diagnosis of Placenta Accreta Spectrum: a systematic review and exploratory meta-analysis.",
+  "revue": "Placenta",
+  "date": "2026-11-18",
+  "auteurs": "Sirico A, Pisani D, Sandullo L, Fatigati M, Mappa I, Maruotti GM, Rizzo G, Cobellis L.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "resume": "Objective accuracy of Placenta Accreta Spectrum (PAS) diagnosis using conventional magnetic resonance imaging (MRI) is still limited by subjective interpretation. Increasing evidence showed that radiomics and Deep Learning (DL) may improve diagnostic objectivity by extracting quantitative features from MRI data. This study aimed to synthesize the evidence on the diagnostic performance and clinical utility of these models. Methods a systematic review and meta-analysis was conducted following PRISMA-DTA guidelines and PRISMA 2020 recommendations: PubMed, Scopus, and Web of Science databases from inception to December 2025. We searched for primary studies evaluating MRI-based radiomics or DL models for the binary diagnosis of PAS. Data were extracted to create 2 × 2 contingency tables and used a bivariate random-effects model to calculate pooled sensitivity, specificity, and to generate a summary ROC (SROC) curve. We assessed robustness via leave-one-out sensitivity analysis, and clinical utility using Fagan's nomogram and likelihood ratios. A secondary meta-analysis was performed for the prediction of postpartum hemorrhage (PPH) ≥1000 mL. Results twelve studies met the inclusion criteria (N = 1135 patients). The pooled sensitivity for PAS diagnosis was 0.83 (95% CI: 0.75-0.89) and pooled specificity was 0.82 (95% CI: 0.74-0.88). The summary AUC was 0.896, confirming high diagnostic accuracy. The positive likelihood ratio (LR+) was 4.61 and the negative likelihood ratio (LR-) was 0.21. Subgroup analyses based on AI model type (p > 0.05) and study design (p > 0.05) did not find significant differences between groups but revealed that single-center studies tended to report higher accuracy compared to multicenter studies. The secondary meta-analysis on massive PPH prediction (n = 4 studies, N = 353 patients: 165 PPH+ and 188 PPH-) yielded a pooled sensitivity of 0.88 (95% CI: 0.63-0.97), a pooled specificity of 0.78 (95% CI: 0.50-0.93), and an AUC of 0.901. Conclusions MRI-based AI models demonstrate high exploratory pooled accuracy for the prenatal diagnosis of PAS in high-risk cohorts. These results suggest that these tools show promising exploratory accuracy and may provide decision support as an adjunct (\"human-in-the-loop\") in equivocal cases. However, their real-world clinical generalizability remains constrained by retrospective designs and index test threshold optimization."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "revue majeure"
+  ],
+  "type_etude": "revue systématique",
+  "themes": [
+   "IA conversationnelle"
+  ],
+  "id": "MED:43052083",
+  "pmid": "43052083",
+  "pmcid": null,
+  "doi": "10.1016/j.landig.2026.101112",
+  "titre": "Bias and equity in large language model-based applications for health care: a scoping review.",
+  "revue": "The Lancet. Digital health",
+  "date": "2026-11-18",
+  "auteurs": "Liao J, Li H, Yang R, Nair SV, Zhu W, Liew JCK, Zhang P, Liu M, Ning Y, Elangovan K, Ke Y, Hong C, Ong JCL, Chen Q, Alsentzer E, Bitterman DS, Ting DSW, Liu N.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "resume": "The integration of large language models (LLMs) into health care presents both opportunities for innovation and risks of perpetuating existing biases and health disparities. Although these concerns are widely discussed, a systematic understanding of the research landscape regarding bias and equity in LLM-based applications for health care remains limited, and few discussions have translated into actionable mitigation strategies. We conducted a Scoping Review to systematically map this landscape and identify key trends and gaps. We searched PubMed, Embase, Web of Science, and Scopus for English-language articles published from Jan 1, 2018, to March 10, 2026. Our analysis of the 201 included studies revealed a strong focus on specific medical contexts and demographic factors and a predominant reliance on proprietary models that constrain transparency in bias evaluation. A disconnect exists between bias detection and mitigation, and the potential of LLMs to promote health equity remains underexplored. To realise a more coherent integration of bias mitigation and health equity objectives in health-care LLM development, the field needs large-scale, endpoint-driven studies grounded in real-world clinical workflows. Furthermore, we advocate for standardised multidimensional bias evaluation frameworks developed with support from professional societies and lifecycle bias governance across both proprietary and open-weight models to guide the safe and equitable integration of LLMs into health care globally."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "n = 592",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "reins et sang"
+  ],
+  "id": "MED:43057534",
+  "pmid": "43057534",
+  "pmcid": null,
+  "doi": "10.1016/j.jad.2026.122759",
+  "titre": "Demoralization syndrome in hemodialysis patients: Development and validation of an interpretable machine learning prediction model.",
+  "revue": "Journal of affective disorders",
+  "date": "2026-11-19",
+  "auteurs": "Wang H, Zhang P, Liu R, Zhang L.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Background Demoralization syndrome (DS)-an existential distress state marked by hopelessness, helplessness, and loss of meaning-is a prevalent yet underrecognized affective comorbidity among maintenance hemodialysis (MHD) patients. Unlike depression, it stems from impaired coping capacity and carries distinct suicidal ideation risk, yet no practical prediction tool exists for early identification in routine care. Objective To develop and externally validate a parsimonious, interpretable machine learning model for predicting early DS risk in MHD patients without baseline demoralization. Methods This prospective multicenter cohort enrolled 592 participants. Incident DS symptoms were evaluated at a 5-month follow-up using the Demoralization Scale-II (cutoff ≥20). Twelve core predictors were screened from 87 clinical, laboratory and psychological indicators via a funnel-like feature selection workflow. A Stacking ensemble model with Bayesian-optimized base learners was built, interpreted using SHapley Additive exPlanations (SHAP), and assessed through sensitivity and ablation analyses to evaluate predictor stability and variable incremental value. Results In external validation (N = 245), the 12-variable Stacking-Ridge model achieved an AUC of 0.922 (95% CI: 0.883-0.955), with accuracy 0.886, recall 0.652, precision 0.714, and F1-score 0.682-comparable to the 28-variable model while lowering clinical data-collection burden. SHAP analysis identified urinary microalbumin (U-MALB), PHQ-9 score, and HALP score as top contributors. Decision curve analysis indicated favorable clinical net benefit across broad threshold. Conclusions The model provides an accurate, interpretable tool for DS prediction in MHD patients. By integrating predictive analytics with clinical feasibility, it supports early identification of affective distress in nephrology practice and lays the groundwork for targeted psychosocial intervention."
+ }
+]

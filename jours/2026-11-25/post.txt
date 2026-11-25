@@ -1,0 +1,5 @@
+Une IA qui lit la pression artérielle prise au doigt repère 92,5 % des vraies sténoses aortiques, mais donne aussi beaucoup de fausses alertes.
+Cette cohorte prospective internationale a entraîné un réseau de neurones sur 3 634 patients, puis l'a testé sur 1 336 autres, avec l'échographie du cœur comme référence. Sur 241 patients atteints, l'IA en repère 223. Mais sur 612 patients signalés, 223 seulement sont vraiment atteints.
+Et dans votre pratique, un test de dépistage au doigt vous aiderait-il à décider qui envoyer vers l'échographie ?
+Source : Kassab et al., JACC Advances, novembre 2026. https://doi.org/10.1016/j.jacadv.2026.103475
+#IA #Cardiologie #Dépistage #Santé

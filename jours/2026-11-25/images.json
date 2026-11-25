@@ -1,0 +1,18 @@
+{
+ "duree": 107.1,
+ "pas": 0.5,
+ "edition": "carbone",
+ "occupation_moyenne": 44,
+ "etendue_moyenne": 62.7,
+ "temps_vide_pct": 0.5,
+ "temps_sous_rempli_pct": 6.3,
+ "ecrans_vides": [],
+ "cadres_sous_remplis": [
+  [
+   75,
+   80.5
+  ]
+ ],
+ "pire_vide": 0,
+ "bilan": "cadre peu rempli à 1:15"
+}

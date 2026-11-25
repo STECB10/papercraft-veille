@@ -1,0 +1,62 @@
+[
+ {
+  "id": "f1",
+  "valeur": 2020,
+  "citation": "from December 2020 through July 2025"
+ },
+ {
+  "id": "f2",
+  "valeur": 2025,
+  "citation": "from December 2020 through July 2025"
+ },
+ {
+  "id": "f3",
+  "valeur": 3634,
+  "calcul": "3634"
+ },
+ {
+  "id": "f4",
+  "valeur": 1336,
+  "calcul": "1336"
+ },
+ {
+  "id": "f5",
+  "valeur": 241,
+  "citation": "241 of 1,336 (18.0%) in the validation cohort"
+ },
+ {
+  "id": "f6",
+  "valeur": 223,
+  "citation": "sensitivity of 92.5% (223/241; 95% CI: 88.5%-95.2%)"
+ },
+ {
+  "id": "f7",
+  "valeur": 92.5,
+  "citation": "sensitivity of 92.5% (223/241; 95% CI: 88.5%-95.2%)"
+ },
+ {
+  "id": "f8",
+  "valeur": 18,
+  "calcul": "f5 - f6"
+ },
+ {
+  "id": "f9",
+  "valeur": 706,
+  "citation": "specificity of 64.5% (706/1,095; 95% CI: 61.6%-67.3%)"
+ },
+ {
+  "id": "f10",
+  "valeur": 1095,
+  "calcul": "1095"
+ },
+ {
+  "id": "f11",
+  "valeur": 612,
+  "citation": "positive predictive value of 36.4% (223/612; 95% CI: 32.7%-40.3%)"
+ },
+ {
+  "id": "f12",
+  "valeur": 724,
+  "citation": "negative predictive value of 97.5% (706/724; 95% CI: 96.1%-98.4%)"
+ }
+]

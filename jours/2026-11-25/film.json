@@ -1,0 +1,354 @@
+{
+ "id": "2026-11-25",
+ "sentences": [
+  {
+   "text": "Un brassard au doigt pourrait-il révéler un rétrécissement de la valve aortique ?",
+   "partie": "accroche",
+   "box": "brassard"
+  },
+  {
+   "text": "La sténose aortique est un rétrécissement de cette valve, qui pèse lourd en santé publique.",
+   "partie": "contexte",
+   "box": "rétrécissement"
+  },
+  {
+   "text": "Pour la confirmer, on passe aujourd'hui par une échographie du cœur, qui sert de référence.",
+   "partie": "contexte",
+   "box": "échographie"
+  },
+  {
+   "text": "Le problème, c'est que sans repérage précoce, la prise en charge arrive plus tard.",
+   "partie": "probleme",
+   "box": "précoce,",
+   "source": "Early identification of significant AS, defined as at least moderate AS, may facilitate timely confirmatory testing, referral, and management."
+  },
+  {
+   "text": "Alors il faudrait un test de dépistage simple, pour savoir à qui proposer l'échographie.",
+   "partie": "probleme",
+   "box": "dépistage",
+   "source": "serves as a promising screening test for significant AS",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "C'est là qu'intervient l'IA : un réseau de neurones lit la pression artérielle prise au doigt, sans geste invasif.",
+   "partie": "ia",
+   "box": "réseau",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Cette IA sait-elle repérer une sténose aortique significative ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, une cohorte prospective internationale, de décembre deux mille vingt à juillet deux mille vingt-cinq.",
+   "partie": "etude",
+   "display": "Pour le savoir, une cohorte prospective internationale, de décembre 2020 à juillet 2025.",
+   "box": "cohorte"
+  },
+  {
+   "text": "Concrètement, chaque participant passe une échographie, avec en même temps sa pression artérielle au doigt.",
+   "partie": "methode",
+   "box": "échographie,"
+  },
+  {
+   "text": "Ensuite, chaque courbe passe dans l'IA, qui dit si la valve est rétrécie.",
+   "partie": "methode",
+   "box": "courbe"
+  },
+  {
+   "text": "Elle s'entraîne d'abord sur trois mille six cent trente-quatre patients de la Cleveland Clinic.",
+   "partie": "methode",
+   "display": "Elle s'entraîne d'abord sur 3 634 patients de la Cleveland Clinic.",
+   "box": "s'entraîne"
+  },
+  {
+   "text": "Puis elle est testée sur mille trois cent trente-six autres, vus plus tard aux États-Unis, en Espagne et aux Pays-Bas.",
+   "partie": "methode",
+   "display": "Puis elle est testée sur 1 336 autres, vus plus tard aux États-Unis, en Espagne et aux Pays-Bas.",
+   "box": "testée",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : l'IA repère quatre-vingt-douze virgule cinq pour cent des vraies sténoses.",
+   "partie": "resultat",
+   "display": "Résultat : l'IA repère 92,5 % des vraies sténoses.",
+   "box": "92,5"
+  },
+  {
+   "text": "Autrement dit, sur deux cent quarante et un patients atteints, elle en repère deux cent vingt-trois et en rate dix-huit.",
+   "partie": "resultat",
+   "display": "Autrement dit, sur 241 patients atteints, elle en repère 223 et en rate 18.",
+   "box": "223",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Mais côté patients sains, elle n'en écarte à raison que sept cent six sur mille quatre-vingt-quinze.",
+   "partie": "concret",
+   "display": "Mais côté patients sains, elle n'en écarte à raison que 706 sur 1 095.",
+   "box": "sains,",
+   "source": "specificity of 64.5% (706/1,095; 95% CI: 61.6%-67.3%)"
+  },
+  {
+   "text": "Autrement dit, sur six cent douze patients signalés, deux cent vingt-trois seulement sont vraiment atteints.",
+   "partie": "concret",
+   "display": "Autrement dit, sur 612 patients signalés, 223 seulement sont vraiment atteints.",
+   "box": "signalés,",
+   "peak": "seulement",
+   "source": "positive predictive value of 36.4% (223/612; 95% CI: 32.7%-40.3%)"
+  },
+  {
+   "text": "En revanche, quand elle ne signale rien, elle a raison dans sept cent six cas sur sept cent vingt-quatre.",
+   "partie": "concret",
+   "display": "En revanche, quand elle ne signale rien, elle a raison dans 706 cas sur 724.",
+   "box": "rien,",
+   "source": "negative predictive value of 97.5% (706/724; 95% CI: 96.1%-98.4%)",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : c'est un test de dépistage, pas un diagnostic : l'échographie reste nécessaire.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : ce test pourrait aider à choisir qui envoyer vers l'échographie, sans la remplacer.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_headline",
+    "cam_at": 0,
+    "header": "Cohorte prospective · 3 pays · 2020–2025",
+    "headline": "Dépister une valve aortique rétrécie avec l'IA, grâce à la pression artérielle mesurée au doigt",
+    "journal": "JACC Advances · novembre 2026",
+    "mark": "pression artérielle mesurée au doigt",
+    "mark_at": "s0:doigt",
+    "footnote": "Sténose aortique · dépistage"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s1:pèse",
+    "title": "Une valve qui se rétrécit",
+    "steps": [
+     {
+      "icon": "heart",
+      "label": "Valve aortique rétrécie",
+      "at": "s1:rétrécissement"
+     },
+     {
+      "icon": "hospital",
+      "label": "Un poids pour la santé publique",
+      "at": "s1:pèse"
+     },
+     {
+      "icon": "stethoscope",
+      "label": "Échographie du cœur",
+      "note": "la référence",
+      "at": "s2:échographie",
+      "note_at": "s2:référence"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s3:précoce",
+    "title": "Repérer trop tard",
+    "steps": [
+     {
+      "icon": "clock",
+      "label": "Sans repérage précoce",
+      "at": "s3:précoce"
+     },
+     {
+      "icon": "pill",
+      "label": "Prise en charge plus tardive",
+      "at": "s3:prise"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s4-0.1",
+    "mark_at": "s4:dépistage",
+    "title": "Un dépistage simple",
+    "steps": [
+     {
+      "icon": "check",
+      "label": "Un test de dépistage",
+      "at": "s4:dépistage"
+     },
+     {
+      "icon": "stethoscope",
+      "label": "Qui passe l'échographie ?",
+      "at": "s4:qui"
+     },
+     {
+      "icon": "heart",
+      "label": "Pression artérielle au doigt",
+      "note": "sans geste invasif",
+      "at": "s5:pression",
+      "note_at": "s5:invasif"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Cette IA sait-elle repérer une sténose aortique significative ?",
+  "italic": "repérer",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Cohorte prospective",
+      "at": "s7:cohorte"
+     },
+     {
+      "label": "Période",
+      "value": "Déc. 2020 – juil. 2025",
+      "at": "s7:décembre"
+     },
+     {
+      "label": "Référence",
+      "value": "Échographie du cœur",
+      "at": "s8:échographie"
+     },
+     {
+      "label": "Mesure",
+      "value": "Pression artérielle au doigt",
+      "at": "s8:pression",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s9-0.3",
+    "input_icon": "ecg",
+    "input_label": "Courbe de pression au doigt",
+    "ai_label": "Cherche une valve rétrécie",
+    "output_label": "Sténose : oui ou non",
+    "modality": "signal",
+    "at": "s9:courbe",
+    "core_at": "s9:l'IA",
+    "out_at": "s9:rétrécie"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s10-0.3",
+    "title": "Apprendre, puis tester",
+    "points": [
+     {
+      "text": "Entraînement : 3 634 patients, Cleveland Clinic",
+      "at": "s10:trois"
+     },
+     {
+      "text": "Test : 1 336 patients, États-Unis, Espagne, Pays-Bas",
+      "at": "s11:mille"
+     }
+    ]
+   },
+   {
+    "type": "big_stat",
+    "cam_at": "s12-0.3",
+    "title": "Ce que l'IA repère",
+    "value": "92,5",
+    "num": 92.5,
+    "unit": "%",
+    "label": "des vraies sténoses repérées",
+    "label_at": "s12:vraies",
+    "at": "s12:quatre-vingt-douze",
+    "compare": {
+     "value": "18",
+     "label": "sténoses manquées sur 241",
+     "at": "s13:rate"
+    }
+   },
+   {
+    "type": "findings",
+    "cam_at": "s14-0.3",
+    "title": "Ce que ça donne en pratique",
+    "items": [
+     {
+      "icon": "users",
+      "label": "Patients sains écartés",
+      "detail": "706 sur 1 095 seulement",
+      "detail_at": "s14:sept",
+      "tendance": "moins",
+      "at": "s14:sains"
+     },
+     {
+      "icon": "magnifier",
+      "label": "Fausses alertes",
+      "detail": "223 vrais malades sur 612 signalés",
+      "detail_at": "s15:deux",
+      "at": "s15:signalés",
+      "accent": true
+     },
+     {
+      "icon": "check",
+      "label": "Quand elle ne signale rien",
+      "detail": "Elle a raison dans 706 cas sur 724",
+      "detail_at": "s16:sept",
+      "tendance": "plus",
+      "at": "s16:rien"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s17-0.25",
+    "text": "Attention : c'est un test de dépistage, pas un diagnostic : l'échographie reste nécessaire.",
+    "italic": "dépistage"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s18-0.25",
+    "text": "À retenir : ce test pourrait aider à choisir qui envoyer vers l'échographie, sans la remplacer.",
+    "italic": "choisir"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s18.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s20",
+  "button": "Suivre",
+  "button_at": "s20+0.6",
+  "click_at": "s20+1.6",
+  "source": "Kassab et al. · JACC Advances · novembre 2026",
+  "doi": "doi:10.1016/j.jacadv.2026.103475",
+  "source_at": "s19:vérifiée-0.2"
+ },
+ "duration": 107.1,
+ "lead": 3.4,
+ "audio": "assets/audio/mix.wav",
+ "words_file": "onsets.json"
+}
