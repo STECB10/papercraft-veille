@@ -1,0 +1,146 @@
+[
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "multicentrique",
+   "n = 1135",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "imagerie"
+  ],
+  "id": "MED:43064567",
+  "pmid": "43064567",
+  "pmcid": null,
+  "doi": "10.1016/j.placenta.2026.11.008",
+  "titre": "MRI-based radiomics and deep learning for the prenatal diagnosis of Placenta Accreta Spectrum: a systematic review and exploratory meta-analysis.",
+  "revue": "Placenta",
+  "date": "2026-11-18",
+  "auteurs": "Sirico A, Pisani D, Sandullo L, Fatigati M, Mappa I, Maruotti GM, Rizzo G, Cobellis L.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "resume": "Objective accuracy of Placenta Accreta Spectrum (PAS) diagnosis using conventional magnetic resonance imaging (MRI) is still limited by subjective interpretation. Increasing evidence showed that radiomics and Deep Learning (DL) may improve diagnostic objectivity by extracting quantitative features from MRI data. This study aimed to synthesize the evidence on the diagnostic performance and clinical utility of these models. Methods a systematic review and meta-analysis was conducted following PRISMA-DTA guidelines and PRISMA 2020 recommendations: PubMed, Scopus, and Web of Science databases from inception to December 2025. We searched for primary studies evaluating MRI-based radiomics or DL models for the binary diagnosis of PAS. Data were extracted to create 2 × 2 contingency tables and used a bivariate random-effects model to calculate pooled sensitivity, specificity, and to generate a summary ROC (SROC) curve. We assessed robustness via leave-one-out sensitivity analysis, and clinical utility using Fagan's nomogram and likelihood ratios. A secondary meta-analysis was performed for the prediction of postpartum hemorrhage (PPH) ≥1000 mL. Results twelve studies met the inclusion criteria (N = 1135 patients). The pooled sensitivity for PAS diagnosis was 0.83 (95% CI: 0.75-0.89) and pooled specificity was 0.82 (95% CI: 0.74-0.88). The summary AUC was 0.896, confirming high diagnostic accuracy. The positive likelihood ratio (LR+) was 4.61 and the negative likelihood ratio (LR-) was 0.21. Subgroup analyses based on AI model type (p > 0.05) and study design (p > 0.05) did not find significant differences between groups but revealed that single-center studies tended to report higher accuracy compared to multicenter studies. The secondary meta-analysis on massive PPH prediction (n = 4 studies, N = 353 patients: 165 PPH+ and 188 PPH-) yielded a pooled sensitivity of 0.88 (95% CI: 0.63-0.97), a pooled specificity of 0.78 (95% CI: 0.50-0.93), and an AUC of 0.901. Conclusions MRI-based AI models demonstrate high exploratory pooled accuracy for the prenatal diagnosis of PAS in high-risk cohorts. These results suggest that these tools show promising exploratory accuracy and may provide decision support as an adjunct (\"human-in-the-loop\") in equivocal cases. However, their real-world clinical generalizability remains constrained by retrospective designs and index test threshold optimization."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "multicentrique",
+   "n = 3846",
+   "intervalle de confiance",
+   "thème déjà traité il y a trois jours (cerveau) : −1"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "cerveau",
+   "imagerie"
+  ],
+  "id": "MED:43066745",
+  "pmid": "43066745",
+  "pmcid": null,
+  "doi": "10.1007/s00330-026-13101-6",
+  "titre": "AI-based contrast dose reduction in brain MRI: systematic review and exploratory meta-analysis of AI-generated post-contrast images.",
+  "revue": "European radiology",
+  "date": "2026-11-21",
+  "auteurs": "Habibi Tirtashi R, Saber Hamishegi F, Sohrabi-Ashlaghi A, Shakiba M, Firouznia K, Kolahi S.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Objectives To evaluate the performance of AI algorithms in reducing gadolinium (Gd) administration in brain MRI by generating synthetic post-contrast images from low-dose inputs. Materials and methods Comprehensive searches of PubMed, Scopus, Web of Science, and Embase were conducted through April 17, 2026. Study screening, eligibility assessment, quality evaluation, and data extraction were performed independently by two reviewers. Pooled peak signal-to-noise ratio (PSNR) and structural similarity index (SSIM) values were calculated using a random-effects model. Heterogeneity was quantified using the I² statistic. These analyses were additionally followed by evaluations of the reported qualitative assessments. Results Twelve studies met the inclusion criteria, most of which used convolutional neural network architectures. The pooled PSNR was 32.91 dB (95% CI: 31.37-34.46; I² = 99.08%) across seven studies, and the pooled SSIM was 91.81% (95% CI: 89.33-94.30; I² = 99.69%) across six studies. Subgroup analyses stratified by contrast-dose reduction level, deep learning model type, and input modality did not identify consistent contributors to heterogeneity. Given substantial between-study heterogeneity, pooled estimates were interpreted descriptively. Across the qualitative assessments, synthetic images were generally rated as diagnostically acceptable or comparable to full-dose images for most tasks, although subtle differences in lesion conspicuity and artifact patterns were reported. Conclusion AI models demonstrate promising technical performance for generating synthetic post-contrast brain MRI with high voxel-wise similarity to full-dose images at substantial contrast-dose reductions. However, marked heterogeneity, limited external validation, and the lack of clinically oriented diagnostic outcomes limit the interpretability and generalizability of current evidence. Key points Question There is a need to determine how effectively artificial intelligence can reduce gadolinium use in brain MRI by generating synthetic post-contrast images from low-dose inputs. Findings Across 12 studies involving 3846 patients, AI-generated post-contrast brain MRI achieved pooled peak signal-to-noise ratio (PSNR) and structural similarity index (SSIM) values of 32.91 dB and 91.81%, respectively, with substantial between-study heterogeneity. Clinical relevance AI-assisted synthetic post-contrast imaging may substantially reduce gadolinium exposure in neuroradiology while preserving diagnostic confidence. However, high heterogeneity highlights the need for cautious interpretation and further multicenter standardization before clinical adoption."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [],
+  "id": "MED:43071451",
+  "pmid": "43071451",
+  "pmcid": null,
+  "doi": "10.2196/91297",
+  "titre": "Predictive Modeling of Sarcopenia Using Machine Learning: Systematic Review and Meta-Analysis.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-23",
+  "auteurs": "Peng Y, Ren Z, Xue L, Zhao M, Bian C, Shen Q, Zhou M, Li B, Jin X.",
+  "types": "meta-analysis systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Background Sarcopenia is an age-related syndrome characterized by muscle loss and functional decline, increasing fall risks. Early identification is crucial, yet convenient and accurate screening tools remain limited in routine practice. Machine learning (ML) models show promise for early sarcopenia detection, but their diagnostic performance and methodological quality have not been systematically quantified. Objective This review aimed to quantitatively evaluate the diagnostic performance of ML models for sarcopenia prediction, compare performance across ML algorithms, and identify key sources of heterogeneity and methodological limitations. Methods PubMed, Web of Science, Embase, and the Cochrane Library were systematically searched from inception to April 15, 2026. Eligible studies developed or validated at least one ML model for sarcopenia and provided sufficient data to reconstruct a 2×2 contingency table. Risk of bias was assessed using PROBAST (Prediction Model Risk of Bias Assessment Tool) developed by Moons et al. The primary analysis used a bivariate random‑effects (Reitsma) model to jointly synthesize sensitivity and specificity. Area under the receiver operating characteristic curve (AUROC) values were pooled using a univariate random‑effects model with the Hartung‑Knapp‑Sidik‑Jonkman (HKSJ) method, and 95% prediction intervals (PIs) were estimated. A secondary analysis incorporated all models using cluster-robust variance estimation (RVE). Subgroup analyses and meta‑regression explored heterogeneity. The certainty of evidence was assessed using the Grading of Recommendations Assessment, Development and Evaluation (GRADE). Results Twenty studies (20 prespecified index models) were included. The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98), with pooled sensitivity of 0.77 (95% CI 0.68-0.83; 95% PI 0.37-0.95) and specificity of 0.88 (95% CI 0.83-0.91; 95% PI 0.62-0.97). Gradient boosting had the highest pooled AUROC (0.92), but CIs overlapped across algorithms. Externally validated models had a pooled AUROC of 0.85, lower than that of internal ones (0.91). The secondary analysis of all 115 models yielded consistent results. Meta‑regression identified no significant covariates. PROBAST assessment revealed that half of the studies were at high risk of bias. Conclusions This review provides the first quantitative synthesis of ML‑based sarcopenia prediction models, with several innovations: (1) it provides algorithm‑stratified pooled estimates of diagnostic accuracy, (2) it formally quantifies performance across algorithms and addresses the unit‑of‑analysis issue through a 2‑tier approach, and (3) it quantifies the performance gap between externally and internally validated models. By identifying specific weaknesses-insufficient external validation, poor calibration reporting, and high risk of bias-this review offers a roadmap for improving future studies. Practically, these models may serve as cost‑effective prescreening tools. However, GRADE certainty was very low, with substantial heterogeneity, insufficient external validation, and high risk of bias, indicating that current models are not yet ready for routine deployment. Future research should prioritize rigorous external validation, transparent reporting, calibration assessment, and clinically implementable design. Trial registration PROSPERO CRD420251267598; https://www.crd.york.ac.uk/PROSPERO/view/CRD420251267598."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "poumons"
+  ],
+  "id": "MED:43083744",
+  "pmid": "43083744",
+  "pmcid": null,
+  "doi": "10.1097/cce.0000000000001506",
+  "titre": "Developing and Externally Validating Machine Learning Models to Forecast Short-Term Risk of Ventilator-Associated Pneumonia.",
+  "revue": "Critical care explorations",
+  "date": "2026-11-24",
+  "auteurs": "Peltekian AK, Liao WT, Guggilla V, Markov N, Senkow K, Liao Z, Kang M, Rasmussen L, Tavernier E, Ehrmann S, Clepp RK, Stoeger T, Walunas T, Choudhary A, Misharin AV, Singer BD, Budinger GRS, Wunderink",
+  "types": "journal article observational study",
+  "acces_libre": false,
+  "resume": "Objectives To develop and externally validate supervised machine learning models using routinely collected ICU electronic health record (EHR) data to predict short-term onset of ventilator-associated pneumonia (VAP) before clinical diagnosis. Design Prospective observational cohort study with temporal model development and external validation. Setting ICUs. Patients Mechanically ventilated adults in a prospective observational cohort (Successful Clinical Response In Pneumonia Therapy [SCRIPT]) who underwent bronchoalveolar lavage (BAL) for suspected pneumonia and had BAL-confirmed adjudicated VAP or adjudicated non-VAP status (n = 507). External validation in the Medical Information Mart for Intensive Care-IV (MIMIC-IV) included mechanically ventilated patients with greater than or equal to 48 hours of continuous invasive ventilation (n = 2681). Additional evaluation was performed in participants from the Inhaled Amikacin vs. Placebo to Prevent Ventilator Associated Pneumonia (AMIKINHAL) randomized trial evaluating inhaled amikacin for VAP prevention, using centrally adjudicated VAP outcomes. Interventions None. Measurements and main results We extracted 36 day-level clinical features (vital signs, ventilator settings, laboratory values, inflammatory markers, and support devices) from the EHR and trained models to predict VAP within 3, 5, or 7 days before BAL-confirmed diagnosis. Unsupervised clustering identified physiologic states enriched for VAP-labeled days. In internal testing, the best performance reached an area under the receiver operating characteristic curve (AUROC) of 0.866 for predicting VAP within 7 days and 0.843 for predicting VAP within 5 days. Predicted risk increased over the days preceding VAP among patients who developed VAP, while remaining low among non-VAP patients. On external validation in MIMIC-IV, the best model achieved an AUROC of 0.817 for predicting VAP within 5 days. Performance was poor in AMIKINHAL, where only nine of 36 features were available. Across models, influential predictors included ventilator duration and mechanics (e.g., positive end-expiratory pressure), platelet count, and inflammatory markers. Conclusions Machine learning models trained on day-level structured ICU data with BAL-confirmed adjudicated labels predicted VAP up to 7 days before clinical diagnosis with strong discrimination and generalized to an external health system when key features were available, supporting future prospective real-time evaluation."
+ },
+ {
+  "score": 13,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "revue systématique",
+  "themes": [
+   "cancer"
+  ],
+  "id": "MED:43077224",
+  "pmid": "43077224",
+  "pmcid": null,
+  "doi": "10.2196/101445",
+  "titre": "Stakeholder Acceptance, Trust, and Implementation of AI in Oncology: Mixed Methods Systematic Review.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-24",
+  "auteurs": "Fitzek S, Pohn B, Mohebbi A, Ardakani AA, Choi KA, Hatamikia S.",
+  "types": "systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Background AI is entering oncology workflows faster than evidence on stakeholder acceptance, trust, and sustained use. Existing syntheses rarely distinguish anticipated attitudes from actual use across oncology stakeholders. Objective The aim of the study is to synthesize primary empirical evidence on stakeholder acceptance, trust, and implementation of AI in oncology and examine variation by stakeholder group, clinical task, AI exposure, and implementation maturity. Methods We conducted a Joanna Briggs Institute-guided mixed methods systematic review with convergent integrated synthesis; the protocol was registered before formal eligibility screening. Eight databases were searched without date or language limits (August 6-9, 2026), yielding 46,206 records and 31,802 unique records. Title and abstract screening used 2 balanced primary allocations, joint bidirectional readjudication, and blinded verification of a stratified 10% (n=3182) sample. Full-text assessment, extraction, and critical appraisal were dual independent. Acceptance/Trust modes and F1-F8 coverage were independently coded across 309 studies and reconciled. Eight integrated findings were anchored to the nonadoption, abandonment, scale-up, spread, and sustainability framework; an emergent economic finding was reported separately. Adjusted stage models controlled for study design, publication format, and publication period; robustness analyses examined screening provenance and appraisal sensitivity. Results We included 309 primary empirical studies; 187 (60.5%) were published in 2025 or 2026. Exposure ranged from hypothetical opinion to real-world implementation (n=82 studies), but only 6 described routine use. Acceptance was empirically assessed in 267 studies and Trust in 127. Relative to anticipatory stage 1, Acceptance assessment was less frequent in evaluated-interaction stage 2 (adjusted odds ratio [aOR] 0.07, 95% CI 0.02-0.25; P Conclusions In oncology, the AI evidence profile appears to differ from anticipated use to implementation. Acceptance was empirically assessed most often before deployment; later-stage studies more often examined workflow and less often examined transparency and governance. The challenge is whether favorable attitudes and early deployment translate into calibrated, governed, and sustained routine use. An interpretive stage-specific model identifies assessment priorities across exposure and implementation contexts, but is not a validated causal or predictive model. Later-stage evaluations should retain measurement of Acceptance, trust calibration, governance, durability, and workflow outcomes. Trial registration OSF Registries osf.io/nmep8; https://osf.io/nmep8."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "multicentrique"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "chirurgie"
+  ],
+  "id": "MED:43025198",
+  "pmid": "43025198",
+  "pmcid": null,
+  "doi": "10.1016/j.jocn.2026.112382",
+  "titre": "Predicting outcomes in microdiscectomy surgery with applied machine learning.",
+  "revue": "Journal of clinical neuroscience : official journal of the Neurosurgical Society of Australasia",
+  "date": "2026-11-13",
+  "auteurs": "Roadley JL, Buchlak QD, Shah J, Goldschlager T.",
+  "types": "multicenter study randomized controlled trial journal article",
+  "acces_libre": false,
+  "resume": "Background Microdiscectomy surgery is a common procedure used to treat lumbar disc herniation (LDH), a condition causing significant lower back pain and sciatica. Despite its widespread use, outcomes vary, with some patients experiencing re herniation. Accurate prediction of postoperative outcomes could improve patient counselling and treatment planning. This study explores the application of machine learning models to predict re-herniation at 12 months using preoperative clinical and demographic data. Methods This multi-centered study used data from a randomised controlled trial involving 211 patients who underwent microdiscectomy. After addressing missing data, 152 cases were analysed. Logistic regression was first applied to determine significant covariates, followed by the development of supervised learning classifiers, including Random Forest, AdaBoost, and Neural Networks. Model performance was evaluated using metrics such as the Matthews correlation coefficient (MCC) and area under the receiver operating characteristics curve (ROC-AUC). Results Significant predictors of re-herniation included smoking status and emergency department presentations. Smokers were 11 times more likely to experience re herniation, and those with frequent ED visits were 19 times more likely to do so. The Random Forest model achieved the highest predictive performance, with an MCC of 0.47 and an AUC of 0.69. Application of SMOTE improved sensitivity but decreased specificity in most models. Conclusions Machine learning models, particularly Random Forest, demonstrated moderate predictive ability for re-herniation following microdiscectomy. Significant preoperative factors like smoking and ED visits were strongly associated with poor outcomes. These findings suggest that machine learning can enhance clinical decision-making by identifying high-risk patients, allowing for more personalised treatment strategies."
+ }
+]

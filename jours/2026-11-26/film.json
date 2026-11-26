@@ -1,0 +1,363 @@
+{
+ "id": "2026-11-26",
+ "sentences": [
+  {
+   "text": "Une IA peut-elle repérer la fonte musculaire qui fait chuter les seniors ?",
+   "partie": "accroche",
+   "box": "musculaire"
+  },
+  {
+   "text": "La sarcopénie est une perte de muscle liée à l'âge, qui fait baisser les capacités et augmente le risque de chute.",
+   "partie": "contexte",
+   "box": "sarcopénie"
+  },
+  {
+   "text": "Pour la dépister, il faut repérer tôt cette fonte musculaire, avant la première chute.",
+   "partie": "contexte",
+   "box": "repérer",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Le problème, c'est que les outils de dépistage simples et précis restent limités en routine.",
+   "partie": "probleme",
+   "box": "outils",
+   "source": "Early identification is crucial, yet convenient and accurate screening tools remain limited in routine practice."
+  },
+  {
+   "text": "Pourtant, repérer tôt est décisif, car la perte de muscle augmente le risque de chutes.",
+   "partie": "probleme",
+   "box": "décisif,",
+   "source": "Sarcopenia is an age-related syndrome characterized by muscle loss and functional decline, increasing fall risks. Early identification is crucial",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "C'est là qu'intervient l'IA : des modèles d'apprentissage automatique qui prédisent la sarcopénie.",
+   "partie": "ia",
+   "box": "modèles",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Peut-on se fier à ces modèles pour prédire la sarcopénie ?",
+   "partie": "question",
+   "box": "fier",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, une méta-analyse de vingt études, trouvées dans les grandes bases de données jusqu'en avril.",
+   "partie": "etude",
+   "box": "méta-analyse"
+  },
+  {
+   "text": "Concrètement, pour chaque personne, un modèle d'apprentissage automatique devait dire si elle a une sarcopénie.",
+   "partie": "methode",
+   "box": "modèle"
+  },
+  {
+   "text": "Ensuite, ils ont regroupé les résultats par un calcul statistique, puis noté le risque de biais de chaque étude.",
+   "partie": "methode",
+   "box": "regroupé",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : l'aire sous la courbe regroupée atteint zéro virgule quatre-vingt-neuf, tout près du maximum de un.",
+   "partie": "resultat",
+   "box": "l'aire",
+   "display": "Résultat : l'aire sous la courbe regroupée atteint 0,89, tout près du maximum de 1."
+  },
+  {
+   "text": "Et son intervalle de confiance va de zéro virgule quatre-vingt-deux à zéro virgule quatre-vingt-treize.",
+   "partie": "resultat",
+   "box": "intervalle",
+   "display": "Et son intervalle de confiance va de 0,82 à 0,93."
+  },
+  {
+   "text": "Autrement dit, ils repèrent soixante-dix-sept pour cent des personnes atteintes et écartent quatre-vingt-huit pour cent des personnes saines.",
+   "partie": "resultat",
+   "box": "atteintes",
+   "display": "Autrement dit, ils repèrent 77 % des personnes atteintes et écartent 88 % des personnes saines.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Mais d'une étude à l'autre, l'aire sous la courbe pourrait aller de zéro virgule cinquante-quatre à zéro virgule quatre-vingt-dix-huit.",
+   "partie": "concret",
+   "box": "étude",
+   "display": "Mais d'une étude à l'autre, l'aire sous la courbe pourrait aller de 0,54 à 0,98.",
+   "source": "The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98)"
+  },
+  {
+   "text": "Surtout, les modèles validés sur d'autres patients obtiennent zéro virgule quatre-vingt-cinq, contre zéro virgule quatre-vingt-onze en validation interne.",
+   "partie": "concret",
+   "box": "validés",
+   "display": "Surtout, les modèles validés sur d'autres patients obtiennent 0,85, contre 0,91 en validation interne.",
+   "source": "Externally validated models had a pooled AUROC of 0.85, lower than that of internal ones (0.91)"
+  },
+  {
+   "text": "Quant au meilleur algorithme, le gradient boosting arrive en tête avec zéro virgule quatre-vingt-douze, mais les intervalles se chevauchent.",
+   "partie": "concret",
+   "box": "gradient",
+   "display": "Quant au meilleur algorithme, le gradient boosting arrive en tête avec 0,92, mais les intervalles se chevauchent.",
+   "source": "Gradient boosting had the highest pooled AUROC (0.92), but CIs overlapped across algorithms.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : la moitié des études ont un risque de biais élevé, et la confiance reste très faible.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : ces modèles pourraient servir de pré-dépistage, mais pas avant d'être validés ailleurs.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "box": "étude",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "box": "Papercraft.",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_number",
+    "cam_at": 0,
+    "header": "Méta-analyse · sarcopénie · 20 études",
+    "number": "20",
+    "unit": "études",
+    "caption": "Des IA qui prédisent la fonte musculaire : peut-on s'y fier ?",
+    "caption_at": "s0:fonte",
+    "visual": "sheets",
+    "footnote": "IA · dépistage de la perte de muscle"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s1:perte",
+    "title": "Une perte de muscle",
+    "steps": [
+     {
+      "icon": "user",
+      "label": "Perte de muscle liée à l'âge",
+      "at": "s1:perte"
+     },
+     {
+      "icon": "chart",
+      "label": "Des capacités qui baissent",
+      "at": "s1:baisser"
+     },
+     {
+      "icon": "clock",
+      "label": "Repérer tôt",
+      "note": "avant la chute",
+      "at": "s2:repérer",
+      "note_at": "s2:première"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s3:outils",
+    "title": "Un repérage qui coince",
+    "steps": [
+     {
+      "icon": "magnifier",
+      "label": "Outils simples et précis",
+      "note": "limités en routine",
+      "at": "s3:outils",
+      "note_at": "s3:limités"
+     },
+     {
+      "icon": "check",
+      "label": "Un repérage tôt décisif",
+      "at": "s4:décisif"
+     },
+     {
+      "icon": "user",
+      "label": "Plus de risque de chutes",
+      "at": "s4:chutes"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s5-0.1",
+    "mark_at": "s5:modèles",
+    "title": "Des modèles qui prédisent",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "Apprentissage automatique",
+      "at": "s5:modèles"
+     },
+     {
+      "icon": "brain",
+      "label": "Prédit la sarcopénie",
+      "at": "s5:prédisent"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Peut-on se fier à ces modèles pour prédire la sarcopénie ?",
+  "italic": "fier",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Méta-analyse",
+      "at": "s7:méta-analyse"
+     },
+     {
+      "label": "Études",
+      "value": "20 études",
+      "at": "s7:vingt",
+      "accent": true
+     },
+     {
+      "label": "Recherche",
+      "value": "Grandes bases de données",
+      "at": "s7:bases"
+     },
+     {
+      "label": "Jusqu'en",
+      "value": "Avril",
+      "at": "s7:avril"
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s8-0.3",
+    "input_icon": "user",
+    "input_label": "Une personne à évaluer",
+    "ai_label": "Cherche une sarcopénie",
+    "output_label": "Sarcopénie : oui ou non",
+    "modality": "donnees",
+    "at": "s8:personne",
+    "core_at": "s8:modèle",
+    "out_at": "s8:sarcopénie"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s9-0.3",
+    "title": "Comment ils ont regroupé",
+    "points": [
+     {
+      "text": "Résultats regroupés par un calcul statistique",
+      "at": "s9:regroupé"
+     },
+     {
+      "text": "Risque de biais noté pour chaque étude",
+      "at": "s9:risque"
+     }
+    ]
+   },
+   {
+    "type": "roc_curve",
+    "cam_at": "s10-0.3",
+    "auc": {
+     "value": "0,89",
+     "num": 0.89,
+     "at": "s10:atteint",
+     "note": "IC 95 % : 0,82 à 0,93"
+    },
+    "curve_at": "s10:tout"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s12-0.3",
+    "title": "Ce que les modèles repèrent",
+    "metrics": [
+     {
+      "label": "Atteints repérés",
+      "value": "77",
+      "num": 77,
+      "unit": "%",
+      "at": "s12:repèrent",
+      "accent": true
+     },
+     {
+      "label": "Sains écartés",
+      "value": "88",
+      "num": 88,
+      "unit": "%",
+      "at": "s12:écartent"
+     }
+    ]
+   },
+   {
+    "type": "findings",
+    "cam_at": "s13-0.3",
+    "title": "Ce qui nuance le résultat",
+    "items": [
+     {
+      "icon": "chart",
+      "label": "D'une étude à l'autre",
+      "detail": "Aire attendue de 0,54 à 0,98",
+      "detail_at": "s13:cinquante-quatre",
+      "at": "s13:étude"
+     },
+     {
+      "icon": "users",
+      "label": "Sur d'autres patients",
+      "detail": "0,85, contre 0,91 en interne",
+      "detail_at": "s14:obtiennent",
+      "tendance": "moins",
+      "accent": true,
+      "at": "s14:validés"
+     },
+     {
+      "icon": "chip",
+      "label": "Meilleur algorithme",
+      "detail": "Gradient boosting : 0,92, sans écart net",
+      "detail_at": "s15:chevauchent",
+      "at": "s15:gradient"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s16-0.25",
+    "text": "Attention : la moitié des études ont un risque de biais élevé, et la confiance reste très faible.",
+    "italic": "moitié"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s17-0.25",
+    "text": "À retenir : ces modèles pourraient servir de pré-dépistage, mais pas avant d'être validés ailleurs.",
+    "italic": "validés"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s17.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s19",
+  "button": "Suivre",
+  "button_at": "s19+0.6",
+  "click_at": "s19+1.6",
+  "source": "Peng et al. · JMIR · novembre 2026",
+  "doi": "doi:10.2196/91297",
+  "source_at": "s18:vérifiée-0.2"
+ }
+}

@@ -1,0 +1,72 @@
+[
+ {
+  "id": "f1",
+  "valeur": 20,
+  "citation": "Twenty studies (20 prespecified index models) were included"
+ },
+ {
+  "id": "f2",
+  "valeur": 0.89,
+  "citation": "The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98), with pooled sensitivity of 0.77 (95% CI 0.68-0.83; 95% PI 0.37-0.95) and specificity of 0.88 (95% CI 0.83-0.91; 95% PI 0.62-0.97)"
+ },
+ {
+  "id": "f3",
+  "valeur": 0.82,
+  "citation": "The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98), with pooled sensitivity of 0.77 (95% CI 0.68-0.83; 95% PI 0.37-0.95) and specificity of 0.88 (95% CI 0.83-0.91; 95% PI 0.62-0.97)"
+ },
+ {
+  "id": "f4",
+  "valeur": 0.93,
+  "citation": "The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98), with pooled sensitivity of 0.77 (95% CI 0.68-0.83; 95% PI 0.37-0.95) and specificity of 0.88 (95% CI 0.83-0.91; 95% PI 0.62-0.97)"
+ },
+ {
+  "id": "f5",
+  "valeur": 0.54,
+  "citation": "The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98), with pooled sensitivity of 0.77 (95% CI 0.68-0.83; 95% PI 0.37-0.95) and specificity of 0.88 (95% CI 0.83-0.91; 95% PI 0.62-0.97)"
+ },
+ {
+  "id": "f6",
+  "valeur": 0.98,
+  "citation": "The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98), with pooled sensitivity of 0.77 (95% CI 0.68-0.83; 95% PI 0.37-0.95) and specificity of 0.88 (95% CI 0.83-0.91; 95% PI 0.62-0.97)"
+ },
+ {
+  "id": "f7",
+  "valeur": 0.77,
+  "citation": "The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98), with pooled sensitivity of 0.77 (95% CI 0.68-0.83; 95% PI 0.37-0.95) and specificity of 0.88 (95% CI 0.83-0.91; 95% PI 0.62-0.97)"
+ },
+ {
+  "id": "f8",
+  "valeur": 0.88,
+  "citation": "The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98), with pooled sensitivity of 0.77 (95% CI 0.68-0.83; 95% PI 0.37-0.95) and specificity of 0.88 (95% CI 0.83-0.91; 95% PI 0.62-0.97)"
+ },
+ {
+  "id": "f9",
+  "valeur": 0.85,
+  "citation": "Externally validated models had a pooled AUROC of 0.85, lower than that of internal ones (0.91)"
+ },
+ {
+  "id": "f10",
+  "valeur": 0.91,
+  "citation": "Externally validated models had a pooled AUROC of 0.85, lower than that of internal ones (0.91)"
+ },
+ {
+  "id": "f11",
+  "valeur": 0.92,
+  "citation": "Gradient boosting had the highest pooled AUROC (0.92), but CIs overlapped across algorithms"
+ },
+ {
+  "id": "f12",
+  "valeur": 77,
+  "calcul": "f7*100"
+ },
+ {
+  "id": "f13",
+  "valeur": 88,
+  "calcul": "f8*100"
+ },
+ {
+  "id": "f14",
+  "valeur": 95,
+  "citation": "The pooled AUROC was 0.89 (95% CI 0.82-0.93; 95% PI 0.54-0.98)"
+ }
+]

@@ -1,0 +1,5 @@
+Des IA qui prédisent la sarcopénie ont une bonne performance moyenne, mais les modèles validés sur d'autres patients obtiennent un score plus bas.
+Cette méta-analyse a regroupé 20 études de modèles d'apprentissage automatique pour repérer la perte de muscle liée à l'âge. L'aire sous la courbe regroupée atteint 0,89 (IC 95 % : 0,82 à 0,93), avec 77 % des personnes atteintes repérées et 88 % des personnes saines écartées. Les modèles validés en externe obtiennent 0,85, contre 0,91 en interne, et la confiance dans les preuves reste très faible.
+Et dans votre pratique, un outil de pré-dépistage de la sarcopénie vous aiderait-il à repérer plus tôt les patients à risque de chute ?
+Source : Peng et al., Journal of Medical Internet Research, novembre 2026. https://doi.org/10.2196/91297
+#IA #Sarcopénie #Gériatrie #Santé

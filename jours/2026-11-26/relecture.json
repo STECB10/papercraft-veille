@@ -1,0 +1,15 @@
+{
+ "verdict": "corrigé",
+ "resume": "Film fidèle ; post corrigé : comparaison externe/interne entre modèles différents, plus présentée comme une baisse.",
+ "points": [
+  {
+   "gravite": "bloquant",
+   "ou": "post",
+   "probleme": "La baisse « quand on les teste » suppose les mêmes modèles ; c'est une comparaison de sous-groupes, et la méta-régression n'a trouvé aucune covariable significative.",
+   "preuve": "Externally validated models had a pooled AUROC of 0.85, lower than that of internal ones (0.91). / Meta‑regression identified no significant covariates.",
+   "avant": "mais elle baisse quand on les teste sur d'autres patients. / Mais elle tombe à 0,85 en validation externe, contre 0,91 en interne,",
+   "apres": "mais les modèles validés sur d'autres patients obtiennent un score plus bas. / Les modèles validés en externe obtiennent 0,85, contre 0,91 en interne,"
+  }
+ ],
+ "phrases_modifiees": 0
+}
