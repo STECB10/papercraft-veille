@@ -1,0 +1,15 @@
+{
+ "verdict": "corrigé",
+ "resume": "Chiffres et sens OK ; la baisse à 0,607 vient d'un autre essai (AMIKINHAL), plus seulement des 9 données.",
+ "points": [
+  {
+   "gravite": "bloquant",
+   "ou": "phrase 15, planche paper 8, post",
+   "probleme": "Le 0,607 vient d'une autre population (essai AMIKINHAL, prévision à 3 jours), pas des mêmes patients avec moins de données.",
+   "preuve": "AMIKINHAL had only nine of our 36 features (WBC, CRRT, F io 2 , oxygen saturation, Pa o 2 , creatinine, PEEP, days on ventilator, and temperature) with differences in feature distribution",
+   "avant": "Attention : avec neuf données sur trente-six seulement, l'aire tombe à zéro virgule six cent sept.",
+   "apres": "Attention : dans un essai à neuf données sur trente-six, l'aire tombe à zéro virgule six cent sept."
+  }
+ ],
+ "phrases_modifiees": 1
+}

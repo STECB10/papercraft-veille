@@ -1,0 +1,102 @@
+[
+ {
+  "id": "f1",
+  "valeur": 507,
+  "citation": "In 507 mechanically ventilated adults"
+ },
+ {
+  "id": "f2",
+  "valeur": 2018,
+  "citation": "from June 2018 to July 2023"
+ },
+ {
+  "id": "f3",
+  "valeur": 2023,
+  "citation": "from June 2018 to July 2023"
+ },
+ {
+  "id": "f4",
+  "valeur": 261,
+  "citation": "261 (51.5%) experienced a BAL-confirmed episode of VAP"
+ },
+ {
+  "id": "f5",
+  "valeur": 246,
+  "citation": "while 246 patients (48.5%) underwent BAL for suspected pneumonia"
+ },
+ {
+  "id": "f6",
+  "valeur": 36,
+  "citation": "We extracted 36 day-level clinical features"
+ },
+ {
+  "id": "f7",
+  "valeur": 3,
+  "citation": "predict VAP within 3, 5, or 7 days before BAL-confirmed diagnosis"
+ },
+ {
+  "id": "f8",
+  "valeur": 5,
+  "citation": "predict VAP within 3, 5, or 7 days before BAL-confirmed diagnosis"
+ },
+ {
+  "id": "f9",
+  "valeur": 7,
+  "citation": "predict VAP within 3, 5, or 7 days before BAL-confirmed diagnosis"
+ },
+ {
+  "id": "f10",
+  "valeur": 0.866,
+  "citation": "LSTM (binned) | 0.866 (0.820–0.909 )"
+ },
+ {
+  "id": "f11",
+  "valeur": 0.82,
+  "citation": "LSTM (binned) | 0.866 (0.820–0.909 )"
+ },
+ {
+  "id": "f12",
+  "valeur": 0.909,
+  "citation": "LSTM (binned) | 0.866 (0.820–0.909 )"
+ },
+ {
+  "id": "f13",
+  "valeur": 82.4,
+  "citation": "the 5-day raw-feature random forest achieved 82.4% sensitivity, 71.4% specificity"
+ },
+ {
+  "id": "f14",
+  "valeur": 71.4,
+  "citation": "the 5-day raw-feature random forest achieved 82.4% sensitivity, 71.4% specificity"
+ },
+ {
+  "id": "f15",
+  "valeur": 2681,
+  "citation": "(n = 2681)"
+ },
+ {
+  "id": "f16",
+  "valeur": 0.817,
+  "citation": "On external validation in MIMIC-IV, the best model achieved an AUROC of 0.817 for predicting VAP within 5 days"
+ },
+ {
+  "id": "f17",
+  "valeur": 0.528,
+  "citation": "(area under the curve [AUC], 0.528"
+ },
+ {
+  "id": "f18",
+  "valeur": 0.607,
+  "citation": "resulted in a 0.607 (0.579–0.634) AUC for predicting VAP within 3 days"
+ },
+ {
+  "id": "f19",
+  "valeur": 28,
+  "citation": "longer ICU stays (28.0 vs. 9.0 d)"
+ },
+ {
+  "id": "f20",
+  "valeur": 9,
+  "citation": "longer ICU stays (28.0 vs. 9.0 d)"
+ }
+]

@@ -1,0 +1,5 @@
+Des modèles d'IA ont prévu une pneumonie sous respirateur jusqu'à 7 jours avant le diagnostic, mais pas partout.
+Cette cohorte a suivi 507 adultes sous ventilation en réanimation. Chaque jour, 36 données entrent dans le modèle, qui estime le risque de pneumonie à venir. L'aire sous la courbe atteint 0,866 à 7 jours (IC : 0,820 à 0,909) et reste à 0,817 dans un autre hôpital, mais tombe à 0,607 dans un autre essai, où seules 9 données sur 36 sont disponibles.
+Et dans votre service, une alerte précoce de pneumonie changerait-elle votre façon de surveiller les patients ventilés ?
+Source : Peltekian et al., Critical Care Explorations, novembre 2026. https://doi.org/10.1097/cce.0000000000001506
+#IA #Réanimation #Pneumonie #Santé

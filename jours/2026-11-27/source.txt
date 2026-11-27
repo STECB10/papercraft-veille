@@ -1,0 +1,274 @@
+TITRE : Developing and Externally Validating Machine Learning Models to Forecast Short-Term Risk of Ventilator-Associated Pneumonia.
+REVUE : Critical care explorations · 2026-11-24
+DOI : 10.1097/cce.0000000000001506
+
+RÉSUMÉ :
+Objectives To develop and externally validate supervised machine learning models using routinely collected ICU electronic health record (EHR) data to predict short-term onset of ventilator-associated pneumonia (VAP) before clinical diagnosis. Design Prospective observational cohort study with temporal model development and external validation. Setting ICUs. Patients Mechanically ventilated adults in a prospective observational cohort (Successful Clinical Response In Pneumonia Therapy [SCRIPT]) who underwent bronchoalveolar lavage (BAL) for suspected pneumonia and had BAL-confirmed adjudicated VAP or adjudicated non-VAP status (n = 507). External validation in the Medical Information Mart for Intensive Care-IV (MIMIC-IV) included mechanically ventilated patients with greater than or equal to 48 hours of continuous invasive ventilation (n = 2681). Additional evaluation was performed in participants from the Inhaled Amikacin vs. Placebo to Prevent Ventilator Associated Pneumonia (AMIKINHAL) randomized trial evaluating inhaled amikacin for VAP prevention, using centrally adjudicated VAP outcomes. Interventions None. Measurements and main results We extracted 36 day-level clinical features (vital signs, ventilator settings, laboratory values, inflammatory markers, and support devices) from the EHR and trained models to predict VAP within 3, 5, or 7 days before BAL-confirmed diagnosis. Unsupervised clustering identified physiologic states enriched for VAP-labeled days. In internal testing, the best performance reached an area under the receiver operating characteristic curve (AUROC) of 0.866 for predicting VAP within 7 days and 0.843 for predicting VAP within 5 days. Predicted risk increased over the days preceding VAP among patients who developed VAP, while remaining low among non-VAP patients. On external validation in MIMIC-IV, the best model achieved an AUROC of 0.817 for predicting VAP within 5 days. Performance was poor in AMIKINHAL, where only nine of 36 features were available. Across models, influential predictors included ventilator duration and mechanics (e.g., positive end-expiratory pressure), platelet count, and inflammatory markers. Conclusions Machine learning models trained on day-level structured ICU data with BAL-confirmed adjudicated labels predicted VAP up to 7 days before clinical diagnosis with strong discrimination and generalized to an external health system when key features were available, supporting future prospective real-time evaluation.
+
+TEXTE INTÉGRAL :
+> KEY POINTS
+ Question : Can routinely collected ICU electronic health record data predict ventilator-associated pneumonia (VAP) before clinical diagnosis?
+ Findings : In 507 mechanically ventilated adults, machine learning models predicted VAP up to 7 days before diagnosis, with area under the receiver operating characteristic curves (AUROCs) of 0.866 at 7 days and 0.843 at 5 days. Performance remained strong in Medical Information Mart for Intensive Care-IV (AUROC, 0.817 at 5 d) but was attenuated with limited feature availability.
+ Meaning : Structured daily ICU data may enable earlier identification of VAP and support prospective evaluation of real-time clinical decision support.
+ Ventilator-associated pneumonia (VAP) is a common and serious complication among patients requiring mechanical ventilation (). It is associated with increased morbidity, extended ICU stays, and elevated mortality risk (). Despite established guidelines and prevention strategies, early VAP detection remains challenging, as subtle physiologic changes may be masked by the complexity of critical illness. Current clinical tools lack the temporal use and predictive specificity needed to surface early VAP risk in real time (). As a result, clinicians frequently rely on subjective assessments or reactive thresholds, which may not capture emerging infections ().
+ Patients requiring mechanical ventilation are closely monitored for infection, with antibiotics typically initiated once VAP is suspected, but often only after clinical deterioration and organ dysfunction. Prophylactic and preventive therapies such as inhaled antibiotics (), selective gastric decontamination (), and systemic antibiotics () to reduce VAP in certain patient populations have been found beneficial in some settings (), but widespread use may increase antibiotic-related complications and antimicrobial resistance. A risk stratification strategy for VAP using electronic health record (EHR) predictive models could identify high-risk patients and assist clinicians in the judicious use of prophylactic therapies to prevent VAP.
+ Machine learning (ML) has shown promise in predicting sepsis (), respiratory failure (), and mortality (). However, few studies have focused specifically on early VAP prediction. Furthermore, existing models use static features or coarse temporal resolutions (), limiting clinical utility. We hypothesized that high-quality ICU data, including gold-standard VAP diagnosis based on bronchoalveolar lavage (BAL) fluid sampling and clinical adjudication, could support ML models to forecast VAP sufficiently early in the patient’s ICU course to be clinically actionable. Some of this work was previously presented at the 2025 American Thoracic Society Meeting ().
+ METHODS
+ Cohort and Data Source
+ We analyzed data from patients from the Successful Clinical Response In Pneumonia Therapy (SCRIPT) cohort (), a prospective observational study of patients on mechanical ventilation who undergo a BAL for suspected pneumonia. We included data collected from June 2018 to July 2023. Patients’ families or authorized representatives provided informed consent for participation. The study, titled “Successful Clinical Response In Pneumonia Therapy (SCRIPT),” was approved by the Northwestern University Institutional Review Board (STU00204868) on July 27, 2017. All study procedures were conducted in accordance with the ethical standards of the responsible institutional committee on human experimentation and with the principles of the Declaration of Helsinki of 1975. We used the “CarpeDiem” dataset (), a structured, day-level ICU database that includes vitals, laboratory measurements, support measures, medications, BAL results, and outcome annotations for SCRIPT patients. Data were abstracted from the EHR and study Research Electronic Data Capture forms, as previously described ().
+ Pneumonia Adjudication and Labels
+ At our hospital, clinicians routinely obtain BAL to evaluate for pneumonia early on in clinical decompensation, with an excellent safety profile (). These were used to label VAP cases, with details of adjudication using a standardized multireviewer adjudication process described in the Supplement ( https://links.lww.com/CCX/B699 ) and our previous work (). To model VAP onset using the clearest cases, we developed labels based on the temporal relationship between intubated days and BAL-confirmed events ( Fig. A ). As VAP can only develop in intubated patients, only intubated days were used for modeling. Intubated days occurring 3, 5, or 7 days before a confirmed VAP or non-VAP event were labeled as positive or negative, respectively. Additional labeling details are provided in the Supplement ( https://links.lww.com/CCX/B699 ).
+ Figure 1.
+ Overview of the machine learning pipeline for ventilator-associated pneumonia (VAP) onset prediction. A , Cohort derivation and labeling from bronchoalveolar lavage (BAL)-confirmed VAP or non-VAP cases with 3-, 5-, and 7-d windows. B , Data preprocessing with feature extraction, normalization, and missingness handling. C , Model development using logistic regression, random forest, and eXtreme Gradient Boosting (XGBoost) with Optuna tuning. D , Temporal splitting and evaluation: 10-fold patient-grouped cross-validation (CV) on the training set with hyperparameter optimization. Temporal train/test split (90/10; test = most recent patients). Within training, 10-fold GroupKFold CV prevents patient leakage. Each fold optimizes hyperparameters (25 Optuna trials) and evaluates on fold validation data. The hyperparameter set achieving the highest mean validation area under the curve across all folds is selected, and a final model is trained on all training data using these selected hyperparameters and evaluated on the temporal test set. AMIKINHAL = Inhaled Amikacin vs. Placebo to Prevent Ventilator Associated Pneumonia, LSTM = Long Short-Term Memory, MIMIC-IV = Medical Information Mart for Intensive Care-IV.
+ Features
+ Our model used 36 clinical features spanning demographics, vital signs, neurologic status, respiratory mechanics, blood gas values, hematology, blood chemistry, inflammatory markers, medications and interventions, and critical care flags (full list in Supplement, https://links.lww.com/CCX/B699 ). We performed outlier checks, unit harmonization, and quality checks as previously described (). Data missingness is a characteristic of real-world EHR data (); the proportion of missingness across features is summarized in Supplementary Table S1 ( https://links.lww.com/CCX/B699 ). The models we used are either inherently capable of handling missing data, such as eXtreme Gradient Boosting (XGBoost), or we performed quartile binning for continuous variables, mask encoding for missingness, and one-hot encoding for categorical variables ( Fig. B ) (, ).
+ Sequential Organ Failure Assessment Trends to Predict VAP
+ Previous work suggested that trends in Sequential Organ Failure Assessment (SOFA) scores could predict the development of subsequent VAP (). We examined this by calculating the change in SOFA score between the first and second intubated days for each patient and examining its relationship with subsequent VAP.
+ Unsupervised Phenotyping and Temporal Dynamics
+ We explored latent clinical states associated with or without subsequent VAP through unsupervised clustering of daily patient-level feature vectors. Each data point represented a single intubated day and 36 features. Hierarchical clustering with Ward’s linkage was used to generate patient-day clusters, as described in previous work (). Dimensionality reduction with Uniform Manifold Approximation and Projection (UMAP) was applied to visualize cluster structure and the distribution of VAP and non-VAP days in the embedded space.
+ Temporal Feature Dynamics
+ To characterize deterioration in the days preceding VAP onset, we identified patients with exactly 5 consecutive intubated days leading up to their first BAL-confirmed pneumonia event. The 36 clinical features were extracted and z score normalized across the cohort. We computed the average value of each feature by day (from day –5 to day –1) and visualized this using a heatmap of feature intensities over time. In addition to magnitude-based trends, we calculated slopes to analyze the steepness of change for each feature between consecutive days.
+ Machine Learning, Model Optimization, and Feature Importance
+ To assess predictive performance, we implemented an ML framework ( Fig. C ) comprising six model configurations: binned-feature logistic regression (), raw-feature random forest (), XGBoost (), and Long Short-Term Memory (LSTM) (). For each VAP/non-VAP prediction horizon, data were temporally split into 90% for model development and 10% for held-out testing. Logistic regression, random forest, and XGBoost models were trained using 10-fold patient-level cross-validation, while the LSTM was trained on longitudinal sequences of daily feature vectors. Patient-level splits identical to those used for the snapshot-based models were applied to prevent information leakage across sequences. Hyperparameter optimization for all models was performed using Bayesian optimization with Optuna (), with 50 trials per model per task ( Fig. D ). Model performance was evaluated on the held-out test set using standard classification metrics, including area under the receiver operating characteristic curve (AUROC), area under the precision-recall curve (AUPRC), accuracy, and F1 score. Ninety-five percent CIs for all metrics were calculated using bootstrap resampling with 1000 iterations (). Calibration was assessed using calibration curves, calibration slope and intercept, and Brier scores, with additional Brier score decompositions described in the Supplementary Methods ( https://links.lww.com/CCX/B699 ). Temporal trends in predicted VAP probability and model interpretability were also assessed using model-specific feature-importance methods, including SHapley Additive exPlanations and permutation importance. All interpretability analyses were performed on held-out test data. Additional details on modeling are provided in Supplementary Methods ( https://links.lww.com/CCX/B699 ). We followed the Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis + Artificial Intelligence checklist ().
+ External Validation
+ We externally validated our models using the Medical Information Mart for Intensive Care-IV (MIMIC-IV) (), which includes ICU admissions from the Beth Israel Deaconess Medical Center from 2008 to 2022, and the AMIKINHAL randomized controlled trial of inhaled amikacin for VAP prevention (). We labeled VAP cases using similar logic as Agard et al (), while VAP in AMIKINHAL was determined through standardized data collection and central adjudication. d -dimer, procalcitonin, and immunocompromised status were unavailable in MIMIC-IV and were encoded as missing during external validation. Additional details on external datasets and data processing are available in the Supplement ( https://links.lww.com/CCX/B699 ).
+ RESULTS
+ Cohort
+ Of the 507 mechanically ventilated patients from SCRIPT included in this cohort, 261 (51.5%) experienced a BAL-confirmed episode of VAP, while 246 patients (48.5%) underwent BAL for suspected pneumonia but were adjudicated not to have VAP (“non-VAP”). Detailed inclusion criteria, episode adjudication, and exclusions are described in the Supplement ( https://links.lww.com/CCX/B699 ). The most frequently detected pathogens were Staphylococcus aureus and Pseudomonas aeruginosa , followed by Enterococcus faecalis , Klebsiella pneumoniae group, and Escherichia coli ( Supplementary Table S2 , https://links.lww.com/CCX/B699 ). A cohort flow diagram is provided in Supplementary Figure S1 ( https://links.lww.com/CCX/B699 ), and example pneumonia episode timelines are shown in Supplementary Figure S2 ( https://links.lww.com/CCX/B699 ).
+ Baseline demographic and clinical outcomes of the VAP and non-VAP cohorts are presented in Table . VAP patients had significantly longer ICU stays (28.0 vs. 9.0 d), longer ventilation (27.0 vs. 6.0 d), and higher rates of ECMO use (33.7% vs. 11.8%) and tracheostomy (51.0% vs. 9.3%) than non-VAP patients (all p &lt; 0.001). Discharge home was less common among VAP patients (13.4% vs. 32.9%; p &lt; 0.001).
+ TABLE 1.
+ Baseline Demographics and Clinical Characteristics Stratified by Ventilator-Associated Pneumonia Status
+ Characteristic | Overall | Did Not Have VAP | Had VAP | 
+ n 
+ | 507 | 246 | 261 | 
+ Age, yr, median (Q1–Q3) | 62.0 (51.0–71.0) | 61.5 (50.0–72.0) | 62.0 (51.0–70.0) | 
+ Gender, n (%) | 
+  Female | 189 (37.3) | 110 (44.7) | 79 (30.3) | 
+  Male | 318 (62.7) | 136 (55.3) | 182 (69.7) | 
+ Race, n (%) | 
+  White | 310 (61.1) | 159 (64.6) | 151 (57.9) | 
+  Black or African American | 103 (20.3) | 49 (19.9) | 54 (20.7) | 
+  Asian | 15 (3.0) | 7 (2.8) | 8 (3.1) | 
+  Unknown/not reported | 79 (15.6) | 31 (12.6) | 48 (18.4) | 
+ Ethnicity, n (%) | 
+  Hispanic or Latino | 94 (18.5) | 31 (12.6) | 63 (24.1) | 
+  Not Hispanic or Latino | 389 (76.7) | 204 (82.9) | 185 (70.9) | 
+  Unknown/not reported | 24 (4.7) | 11 (4.5) | 13 (5.0) | 
+ Body mass index, median (Q1–Q3) | 28.2 (24.2–33.4) | 27.3 (23.3–33.0) | 29.1 (25.0–34.0) | 
+ Smoking status, n (%) | 
+  Never smoked | 219 (43.2) | 108 (43.9) | 111 (42.5) | 
+  Former smoker | 126 (24.9) | 70 (28.5) | 56 (21.5) | 
+  Current smoker | 41 (8.1) | 21 (8.5) | 20 (7.7) | 
+  Unknown | 121 (23.9) | 47 (19.1) | 74 (28.4) | 
+ Immunocompromised, n (%) | 118 (23.3) | 61 (24.8) | 57 (21.8) | 
+ Admission Sequential Organ Failure Assessment score, median (Q1–Q3) | 5.0 (2.0–10.0) | 5.0 (2.0–10.0) | 6.0 (2.0–11.0) | 
+ Cumulative net antimicrobial therapy score, median (Q1–Q3) | 0.0 (–17.0 to 16.5) | –3.0 (–18.0 to 7.0) | 5.0 (–14.0 to 25.0) | 
+ Cumulative steroid dose, median (Q1–Q3) | 600.0 (0.0–1840.0) | 550.0 (0.0–1545.0) | 640.0 (0.0–2050.0) | 
+ Norepinephrine use, n (%) | 438 (86.4) | 194 (78.9) | 244 (93.5) | 
+ Hemodialysis, n (%) | 66 (13.0) | 20 (8.1) | 46 (17.6) | 
+ Continuous renal replacement therapy, n (%) | 145 (28.6) | 54 (22.0) | 91 (34.9) | 
+ Extracorporeal membrane oxygenation use, n (%) | 117 (23.1) | 29 (11.8) | 88 (33.7) | 
+ Total ICU days, median (Q1–Q3) | 17.0 (8.0–31.5) | 9.0 (6.0–17.8) | 28.0 (16.0–44.0) | 
+ Tracheostomy, n (%) | 156 (30.8) | 23 (9.3) | 133 (51.0) | 
+ Total intubation days, median (Q1–Q3) | 12.0 (5.0–28.0) | 6.0 (3.0–12.0) | 27.0 (13.0–39.0) | 
+ Discharge disposition, n (%) | 
+  Home | 116 (22.9) | 81 (32.9) | 35 (13.4) | 
+  Rehabilitation | 95 (18.7) | 57 (23.2) | 38 (14.6) | 
+  Long-term acute care hospital | 72 (14.2) | 16 (6.5) | 56 (21.5) | 
+  Skilled nursing facility | 33 (6.5) | 22 (8.9) | 11 (4.2) | 
+  Hospice | 16 (3.2) | 15 (6.1) | 1 (0.4) | 
+  Died | 175 (34.5) | 55 (22.4) | 120 (46.0) | 
+ Unfavorable outcome, n (%) | 191 (37.7) | 70 (28.5) | 121 (46.4) | 
+ VAP = ventilator-associated pneumonia.
+ Unsupervised Clustering Analysis
+ Six-cluster analysis showed that VAP-labeled days were enriched in clusters characterized by elevated inflammatory markers, impaired gas exchange, and increased ventilatory support ( Fig. A ). UMAP projections similarly showed that VAP days localized to distinct regions despite labels being excluded from clustering, indicating coherent physiologic states associated with infection ( Fig. C ). Among 85 patients with 7 consecutive intubated days before their first VAP episode, bilirubin, heart rate, temperature, lymphocyte count, and mean arterial pressure increased from day –5 to day –1, while continuous renal replacement therapy (CRRT) use, procalcitonin, d -dimer, and lactate dehydrogenase declined ( Fig. B ).
+ Figure 2.
+ Unsupervised clustering reveals physiologic states associated with impending ventilator-associated pneumonia (VAP). A , Similarity-based clustering of patient-days over a 5-d prediction window identifies distinct physiologic clusters, with VAP-labeled days enriched in clusters marked by heightened inflammation and increased ventilatory support. B , Aggregated temporal trajectories of key clinical variables in the 5 d preceding bronchoalveolar lavage-confirmed VAP demonstrate coordinated shifts across inflammatory, hemodynamic, and metabolic features. C , Uniform Manifold Approximation and Projection (UMAP) projection of patient-day feature vectors shows spatial concentration of VAP days within specific regions of the embedded space, despite pneumonia labels not being used during clustering. CRP = C-reactive protein, CRRT = continuous renal replacement therapy, ECMO = extracorporeal membrane oxygenation, GCS = Glasgow Coma Scale, LDH = lactate dehydrogenase, MAP = mean arterial pressure, o 2 = oxygen, PEEP = positive end-expiratory pressure, RASS = Richmond Agitation-Sedation Scale.
+ Early SOFA Change
+ SOFA score changes did not differ significantly between VAP and non-VAP groups and showed poor discrimination for subsequent VAP (area under the curve [AUC], 0.528; Supplementary Fig. S3 , https://links.lww.com/CCX/B699 ).
+ Supervised ML Performance
+ LSTM models achieved AUCs up to 0.866 for 7-day prediction tasks and average precision scores reaching 0.903, and Random Forest with raw imputation achieved 0.843 AUC for 5-day prediction tasks ( Table ). At a 0.5 threshold, the 5-day raw-feature random forest achieved 82.4% sensitivity, 71.4% specificity, 86.2% positive predictive value, and 65.2% negative predictive value. Calibration analyses showed that resolution exceeded reliability across all prediction horizons, with Brier skill scores of 0.245, 0.298, and 0.271 for the 3-, 5-, and 7-day models, respectively ( Supplementary Fig. S4 , https://links.lww.com/CCX/B699 ). For the primary 5-day model, Yates decomposition showed minimal mean bias (–0.038; bias squared, 0.001), with residual error driven primarily by correlation deficit (0.095) and variance mismatch (0.055).
+ TABLE 2.
+ Internal Testing Performance With 95% CIs
+ Model | Area Under the Curve | Area Under the Precision-Recall Curve | Accuracy | F1 | 
+ VAP within 3 d | 
+  XGBoost (raw) | 0.721 (0.626–0.797) | 0.878 (0.819–0.921) | 0.625 (0.539–0.703) | 0.711 (0.622–0.779) | 
+  Random forest (raw) | 0.806 (0.732–0.874 ) | 0.918 (0.876–0.952 ) | 0.750 (0.672–0.820 ) | 0.828 (0.766–0.881 ) | 
+  XGBoost (binned) | 0.756 (0.670–0.830) | 0.899 (0.849–0.937) | 0.656 (0.578–0.734) | 0.711 (0.619–0.784) | 
+  Random forest (binned) | 0.769 (0.682–0.844) | 0.902 (0.854–0.941) | 0.695 (0.609–0.773) | 0.775 (0.699–0.835) | 
+  Logistic regression (binned) | 0.725 (0.637–0.809) | 0.881 (0.826–0.927) | 0.664 (0.578–0.742) | 0.749 (0.671–0.815) | 
+  LSTM (binned) | 0.765 (0.676–0.850) | 0.899 (0.844–0.943) | 0.617 (0.531–0.703) | 0.642 (0.543–0.731) | 
+ VAP within 5 d | 
+  XGBoost (raw) | 0.706 (0.634–0.772) | 0.871 (0.826–0.911) | 0.613 (0.543–0.678) | 0.680 (0.612–0.744) | 
+  Random forest (raw) | 0.843 (0.782–0.894 ) | 0.931 (0.896–0.959 ) | 0.789 (0.729–0.844 ) | 0.842 (0.789–0.887 ) | 
+  XGBoost (binned) | 0.747 (0.677–0.807) | 0.891 (0.851–0.926) | 0.658 (0.588–0.719) | 0.728 (0.661–0.787) | 
+  Random forest (binned) | 0.780 (0.715–0.838) | 0.905 (0.866–0.938) | 0.729 (0.663–0.784) | 0.799 (0.740–0.846) | 
+  Logistic regression (binned) | 0.716 (0.643–0.781) | 0.869 (0.823–0.911) | 0.653 (0.588–0.714) | 0.732 (0.669–0.786) | 
+  LSTM (binned) | 0.840 (0.782–0.892) | 0.928 (0.893–0.957) | 0.774 (0.714–0.829) | 0.812 (0.756–0.861) | 
+ VAP within 7 d | 
+  XGBoost (raw) | 0.812 (0.757–0.863) | 0.904 (0.867–0.933) | 0.745 (0.687–0.795) | 0.766 (0.703–0.818) | 
+  Random forest (raw) | 0.846 (0.799–0.889) | 0.916 (0.880–0.943 ) | 0.764 (0.714–0.811) | 0.817 (0.769–0.858 ) | 
+  XGBoost (binned) | 0.816 (0.760–0.866) | 0.906 (0.869–0.936) | 0.761 (0.707–0.811) | 0.780 (0.720–0.829) | 
+  Random forest (binned) | 0.826 (0.773–0.876) | 0.910 (0.874–0.938) | 0.737 (0.680–0.788) | 0.793 (0.738–0.839) | 
+  Logistic regression (binned) | 0.792 (0.735–0.843) | 0.890 (0.850–0.923) | 0.687 (0.629–0.741) | 0.746 (0.690–0.798) | 
+  LSTM (binned) | 0.866 (0.820–0.909 ) | 0.904 (0.846–0.948) | 0.772 (0.722–0.822 ) | 0.803 (0.747–0.852) | 
+ LSTM = Long Short-Term Memory, VAP = ventilator-associated pneumonia, XGBoost = eXtreme Gradient Boosting.
+ Baseline area under the precision-recall curves were 0.695 (3-d), 0.683 (5-d), and 0.618 (7-d), reflecting outcome prevalence in the training dataset. Best performance is bolded.
+ On the 7-day test set, overall AUC was 0.87 with a Brier score of 0.17. AUC was higher in males than females (0.90 vs. 0.79; Brier score, 0.15 vs. 0.20). Among patients with adequate ethnicity sample size, AUC was 0.86 in non-Hispanic/non-Latino patients; the Hispanic/Latino subgroup had an AUC of 1.00 but was small ( n = 28). It is important to note that because prediction datasets differed across the 3-, 5-, and 7-day horizons, AUROC and AUPRC values across horizons are not directly comparable, as they were evaluated on nonidentical test sets.
+ Feature Importance and Model Interpretability
+ Feature rankings were consistent across prediction horizons and models, with ventilator mechanics, inflammatory markers, and oxygenation variables emerging as key VAP predictors ( Fig. , A and B ). Ventilator days, plateau pressure, positive end-expiratory pressure (PEEP), and F io 2 were among the most influential features, alongside arterial blood gases, platelet count, and inflammatory markers. After removing ventilator days, Random Forest (raw) performance declined but retained an AUC of 0.7338.
+ Figure 3.
+ Model interpretability and temporal risk dynamics for ventilator-associated pneumonia (VAP) prediction. A , SHapley Additive exPlanations (SHAP) summary plot for the eXtreme Gradient Boosting model predicting VAP within 5 d, illustrating the direction and magnitude of feature contributions across patient-days. Higher values of ventilatory support variables (e.g., days on ventilator, plateau pressure) and impaired neurologic status were associated with increased predicted VAP risk. B , Feature importance rankings from a Random Forest model trained on the same prediction task, demonstrating similar prioritization. C , Temporal evolution of predicted VAP risk probabilities from day –5 to day –1 before diagnosis, plotted only for the subset of patients with 5 consecutive days. GCS = Glasgow Coma Scale, PEEP = positive end-expiratory pressure, RASS = Richmond Agitation-Sedation Scale.
+ Temporal Rise in Predicted VAP Risk
+ To explore predicted-risk trajectories, we examined probabilities from day –5 to day –1 in a subset of test-set patients. This exploratory analysis included 26 patients: 16 with VAP and 10 without VAP (VAP prevalence, 61.5%). Predicted probabilities in the VAP group remained above the classification threshold of 0.683 and increased modestly from approximately 0.74 on day –5 to 0.79 on day –1 ( Fig. C ). Predicted probabilities in the non-VAP group remained below the threshold. The modest increase may partly reflect cumulative time on mechanical ventilation.
+ External Validation in MIMIC-IV and Exploratory Evaluation in AMIKINHAL
+ The MIMIC-IV cohort ( Supplementary Figure S5 , https://links.lww.com/CCX/B699 ) was older, predominantly male, and had lower VAP prevalence and higher mortality than SCRIPT, reflecting differences in ICU exposure and competing risks ( Supplementary Tables S3 and S4 , https://links.lww.com/CCX/B699 ). Shared feature distributions were directly compared between SCRIPT and MIMIC-IV in Supplementary Figure S6 ( https://links.lww.com/CCX/B699 ), demonstrating several differences between the cohorts. The MIMIC-IV cohort contained a higher proportion of non-VAP cases, resulting in low baseline AUPRCs of 0.075, 0.104, and 0.123 for the 3-, 5-, and 7-day prediction windows, respectively ( Table ). Despite these differences, raw-feature models maintained AUCs greater than 0.80 across all horizons. In contrast, binned-feature models showed lower AUPRC and F1, particularly at longer horizons, likely reflecting distributional shift because thresholds derived from SCRIPT compressed MIMIC-IV values into fewer bins (Supplementary Fig. S6, https://links.lww.com/CCX/B699 ).
+ TABLE 3.
+ External Validation Performance on the Medical Information Mart for Intensive Care-IV Cohort With 95% CIs
+ Model | Area Under the Curve | Area Under the Precision-Recall Curve | Accuracy | F1 | 
+ VAP within 3 d (external) | 
+  XGBoost (raw) | 0.807 (0.783–0.829 ) | 0.347 (0.305–0.396) | 0.341 (0.329–0.353) | 0.172 (0.158–0.187) | 
+  Random forest (raw) | 0.800 (0.776–0.822) | 0.365 (0.320–0.411 ) | 0.112 (0.105–0.119) | 0.144 (0.132–0.155) | 
+  XGBoost (binned) | 0.711 (0.684–0.737) | 0.315 (0.270–0.360) | 0.826 (0.817–0.836) | 0.275 (0.243–0.304) | 
+  Random forest (binned) | 0.664 (0.636–0.692) | 0.262 (0.223–0.305) | 0.500 (0.487–0.513) | 0.173 (0.156–0.189) | 
+  Logistic regression (binned) | 0.658 (0.631–0.684) | 0.206 (0.172–0.244) | 0.601 (0.589–0.613) | 0.190 (0.171–0.208) | 
+  LSTM | 0.652 (0.621–0.681) | 0.225 (0.188–0.269) | 0.863 (0.855–0.871 ) | 0.296 (0.262–0.331 ) | 
+ VAP within 5 d (external) | 
+  XGBoost (raw) | 0.803 (0.785–0.823) | 0.449 (0.413–0.489) | 0.412 (0.400–0.424) | 0.241 (0.225–0.256) | 
+  Random forest (raw) | 0.817 (0.796–0.838 ) | 0.486 (0.447–0.530 ) | 0.209 (0.200–0.219) | 0.202 (0.190–0.215) | 
+  XGBoost (binned) | 0.658 (0.635–0.682) | 0.289 (0.253–0.327) | 0.707 (0.695–0.718) | 0.262 (0.240–0.286) | 
+  Random forest (binned) | 0.658 (0.634–0.683) | 0.352 (0.314–0.389) | 0.558 (0.545–0.571) | 0.224 (0.207–0.244) | 
+  Logistic regression (binned) | 0.627 (0.607–0.649) | 0.145 (0.131–0.161) | 0.564 (0.552–0.576) | 0.230 (0.211–0.248) | 
+  LSTM | 0.662 (0.634–0.687) | 0.353 (0.312–0.391) | 0.846 (0.838–0.855 ) | 0.354 (0.321–0.383 ) | 
+ VAP within 7 d (external) | 
+  XGBoost (raw) | 0.813 (0.795–0.831 ) | 0.559 (0.526–0.595 ) | 0.507 (0.495–0.519) | 0.301 (0.283–0.318) | 
+  Random forest (raw) | 0.770 (0.753–0.789) | 0.425 (0.392–0.458) | 0.208 (0.199–0.218) | 0.231 (0.217–0.244) | 
+  XGBoost (binned) | 0.697 (0.676–0.719) | 0.410 (0.374–0.446) | 0.826 (0.818–0.836 ) | 0.386 (0.359–0.413 ) | 
+  Random forest (binned) | 0.705 (0.685–0.725) | 0.405 (0.373–0.439) | 0.674 (0.664–0.685) | 0.314 (0.293–0.334) | 
+  Logistic regression (binned) | 0.707 (0.685–0.728) | 0.436 (0.400–0.470) | 0.750 (0.740–0.760) | 0.352 (0.328–0.376) | 
+  LSTM | 0.637 (0.614–0.660) | 0.337 (0.305–0.370) | 0.769 (0.759–0.779) | 0.318 (0.294–0.342) | 
+ LSTM = Long Short-Term Memory, VAP = ventilator-associated pneumonia, XGBoost = eXtreme Gradient Boosting.
+ Baseline area under the precision-recall curves were 0.0675 (3-d), 0.0944 (5-d), and 0.1126 (7-d), reflecting outcome prevalence in the external dataset. Best performance is bolded.
+ AMIKINHAL had only nine of our 36 features (WBC, CRRT, F io 2 , oxygen saturation, Pa o 2 , creatinine, PEEP, days on ventilator, and temperature) with differences in feature distribution ( Supplementary Fig. S7 , https://links.lww.com/CCX/B699 ). While several features showed statistically significant differences between VAP and non-VAP groups in both cohorts, effect sizes were substantially smaller in AMIKINHAL. For example, days on ventilator showed a large effect (Cohen’s d = 0.736) in SCRIPT but a negligible effect (d = –0.103) in AMIKINHAL. Using our models to test on the AMIKINHAL data resulted in a 0.607 (0.579–0.634) AUC for predicting VAP within 3 days.
+ Feature Importance in the External MIMIC-IV Cohort
+ In both SCRIPT and MIMIC-IV, duration of mechanical ventilation was the strongest predictor, followed by Glasgow Coma Scale (GCS) motor response, plateau pressure, PEEP, arterial P co 2 , platelet count, bicarbonate, and inflammatory markers ( Supplementary Fig. S8 , https://links.lww.com/CCX/B699 ).
+ DISCUSSION
+ Despite advances in ICU care and infection control, VAP remains a common complication of mechanical ventilation, and tools to predict its onset are lacking. We developed ML models using day-level ICU data to predict VAP up to 7 days in advance, demonstrating that EHR features can capture evolving clinical signals preceding pneumonia and support proactive risk assessment. We show that unsupervised clustering of patient-days revealed latent phenotypic patterns associated with VAP onset that were enriched for elevated inflammatory markers, increased ventilator pressures, and impaired gas exchange, consistent with the clinical profile of early pneumonia. Our temporal profiling analysis further supports this, showing that respiratory and inflammatory features begin diverging from baseline up to 5 days before diagnosis, with progressively increasing trajectories. The decline in procalcitonin should be interpreted cautiously because of substantial missingness and the inclusion of superinfection VAP occurring during treatment of an earlier pneumonia episode. These changes were not captured by coarse measures like early SOFA score changes alone, which lacked predictive utility, highlighting the need for more granular models in this domain.
+ Previous efforts to predict VAP using EHR data have been limited by small sample sizes (), delayed and coarse outcome labels such as International Classification of Diseases codes (), and models that rely on static snapshots (i.e., using data from the beginning of admission only) () rather than dynamic patient trajectories (our day-by-day prediction window). There is also limited external validation in the current studies, with many developed exclusively using the MIMIC-IV dataset (, –). Our study addresses these limitations by leveraging a large cohort of intubated patients with state-of-the-art BAL-confirmed and clinically adjudicated infection status. We used high-resolution temporal data and performed additional unsupervised techniques and feature evaluation to understand physiologic changes over time and examined our model performance in external datasets. In the nature of open science and rigorous reproducibility, we furthermore fully share our code for evaluation and understanding of detailed decisions made during data processing.
+ Compared with binned logistic regression, the best-performing ML models had higher AUROCs at 3 days (0.806 vs. 0.725), 5 days (0.843 vs. 0.716), and 7 days (0.866 vs. 0.792). This suggests that nonlinear interactions and temporal patterns may add predictive value beyond traditional regression. However, because the models used different preprocessing approaches, the performance differences cannot be attributed solely to the choice of algorithm. In contrast to many prior studies using static features, diagnosis codes, or a single MIMIC-IV cohort, our study used day-level data, BAL-adjudicated labels, and external validation.
+ After tuning with Optuna and evaluating multiple modeling strategies across different labeling windows, predictive performance obtained high AUROCs greater than 0.85. PEEP and F io 2 are important contributors to model prediction. We recognize that these parameters are not specific to VAP and may increase in the setting of other causes of respiratory deterioration, including acute respiratory distress syndrome, atelectasis, and fluid overload. Importantly, these conditions may also coexist with VAP, making complete separation based on ventilator parameters alone challenging. In the SCRIPT study, however, VAP was defined using BAL-based microbiologic confirmation, providing a more specific infection endpoint than ventilator-associated event criteria based solely on sustained increases in PEEP or F io 2 . Thus, the contribution of these variables should be interpreted as markers of evolving respiratory deterioration that may contribute to the recognition of VAP, rather than as VAP-specific features. Further validation in broader populations with more heterogeneous causes of respiratory deterioration will be important to determine the specificity and generalizability of these predictors. Interestingly, several features identified as influential to the model, such as platelet count, often still appeared within the normal laboratory-defined ranges and therefore may be overlooked in busy clinical workflows. These findings highlight the value of ML in surfacing early, multivariate signals that may not reach conventional thresholds for clinical concern. Duration of ventilation likely captures cumulative time at risk for VAP, whereas variables such as PEEP may reflect more immediate respiratory deterioration. These associations are predictive and should not be interpreted as causal.
+ Importantly, our models demonstrated robust performance in an external validation cohort derived from MIMIC-IV, despite substantial differences in outcome prevalence, patient population, and feature distributions. While the prevalence of VAP in MIMIC-IV was lower than in SCRIPT, resulting in lower baseline AUPRC values, raw-feature models maintained strong discriminative ability across prediction horizons. Feature importance patterns in the external MIMIC-IV cohort mirrored those observed internally. Duration of mechanical ventilation, neurologic status, and ventilatory mechanics again emerged as the dominant predictors of VAP risk. Although model discrimination and feature importance were similar in MIMIC-IV, differences in outcome definitions mean that these findings do not establish equivalence of the VAP labels. The AMIKINHAL analysis was exploratory because only nine of 36 features were available and the data definitions differed substantially; therefore, it cannot support or refute model generalizability. The relatively poor performance of our model in the AMIKINHAL cohort, which lacked many of these important features, supports this interpretation. Although AUPRC values were lower in MIMIC-IV due to lower VAP prevalence (6.8%, 9.4%, and 11.3% across horizons), model performance remained approximately five-fold (5×) above baseline. This indicates substantial enrichment of true VAP cases despite class imbalance.
+ This study has several important limitations. Models were built using data from a single center, using a frequent BAL-sampling protocol, contrary to institutions with different sampling practices, patient populations, or VAP prevention protocols. Because SCRIPT enrolls mechanically ventilated patients undergoing BAL for suspected pneumonia, the cohort is enriched for VAP and does not necessarily represent the overall institutional incidence of VAP, or VAP rates across other populations (). BAL-confirmed VAP was used as the diagnostic standard along with clinician adjudication; however, clinical variability in when BAL is pursued introduces selection bias. This bias is in part mitigated by the regularity with which BAL sampling is performed in our hospital, and the negative control cases where a BAL did not end up showing evidence of pneumonia. Our modeling approach excluded patients with unclear adjudication. Recorded GCS values may reflect neurologic impairment, sedation, or both, which could not be readily distinguished in this dataset; incorporating the doses of sedating medication could be helpful for future work. We used heuristic definitions of VAP/non-VAP in the MIMIC cohort; manual labels by physician experts may have identified different cases of VAP. It is challenging to find external validation cohorts that have both granular EHR data and clean VAP labels. Missingness was substantial and may reflect clinician testing practices, which could differ across institutions. Several important features, including PEEP, F io 2 , GCS, and procalcitonin, are nonspecific or may be affected by sedation, treatment, and other causes of clinical deterioration. Evaluation in AMIKINHAL was limited by the availability of only nine of the 36 model features. Finally, all model evaluations were retrospective, and prospective clinical performance remains unknown. Another limitation is inherent to our patient-level labeling schema, in that patients who experienced both VAP and non-VAP episodes within a short period were not represented in our modeling framework. Although these cases were rare fewer than 2.5% of cases, future work should better focus on even more short-term modeling approaches to capture clinically relevant transitions. Future work should explore prospective deployment for real-time model evaluation integrated with EHR systems, where the model could potentially forecast the short-term development of VAP running on all intubated patient-days in patients not already being treated for VAP.
+ CONCLUSIONS
+ We found that ML models using structured, day-level ICU data demonstrated strong discrimination for short-term VAP risk. Because calibration varied across prediction horizons, these probabilities should not yet be interpreted as reliable individual-level risk estimates. By leveraging granular physiologic, laboratory, and ventilator parameters, our models identified subtle but consistent changes in patient status up to 7 days before clinical diagnosis. In such patients identified by the model to be high risk for VAP, prophylactic therapies or earlier diagnostics may be beneficial. Prospective validation in diverse, real-time clinical settings will be essential to confirm generalizability and assess implementation impact. Prospective, multicenter validation in diverse, real-time clinical settings will be essential to confirm generalizability and assess implementation impact.
+ ACKNOWLEDGMENTS
+ We thank all the patients and families who consented to take part in the study. Many team members contribute to the Successful Clinical Response In Pneumonia Therapy (SCRIPT) Systems Biology Center and are recognized in the Northwestern University (NU) SCRIPT Study Investigators list. We thank Dr. Geoffray Agard for sharing code to identify suspicion for ventilator-associated pneumonia in the Medical Information Mart for Intensive Care-IV cohort. Also, we thank Drs. Anna Barker, Owen Albin, Michael Sjoding, Benjamin Wu, Clea Barnett, and Cecilia Chung, and Mr. Mark Nuppnau for looking into potential external datasets in which to validate our model.
+ Supplementary Material
+ The Northwestern University Successful Clinical Response In Pneumonia Therapy (NU SCRIPT) Study Investigators are available at: https://links.lww.com/CCX/B711 .
+ Drs. Gao and Agrawal are co-last authors.
+ Work in the Northwestern Pulmonary and Critical Care Medicine Division is supported by the Simpson Querrey Lung Institute for Translational Science and the Canning Thoracic Institute. This research was supported, in part, by an American Thoracic Society Unrestricted Grant.
+ Dr. Markov was supported by the American Heart Association (grant no. 24PRE1196998). Mr. Rasmussen was supported by the National Institutes of Health (NIH)/National Institute of Allergy and Infectious Diseases (NIAID; grant no. U19AI135964). Dr. Ehrmann reports relationships with Aerogen, Fisher &amp; Paykel, and JIB. Ms. Clepp was supported by NIH/NIAID (U19 AI135964). Dr. Stoeger was supported by the NIH (grant no. R00AG068544) and the National Science Foundation (grant no. 2410335). Dr. Walunas was supported by Gilead Sciences (award no. CO-US-540-6435) and the NIH (grant nos. U19AI135964, U19AI181102, and R21HD107571). Dr. Misharin was supported by the NIH (grant nos. U19AI135964, P01AG049665, P01HL154998, U19AI181102, R01HL153312, R01HL158139, R21AG075423, and R01ES034350). Dr. Singer holds U.S. Patent No. US 10,905,706 B2, Compositions and Methods to Accelerate Resolution of Acute Lung Inflammation, and serves on the Scientific Advisory Board of Zoe Biosciences; he was supported by the French Ministry of Health (PHRC-15-260); and he was supported by the NIH (grant nos. R01HL149883, R01HL153122, P01HL154998, P01AG049665, U19AI135964, and U19AI181102). Dr. Budinger was supported by the NIH (grant nos. U19AI135964, P01AG049665, R01HL147575, P01HL071643, and R01HL154686), the U.S. Department of Veterans Affairs (award no. I01CX001777), a Chicago Biomedical Consortium grant, and a Northwestern University Dixon Translational Science Award. Dr. Wunderink was supported by the NIH/NIAID (grant nos. U19AI135964, R01AI158530), the NIH/National Heart, Lung, and Blood Institute (NHLBI; grant nos. R01HL149883, P01HL154998), and the National Center for Advancing Translational Sciences (grant no. U01TR003528). Dr. Gao was supported by the NIH/NHLBI (grant no. K23HL169815), a Parker B. Francis Opportunity Award, and an American Thoracic Society Unrestricted Grant. Dr. Agrawal was supported by the NIH (grant nos. U19AI135964 and R01HL158139), the Simpson Querrey Lung Institute for Translational Science, and the National Science Foundation (grant no. OAC-2331329). The remaining authors have disclosed that they do not have any potential conflicts of interest.
+ Claude was used for help with coding, and ChatGPT was used for help rewording text. The authors reviewed, edited, and take responsibility for all output.
+ Dr. Peltekian, Liao, Dr. Stoeger, Dr. Gao, and Dr. Agrawal were involved in methodology. Dr. Peltekian, Liao, Guggilla, Dr. Markov, Senkow, Liao, Kang, and Dr. Gao were involved in analysis. Dr. Peltekian, Liao, Guggilla, Dr. Markov, Liao, Kang, Mr. Rasmussen, Dr. Tavernier, Dr. Ehrmann, and Dr. Gao were involved in data curation. Drs. Tavernier, Ehrmann, Walunas, Choudhary, Misharin, Singer, Budinger, and Wunderink were involved in resources. Dr. Peltekian, Liao, Dr. Markov, and Dr. Gao were involved in visualization. Drs. Gao, Agrawal, and Wunderink were involved in conceptualization. Drs. Gao and Agrawal were involved in supervision. Ms. Clepp, Kang, and Mr. Rasmussen were involved in project administration. Drs. Walunas, Misharin, Singer, Budinger, and Wunderink were involved in funding acquisition. Drs. Peltekian and Gao were involved in writing—original draft. All authors were involved in writing—review and editing.
+ Patients’ families or authorized representatives provided informed consent for participation. The study, titled “Successful Clinical Response In Pneumonia Therapy (SCRIPT),” was approved by the Northwestern University Institutional Review Board (STU00204868) on July 27, 2017. All study procedures were conducted in accordance with the ethical standards of the responsible institutional committee on human experimentation and with the principles of the Declaration of Helsinki of 1975. The Medical Information Mart for Intensive Care-IV dataset was compiled through a waiver of informed consent, as approved by the Beth Israel Deaconess Medical Center, and is made available to researchers who have completed training in human research and signed a data use agreement. Patients/families consented to participate in the Inhaled Amikacin vs. Placebo to Prevent Ventilator Associated Pneumonia (AMIKINHAL) study.
+ The Successful Clinical Response In Pneumonia Therapy (SCRIPT) data are available through PhysioNet at https://physionet.org/content/script-carpediem-dataset/1.9.0/ ; to credentialed users who sign a data use agreement (DUA). The Medical Information Mart for Intensive Care-IV dataset is available through PhysioNet to credentialed users who sign a DUA at https://physionet.org/content/mimiciv/3.1/ . The AMIKINHAL dataset was made available to us by the authors after signing a DUA. Code to reproduce our analysis is available at: https://github.com/NUSCRIPT/VAPOnset .
+ Supplemental digital content is available for this article. Direct URL citations appear in the printed text and are provided in the HTML and PDF versions of this article on the journal’s website ( http://journals.lww.com/ccejournal ).
+ REFERENCES
+ 1.
+ Kohbodi GA Rajasurya V Noor A : Ventilator-Associated Pneumonia . StatPearls Publishing , 2018 2.
+ Howroyd F Chacko C MacDuff A : Ventilatorassociated pneumonia: Pathobiological heterogeneity and diagnostic challenges. 
+ Nat Commun 
+ 2024 ; 15 : 6447 3.
+ Koenig SM Truwit JD : Ventilator-associated pneumonia: Diagnosis, treatment, and prevention. 
+ Clin Microbiol Rev 
+ 2006 ; 19 : 637 – 657 4.
+ Zilberberg MD Shorr AF : Ventilator-associated pneumonia: The clinical pulmonary infection score as a surrogate for diagnostics and outcome. 
+ Clin Infect Dis 
+ 2010 ; 51 ( Suppl 1 ): S131 – S135 5.
+ Ehrmann S Barbier F Demiselle J ; Reva and CRICS-TRIGGERSEP F-CRIN Research Networks : Inhaled amikacin to prevent ventilator-associated pneumonia. 
+ N Engl J Med 
+ 2023 ; 389 : 2052 – 2062 6.
+ Minozzi S Pifferi S Brazzi L : Topical antibiotic prophylaxis to reduce respiratory tract infections and mortality in adults receiving mechanical ventilation. 
+ Cochrane Database Syst Rev 
+ 2021 ; 1 : CD000022 7.
+ Dahyot-Fizelier C Lasocki S Kerforne T ; PROPHY-VAP Study Group and the ATLANREA Study Group : Ceftriaxone to prevent early ventilator-associated pneumonia in patients with acute brain injury: A multicentre, randomised, double-blind, placebo-controlled, assessor-masked superiority trial. 
+ Lancet Respir Med 
+ 2024 ; 12 : 375 – 385 8.
+ Zhang Q Li C Worthington HV : Oral hygiene care for critically ill patients to prevent ventilator-associated pneumonia. 
+ Cochrane Database Syst Rev 
+ 2020 ; 12 : CD008367 9.
+ Adams R Henry KE Sridharan A : Prospective, multisite study of patient outcomes after implementation of the TREWS machine learning-based early warning system for sepsis. 
+ Nat Med 
+ 2022 ; 28 : 1455 – 1460 10.
+ Wong AKI Cheung PC Kamaleswaran R : Machine learning methods to predict acute respiratory failure and acute respiratory distress syndrome. 
+ Frontiers Big Data 
+ 2020 ; 3 : 579774 11.
+ Qiu W Chen H Dincer AB : Interpretable machine learning prediction of all-cause mortality. 
+ Commun Med . 2022 ; 2 : 125 12.
+ Giang C Calvert J Rahmani K : Predicting ventilator-associated pneumonia with machine learning. 
+ Medicine (Baltimore) 
+ 2021 ; 100 : e26246 13.
+ Peltekian A Senkow K Markov N : Machine learning to predict the onset of ventilator-associated pneumonia using electronic health record data: A7723. 
+ Am J Respir Crit Care Med 
+ 2025 ; 211 : A7723 14.
+ Northwestern University : Successful Clinical Response In Pneumonia Therapy. 
+ 2025 . Available at: https://script.northwestern.edu/ . Accessed September 12, 2025 15.
+ Markov N Gao CA Stoeger T : SCRIPT CarpeDiem dataset: Demographics, outcomes, and per-day clinical parameters for critically ill patients with suspected pneumonia. 
+ PhysioNet 
+ 2023 16.
+ Gao CA Markov NS Stoeger T ; NU SCRIPT Study Investigators : Machine learning links unresolving secondary pneumonia to mortality in patients with severe pneumonia, including COVID-19. 
+ J Clin Invest 
+ 2023 ; 133 : e170682 17.
+ Walter JM Helmin KA Abdala-Valencia H : Multidimensional assessment of alveolar T cells in critically ill patients. 
+ JCI insight 
+ 2018 ; 3 : e123287 18.
+ Pickens CI Gao CA Bodner J ; NU SCRIPT Study Investigators : An adjudication protocol for severe pneumonia. 
+ Open Forum Infect Dis 
+ 2023 ; 10 :ofad336 19.
+ Ren W Liu Z Wu Y ; Missing Data in Electronic health Records (MINDER) Group : Moving beyond medical statistics: A systematic review on missing data handling in electronic health records. 
+ Health Data Sc 
+ 2024 ; 4 : 0176 20.
+ Fenske SW Peltekian A Kang M ; NU SCRIPT Study Investigators : Developing and validating machine learning models to predict next-day extubation. 
+ Sci Rep 
+ 2025 ; 15 : 27552 21.
+ Tang S Davarmanesh P Song Y : Democratizing EHR analyses with FIDDLE: A flexible data-driven preprocessing pipeline for structured clinical data. 
+ J Am Med Inform Assoc 
+ 2020 ; 27 : 1921 – 1934 22.
+ Akca O Bautista A Mascha E : Can serial evaluation of SOFA score predict developing ventilator-associated pneumonia? 
+ Annual Meeting of the American Society Anesthesiologists, San Diego . October 16–20 , 2010 , p A865 23.
+ Hosmer DW Lemeshow S Sturdivant RX : Introduction to the logistic regression model. 
+ App Logistic Regression 
+ 2000 ; 2 : 1 – 30 24.
+ Breiman L : Random forests. 
+ Mach Learn 
+ 2001 ; 45 : 5 – 32 25.
+ Chen T Guestrin C : XGBoost: A scalable tree boosting system. 
+ Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, San Francisco, California . August 13–17 , 2016 , pp 785 – 94 26.
+ Pedregosa F Varoquaux G Gramfort A : Scikit-learn: Machine learning in Python. 
+ J Mach Learn Res 
+ 2011 ; 12 : 2825 – 2830 27.
+ Akiba T Sano S Yanase T : Optuna: A next-generation hyperparameter optimization framework. 
+ Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining, Anchorage, Alaska . August 4–8 , 2019 , pp 2623 – 2631 28.
+ Efron B Tibshirani RJ : An Introduction to the Bootstrap . Chapman and Hall/CRC , 1994 29.
+ Collins GS Moons KG Dhiman P : TRIPOD+AI statement: Updated guidance for reporting clinical prediction models that use regression or machine learning methods. 
+ BMJ 
+ 2024 ; 385 : e078378 30.
+ Johnson A Bulgarelli L Pollard T : MIMIC-IV . 2020 . PhysioNet. 
+ Available at: https://physionet.org/content/mimiciv/1.0/ . Accessed August 28, 2026 31.
+ Agard G Roman C Guervilly C : An innovative deep learning approach for ventilator-associated pneumonia (VAP) prediction in intensive care units—pneumonia risk evaluation and diagnostic intelligence via computational technology (PREDICT). 
+ J Clin Med 
+ 2025 ; 14 : 3380 32.
+ Dos Santos R Silva D Menezes A : Automated healthcare-associated infection surveillance using an artificial intelligence algorithm. 
+ Infect Prev Pract 
+ 2021 ; 3 : 100167 33.
+ Frondelius T Atkova I Miettunen J : Early prediction of ventilator-associated pneumonia with machine learning models: A systematic review and metaanalysis of prediction model performance. 
+ Eur J Intern Med 
+ 2024 ; 121 : 76 – 87 34.
+ Zhang J Yang P Zeng L : Ventilator-associated pneumonia prediction models based on AI: Scoping review. 
+ JMIR Med Inform 2024 ; 12 : e57026 35.
+ Liang Y Zhu C Tian C : Early prediction of ventilator-associated pneumonia in critical care patients: A machine learning model. 
+ BMC Pulm Med 
+ 2022 ; 22 : 250 36.
+ Papazian L Klompas M Luyt CE : Ventilator-associated pneumonia in adults: A narrative review. 
+ Intensive Care Med 
+ 2020 ; 46 : 888 – 906

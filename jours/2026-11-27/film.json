@@ -1,0 +1,373 @@
+{
+ "id": "2026-11-27",
+ "sentences": [
+  {
+   "text": "Peut-on voir venir une pneumonie sous respirateur plusieurs jours avant le diagnostic ?",
+   "partie": "accroche"
+  },
+  {
+   "text": "En réanimation, un patient sous respirateur peut développer une pneumonie.",
+   "partie": "contexte",
+   "box": "pneumonie."
+  },
+  {
+   "text": "Elle pèse lourd : vingt-huit jours de réanimation en médiane, contre neuf sans pneumonie.",
+   "partie": "contexte",
+   "display": "Elle pèse lourd : 28 jours de réanimation en médiane, contre 9 sans pneumonie.",
+   "box": "lourd",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Le problème, c'est que les premiers signes se noient dans la maladie : on repère la pneumonie trop tard.",
+   "partie": "probleme",
+   "box": "noient",
+   "source": "subtle physiologic changes may be masked by the complexity of critical illness"
+  },
+  {
+   "text": "Résultat : les antibiotiques démarrent souvent après la dégradation.",
+   "partie": "probleme",
+   "box": "antibiotiques",
+   "source": "antibiotics typically initiated once VAP is suspected, but often only after clinical deterioration and organ dysfunction"
+  },
+  {
+   "text": "Une équipe a donc entraîné des modèles d'apprentissage automatique sur les données quotidiennes.",
+   "partie": "ia",
+   "box": "modèles",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Ces modèles peuvent-ils prévoir la pneumonie avant le diagnostic ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, ils ont suivi cinq cent sept adultes sous respirateur, de juin deux mille dix-huit à juillet deux mille vingt-trois, pour prévoir la pneumonie.",
+   "partie": "etude",
+   "display": "Pour le savoir, ils ont suivi 507 adultes sous respirateur, de juin 2018 à juillet 2023, pour prévoir la pneumonie.",
+   "box": "507"
+  },
+  {
+   "text": "Un lavage bronchique confirmait ou écartait la pneumonie : deux cent soixante et un l'ont eue, deux cent quarante-six non.",
+   "partie": "methode",
+   "display": "Un lavage bronchique confirmait ou écartait la pneumonie : 261 l'ont eue, 246 non.",
+   "box": "lavage"
+  },
+  {
+   "text": "Chaque jour, trente-six données entrent dans le modèle, qui estime le risque de pneumonie.",
+   "partie": "methode",
+   "display": "Chaque jour, 36 données entrent dans le modèle, qui estime le risque de pneumonie.",
+   "box": "risque",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : sept jours avant le diagnostic, l'aire sous la courbe atteint zéro virgule huit cent soixante-six, sur une échelle qui s'arrête à un.",
+   "partie": "resultat",
+   "display": "Résultat : 7 jours avant le diagnostic, l'aire sous la courbe atteint 0,866, sur une échelle qui s'arrête à 1.",
+   "box": "0,866,"
+  },
+  {
+   "text": "Et à cinq jours, un autre modèle repère quatre-vingt-deux virgule quatre pour cent des cas et écarte soixante et onze virgule quatre pour cent des autres.",
+   "partie": "resultat",
+   "display": "Et à 5 jours, un autre modèle repère 82,4 % des cas et écarte 71,4 % des autres.",
+   "box": "repère",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Dans un autre hôpital, sur deux mille six cent quatre-vingt-un patients, l'aire reste à zéro virgule huit cent dix-sept.",
+   "partie": "resultat",
+   "display": "Dans un autre hôpital, sur 2 681 patients, l'aire reste à 0,817.",
+   "box": "hôpital,"
+  },
+  {
+   "text": "En revanche, la variation du score de gravité SOFA ne prévoit presque rien : zéro virgule cinq cent vingt-huit.",
+   "partie": "concret",
+   "display": "En revanche, la variation du score de gravité SOFA ne prévoit presque rien : 0,528.",
+   "box": "SOFA",
+   "source": "showed poor discrimination for subsequent VAP (area under the curve [AUC], 0.528"
+  },
+  {
+   "text": "Et le meilleur indice, c'est la durée de ventilation, avant la pression du respirateur et l'inflammation.",
+   "partie": "concret",
+   "box": "durée",
+   "source": "duration of mechanical ventilation was the strongest predictor, followed by Glasgow Coma Scale (GCS) motor response, plateau pressure, PEEP",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : dans un essai à neuf données sur trente-six, l'aire tombe à zéro virgule six cent sept.",
+   "partie": "limite",
+   "display": "Attention : dans un essai à 9 données sur 36, l'aire tombe à 0,607.",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : ces modèles pourraient aider à surveiller les patients à risque, mais il faudra les tester en temps réel.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_question",
+    "cam_at": 0,
+    "header": "Cohorte · réanimation · 2018–2023",
+    "text": "Peut-on voir venir une pneumonie sous respirateur plusieurs jours avant le diagnostic ?",
+    "italic": "venir",
+    "footnote": "IA · pneumonie sous respirateur"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s1:pneumonie",
+    "title": "Sous respirateur",
+    "steps": [
+     {
+      "icon": "hospital",
+      "label": "Patient sous respirateur",
+      "at": "s1:respirateur"
+     },
+     {
+      "icon": "stethoscope",
+      "label": "Une pneumonie possible",
+      "at": "s1:pneumonie"
+     },
+     {
+      "icon": "calendar",
+      "label": "Un séjour plus long",
+      "note": "28 jours, contre 9",
+      "at": "s2:vingt-huit",
+      "note_at": "s2:neuf"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s3:noient",
+    "title": "Un repérage trop tardif",
+    "steps": [
+     {
+      "icon": "magnifier",
+      "label": "Des signes discrets",
+      "at": "s3:signes"
+     },
+     {
+      "icon": "clock",
+      "label": "Repérée trop tard",
+      "at": "s3:tard"
+     },
+     {
+      "icon": "pill",
+      "label": "Antibiotiques tardifs",
+      "note": "après la dégradation",
+      "at": "s4:antibiotiques",
+      "note_at": "s4:dégradation"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s5-0.1",
+    "mark_at": "s5:modèles",
+    "title": "Des modèles qui prévoient",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "Apprentissage automatique",
+      "at": "s5:modèles"
+     },
+     {
+      "icon": "chart",
+      "label": "Données quotidiennes",
+      "at": "s5:données"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Ces modèles peuvent-ils prévoir la pneumonie avant le diagnostic ?",
+  "italic": "prévoir",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Cohorte prospective",
+      "at": "s7:savoir"
+     },
+     {
+      "label": "Patients",
+      "value": "507 adultes ventilés",
+      "at": "s7:cinq"
+     },
+     {
+      "label": "Période",
+      "value": "Juin 2018 à juillet 2023",
+      "at": "s7:juin"
+     },
+     {
+      "label": "Mesure",
+      "value": "Pneumonie prévue à l'avance",
+      "at": "s7:prévoir",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "flow_chart",
+    "cam_at": "s8-0.3",
+    "title": "Qui a eu une pneumonie",
+    "stages": [
+     {
+      "label": "Lavage bronchique réalisé",
+      "n": "507",
+      "at": "s8:lavage"
+     },
+     {
+      "label": "Pneumonie confirmée",
+      "n": "261",
+      "at": "s8:soixante",
+      "accent": true
+     }
+    ],
+    "excluded": [
+     {
+      "after": 0,
+      "label": "Pneumonie écartée",
+      "n": "246",
+      "at": "s8:quarante-six"
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s9-0.3",
+    "input_icon": "doc",
+    "input_label": "36 données de réanimation par jour",
+    "ai_label": "Estime le risque chaque jour",
+    "output_label": "Risque de pneumonie",
+    "modality": "donnees",
+    "at": "s9:données",
+    "core_at": "s9:modèle",
+    "out_at": "s9:risque"
+   },
+   {
+    "type": "roc_curve",
+    "cam_at": "s10-0.3",
+    "auc": {
+     "value": "0,866",
+     "num": 0.866,
+     "at": "s10:atteint",
+     "note": "IC : 0,820 à 0,909"
+    },
+    "curve_at": "s10:courbe"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s11-0.3",
+    "title": "À 5 jours du diagnostic",
+    "metrics": [
+     {
+      "label": "Cas repérés",
+      "value": "82,4",
+      "num": 82.4,
+      "unit": "%",
+      "at": "s11:repère",
+      "accent": true
+     },
+     {
+      "label": "Autres écartés",
+      "value": "71,4",
+      "num": 71.4,
+      "unit": "%",
+      "at": "s11:écarte"
+     }
+    ]
+   },
+   {
+    "type": "big_stat",
+    "cam_at": "s12-0.3",
+    "title": "Dans un autre hôpital",
+    "value": "0,817",
+    "label": "Aire sous la courbe, 2 681 patients, prévision à 5 jours",
+    "label_at": "s12:reste",
+    "at": "s12:hôpital"
+   },
+   {
+    "type": "findings",
+    "cam_at": "s13-0.3",
+    "title": "Ce qui compte",
+    "items": [
+     {
+      "icon": "chart",
+      "label": "Le score SOFA seul",
+      "detail": "0,528 : presque aucun signal",
+      "detail_at": "s13:zéro",
+      "tendance": "moins",
+      "at": "s13:SOFA"
+     },
+     {
+      "icon": "clock",
+      "label": "La durée de ventilation",
+      "detail": "Le meilleur indice du modèle",
+      "detail_at": "s14:meilleur",
+      "tendance": "plus",
+      "accent": true,
+      "at": "s14:durée"
+     },
+     {
+      "icon": "heart",
+      "label": "Respirateur et inflammation",
+      "detail": "Pression, marqueurs sanguins",
+      "detail_at": "s14:respirateur",
+      "at": "s14:avant"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s15-0.25",
+    "text": "Attention : dans un essai à neuf données sur trente-six, l'aire tombe à zéro virgule six cent sept.",
+    "italic": "neuf"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s16-0.25",
+    "text": "À retenir : ces modèles pourraient aider à surveiller les patients à risque, mais il faudra les tester en temps réel.",
+    "italic": "temps réel"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s16.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s18",
+  "button": "Suivre",
+  "button_at": "s18+0.6",
+  "click_at": "s18+1.6",
+  "source": "Peltekian et al. · Critical Care Explorations · novembre 2026",
+  "doi": "doi:10.1097/cce.0000000000001506",
+  "source_at": "s17:vérifiée-0.2"
+ }
+}

@@ -1,0 +1,149 @@
+[
+ {
+  "score": 18,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "IA conversationnelle",
+   "formation des soignants"
+  ],
+  "id": "MED:43083839",
+  "pmid": "43083839",
+  "pmcid": "PMC13792887",
+  "doi": "10.2196/99015",
+  "titre": "Large Language Models for Structured Critical Appraisal of Randomized Controlled Trials in Otolaryngology: Randomized Crossover Study Comparing GPT-4o and Medical Students.",
+  "revue": "JMIR formative research",
+  "date": "2026-11-20",
+  "auteurs": "Olsson S, Del Mundo N, Bourmand R, Baloch F, Liang J, Jiang N.",
+  "types": "research-article randomized controlled trial journal article",
+  "acces_libre": true,
+  "resume": "Background Critical appraisal of medical literature is an essential skill for trainees but can be time-intensive and difficult to master. Large language models (LLMs) such as ChatGPT have emerged as potential tools to support learners; however, their accuracy and reliability in structured appraisal tasks remain unclear. Objective The objective of this study was to compare the performance of GPT-4o with that of medical students in structured critical appraisal of randomized controlled trials (RCTs), evaluating its potential role in medical education. Methods In this prospective randomized crossover study, 12 RCTs published in The Laryngoscope in 2024 were identified and appraised using the Critical Appraisal Skills Programme (CASP) checklist. Two second-year medical students independently appraised each article with and without the assistance of GPT-4o, separated by a 1-month washout period. The GPT-4o model was also used to independently appraise each study. Two otolaryngologists evaluated the randomized and anonymized appraisals using a standardized rubric assessing binary correctness, free-text accuracy, completeness, and overall quality. Medical students and evaluators also completed poststudy questionnaires regarding AI use and perceptions. Results A statistically significant overall effect of appraisal condition was observed for free-text accuracy ( F 2,22 =3.94; P =.04; η 2 p=0.263); however, no individual pairwise comparison remained statistically significant following Holm adjustment for multiple comparisons. No statistically significant effect of appraisal condition was detected for binary correctness ( F 2,22 =0.07; P =.93, η 2 p=.006), completeness ( F 2,22 =0.18; P =.84; η 2 p=0.016), or overall quality ( F 2,22 =0.52; P =.60; η 2 p=0.045). Physician evaluators identified the presence of AI involvement in approximately 56% of student appraisals completed with AI assistance and 58% of AI-only appraisals. Medical students reported that GPT-4o reduced the time required to complete appraisals and assisted with understanding study topics, interpreting results, and identifying study limitations. Conclusions Although a statistically significant overall effect of appraisal condition was observed for free-text accuracy, no individual pairwise comparison remained statistically significant following Holm adjustment, with the largest observed difference occurring between students without AI assistance and AI alone. No statistically significant differences were detected in binary correctness, completeness, or overall quality. These findings support cautious investigation of GPT-4o as an adjunct educational tool for structured critical appraisal while emphasizing the continued importance of independent critical reasoning and human oversight. Larger studies are needed to determine the generalizability of these findings."
+ },
+ {
+  "score": 15,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "prospectif",
+   "texte intégral libre"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "poumons"
+  ],
+  "id": "MED:43083744",
+  "pmid": "43083744",
+  "pmcid": "PMC13808709",
+  "doi": "10.1097/cce.0000000000001506",
+  "titre": "Developing and Externally Validating Machine Learning Models to Forecast Short-Term Risk of Ventilator-Associated Pneumonia.",
+  "revue": "Critical care explorations",
+  "date": "2026-11-24",
+  "auteurs": "Peltekian AK, Liao WT, Guggilla V, Markov N, Senkow K, Liao Z, Kang M, Rasmussen L, Tavernier E, Ehrmann S, Clepp RK, Stoeger T, Walunas T, Choudhary A, Misharin AV, Singer BD, Budinger GRS, Wunderink",
+  "types": "research-article journal article observational study",
+  "acces_libre": true,
+  "resume": "Objectives To develop and externally validate supervised machine learning models using routinely collected ICU electronic health record (EHR) data to predict short-term onset of ventilator-associated pneumonia (VAP) before clinical diagnosis. Design Prospective observational cohort study with temporal model development and external validation. Setting ICUs. Patients Mechanically ventilated adults in a prospective observational cohort (Successful Clinical Response In Pneumonia Therapy [SCRIPT]) who underwent bronchoalveolar lavage (BAL) for suspected pneumonia and had BAL-confirmed adjudicated VAP or adjudicated non-VAP status (n = 507). External validation in the Medical Information Mart for Intensive Care-IV (MIMIC-IV) included mechanically ventilated patients with greater than or equal to 48 hours of continuous invasive ventilation (n = 2681). Additional evaluation was performed in participants from the Inhaled Amikacin vs. Placebo to Prevent Ventilator Associated Pneumonia (AMIKINHAL) randomized trial evaluating inhaled amikacin for VAP prevention, using centrally adjudicated VAP outcomes. Interventions None. Measurements and main results We extracted 36 day-level clinical features (vital signs, ventilator settings, laboratory values, inflammatory markers, and support devices) from the EHR and trained models to predict VAP within 3, 5, or 7 days before BAL-confirmed diagnosis. Unsupervised clustering identified physiologic states enriched for VAP-labeled days. In internal testing, the best performance reached an area under the receiver operating characteristic curve (AUROC) of 0.866 for predicting VAP within 7 days and 0.843 for predicting VAP within 5 days. Predicted risk increased over the days preceding VAP among patients who developed VAP, while remaining low among non-VAP patients. On external validation in MIMIC-IV, the best model achieved an AUROC of 0.817 for predicting VAP within 5 days. Performance was poor in AMIKINHAL, where only nine of 36 features were available. Across models, influential predictors included ventilator duration and mechanics (e.g., positive end-expiratory pressure), platelet count, and inflammatory markers. Conclusions Machine learning models trained on day-level structured ICU data with BAL-confirmed adjudicated labels predicted VAP up to 7 days before clinical diagnosis with strong discrimination and generalized to an external health system when key features were available, supporting future prospective real-time evaluation."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "essai tiré au sort",
+   "multicentrique"
+  ],
+  "type_etude": "essai tiré au sort",
+  "themes": [
+   "chirurgie"
+  ],
+  "id": "MED:43025198",
+  "pmid": "43025198",
+  "pmcid": null,
+  "doi": "10.1016/j.jocn.2026.112382",
+  "titre": "Predicting outcomes in microdiscectomy surgery with applied machine learning.",
+  "revue": "Journal of clinical neuroscience : official journal of the Neurosurgical Society of Australasia",
+  "date": "2026-11-13",
+  "auteurs": "Roadley JL, Buchlak QD, Shah J, Goldschlager T.",
+  "types": "multicenter study randomized controlled trial journal article",
+  "acces_libre": false,
+  "resume": "Background Microdiscectomy surgery is a common procedure used to treat lumbar disc herniation (LDH), a condition causing significant lower back pain and sciatica. Despite its widespread use, outcomes vary, with some patients experiencing re herniation. Accurate prediction of postoperative outcomes could improve patient counselling and treatment planning. This study explores the application of machine learning models to predict re-herniation at 12 months using preoperative clinical and demographic data. Methods This multi-centered study used data from a randomised controlled trial involving 211 patients who underwent microdiscectomy. After addressing missing data, 152 cases were analysed. Logistic regression was first applied to determine significant covariates, followed by the development of supervised learning classifiers, including Random Forest, AdaBoost, and Neural Networks. Model performance was evaluated using metrics such as the Matthews correlation coefficient (MCC) and area under the receiver operating characteristics curve (ROC-AUC). Results Significant predictors of re-herniation included smoking status and emergency department presentations. Smokers were 11 times more likely to experience re herniation, and those with frequent ED visits were 19 times more likely to do so. The Random Forest model achieved the highest predictive performance, with an MCC of 0.47 and an AUC of 0.69. Application of SMOTE improved sensitivity but decreased specificity in most models. Conclusions Machine learning models, particularly Random Forest, demonstrated moderate predictive ability for re-herniation following microdiscectomy. Significant preoperative factors like smoking and ED visits were strongly associated with poor outcomes. These findings suggest that machine learning can enhance clinical decision-making by identifying high-risk patients, allowing for more personalised treatment strategies."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "texte intégral libre",
+   "soin de terrain"
+  ],
+  "type_etude": "revue systématique",
+  "themes": [
+   "soins de ville"
+  ],
+  "id": "MED:43083494",
+  "pmid": "43083494",
+  "pmcid": "PMC13806635",
+  "doi": "10.3390/nursrep16110417",
+  "titre": "Evidence Continuity in Evaluations of Artificial Intelligence and Algorithmic Decision Support in Nursing: A Scoping Review.",
+  "revue": "Nursing reports (Pavia, Italy)",
+  "date": "2026-11-17",
+  "auteurs": "Mustafa MH, Alkubati SA, Almagharbeh WT, Savi V, El Arab RA.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "resume": "Background/Objectives: Artificial intelligence (AI) and algorithmic decision support are increasingly used to extract, predict, classify, or generate information relevant to nursing care. However, technical or task performance alone does not establish preservation of meaning, appropriate human use, effective care delivery, or patient benefit. This scoping review mapped nursing-specific AI evaluations and examined continuity from source information through AI output, nurse response, delivered action, and patient outcomes. Methods: PubMed, CINAHL Complete, Embase, Scopus, and Web of Science Core Collection were searched from inception on 1 July 2026 for peer-reviewed reports available by 30 June 2026, supplemented by citation and targeted searching. Two reviewers independently assessed each record at title/abstract and full-text stages; charting and verification were conducted in reviewer pairs across four authors. Related reports were linked at the investigation level. An author-developed heuristic mapped evidence location and within-case continuity from AI input (S0) to patient outcome (S5), with reference standards coded separately. Global quality, risk-of-bias, and certainty ratings were not assigned. No protocol was prospectively registered or published. Results: Fifty-nine publications spanned educational and simulation studies, technical evaluations, and clinical implementation studies across four domains: learning and benchmarking; generative care planning; wound systems; and information, workflow, and outcomes. Under the review-defined heuristic, no identified investigation documented continuity across all task-relevant transitions. Generative systems produced plausible outputs but also omissions, unsupported additions, weak individualisation, and task-dependent performance. Workflow findings varied: some documentation and handover studies reported shorter completion times, whereas an AI-supported wound-care pilot required longer completion. Patient-outcome findings were mixed and design-dependent. No included investigation directly compared a safeguard with an alternative using an endpoint matched to clinically important error detection, correction, inappropriate reliance, residual error, or harm. Conclusions: The identified corpus supports function-specific findings but provides insufficient evidence for general claims of improved nursing judgement, safety, whole-workflow efficiency or patient outcomes; this does not establish absence of benefit. Future evaluations should distinguish model performance from human-AI benefit, assess final fidelity and residual error, and link decisions, delivered care and outcomes when explaining mechanisms."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "revue majeure",
+   "texte intégral libre"
+  ],
+  "type_etude": "cohorte / prédiction",
+  "themes": [
+   "cerveau",
+   "IA conversationnelle",
+   "chirurgie"
+  ],
+  "id": "MED:43084238",
+  "pmid": "43084238",
+  "pmcid": "PMC13795778",
+  "doi": "10.2196/92871",
+  "titre": "Large Language Model Performance in Structured Data Extraction From Neurosurgical Electronic Health Records: Comparative Benchmark Study.",
+  "revue": "JMIR formative research",
+  "date": "2026-11-24",
+  "auteurs": "Černý M, Májovský M, Lama S, Guo E, Hallak H, Singh R, Riva-Cambrin H, Šustek P, Široká L, Horčičáková K, Hužava S, Sajfrídová K, El-Haj Ahmadová K, Sutherland GR, Netuka D.",
+  "types": "comparative study research-article journal article",
+  "acces_libre": true,
+  "resume": "Background Large language models (LLMs) are increasingly used to extract information from electronic health records (EHRs). Given the rapid pace of LLM development, robust scenario-specific benchmarks are essential to evaluate clinical usefulness and support safe deployment. Objective This study aimed to compare contemporary LLMs for structured data extraction from real neurosurgical EHRs written in Czech. Methods In a prospective single-center cohort, 172 hospitalized patients provided informed consent for the use of anonymized EHRs. For each patient, predefined records were collected and concatenated. Ground truth for 35 data points was established by dual extraction with consensus. A standardized prompt requesting JSON output was submitted to 19 LLMs. The primary outcome was overall accuracy; secondary outcomes were category-level accuracy and the proportion of complete machine-readable outputs. Results A total of 6264 documents were collected (median 33, IQR 25-41 per patient). Ground truth was established with 92.6% initial interrater agreement before consensus. Several models produced complete JSON outputs for 100% of cases (Claude 4.1 Opus, Grok 4, and Gemini 2.5 Flash); GPT-4.1 (DeepSearch) and GPT-5 completed 99.4%. The highest accuracy was achieved by GPT-4.1 (87.6%), followed by GPT-4.5 (85.6%), Claude 4.1 (84.8%), and Grok 4 (84.2%). Accuracy declined by data type: binary (up to 95%), numeric (~89%), multiple-choice (~75%), and short text (~78%). Conclusions Current LLMs can reliably extract structured clinical information from full, non-English EHRs, while older or smaller models show major limitations. A hybrid workflow-automated extraction with targeted validation-appears practical for research use."
+ },
+ {
+  "score": 11,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "texte intégral libre"
+  ],
+  "type_etude": "revue systématique",
+  "themes": [
+   "IA conversationnelle",
+   "formation des soignants"
+  ],
+  "id": "MED:42993682",
+  "pmid": "42993682",
+  "pmcid": "PMC13757853",
+  "doi": "10.1080/10872981.2026.2756806",
+  "titre": "Artificial intelligence hallucinations in large language models for medical education and healthcare: a scoping review of detection, mitigation, and governance.",
+  "revue": "Medical education online",
+  "date": "2026-11-06",
+  "auteurs": "Heydari S, Alavi ZS.",
+  "types": "scoping review review-article journal article",
+  "acces_libre": true,
+  "resume": "Background and objective Generative artificial intelligence (AI) and large language models (LLMs) are increasingly used in medical education and healthcare. Yet AI hallucinations-plausible but inaccurate, unsupported, or fabricated information or citations-may compromise educational integrity, clinical judgment, patient safety, and trust. This scoping review mapped evidence on their nature, detection and validation, mitigation, and educational and governance implications. Methods This scoping review was conducted in accordance with the Joanna Briggs Institute methodology and informed by the Arksey and O'Malley framework. Reporting followed the PRISMA Extension for Scoping Reviews. PubMed/MEDLINE, Scopus, IEEE Xplore, and Web of Science were systematically searched for English-language sources published from January 1, 2018, to July 31, 2026. Study selection and data extraction were independently performed by two reviewers. Findings were synthesized using descriptive thematic analysis. Results Of 2,051 identified records, 21 sources were included in the final synthesis after duplicate removal and screening. These included five empirical or model-evaluation studies and 16 review, conceptual, or opinion-based sources. The analysis identified five main themes and 13 subthemes: (1) conceptualization and manifestations of AI hallucinations in healthcare; (2) detection, assessment, and validation of hallucinations; (3) mitigation strategies for improving the reliability of generative AI outputs; (4) educational implications and critical AI literacy; and (5) governance, accountability, and trustworthy implementation in healthcare. Retrieval-augmented generation, structured prompt design, output-verification methods, and human oversight were among the most frequently identified approaches for reducing hallucination-related risks. Conclusion AI hallucinations are not merely technical errors; they represent a multidimensional challenge to the safe and responsible use of LLMs in medical education and healthcare. Reducing their risks requires a multilayered approach that includes evidence-based validation, human oversight, critical AI literacy, redesign of educational assessment, and transparent governance and accountability frameworks."
+ }
+]
