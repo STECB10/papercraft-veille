@@ -1,0 +1,153 @@
+[
+ {
+  "score": 16,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "multicentrique",
+   "n = 2485",
+   "revue majeure",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "cancer",
+   "imagerie",
+   "chirurgie"
+  ],
+  "id": "MED:43097663",
+  "pmid": "43097663",
+  "pmcid": null,
+  "doi": "10.2196/95893",
+  "titre": "Diagnostic Performance of Imaging-Based AI vs Radiologists for Preoperative Lymph Node Metastasis in Esophageal Cancer: Systematic Review and Meta-Analysis.",
+  "revue": "Journal of medical Internet research",
+  "date": "2026-11-26",
+  "auteurs": "Tan C, Xia L, Gao X, Zhong Z, Zhang S, Deng W, Gui S, Shang Z.",
+  "types": "meta-analysis systematic review review journal article",
+  "acces_libre": false,
+  "resume": "Background Imaging-based AI technologies, particularly deep learning and radiomics, offer a novel approach to improving the accuracy of lymph node metastasis (LNM) diagnosis. Objective This study aimed to evaluate the diagnostic performance of imaging-based AI models compared with radiologists in detecting preoperative LNM in esophageal cancer (EC). Methods A systematic literature search was conducted across 5 databases (PubMed, Embase, Web of Science, Cochrane Library, and IEEE Xplore) up to August 19, 2026. Eligible studies assessed imaging-based AI for preoperative LNM detection in EC (pathology reference standard). The protocol was prospectively registered in the International Prospective Register of Systematic Reviews (PROSPERO CRD420251169109). The PROBAST+AI (Prediction Model Risk of Bias Assessment Tool with AI) tool was used for quality assessment. Bivariate random-effects models were used to calculate pooled sensitivity, specificity, diagnostic odds ratio (DOR), and area under the curve (AUC); between-study heterogeneity was described using τ ² and I ² (interpreted descriptively rather than categorically); homogeneity of study effects was tested with the Q statistic, and 95% prediction intervals (PIs) were derived for all pooled estimates. Head-to-head comparisons used a random-effects meta-analysis of within-study paired differences (restricted maximum likelihood with Hartung-Knapp-Sidik-Jonkman adjustment). Results A total of 18 studies were included. Across the 17 internal validation sets (2485 participants), AI models demonstrated a pooled sensitivity of 0.77 (95% CI 0.73-0.81; 95% PI 0.62-0.87), specificity of 0.79 (95% CI 0.73-0.84; 95% PI 0.48-0.94), a DOR of 12.88 (95% CI 9.57-17.33; 95% PI 4.5-37.0), and an AUC of 0.83 (95% CI 0.81-0.86; 95% PI 0.80-0.86). In the 10 head-to-head studies, AI showed higher sensitivity than radiologists (a paired difference of +0.27, 95% CI 0.11-0.37; 95% PI -0.26 to 0.45; P =.006) and higher discrimination (DOR ratio 4.65, 95% CI 2.53-8.56; 95% PI 0.97-22.42; P P =.30). Pooled arm-specific AUCs were 0.86 (95% CI 0.82-0.89; 95% PI 0.79-0.91) for AI and 0.67 (95% CI 0.59-0.75; 95% PI 0.44-0.84) for radiologists. In 4 external validation studies, pooled sensitivity was 0.66 (95% CI 0.46-0.81; 95% PI 0.31-0.90), specificity was 0.85 (95% CI 0.75-0.91; 95% PI 0.63-0.94), and the DOR was 10.42 (95% CI 3.50-31.01; 95% PI 0.6-142.0). These estimates remain subject to substantial heterogeneity and design-related bias. Conclusions Imaging-based AI models demonstrated promising pooled diagnostic performance for preoperative LNM detection in EC. By pairing AI with radiologists' performance in the same cohorts, reporting PIs alongside CIs, and separating internal from external validation, this review provides a more realistic assessment than previous average-effect estimates. In predominantly retrospective and heterogeneous cohorts, AI had higher pooled sensitivity and discrimination than radiologists, whereas specificity did not differ; the selective extraction of the model with the highest AUC and very low certainty of evidence precludes conclusions about clinical superiority. These findings support AI as a decision-support tool, warranting prospective, multicenter external validation and prespecified human-AI comparisons rather than replacing radiologists."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "texte intégral libre",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [],
+  "id": "MED:43090735",
+  "pmid": "43090735",
+  "pmcid": "PMC13804609",
+  "doi": "10.3390/life16111915",
+  "titre": "Machine Learning-Based Prediction of Aerobic Physiological Indicators in Athletes and Physically Active Individuals: A Systematic Review and Meta-Analysis.",
+  "revue": "Life (Basel, Switzerland)",
+  "date": "2026-11-12",
+  "auteurs": "Wang Z, Li S, Fu R, Wu H, Guo Y, Gao J, Wang J.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "resume": "Background Machine learning is increasingly used to predict aerobic physiological indicators in sport, but the reliability of reported performance is uncertain. Methods We searched the PubMed, Embase, Web of Science Core Collection, Scopus, SPORTDiscus, and IEEE Xplore databases through 22 September 2026 and included 31 reports involving athletes or physically active individuals. Study information was extracted using CHARMS, and prediction-model evaluations were assessed with PROBAST+AI. Reported performance was summarized by outcome, metric, and validation design. An exploratory random-effects analysis was restricted to two lactate-threshold correlations from identifiable participant test sets. Results Twelve reports assessed maximal or peak oxygen uptake, nine threshold-related outcomes, six continuous oxygen uptakes, two running economies, and one aerobic power. The two-study pooled correlation was 0.889 (95% confidence interval 0.090-0.992); the studies used different threshold definitions and target variables. Nine selected maximal oxygen uptake reports provided R 2 -related values of 0.45-0.969, but these were not pooled because definitions, evaluation designs, and sampling variances were not sufficiently comparable. No report was confirmed to provide locked-model validation in an independently recruited external cohort. The PROBAST+AI assessments classified 29 of 31 model evaluations as high risk of bias. No algorithm family was consistently superior. Conclusions Strong within-study associations do not establish agreement or transportability. The small threshold synthesis is highly uncertain; participant-level validation, independent physiological reference measurements, and transparent reporting are priorities."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "revue systématique",
+   "texte intégral libre",
+   "intervalle de confiance"
+  ],
+  "type_etude": "revue systématique",
+  "themes": [
+   "cœur",
+   "cancer"
+  ],
+  "id": "MED:43091037",
+  "pmid": "43091037",
+  "pmcid": "PMC13804713",
+  "doi": "10.3390/jcm15229003",
+  "titre": "Mammography-Based Artificial Intelligence for Breast Arterial Calcification Detection, Quantification, and Cardiovascular Risk Assessment: A Systematic Review.",
+  "revue": "Journal of clinical medicine",
+  "date": "2026-11-17",
+  "auteurs": "Ferré R, Benefield T, Kuzmiak CM.",
+  "types": "review-article review journal article",
+  "acces_libre": true,
+  "resume": "Background/Objectives : Artificial intelligence (AI) may automate breast arterial calcification (BAC) assessment and extract cardiovascular information from mammograms. In this study, we review technical BAC assessment, computed tomography (CT)-derived coronary artery calcification (CAC) surrogate assessment, and cardiovascular associations and prediction. Methods : MEDLINE and Embase were searched through 29 August 2026, supplemented by citation searching. Reports were synthesized narratively by target task, reference standard, and predictor type. QUADAS-2 and PROBAST informed risk-of-bias assessment. Results : Database screening yielded 17 eligible reports, and citation searching added three, resulting in 20 reports from 19 studies. These included 12 technical BAC reports, two CAC-surrogate reports, and six cardiovascular reports comprising five BAC-specific studies and one whole-mammogram study. BAC-detection areas under the receiver operating characteristic curve (AUCs) reached 0.95-0.96; segmentation Jaccard coefficients were approximately 0.58-0.61, and one small internal validation reported a Dice of 0.89. Mammography-only CAC AUCs ranged from 0.761 to 0.850 across thresholds; an AI-derived BAC score yielded AUC 0.64 for marked CAC. In an external health system cohort, severe versus absent BAC was associated with major adverse cardiovascular events after adjustment for Predicting Risk of cardiovascular disease EVENTs (PREVENT) (hazard ratio 2.80; 95% confidence interval 2.36-3.32). Separately, adding categorical BAC to PREVENT increased the external cohort C-index from 0.62 to 0.64. Conclusions : AI enables automated BAC assessment, and BAC-derived measures show prognostic associations with limited evidence of incremental predictive performance. Whole-mammogram models provide complementary evidence that cannot establish BAC-specific prognostic value. These tasks require separate interpretation. Standardized measurement, external validation, calibration, and prospective evidence of clinical benefit remain necessary."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "n = 357",
+   "texte intégral libre",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "yeux",
+   "diabète et poids"
+  ],
+  "id": "MED:43091663",
+  "pmid": "43091663",
+  "pmcid": "PMC13805362",
+  "doi": "10.3390/medicina62112267",
+  "titre": "Comparison of Retinopathy Screening Performed Using Conventional Methods and an Artificial Intelligence-Assisted System in Prediabetic and Diabetic Patients: A Single-Center Prospective Analysis.",
+  "revue": "Medicina (Kaunas, Lithuania)",
+  "date": "2026-11-18",
+  "auteurs": "Arici FN, Sumbul HE, Ozturk HA, Isik B, Mustan AG, Gul Olke K, Demirtas AE, Alisan I, Avci BS, Gulumsek E, Yilmaz C, Dincer C, Okyay RA.",
+  "types": "comparative study research-article journal article",
+  "acces_libre": true,
+  "resume": "Background and Objectives : AI-assisted retinal imaging is increasingly proposed to expand diabetic retinopathy (DR) screening capacity, but most validation studies use reading-center standards, exclude prediabetes, and assess macular edema against photographic surrogates rather than optical coherence tomography (OCT). We compared an AI-assisted retinal screening system with routine ophthalmological examination in an unselected internal medicine screening population. Materials and Methods : In this prospective, cross-sectional diagnostic accuracy study, consecutive adults with prediabetes or diabetes underwent AI-assisted retinal imaging (index test) followed by masked ophthalmological examination (reference standard), with OCT as the reference for macular edema. Analyses were performed at the eye level ( n = 714) and patient level ( n = 357) using Wilson score 95% confidence intervals and Cohen kappa (κ) for agreement. Results : Among 357 patients (714 eyes; 83.8% diabetes, 16.2% prediabetes), DR prevalence by ophthalmological examination was 15.0% (eyes) and 17.9% (patients), versus 24.4% and 33.1% by AI (McNemar p p = 0.040); false negatives had milder disease. In prediabetes, DR prevalence was 1.7% and agreement was absent (κ = -0.03). AI sensitivity for OCT-defined macular edema was 45.5% (κ = 0.197), with no significant central macular thickness difference by AI status. Conclusions : The AI system showed high negative predictive value but systematically over-called DR, with only fair-to-moderate agreement and performance below accepted screening benchmarks, particularly in prediabetes and for macular edema. These findings support its use as a rule-out triage adjunct with ophthalmological confirmation of positive results, rather than an autonomous substitute, and argue for local recalibration before deployment."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "méta-analyse",
+   "n = 65045",
+   "intervalle de confiance"
+  ],
+  "type_etude": "méta-analyse",
+  "themes": [
+   "cœur",
+   "reins et sang"
+  ],
+  "id": "MED:43094210",
+  "pmid": "43094210",
+  "pmcid": null,
+  "doi": "10.1002/ccd.71066",
+  "titre": "Machine Learning Versus Clinical Risk Scores for Predicting Contrast-Associated Acute Kidney Injury After Coronary Angiography or Percutaneous Coronary Intervention: A Systematic Review and Meta-Analysis.",
+  "revue": "Catheterization and cardiovascular interventions : official journal of the Society for Cardiac Angiography & Interventions",
+  "date": "2026-11-25",
+  "auteurs": "Munir L, Cai A, Leslie O, Mutahar D, Andrews J, Perrotta D, Leslie A, Kovoor J, Singh K.",
+  "types": "review journal article",
+  "acces_libre": false,
+  "resume": "Risk stratification for contrast-associated acute kidney injury (CA-AKI) before coronary angiography or percutaneous coronary intervention (PCI) may inform procedural planning and preventive management. Machine-learning (ML) models frequently report higher discrimination than established clinical scores, but whether this represents genuine incremental value or unequal comparator specification is unclear. Seven databases were searched until June 20, 2026 for studies evaluating ML and a traditional CA-AKI score in identical patients. The primary outcome was the within-study difference in C-statistic (ΔC), pooled by random-effects meta-analysis with Hartung-Knapp adjustment and stratified by validation level and comparator construction. Risk of bias and certainty were assessed with PROBAST + AI and GRADE. Eleven studies (65,045 patients, 4670 events) were eligible; 10 were meta-analyzed. Pooled ΔC for each study was 0.154 (95% CI, 0.114-0.195; I 2 = 87.4%), every study favoring ML. In seven studies that also refitted a logistic regression in-cohort, ΔC was 0.157 against the frozen score and 0.120 (95% CI, 0.040-0.200) against the regression. With each study's median-ranked algorithm, ΔC was 0.112 (95% CI, 0.044-0.179). One comparison was external; calibration was seldom reported and eight of 11 studies were at high risk of bias. ML models consistently out-discriminated established CA-AKI risk scores, but less so against an in-cohort refitted regression or without best-model selection. With little external validation and limited reporting of calibration or clinical utility, current evidence does not support replacing established clinical scores with ML models in routine coronary angiography or PCI practice."
+ },
+ {
+  "score": 12,
+  "raisons": [
+   "IA dans le titre",
+   "prospectif",
+   "multicentrique",
+   "n = 1693",
+   "intervalle de confiance"
+  ],
+  "type_etude": "performance diagnostique",
+  "themes": [
+   "grossesse et enfants"
+  ],
+  "id": "MED:43099922",
+  "pmid": "43099922",
+  "pmcid": null,
+  "doi": "10.1080/07853890.2026.2760066",
+  "titre": "A pre-procedural machine learning model to predict hypoxemia risk in pediatric flexible bronchoscopy.",
+  "revue": "Annals of medicine",
+  "date": "2026-11-26",
+  "auteurs": "Chi W, Liu J, Li Y, Teng P.",
+  "types": "journal article",
+  "acces_libre": false,
+  "resume": "Background Hypoxemia is a common and potentially serious adverse event during pediatric flexible bronchoscopy (FB), yet reliable pre-procedural risk stratification tools remain limited. We aimed to develop and validate machine learning models to predict hypoxemia. Patients and methods Clinical data from 1,693 children undergoing elective FB between 1 January 2023 and 31 August 2024 were analyzed retrospectively. The data set was randomly split into training (60%, n = 1,015; 208 events) and held-out test (40%, n = 678; 139 events) sets. Model development, tuning, and 10-fold cross-validation used the training set. The least absolute shrinkage and selection operator (LASSO) regression screened candidate predictors of hypoxemia. Seven models were constructed: logistic regression (LR), decision trees, random forest, support vector machine, k-nearest neighbors, Gaussian Naive Bayes, and XGBoost. Performance was evaluated using the area under the receiver operating characteristic curve (AUROC), Brier scores, and decision curve analysis (DCA). SHAP (SHapley Additive exPlanations) analysis interpreted predictor contributions in the final model. Results Hypoxemia (SpO 2 38.0 °C, asthma, ASA-PS, NLR, PCT, and age. LR had the lowest training-set cross-validation Brier score (0.118); in the held-out test set, AUROC was 0.827 (95% CI 0.782-0.867) and Brier score 0.106. Conclusion The model showed good discrimination, calibration, and potential net benefit. It may aid preoperative risk stratification by identifying high-risk children for more intensive monitoring, complementing clinical judgment. Prospective multicenter external validation is needed before clinical implementation."
+ }
+]

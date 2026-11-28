@@ -1,0 +1,5 @@
+Une IA de dépistage de la rétinopathie diabétique signale presque deux fois plus de rétinopathies que l’ophtalmologue : beaucoup sont de fausses alertes.
+Des médecins turcs ont comparé cette IA à l'ophtalmologue chez 357 patients prédiabétiques ou diabétiques. L'ophtalmologue a trouvé une rétinopathie chez 17,9 % des patients, l'IA chez 33,1 %. Elle repère 75 % des malades, mais 70 de ses 118 alertes étaient fausses.
+Et dans votre pratique, un tel tri en amont vous ferait-il gagner du temps, ou créerait-il trop de patients à revoir ?
+Source : Arici et al., Medicina, novembre 2026. https://doi.org/10.3390/medicina62112267
+#IA #Diabète #Ophtalmologie #Santé

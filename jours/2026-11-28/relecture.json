@@ -1,0 +1,15 @@
+{
+ "verdict": "corrigé",
+ "resume": "Sens, population, comparateur et limite conformes ; un libellé de planche ambigu sur l'œdème (OCT) précisé.",
+ "points": [
+  {
+   "gravite": "mineur",
+   "ou": "planche paper 7 (findings, œdème de la macula)",
+   "probleme": "« cas repérés à l'OCT » laissait croire que l'OCT repère les cas, alors que l'IA en repère 45,5 % des cas confirmés par OCT.",
+   "preuve": "With OCT as the reference standard, AI sensitivity for macular edema was 45.5% (95% CI 26.9–65.3)",
+   "avant": "45,5 % des cas repérés à l'OCT",
+   "apres": "45,5 % des cas confirmés à l'OCT"
+  }
+ ],
+ "phrases_modifiees": 0
+}

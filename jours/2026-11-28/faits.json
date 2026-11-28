@@ -1,0 +1,112 @@
+[
+ {
+  "id": "f1",
+  "valeur": 589,
+  "citation": "an estimated 589 million adults aged 20–79 years were living with diabetes in 2024"
+ },
+ {
+  "id": "f2",
+  "valeur": 2024,
+  "citation": "were living with diabetes in 2024"
+ },
+ {
+  "id": "f3",
+  "valeur": 357,
+  "citation": "leaving 357 patients (714 eyes) in the analysis"
+ },
+ {
+  "id": "f4",
+  "valeur": 714,
+  "citation": "leaving 357 patients (714 eyes) in the analysis"
+ },
+ {
+  "id": "f5",
+  "valeur": 2026,
+  "citation": "between 23 February 2026 and 23 April 2026"
+ },
+ {
+  "id": "f6",
+  "valeur": 64,
+  "citation": "in 17.9% of patients (64 of 357)"
+ },
+ {
+  "id": "f7",
+  "valeur": 17.9,
+  "citation": "in 17.9% of patients (64 of 357)"
+ },
+ {
+  "id": "f8",
+  "valeur": 118,
+  "citation": "33.1% of patients (118 of 357)"
+ },
+ {
+  "id": "f9",
+  "valeur": 33.1,
+  "citation": "33.1% of patients (118 of 357)"
+ },
+ {
+  "id": "f10",
+  "valeur": 75.0,
+  "citation": "At the patient level, sensitivity was slightly higher at 75.0% (63.2–84.0)"
+ },
+ {
+  "id": "f11",
+  "valeur": 76.1,
+  "citation": "specificity fell to 76.1% (70.9–80.6)"
+ },
+ {
+  "id": "f12",
+  "valeur": 93.3,
+  "citation": "with an NPV of 93.3% (89.4–95.8)"
+ },
+ {
+  "id": "f13",
+  "valeur": 70,
+  "citation": "corresponding to 70 false-positive and 16 false-negative patients"
+ },
+ {
+  "id": "f14",
+  "valeur": 16,
+  "citation": "corresponding to 70 false-positive and 16 false-negative patients"
+ },
+ {
+  "id": "f15",
+  "valeur": 8.2,
+  "citation": "higher HbA1c (8.2 ± 1.8% versus 7.6 ± 1.8%, p = 0.004)"
+ },
+ {
+  "id": "f16",
+  "valeur": 7.6,
+  "citation": "higher HbA1c (8.2 ± 1.8% versus 7.6 ± 1.8%, p = 0.004)"
+ },
+ {
+  "id": "f17",
+  "valeur": 15,
+  "calcul": "f14 - 1"
+ },
+ {
+  "id": "f18",
+  "valeur": 58,
+  "citation": "Among the 58 patients with prediabetes, only one patient had DR on ophthalmological examination"
+ },
+ {
+  "id": "f20",
+  "valeur": 45.5,
+  "citation": "AI sensitivity for macular edema was 45.5% (95% CI 26.9–65.3)"
+ },
+ {
+  "id": "f21",
+  "valeur": 22,
+  "citation": "Macular edema was detected by OCT in 22 patients (6.2%)"
+ },
+ {
+  "id": "f22",
+  "valeur": 15.2,
+  "calcul": "f9 - f7"
+ },
+ {
+  "id": "f23",
+  "valeur": 40.7,
+  "citation": "a PPV of 40.7% (32.2–49.7)"
+ }
+]

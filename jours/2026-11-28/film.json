@@ -1,0 +1,409 @@
+{
+ "id": "2026-11-28",
+ "sentences": [
+  {
+   "text": "Une IA qui lit le fond de l'œil voit-elle trop de maladies ?",
+   "partie": "accroche"
+  },
+  {
+   "text": "Dans le monde, cinq cent quatre-vingt-neuf millions d'adultes ont un diabète, et chez eux la rétine peut s'abîmer sans symptôme.",
+   "partie": "contexte",
+   "display": "Dans le monde, 589 millions d'adultes ont un diabète, et chez eux la rétine peut s'abîmer sans symptôme.",
+   "box": "diabète,"
+  },
+  {
+   "text": "Du coup, seul un dépistage régulier la repère à temps.",
+   "partie": "contexte",
+   "box": "dépistage",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Le problème, c'est qu'il manque des ophtalmologues : tous les patients ne sont pas examinés.",
+   "partie": "probleme",
+   "box": "ophtalmologues",
+   "source": "constrained by the number of ophthalmologists available"
+  },
+  {
+   "text": "Et pourtant, c'est la première cause de perte de vision évitable chez les adultes actifs.",
+   "partie": "probleme",
+   "box": "évitable",
+   "source": "remains the leading cause of preventable vision loss in working-age adults"
+  },
+  {
+   "text": "Alors une IA analyse des photos du fond d'œil et dit s'il y a une rétinopathie.",
+   "partie": "ia",
+   "box": "IA",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Fait-elle aussi bien qu'un ophtalmologue, y compris chez les prédiabétiques ?",
+   "partie": "question",
+   "mode": "type",
+   "pause_apres": 1.4
+  },
+  {
+   "text": "Pour le savoir, des médecins turcs ont examiné trois cent cinquante-sept patients, de février à avril deux mille vingt-six.",
+   "partie": "etude",
+   "display": "Pour le savoir, des médecins turcs ont examiné 357 patients, de février à avril 2026.",
+   "box": "357"
+  },
+  {
+   "text": "D'abord, des photos du fond d'œil : l'IA dit si elle voit une rétinopathie.",
+   "partie": "methode",
+   "box": "photos"
+  },
+  {
+   "text": "Ensuite, un ophtalmologue, sans connaître ce résultat, a examiné les mêmes patients : c'est la référence.",
+   "partie": "methode",
+   "box": "référence.",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Résultat : l'ophtalmologue en trouve chez soixante-quatre patients, l'IA chez cent dix-huit.",
+   "partie": "resultat",
+   "display": "Résultat : l'ophtalmologue en trouve chez 64 patients, l'IA chez 118.",
+   "box": "118."
+  },
+  {
+   "text": "Autrement dit : dix-sept virgule neuf pour cent contre trente-trois virgule un.",
+   "partie": "resultat",
+   "display": "Autrement dit : 17,9 % contre 33,1 %.",
+   "box": "contre",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Concrètement, elle repère soixante-quinze pour cent des malades et écarte soixante-seize pour cent des autres.",
+   "partie": "resultat",
+   "display": "Concrètement, elle repère 75 % des malades et écarte 76 % des autres.",
+   "box": "repère"
+  },
+  {
+   "text": "Mais quand elle écarte la maladie, elle a raison dans quatre-vingt-treize pour cent des cas.",
+   "partie": "resultat",
+   "display": "Mais quand elle écarte la maladie, elle a raison dans 93 % des cas.",
+   "box": "raison"
+  },
+  {
+   "text": "En revanche, ses alertes sont souvent fausses : soixante-dix sur cent dix-huit.",
+   "partie": "resultat",
+   "display": "En revanche, ses alertes sont souvent fausses : 70 sur 118.",
+   "box": "fausses",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Parmi les seize patients manqués, quinze avaient une forme légère ou modérée.",
+   "partie": "concret",
+   "display": "Parmi les 16 patients manqués, 15 avaient une forme légère ou modérée.",
+   "box": "manqués,",
+   "source": "Fifteen of the 16 missed patients had grade 1 disease"
+  },
+  {
+   "text": "Chez les cinquante-huit prédiabétiques, un seul avait une rétinopathie, et l'IA l'a ratée.",
+   "partie": "concret",
+   "display": "Chez les 58 prédiabétiques, un seul avait une rétinopathie, et l'IA l'a ratée.",
+   "box": "ratée.",
+   "source": "only one patient had DR on ophthalmological examination"
+  },
+  {
+   "text": "Enfin, pour l'œdème de la macula, elle repère quarante-cinq virgule cinq pour cent des cas.",
+   "partie": "concret",
+   "display": "Enfin, pour l'œdème de la macula, elle repère 45,5 % des cas.",
+   "box": "repère",
+   "source": "AI sensitivity for macular edema was 45.5%",
+   "pause_apres": 0.4
+  },
+  {
+   "text": "Attention : une seule IA, un seul hôpital, peu de cas graves : il ne faut pas généraliser.",
+   "partie": "limite",
+   "mode": "type"
+  },
+  {
+   "text": "À retenir : elle peut écarter des patients sains, mais l'ophtalmologue doit confirmer chaque alerte.",
+   "partie": "retenir",
+   "mode": "type",
+   "pause_apres": 0.3
+  },
+  {
+   "text": "Une étude par jour, vérifiée à la source.",
+   "partie": "fin",
+   "mode": "none"
+  },
+  {
+   "text": "Papercraft.",
+   "partie": "fin",
+   "mode": "none"
+  }
+ ],
+ "night": {
+  "start": 0,
+  "end": "s5.e+0.25",
+  "stations": [
+   {
+    "type": "hook_image",
+    "cam_at": 0,
+    "header": "Étude diagnostique · Turquie · 2026",
+    "image": "fundus",
+    "title": "Une IA lit des photos du fond de l'œil",
+    "title_at": "s0:fond",
+    "scan_at": "s0:lit",
+    "lock_at": "s0:maladies",
+    "footnote": "IA · rétinopathie diabétique"
+   },
+   {
+    "type": "steps",
+    "cam_at": "s1-0.1",
+    "mark_at": "s1:rétine",
+    "title": "Une atteinte silencieuse",
+    "steps": [
+     {
+      "icon": "user",
+      "label": "Des adultes diabétiques",
+      "at": "s1:diabète"
+     },
+     {
+      "icon": "eye",
+      "label": "Une rétine qui s'abîme",
+      "note": "sans symptôme",
+      "at": "s1:rétine",
+      "note_at": "s1:symptôme"
+     },
+     {
+      "icon": "magnifier",
+      "label": "Un dépistage régulier",
+      "at": "s2:dépistage"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s3-0.1",
+    "mark_at": "s3:examinés",
+    "title": "Un dépistage inégal",
+    "steps": [
+     {
+      "icon": "stethoscope",
+      "label": "Peu d'ophtalmologues",
+      "at": "s3:ophtalmologues"
+     },
+     {
+      "icon": "users",
+      "label": "Des patients non examinés",
+      "at": "s3:examinés"
+     },
+     {
+      "icon": "eye",
+      "label": "Une vision à protéger",
+      "note": "perte évitable",
+      "at": "s4:vision",
+      "note_at": "s4:évitable"
+     }
+    ]
+   },
+   {
+    "type": "steps",
+    "cam_at": "s5-0.1",
+    "mark_at": "s5:photos",
+    "title": "Une IA qui lit la rétine",
+    "steps": [
+     {
+      "icon": "chip",
+      "label": "Une IA qui analyse",
+      "at": "s5:analyse"
+     },
+     {
+      "icon": "fundus",
+      "label": "Des photos du fond d'œil",
+      "at": "s5:photos"
+     },
+     {
+      "icon": "check",
+      "label": "Rétinopathie : oui ou non",
+      "at": "s5:rétinopathie"
+     }
+    ]
+   }
+  ]
+ },
+ "pivot": {
+  "text": "Fait-elle aussi bien qu'un ophtalmologue, y compris chez les prédiabétiques ?",
+  "italic": "ophtalmologue",
+  "fold_at": "s6.e+0.12"
+ },
+ "paper": {
+  "stations": [
+   {
+    "type": "id_card",
+    "cam_at": "s7-0.3",
+    "title": "L'étude en bref",
+    "rows": [
+     {
+      "label": "Type",
+      "value": "Étude diagnostique prospective",
+      "at": "s7:savoir"
+     },
+     {
+      "label": "Lieu",
+      "value": "Adana, Turquie",
+      "at": "s7:turcs"
+     },
+     {
+      "label": "Patients",
+      "value": "357 patients · 714 yeux",
+      "at": "s7:trois"
+     },
+     {
+      "label": "Période",
+      "value": "Février à avril 2026",
+      "at": "s7:février",
+      "accent": true
+     }
+    ]
+   },
+   {
+    "type": "ai_scan",
+    "cam_at": "s8-0.3",
+    "input_icon": "fundus",
+    "input_label": "Photos des deux yeux",
+    "ai_label": "Cherche une rétinopathie",
+    "output_label": "Rétinopathie : oui ou non",
+    "modality": "image",
+    "at": "s8:photos",
+    "core_at": "s8:l'IA",
+    "out_at": "s8:rétinopathie"
+   },
+   {
+    "type": "key_points",
+    "cam_at": "s9-0.3",
+    "title": "Le test et la référence",
+    "points": [
+     {
+      "text": "Examen sans connaître le résultat de l'IA",
+      "at": "s9:sans"
+     },
+     {
+      "text": "La référence : l'ophtalmologue",
+      "at": "s9:mêmes"
+     }
+    ]
+   },
+   {
+    "type": "result_dots",
+    "cam_at": "s10-0.3",
+    "title": "Patients avec rétinopathie",
+    "unit": "%",
+    "groups": [
+     {
+      "label": "Ophtalmologue",
+      "n": 357,
+      "k": 64,
+      "value": "17,9",
+      "num": 17.9,
+      "at": "s10:l'ophtalmologue"
+     },
+     {
+      "label": "IA",
+      "n": 357,
+      "k": 118,
+      "value": "33,1",
+      "num": 33.1,
+      "at": "s10:l'IA",
+      "accent": true
+     }
+    ],
+    "diff": "+15,2 points",
+    "diff_at": "s11:contre"
+   },
+   {
+    "type": "metric",
+    "cam_at": "s12-0.3",
+    "title": "Face à l'ophtalmologue",
+    "metrics": [
+     {
+      "label": "Malades repérés",
+      "value": "75",
+      "num": 75,
+      "unit": "%",
+      "at": "s12:soixante-quinze",
+      "accent": true
+     },
+     {
+      "label": "Sains écartés",
+      "value": "76",
+      "num": 76,
+      "unit": "%",
+      "at": "s12:soixante-seize"
+     },
+     {
+      "label": "Absences fiables",
+      "value": "93",
+      "num": 93,
+      "unit": "%",
+      "at": "s13:quatre-vingt-treize"
+     }
+    ]
+   },
+   {
+    "type": "big_stat",
+    "cam_at": "s14-0.3",
+    "title": "Quand l'IA alerte",
+    "value": "70/118",
+    "label": "alertes sans rétinopathie pour l'ophtalmologue",
+    "label_at": "s14:fausses",
+    "at": "s14:soixante-dix"
+   },
+   {
+    "type": "findings",
+    "cam_at": "s15-0.3",
+    "title": "Ce qu'on a trouvé",
+    "items": [
+     {
+      "icon": "eye",
+      "label": "Les patients manqués",
+      "detail": "15 sur 16 : forme légère ou modérée",
+      "detail_at": "s15:quinze",
+      "at": "s15:manqués,"
+     },
+     {
+      "icon": "user",
+      "label": "Les prédiabétiques",
+      "detail": "Une seule rétinopathie, ratée",
+      "detail_at": "s16:seul",
+      "at": "s16:prédiabétiques,"
+     },
+     {
+      "icon": "magnifier",
+      "label": "L'œdème de la macula",
+      "detail": "45,5 % des cas confirmés à l'OCT",
+      "detail_at": "s17:quarante-cinq",
+      "accent": true,
+      "at": "s17:l'œdème"
+     }
+    ]
+   },
+   {
+    "type": "typo",
+    "cam_at": "s18-0.25",
+    "text": "Attention : une seule IA, un seul hôpital, peu de cas graves : il ne faut pas généraliser.",
+    "italic": "généraliser"
+   },
+   {
+    "type": "typo",
+    "cam_at": "s19-0.25",
+    "text": "À retenir : elle peut écarter des patients sains, mais l'ophtalmologue doit confirmer chaque alerte.",
+    "italic": "confirmer"
+   }
+  ]
+ },
+ "end": {
+  "fold_at": "s19.e+0.2",
+  "promise": "Une étude par jour, vérifiée à la source.",
+  "promise_italic": "vérifiée",
+  "wordmark_at": "s21",
+  "button": "Suivre",
+  "button_at": "s21+0.6",
+  "click_at": "s21+1.6",
+  "source": "Arici et al. · Medicina · novembre 2026",
+  "doi": "doi:10.3390/medicina62112267",
+  "source_at": "s20:vérifiée-0.2"
+ }
+}
